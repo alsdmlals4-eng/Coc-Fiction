@@ -3,8 +3,10 @@ name: Fiction operating system
 on:
   pull_request:
     paths:
-      - "[소설]/00_운영체계/**"
+      - "**/00_운영체계/**"
       - "docs/fiction-ops/**"
+      - "docs/coordination/**"
+      - "templates/fiction-ops/**"
       - "skills/fiction-*/**"
       - "skills/FICTION_SKILL_LEARNING_LOG.md"
       - "tools/check_fiction_operating_system.py"
@@ -13,8 +15,10 @@ on:
   push:
     branches: [main]
     paths:
-      - "[소설]/00_운영체계/**"
+      - "**/00_운영체계/**"
       - "docs/fiction-ops/**"
+      - "docs/coordination/**"
+      - "templates/fiction-ops/**"
       - "skills/fiction-*/**"
       - "skills/FICTION_SKILL_LEARNING_LOG.md"
       - "tools/check_fiction_operating_system.py"
