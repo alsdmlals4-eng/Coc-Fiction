@@ -20,6 +20,7 @@
 | 작법·퇴고 방법의 근거는? | `docs/fiction-ops/CRAFT_RESEARCH.md` |
 | Base에서 무엇을 가져오고 제외했는가? | `docs/fiction-ops/BASE_ADOPTION_AUDIT.md` |
 | 다른 채팅과 어떻게 충돌을 피하는가? | `docs/coordination/CONCURRENT_WORK.md` |
+| 새 상태·Canon·장면·문체·퇴고 파일을 어떻게 시작하는가? | `templates/fiction-ops/` |
 
 ## 단일 책임 원본 정책
 
@@ -37,6 +38,18 @@
 - `RETCON_PENDING`: 기존 Canon과 충돌해 결정 대기
 - `SUPERSEDED`: 대체됐으며 역사 확인용
 - `UNVERIFIED`: 근거 부족
+
+## 설치 템플릿
+
+| 템플릿 | 용도 |
+|---|---|
+| `ACTIVE_CONTEXT.template.md` | 현재 상태·다음 작업·재개 지점 |
+| `CANON_REGISTRY.template.json` | Canon 상태·원본·충돌·별칭 색인 |
+| `SCENE_CARD.template.md` | 장면 전후 변화·정보·연속성 계약 |
+| `STYLE_GUIDE.template.md` | POV·시제·거리·문장·대화·표기 기준 |
+| `REVISION_REPORT.template.md` | finding·승인 수정·회귀 증거 |
+
+템플릿은 빈 구조일 뿐 작품 정본이 아니다. 실제 이전 결과와 사용자 승인에 맞춰 설치한 파일만 Registry에 등록한다.
 
 ## 작품 이전 뒤 연결할 최소 항목
 
