@@ -24,6 +24,11 @@ REQUIRED_FILES = [
     "skills/fiction-canon-and-research/SKILL.md",
     "skills/fiction-revision-and-validation/SKILL.md",
     "skills/FICTION_SKILL_LEARNING_LOG.md",
+    "templates/fiction-ops/ACTIVE_CONTEXT.template.md",
+    "templates/fiction-ops/CANON_REGISTRY.template.json",
+    "templates/fiction-ops/SCENE_CARD.template.md",
+    "templates/fiction-ops/STYLE_GUIDE.template.md",
+    "templates/fiction-ops/REVISION_REPORT.template.md",
 ]
 
 EXPECTED_SKILLS = {
@@ -32,6 +37,34 @@ EXPECTED_SKILLS = {
     "fiction-drafting",
     "fiction-canon-and-research",
     "fiction-revision-and-validation",
+}
+
+EXPECTED_BASE_CAPABILITIES = {
+    "managing-project-intake-and-work-contract",
+    "managing-game-project-operating-system",
+    "managing-design-documents",
+    "evolving-project-discipline-skills",
+    "pruning-stale-and-nonfunctional-material",
+    "simplifying-skill-bodies",
+    "refactoring-with-contract-preservation",
+    "synchronizing-local-and-github-state",
+    "maintaining-long-running-task-continuity",
+    "governing-game-user-research-coverage",
+    "creating-user-learning-notes",
+    "building-project-visual-dashboards",
+    "diagnosing-game-engine-runtime-failures",
+    "maintaining-project-context-and-handoff",
+    "analyzing-and-refining-game-concepts",
+    "identifying-project-core",
+    "establishing-project-core",
+    "running-adversarial-review-and-refinement",
+    "designing-vertical-slices",
+    "orchestrating-deepseek-worktrees",
+    "reviewing-and-validating-project-changes",
+    "auditing-canonical-reference-freshness",
+    "designing-art-prompts-and-technique-cards",
+    "auditing-and-refining-ui-art",
+    "managing-base-change-proposals",
 }
 
 REQUIRED_RESEARCH_URLS = [
@@ -152,8 +185,19 @@ def main() -> int:
             errors.append(f"OPERATING_MODEL missing revision contract: {token}")
 
     audit = (ROOT / "docs/fiction-ops/BASE_ADOPTION_AUDIT.md").read_text(encoding="utf-8")
-    if audit.count("| `") < 25:
-        errors.append("Base adoption audit does not account for all 25 active Base skills")
+    mapped_base_ids = set(re.findall(r"^\| `([^`]+)` \|", audit, re.MULTILINE))
+    if mapped_base_ids != EXPECTED_BASE_CAPABILITIES:
+        missing = sorted(EXPECTED_BASE_CAPABILITIES - mapped_base_ids)
+        extra = sorted(mapped_base_ids - EXPECTED_BASE_CAPABILITIES)
+        errors.append(f"Base capability mapping mismatch; missing={missing}, extra={extra}")
+
+    for json_path in ROOT.rglob("*.json"):
+        if ".git" in json_path.parts:
+            continue
+        try:
+            json.loads(json_path.read_text(encoding="utf-8"))
+        except Exception as exc:
+            errors.append(f"invalid JSON: {json_path.relative_to(ROOT)}: {exc}")
 
     if errors:
         print("Fiction operating system FAILED")
