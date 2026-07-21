@@ -1,0 +1,34 @@
+name: Fiction operating system
+
+on:
+  pull_request:
+    paths:
+      - "[소설]/00_운영체계/**"
+      - "docs/fiction-ops/**"
+      - "skills/fiction-*/**"
+      - "skills/FICTION_SKILL_LEARNING_LOG.md"
+      - "tools/check_fiction_operating_system.py"
+      - ".github/workflows/fiction-ops-validation.yml"
+      - ".github/PULL_REQUEST_TEMPLATE/fiction-change.md"
+  push:
+    branches: [main]
+    paths:
+      - "[소설]/00_운영체계/**"
+      - "docs/fiction-ops/**"
+      - "skills/fiction-*/**"
+      - "skills/FICTION_SKILL_LEARNING_LOG.md"
+      - "tools/check_fiction_operating_system.py"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate fiction operating system
+        run: python tools/check_fiction_operating_system.py
