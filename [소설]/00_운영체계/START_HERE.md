@@ -57,6 +57,16 @@ docs/coordination/CONCURRENT_WORK.md
 - 맞춤법 교정은 구조·장면·문장 퇴고가 끝난 뒤 별도 패스로 수행한다.
 - 실행하지 않은 검수와 해결하지 않은 충돌은 `PASS`로 표시하지 않는다.
 
+## 바로 사용할 템플릿
+
+- 현재 상태: `templates/fiction-ops/ACTIVE_CONTEXT.template.md`
+- Canon Registry: `templates/fiction-ops/CANON_REGISTRY.template.json`
+- 장면 카드: `templates/fiction-ops/SCENE_CARD.template.md`
+- 작품 문체 기준: `templates/fiction-ops/STYLE_GUIDE.template.md`
+- 퇴고·적대적 검토 보고: `templates/fiction-ops/REVISION_REPORT.template.md`
+
+템플릿을 복사해 실제 작품 경로에 설치할 때는 다른 채팅의 이전 결과와 경로를 먼저 대조하고, 빈 템플릿을 현행 정본처럼 선언하지 않는다.
+
 ## 현재 설치 범위
 
 이 브랜치는 운영체계와 검증 도구만 추가한다. 소설 원고·설정·캐릭터·플롯 내용은 수정하지 않는다. 작품 이전이 끝난 뒤 `DOCUMENTATION_MAP.md`와 별도 Canon Registry에서 실제 책임 원본 경로를 연결한다.
