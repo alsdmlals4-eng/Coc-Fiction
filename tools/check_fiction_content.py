@@ -88,6 +88,21 @@ for path in bundles:
         if term in text:
             errors.append(f"superseded term {term} in active manuscript {path.relative_to(ROOT)}")
 
+# 폐기 명칭은 현행 금지 정책을 정의하는 두 책임 원본에서만 허용한다.
+superseded_allowlist = {
+    FICTION / "CANON_REGISTRY.json",
+    FICTION / "FICTION_MASTER.md",
+}
+for path in sorted(FICTION.rglob("*")):
+    if not path.is_file() or "archive" in path.parts or path in superseded_allowlist:
+        continue
+    if path.suffix not in {".md", ".json"}:
+        continue
+    text = path.read_text(encoding="utf-8")
+    for term in superseded_terms:
+        if term in text:
+            errors.append(f"superseded term {term} in active file {path.relative_to(ROOT)}")
+
 archive_google = FICTION / "archive/SUPERSEDED_GOOGLE_DOCS.md"
 archive_text = archive_google.read_text(encoding="utf-8") if archive_google.is_file() else ""
 old_ids = re.findall(r"`([A-Za-z0-9_-]{20,})`", archive_text)
@@ -117,6 +132,29 @@ for path in sorted(FICTION.rglob("*")):
     for pattern in legacy_patterns:
         if pattern in text:
             errors.append(f"active legacy 140-plan content in {path.relative_to(ROOT)}: {pattern}")
+
+# 과거 작업 단계 문구가 활성 진입점으로 되돌아오지 않게 한다.
+stale_stage_phrases = (
+    "현재 사건 배치 원고",
+    "5화 단위 확장 뒤",
+    "확장 미착수",
+    "제1화~제5화 확장부터",
+)
+active_doc_roots = (
+    FICTION,
+    ROOT / "[소설]" / "00_운영체계",
+    ROOT / "docs" / "coordination",
+)
+for doc_root in active_doc_roots:
+    if not doc_root.exists():
+        continue
+    for path in sorted(doc_root.rglob("*")):
+        if not path.is_file() or "archive" in path.parts or path.suffix not in {".md", ".json"}:
+            continue
+        text = path.read_text(encoding="utf-8")
+        for phrase in stale_stage_phrases:
+            if phrase in text:
+                errors.append(f"stale workflow phrase in {path.relative_to(ROOT)}: {phrase}")
 
 try:
     registry = json.loads((FICTION / "CANON_REGISTRY.json").read_text(encoding="utf-8"))
