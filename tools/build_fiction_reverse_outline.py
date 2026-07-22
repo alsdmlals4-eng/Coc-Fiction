@@ -252,7 +252,7 @@ def build(repo_root: Path) -> dict[str, Any]:
         previous = chapter
     return {
         "schema_version": 1,
-        "generated_at": "2026-07-22",
+        "generated_at": "2026-07-23",
         "status": "ACTIVE_ANALYSIS / EXTRACTIVE_BASELINE / MANUAL_REVIEW_REQUIRED",
         "source_of_truth": "fiction/manuscript/ plus fiction/MANUSCRIPT_INDEX.json on the same commit",
         "method": (

@@ -31,6 +31,18 @@ for rel in REQUIRED:
         errors.append(f"missing {rel}")
 
 try:
+    registry = json.loads((FICTION / "CANON_REGISTRY.json").read_text(encoding="utf-8"))
+    if registry.get("core_status") != "CORE_CONFIRMED":
+        errors.append("canon registry core status is not CORE_CONFIRMED")
+    forbidden_terms = list(registry.get("validation", {}).get("forbidden_in_active_manuscript", []))
+    if not forbidden_terms:
+        errors.append("canon registry forbidden term list is empty")
+except Exception as exc:
+    registry = {}
+    forbidden_terms = []
+    errors.append(f"invalid canon registry: {exc}")
+
+try:
     index = json.loads((FICTION / "MANUSCRIPT_INDEX.json").read_text(encoding="utf-8"))
     index_entries = {int(item["chapter"]): item for item in index.get("chapters", [])}
 except Exception as exc:
@@ -81,25 +93,34 @@ for number, (title, pov, body, path) in seen.items():
     if entry.get("body_sha256") != digest:
         errors.append(f"chapter {number} body SHA mismatch")
 
-superseded_terms = ["쵸르브라트", "미하일 카쉬프", "피엘렛토", "붉은 늑대"]
 for path in bundles:
     text = path.read_text(encoding="utf-8")
-    for term in superseded_terms:
+    for term in forbidden_terms:
         if term in text:
             errors.append(f"superseded term {term} in active manuscript {path.relative_to(ROOT)}")
 
-# 폐기 명칭은 현행 금지 정책을 정의하는 두 책임 원본에서만 허용한다.
+# 폐기 명칭은 금지 정책을 정의하는 책임 원본에서만 허용한다.
 superseded_allowlist = {
     FICTION / "CANON_REGISTRY.json",
     FICTION / "FICTION_MASTER.md",
 }
-for path in sorted(FICTION.rglob("*")):
-    if not path.is_file() or "archive" in path.parts or path in superseded_allowlist:
+active_roots = (
+    FICTION,
+    ROOT / "[소설]" / "00_운영체계",
+    ROOT / "docs" / "coordination",
+)
+active_files: set[Path] = set()
+for active_root in active_roots:
+    if not active_root.exists():
         continue
-    if path.suffix not in {".md", ".json"}:
+    for path in active_root.rglob("*"):
+        if path.is_file() and "archive" not in path.parts and path.suffix in {".md", ".json"}:
+            active_files.add(path)
+for path in sorted(active_files):
+    if path in superseded_allowlist:
         continue
     text = path.read_text(encoding="utf-8")
-    for term in superseded_terms:
+    for term in forbidden_terms:
         if term in text:
             errors.append(f"superseded term {term} in active file {path.relative_to(ROOT)}")
 
@@ -108,9 +129,7 @@ archive_text = archive_google.read_text(encoding="utf-8") if archive_google.is_f
 old_ids = re.findall(r"`([A-Za-z0-9_-]{20,})`", archive_text)
 if len(old_ids) < 3:
     errors.append("superseded Google Doc IDs missing from archive inventory")
-for path in sorted(FICTION.rglob("*")):
-    if not path.is_file() or "archive" in path.parts:
-        continue
+for path in sorted(active_files):
     text = path.read_text(encoding="utf-8")
     for old_id in old_ids:
         if old_id in text:
@@ -125,43 +144,23 @@ for active_id in (
         errors.append(f"active Google Doc id missing from SOURCE_MANIFEST: {active_id}")
 
 legacy_patterns = ("총 140화", "2부: 제91화~제140화", "제138화~제140화")
-for path in sorted(FICTION.rglob("*")):
-    if not path.is_file() or "archive" in path.parts:
-        continue
+for path in sorted(active_files):
     text = path.read_text(encoding="utf-8")
     for pattern in legacy_patterns:
         if pattern in text:
             errors.append(f"active legacy 140-plan content in {path.relative_to(ROOT)}: {pattern}")
 
-# 과거 작업 단계 문구가 활성 진입점으로 되돌아오지 않게 한다.
 stale_stage_phrases = (
     "현재 사건 배치 원고",
     "5화 단위 확장 뒤",
     "확장 미착수",
     "제1화~제5화 확장부터",
 )
-active_doc_roots = (
-    FICTION,
-    ROOT / "[소설]" / "00_운영체계",
-    ROOT / "docs" / "coordination",
-)
-for doc_root in active_doc_roots:
-    if not doc_root.exists():
-        continue
-    for path in sorted(doc_root.rglob("*")):
-        if not path.is_file() or "archive" in path.parts or path.suffix not in {".md", ".json"}:
-            continue
-        text = path.read_text(encoding="utf-8")
-        for phrase in stale_stage_phrases:
-            if phrase in text:
-                errors.append(f"stale workflow phrase in {path.relative_to(ROOT)}: {phrase}")
-
-try:
-    registry = json.loads((FICTION / "CANON_REGISTRY.json").read_text(encoding="utf-8"))
-    if registry.get("core_status") != "CORE_CONFIRMED":
-        errors.append("canon registry core status is not CORE_CONFIRMED")
-except Exception as exc:
-    errors.append(f"invalid canon registry: {exc}")
+for path in sorted(active_files):
+    text = path.read_text(encoding="utf-8")
+    for phrase in stale_stage_phrases:
+        if phrase in text:
+            errors.append(f"stale workflow phrase in {path.relative_to(ROOT)}: {phrase}")
 
 if errors:
     print("Fiction content validation FAILED")

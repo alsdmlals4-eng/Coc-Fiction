@@ -9,21 +9,22 @@ docs/coordination/CONCURRENT_WORK.md
 → fiction/FICTION_MASTER.md
 → fiction/ACTIVE_CONTEXT.md
 → fiction/CANON_REGISTRY.json
-→ fiction/analysis/REVERSE_OUTLINE_REPORT.md
+→ fiction/reports/REVISION_2026-07-23_PILOT_10_95_180.md
 → fiction/analysis/REPRESENTATIVE_CHAPTER_GATES.md
+→ fiction/analysis/REVERSE_OUTLINE_REPORT.md
 → fiction/MANUSCRIPT_INDEX.json
 → fiction/STYLE_GUIDE.md
 → 현재 5화 원고 묶음
 ```
 
-`REVERSE_OUTLINE_001_225.json`은 화별 탐색과 자동 검증에 사용하며, 일반 작업 시작 시 전체를 매번 읽지 않는다.
+`REVERSE_OUTLINE_001_225.json`은 화별 탐색과 자동 검증에 사용하며 일반 작업 시작 시 전체를 매번 읽지 않는다.
 
 ## Work Mode와 Manuscript Stage
 
 - Work Mode: `PLAN / BUILD / REVIEW`
 - Manuscript Stage: `DISCOVER → OUTLINE → DRAFT → REVISE → POLISH`
 
-현재 작품은 `REVISE`다. 225화 분량 확장과 구조 역개요 기준선은 완료됐지만 원본 장면 감사, 대표 화 scene diagnostic, 전체 구조·연속성·문체·최종 교정은 완료되지 않았다.
+현재 작품은 `REVISE`다. 225화 분량 확장, 구조 역개요 기준선, 제10·95·180화 파일럿은 완료됐다. 원본 전체 장면 감사, 나머지 5화 묶음 구조·연속성·문체·최종 교정은 완료되지 않았다.
 
 ## 프로젝트 Skill
 
@@ -41,8 +42,14 @@ docs/coordination/CONCURRENT_WORK.md
 
 ## 보호 규칙
 
-- archive와 SUPERSEDED Google Docs를 활성 정본처럼 사용하지 않는다.
+- archive와 구형 Google Docs를 활성 정본처럼 사용하지 않는다.
 - 사용자 승인 없이 작품 코어·결말·인물성·POV·문체를 바꾸지 않는다.
 - 자동 역개요와 정량 플래그를 오류나 수정 명령으로 취급하지 않는다.
+- 원본 본체가 없으면 직접 대조 완료로 표시하지 않는다.
+- 새 조직명으로 폐기 세력의 장기 기능을 복원하지 않는다.
 - 구조 검토 전에 맞춤법만 고쳐 문제를 숨기지 않는다.
-- 5화 단위 수정 뒤 원본·인과·POV·동선·상태·금지 설정·역개요 회귀를 남긴다.
+- 5화 단위 수정 뒤 원본·인과·POV·동선·상태·금지 설정·색인·역개요 회귀를 남긴다.
+
+## 다음 시작 묶음
+
+`fiction/manuscript/part-1/006-010.md` → `fiction/manuscript/side-story-lake/091-095.md` → `fiction/manuscript/part-2/176-180.md` 순으로 수동 장면 카드와 연속성 패스를 진행한다.
