@@ -32,9 +32,6 @@ on:
       - "tools/build_fiction_reverse_outline.py"
       - "tools/check_fiction_reverse_outline.py"
 
-permissions:
-  contents: write
-
 jobs:
   validate:
     runs-on: ubuntu-latest
