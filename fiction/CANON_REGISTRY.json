@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-22",
+  "updated_at": "2026-07-23",
   "core_status": "CORE_CONFIRMED",
   "active_sources": {
     "master": "fiction/FICTION_MASTER.md",
@@ -42,9 +42,11 @@
         "쵸르브라트",
         "미하일 카쉬프",
         "피엘렛토",
-        "붉은 늑대"
+        "붉은 늑대",
+        "컨소시엄",
+        "협상 책임자"
       ],
-      "replacement": "황색 과격파·외부 용병·델타그린 회수파·경찰·의료진에 기능 분산"
+      "replacement": "미스캐토닉 압수 장비·델타그린 보관/강경 회수선·경찰 증거보전·의료 중단 권한·황색 과격파 및 단발 외부 용병에 기능 분산"
     },
     {
       "id": "legacy.140-episode-plan",
@@ -57,7 +59,9 @@
       "쵸르브라트",
       "미하일 카쉬프",
       "피엘렛토",
-      "붉은 늑대"
+      "붉은 늑대",
+      "컨소시엄",
+      "협상 책임자"
     ],
     "allowed_only_in_registry_or_archive": [
       "구 140화 편성"

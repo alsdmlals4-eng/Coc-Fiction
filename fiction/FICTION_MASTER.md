@@ -1,7 +1,7 @@
 # 《폭풍의 눈》 현행 정본·작업 기준
 
 상태: **ACTIVE / SINGLE SOURCE OF TRUTH**  
-최종 갱신: 2026-07-22
+최종 갱신: 2026-07-23
 
 ## 1. 책임 원본
 
@@ -14,7 +14,7 @@
 | 실제 225화 확장 원고 | `manuscript/` |
 | 화별 제목·POV·분량·원문 SHA | `MANUSCRIPT_INDEX.json` |
 | 225화 구조 역개요·구조 진단 | `analysis/REVERSE_OUTLINE_001_225.json`, `analysis/REVERSE_OUTLINE_REPORT.md` |
-| 대표 품질 게이트 | `analysis/REPRESENTATIVE_CHAPTER_GATES.md` |
+| 대표 품질 게이트·파일럿 판정 | `analysis/REPRESENTATIVE_CHAPTER_GATES.md`, `reports/REVISION_2026-07-23_PILOT_10_95_180.md` |
 | 현재 상태·다음 작업 | `ACTIVE_CONTEXT.md` |
 | 인수인계 | `HANDOFF.md` |
 | 출처와 구형 자료 상태 | `SOURCE_MANIFEST.md`, `archive/` |
@@ -57,11 +57,11 @@
 
 Developmental → Structural reverse outline → Scene diagnostic → Continuity → Line edit → Copyedit → Proofread 순서를 지킨다. 5화 단위로 원본·인과·POV·동선·상태를 검수하고, 부 단위와 225화 전체 회귀 검토를 별도로 수행한다.
 
-현재 Structural reverse outline 기준선은 완료됐으며, 다음 단계는 대표 품질 게이트의 Scene diagnostic이다.
+Structural reverse outline 기준선과 제10·95·180화 파일럿 Scene diagnostic은 완료됐다. 다음 단계는 파일럿이 포함된 5화 묶음 `006-010 → 091-095 → 176-180`의 수동 장면 카드·연속성 패스다.
 
 ## 7. 폐기 설정 정책
 
-독립 러시아 마피아·쵸르브라트·미하일·피엘렛토·붉은 늑대 장기 서사축은 `SUPERSEDED`다. 전투·압박 기능은 황색 과격파·외부 용병의 단발 적대, 추적·후송은 경찰·의료진·라르고 팀, 장비는 델타그린 압수 장비와 공동 관리 구조로 분산한다. 활성 원고에 폐기 명칭이 남으면 검증 실패다.
+독립 러시아 마피아·쵸르브라트·미하일·피엘렛토·붉은 늑대·컨소시엄·협상 책임자 장기 서사축은 `SUPERSEDED`다. 전투·압박은 황색 과격파와 단발 외부 용병, 장비 출처는 미스캐토닉 압수품, 보관·봉쇄는 델타그린, 증거보전·후송은 경찰, 의료 중단은 주민과 의료진, 원격 지원은 라르고 팀에 분산한다. `공동운용팀`은 이 권한을 잠시 연결하는 실무 구조이며 독립 세력이 아니다. 활성 원고에 폐기 명칭이 남으면 검증 실패다.
 
 ## 8. 구형 파일 정책
 

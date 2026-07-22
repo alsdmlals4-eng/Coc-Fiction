@@ -89,7 +89,7 @@ for heading in (
     "## 4. 부·외전별 정량 기준선",
     "## 5. 전체 구조 지도",
     "## 6. Finding-first 판정",
-    "## 8. 다음 정확한 작업",
+    "## 9. 다음 정확한 작업",
 ):
     if heading not in report_text:
         errors.append(f"reverse outline report missing heading: {heading}")
@@ -109,6 +109,8 @@ for stale in (
     "미하일 카쉬프",
     "피엘렛토",
     "붉은 늑대",
+    "컨소시엄",
+    "협상 책임자",
 ):
     for path in (OUTLINE, REPORT, GATES):
         if path.is_file() and stale in path.read_text(encoding="utf-8"):
