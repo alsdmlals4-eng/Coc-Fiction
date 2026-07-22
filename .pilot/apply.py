@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from pathlib import Path
 import hashlib, json, re
-ROOT=Path(__file__).resolve().parents[2]
+ROOT=Path(__file__).resolve().parents[1]
 PAT=re.compile(r"^## 제(\d+)화 · (.*?)\n\n\*\*POV:\*\* ([^\n]+)\n\n(.*?)(?=\n\n<!-- source-lines:)",re.M|re.S)
 
 def replace_chapter(item):
