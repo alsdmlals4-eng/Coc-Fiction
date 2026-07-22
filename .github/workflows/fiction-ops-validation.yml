@@ -12,6 +12,8 @@ on:
       - "fiction/**"
       - "tools/check_fiction_operating_system.py"
       - "tools/check_fiction_content.py"
+      - "tools/build_fiction_reverse_outline.py"
+      - "tools/check_fiction_reverse_outline.py"
       - ".github/workflows/fiction-ops-validation.yml"
       - ".github/PULL_REQUEST_TEMPLATE/fiction-change.md"
   push:
@@ -26,15 +28,20 @@ on:
       - "fiction/**"
       - "tools/check_fiction_operating_system.py"
       - "tools/check_fiction_content.py"
+      - "tools/build_fiction_reverse_outline.py"
+      - "tools/check_fiction_reverse_outline.py"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -42,23 +49,21 @@ jobs:
         run: python tools/check_fiction_operating_system.py
       - name: Validate active fiction canon and manuscript
         run: python tools/check_fiction_content.py
-      - name: Package current canon for reverse-outline audit
+      - name: Generate reverse-outline baseline
+        run: python tools/build_fiction_reverse_outline.py
+      - name: Validate generated reverse outline
+        run: python tools/check_fiction_reverse_outline.py
+      - name: Commit generated reverse outline
+        shell: bash
         run: |
-          tar -czf fiction-reverse-outline-source.tar.gz \
-            fiction/FICTION_MASTER.md \
-            fiction/ACTIVE_CONTEXT.md \
-            fiction/HANDOFF.md \
-            fiction/CANON_REGISTRY.json \
-            fiction/MANUSCRIPT_INDEX.json \
-            fiction/STYLE_GUIDE.md \
-            fiction/SOURCE_MANIFEST.md \
-            fiction/bible \
-            fiction/manuscript \
-            skills/fiction-story-development/SKILL.md \
-            skills/fiction-revision-and-validation/SKILL.md
-      - name: Upload reverse-outline source snapshot
-        uses: actions/upload-artifact@v4
-        with:
-          name: fiction-reverse-outline-source
-          path: fiction-reverse-outline-source.tar.gz
-          retention-days: 1
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add fiction/analysis/REVERSE_OUTLINE_001_225.json
+          if git diff --cached --quiet; then
+            echo 'Reverse outline is already current.'
+            exit 0
+          fi
+          git commit -m '225화 구조 역개요 기준선 생성'
+          target_branch='${{ github.event.pull_request.head.ref || github.ref_name }}'
+          git push origin "HEAD:${target_branch}"
