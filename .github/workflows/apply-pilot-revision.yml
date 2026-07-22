@@ -1,0 +1,40 @@
+name: Apply validated pilot revision
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths:
+      - ".pilot/**"
+      - ".github/workflows/apply-pilot-revision.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply chapter-verified revisions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python .pilot/apply.py
+          sed -i 's/"generated_at": "2026-07-22"/"generated_at": "2026-07-23"/' tools/build_fiction_reverse_outline.py
+          python tools/build_fiction_reverse_outline.py
+          python tools/check_fiction_operating_system.py
+          python tools/check_fiction_content.py
+          python tools/build_fiction_reverse_outline.py --check
+          python tools/check_fiction_reverse_outline.py
+          rm -rf .pilot .github/workflows/apply-pilot-revision.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m '제10·95·180화 파일럿 원고 적용과 2부 Canon 전파 교정'
+          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
