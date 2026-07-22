@@ -6,7 +6,7 @@ from pathlib import Path
 if len(sys.argv) != 3:
     raise SystemExit("usage: bootstrap_latest_fiction.py INTEGRATED.txt REPO_ROOT")
 SRC, ROOT = Path(sys.argv[1]), Path(sys.argv[2])
-STATIC_B64 = (Path(__file__).with_name("static_seed.b64")).read_text(encoding="ascii").strip()
+STATIC_B64 = "".join(path.read_text(encoding="ascii") for path in sorted(Path(__file__).parent.glob("static_seed.part*")))
 
 with tarfile.open(fileobj=io.BytesIO(base64.b64decode(STATIC_B64)), mode="r:gz") as archive:
     archive.extractall(ROOT)
