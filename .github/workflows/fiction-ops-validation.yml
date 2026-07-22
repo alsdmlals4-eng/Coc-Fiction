@@ -12,6 +12,8 @@ on:
       - "fiction/**"
       - "tools/check_fiction_operating_system.py"
       - "tools/check_fiction_content.py"
+      - "tools/build_fiction_reverse_outline.py"
+      - "tools/check_fiction_reverse_outline.py"
       - ".github/workflows/fiction-ops-validation.yml"
       - ".github/PULL_REQUEST_TEMPLATE/fiction-change.md"
   push:
@@ -26,6 +28,8 @@ on:
       - "fiction/**"
       - "tools/check_fiction_operating_system.py"
       - "tools/check_fiction_content.py"
+      - "tools/build_fiction_reverse_outline.py"
+      - "tools/check_fiction_reverse_outline.py"
 
 permissions:
   contents: read
@@ -42,3 +46,7 @@ jobs:
         run: python tools/check_fiction_operating_system.py
       - name: Validate active fiction canon and manuscript
         run: python tools/check_fiction_content.py
+      - name: Check reverse-outline reproducibility
+        run: python tools/build_fiction_reverse_outline.py --check
+      - name: Validate reverse-outline analysis
+        run: python tools/check_fiction_reverse_outline.py
