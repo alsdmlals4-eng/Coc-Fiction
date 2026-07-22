@@ -9,7 +9,9 @@ on:
       - "templates/fiction-ops/**"
       - "skills/fiction-*/**"
       - "skills/FICTION_SKILL_LEARNING_LOG.md"
+      - "fiction/**"
       - "tools/check_fiction_operating_system.py"
+      - "tools/check_fiction_content.py"
       - ".github/workflows/fiction-ops-validation.yml"
       - ".github/PULL_REQUEST_TEMPLATE/fiction-change.md"
   push:
@@ -21,7 +23,9 @@ on:
       - "templates/fiction-ops/**"
       - "skills/fiction-*/**"
       - "skills/FICTION_SKILL_LEARNING_LOG.md"
+      - "fiction/**"
       - "tools/check_fiction_operating_system.py"
+      - "tools/check_fiction_content.py"
 
 permissions:
   contents: read
@@ -36,3 +40,5 @@ jobs:
           python-version: "3.12"
       - name: Validate fiction operating system
         run: python tools/check_fiction_operating_system.py
+      - name: Validate active fiction canon and manuscript
+        run: python tools/check_fiction_content.py
