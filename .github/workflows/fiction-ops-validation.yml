@@ -40,5 +40,20 @@ jobs:
           python-version: "3.12"
       - name: Validate fiction operating system
         run: python tools/check_fiction_operating_system.py
-      - name: Validate active fiction canon and manuscript
-        run: python tools/check_fiction_content.py
+      - name: Capture active fiction validation
+        id: fiction_content
+        continue-on-error: true
+        shell: bash
+        run: python tools/check_fiction_content.py > fiction-content-validation.log 2>&1
+      - name: Upload validation diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fiction-content-validation
+          path: fiction-content-validation.log
+      - name: Enforce active fiction validation
+        if: always()
+        shell: bash
+        run: |
+          cat fiction-content-validation.log
+          test "${{ steps.fiction_content.outcome }}" = "success"
