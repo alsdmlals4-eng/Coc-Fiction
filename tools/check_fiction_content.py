@@ -7,6 +7,8 @@ import json
 import re
 import sys
 
+from fiction_composed_data import load_manuscript_index
+
 ROOT = Path(__file__).resolve().parents[1]
 FICTION = ROOT / "fiction"
 errors: list[str] = []
@@ -43,7 +45,7 @@ except Exception as exc:
     errors.append(f"invalid canon registry: {exc}")
 
 try:
-    index = json.loads((FICTION / "MANUSCRIPT_INDEX.json").read_text(encoding="utf-8"))
+    index = load_manuscript_index(FICTION)
     index_entries = {int(item["chapter"]): item for item in index.get("chapters", [])}
 except Exception as exc:
     index_entries = {}
@@ -99,7 +101,6 @@ for path in bundles:
         if term in text:
             errors.append(f"superseded term {term} in active manuscript {path.relative_to(ROOT)}")
 
-# 폐기 명칭은 금지 정책을 정의하는 책임 원본에서만 허용한다.
 superseded_allowlist = {
     FICTION / "CANON_REGISTRY.json",
     FICTION / "FICTION_MASTER.md",
