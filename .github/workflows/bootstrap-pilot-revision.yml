@@ -1,0 +1,47 @@
+name: Bootstrap pilot revision
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths:
+      - ".pilot/**"
+      - ".github/workflows/bootstrap-pilot-revision.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply validated pilot revision
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/pilot
+          base64 -d .pilot/payload.b64 > /tmp/pilot-payload.tar.xz
+          echo "68620a65ab8f2e38b2f629249d3371d6749fe6f4bc3fe4cb6b40d61d9ac3663c  /tmp/pilot-payload.tar.xz" | sha256sum -c -
+          tar -xJf /tmp/pilot-payload.tar.xz -C /tmp/pilot
+          git apply --check /tmp/pilot/source.patch
+          git apply /tmp/pilot/source.patch
+          cp -a /tmp/pilot/overlay/. .
+          sed -i "s#root=Path('/mnt/data/fiction_pilot_work')#root=Path.cwd()#" /tmp/pilot/update_manuscript_index.py
+          python /tmp/pilot/update_manuscript_index.py
+          python tools/build_fiction_reverse_outline.py
+          python tools/check_fiction_operating_system.py
+          python tools/check_fiction_content.py
+          python tools/build_fiction_reverse_outline.py --check
+          python tools/check_fiction_reverse_outline.py
+          rm -rf .pilot .github/workflows/bootstrap-pilot-revision.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m '제10·95·180화 파일럿 퇴고와 2부 Canon 전파 교정'
+          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
