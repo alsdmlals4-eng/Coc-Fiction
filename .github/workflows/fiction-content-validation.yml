@@ -1,0 +1,29 @@
+name: Fiction content validation
+
+on:
+  pull_request:
+    paths:
+      - "fiction/**"
+      - "tools/check_fiction_content.py"
+      - ".github/workflows/fiction-content-validation.yml"
+      - "[소설]/00_운영체계/**"
+      - "skills/FICTION_SKILL_LEARNING_LOG.md"
+  push:
+    branches: [main]
+    paths:
+      - "fiction/**"
+      - "tools/check_fiction_content.py"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python tools/check_fiction_operating_system.py
+      - run: python tools/check_fiction_content.py
