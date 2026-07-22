@@ -40,4 +40,4 @@ docs/coordination/CONCURRENT_WORK.md
 - archive와 SUPERSEDED Google Docs를 활성 정본처럼 사용하지 않는다.
 - 사용자 승인 없이 작품 코어·결말·인물성·POV·문체를 바꾸지 않는다.
 - 구조 검토 전에 맞춤법만 고쳐 문제를 숨기지 않는다.
-- 5화 단위 확장 뒤 원본·인과·POV·동선·상태·금지 설정 회귀를 남긴다.
+- 5화 단위 수정 뒤 원본·인과·POV·동선·상태·금지 설정 회귀를 남긴다.
