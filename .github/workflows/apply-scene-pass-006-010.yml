@@ -1,0 +1,47 @@
+name: Apply scene pass 006-010
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths:
+      - ".scene-pass/**"
+      - ".github/workflows/apply-scene-pass-006-010.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply verified scene pass
+        run: python .scene-pass/apply_scene_pass_006_010.py
+      - name: Remove one-time bootstrap files
+        run: |
+          rm -rf .scene-pass
+          rm -f .github/workflows/apply-scene-pass-006-010.yml
+      - name: Validate clean patch
+        run: |
+          git diff --check
+          test ! -e .scene-pass
+          test ! -e .github/workflows/apply-scene-pass-006-010.yml
+      - name: Commit generated scene pass
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "제6화~제10화 장면 카드와 연속성 교정"
+            git push origin HEAD:${{ github.event.pull_request.head.ref }}
+          fi
