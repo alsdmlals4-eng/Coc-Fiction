@@ -1,0 +1,56 @@
+name: Bootstrap fiction content
+
+on:
+  push:
+    branches:
+      - fiction/source-integration-2026-07-22
+    paths:
+      - ".bootstrap/**"
+      - ".github/workflows/bootstrap-fiction-content.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Reconstruct editable fiction documents
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f .bootstrap/chunk-00
+          test -f .bootstrap/chunk-01
+          cat .bootstrap/chunk-* \
+            | grep -v -E '^(BEGIN|END)[0-9][0-9]$' \
+            | tr -d '\n\r' \
+            | base64 -d > /tmp/coc-fiction-seed.tar.xz
+          tar -xJf /tmp/coc-fiction-seed.tar.xz
+          curl -L --fail --retry 3 \
+            'https://docs.google.com/document/d/1Q753033aiMhYBMOE8NodXaRKcpH9S2NdBMg31CKC2HI/export?format=txt' \
+            -o /tmp/integrated.txt
+          curl -L --fail --retry 3 \
+            'https://docs.google.com/document/d/14sPx4rmIaUXlRJvCIj_FKp9osm5fOElZwUzIpGBx198/export?format=txt' \
+            -o /tmp/handoff.txt
+          python .bootstrap/bootstrap_generate_content.py /tmp/integrated.txt /tmp/handoff.txt "$GITHUB_WORKSPACE"
+          rm -rf .bootstrap
+          rm -f .github/workflows/bootstrap-fiction-content.yml
+      - name: Validate generated repository
+        run: |
+          python fiction/tools/validate_fiction_repo.py
+          python -m pytest -q fiction/tests/test_repository.py
+      - name: Commit generated content
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'docs: integrate editable canon and 225-chapter manuscript'
+          git push origin HEAD
