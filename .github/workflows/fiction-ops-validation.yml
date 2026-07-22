@@ -42,3 +42,23 @@ jobs:
         run: python tools/check_fiction_operating_system.py
       - name: Validate active fiction canon and manuscript
         run: python tools/check_fiction_content.py
+      - name: Package current canon for reverse-outline audit
+        run: |
+          tar -czf fiction-reverse-outline-source.tar.gz \
+            fiction/FICTION_MASTER.md \
+            fiction/ACTIVE_CONTEXT.md \
+            fiction/HANDOFF.md \
+            fiction/CANON_REGISTRY.json \
+            fiction/MANUSCRIPT_INDEX.json \
+            fiction/STYLE_GUIDE.md \
+            fiction/SOURCE_MANIFEST.md \
+            fiction/bible \
+            fiction/manuscript \
+            skills/fiction-story-development/SKILL.md \
+            skills/fiction-revision-and-validation/SKILL.md
+      - name: Upload reverse-outline source snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: fiction-reverse-outline-source
+          path: fiction-reverse-outline-source.tar.gz
+          retention-days: 1
