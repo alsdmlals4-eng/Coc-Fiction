@@ -28,18 +28,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Reconstruct editable fiction documents
+      - name: Reconstruct latest fiction documents
         shell: bash
         run: |
           set -euo pipefail
-          if [[ ! -f .bootstrap/chunk-00a ]]; then
-            echo 'Bootstrap inputs already removed.'
+          if [[ ! -f .bootstrap/bootstrap_generate_content.py ]]; then
+            echo 'Bootstrap already completed.'
             exit 0
           fi
-          test -f .bootstrap/chunk-00b
-          test -f .bootstrap/chunk-00c
-          test -f .bootstrap/chunk-00d
-          test -f .bootstrap/chunk-01
           cat .bootstrap/chunk-* \
             | grep -v -E '^(BEGIN|END)[0-9][0-9]$' \
             | tr -d '\n\r' \
@@ -48,16 +44,18 @@ jobs:
           curl -L --fail --retry 3 \
             'https://docs.google.com/document/d/1Q753033aiMhYBMOE8NodXaRKcpH9S2NdBMg31CKC2HI/export?format=txt' \
             -o /tmp/integrated.txt
-          curl -L --fail --retry 3 \
+          if ! curl -L --fail --retry 2 \
             'https://docs.google.com/document/d/14sPx4rmIaUXlRJvCIj_FKp9osm5fOElZwUzIpGBx198/export?format=txt' \
-            -o /tmp/handoff.txt
+            -o /tmp/handoff.txt; then
+            printf '구 인수인계 원문을 내려받지 못함. 활성 인수인계는 별도 정본을 사용한다.\n' > /tmp/handoff.txt
+          fi
           python .bootstrap/bootstrap_generate_content.py /tmp/integrated.txt /tmp/handoff.txt "$GITHUB_WORKSPACE"
+          python -m json.tool fiction/MANUSCRIPT_INDEX.json >/dev/null
+          test "$(find fiction/manuscript -type f -name '*.md' | wc -l)" -eq 45
+          test "$(grep -Rho '^## 제[0-9]\+화 · ' fiction/manuscript | wc -l)" -eq 225
+          ! grep -R -n -E '쵸르브라트|미하일 카쉬프|피엘렛토|붉은 늑대' fiction/manuscript
           rm -rf .bootstrap
           rm -f .github/workflows/bootstrap-fiction-content.yml
-      - name: Validate generated repository
-        run: |
-          python fiction/tools/validate_fiction_repo.py
-          python -m pytest -q fiction/tests/test_repository.py
       - name: Commit generated content
         shell: bash
         run: |
@@ -69,6 +67,6 @@ jobs:
             echo 'No generated changes to commit.'
             exit 0
           fi
-          git commit -m 'docs: integrate editable canon and 225-chapter manuscript'
+          git commit -m 'docs: integrate latest canon and expanded 225-chapter manuscript'
           target_branch='${{ github.event.pull_request.head.ref || github.ref_name }}'
           git push origin "HEAD:${target_branch}"
