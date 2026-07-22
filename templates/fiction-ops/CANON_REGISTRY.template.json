@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "project": "",
+  "canon_policy": "Only user-approved facts are CANON. Draft prose and external research do not automatically change canon.",
+  "statuses": [
+    "CANON",
+    "PROPOSED",
+    "DRAFT",
+    "RETCON_PENDING",
+    "SUPERSEDED",
+    "UNVERIFIED"
+  ],
+  "sources": [],
+  "entities": [],
+  "timeline": [],
+  "open_conflicts": [],
+  "aliases": []
+}

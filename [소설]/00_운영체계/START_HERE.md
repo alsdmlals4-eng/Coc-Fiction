@@ -1,0 +1,72 @@
+# Coc-Fiction 소설 작업 시작 지점
+
+이 문서는 새 채팅·새 작업자가 소설의 **기획, 집필, 퇴고, 연속성 검수**를 같은 기준으로 이어 가기 위한 라우터다. 작품 내용의 정본은 아니며, 실제 원고와 설정 이전 작업을 덮어쓰지 않는다.
+
+## 최초 읽기
+
+```text
+docs/coordination/CONCURRENT_WORK.md
+→ [소설]/00_운영체계/OPERATING_MODEL.md
+→ [소설]/00_운영체계/DOCUMENTATION_MAP.md
+→ [소설]/00_운영체계/SKILL_REGISTRY.json
+→ 등록된 작품 코어·설정·인물·플롯·연표·문체 정본
+→ 현재 장면 카드와 원고
+```
+
+## 두 축을 구분한다
+
+- **Work Mode**: 현재 작업 권한과 증거 기준
+  - `PLAN`: 조사·설계·작품 코어·작업 순서
+  - `BUILD`: 승인 범위의 기획서·장면·원고·퇴고 반영
+  - `REVIEW`: 적대적 검토·반례·정합성·품질 판정
+- **Manuscript Stage**: 작품 진행 단계
+  - `DISCOVER → OUTLINE → DRAFT → REVISE → POLISH`
+
+`PLAN`과 `OUTLINE`, `BUILD`와 `DRAFT`는 같은 개념이 아니다. 예를 들어 `REVISE` 단계에서도 먼저 `PLAN`으로 퇴고 범위를 정하고, `BUILD`로 수정한 뒤 `REVIEW`로 재검증한다.
+
+## 프로젝트 Skill 5개
+
+| Skill | 책임 |
+|---|---|
+| `fiction-project-operations` | 요청 라우팅, 작업 계약, 동시 작업 충돌 방지, 단계 분해, 체크포인트·인수인계 |
+| `fiction-story-development` | 작품 코어, 주제, 인물, 플롯, 장면 목록·장면 카드, 대표 장면 품질 게이트 |
+| `fiction-drafting` | POV·거리·대화·묘사·리듬을 통제한 장면 집필과 승인된 재작성 |
+| `fiction-canon-and-research` | 설정·인물·연표·지식 상태·자료 출처·참고문장·저작권 경계 |
+| `fiction-revision-and-validation` | 구조·연속성·장면·문장·교정, 적대적 검토, 독자 피드백, 회귀·PR 검수 |
+
+모든 Skill은 `load_by_default=false`다. 현재 요청의 trigger와 일치하는 최소 Skill만 자동 선택한다.
+
+## 절대 우선순위
+
+1. 사용자의 최신 지시
+2. 사용자가 승인한 작품 코어와 변경 금지 범위
+3. 등록된 현행 설정·인물·연표·플롯·문체 정본
+4. 현재 원고와 승인된 장면 카드
+5. 프로젝트에 동기화된 운영 기준
+6. 외부 작법·참고 작품·리뷰·AI 제안
+
+외부 자료는 **개선 가설과 기술 참고**일 뿐 작품 정본이나 사용자 의도를 대체하지 않는다.
+
+## 기본 보호 규칙
+
+- 다른 채팅이 이전 중인 원고·설정·루트 파일을 불필요하게 덮어쓰지 않는다.
+- 사용자 승인 없이 작품 코어, 결말 방향, 인물 동기, POV·시제, 고유 문체를 바꾸지 않는다.
+- `퇴고`라는 이유로 의미·사건·인물성을 몰래 재설계하지 않는다.
+- 특정 작가의 현존 작품 문체를 모사하지 않는다. 참고문장은 짧게 분석하고 추상적 기법만 전이한다.
+- 큰 구조 수정 전에 현재 원고의 역개요와 보존할 장점을 먼저 고정한다.
+- 맞춤법 교정은 구조·장면·문장 퇴고가 끝난 뒤 별도 패스로 수행한다.
+- 실행하지 않은 검수와 해결하지 않은 충돌은 `PASS`로 표시하지 않는다.
+
+## 바로 사용할 템플릿
+
+- 현재 상태: `templates/fiction-ops/ACTIVE_CONTEXT.template.md`
+- Canon Registry: `templates/fiction-ops/CANON_REGISTRY.template.json`
+- 장면 카드: `templates/fiction-ops/SCENE_CARD.template.md`
+- 작품 문체 기준: `templates/fiction-ops/STYLE_GUIDE.template.md`
+- 퇴고·적대적 검토 보고: `templates/fiction-ops/REVISION_REPORT.template.md`
+
+템플릿을 복사해 실제 작품 경로에 설치할 때는 다른 채팅의 이전 결과와 경로를 먼저 대조하고, 빈 템플릿을 현행 정본처럼 선언하지 않는다.
+
+## 현재 설치 범위
+
+이 브랜치는 운영체계와 검증 도구만 추가한다. 소설 원고·설정·캐릭터·플롯 내용은 수정하지 않는다. 작품 이전이 끝난 뒤 `DOCUMENTATION_MAP.md`와 별도 Canon Registry에서 실제 책임 원본 경로를 연결한다.

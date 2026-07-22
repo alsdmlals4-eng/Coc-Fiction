@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "registry_role": "coc-fiction-skill-router",
+  "base_repository": "alsdmlals4-eng/Base",
+  "base_commit": "41a20584dd2ee51d917e5c9d7cab6838e1ceba7e",
+  "routing_policy": {
+    "load_all_skills": false,
+    "default_selection": "automatic-trigger-match",
+    "automatic_selection": true,
+    "user_skill_declaration_required": false,
+    "require_trigger_match": true,
+    "require_execution_report": true,
+    "work_modes": [
+      "PLAN",
+      "BUILD",
+      "REVIEW"
+    ],
+    "manuscript_stages": [
+      "DISCOVER",
+      "OUTLINE",
+      "DRAFT",
+      "REVISE",
+      "POLISH"
+    ],
+    "max_primary_specialist_skills": 1,
+    "max_foundation_skills": 1
+  },
+  "skills": [
+    {
+      "skill_id": "fiction-project-operations",
+      "layer": "foundation",
+      "discipline": "project-operations",
+      "path": "skills/fiction-project-operations/SKILL.md",
+      "status": "ACTIVE",
+      "load_by_default": false,
+      "trigger_tags": [
+        "new-request",
+        "cross-chat",
+        "concurrent-work",
+        "work-contract",
+        "task-breakdown",
+        "dependency-map",
+        "checkpoint",
+        "handoff",
+        "pr-integration"
+      ],
+      "skill_modes": [
+        "route",
+        "contract",
+        "coordinate-concurrent-work",
+        "decompose-and-sequence",
+        "checkpoint",
+        "handoff",
+        "execution-report"
+      ],
+      "use_when": [
+        "요청을 Work Mode·Manuscript Stage·최소 Skill로 라우팅하고 동시 작업 충돌, 범위, 보호 대상, 순서, 체크포인트를 관리한다."
+      ],
+      "do_not_use_when": [
+        "명확한 단일 문장 교정 또는 같은 입력의 단순 검사 재실행이다."
+      ],
+      "learning_log": "skills/FICTION_SKILL_LEARNING_LOG.md"
+    },
+    {
+      "skill_id": "fiction-story-development",
+      "layer": "specialist",
+      "discipline": "story-design",
+      "path": "skills/fiction-story-development/SKILL.md",
+      "status": "ACTIVE",
+      "load_by_default": false,
+      "trigger_tags": [
+        "story-core",
+        "premise",
+        "theme",
+        "character-arc",
+        "plot",
+        "subplot",
+        "outline",
+        "scene-list",
+        "scene-card",
+        "ending",
+        "sample-chapter"
+      ],
+      "skill_modes": [
+        "core-audit",
+        "core-contract",
+        "premise-and-theme",
+        "character-and-arc",
+        "plot-and-causality",
+        "progressive-outline",
+        "scene-list",
+        "scene-card",
+        "representative-chapter-gate",
+        "stress-test"
+      ],
+      "use_when": [
+        "작품 코어·주제·인물·플롯·인과·장면 설계와 대표 장면 품질 기준을 만들거나 재검토한다."
+      ],
+      "do_not_use_when": [
+        "확정된 장면 카드에 따른 문장 집필, 맞춤법 교정, 자료 사실 확인만 필요하다."
+      ],
+      "learning_log": "skills/FICTION_SKILL_LEARNING_LOG.md"
+    },
+    {
+      "skill_id": "fiction-drafting",
+      "layer": "specialist",
+      "discipline": "prose-production",
+      "path": "skills/fiction-drafting/SKILL.md",
+      "status": "ACTIVE",
+      "load_by_default": false,
+      "trigger_tags": [
+        "draft-scene",
+        "rewrite-scene",
+        "pov",
+        "narrative-distance",
+        "dialogue",
+        "subtext",
+        "description",
+        "action",
+        "emotion",
+        "prose-rhythm"
+      ],
+      "skill_modes": [
+        "scene-draft",
+        "approved-rewrite",
+        "pov-and-distance",
+        "dialogue-and-subtext",
+        "description-and-image",
+        "action-and-reaction",
+        "rhythm-and-voice"
+      ],
+      "use_when": [
+        "승인된 코어·정본·장면 카드에 따라 새 장면을 쓰거나 승인 범위에서 장면·문단을 재작성한다."
+      ],
+      "do_not_use_when": [
+        "작품 구조 판정, Canon 사실 조사, 최종 교정만 필요하거나 변경 권한이 없다."
+      ],
+      "learning_log": "skills/FICTION_SKILL_LEARNING_LOG.md"
+    },
+    {
+      "skill_id": "fiction-canon-and-research",
+      "layer": "specialist",
+      "discipline": "canon-continuity-research",
+      "path": "skills/fiction-canon-and-research/SKILL.md",
+      "status": "ACTIVE",
+      "load_by_default": false,
+      "trigger_tags": [
+        "canon",
+        "continuity",
+        "timeline",
+        "knowledge-state",
+        "world-rule",
+        "character-fact",
+        "research",
+        "fact-check",
+        "reference-passage",
+        "source-log",
+        "copyright"
+      ],
+      "skill_modes": [
+        "canon-audit",
+        "canon-update",
+        "continuity-map",
+        "timeline-and-state",
+        "fact-research",
+        "reference-card",
+        "source-log",
+        "copyright-boundary",
+        "reference-freshness"
+      ],
+      "use_when": [
+        "설정·인물·연표·지식 상태와 자료 출처를 조사·등록하고 참고문장에서 전이 가능한 기법만 추출한다."
+      ],
+      "do_not_use_when": [
+        "외부 사실이나 Canon 영향이 없는 순수 창작 초안 또는 표면 교정이다."
+      ],
+      "learning_log": "skills/FICTION_SKILL_LEARNING_LOG.md"
+    },
+    {
+      "skill_id": "fiction-revision-and-validation",
+      "layer": "specialist",
+      "discipline": "editing-integrated-review",
+      "path": "skills/fiction-revision-and-validation/SKILL.md",
+      "status": "ACTIVE",
+      "load_by_default": false,
+      "trigger_tags": [
+        "developmental-edit",
+        "reverse-outline",
+        "structural-edit",
+        "scene-diagnostic",
+        "continuity-check",
+        "line-edit",
+        "copyedit",
+        "proofread",
+        "adversarial-review",
+        "beta-reader",
+        "pr-review",
+        "regression"
+      ],
+      "skill_modes": [
+        "contract-check",
+        "developmental-edit",
+        "structural-reverse-outline",
+        "scene-diagnostic",
+        "continuity-check",
+        "line-edit",
+        "copyedit",
+        "proofread",
+        "reader-feedback",
+        "adversarial-loop",
+        "regression-check",
+        "evidence-report",
+        "pr-review"
+      ],
+      "use_when": [
+        "원고를 큰 구조부터 표면 교정까지 층별로 검토하고 적대적 finding을 검증·최소 수정·회귀 재검토한다."
+      ],
+      "do_not_use_when": [
+        "아직 쓸 장면의 자유 초안만 필요하거나 검토 대상 원고·정본·승인 범위가 없다."
+      ],
+      "learning_log": "skills/FICTION_SKILL_LEARNING_LOG.md"
+    }
+  ]
+}
