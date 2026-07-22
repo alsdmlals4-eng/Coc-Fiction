@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "source": "latest integrated Google Doc export used as migration evidence",
-  "generated_at": "2026-07-22",
+  "generated_at": "2026-07-23",
   "counting_rule": "본문만 집계하며 시작·끝 마커와 POV 표식은 제외한다. 공백과 줄바꿈은 포함한다.",
   "chapters": [
     {
@@ -80,16 +80,16 @@
       "chapter": 10,
       "title": "거짓 무전과 브루고",
       "pov": "주안",
-      "body_chars": 2929,
-      "body_sha256": "2fcf6795e1167038e69f30cdb37f944f987ba04efff512776f2b92f2c521ad6f",
+      "body_chars": 3063,
+      "body_sha256": "62492d465a2cb3e0a83761ad050c04858e145596c44285accc63b3468ea72bdb",
       "bundle": "fiction/manuscript/part-1/006-010.md"
     },
     {
       "chapter": 11,
       "title": "갈라진 배와 검은 바다",
       "pov": "주안",
-      "body_chars": 2579,
-      "body_sha256": "35b36c44039cb359b936a3ab81d9102bbee5e9c20cdd21ff90f8ad42cd45cd25",
+      "body_chars": 2590,
+      "body_sha256": "31327614ba94f7794fbadddad60fc95ece9daa3229e0672d30e20a6f4c3ba4ac",
       "bundle": "fiction/manuscript/part-1/011-015.md"
     },
     {
@@ -760,16 +760,16 @@
       "chapter": 95,
       "title": "호수가 보이는 마을의 끝",
       "pov": "주안",
-      "body_chars": 2077,
-      "body_sha256": "5a6d9e23196dcad5d9a78c7a1c2bcd64752878ddc7c1eb0181ff360bdaf2e85b",
+      "body_chars": 2093,
+      "body_sha256": "d6666285d961fc469b98ced9c36a34404b4ffb0f30a06f61f47e9e39031b8d7e",
       "bundle": "fiction/manuscript/side-story-lake/091-095.md"
     },
     {
       "chapter": 96,
       "title": "돌아오지 않은 사람",
       "pov": "엘리스",
-      "body_chars": 2092,
-      "body_sha256": "665c83e27826efec117d6f111e8109307e412f5ab29bdb31d04704644a46d4a4",
+      "body_chars": 2109,
+      "body_sha256": "1e0bf9444fb14121db47396a5a44702190c587f6308d82e816c72d824f19d25e",
       "bundle": "fiction/manuscript/side-story-alice/096-100.md"
     },
     {
@@ -1416,48 +1416,48 @@
       "chapter": 177,
       "title": "장례식 뒤의 할머니",
       "pov": "다빈",
-      "body_chars": 2306,
-      "body_sha256": "36f1cc0db0991ec8dc7cd5eb52ddb0000e707bb67e6a888ab00d67b9fe812426",
+      "body_chars": 2326,
+      "body_sha256": "aaa246b43e91607e6d9a5f3d7f2bc6717f8cd1d5ac23d41555fd11c61feb54d5",
       "bundle": "fiction/manuscript/part-2/176-180.md"
     },
     {
       "chapter": 178,
       "title": "태원파의 칼",
       "pov": "다빈",
-      "body_chars": 2212,
-      "body_sha256": "b2b4a9cf061359b83b52c7486a23c91a90c0f937b96a30000f284752379b71e6",
+      "body_chars": 2218,
+      "body_sha256": "0fc93c038e82c6c638e5017b32b12b4b683fe9e21b7d28ce999d00749dc9ad4c",
       "bundle": "fiction/manuscript/part-2/176-180.md"
     },
     {
       "chapter": 179,
       "title": "임시 계약의 대가",
       "pov": "엘리스",
-      "body_chars": 2273,
-      "body_sha256": "a1b1e9052fd8b387ad882bd81f491cd58073445d9e02e60dd7b01a31e7e265b2",
+      "body_chars": 2140,
+      "body_sha256": "2b01a74953def21777b8f12bd3b876a4be35858cd5511b27dd09b81d1cf169b6",
       "bundle": "fiction/manuscript/part-2/176-180.md"
     },
     {
       "chapter": 180,
       "title": "몸 안의 멈춘 시간",
       "pov": "주민",
-      "body_chars": 2298,
-      "body_sha256": "c9a7418522a5ccf416b0f54a4cc3976f3a250017ef66962ff031ebdb6ff53c7b",
+      "body_chars": 2401,
+      "body_sha256": "2a87322e8435967a81b17847c00c7fe479581b87066ec5dbaac31ac0a13563df",
       "bundle": "fiction/manuscript/part-2/176-180.md"
     },
     {
       "chapter": 181,
       "title": "교주의 폐업 선언",
       "pov": "주민",
-      "body_chars": 3047,
-      "body_sha256": "a8e10bb445892b420325f2aada33369d99a73a17c79c0ec1f3411aa28c8425b6",
+      "body_chars": 3049,
+      "body_sha256": "35e649d3741cbf8f3bba82433ac1470eb9380d4303ccdf79b400ad98983446d9",
       "bundle": "fiction/manuscript/part-2/181-185.md"
     },
     {
       "chapter": 182,
       "title": "돌아갈 수 없는 문장",
       "pov": "주민",
-      "body_chars": 2634,
-      "body_sha256": "a8f780afaf0ac22587c83ccb7ed072b1c8b674eb7593bf6ebccc6246d58ca84f",
+      "body_chars": 2637,
+      "body_sha256": "3a9cd31fbd69c72073a2b7f2e4e5825e6aec8c8032935537c97941c0aca60d57",
       "bundle": "fiction/manuscript/part-2/181-185.md"
     },
     {
@@ -1472,24 +1472,24 @@
       "chapter": 184,
       "title": "신의 의안",
       "pov": "주민",
-      "body_chars": 2395,
-      "body_sha256": "1b256e3cee4a2bd890811adb324f489b2b75956b5daff709641e360f67ad702c",
+      "body_chars": 2402,
+      "body_sha256": "36f3e72b2bdfdecf8d083a7340df1d7466028562ea2c5f5db7e6ba958e31d30b",
       "bundle": "fiction/manuscript/part-2/181-185.md"
     },
     {
       "chapter": 185,
       "title": "열이 없는 불",
       "pov": "주민",
-      "body_chars": 2468,
-      "body_sha256": "8d8e39186636756bc2e57254a5702f60ba6418f45f9db427f4aee5714c696854",
+      "body_chars": 2477,
+      "body_sha256": "9200cb846f9e62c7b7b0ebaf67f1d1517708bc51778910f5da42d390a4807125",
       "bundle": "fiction/manuscript/part-2/181-185.md"
     },
     {
       "chapter": 186,
       "title": "경찰서의 세 가지 명령",
       "pov": "엘리스",
-      "body_chars": 2289,
-      "body_sha256": "315037ba6e15a85c87d157d5d2f8b4c8776c34901db2c15c07cfd74bb33bbf52",
+      "body_chars": 2316,
+      "body_sha256": "941d6f21a491db42b9cc9049ea24939a627d585588191391171312e0971bb85b",
       "bundle": "fiction/manuscript/part-2/186-190.md"
     },
     {
@@ -1512,32 +1512,32 @@
       "chapter": 189,
       "title": "다빈을 둘러싼 관할권",
       "pov": "엘리스",
-      "body_chars": 2221,
-      "body_sha256": "6cc60dba69e53fe630c5a8c7700d118e05477f65bc88dd7d8aa5b67f7afc7175",
+      "body_chars": 2231,
+      "body_sha256": "020a0b4ee32dffa3368b5717966afade3a4d4fd5e639f4fb1e32401d338509c6",
       "bundle": "fiction/manuscript/part-2/186-190.md"
     },
     {
       "chapter": 190,
       "title": "죽지 않는 장소",
       "pov": "다빈",
-      "body_chars": 2276,
-      "body_sha256": "3ba9ee609a54ecb694450e38bd1d054886dd7ca0be8e818ccf97c2810034418c",
+      "body_chars": 2285,
+      "body_sha256": "c4dc85bb62ef43d05c6aaa2367cee1a0930ef6997c1685180a1b96f0300a4a92",
       "bundle": "fiction/manuscript/part-2/186-190.md"
     },
     {
       "chapter": 191,
       "title": "무장 협상의 조건",
       "pov": "엘리스",
-      "body_chars": 2414,
-      "body_sha256": "f4b79ebc416ef1df07868bddf768d748a0bf90ee505decfc9b10d7db4ce379ee",
+      "body_chars": 2455,
+      "body_sha256": "915cba1e22aa73df85c83a82cf8c6bc9fa60ffaa13d8534f5cde9ba591db4f80",
       "bundle": "fiction/manuscript/part-2/191-195.md"
     },
     {
       "chapter": 192,
       "title": "첫 번째 수술대",
       "pov": "주민",
-      "body_chars": 2351,
-      "body_sha256": "40a8123986082911bc0da32d5966f53b6f64e46ffa4f7884269cbae049df3932",
+      "body_chars": 2357,
+      "body_sha256": "e5e68e50b86babba323e8e071a36f02cf56fefdc0ef2e308260fcbcb725fba32",
       "bundle": "fiction/manuscript/part-2/191-195.md"
     },
     {
@@ -1560,16 +1560,16 @@
       "chapter": 195,
       "title": "죽은 아이를 살리는 법",
       "pov": "엘리스",
-      "body_chars": 2466,
-      "body_sha256": "859484f6b11a3ddacf5fad7376b850fe9213326c36ef80039d80619403572153",
+      "body_chars": 2487,
+      "body_sha256": "115f7d29a5c00ef80f6fa3ac8a9013c7748c7f3b6e14bf2f97d1e036add69b9c",
       "bundle": "fiction/manuscript/part-2/191-195.md"
     },
     {
       "chapter": 196,
       "title": "내부의 불순분자",
       "pov": "다빈",
-      "body_chars": 2242,
-      "body_sha256": "b260cb2b9986635ad95162b93ce239e49ec70bcd2a73f5e1a60db0fb8d6fe17b",
+      "body_chars": 2259,
+      "body_sha256": "608f9d011a502c621653413533e8a8a901709572a48d4d1c61993c215dda0c2a",
       "bundle": "fiction/manuscript/part-2/196-200.md"
     },
     {
@@ -1600,8 +1600,8 @@
       "chapter": 200,
       "title": "창을 지키는 사람",
       "pov": "다빈",
-      "body_chars": 2280,
-      "body_sha256": "ad1940d01dcaeee0a999b6a56768cceff9640def3f8ac21dfab9e3fbbde4fded",
+      "body_chars": 2283,
+      "body_sha256": "bce8e57c326e36e944893f87249a2889837d111f9dc8289cc8691fd415b60f06",
       "bundle": "fiction/manuscript/part-2/196-200.md"
     },
     {
@@ -1624,8 +1624,8 @@
       "chapter": 203,
       "title": "세 사람의 공동 전선",
       "pov": "엘리스",
-      "body_chars": 2356,
-      "body_sha256": "36e294fd92162733c02b01c40f4320cc3f9d649c9621d9f1d9bbe2c129122a32",
+      "body_chars": 2366,
+      "body_sha256": "c742b0c83073cbc1860d7a9762ac190e1c71adc80ef2afa2d29ddbbc0f518cfd",
       "bundle": "fiction/manuscript/part-2/201-205.md"
     },
     {
@@ -1656,8 +1656,8 @@
       "chapter": 207,
       "title": "여섯 개의 입구",
       "pov": "엘리스",
-      "body_chars": 2238,
-      "body_sha256": "7de7c029a390a412f410b04a3ba9295df2c0352a122372ca45a28e8bca468868",
+      "body_chars": 2249,
+      "body_sha256": "ce28d7b2021ab0bcb0255e3f936f47f6ae2e8ef0b68ac7f7a7a4e4314aac9d3f",
       "bundle": "fiction/manuscript/part-2/206-210.md"
     },
     {
@@ -1704,8 +1704,8 @@
       "chapter": 213,
       "title": "장벽에 남긴 이름",
       "pov": "엘리스",
-      "body_chars": 2299,
-      "body_sha256": "1f5f7dbf1ef3f05e7710eabc5b7a921a1312123deda996fb04b5b8e6262b8bdc",
+      "body_chars": 2305,
+      "body_sha256": "2851d51959f275b57bae7bafa89564c75d47fb75e9d7b012bd31e90446943e1d",
       "bundle": "fiction/manuscript/part-2/211-215.md"
     },
     {
@@ -1720,8 +1720,8 @@
       "chapter": 215,
       "title": "검은 인자와 진주 핵",
       "pov": "주민",
-      "body_chars": 2591,
-      "body_sha256": "8af84c758a4e9b87c3cf8e71f94a958b3ec769a26d04faab54e0b0e176dee4d4",
+      "body_chars": 2594,
+      "body_sha256": "0d40e15a2722450c2ab0512c8bcb1e19de0a80a6024d8213db8fb36948714c6f",
       "bundle": "fiction/manuscript/part-2/211-215.md"
     },
     {
@@ -1736,8 +1736,8 @@
       "chapter": 217,
       "title": "미래를 배신하는 사람들",
       "pov": "엘리스",
-      "body_chars": 2356,
-      "body_sha256": "b1205b0592a30810d9892b16ad426ad13b95397accbc1474dc90909e667560b4",
+      "body_chars": 2370,
+      "body_sha256": "80c94a45b7d10990f15ce03663a425689c441b73320e955873b22eda5ab7d414",
       "bundle": "fiction/manuscript/part-2/216-220.md"
     },
     {
@@ -1768,8 +1768,8 @@
       "chapter": 221,
       "title": "끝난 뒤의 관할권",
       "pov": "엘리스",
-      "body_chars": 2397,
-      "body_sha256": "2e67dbe2118c0bbb941887c3582e5cd8ddd1c528bf5d8a4d2edc541ec7d1c44a",
+      "body_chars": 2434,
+      "body_sha256": "d056173b1eb4ecc9d7ff1f46e55cbffc1fa937dc96a51f5be3f27d20c75a1d2e",
       "bundle": "fiction/manuscript/part-2/221-225.md"
     },
     {
