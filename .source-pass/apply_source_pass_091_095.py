@@ -71,15 +71,15 @@ subprocess.run(
     check=True,
 )
 generated = json.loads(generated_path.read_text(encoding="utf-8"))
-chapters = [item for item in generated.get("chapters", []) if 91 <= int(item.get("chapter", 0)) <= 95]
-if [int(item["chapter"]) for item in chapters] != [91, 92, 93, 94, 95]:
-    raise SystemExit("generated reverse-outline override is incomplete")
+chapters = [item for item in generated.get("chapters", []) if 90 <= int(item.get("chapter", 0)) <= 96]
+if [int(item["chapter"]) for item in chapters] != [90, 91, 92, 93, 94, 95, 96]:
+    raise SystemExit("generated reverse-outline override and boundary entries are incomplete")
 OUTLINE_OVERRIDE.write_text(
     json.dumps(
         {
             "schema_version": 1,
             "updated_at": "2026-07-23",
-            "status": "ACTIVE_OVERRIDE / SOURCE_PASS_091_095 / DETERMINISTIC_GENERATOR",
+            "status": "ACTIVE_OVERRIDE / SOURCE_PASS_091_095 / BOUNDARIES_090_096 / DETERMINISTIC_GENERATOR",
             "baseline": "analysis/baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
             "chapters": chapters,
         },
