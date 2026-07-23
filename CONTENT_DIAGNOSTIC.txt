@@ -1,2 +1,0 @@
-Fiction content validation FAILED
-- active legacy reference in fiction/reports/REVISION_2026-07-22_CANON_REFRESH.md: 225화 압축 초안
