@@ -1,0 +1,487 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-07-23",
+  "status": "ACTIVE_OVERRIDE / SOURCE_PASS_091_095 / BOUNDARIES_090_096 / DETERMINISTIC_GENERATOR",
+  "baseline": "analysis/baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 90,
+      "section": {
+        "key": "side-story-lake",
+        "label": "외전1 《호수가 보이는 마을》"
+      },
+      "title": "한국행 세 사람",
+      "pov": "주안",
+      "source": {
+        "bundle": "fiction/manuscript/side-story-lake/086-090.md",
+        "body_sha256": "7c1a55144a745d933da9433f2e762f577d37522311c593046f2253b5fa656eb2",
+        "body_chars": 2080
+      },
+      "chapter_function": [
+        "INVESTIGATION",
+        "REVELATION",
+        "RELATIONSHIP",
+        "CHOICE_AND_COST",
+        "AFTERMATH"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "공항에서 조세이칸은 신발 끈을 세 번 다시 묶었다. 교단에서는 누군가 옷과 식사를 준비했고, 이동 경로도 미리 정해줬다.",
+        "immediate_goal_or_focus": "스스로 표를 확인하고 가방을 챙기는 일부터 낯설었다.",
+        "opposition_and_cost": "빨리 고르는 것보다 직접 고르는 것이 이번 여행의 목적이라고 말했다.",
+        "turn_or_discovery": "대신 직접 접촉하지 않고, 위험이 없다는 보고만 보내기로 합의했다.",
+        "decision_or_choice": "그녀에게 직접 빈 지도를 건넸다.",
+        "ending_state": "주안과 아킴도 그 웃음의 이유를 묻지 않았다. 아무도 대신 정하지 않은 첫 여행이 시작됐다.",
+        "next_pressure": "다음 제91화 「답을 찾았느냐」(주안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 아무도 대신 정하지 않은 첫 여행이 시작됐다."
+      },
+      "metrics": {
+        "paragraphs": 7,
+        "average_paragraph_chars": 297.1,
+        "dialogue_ratio": 0.0538,
+        "theme_term_hits": {
+          "선택": 2,
+          "명령": 3,
+          "안전": 4,
+          "사람": 9
+        }
+      },
+      "structural_flags": [
+        "DENSE_PARAGRAPHING",
+        "LOW_DIALOGUE_SHARE",
+        "HIGH_THEME_EXPLICITNESS",
+        "MULTI_TURN_DENSITY",
+        "NEAR_MINIMUM_LENGTH",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 89,
+        "title": "가론이 남는 곳",
+        "pov": "가론"
+      },
+      "next_chapter": {
+        "chapter": 91,
+        "title": "답을 찾았느냐",
+        "pov": "주안"
+      }
+    },
+    {
+      "chapter": 91,
+      "section": {
+        "key": "side-story-lake",
+        "label": "외전1 《호수가 보이는 마을》"
+      },
+      "title": "답을 찾았느냐",
+      "pov": "주안",
+      "source": {
+        "bundle": "fiction/manuscript/side-story-lake/091-095.md",
+        "body_sha256": "fdbc8ddf2d7ed58ff482543672bf9e7ee2f6aeb1b48bacf3934999f8b839ca44",
+        "body_chars": 2049
+      },
+      "chapter_function": [
+        "OPENING",
+        "REVELATION",
+        "NEGOTIATION",
+        "CHOICE_AND_COST"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "한국에 도착한 첫날 밤, 주안은 잠들지 못했다. 작은 숙소의 천장은 티베트 고원의 하늘보다 낮았다.",
+        "immediate_goal_or_focus": "한국에 도착한 첫날 밤, 주안은 잠들지 못했다.",
+        "opposition_and_cost": "불꽃의 흔들림과 조세이칸의 숨, 가론이 몸을 일으키려던 동작까지 정지했다.",
+        "turn_or_discovery": "그러나 엘리스를 지키고 싶은 마음 가운데 무엇이 복종인자에서 시작됐고 무엇이 지금의 선택인지는 여전히 분리할 수 없었다.",
+        "decision_or_choice": "그러나 엘리스를 지키고 싶은 마음 가운데 무엇이 복종인자에서 시작됐고 무엇이 지금의 선택인지는 여전히 분리할 수 없었다.",
+        "ending_state": "그 아래에 썼다. 그러나 방향은 내가 정한다.`",
+        "next_pressure": "다음 제92화 「세 사람이 사는 집」(주안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 그러나 방향은 내가 정한다.`"
+      },
+      "metrics": {
+        "paragraphs": 25,
+        "average_paragraph_chars": 82.0,
+        "dialogue_ratio": 0.041,
+        "theme_term_hits": {
+          "선택": 2,
+          "보호": 1,
+          "명령": 2,
+          "자유": 1,
+          "사람": 3
+        }
+      },
+      "structural_flags": [
+        "LOW_DIALOGUE_SHARE",
+        "MULTI_TURN_DENSITY",
+        "NEAR_MINIMUM_LENGTH"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 90,
+        "title": "한국행 세 사람",
+        "pov": "주안"
+      },
+      "next_chapter": {
+        "chapter": 92,
+        "title": "세 사람이 사는 집",
+        "pov": "주안"
+      }
+    },
+    {
+      "chapter": 92,
+      "section": {
+        "key": "side-story-lake",
+        "label": "외전1 《호수가 보이는 마을》"
+      },
+      "title": "세 사람이 사는 집",
+      "pov": "주안",
+      "source": {
+        "bundle": "fiction/manuscript/side-story-lake/091-095.md",
+        "body_sha256": "82939a9d94164790f0a94e508ea6b5e91f11fb0ce947494fb4bc55481d63551d",
+        "body_chars": 2262
+      },
+      "chapter_function": [
+        "OPENING",
+        "INVESTIGATION",
+        "REVELATION",
+        "RELATIONSHIP",
+        "CHOICE_AND_COST",
+        "AFTERMATH"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "주안과 아킴, 조세이칸이 한국에 도착하는 과정은 영웅의 귀환과 거리가 멀었다. 아킴은 입국 과정에서 총기를 들킬 뻔했고, 경찰 앞에서 “사람에게 쏘지 않으면 안전하다”는 설명을 했다가 상황을 더 악화시켰다.",
+        "immediate_goal_or_focus": "주안과 아킴, 조세이칸이 한국에 도착하는 과정은 영웅의 귀환과 거리가 멀었다.",
+        "opposition_and_cost": "교단 숙소보다 좁고 하인도 없었지만, 어느 방을 누가 쓸지 정해 둔 사람도 없었다.",
+        "turn_or_discovery": "이 집은 교단의 감시소도, 주안이 누군가를 대신 보호하는 감옥도 아니었다.",
+        "decision_or_choice": "누구도 직급이나 나이로 먼저 선택하지 않았다.",
+        "ending_state": "`다음 목적지는 미정.` 그 정도가 지금의 해피 엔드에 더 가까웠다.",
+        "next_pressure": "다음 제93화 「카터가의 진로 상담」(엘리스 POV)로 압력이 이월된다. 현재 화 마지막 증거: 그 정도가 지금의 해피 엔드에 더 가까웠다."
+      },
+      "metrics": {
+        "paragraphs": 30,
+        "average_paragraph_chars": 75.4,
+        "dialogue_ratio": 0.0637,
+        "theme_term_hits": {
+          "선택": 2,
+          "보호": 1,
+          "명령": 3,
+          "권리": 1,
+          "안전": 1,
+          "사람": 13
+        }
+      },
+      "structural_flags": [
+        "HIGH_THEME_EXPLICITNESS"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 91,
+        "title": "답을 찾았느냐",
+        "pov": "주안"
+      },
+      "next_chapter": {
+        "chapter": 93,
+        "title": "카터가의 진로 상담",
+        "pov": "엘리스"
+      }
+    },
+    {
+      "chapter": 93,
+      "section": {
+        "key": "side-story-lake",
+        "label": "외전1 《호수가 보이는 마을》"
+      },
+      "title": "카터가의 진로 상담",
+      "pov": "엘리스",
+      "source": {
+        "bundle": "fiction/manuscript/side-story-lake/091-095.md",
+        "body_sha256": "fff1beece00334bcc1d1a777590f40debb60abe6bdd4a2ad8bcc7e6d10ebd72e",
+        "body_chars": 2186
+      },
+      "chapter_function": [
+        "INVESTIGATION",
+        "REVELATION",
+        "RELATIONSHIP",
+        "CHOICE_AND_COST",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "2018년 2월, 엘리스가 마지막 학창 시절을 보내던 어느 날이었다. 윌리엄 카터는 딸의 방문을 두드린 뒤 두꺼운 팸플릿 묶음을 내밀었다.",
+        "immediate_goal_or_focus": "2018년 2월, 엘리스가 마지막 학창 시절을 보내던 어느 날이었다.",
+        "opposition_and_cost": "그는 주안이 황색과 함께 있다는 사실과 복종인자를 둘러싼 위험을 알고 있었다.",
+        "turn_or_discovery": "그러나 딸이 직접 판단할 수 있도록 설명하는 대신, 다시 보호자의 위치로 물러섰다.",
+        "decision_or_choice": "아버지는 위험을 막기 위해 선택지를 좁혔고, 어머니는 그 통제에서 딸을 떼어 놓으려 했다.",
+        "ending_state": "차창 밖으로 저택이 멀어졌다. 엘리스는 이안의 번호를 눌렀다.",
+        "next_pressure": "다음 제94화 「오랜만의 전화」(엘리스 POV)로 압력이 이월된다. 현재 화 마지막 증거: 엘리스는 이안의 번호를 눌렀다."
+      },
+      "metrics": {
+        "paragraphs": 38,
+        "average_paragraph_chars": 57.5,
+        "dialogue_ratio": 0.0883,
+        "theme_term_hits": {
+          "선택": 2,
+          "보호": 2,
+          "명령": 2,
+          "안전": 1,
+          "사람": 5
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 92,
+        "title": "세 사람이 사는 집",
+        "pov": "주안"
+      },
+      "next_chapter": {
+        "chapter": 94,
+        "title": "오랜만의 전화",
+        "pov": "엘리스"
+      }
+    },
+    {
+      "chapter": 94,
+      "section": {
+        "key": "side-story-lake",
+        "label": "외전1 《호수가 보이는 마을》"
+      },
+      "title": "오랜만의 전화",
+      "pov": "엘리스",
+      "source": {
+        "bundle": "fiction/manuscript/side-story-lake/091-095.md",
+        "body_sha256": "267e8626ebd31a0b8678af767dd8f8e2f3cbee6964e15d9a9b99f378d9d08ef9",
+        "body_chars": 2266
+      },
+      "chapter_function": [
+        "INVESTIGATION",
+        "REVELATION",
+        "RELATIONSHIP",
+        "CHOICE_AND_COST",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "신호음이 세 번 울린 뒤 이안이 전화를 받았다. 처음에는 서로의 목소리를 확인하는 데 시간이 걸렸다.",
+        "immediate_goal_or_focus": "처음에는 서로의 목소리를 확인하는 데 시간이 걸렸다.",
+        "opposition_and_cost": "엘리스는 재촉하지 않았다.",
+        "turn_or_discovery": "그러나 지금의 엘리스는 상대의 선택을 들을 여지를 남기는 것이 자신이 지키고 싶은 방식임을 알았다.",
+        "decision_or_choice": "자신도 훈련과 공부를 시작할 생각이라고 말했다.",
+        "ending_state": "엘리스는 기다리는 사람으로 멈춰 있지 않았다. 만나게 될 날까지 자기 삶을 선택하며 나아가기로 했다.",
+        "next_pressure": "다음 제95화 「다음 이야기의 문 앞」(다빈 POV)로 압력이 이월된다. 현재 화 마지막 증거: 만나게 될 날까지 자기 삶을 선택하며 나아가기로 했다."
+      },
+      "metrics": {
+        "paragraphs": 44,
+        "average_paragraph_chars": 51.5,
+        "dialogue_ratio": 0.15,
+        "theme_term_hits": {
+          "선택": 4,
+          "보호": 1,
+          "명령": 1,
+          "사람": 5
+        }
+      },
+      "structural_flags": [
+        "TIMELINE_SHIFT"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 93,
+        "title": "카터가의 진로 상담",
+        "pov": "엘리스"
+      },
+      "next_chapter": {
+        "chapter": 95,
+        "title": "다음 이야기의 문 앞",
+        "pov": "다빈"
+      }
+    },
+    {
+      "chapter": 95,
+      "section": {
+        "key": "side-story-lake",
+        "label": "외전1 《호수가 보이는 마을》"
+      },
+      "title": "다음 이야기의 문 앞",
+      "pov": "다빈",
+      "source": {
+        "bundle": "fiction/manuscript/side-story-lake/091-095.md",
+        "body_sha256": "f15efb0650aae97f4dad79f9e2419838fd16918d85a6f3b41a4ba614aeba74e9",
+        "body_chars": 2402
+      },
+      "chapter_function": [
+        "REVELATION",
+        "RELATIONSHIP",
+        "CHOICE_AND_COST",
+        "FINALE",
+        "SECTION_EXIT"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "이안과 엘리스의 통화가 끝난 호텔 앞을 다빈과 예나가 지나갔다. 호텔은 동네에서 보기 드물게 크고 반짝였다.",
+        "immediate_goal_or_focus": "이안과 엘리스의 통화가 끝난 호텔 앞을 다빈과 예나가 지나갔다.",
+        "opposition_and_cost": "다빈은 그 평범함을 의심만 하며 흘려보내고 싶지 않았다.",
+        "turn_or_discovery": "보호한다고 해서 대신 길을 건널 수는 없었다.",
+        "decision_or_choice": "선택의 이유가 단순했다고 해서 현재의 의미까지 가짜가 되는 것은 아니었다.",
+        "ending_state": "지금의 다빈이 내일을 선택하겠다는 약속이었다. 그 평범한 걸음과 약속이 다음 이야기의 시작이었다.",
+        "next_pressure": "다음 제96화 「돌아오지 않은 사람」(엘리스 POV)로 압력이 이월된다. 현재 화 마지막 증거: 그 평범한 걸음과 약속이 다음 이야기의 시작이었다."
+      },
+      "metrics": {
+        "paragraphs": 38,
+        "average_paragraph_chars": 63.2,
+        "dialogue_ratio": 0.0883,
+        "theme_term_hits": {
+          "선택": 5,
+          "책임": 1,
+          "보호": 1,
+          "미래": 1,
+          "사람": 12,
+          "괴물": 1
+        }
+      },
+      "structural_flags": [
+        "HIGH_THEME_EXPLICITNESS",
+        "SECTION_EXIT",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": true,
+      "previous_chapter": {
+        "chapter": 94,
+        "title": "오랜만의 전화",
+        "pov": "엘리스"
+      },
+      "next_chapter": {
+        "chapter": 96,
+        "title": "돌아오지 않은 사람",
+        "pov": "엘리스"
+      }
+    },
+    {
+      "chapter": 96,
+      "section": {
+        "key": "side-story-alice",
+        "label": "외전2 《붉은 여왕의 첫 임무》"
+      },
+      "title": "돌아오지 않은 사람",
+      "pov": "엘리스",
+      "source": {
+        "bundle": "fiction/manuscript/side-story-alice/096-100.md",
+        "body_sha256": "1e0bf9444fb14121db47396a5a44702190c587f6308d82e816c72d824f19d25e",
+        "body_chars": 2109
+      },
+      "chapter_function": [
+        "INCITING_INCIDENT",
+        "REVELATION",
+        "RELATIONSHIP",
+        "CHOICE_AND_COST",
+        "AFTERMATH",
+        "FINALE",
+        "SECTION_ENTRY"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "시간은 다시 여덟 해 전, 섬에서 돌아온 직후로 되돌아간다. 귀환장은 사람들로 가득했다.",
+        "immediate_goal_or_focus": "부상자는 들것에 실려 나왔고, 생존자는 이름을 확인받았다.",
+        "opposition_and_cost": "엘리스는 괜찮다고 말했지만 손목의 멍과 정신 공격 뒤의 두통을 숨길 수 없었다.",
+        "turn_or_discovery": "그러나 이유를 알 수 없는 침묵은 공포를 더 키웠다.",
+        "decision_or_choice": "그래서 ‘그의 선택’이라는 가장 짧은 문장을 골랐다.",
+        "ending_state": "그 내면의 목소리는 주안이 떠난 이유를 단정하지 말라고 했지만, 엘리스는 그 충고마저 위로처럼 밀어냈다. 지금은 상처를 인정하는 편이 먼저였다.",
+        "next_pressure": "다음 제97화 「카터가 아닌 이름」(엘리스 POV)로 압력이 이월된다. 현재 화 마지막 증거: 지금은 상처를 인정하는 편이 먼저였다."
+      },
+      "metrics": {
+        "paragraphs": 8,
+        "average_paragraph_chars": 263.6,
+        "dialogue_ratio": 0.0256,
+        "theme_term_hits": {
+          "선택": 3,
+          "보호": 6,
+          "명령": 2,
+          "사람": 9,
+          "괴물": 1
+        }
+      },
+      "structural_flags": [
+        "DENSE_PARAGRAPHING",
+        "LOW_DIALOGUE_SHARE",
+        "HIGH_THEME_EXPLICITNESS",
+        "TIMELINE_SHIFT",
+        "SECTION_ENTRY",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 95,
+        "title": "다음 이야기의 문 앞",
+        "pov": "다빈"
+      },
+      "next_chapter": {
+        "chapter": 97,
+        "title": "카터가 아닌 이름",
+        "pov": "엘리스"
+      }
+    }
+  ]
+}

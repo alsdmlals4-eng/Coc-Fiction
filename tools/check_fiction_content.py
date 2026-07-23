@@ -14,19 +14,12 @@ FICTION = ROOT / "fiction"
 errors: list[str] = []
 
 REQUIRED = [
-    "FICTION_MASTER.md",
-    "ACTIVE_CONTEXT.md",
-    "HANDOFF.md",
-    "CANON_REGISTRY.json",
-    "MANUSCRIPT_INDEX.json",
-    "STYLE_GUIDE.md",
-    "SOURCE_MANIFEST.md",
-    "archive/SUPERSEDED_GOOGLE_DOCS.md",
-    "archive/SUPERSEDED_140_EPISODE_PLAN.md",
-    "bible/01_PROJECT_CORE.md",
-    "bible/02_CANON_AND_CONTINUITY.md",
-    "bible/03_PART1_STORY_BIBLE.md",
-    "bible/04_PART2_STORY_BIBLE.md",
+    "FICTION_MASTER.md", "ACTIVE_CONTEXT.md", "HANDOFF.md", "CANON_REGISTRY.json",
+    "MANUSCRIPT_INDEX.json", "STYLE_GUIDE.md", "SOURCE_MANIFEST.md",
+    "sources/PRIMARY_SOURCE_INVENTORY.md", "analysis/SCENE_PASS_REGISTRY.json",
+    "archive/SUPERSEDED_GOOGLE_DOCS.md", "archive/SUPERSEDED_140_EPISODE_PLAN.md",
+    "bible/01_PROJECT_CORE.md", "bible/02_CANON_AND_CONTINUITY.md",
+    "bible/03_PART1_STORY_BIBLE.md", "bible/04_PART2_STORY_BIBLE.md",
 ]
 for rel in REQUIRED:
     if not (FICTION / rel).is_file():
@@ -101,24 +94,23 @@ for path in bundles:
         if term in text:
             errors.append(f"superseded term {term} in active manuscript {path.relative_to(ROOT)}")
 
-superseded_allowlist = {
-    FICTION / "CANON_REGISTRY.json",
-    FICTION / "FICTION_MASTER.md",
-}
-active_roots = (
-    FICTION,
-    ROOT / "[소설]" / "00_운영체계",
-    ROOT / "docs" / "coordination",
-)
+active_roots = (FICTION, ROOT / "[소설]" / "00_운영체계", ROOT / "docs" / "coordination")
 active_files: set[Path] = set()
 for active_root in active_roots:
-    if not active_root.exists():
-        continue
-    for path in active_root.rglob("*"):
-        if path.is_file() and "archive" not in path.parts and path.suffix in {".md", ".json"}:
-            active_files.add(path)
+    if active_root.exists():
+        for path in active_root.rglob("*"):
+            if path.is_file() and "archive" not in path.parts and path.suffix in {".md", ".json"}:
+                active_files.add(path)
+
+# Canon/evidence documents may name rejected terms only to record the exclusion.
+superseded_evidence_allowlist = {
+    FICTION / "CANON_REGISTRY.json", FICTION / "FICTION_MASTER.md", FICTION / "HANDOFF.md",
+    FICTION / "SOURCE_MANIFEST.md", FICTION / "sources/PRIMARY_SOURCE_INVENTORY.md",
+    FICTION / "analysis/SCENE_CARDS_091_095.md",
+    FICTION / "reports/REVISION_2026-07-23_SOURCE_PASS_091_095.md",
+}
 for path in sorted(active_files):
-    if path in superseded_allowlist:
+    if path in superseded_evidence_allowlist:
         continue
     text = path.read_text(encoding="utf-8")
     for term in forbidden_terms:
@@ -144,24 +136,47 @@ for active_id in (
     if active_id not in source_manifest:
         errors.append(f"active Google Doc id missing from SOURCE_MANIFEST: {active_id}")
 
-legacy_patterns = ("총 140화", "2부: 제91화~제140화", "제138화~제140화")
+legacy_patterns = (
+    "총 140화", "2부: 제91화~제140화", "제138화~제140화",
+    "225화 압축 초안", "Coc 폭풍의 눈(주안편) — 통합 문서",
+)
+legacy_allowlist = {FICTION / "FICTION_MASTER.md", FICTION / "SOURCE_MANIFEST.md"}
 for path in sorted(active_files):
+    if path in legacy_allowlist:
+        continue
     text = path.read_text(encoding="utf-8")
     for pattern in legacy_patterns:
         if pattern in text:
-            errors.append(f"active legacy 140-plan content in {path.relative_to(ROOT)}: {pattern}")
+            errors.append(f"active legacy reference in {path.relative_to(ROOT)}: {pattern}")
 
 stale_stage_phrases = (
-    "현재 사건 배치 원고",
-    "5화 단위 확장 뒤",
-    "확장 미착수",
-    "제1화~제5화 확장부터",
+    "현재 사건 배치 원고", "5화 단위 확장 뒤", "확장 미착수", "제1화~제5화 확장부터",
+    "원본 Drive 폴더는 현재 연결 계정에서", "실제 본체는 확인되지 않았다",
+    "원본 본체에 접근하기 전까지", "다음 단계는 `091-095`",
 )
 for path in sorted(active_files):
     text = path.read_text(encoding="utf-8")
     for phrase in stale_stage_phrases:
         if phrase in text:
-            errors.append(f"stale workflow phrase in {path.relative_to(ROOT)}: {phrase}")
+            errors.append(f"stale workflow/source phrase in {path.relative_to(ROOT)}: {phrase}")
+
+# Active documents must not direct workers to archive paths.
+archive_policy_allowlist = {FICTION / "CANON_REGISTRY.json"}
+for path in sorted(active_files):
+    if path in archive_policy_allowlist:
+        continue
+    text = path.read_text(encoding="utf-8")
+    if "`archive/" in text or "](archive/" in text:
+        errors.append(f"active file directly references archive input: {path.relative_to(ROOT)}")
+
+source_inventory = (FICTION / "sources/PRIMARY_SOURCE_INVENTORY.md").read_text(encoding="utf-8")
+for required_source in (
+    "COC 외전 - 호수가 보이는 마을(2).pdf",
+    "c0576e6f5e293077a0a37646e56671415ba7a04b5e6a5da87f6ebdae8a78b36a",
+    "COC 중편 - 네가 없는 마을 7일차 완결.pdf",
+):
+    if required_source not in source_inventory:
+        errors.append(f"primary source inventory missing: {required_source}")
 
 if errors:
     print("Fiction content validation FAILED")
@@ -170,7 +185,4 @@ if errors:
     sys.exit(1)
 
 lengths = [len(item[2]) for item in seen.values()]
-print(
-    "Fiction content validation PASSED "
-    f"({len(bundles)} bundles, 225 chapters, min={min(lengths)}, max={max(lengths)})"
-)
+print(f"Fiction content validation PASSED ({len(bundles)} bundles, 225 chapters, min={min(lengths)}, max={max(lengths)})")

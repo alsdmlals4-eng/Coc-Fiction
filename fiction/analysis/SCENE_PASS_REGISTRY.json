@@ -1,31 +1,19 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "updated_at": "2026-07-23",
-  "status": "ACTIVE / MANUAL_SCENE_PASS_TRACKER",
+  "status": "ACTIVE / MANUAL_SCENE_AND_SOURCE_PASS_TRACKER",
   "source_policy": {
-    "primary_source_direct_match": "UNVERIFIED",
-    "reason": "User-provided Google Drive source folder is not accessible to the connected account; metadata 404 and direct children empty.",
-    "folder_url": "https://drive.google.com/drive/folders/1EPA-bg8ExjvK-XPadKqdab2cCSNMWVt0"
+    "inventory": "fiction/sources/PRIMARY_SOURCE_INVENTORY.md",
+    "primary_files_available": true,
+    "whole_manuscript_direct_match": "IN_PROGRESS",
+    "rule": "Bundle-level status only; source availability does not imply whole-manuscript audit completion."
   },
-  "representative_pilots": [
-    10,
-    95,
-    180
-  ],
+  "representative_pilots": [10, 95, 180],
   "completed_bundle_passes": [
     {
       "bundle": "fiction/manuscript/part-1/006-010.md",
-      "chapters": [
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "boundary_chapters": [
-        5,
-        11
-      ],
+      "chapters": [6, 7, 8, 9, 10],
+      "boundary_chapters": [5, 11],
       "scene_cards": "fiction/analysis/SCENE_CARDS_006_010.md",
       "revision_report": "fiction/reports/REVISION_2026-07-23_SCENE_PASS_006_010.md",
       "chapter_shas": {
@@ -35,11 +23,31 @@
         "9": "9bc13a600ddc48f3284c01cf9522b41a8575c72e081fe65f26d82aa5aacdeab3",
         "10": "62492d465a2cb3e0a83761ad050c04858e145596c44285accc63b3468ea72bdb"
       },
-      "status": "COMPLETE_INTERNAL_CONTINUITY / PRIMARY_SOURCE_UNVERIFIED"
+      "status": "COMPLETE_INTERNAL_CONTINUITY / SOURCE_REAUDIT_PENDING"
+    },
+    {
+      "bundle": "fiction/manuscript/side-story-lake/091-095.md",
+      "chapters": [91, 92, 93, 94, 95],
+      "boundary_chapters": [90, 96],
+      "scene_cards": "fiction/analysis/SCENE_CARDS_091_095.md",
+      "revision_report": "fiction/reports/REVISION_2026-07-23_SOURCE_PASS_091_095.md",
+      "source_files": [
+        {"name": "COC 외전 - 호수가 보이는 마을(2).pdf", "sha256": "c0576e6f5e293077a0a37646e56671415ba7a04b5e6a5da87f6ebdae8a78b36a", "pages": "113-147"},
+        {"name": "COC 외전 잡담 - 호수가 보이는 마을(2).pdf", "sha256": "fac68ccbae21ce301263cbd22e7951db9057d8acadc104fcd656fbab3ddac589", "role": "supplemental"}
+      ],
+      "chapter_shas": {
+        "91": "fdbc8ddf2d7ed58ff482543672bf9e7ee2f6aeb1b48bacf3934999f8b839ca44",
+        "92": "82939a9d94164790f0a94e508ea6b5e91f11fb0ce947494fb4bc55481d63551d",
+        "93": "fff1beece00334bcc1d1a777590f40debb60abe6bdd4a2ad8bcc7e6d10ebd72e",
+        "94": "267e8626ebd31a0b8678af767dd8f8e2f3cbee6964e15d9a9b99f378d9d08ef9",
+        "95": "f15efb0650aae97f4dad79f9e2419838fd16918d85a6f3b41a4ba614aeba74e9"
+      },
+      "preserved_boundary_shas": {
+        "90": "7c1a55144a745d933da9433f2e762f577d37522311c593046f2253b5fa656eb2",
+        "96": "1e0bf9444fb14121db47396a5a44702190c587f6308d82e816c72d824f19d25e"
+      },
+      "status": "COMPLETE_SOURCE_MATCHED_CORE_EVENTS / ADAPTATION_EXCLUSIONS_APPLIED"
     }
   ],
-  "next_bundle_passes": [
-    "fiction/manuscript/side-story-lake/091-095.md",
-    "fiction/manuscript/part-2/176-180.md"
-  ]
+  "next_bundle_passes": ["fiction/manuscript/part-2/176-180.md"]
 }

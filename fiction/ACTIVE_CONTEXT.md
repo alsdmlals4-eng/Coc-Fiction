@@ -6,48 +6,37 @@
 
 - Work Mode: `REVIEW`
 - Manuscript Stage: `REVISE`
-- 주 Skill: `fiction-revision-and-validation: scene-diagnostic / continuity-check / adversarial-loop / regression-check / pr-review`
-- 보조 Skill: `fiction-story-development: scene-card / plot-and-causality / stress-test`, `fiction-canon-and-research: canon-audit / continuity-map / timeline-and-state / reference-freshness`, `fiction-drafting: approved-rewrite / pov-and-distance / action-and-reaction`, `fiction-project-operations: checkpoint / handoff / execution-report`
+- 주 Skill: `fiction-canon-and-research: source-log / canon-audit / continuity-map / timeline-and-state`
+- 보조 Skill: `fiction-revision-and-validation: scene-diagnostic / adversarial-loop / regression-check / pr-review`, `fiction-story-development: scene-card / plot-and-causality / stress-test`, `fiction-drafting: approved-rewrite / pov-and-distance / dialogue-and-subtext`, `fiction-project-operations: checkpoint / handoff / execution-report`
 
 ## 완료
 
-- 제1화~제225화 최신 확장 원고와 45개 5화 묶음 유지
-- 화별 제목·POV·분량·본문 SHA 색인과 구조 역개요 기준선 유지
-- 대표 품질 게이트 12화와 제10·95·180화 파일럿 완료
-- 제177화~제225화 비정본 장기 세력 기능 전파 교정 완료
-- `006-010` 묶음의 제6화~제10화 수동 장면 카드와 제5·11화 경계 연속성 패스 완료
-- 제5→6화 시간 되감기 표지, 제9화 중복 승선, 제7화 동일 자아 보호 반응 표현 교정
-- 변경 제6·7·9화의 분량·SHA와 225화 역개요 재생성
-- Scene Pass Registry와 전용 회귀 검사 추가
+- 제1화~제225화와 45개 5화 묶음 유지
+- 구조 역개요 기준선·대표 게이트·제10·95·180화 파일럿 완료
+- `006-010` 내부 연속성 패스와 제6·7·9화 최소 수정 완료
+- 원본 1부·외전1·2부 PDF 파일 인벤토리와 SHA256 등록
+- `091-095` 원본 직접 대조 패스 완료
+- 원본 외전1 종결의 이가레스 문답 → 한국 정착 → 엘리스·이안 통화 → 다빈·예나 예고 순서 복원
+- 제90·96화 SHA 보존, 제91~95화만 색인·역개요 override 갱신
 
 ## 현재 원고 상태
 
 - 화수: 225
 - 편집 묶음: 45
-- 상태: `확장 원고 DRAFT / 구조 역개요 기준선 완료 / 대표 3화 파일럿 완료 / 006-010 묶음 패스 완료 / 원본 전체 감사 전`
-
-사용자가 제공한 원본 Drive 폴더는 현재 연결 계정에서 폴더 자식 0개·메타데이터 404로 확인됐다. 따라서 `006-010` 묶음의 내부 Canon·연속성은 검증했지만 원본 대사·세부 동선 직접 충실도는 `UNVERIFIED`다.
+- 상태: `확장 원고 DRAFT / 006-010 내부 패스 완료 / 091-095 원본 직접 대조 완료 / 전체 원본 감사 진행 중`
 
 ## 이번 묶음에서 확정한 규칙
 
-1. 병행 POV가 더 이른 시점으로 돌아가면 첫 문단에 시간 앵커를 둔다.
-2. 다른 POV에서 이미 완료된 승선·이동·교전을 새 현재 장면처럼 반복하지 않는다.
-3. 같은 사건의 병행 전환은 `동일 시각`과 서로 다른 위치·목표를 명료하게 한다.
-4. 보호 반응은 같은 자아의 상태·기능으로 유지한다.
-5. 장면 카드에 시간·위치·부상·지식·소지품·비밀 상태를 함께 기록한다.
-
-## 남은 구조 우선순위
-
-1. `091-095` 묶음의 장문단·호수 결말 경계와 제90→91·제95→96화 인계
-2. `176-180` 묶음의 의료·기관 절차·권한 연속성
-3. 외전2 제96화~제100화의 시간 전환·설명 밀도
-4. 외전3·2부의 주제어 직접 설명 집중
-5. 2부 중반의 절차·책임 논점 반복 위험
+1. 원본 사건 순서가 현행 각색 장면으로 대체됐다면 주제적 장점만으로 유지하지 않는다.
+2. 이미 다음 시간대에 도착한 경계 뒤에서 원본 선행 사건을 복원할 때는 명시적 회상 앵커를 둔다.
+3. 호출기와 일반 전화·녹음 장치를 기능별로 분리한다.
+4. 원본에 있어도 최신 사용자 지시가 폐기한 사건·인물축은 복원하지 않는다.
+5. `SOURCE_MATCHED`는 사건 순서·동행·결과 판정이며 문장 전체 복사를 뜻하지 않는다.
 
 ## 다음 정확한 작업
 
-`fiction/manuscript/side-story-lake/091-095.md`를 대상으로 제90화와 제96화까지 포함해 수동 장면 카드·연속성 패스를 수행한다. 그다음 `fiction/manuscript/part-2/176-180.md`로 이동한다.
+`fiction/manuscript/part-2/176-180.md`를 제175·181화 경계와 원본 2부 로그까지 포함해 직접 대조한다. 제180화 파일럿의 의료·기관 절차·동의·장비 관할 판정을 원본 근거로 재감사한다.
 
 ## 변경 금지
 
-`FICTION_MASTER.md`와 `CANON_REGISTRY.json`을 따른다. 자동 역개요와 통계 플래그를 수정 명령으로 쓰지 않는다. 원고 수정 시 색인·역개요·Scene Pass Registry·Revision Report를 같은 PR에서 갱신한다.
+`FICTION_MASTER.md`와 `CANON_REGISTRY.json`을 따른다. 자동 역개요는 수정 명령이 아니다. 원고 수정 시 색인·역개요·Scene Pass Registry·Revision Report·활성 기획 문서를 같은 PR에서 갱신한다.
