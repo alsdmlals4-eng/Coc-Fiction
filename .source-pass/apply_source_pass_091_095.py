@@ -8,6 +8,7 @@ TEMP = ROOT / ".source-pass"
 TARGET = ROOT / "fiction/manuscript/side-story-lake/091-095.md"
 START_HERE = ROOT / "[소설]/00_운영체계/START_HERE.md"
 CANON_REFRESH_REPORT = ROOT / "fiction/reports/REVISION_2026-07-22_CANON_REFRESH.md"
+OUTLINE_REPORT = ROOT / "fiction/analysis/REVERSE_OUTLINE_REPORT.md"
 OUTLINE_OVERRIDE = ROOT / "fiction/analysis/REVERSE_OUTLINE_OVERRIDE_091_095.json"
 EXPECTED_GIT_BLOB = "d3fbb8f0906d36b0016266139cd636fb31f7cfed"
 
@@ -63,6 +64,36 @@ report_text = report_text.replace(
     1,
 )
 CANON_REFRESH_REPORT.write_text(report_text.rstrip() + "\n", encoding="utf-8")
+
+outline_report_text = OUTLINE_REPORT.read_text(encoding="utf-8")
+if "## 4. 부·외전별 정량 기준선" not in outline_report_text:
+    outline_report_text = outline_report_text.rstrip() + """
+
+## 4. 부·외전별 정량 기준선
+
+- 1부 70화, 외전1 25화, 외전2 35화, 외전3 35화, 2부 60화의 총 225화를 유지한다.
+- 45개 원고 묶음과 모든 화 2,000자 이상 조건은 합성 색인과 현재 원고를 함께 검사한다.
+- 정량 플래그는 검토 우선순위이며 자동 수정 명령이 아니다.
+
+## 5. 전체 구조 지도
+
+- 1부: 출항과 선상 재난에서 섬의 규칙·세력 충돌·쇼거스전·복종인자 폭로·주안 이탈까지.
+- 외전1: 주안의 답 탐색과 티베트 문답, 한국 정착, 엘리스의 생존 확인, 다빈·예나의 다음 이야기 예고까지.
+- 외전2·외전3: 엘리스와 이안의 독립 성장 및 2부 연결.
+- 2부: 다빈·주민·엘리스가 정해진 안전보다 선택 가능한 미래를 되찾는 과정.
+
+## 6. Finding-first 판정
+
+- `MUST_FIX`: 원본 종결을 대체한 제91~95화의 비정본 결말 구조를 원본 핵심 사건으로 복원했다.
+- `SHOULD_FIX`: 제95화의 제한적 3인칭 밖 인물 상태 서술을 다빈 관찰 범위로 제한했다.
+- `REJECT`: 사용자 지시로 폐기된 인물 후일담·독립 동물 서사·장기 조직축은 원본에 있어도 복원하지 않았다.
+- 제90·96화 원고는 수정하지 않고 역개요의 앞뒤 화 메타데이터만 제90~96화 경계까지 갱신했다.
+
+## 9. 다음 정확한 작업
+
+`fiction/manuscript/part-2/176-180.md`를 제175·181화 경계와 원본 2부 로그에 직접 대조한다. `006-010`은 원본 1부 로그 재감사 대기로 유지한다.
+"""
+OUTLINE_REPORT.write_text(outline_report_text.rstrip() + "\n", encoding="utf-8")
 
 generated_path = TEMP / "generated-reverse-outline.json"
 subprocess.run(
