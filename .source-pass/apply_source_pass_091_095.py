@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import base64, hashlib, shutil, subprocess, tarfile
+import base64, hashlib, json, shutil, subprocess, tarfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -8,6 +8,7 @@ TEMP = ROOT / ".source-pass"
 TARGET = ROOT / "fiction/manuscript/side-story-lake/091-095.md"
 START_HERE = ROOT / "[소설]/00_운영체계/START_HERE.md"
 CANON_REFRESH_REPORT = ROOT / "fiction/reports/REVISION_2026-07-22_CANON_REFRESH.md"
+OUTLINE_OVERRIDE = ROOT / "fiction/analysis/REVERSE_OUTLINE_OVERRIDE_091_095.json"
 EXPECTED_GIT_BLOB = "d3fbb8f0906d36b0016266139cd636fb31f7cfed"
 
 actual_blob = subprocess.check_output(["git", "hash-object", str(TARGET)], cwd=ROOT, text=True).strip()
@@ -62,6 +63,31 @@ report_text = report_text.replace(
     1,
 )
 CANON_REFRESH_REPORT.write_text(report_text.rstrip() + "\n", encoding="utf-8")
+
+generated_path = TEMP / "generated-reverse-outline.json"
+subprocess.run(
+    ["python", "tools/build_fiction_reverse_outline.py", "--materialize", str(generated_path)],
+    cwd=ROOT,
+    check=True,
+)
+generated = json.loads(generated_path.read_text(encoding="utf-8"))
+chapters = [item for item in generated.get("chapters", []) if 91 <= int(item.get("chapter", 0)) <= 95]
+if [int(item["chapter"]) for item in chapters] != [91, 92, 93, 94, 95]:
+    raise SystemExit("generated reverse-outline override is incomplete")
+OUTLINE_OVERRIDE.write_text(
+    json.dumps(
+        {
+            "schema_version": 1,
+            "updated_at": "2026-07-23",
+            "status": "ACTIVE_OVERRIDE / SOURCE_PASS_091_095 / DETERMINISTIC_GENERATOR",
+            "baseline": "analysis/baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
+            "chapters": chapters,
+        },
+        ensure_ascii=False,
+        indent=2,
+    ) + "\n",
+    encoding="utf-8",
+)
 
 shutil.rmtree(TEMP)
 print("source pass 091-095 applied")
