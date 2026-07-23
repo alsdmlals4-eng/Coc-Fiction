@@ -187,6 +187,12 @@
         "developmental-edit",
         "reverse-outline",
         "structural-edit",
+        "serial-arc",
+        "chapter-batch",
+        "scene-pass",
+        "source-pass",
+        "representative-gate",
+        "canon-propagation",
         "scene-diagnostic",
         "continuity-check",
         "line-edit",
@@ -201,6 +207,7 @@
         "contract-check",
         "developmental-edit",
         "structural-reverse-outline",
+        "serial-arc-pass",
         "scene-diagnostic",
         "continuity-check",
         "line-edit",
@@ -213,7 +220,7 @@
         "pr-review"
       ],
       "use_when": [
-        "원고를 큰 구조부터 표면 교정까지 층별로 검토하고 적대적 finding을 검증·최소 수정·회귀 재검토한다."
+        "원고를 큰 구조부터 표면 교정까지 층별로 검토하고, 장편 묶음 작업에서는 경계·원본·Canon·파생 자료·기획 문서를 같은 변경 단위로 검증한다."
       ],
       "do_not_use_when": [
         "아직 쓸 장면의 자유 초안만 필요하거나 검토 대상 원고·정본·승인 범위가 없다."
