@@ -104,6 +104,10 @@
 
 각 패스는 한 번에 2~3개 핵심 의제만 다룬다. 구조가 바뀌면 하위 패스의 결과를 다시 검토한다.
 
+### 장편 묶음 패스
+
+5화 등 연재 묶음을 원본·Canon과 대조해 수정할 때는 `fiction-revision-and-validation: serial-arc-pass`를 사용한다. 직전·직후 경계 화와 원본 범위를 작업 계약에 고정하고, Scene Card·원고·색인·역개요 override·Scene Pass Registry·Revision Report·활성 기획 문서를 같은 변경 범위에서 갱신한다. 자동 분석은 finding 후보로만 사용하며, 완료 묶음에서 발견한 규칙은 동일 결함이 확인된 범위에만 적용한다.
+
 ## 8. 적대적 검토·개선 루프
 
 ```text
