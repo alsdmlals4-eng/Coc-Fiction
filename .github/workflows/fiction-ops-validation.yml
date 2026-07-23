@@ -14,6 +14,8 @@ on:
       - "tools/check_fiction_content.py"
       - "tools/build_fiction_reverse_outline.py"
       - "tools/check_fiction_reverse_outline.py"
+      - "tools/check_fiction_scene_passes.py"
+      - "tools/fiction_composed_data.py"
       - ".github/workflows/fiction-ops-validation.yml"
       - ".github/PULL_REQUEST_TEMPLATE/fiction-change.md"
   push:
@@ -30,6 +32,8 @@ on:
       - "tools/check_fiction_content.py"
       - "tools/build_fiction_reverse_outline.py"
       - "tools/check_fiction_reverse_outline.py"
+      - "tools/check_fiction_scene_passes.py"
+      - "tools/fiction_composed_data.py"
 
 permissions:
   contents: read
@@ -50,3 +54,5 @@ jobs:
         run: python tools/build_fiction_reverse_outline.py --check
       - name: Validate reverse-outline analysis
         run: python tools/check_fiction_reverse_outline.py
+      - name: Validate completed scene passes
+        run: python tools/check_fiction_scene_passes.py

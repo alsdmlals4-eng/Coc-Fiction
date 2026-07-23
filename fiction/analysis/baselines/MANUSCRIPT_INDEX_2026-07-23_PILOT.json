@@ -1,0 +1,1808 @@
+{
+  "schema_version": 1,
+  "source": "latest integrated Google Doc export used as migration evidence",
+  "generated_at": "2026-07-23",
+  "counting_rule": "본문만 집계하며 시작·끝 마커와 POV 표식은 제외한다. 공백과 줄바꿈은 포함한다.",
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "출항과 금서",
+      "pov": "이안",
+      "body_chars": 2543,
+      "body_sha256": "4c5122292cd85e62ba40b95f8b45e4edfb3ff76057a14c3aab37aa383300dc4c",
+      "bundle": "fiction/manuscript/part-1/001-005.md"
+    },
+    {
+      "chapter": 2,
+      "title": "오지 않은 아버지",
+      "pov": "엘리스",
+      "body_chars": 2974,
+      "body_sha256": "7eabad88e95fa9bc3e5d60de8e21fe743fcc30e8a6360476d9d5436d8f582bb2",
+      "bundle": "fiction/manuscript/part-1/001-005.md"
+    },
+    {
+      "chapter": 3,
+      "title": "벌꿀주스와 신입 경호원",
+      "pov": "주안",
+      "body_chars": 3592,
+      "body_sha256": "5bf0de006cda4e6e25ff5b19d3e16cf0bce7b51766c32d52df27d18d7eef640a",
+      "bundle": "fiction/manuscript/part-1/001-005.md"
+    },
+    {
+      "chapter": 4,
+      "title": "도박장의 오래된 인연",
+      "pov": "이안",
+      "body_chars": 3179,
+      "body_sha256": "691dde3dc39ed151c4f344b28df3db92e65126926d3e1e848188e3cd229d2946",
+      "bundle": "fiction/manuscript/part-1/001-005.md"
+    },
+    {
+      "chapter": 5,
+      "title": "황색의 승선",
+      "pov": "아킴",
+      "body_chars": 3946,
+      "body_sha256": "35bea68a116c8e042ab0cc3f598de082d3042fcff17e1748edff198319ca6f62",
+      "bundle": "fiction/manuscript/part-1/001-005.md"
+    },
+    {
+      "chapter": 6,
+      "title": "평생의 과제",
+      "pov": "이안",
+      "body_chars": 2326,
+      "body_sha256": "21439bdc3195607dd40d08965ec0e9fe98e1b0cd2b3de637e3564a4d26a3380a",
+      "bundle": "fiction/manuscript/part-1/006-010.md"
+    },
+    {
+      "chapter": 7,
+      "title": "노란 코트가 들어온 밤",
+      "pov": "엘리스",
+      "body_chars": 2640,
+      "body_sha256": "21ab36521212e93c78cb9f7f029b273b741607dbcb75fc430747521c760a80a5",
+      "bundle": "fiction/manuscript/part-1/006-010.md"
+    },
+    {
+      "chapter": 8,
+      "title": "식당의 비명",
+      "pov": "주안",
+      "body_chars": 2686,
+      "body_sha256": "9c5c5e4b5fef29eb98de705a5af331881fa49078b5e9db66ee912a452591cbe2",
+      "bundle": "fiction/manuscript/part-1/006-010.md"
+    },
+    {
+      "chapter": 9,
+      "title": "납치된 세실리아",
+      "pov": "아킴",
+      "body_chars": 2567,
+      "body_sha256": "26acae6a529afc11bb47e68bdbbbd91846fbb683ab15939fb3c6f7190582855f",
+      "bundle": "fiction/manuscript/part-1/006-010.md"
+    },
+    {
+      "chapter": 10,
+      "title": "거짓 무전과 브루고",
+      "pov": "주안",
+      "body_chars": 3063,
+      "body_sha256": "62492d465a2cb3e0a83761ad050c04858e145596c44285accc63b3468ea72bdb",
+      "bundle": "fiction/manuscript/part-1/006-010.md"
+    },
+    {
+      "chapter": 11,
+      "title": "갈라진 배와 검은 바다",
+      "pov": "주안",
+      "body_chars": 2590,
+      "body_sha256": "31327614ba94f7794fbadddad60fc95ece9daa3229e0672d30e20a6f4c3ba4ac",
+      "bundle": "fiction/manuscript/part-1/011-015.md"
+    },
+    {
+      "chapter": 12,
+      "title": "해안의 두 사람",
+      "pov": "이안",
+      "body_chars": 2404,
+      "body_sha256": "9c149e99f3bff63c4e2815d3276adbaa7107d7245e986848e0b52e82696d7a57",
+      "bundle": "fiction/manuscript/part-1/011-015.md"
+    },
+    {
+      "chapter": 13,
+      "title": "흉터 노인의 친절",
+      "pov": "이안",
+      "body_chars": 2198,
+      "body_sha256": "6f28d62b21d3f75da1d8bfe9082750c074d24ed1f2e19ab8156da8caae691cd3",
+      "bundle": "fiction/manuscript/part-1/011-015.md"
+    },
+    {
+      "chapter": 14,
+      "title": "시체 절벽",
+      "pov": "이안",
+      "body_chars": 2640,
+      "body_sha256": "33a5de9a9767c0945cb2aea9dc644cd362641d0a20f2077ccda94d44aa71c77c",
+      "bundle": "fiction/manuscript/part-1/011-015.md"
+    },
+    {
+      "chapter": 15,
+      "title": "시체 사이의 노란 구두",
+      "pov": "엘리스",
+      "body_chars": 2713,
+      "body_sha256": "c4ed662a5142bae7dfe6b39ab4852ae7f04284b2bd21533056795f8e2c0f7044",
+      "bundle": "fiction/manuscript/part-1/011-015.md"
+    },
+    {
+      "chapter": 16,
+      "title": "감옥의 연설가",
+      "pov": "주안",
+      "body_chars": 2645,
+      "body_sha256": "d7bbe9d0ca159543803b52436dbb1344a40ba5c6ca79cc1274972adf9b85450e",
+      "bundle": "fiction/manuscript/part-1/016-020.md"
+    },
+    {
+      "chapter": 17,
+      "title": "맥주병 수호사제",
+      "pov": "아킴",
+      "body_chars": 3082,
+      "body_sha256": "ced0ea0e1ac7179c5a34f2b4c5d2ad7126504123ef8fd7251bacc06d42f030c9",
+      "bundle": "fiction/manuscript/part-1/016-020.md"
+    },
+    {
+      "chapter": 18,
+      "title": "황색의 전투와 밀리",
+      "pov": "이안",
+      "body_chars": 2362,
+      "body_sha256": "69ec8e3edcf9155f42e4e30a248cb7bc98df6348e580f5f3af3025d6e0f1895d",
+      "bundle": "fiction/manuscript/part-1/016-020.md"
+    },
+    {
+      "chapter": 19,
+      "title": "아버지가 가르친 욕망",
+      "pov": "엘리스",
+      "body_chars": 2320,
+      "body_sha256": "0c59063b169fa36a93b669e150370f382355226734aff493861fb165c4bfa183",
+      "bundle": "fiction/manuscript/part-1/016-020.md"
+    },
+    {
+      "chapter": 20,
+      "title": "두 주인의 점토판",
+      "pov": "이안",
+      "body_chars": 2493,
+      "body_sha256": "7bd29e77001b31c09d70c1fefc225eb67a1c26ac2d8b903eba6e9fdbc84ec1dc",
+      "bundle": "fiction/manuscript/part-1/016-020.md"
+    },
+    {
+      "chapter": 21,
+      "title": "섬의 왕을 보다",
+      "pov": "주안",
+      "body_chars": 2512,
+      "body_sha256": "35e36f50ada14710e283e1d0408c80b6506a0a20c9f59bab1490565e459f89cb",
+      "bundle": "fiction/manuscript/part-1/021-025.md"
+    },
+    {
+      "chapter": 22,
+      "title": "밀리 코사의 얼굴",
+      "pov": "이안",
+      "body_chars": 2389,
+      "body_sha256": "4b9ea4f18e022ad168f7a0fe3af2dab03392b2e810bb7004d488b8fc3bf95f93",
+      "bundle": "fiction/manuscript/part-1/021-025.md"
+    },
+    {
+      "chapter": 23,
+      "title": "노덴스와 비야키",
+      "pov": "이안",
+      "body_chars": 2385,
+      "body_sha256": "b2ec648c90f44127d8b7e9d938bcdcb60384307e0e7b8f86ac0a08c7403893f8",
+      "bundle": "fiction/manuscript/part-1/021-025.md"
+    },
+    {
+      "chapter": 24,
+      "title": "두 명의 엘리스",
+      "pov": "엘리스",
+      "body_chars": 2464,
+      "body_sha256": "15b844aa98c22ce9d61eb7d85926efea430639f09cfda6de3babbb9cbc282ec9",
+      "bundle": "fiction/manuscript/part-1/021-025.md"
+    },
+    {
+      "chapter": 25,
+      "title": "검은 점액 속의 어머니",
+      "pov": "엘리스",
+      "body_chars": 2361,
+      "body_sha256": "cc89225eebc759b53263853e4b4d204072ca3c6151380b0fbf54d6fb91c4329d",
+      "bundle": "fiction/manuscript/part-1/021-025.md"
+    },
+    {
+      "chapter": 26,
+      "title": "아버지의 사랑과 학살",
+      "pov": "엘리스",
+      "body_chars": 2261,
+      "body_sha256": "13e7273f2f7a685fc7548edfc28963da673c77936ad0575f2f31ac7830cf1d13",
+      "bundle": "fiction/manuscript/part-1/026-030.md"
+    },
+    {
+      "chapter": 27,
+      "title": "히템이 남긴 몸",
+      "pov": "이안",
+      "body_chars": 2269,
+      "body_sha256": "60be5c6bd0c5af6456a6f69bb97fe42153a797283ce77bd285728793c07025e4",
+      "bundle": "fiction/manuscript/part-1/026-030.md"
+    },
+    {
+      "chapter": 28,
+      "title": "불붙은 숲의 재회",
+      "pov": "주안",
+      "body_chars": 2315,
+      "body_sha256": "0ef1cf050318595ebfed88c51ef23ae19528006caea7514d7045c8d8b63efa9d",
+      "bundle": "fiction/manuscript/part-1/026-030.md"
+    },
+    {
+      "chapter": 29,
+      "title": "섬의 왕과 공주",
+      "pov": "엘리스",
+      "body_chars": 3053,
+      "body_sha256": "a540ebbc5624dbe94bb3d43d4d7d2c65634aec25efd9e0a6d9e82a4a05b0c2d4",
+      "bundle": "fiction/manuscript/part-1/026-030.md"
+    },
+    {
+      "chapter": 30,
+      "title": "세실리아와 악마",
+      "pov": "세실리아",
+      "body_chars": 2233,
+      "body_sha256": "f8db831ae766af37fbf6a4fd2726eb0641a4eb0ab9362224f67993207e2610e9",
+      "bundle": "fiction/manuscript/part-1/026-030.md"
+    },
+    {
+      "chapter": 31,
+      "title": "가론의 조건",
+      "pov": "주안",
+      "body_chars": 2260,
+      "body_sha256": "ddf006beaf4a34b1855cc138677e2bcdb139056aeed6624a2295411cc20ec9c3",
+      "bundle": "fiction/manuscript/part-1/031-035.md"
+    },
+    {
+      "chapter": 32,
+      "title": "두 얼굴의 꿈",
+      "pov": "엘리스",
+      "body_chars": 2356,
+      "body_sha256": "f1ca5541a15aa45dee14ef00eada13135daaec63074d3300744d6b9f690df3f8",
+      "bundle": "fiction/manuscript/part-1/031-035.md"
+    },
+    {
+      "chapter": 33,
+      "title": "위험구역의 규칙",
+      "pov": "이안",
+      "body_chars": 2303,
+      "body_sha256": "f7b1fffdcde4701e4260bc9a320564ebb79017f8f62126a86bf5e1d51472133d",
+      "bundle": "fiction/manuscript/part-1/031-035.md"
+    },
+    {
+      "chapter": 34,
+      "title": "죽은 길의 생존자들",
+      "pov": "이안",
+      "body_chars": 2267,
+      "body_sha256": "387567dde5ee4f1374a2146d0e31c770764aa57964774a59a879ab49fb1ff68e",
+      "bundle": "fiction/manuscript/part-1/031-035.md"
+    },
+    {
+      "chapter": 35,
+      "title": "어인과 인간의 벽화",
+      "pov": "케인",
+      "body_chars": 2236,
+      "body_sha256": "bab54715421d635eb96936d286b0576fb99e1140bb311f09f201703a4936b0bb",
+      "bundle": "fiction/manuscript/part-1/031-035.md"
+    },
+    {
+      "chapter": 36,
+      "title": "푸른 심해인과 검은 혈관",
+      "pov": "이안",
+      "body_chars": 2352,
+      "body_sha256": "c5dd1b067199247a221350efd77e555c5cc98d08a648eb0f06ec9bd5ddfaf96e",
+      "bundle": "fiction/manuscript/part-1/036-040.md"
+    },
+    {
+      "chapter": 37,
+      "title": "입 없는 안내자 페스타",
+      "pov": "이안",
+      "body_chars": 2334,
+      "body_sha256": "795e50784f264fd2620d25d4ea14df1ebccb6c489c7c84ae942d1ce06420945c",
+      "bundle": "fiction/manuscript/part-1/036-040.md"
+    },
+    {
+      "chapter": 38,
+      "title": "검은 잔을 드는 사람",
+      "pov": "주안",
+      "body_chars": 2300,
+      "body_sha256": "b43544f43c9aaafeac1fc29f5b608599f92ebbdf6f42b326e57c85955f480d11",
+      "bundle": "fiction/manuscript/part-1/036-040.md"
+    },
+    {
+      "chapter": 39,
+      "title": "체셔와 검은 하늘",
+      "pov": "엘리스",
+      "body_chars": 2201,
+      "body_sha256": "d5a3568c14494ab96304102378e7b6820eeb319d6d542b966d89b38aad8f950d",
+      "bundle": "fiction/manuscript/part-1/036-040.md"
+    },
+    {
+      "chapter": 40,
+      "title": "하늘에서 던져진 사람",
+      "pov": "주안",
+      "body_chars": 2343,
+      "body_sha256": "0923eafb5a3c400fa88e79263841746cb8be22c4773d2a277fb4c8a0ba92f69d",
+      "bundle": "fiction/manuscript/part-1/036-040.md"
+    },
+    {
+      "chapter": 41,
+      "title": "먼저 온 사람들",
+      "pov": "주안",
+      "body_chars": 2225,
+      "body_sha256": "ad9c909c0656e0140f6fce400547f983d7d899a5409441371a64d893f787a890",
+      "bundle": "fiction/manuscript/part-1/041-045.md"
+    },
+    {
+      "chapter": 42,
+      "title": "물 위의 호출",
+      "pov": "엘리스",
+      "body_chars": 2253,
+      "body_sha256": "c452d933fe547db8574a49503d1bd142303c1c91973f84e43f0522c5b0302a8e",
+      "bundle": "fiction/manuscript/part-1/041-045.md"
+    },
+    {
+      "chapter": 43,
+      "title": "사람으로 남는 규칙",
+      "pov": "주안",
+      "body_chars": 2225,
+      "body_sha256": "bd817e897b37e5b69ac35eee4b73604838057dbc36e59958523fe7923430e219",
+      "bundle": "fiction/manuscript/part-1/041-045.md"
+    },
+    {
+      "chapter": 44,
+      "title": "만신창이의 작전 회의",
+      "pov": "이안",
+      "body_chars": 2202,
+      "body_sha256": "b10a523d5607a3a19c976ac64f5807c2e1767a60d0cc3795ca04463f09eca5bd",
+      "bundle": "fiction/manuscript/part-1/041-045.md"
+    },
+    {
+      "chapter": 45,
+      "title": "지도를 훔치는 열다섯 분",
+      "pov": "이안",
+      "body_chars": 2294,
+      "body_sha256": "e01876d86e44bca6711d35e7586b3844b86411f8665e6a3a640ad2afb2a2c2be",
+      "bundle": "fiction/manuscript/part-1/041-045.md"
+    },
+    {
+      "chapter": 46,
+      "title": "은색 가면과 르뤼에 점토판",
+      "pov": "이안",
+      "body_chars": 2209,
+      "body_sha256": "33a9f6acb305e423e942789e62af90d7b446fd422cb81293f0ed87f084c5f0b2",
+      "bundle": "fiction/manuscript/part-1/046-050.md"
+    },
+    {
+      "chapter": 47,
+      "title": "브루스가 남긴 동료",
+      "pov": "엘리스",
+      "body_chars": 2206,
+      "body_sha256": "31911dde1df8204ebda5d4f835647da524ecd2a5471e470f7d6819dd71e02fd7",
+      "bundle": "fiction/manuscript/part-1/046-050.md"
+    },
+    {
+      "chapter": 48,
+      "title": "페스타의 열 초",
+      "pov": "엘리스",
+      "body_chars": 2222,
+      "body_sha256": "9529b20b63cdc0658cf86bd8f25b2036b3e2a39587bbddecb5bdd951994c083a",
+      "bundle": "fiction/manuscript/part-1/046-050.md"
+    },
+    {
+      "chapter": 49,
+      "title": "날개가 남긴 지도",
+      "pov": "이안",
+      "body_chars": 2214,
+      "body_sha256": "2981c381de6d5dd088dbb35e886292af49e5390e14f5c6dcaa2634e8a4815284",
+      "bundle": "fiction/manuscript/part-1/046-050.md"
+    },
+    {
+      "chapter": 50,
+      "title": "살아 있는 교수",
+      "pov": "아킴",
+      "body_chars": 2237,
+      "body_sha256": "18efc37906e9dcc235b82c9c407fa222b5642f57f72eddb634a3890d3a5962dd",
+      "bundle": "fiction/manuscript/part-1/046-050.md"
+    },
+    {
+      "chapter": 51,
+      "title": "쿠바라의 순찰",
+      "pov": "엘리스",
+      "body_chars": 2767,
+      "body_sha256": "f149a848ef8c2069d0e461a8b9fe1a73b657c77b9e5327196ce905cfafb60ac1",
+      "bundle": "fiction/manuscript/part-1/051-055.md"
+    },
+    {
+      "chapter": 52,
+      "title": "왕이 내민 두 번째 카드",
+      "pov": "데이비드",
+      "body_chars": 2888,
+      "body_sha256": "19ff31f4a74d8ce6c5ffc3457c6def8de1669a3849d3a153d6bf24402b6fab6f",
+      "bundle": "fiction/manuscript/part-1/051-055.md"
+    },
+    {
+      "chapter": 53,
+      "title": "떨어지는 사람을 받는 법",
+      "pov": "주안",
+      "body_chars": 2263,
+      "body_sha256": "92c628f18edb4b86949f2606fcbfb9bff0c061b8df4db9cf0f28469ea494b843",
+      "bundle": "fiction/manuscript/part-1/051-055.md"
+    },
+    {
+      "chapter": 54,
+      "title": "검은 산양",
+      "pov": "이안",
+      "body_chars": 2199,
+      "body_sha256": "9d0dbaec6c0c83690288fd3a7c621dc7567d6edf62d1c691fb7f55af0a7baf7a",
+      "bundle": "fiction/manuscript/part-1/051-055.md"
+    },
+    {
+      "chapter": 55,
+      "title": "검은 산양의 규칙",
+      "pov": "이안",
+      "body_chars": 2281,
+      "body_sha256": "c40b760b5ca195c203b683724b2e663f38f14da70e56e3a2638d79034080b8fd",
+      "bundle": "fiction/manuscript/part-1/051-055.md"
+    },
+    {
+      "chapter": 56,
+      "title": "검은 주안",
+      "pov": "엘리스",
+      "body_chars": 2555,
+      "body_sha256": "c80b210d3c08101c6c56c3f05cda145541b985ed7331132e86bb657fd29bb453",
+      "bundle": "fiction/manuscript/part-1/056-060.md"
+    },
+    {
+      "chapter": 57,
+      "title": "남은 얼굴의 히템",
+      "pov": "이안",
+      "body_chars": 2274,
+      "body_sha256": "09aa34cc2ebdef9270aabcb128b70d23aef40f337068398f92351b57d94a97e5",
+      "bundle": "fiction/manuscript/part-1/056-060.md"
+    },
+    {
+      "chapter": 58,
+      "title": "노아의 날개",
+      "pov": "주안",
+      "body_chars": 2213,
+      "body_sha256": "a63180c52efbfabf6a99abeb03337e573b094a0b52b914d1df5bf810635ab354",
+      "bundle": "fiction/manuscript/part-1/056-060.md"
+    },
+    {
+      "chapter": 59,
+      "title": "살아남는 자들의 회의",
+      "pov": "이안",
+      "body_chars": 2232,
+      "body_sha256": "c7d56d0f60850a4cd87bb1fea1a455411458f3646d469b85246ec84b7b78ba1c",
+      "bundle": "fiction/manuscript/part-1/056-060.md"
+    },
+    {
+      "chapter": 60,
+      "title": "제3세력",
+      "pov": "엘리스",
+      "body_chars": 2206,
+      "body_sha256": "707bd65c6d71082ddd11bc71b74bc53d35a54a8162de2748d34d1b548440ad66",
+      "bundle": "fiction/manuscript/part-1/056-060.md"
+    },
+    {
+      "chapter": 61,
+      "title": "탈론과 쇼거스",
+      "pov": "주안",
+      "body_chars": 2272,
+      "body_sha256": "467373a27d3cd92e395ede79eb6f8a06b527df9e78eec37b0b4c3db5e9a9380b",
+      "bundle": "fiction/manuscript/part-1/061-065.md"
+    },
+    {
+      "chapter": 62,
+      "title": "괴물과의 협상",
+      "pov": "엘리스",
+      "body_chars": 2330,
+      "body_sha256": "20c83f377451443aa2d055aff0b0ee4f31b8cc3dbc16b1aeff957e81a41b101a",
+      "bundle": "fiction/manuscript/part-1/061-065.md"
+    },
+    {
+      "chapter": 63,
+      "title": "밀리의 마지막 거짓말",
+      "pov": "이안",
+      "body_chars": 2197,
+      "body_sha256": "19bfd3acf6be85575ceacb32d94e0bf22a5f0e7bb0ebd8c4aaca0c337de4800b",
+      "bundle": "fiction/manuscript/part-1/061-065.md"
+    },
+    {
+      "chapter": 64,
+      "title": "어인의 창",
+      "pov": "엘리스",
+      "body_chars": 2207,
+      "body_sha256": "4d231be84f22cf360dadf10e922d343dfb027a7a42dcd7b5924a740306e6f14e",
+      "bundle": "fiction/manuscript/part-1/061-065.md"
+    },
+    {
+      "chapter": 65,
+      "title": "주인을 거부한 것",
+      "pov": "이안",
+      "body_chars": 2302,
+      "body_sha256": "89e9c3ddc41b3e6251331c0aa91ab450be2f81b0f8a8846eaa721e0a8eaed009",
+      "bundle": "fiction/manuscript/part-1/061-065.md"
+    },
+    {
+      "chapter": 66,
+      "title": "자신을 쏘라는 부탁",
+      "pov": "주안",
+      "body_chars": 2288,
+      "body_sha256": "d97bc954b5c80c467b19f1798e3d782340dffabb0721281e3eb31d91dfd18640",
+      "bundle": "fiction/manuscript/part-1/066-070.md"
+    },
+    {
+      "chapter": 67,
+      "title": "움직이는 핵",
+      "pov": "아킴",
+      "body_chars": 2231,
+      "body_sha256": "b9d611fe5f34b00345751fedc52b2de0510c7a98cd098abd2ee920f4e896206a",
+      "bundle": "fiction/manuscript/part-1/066-070.md"
+    },
+    {
+      "chapter": 68,
+      "title": "노덴스의 창",
+      "pov": "엘리스",
+      "body_chars": 2231,
+      "body_sha256": "c12da0635f0ed803bdde26464c0bb676b0cbbe52222c752620a8dc4241ce6ac0",
+      "bundle": "fiction/manuscript/part-1/066-070.md"
+    },
+    {
+      "chapter": 69,
+      "title": "폭풍 뒤의 협상",
+      "pov": "엘리스",
+      "body_chars": 2182,
+      "body_sha256": "ab9b91c10c5a02b912d87d150af47e09849637ef2f18de34e04157b94389d285",
+      "bundle": "fiction/manuscript/part-1/066-070.md"
+    },
+    {
+      "chapter": 70,
+      "title": "응답하지 않는 호출기",
+      "pov": "주안",
+      "body_chars": 2548,
+      "body_sha256": "f162a926874d93a6e7d56b7862c2bbe64bc41e84fba455df60b88ffaca78c33c",
+      "bundle": "fiction/manuscript/part-1/066-070.md"
+    },
+    {
+      "chapter": 71,
+      "title": "노란 아침",
+      "pov": "주안",
+      "body_chars": 2594,
+      "body_sha256": "960d2405eb27bee07425836cb0bd91163240f090f7132e68f5958bdb560a02cd",
+      "bundle": "fiction/manuscript/side-story-lake/071-075.md"
+    },
+    {
+      "chapter": 72,
+      "title": "김치와 감시 보고서",
+      "pov": "주안",
+      "body_chars": 2199,
+      "body_sha256": "c43648725c5c8d0097b4d32890b4d757d66161652c4647fe788f6a2c3e47c290",
+      "bundle": "fiction/manuscript/side-story-lake/071-075.md"
+    },
+    {
+      "chapter": 73,
+      "title": "수호사제들의 회의",
+      "pov": "주안",
+      "body_chars": 2170,
+      "body_sha256": "34705b3c6e6664381db512441fce964030e94573967068339ef02c2b122036f1",
+      "bundle": "fiction/manuscript/side-story-lake/071-075.md"
+    },
+    {
+      "chapter": 74,
+      "title": "신명이 내려오는 자리",
+      "pov": "가론",
+      "body_chars": 2346,
+      "body_sha256": "e6d3f491c6eb5f76532fcae34442974db1c3a54690da45e96f7d6007ba26d58d",
+      "bundle": "fiction/manuscript/side-story-lake/071-075.md"
+    },
+    {
+      "chapter": 75,
+      "title": "사라진 주교",
+      "pov": "주안",
+      "body_chars": 2160,
+      "body_sha256": "b1d2e7affc0f0ac2720f717e2bafebb016ad50e692e40f36c53301bed5ed1194",
+      "bundle": "fiction/manuscript/side-story-lake/071-075.md"
+    },
+    {
+      "chapter": 76,
+      "title": "위구르 특별교구",
+      "pov": "주안",
+      "body_chars": 2130,
+      "body_sha256": "19780e13c2484b223334c0d5c3606137be7d658fd2af5c9d3cd162a1b21f4b8c",
+      "bundle": "fiction/manuscript/side-story-lake/076-080.md"
+    },
+    {
+      "chapter": 77,
+      "title": "호수가 보이는 식당",
+      "pov": "주안",
+      "body_chars": 2130,
+      "body_sha256": "e088f1bf25bf2eb1728610fd50fb4fa58b3acb95c10dcee7437caaa6671f9ae9",
+      "bundle": "fiction/manuscript/side-story-lake/076-080.md"
+    },
+    {
+      "chapter": 78,
+      "title": "호수에서 만난 친구",
+      "pov": "이안",
+      "body_chars": 2102,
+      "body_sha256": "ce640de3ded92de03ce0b1d683514115b1f874a0c8261082cae8cdb8e054a4d3",
+      "bundle": "fiction/manuscript/side-story-lake/076-080.md"
+    },
+    {
+      "chapter": 79,
+      "title": "미스캐토닉의 후배들",
+      "pov": "이안",
+      "body_chars": 2097,
+      "body_sha256": "5b695e1cc50b927c08247feec2fe1d69a04b2a065fe608e744e9ad0a6dfc597c",
+      "bundle": "fiction/manuscript/side-story-lake/076-080.md"
+    },
+    {
+      "chapter": 80,
+      "title": "낙원으로 가는 문",
+      "pov": "주안",
+      "body_chars": 2152,
+      "body_sha256": "d0dc5d52aa4035f660c45a8b89b953e1a58d28ef870885d028e9c89a8ac253a1",
+      "bundle": "fiction/manuscript/side-story-lake/076-080.md"
+    },
+    {
+      "chapter": 81,
+      "title": "큰 옷을 입은 아이",
+      "pov": "주안",
+      "body_chars": 2080,
+      "body_sha256": "272fa148216c9b489048addd429b4a899a56728bd55810ce3d5cb64fed8e9df0",
+      "bundle": "fiction/manuscript/side-story-lake/081-085.md"
+    },
+    {
+      "chapter": 82,
+      "title": "기억을 씻는 물",
+      "pov": "주안",
+      "body_chars": 2108,
+      "body_sha256": "48d279b262d8b3e7f0d29a59e1083ca1199b6382fd3047a0c3bb2701502d70c5",
+      "bundle": "fiction/manuscript/side-story-lake/081-085.md"
+    },
+    {
+      "chapter": 83,
+      "title": "이름 없는 호출",
+      "pov": "이안",
+      "body_chars": 2086,
+      "body_sha256": "b1788db1bdb68d7565319d7c0bd29669e30a5223fe06c82a81bd9394e39813ff",
+      "bundle": "fiction/manuscript/side-story-lake/081-085.md"
+    },
+    {
+      "chapter": 84,
+      "title": "가론의 실패",
+      "pov": "가론",
+      "body_chars": 2114,
+      "body_sha256": "b9b76ddcc15d7fe02a1af9e0e1b0b3ee729e9174f3a19fb99e23d7151b3724fb",
+      "bundle": "fiction/manuscript/side-story-lake/081-085.md"
+    },
+    {
+      "chapter": 85,
+      "title": "호수 아래의 외갑",
+      "pov": "주안",
+      "body_chars": 2147,
+      "body_sha256": "b6ef15243f249ea8ae76c089f8c3b55e38be21c90639d8eaed5c2c76cd7b2470",
+      "bundle": "fiction/manuscript/side-story-lake/081-085.md"
+    },
+    {
+      "chapter": 86,
+      "title": "낙원의 거래",
+      "pov": "이안",
+      "body_chars": 2127,
+      "body_sha256": "0be5fba066b79ddec9afa84395b04b9d50b17de3360de4366128ceed794edb9d",
+      "bundle": "fiction/manuscript/side-story-lake/086-090.md"
+    },
+    {
+      "chapter": 87,
+      "title": "기억 속의 벌꿀주스",
+      "pov": "주안",
+      "body_chars": 2123,
+      "body_sha256": "90e5a366af14b6f46239150ddf296c1f0d0d76c7984fd37ec42b784208d020c5",
+      "bundle": "fiction/manuscript/side-story-lake/086-090.md"
+    },
+    {
+      "chapter": 88,
+      "title": "이가레스의 질문",
+      "pov": "주안",
+      "body_chars": 2128,
+      "body_sha256": "c093fd421360928b198a94b075ee877e214075cda8a5e33183e70dcb45e65469",
+      "bundle": "fiction/manuscript/side-story-lake/086-090.md"
+    },
+    {
+      "chapter": 89,
+      "title": "가론이 남는 곳",
+      "pov": "가론",
+      "body_chars": 2115,
+      "body_sha256": "c614a6ae5f9870618b81440fb820f38a149d33820444cdb80460e7cef18110e8",
+      "bundle": "fiction/manuscript/side-story-lake/086-090.md"
+    },
+    {
+      "chapter": 90,
+      "title": "한국행 세 사람",
+      "pov": "주안",
+      "body_chars": 2080,
+      "body_sha256": "7c1a55144a745d933da9433f2e762f577d37522311c593046f2253b5fa656eb2",
+      "bundle": "fiction/manuscript/side-story-lake/086-090.md"
+    },
+    {
+      "chapter": 91,
+      "title": "호수의 뒤편",
+      "pov": "이안",
+      "body_chars": 2045,
+      "body_sha256": "a18f5cc3337555058c4a97308664b2adbba2302e27c5c39f8cd412f9a26e39ed",
+      "bundle": "fiction/manuscript/side-story-lake/091-095.md"
+    },
+    {
+      "chapter": 92,
+      "title": "돌아온 이름들",
+      "pov": "주안",
+      "body_chars": 2163,
+      "body_sha256": "8bf48d375a3276a1fb37995237963939074145852fd228b9a76182b8c8a1df06",
+      "bundle": "fiction/manuscript/side-story-lake/091-095.md"
+    },
+    {
+      "chapter": 93,
+      "title": "다빈과 예나",
+      "pov": "주안",
+      "body_chars": 2071,
+      "body_sha256": "4d07f486d95059bb1a10096b93100fa2573a0da63b6836bf3a3c9122fefc9cdd",
+      "bundle": "fiction/manuscript/side-story-lake/091-095.md"
+    },
+    {
+      "chapter": 94,
+      "title": "보내지 못한 말",
+      "pov": "주안",
+      "body_chars": 2062,
+      "body_sha256": "4a83860dcbc9f4943892ed2aedd858bc226b6e9a5a8525a7886b8841fb9a5929",
+      "bundle": "fiction/manuscript/side-story-lake/091-095.md"
+    },
+    {
+      "chapter": 95,
+      "title": "호수가 보이는 마을의 끝",
+      "pov": "주안",
+      "body_chars": 2093,
+      "body_sha256": "d6666285d961fc469b98ced9c36a34404b4ffb0f30a06f61f47e9e39031b8d7e",
+      "bundle": "fiction/manuscript/side-story-lake/091-095.md"
+    },
+    {
+      "chapter": 96,
+      "title": "돌아오지 않은 사람",
+      "pov": "엘리스",
+      "body_chars": 2109,
+      "body_sha256": "1e0bf9444fb14121db47396a5a44702190c587f6308d82e816c72d824f19d25e",
+      "bundle": "fiction/manuscript/side-story-alice/096-100.md"
+    },
+    {
+      "chapter": 97,
+      "title": "카터가 아닌 이름",
+      "pov": "엘리스",
+      "body_chars": 2180,
+      "body_sha256": "c2a8e4f6054da0b3233cd8fd938118a23b5d3a99effe78a94b2377dd3c1e50a7",
+      "bundle": "fiction/manuscript/side-story-alice/096-100.md"
+    },
+    {
+      "chapter": 98,
+      "title": "첫 번째 꼴찌",
+      "pov": "엘리스",
+      "body_chars": 2108,
+      "body_sha256": "f73bcaac1dc15838a09fa89f787b11bd22177c50940da5e27b888312d8380563",
+      "bundle": "fiction/manuscript/side-story-alice/096-100.md"
+    },
+    {
+      "chapter": 99,
+      "title": "기숙사의 평화",
+      "pov": "엘리스",
+      "body_chars": 2096,
+      "body_sha256": "fb83817bda2bcea774c293cb3383235b36757675cf0c23ba8fd294d3a9fd3f0b",
+      "bundle": "fiction/manuscript/side-story-alice/096-100.md"
+    },
+    {
+      "chapter": 100,
+      "title": "약한 사람의 규칙",
+      "pov": "엘리스",
+      "body_chars": 2221,
+      "body_sha256": "280d14264d544beaf38eebc8a2346bbf62b87966e3d576f9bbe8a0a7580475b6",
+      "bundle": "fiction/manuscript/side-story-alice/096-100.md"
+    },
+    {
+      "chapter": 101,
+      "title": "라르고 휴빙",
+      "pov": "엘리스",
+      "body_chars": 2730,
+      "body_sha256": "f72938ea0c9ecfe6222a86b673907feedc37b769ac2f6f9e9cd4abec4c43324a",
+      "bundle": "fiction/manuscript/side-story-alice/101-105.md"
+    },
+    {
+      "chapter": 102,
+      "title": "창이 없는 창술",
+      "pov": "엘리스",
+      "body_chars": 2672,
+      "body_sha256": "ede2b9c597a01c0324268fda94af008de8d29836a978389c479e8141678afdcb",
+      "bundle": "fiction/manuscript/side-story-alice/101-105.md"
+    },
+    {
+      "chapter": 103,
+      "title": "사십이 퍼센트",
+      "pov": "엘리스",
+      "body_chars": 2709,
+      "body_sha256": "b64220575935f15c391bd539f931ab0848c3445e6b0cd5a5e3141e711069b576",
+      "bundle": "fiction/manuscript/side-story-alice/101-105.md"
+    },
+    {
+      "chapter": 104,
+      "title": "증거물 보관함",
+      "pov": "엘리스",
+      "body_chars": 2633,
+      "body_sha256": "edadc519512b6378d83057bc3aedef2a775f7ae9aa41cd077731537d5a775c7f",
+      "bundle": "fiction/manuscript/side-story-alice/101-105.md"
+    },
+    {
+      "chapter": 105,
+      "title": "특수과정",
+      "pov": "엘리스",
+      "body_chars": 2823,
+      "body_sha256": "acf83c1ff9b5ec21c09ee7785266f594d116361bc4df71a163b79c6341e0219a",
+      "bundle": "fiction/manuscript/side-story-alice/101-105.md"
+    },
+    {
+      "chapter": 106,
+      "title": "첫 현장 배치",
+      "pov": "엘리스",
+      "body_chars": 2220,
+      "body_sha256": "f7411a447ec1b2b424e56e02f7f906f9dbec848acc1948879e6f7b5d26e292e4",
+      "bundle": "fiction/manuscript/side-story-alice/106-110.md"
+    },
+    {
+      "chapter": 107,
+      "title": "보호의 경계",
+      "pov": "엘리스",
+      "body_chars": 2227,
+      "body_sha256": "4eb85ed6f1c3c887195b40cc1e779a535899b4c5142ade8ee208adee186b2f3a",
+      "bundle": "fiction/manuscript/side-story-alice/106-110.md"
+    },
+    {
+      "chapter": 108,
+      "title": "표준 무기의 거리",
+      "pov": "마라",
+      "body_chars": 2223,
+      "body_sha256": "175ab1e973383b23e8a68755506107541a7e21fcffd01b7f7db51b2a31c90c69",
+      "bundle": "fiction/manuscript/side-story-alice/106-110.md"
+    },
+    {
+      "chapter": 109,
+      "title": "빠진 자리",
+      "pov": "엘리스",
+      "body_chars": 2358,
+      "body_sha256": "2d906f82dd835de89d003e8a251e9f00a0be0370419d8f09cfc7b8b8280c2b30",
+      "bundle": "fiction/manuscript/side-story-alice/106-110.md"
+    },
+    {
+      "chapter": 110,
+      "title": "남겨야 할 이름",
+      "pov": "엘리스",
+      "body_chars": 2453,
+      "body_sha256": "eda088c2796cfea46d240d46b6e89ab50e4d429fbdeb41640d992b4b2450e0e4",
+      "bundle": "fiction/manuscript/side-story-alice/106-110.md"
+    },
+    {
+      "chapter": 111,
+      "title": "붉은 선",
+      "pov": "엘리스",
+      "body_chars": 2374,
+      "body_sha256": "fb16223962c10f1166dd5494487c0f7cd0200a4f2d859744faef0b6f759d3706",
+      "bundle": "fiction/manuscript/side-story-alice/111-115.md"
+    },
+    {
+      "chapter": 112,
+      "title": "에번의 조항",
+      "pov": "에번",
+      "body_chars": 2158,
+      "body_sha256": "4b36ff8e62d77668552a8fb2bd8f2db8a7d4a92c3aa5d66e4e11c5d7e08b3901",
+      "bundle": "fiction/manuscript/side-story-alice/111-115.md"
+    },
+    {
+      "chapter": 113,
+      "title": "한 번의 호출",
+      "pov": "엘리스",
+      "body_chars": 2285,
+      "body_sha256": "09000e3a87d1deac5fa1ca99d622bb06a9a296e7e313b02e683ebaccbba83cd3",
+      "bundle": "fiction/manuscript/side-story-alice/111-115.md"
+    },
+    {
+      "chapter": 114,
+      "title": "기억할 휴일",
+      "pov": "조나스",
+      "body_chars": 2217,
+      "body_sha256": "0c0e4acc165be734f9bdc2752a149914a0432988e1f26e23841b857230bbc088",
+      "bundle": "fiction/manuscript/side-story-alice/111-115.md"
+    },
+    {
+      "chapter": 115,
+      "title": "실전 허가",
+      "pov": "엘리스",
+      "body_chars": 2215,
+      "body_sha256": "5ef69ee28c47c97f25b19d8dfe53f235b64282eab37434435fe8f10da25f5479",
+      "bundle": "fiction/manuscript/side-story-alice/111-115.md"
+    },
+    {
+      "chapter": 116,
+      "title": "사고가 없는 지구",
+      "pov": "엘리스",
+      "body_chars": 2290,
+      "body_sha256": "82a6113b8f66f08ccc0521a2b70e6a5558d7d24b2e70af0d1bad9472742deb6e",
+      "bundle": "fiction/manuscript/side-story-alice/116-120.md"
+    },
+    {
+      "chapter": 117,
+      "title": "예고된 불행",
+      "pov": "조나스",
+      "body_chars": 2383,
+      "body_sha256": "5ab4962fb9619a024f6390b1613547bcabda4b21c7855821bfee0caccaebd4f0",
+      "bundle": "fiction/manuscript/side-story-alice/116-120.md"
+    },
+    {
+      "chapter": 118,
+      "title": "남겨둔 공포",
+      "pov": "엘리스",
+      "body_chars": 2292,
+      "body_sha256": "d7e0d722cba3b0a1744e68bbde03743b481b83d7671be74dc88bab0bf1cbd4b9",
+      "bundle": "fiction/manuscript/side-story-alice/116-120.md"
+    },
+    {
+      "chapter": 119,
+      "title": "가장 낮은 숫자",
+      "pov": "엘리스",
+      "body_chars": 2246,
+      "body_sha256": "7ab04bb5a1e122e2f3ad2c68d15216058e1aa53b902fa19612e6e50eb9630ff2",
+      "bundle": "fiction/manuscript/side-story-alice/116-120.md"
+    },
+    {
+      "chapter": 120,
+      "title": "안전하지 않은 아침",
+      "pov": "엘리스",
+      "body_chars": 2206,
+      "body_sha256": "04be08a40f109884464222ff0a8660921c4189308626af07ba4f8c2267f8db4c",
+      "bundle": "fiction/manuscript/side-story-alice/116-120.md"
+    },
+    {
+      "chapter": 121,
+      "title": "사라지는 구조대",
+      "pov": "엘리스",
+      "body_chars": 2155,
+      "body_sha256": "0a40ffca6e33813824ef3eaed516dc42ff91d6dbc32c8e9029e620d8e5315821",
+      "bundle": "fiction/manuscript/side-story-alice/121-125.md"
+    },
+    {
+      "chapter": 122,
+      "title": "나누어 가진 이름",
+      "pov": "조나스",
+      "body_chars": 2172,
+      "body_sha256": "0b69763f0aad910b6a091aa9611f1eacad87c329bee1b5a017bc6f577cd97da0",
+      "bundle": "fiction/manuscript/side-story-alice/121-125.md"
+    },
+    {
+      "chapter": 123,
+      "title": "붉은 귀환선",
+      "pov": "엘리스",
+      "body_chars": 2141,
+      "body_sha256": "1c8037b1728c84ae1005c4ec166f9497e197dbe954968545d7b18b295106832a",
+      "bundle": "fiction/manuscript/side-story-alice/121-125.md"
+    },
+    {
+      "chapter": 124,
+      "title": "카터라는 이름",
+      "pov": "엘리스",
+      "body_chars": 2224,
+      "body_sha256": "534d8bbf4fcf806a5890352481b5765a31764b5239e026147020d2c0fb5afc92",
+      "bundle": "fiction/manuscript/side-story-alice/121-125.md"
+    },
+    {
+      "chapter": 125,
+      "title": "기억 보관 규칙",
+      "pov": "엘리스",
+      "body_chars": 2239,
+      "body_sha256": "aa148b817c18445a565697c64c436c99a9ed9677fa1ca5c457bfaf1d031e4691",
+      "bundle": "fiction/manuscript/side-story-alice/121-125.md"
+    },
+    {
+      "chapter": 126,
+      "title": "붉은 구역",
+      "pov": "엘리스",
+      "body_chars": 2130,
+      "body_sha256": "cef6469aee11ae9f2ea3c791887e2b31a7e89290b44e85bb725d5c8d23a6f809",
+      "bundle": "fiction/manuscript/side-story-alice/126-130.md"
+    },
+    {
+      "chapter": 127,
+      "title": "여왕의 판",
+      "pov": "엘리스",
+      "body_chars": 2162,
+      "body_sha256": "35fa6d60cdf0d0928e04932f826aabf2cef04423e3fc14198b6e815eeceb1934",
+      "bundle": "fiction/manuscript/side-story-alice/126-130.md"
+    },
+    {
+      "chapter": 128,
+      "title": "예측을 벗어난 사람들",
+      "pov": "조나스",
+      "body_chars": 2214,
+      "body_sha256": "b96b0a1f3e1a7ff8d768315de53cba8832c1320027c11c509b0098dbef4c0a81",
+      "bundle": "fiction/manuscript/side-story-alice/126-130.md"
+    },
+    {
+      "chapter": 129,
+      "title": "레드퀸",
+      "pov": "엘리스",
+      "body_chars": 2217,
+      "body_sha256": "81126d566bafb06a6b223b8c0d0c345f79de844ffa20afb82b2480f5e264c597",
+      "bundle": "fiction/manuscript/side-story-alice/126-130.md"
+    },
+    {
+      "chapter": 130,
+      "title": "기다리지 않는 호출",
+      "pov": "엘리스",
+      "body_chars": 2220,
+      "body_sha256": "f900a1f4f174e8654104de5795b5ccf7485564c1cbf0964e0960edb78563c7ef",
+      "bundle": "fiction/manuscript/side-story-alice/126-130.md"
+    },
+    {
+      "chapter": 131,
+      "title": "브루스가 없는 연구실",
+      "pov": "이안",
+      "body_chars": 2194,
+      "body_sha256": "414251fcebd43bf08ec4683d8d56b626e79750e747859f59697c274004ab338c",
+      "bundle": "fiction/manuscript/side-story-ian/131-135.md"
+    },
+    {
+      "chapter": 132,
+      "title": "고서 보관 심의",
+      "pov": "이안",
+      "body_chars": 2142,
+      "body_sha256": "b796cfb448b500de13e68e6119b9e9366fb76838a1e3d3b814daaa95adf3fe8b",
+      "bundle": "fiction/manuscript/side-story-ian/131-135.md"
+    },
+    {
+      "chapter": 133,
+      "title": "엘레인 라사의 차",
+      "pov": "이안",
+      "body_chars": 2418,
+      "body_sha256": "93fcad26a9b427a13eab67d7e6cf7c122333df5460efe589f587dc3350e2a765",
+      "bundle": "fiction/manuscript/side-story-ian/131-135.md"
+    },
+    {
+      "chapter": 134,
+      "title": "기억을 잃은 표본",
+      "pov": "이안",
+      "body_chars": 2130,
+      "body_sha256": "d2859781549c7cfc79f6999793f909a70ee07a6750037c68443ce4ccd69c7ede",
+      "bundle": "fiction/manuscript/side-story-ian/131-135.md"
+    },
+    {
+      "chapter": 135,
+      "title": "브루스의 미완성 지도",
+      "pov": "이안",
+      "body_chars": 2163,
+      "body_sha256": "2a7930806b88c878f9a541fe7182a4c862a3686aa4eaf1418281e60e27a61ef0",
+      "bundle": "fiction/manuscript/side-story-ian/131-135.md"
+    },
+    {
+      "chapter": 136,
+      "title": "선배와 후배의 첫 임무",
+      "pov": "이안",
+      "body_chars": 2158,
+      "body_sha256": "72ce1fa206b5aa362f680bbfe14c935bdca0932b58a2e82f95589ced68a5856f",
+      "bundle": "fiction/manuscript/side-story-ian/136-140.md"
+    },
+    {
+      "chapter": 137,
+      "title": "기록에 없는 장례식",
+      "pov": "엘리엇",
+      "body_chars": 2205,
+      "body_sha256": "7cdcb2fb46a84e78ea04a6262e50beeb50b8fa7c670122b016c4b85b7cd549e6",
+      "bundle": "fiction/manuscript/side-story-ian/136-140.md"
+    },
+    {
+      "chapter": 138,
+      "title": "같은 날의 두 기록",
+      "pov": "이안",
+      "body_chars": 2152,
+      "body_sha256": "0d0b51eb53f62175fc2c30be665e86e700daf31c233ca755e4316d59e84f7aaf",
+      "bundle": "fiction/manuscript/side-story-ian/136-140.md"
+    },
+    {
+      "chapter": 139,
+      "title": "내일 죽을 사람",
+      "pov": "엘리엇",
+      "body_chars": 2227,
+      "body_sha256": "e91269baaac01654df200b1e81ae2f6bb7541bbd5a0baced435d9ced11b1f645",
+      "bundle": "fiction/manuscript/side-story-ian/136-140.md"
+    },
+    {
+      "chapter": 140,
+      "title": "내일은 이미 실패했다",
+      "pov": "이안",
+      "body_chars": 2115,
+      "body_sha256": "aae03be70951c1ef6caa1b7dd292ae1eb6743a951eefa2258e4904c559abb98c",
+      "bundle": "fiction/manuscript/side-story-ian/136-140.md"
+    },
+    {
+      "chapter": 141,
+      "title": "존재하지 않은 내일",
+      "pov": "이안",
+      "body_chars": 2223,
+      "body_sha256": "80333d5c5683f0bb43cd4583252277c762ecb292ee66211cb231876f7c989fae",
+      "bundle": "fiction/manuscript/side-story-ian/141-145.md"
+    },
+    {
+      "chapter": 142,
+      "title": "죽은 사람이 돌아오는 아침",
+      "pov": "엘리엇",
+      "body_chars": 2127,
+      "body_sha256": "76958dd5bc34e738b3cea903f9230bc876c2a723d893d2d3bc2ed98cc01c492e",
+      "bundle": "fiction/manuscript/side-story-ian/141-145.md"
+    },
+    {
+      "chapter": 143,
+      "title": "관찰자의 죄",
+      "pov": "이안",
+      "body_chars": 2180,
+      "body_sha256": "53d83aef05edf73d4f5575a066768bd583266b4e0fb8152c779b71a21966b558",
+      "bundle": "fiction/manuscript/side-story-ian/141-145.md"
+    },
+    {
+      "chapter": 144,
+      "title": "허가받지 않은 페이지",
+      "pov": "엘리엇",
+      "body_chars": 2176,
+      "body_sha256": "cee78105eee7d3fd330d0ad9975e8cd1092937d8ac05374446d7d5e30622c3e3",
+      "bundle": "fiction/manuscript/side-story-ian/141-145.md"
+    },
+    {
+      "chapter": 145,
+      "title": "모두 살아 있는 방",
+      "pov": "이안",
+      "body_chars": 2148,
+      "body_sha256": "fb0cea9191ba3b7919a6938c24a7205dd8cd9b43769255b0be3d37a69fad174d",
+      "bundle": "fiction/manuscript/side-story-ian/141-145.md"
+    },
+    {
+      "chapter": 146,
+      "title": "수십 개의 장례식",
+      "pov": "엘리엇",
+      "body_chars": 2184,
+      "body_sha256": "aff602adafec3c7e03ac36f3bd119dd67ec8bf88bd5b65c51aa95d20b24a779f",
+      "bundle": "fiction/manuscript/side-story-ian/146-150.md"
+    },
+    {
+      "chapter": 147,
+      "title": "성공을 숨기는 대학",
+      "pov": "이안",
+      "body_chars": 2131,
+      "body_sha256": "c113e3801cf63a5064dbdab6128c057359b2f234bc065c7dd738f77e4261a8e6",
+      "bundle": "fiction/manuscript/side-story-ian/146-150.md"
+    },
+    {
+      "chapter": 148,
+      "title": "빈자리의 사진",
+      "pov": "이안",
+      "body_chars": 2211,
+      "body_sha256": "30e892848e49aae284081059bb8cdfbb5aa63db9374c08c7d915d08435b3d063",
+      "bundle": "fiction/manuscript/side-story-ian/146-150.md"
+    },
+    {
+      "chapter": 149,
+      "title": "엘레인의 보호",
+      "pov": "엘레인",
+      "body_chars": 2161,
+      "body_sha256": "30082ec8c17779aa59541c299128ea181785fe0d092c3f1b690c68fcfb473026",
+      "bundle": "fiction/manuscript/side-story-ian/146-150.md"
+    },
+    {
+      "chapter": 150,
+      "title": "전원 생환 보고서",
+      "pov": "엘리엇",
+      "body_chars": 2134,
+      "body_sha256": "5e0b8e8931a3f1b73ac1cd582b1f03810d0bf1372210b26b4d559f211c19652c",
+      "bundle": "fiction/manuscript/side-story-ian/146-150.md"
+    },
+    {
+      "chapter": 151,
+      "title": "기록에서 사라진 연구자",
+      "pov": "이안",
+      "body_chars": 2180,
+      "body_sha256": "a544685a3662646d4f8a866b89a616d301470fcc0b64fefd758c07f2c2069227",
+      "bundle": "fiction/manuscript/side-story-ian/151-155.md"
+    },
+    {
+      "chapter": 152,
+      "title": "금지된 보관고",
+      "pov": "엘리엇",
+      "body_chars": 2200,
+      "body_sha256": "3fc9dcf607a6193351fe6df801fc8ade0ec72771546c8d77b72a53f17e8baa59",
+      "bundle": "fiction/manuscript/side-story-ian/151-155.md"
+    },
+    {
+      "chapter": 153,
+      "title": "누가 잔편을 훔쳤는가",
+      "pov": "이안",
+      "body_chars": 2207,
+      "body_sha256": "e00f372d626efabdff21616f254c95a98cb18267090d2b51eca2c99d20882fe5",
+      "bundle": "fiction/manuscript/side-story-ian/151-155.md"
+    },
+    {
+      "chapter": 154,
+      "title": "선후배의 결별",
+      "pov": "이안",
+      "body_chars": 2154,
+      "body_sha256": "088bea7bcdde566320b9497b60b0a746fb60872eb8eeee353a6fe6803bd74016",
+      "bundle": "fiction/manuscript/side-story-ian/151-155.md"
+    },
+    {
+      "chapter": 155,
+      "title": "엘레인이 고른 편",
+      "pov": "엘레인",
+      "body_chars": 2139,
+      "body_sha256": "163d93cb270502f4dfeeaa89d61ab74bf8d2faa9cca426bf85ce4141de4953ba",
+      "bundle": "fiction/manuscript/side-story-ian/151-155.md"
+    },
+    {
+      "chapter": 156,
+      "title": "사라진 잔편의 행방",
+      "pov": "이안",
+      "body_chars": 2204,
+      "body_sha256": "6b8f35690dd44eaa61c7a16d71add5d2f63033b22dfa4f3638fdc496f35f3b0a",
+      "bundle": "fiction/manuscript/side-story-ian/156-160.md"
+    },
+    {
+      "chapter": 157,
+      "title": "미스캐토닉의 두 얼굴",
+      "pov": "이안",
+      "body_chars": 2177,
+      "body_sha256": "627d08e5eaf05fe944ad07fbebd2a1e6b6b84b052aab0f4bcafe4a6fc94e1dce",
+      "bundle": "fiction/manuscript/side-story-ian/156-160.md"
+    },
+    {
+      "chapter": 158,
+      "title": "미래를 관리하는 공동체",
+      "pov": "엘리엇",
+      "body_chars": 2186,
+      "body_sha256": "e319a7d56c91084ee85f4c3f2e0eed270a7685fe39c4e3b502c811a02ac2f2e6",
+      "bundle": "fiction/manuscript/side-story-ian/156-160.md"
+    },
+    {
+      "chapter": 159,
+      "title": "다빈의 죽는 날짜들",
+      "pov": "엘리엇",
+      "body_chars": 2225,
+      "body_sha256": "d598a32f7c11d88167382c2743923366670ffa4acbcef0346f18ed1d57b7a0e6",
+      "bundle": "fiction/manuscript/side-story-ian/156-160.md"
+    },
+    {
+      "chapter": 160,
+      "title": "선배의 마지막 경고",
+      "pov": "이안",
+      "body_chars": 2183,
+      "body_sha256": "8ee42d8ce1a7dc2cfc75423cf3aae89a250c1d975d9d3e83830c47d07564b687",
+      "bundle": "fiction/manuscript/side-story-ian/156-160.md"
+    },
+    {
+      "chapter": 161,
+      "title": "에이본의 잔편",
+      "pov": "엘리엇",
+      "body_chars": 2216,
+      "body_sha256": "ebf9a03a888eb2f80ed4f3797ed7a7acd63076cba59deead1aec68113c8cf1fd",
+      "bundle": "fiction/manuscript/side-story-ian/161-165.md"
+    },
+    {
+      "chapter": 162,
+      "title": "도원향",
+      "pov": "엘리엇",
+      "body_chars": 2200,
+      "body_sha256": "9e7d4ffb4f3b780a7d80bba190ccbae438efa24aca911bf1c40e52709d4f4dcc",
+      "bundle": "fiction/manuscript/side-story-ian/161-165.md"
+    },
+    {
+      "chapter": 163,
+      "title": "다시 차를 마시는 날",
+      "pov": "이안",
+      "body_chars": 2237,
+      "body_sha256": "49dac57f40b106e157c0fa7f5e24901c7a97d16ea3c9fefd7f0ab54f805e56e9",
+      "bundle": "fiction/manuscript/side-story-ian/161-165.md"
+    },
+    {
+      "chapter": 164,
+      "title": "존재하지 않은 내일의 기록",
+      "pov": "이안",
+      "body_chars": 2143,
+      "body_sha256": "c9fd904dbd7d2ab03d2bd200c8a2754faef7e6e61e129e67cd95d7174006c5d3",
+      "bundle": "fiction/manuscript/side-story-ian/161-165.md"
+    },
+    {
+      "chapter": 165,
+      "title": "미래를 기록하는 사람",
+      "pov": "엘리엇",
+      "body_chars": 2216,
+      "body_sha256": "45df05a90d941f9c36ecd6fd155be02e70780d2e48bb7a2b34be1032651ae26f",
+      "bundle": "fiction/manuscript/side-story-ian/161-165.md"
+    },
+    {
+      "chapter": 166,
+      "title": "눈 속의 오두막",
+      "pov": "윌리엄",
+      "body_chars": 2214,
+      "body_sha256": "c20e18c879677c6129b7084225fae1cb3758e53c65a9e7d3b0ddc0eb22bf52c2",
+      "bundle": "fiction/manuscript/part-2/166-170.md"
+    },
+    {
+      "chapter": 167,
+      "title": "평범한 휴일의 문자",
+      "pov": "주민",
+      "body_chars": 2152,
+      "body_sha256": "4c37bf9619899ec6b9090f65bf93c946151b62f8ea0ec4e572d46a702a1f59bb",
+      "bundle": "fiction/manuscript/part-2/166-170.md"
+    },
+    {
+      "chapter": 168,
+      "title": "경찰서의 장난감 총",
+      "pov": "주민",
+      "body_chars": 2233,
+      "body_sha256": "2d8b82108bbb638e7c97ed3b406fd20630841f65595245c1e5900fe26a72886e",
+      "bundle": "fiction/manuscript/part-2/166-170.md"
+    },
+    {
+      "chapter": 169,
+      "title": "도원향으로 가는 길",
+      "pov": "주민",
+      "body_chars": 2229,
+      "body_sha256": "26d076ea71037dcda082e4cf9ece3673437b25c01b85862cc66f504156ba243b",
+      "bundle": "fiction/manuscript/part-2/166-170.md"
+    },
+    {
+      "chapter": 170,
+      "title": "부모 없는 유원지",
+      "pov": "다빈",
+      "body_chars": 2250,
+      "body_sha256": "99559feea094f685d0f778330c5a983f399875d09702f6fa65b8d743d65d124e",
+      "bundle": "fiction/manuscript/part-2/166-170.md"
+    },
+    {
+      "chapter": 171,
+      "title": "귀국한 레드퀸",
+      "pov": "엘리스",
+      "body_chars": 2299,
+      "body_sha256": "a3a9965443b4ac8de1c7271d9d4ff94d0063b9601581b82921f5b3258dabd8bc",
+      "bundle": "fiction/manuscript/part-2/171-175.md"
+    },
+    {
+      "chapter": 172,
+      "title": "공강일의 다빈과 교주",
+      "pov": "다빈",
+      "body_chars": 2223,
+      "body_sha256": "4e53f8a7fe02a0c8d3a0e6f54502fab5408dbf7395fa48d5c58b7d4a3fa60e99",
+      "bundle": "fiction/manuscript/part-2/171-175.md"
+    },
+    {
+      "chapter": 173,
+      "title": "미래를 보는 밤",
+      "pov": "다빈",
+      "body_chars": 2204,
+      "body_sha256": "f6513fa1220097498cc1320f95c1dbcf4c75600d93c6aa00b061574bd28b8d4c",
+      "bundle": "fiction/manuscript/part-2/171-175.md"
+    },
+    {
+      "chapter": 174,
+      "title": "같은 사건, 다른 설명",
+      "pov": "주민",
+      "body_chars": 2215,
+      "body_sha256": "8fc3fbd492d58a510f2aeab4f015f8c771c46f349cab2325e0d3d4ac18845c90",
+      "bundle": "fiction/manuscript/part-2/171-175.md"
+    },
+    {
+      "chapter": 175,
+      "title": "손을 놓지 않는 도주",
+      "pov": "엘리스",
+      "body_chars": 2193,
+      "body_sha256": "8455a5151a6b1a8d0663ba155216a17f0af714b4a1b70dd30d8058e988c913eb",
+      "bundle": "fiction/manuscript/part-2/171-175.md"
+    },
+    {
+      "chapter": 176,
+      "title": "불 꺼진 집의 세 사람",
+      "pov": "다빈",
+      "body_chars": 2317,
+      "body_sha256": "99e453ad05a0ba9febf5ec3985745a5fffb09093ea1eab72b0eb7fde1cc53497",
+      "bundle": "fiction/manuscript/part-2/176-180.md"
+    },
+    {
+      "chapter": 177,
+      "title": "장례식 뒤의 할머니",
+      "pov": "다빈",
+      "body_chars": 2326,
+      "body_sha256": "aaa246b43e91607e6d9a5f3d7f2bc6717f8cd1d5ac23d41555fd11c61feb54d5",
+      "bundle": "fiction/manuscript/part-2/176-180.md"
+    },
+    {
+      "chapter": 178,
+      "title": "태원파의 칼",
+      "pov": "다빈",
+      "body_chars": 2218,
+      "body_sha256": "0fc93c038e82c6c638e5017b32b12b4b683fe9e21b7d28ce999d00749dc9ad4c",
+      "bundle": "fiction/manuscript/part-2/176-180.md"
+    },
+    {
+      "chapter": 179,
+      "title": "임시 계약의 대가",
+      "pov": "엘리스",
+      "body_chars": 2140,
+      "body_sha256": "2b01a74953def21777b8f12bd3b876a4be35858cd5511b27dd09b81d1cf169b6",
+      "bundle": "fiction/manuscript/part-2/176-180.md"
+    },
+    {
+      "chapter": 180,
+      "title": "몸 안의 멈춘 시간",
+      "pov": "주민",
+      "body_chars": 2401,
+      "body_sha256": "2a87322e8435967a81b17847c00c7fe479581b87066ec5dbaac31ac0a13563df",
+      "bundle": "fiction/manuscript/part-2/176-180.md"
+    },
+    {
+      "chapter": 181,
+      "title": "교주의 폐업 선언",
+      "pov": "주민",
+      "body_chars": 3049,
+      "body_sha256": "35e649d3741cbf8f3bba82433ac1470eb9380d4303ccdf79b400ad98983446d9",
+      "bundle": "fiction/manuscript/part-2/181-185.md"
+    },
+    {
+      "chapter": 182,
+      "title": "돌아갈 수 없는 문장",
+      "pov": "주민",
+      "body_chars": 2637,
+      "body_sha256": "3a9cd31fbd69c72073a2b7f2e4e5825e6aec8c8032935537c97941c0aca60d57",
+      "bundle": "fiction/manuscript/part-2/181-185.md"
+    },
+    {
+      "chapter": 183,
+      "title": "교주실의 잠긴 문",
+      "pov": "다빈",
+      "body_chars": 2433,
+      "body_sha256": "ab49c5e320ea45cf8efb7a5109da03b905bdf5c2b4466b5b392a9cfd367a2553",
+      "bundle": "fiction/manuscript/part-2/181-185.md"
+    },
+    {
+      "chapter": 184,
+      "title": "신의 의안",
+      "pov": "주민",
+      "body_chars": 2402,
+      "body_sha256": "36f3e72b2bdfdecf8d083a7340df1d7466028562ea2c5f5db7e6ba958e31d30b",
+      "bundle": "fiction/manuscript/part-2/181-185.md"
+    },
+    {
+      "chapter": 185,
+      "title": "열이 없는 불",
+      "pov": "주민",
+      "body_chars": 2477,
+      "body_sha256": "9200cb846f9e62c7b7b0ebaf67f1d1517708bc51778910f5da42d390a4807125",
+      "bundle": "fiction/manuscript/part-2/181-185.md"
+    },
+    {
+      "chapter": 186,
+      "title": "경찰서의 세 가지 명령",
+      "pov": "엘리스",
+      "body_chars": 2316,
+      "body_sha256": "941d6f21a491db42b9cc9049ea24939a627d585588191391171312e0971bb85b",
+      "bundle": "fiction/manuscript/part-2/186-190.md"
+    },
+    {
+      "chapter": 187,
+      "title": "불이 꺼진 경찰서",
+      "pov": "다빈",
+      "body_chars": 2390,
+      "body_sha256": "a8d17d05317c75e2d0c4b44205daceb0a2068f0c6878e0b437a28fad7a511636",
+      "bundle": "fiction/manuscript/part-2/186-190.md"
+    },
+    {
+      "chapter": 188,
+      "title": "죽었던 시간의 잔향",
+      "pov": "주민",
+      "body_chars": 2327,
+      "body_sha256": "4e47ab9f193c5558cc28e284966344c7cd888f43d88065cb361708ea86dc35f4",
+      "bundle": "fiction/manuscript/part-2/186-190.md"
+    },
+    {
+      "chapter": 189,
+      "title": "다빈을 둘러싼 관할권",
+      "pov": "엘리스",
+      "body_chars": 2231,
+      "body_sha256": "020a0b4ee32dffa3368b5717966afade3a4d4fd5e639f4fb1e32401d338509c6",
+      "bundle": "fiction/manuscript/part-2/186-190.md"
+    },
+    {
+      "chapter": 190,
+      "title": "죽지 않는 장소",
+      "pov": "다빈",
+      "body_chars": 2285,
+      "body_sha256": "c4dc85bb62ef43d05c6aaa2367cee1a0930ef6997c1685180a1b96f0300a4a92",
+      "bundle": "fiction/manuscript/part-2/186-190.md"
+    },
+    {
+      "chapter": 191,
+      "title": "무장 협상의 조건",
+      "pov": "엘리스",
+      "body_chars": 2455,
+      "body_sha256": "915cba1e22aa73df85c83a82cf8c6bc9fa60ffaa13d8534f5cde9ba591db4f80",
+      "bundle": "fiction/manuscript/part-2/191-195.md"
+    },
+    {
+      "chapter": 192,
+      "title": "첫 번째 수술대",
+      "pov": "주민",
+      "body_chars": 2357,
+      "body_sha256": "e5e68e50b86babba323e8e071a36f02cf56fefdc0ef2e308260fcbcb725fba32",
+      "bundle": "fiction/manuscript/part-2/191-195.md"
+    },
+    {
+      "chapter": 193,
+      "title": "다시 열리는 상처",
+      "pov": "다빈",
+      "body_chars": 2172,
+      "body_sha256": "468d4aa0588ee048e0f3d26406a4184873015d433450db4ee9287b0946e3e4ac",
+      "bundle": "fiction/manuscript/part-2/191-195.md"
+    },
+    {
+      "chapter": 194,
+      "title": "의료 유예",
+      "pov": "주민",
+      "body_chars": 2270,
+      "body_sha256": "98a3b7fbd1312545107655ab9733ba945eb420669103dc8386b4a9b92e24e1d2",
+      "bundle": "fiction/manuscript/part-2/191-195.md"
+    },
+    {
+      "chapter": 195,
+      "title": "죽은 아이를 살리는 법",
+      "pov": "엘리스",
+      "body_chars": 2487,
+      "body_sha256": "115f7d29a5c00ef80f6fa3ac8a9013c7748c7f3b6e14bf2f97d1e036add69b9c",
+      "bundle": "fiction/manuscript/part-2/191-195.md"
+    },
+    {
+      "chapter": 196,
+      "title": "내부의 불순분자",
+      "pov": "다빈",
+      "body_chars": 2259,
+      "body_sha256": "608f9d011a502c621653413533e8a8a901709572a48d4d1c61993c215dda0c2a",
+      "bundle": "fiction/manuscript/part-2/196-200.md"
+    },
+    {
+      "chapter": 197,
+      "title": "도원향의 병문안",
+      "pov": "엘리스",
+      "body_chars": 2282,
+      "body_sha256": "8666d557ad2ba19802181f81a20e97708d1e4c7870119f57abac4c3b22c3b687",
+      "bundle": "fiction/manuscript/part-2/196-200.md"
+    },
+    {
+      "chapter": 198,
+      "title": "호텔의 독창",
+      "pov": "엘리스",
+      "body_chars": 2273,
+      "body_sha256": "6506fe9d1b1ff553e6390b46b0c7804fd6f3e789cf03cab335729ff7726571ef",
+      "bundle": "fiction/manuscript/part-2/196-200.md"
+    },
+    {
+      "chapter": 199,
+      "title": "제거 대상 레드퀸",
+      "pov": "주민",
+      "body_chars": 2277,
+      "body_sha256": "2b05972e3e8c0e0ad61454dfacb01fd849596118245448b688503065084ec1b5",
+      "bundle": "fiction/manuscript/part-2/196-200.md"
+    },
+    {
+      "chapter": 200,
+      "title": "창을 지키는 사람",
+      "pov": "다빈",
+      "body_chars": 2283,
+      "body_sha256": "bce8e57c326e36e944893f87249a2889837d111f9dc8289cc8691fd415b60f06",
+      "bundle": "fiction/manuscript/part-2/196-200.md"
+    },
+    {
+      "chapter": 201,
+      "title": "독의 뿌리를 자르는 수술",
+      "pov": "주민",
+      "body_chars": 2218,
+      "body_sha256": "2af42a445cccab02160970e362701b08fc72f176701382721900f14afc378b6a",
+      "bundle": "fiction/manuscript/part-2/201-205.md"
+    },
+    {
+      "chapter": 202,
+      "title": "살아난 사람들의 식사",
+      "pov": "엘리스",
+      "body_chars": 2225,
+      "body_sha256": "3d268cbefc68fd397137a2e6cf56c733eb41abf7b2266e5b85230bf90a27b5eb",
+      "bundle": "fiction/manuscript/part-2/201-205.md"
+    },
+    {
+      "chapter": 203,
+      "title": "세 사람의 공동 전선",
+      "pov": "엘리스",
+      "body_chars": 2366,
+      "body_sha256": "c742b0c83073cbc1860d7a9762ac190e1c71adc80ef2afa2d29ddbbc0f518cfd",
+      "bundle": "fiction/manuscript/part-2/201-205.md"
+    },
+    {
+      "chapter": 204,
+      "title": "주안의 바깥 전쟁",
+      "pov": "주안",
+      "body_chars": 2526,
+      "body_sha256": "656fd4051b0dcef89a218d60ae9aca231d066faa40be7af22fd095d080a8292e",
+      "bundle": "fiction/manuscript/part-2/201-205.md"
+    },
+    {
+      "chapter": 205,
+      "title": "미래를 알리는 통화",
+      "pov": "다빈",
+      "body_chars": 2456,
+      "body_sha256": "716c011794c802c679368f89a4dc26e4f7aaa2ae717e6e557dd765149bae3972",
+      "bundle": "fiction/manuscript/part-2/201-205.md"
+    },
+    {
+      "chapter": 206,
+      "title": "의식 전날의 집",
+      "pov": "다빈",
+      "body_chars": 2244,
+      "body_sha256": "268ee8a99aead7d45f11df7cc87e73e6f6a16a15f5cdf92cfcdce28a3e4fa560",
+      "bundle": "fiction/manuscript/part-2/206-210.md"
+    },
+    {
+      "chapter": 207,
+      "title": "여섯 개의 입구",
+      "pov": "엘리스",
+      "body_chars": 2249,
+      "body_sha256": "ce28d7b2021ab0bcb0255e3f936f47f6ae2e8ef0b68ac7f7a7a4e4314aac9d3f",
+      "bundle": "fiction/manuscript/part-2/206-210.md"
+    },
+    {
+      "chapter": 208,
+      "title": "에이본의 서",
+      "pov": "주민",
+      "body_chars": 2455,
+      "body_sha256": "3b5ffd4dcc4a31a70c7ac05954c340eace8c5b170f43bf35efd54d31af6c454b",
+      "bundle": "fiction/manuscript/part-2/206-210.md"
+    },
+    {
+      "chapter": 209,
+      "title": "미스캐토닉의 책임",
+      "pov": "이안",
+      "body_chars": 2459,
+      "body_sha256": "f308a9215f6602d6ba713147dd4538cc06ad5bd47730c7200e40f23c4a64a751",
+      "bundle": "fiction/manuscript/part-2/206-210.md"
+    },
+    {
+      "chapter": 210,
+      "title": "엘리엇과 이 다빈",
+      "pov": "다빈",
+      "body_chars": 2595,
+      "body_sha256": "85e9a5bd842f11a6dd74d589cf7baf4ed1bbde006d10ab580bfff33d662b6dfd",
+      "bundle": "fiction/manuscript/part-2/206-210.md"
+    },
+    {
+      "chapter": 211,
+      "title": "첫 번째 도원향",
+      "pov": "다빈",
+      "body_chars": 2415,
+      "body_sha256": "ec68e7a39ce855bdb314ce6e6ed650b951bd1680a6aa4e96c4596d49303b377e",
+      "bundle": "fiction/manuscript/part-2/211-215.md"
+    },
+    {
+      "chapter": 212,
+      "title": "두 번째 수술",
+      "pov": "주민",
+      "body_chars": 2237,
+      "body_sha256": "77a52c0d8733f2a33c16f8ad1fda94d2c7cdd53dd0fa96705e88e9b3c54f0adc",
+      "bundle": "fiction/manuscript/part-2/211-215.md"
+    },
+    {
+      "chapter": 213,
+      "title": "장벽에 남긴 이름",
+      "pov": "엘리스",
+      "body_chars": 2305,
+      "body_sha256": "2851d51959f275b57bae7bafa89564c75d47fb75e9d7b012bd31e90446943e1d",
+      "bundle": "fiction/manuscript/part-2/211-215.md"
+    },
+    {
+      "chapter": 214,
+      "title": "실패한 미래의 사람들",
+      "pov": "이안",
+      "body_chars": 2386,
+      "body_sha256": "fc50ce55d129ec68099055d910be9a2529281b30ba60d0504fe1450fa74e051a",
+      "bundle": "fiction/manuscript/part-2/211-215.md"
+    },
+    {
+      "chapter": 215,
+      "title": "검은 인자와 진주 핵",
+      "pov": "주민",
+      "body_chars": 2594,
+      "body_sha256": "0d40e15a2722450c2ab0512c8bcb1e19de0a80a6024d8213db8fb36948714c6f",
+      "bundle": "fiction/manuscript/part-2/211-215.md"
+    },
+    {
+      "chapter": 216,
+      "title": "되돌아오지 않는 심장",
+      "pov": "다빈",
+      "body_chars": 2453,
+      "body_sha256": "0e13d831c206996ac4fbe2424fb9ef68a558de00a2a45f31a38c248229068b71",
+      "bundle": "fiction/manuscript/part-2/216-220.md"
+    },
+    {
+      "chapter": 217,
+      "title": "미래를 배신하는 사람들",
+      "pov": "엘리스",
+      "body_chars": 2370,
+      "body_sha256": "80c94a45b7d10990f15ce03663a425689c441b73320e955873b22eda5ab7d414",
+      "bundle": "fiction/manuscript/part-2/216-220.md"
+    },
+    {
+      "chapter": 218,
+      "title": "선배의 마지막 기록",
+      "pov": "이안",
+      "body_chars": 2431,
+      "body_sha256": "29d661f65bc8d5b4c71740344c9267289585aeeafd99e63a35ff8687e7b0b7da",
+      "bundle": "fiction/manuscript/part-2/216-220.md"
+    },
+    {
+      "chapter": 219,
+      "title": "한 번뿐인 결투",
+      "pov": "다빈",
+      "body_chars": 2358,
+      "body_sha256": "6ff27f35d4620db5a4af56f7f0565e3725099f9d85731522d37a4f880d1b29e5",
+      "bundle": "fiction/manuscript/part-2/216-220.md"
+    },
+    {
+      "chapter": 220,
+      "title": "도원향이 무너지는 밤",
+      "pov": "주민",
+      "body_chars": 2358,
+      "body_sha256": "84816043ea84c81d4e5a0f5365e95d8c0e70606933de02a9158a265ac7cce7f9",
+      "bundle": "fiction/manuscript/part-2/216-220.md"
+    },
+    {
+      "chapter": 221,
+      "title": "끝난 뒤의 관할권",
+      "pov": "엘리스",
+      "body_chars": 2434,
+      "body_sha256": "d056173b1eb4ecc9d7ff1f46e55cbffc1fa937dc96a51f5be3f27d20c75a1d2e",
+      "bundle": "fiction/manuscript/part-2/221-225.md"
+    },
+    {
+      "chapter": 222,
+      "title": "미래가 없는 진단서",
+      "pov": "주민",
+      "body_chars": 2407,
+      "body_sha256": "f5c7044c11fde0221335109ba033e37aba285435bdc2ab4244d3ef36ea8c413b",
+      "bundle": "fiction/manuscript/part-2/221-225.md"
+    },
+    {
+      "chapter": 223,
+      "title": "미래를 모르는 아침",
+      "pov": "다빈",
+      "body_chars": 2380,
+      "body_sha256": "ad3909cb587bbb9f8202fcde6b7570c82ea4509e253a0c6d4021eeb0d0f6fd3c",
+      "bundle": "fiction/manuscript/part-2/221-225.md"
+    },
+    {
+      "chapter": 224,
+      "title": "호출기에 남은 두 사람",
+      "pov": "엘리스",
+      "body_chars": 2418,
+      "body_sha256": "f5ab2509c3f90a4cbaafb3050a630a7b0f94932665f5831a3ed2903534ab1954",
+      "bundle": "fiction/manuscript/part-2/221-225.md"
+    },
+    {
+      "chapter": 225,
+      "title": "네가 없는 마을",
+      "pov": "이안",
+      "body_chars": 2127,
+      "body_sha256": "fdbed9aa9232bf35176b40d1e895adb7cd9209d5852246922c64e40170aedd3b",
+      "bundle": "fiction/manuscript/part-2/221-225.md"
+    }
+  ]
+}

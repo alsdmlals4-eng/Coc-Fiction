@@ -14,7 +14,7 @@
 | 실제 225화 확장 원고 | `manuscript/` |
 | 화별 제목·POV·분량·원문 SHA | `MANUSCRIPT_INDEX.json` |
 | 225화 구조 역개요·구조 진단 | `analysis/REVERSE_OUTLINE_001_225.json`, `analysis/REVERSE_OUTLINE_REPORT.md` |
-| 대표 품질 게이트·파일럿 판정 | `analysis/REPRESENTATIVE_CHAPTER_GATES.md`, `reports/REVISION_2026-07-23_PILOT_10_95_180.md` |
+| 대표 품질 게이트·파일럿·완료 묶음 패스 | `analysis/REPRESENTATIVE_CHAPTER_GATES.md`, `analysis/SCENE_PASS_REGISTRY.json`, `reports/REVISION_2026-07-23_PILOT_10_95_180.md`, `reports/REVISION_2026-07-23_SCENE_PASS_006_010.md` |
 | 현재 상태·다음 작업 | `ACTIVE_CONTEXT.md` |
 | 인수인계 | `HANDOFF.md` |
 | 출처와 구형 자료 상태 | `SOURCE_MANIFEST.md`, `archive/` |
@@ -29,7 +29,7 @@
 6. 구조 역개요·진단 보고서
 7. 각색 제안·외부 벤치마킹
 
-역개요와 진단 보고서는 원고를 설명하고 탐색하는 파생 분석본이다. 원고·Canon과 충돌하면 분석본을 갱신하며, 분석본을 근거로 정본을 자동 덮어쓰지 않는다.
+색인과 역개요의 대형 기계 생성 데이터는 활성 manifest가 immutable baseline과 승인된 묶음 override를 합성한다. baseline은 직접 작업 입력으로 사용하지 않는다. 역개요와 진단 보고서는 원고를 설명하고 탐색하는 파생 분석본이다. 원고·Canon과 충돌하면 분석본을 갱신하며, 분석본을 근거로 정본을 자동 덮어쓰지 않는다.
 
 ## 3. 현행 편성
 
@@ -57,7 +57,7 @@
 
 Developmental → Structural reverse outline → Scene diagnostic → Continuity → Line edit → Copyedit → Proofread 순서를 지킨다. 5화 단위로 원본·인과·POV·동선·상태를 검수하고, 부 단위와 225화 전체 회귀 검토를 별도로 수행한다.
 
-Structural reverse outline 기준선과 제10·95·180화 파일럿 Scene diagnostic은 완료됐다. 다음 단계는 파일럿이 포함된 5화 묶음 `006-010 → 091-095 → 176-180`의 수동 장면 카드·연속성 패스다.
+Structural reverse outline 기준선, 제10·95·180화 파일럿, `006-010` 묶음 수동 장면 카드·연속성 패스가 완료됐다. 다음 단계는 `091-095 → 176-180` 묶음 패스다.
 
 ## 7. 폐기 설정 정책
 

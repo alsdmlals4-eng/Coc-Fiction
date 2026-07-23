@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-07-23",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_006_010",
+  "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 6,
+      "section": {"key": "part-1", "label": "1부 《폭풍의 눈》"},
+      "title": "평생의 과제",
+      "pov": "이안",
+      "source": {"bundle": "fiction/manuscript/part-1/006-010.md", "body_sha256": "1b2681bdb7f660583b2a1a9f59b059f95d89ca2dd692cdcb6a1db162ce96e92a", "body_chars": 2344},
+      "chapter_function": ["OPENING", "INVESTIGATION", "REVELATION", "RELATIONSHIP", "CHOICE_AND_COST", "AFTERMATH"],
+      "state_change_axes": ["EVENT", "INFORMATION", "RELATIONSHIP", "AGENCY", "EMOTION", "BODY_OR_RESOURCE", "WORLD_RULE"],
+      "evidence": {
+        "starting_state": "복도에서 첫 총성이 울리기 전, 저녁 식당은 바다 위에 떠 있다는 사실을 잊게 만들 만큼 밝았다. 천장에는 유리 샹들리에가 줄지어 매달렸고, 벽을 따라 난 창에는 검푸른 수평선 대신 실내 조명이 비쳤다.",
+        "immediate_goal_or_focus": "교수는 포크를 들었다가 고서가 든 가방을 확인했고, 와인을 마시려다 목에 걸린 돌 펜던트를 만졌다.",
+        "opposition_and_cost": "중앙에 박힌 푸른 결정도 지금은 빛나지 않았다.",
+        "turn_or_discovery": "국제 안보위원회와 여러 정부 기관의 직함이 길게 소개된 뒤 윌리엄 카터가 나타났다.",
+        "decision_or_choice": "화면 속 그는 흠잡을 곳 없이 정돈된 정장과 낮고 안정된 목소리로 테러와 재난, 국가의 보호 의무를 말했다.",
+        "ending_state": "식당의 모든 것이 계속 평범하게 움직였다. 문밖의 노란 소매만이 그 평범함과 맞지 않았다.",
+        "next_pressure": "다음 제7화 「노란 코트가 들어온 밤」(엘리스 POV)로 압력이 이월된다. 현재 화 마지막 증거: 문밖의 노란 소매만이 그 평범함과 맞지 않았다."
+      },
+      "metrics": {"paragraphs": 39, "average_paragraph_chars": 60.1, "dialogue_ratio": 0.1651, "theme_term_hits": {"선택": 2, "보호": 3, "사람": 4}},
+      "structural_flags": ["MULTI_TURN_DENSITY", "POV_HANDOFF"],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {"chapter": 5, "title": "황색의 승선", "pov": "아킴"},
+      "next_chapter": {"chapter": 7, "title": "노란 코트가 들어온 밤", "pov": "엘리스"}
+    },
+    {
+      "chapter": 7,
+      "section": {"key": "part-1", "label": "1부 《폭풍의 눈》"},
+      "title": "노란 코트가 들어온 밤",
+      "pov": "엘리스",
+      "source": {"bundle": "fiction/manuscript/part-1/006-010.md", "body_sha256": "11fcb4fe99c8840fb3845def385df801b5cdec35e7bfbc285a8747d9caa850d0", "body_chars": 2644},
+      "chapter_function": ["OPENING", "REVELATION", "RELATIONSHIP", "NEGOTIATION", "CHOICE_AND_COST", "AFTERMATH", "FINALE"],
+      "state_change_axes": ["EVENT", "INFORMATION", "RELATIONSHIP", "EMOTION", "BODY_OR_RESOURCE", "WORLD_RULE"],
+      "evidence": {
+        "starting_state": "엘리스는 세실리아와 함께 저녁 식당으로 내려왔다. 윌리엄의 연설은 이미 끝났지만 화면 아래에는 그의 이름과 직함이 자막처럼 남아 있었다.",
+        "immediate_goal_or_focus": "윌리엄의 연설은 이미 끝났지만 화면 아래에는 그의 이름과 직함이 자막처럼 남아 있었다.",
+        "opposition_and_cost": "“시범이면 관객이 위험하지는 않겠죠.”",
+        "turn_or_discovery": "그때 엘리스의 목 뒤가 서늘해졌다.",
+        "decision_or_choice": "엘리스는 조금 마음에 들었다.",
+        "ending_state": "첫 비명은 아직 나오지 않았다. 그 직전의 한순간, 엘리스는 평범했던 저녁이 완전히 끝났다는 것을 알았다.",
+        "next_pressure": "다음 제8화 「식당의 비명」(주안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 그 직전의 한순간, 엘리스는 평범했던 저녁이 완전히 끝났다는 것을 알았다."
+      },
+      "metrics": {"paragraphs": 60, "average_paragraph_chars": 44.1, "dialogue_ratio": 0.138, "theme_term_hits": {"보호": 3, "사람": 10}},
+      "structural_flags": ["MULTI_TURN_DENSITY", "POV_HANDOFF"],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {"chapter": 6, "title": "평생의 과제", "pov": "이안"},
+      "next_chapter": {"chapter": 8, "title": "식당의 비명", "pov": "주안"}
+    },
+    {
+      "chapter": 9,
+      "section": {"key": "part-1", "label": "1부 《폭풍의 눈》"},
+      "title": "납치된 세실리아",
+      "pov": "아킴",
+      "source": {"bundle": "fiction/manuscript/part-1/006-010.md", "body_sha256": "9bc13a600ddc48f3284c01cf9522b41a8575c72e081fe65f26d82aa5aacdeab3", "body_chars": 2598},
+      "chapter_function": ["INCITING_INCIDENT", "REVELATION", "CHOICE_AND_COST", "FINALE"],
+      "state_change_axes": ["EVENT", "INFORMATION", "AGENCY", "EMOTION", "BODY_OR_RESOURCE", "WORLD_RULE"],
+      "evidence": {
+        "starting_state": "같은 시각, 아킴이 식당 쪽 복도에 들어섰을 때 문틈에서는 이미 피와 증기가 밀려나오고 있었다. 조금 전 서비스 통로에서 데커와 총을 주고받는 동안에도 비명은 끊이지 않았다.",
+        "immediate_goal_or_focus": "브루고는 작은 카터를 추적한다.",
+        "opposition_and_cost": "한 경호원은 어깨에 피를 흘리고 있었고, 다른 한 명은 뒤를 돌아보며 권총을 겨눴다.",
+        "turn_or_discovery": "불빛 사이로 섬의 윤곽이 잠깐 나타났다 사라졌다.",
+        "decision_or_choice": "아킴은 진심으로 말했다.",
+        "ending_state": "섬은 배에 탄 모든 사람을 같은 장소로 끌어모으고 있었다. 황색이 시작한 습격이었지만, 끝을 정할 권한은 이미 다른 존재에게 넘어가고 있었다.",
+        "next_pressure": "다음 제10화 「거짓 무전과 브루고」(주안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 황색이 시작한 습격이었지만, 끝을 정할 권한은 이미 다른 존재에게 넘어가고 있었다."
+      },
+      "metrics": {"paragraphs": 58, "average_paragraph_chars": 44.8, "dialogue_ratio": 0.1316, "theme_term_hits": {"보호": 1, "명령": 6, "사람": 7}},
+      "structural_flags": ["POV_HANDOFF"],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {"chapter": 8, "title": "식당의 비명", "pov": "주안"},
+      "next_chapter": {"chapter": 10, "title": "거짓 무전과 브루고", "pov": "주안"}
+    }
+  ]
+}

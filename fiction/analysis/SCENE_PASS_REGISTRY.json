@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-07-23",
+  "status": "ACTIVE / MANUAL_SCENE_PASS_TRACKER",
+  "source_policy": {
+    "primary_source_direct_match": "UNVERIFIED",
+    "reason": "User-provided Google Drive source folder is not accessible to the connected account; metadata 404 and direct children empty.",
+    "folder_url": "https://drive.google.com/drive/folders/1EPA-bg8ExjvK-XPadKqdab2cCSNMWVt0"
+  },
+  "representative_pilots": [
+    10,
+    95,
+    180
+  ],
+  "completed_bundle_passes": [
+    {
+      "bundle": "fiction/manuscript/part-1/006-010.md",
+      "chapters": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "boundary_chapters": [
+        5,
+        11
+      ],
+      "scene_cards": "fiction/analysis/SCENE_CARDS_006_010.md",
+      "revision_report": "fiction/reports/REVISION_2026-07-23_SCENE_PASS_006_010.md",
+      "chapter_shas": {
+        "6": "1b2681bdb7f660583b2a1a9f59b059f95d89ca2dd692cdcb6a1db162ce96e92a",
+        "7": "11fcb4fe99c8840fb3845def385df801b5cdec35e7bfbc285a8747d9caa850d0",
+        "8": "9c5c5e4b5fef29eb98de705a5af331881fa49078b5e9db66ee912a452591cbe2",
+        "9": "9bc13a600ddc48f3284c01cf9522b41a8575c72e081fe65f26d82aa5aacdeab3",
+        "10": "62492d465a2cb3e0a83761ad050c04858e145596c44285accc63b3468ea72bdb"
+      },
+      "status": "COMPLETE_INTERNAL_CONTINUITY / PRIMARY_SOURCE_UNVERIFIED"
+    }
+  ],
+  "next_bundle_passes": [
+    "fiction/manuscript/side-story-lake/091-095.md",
+    "fiction/manuscript/part-2/176-180.md"
+  ]
+}

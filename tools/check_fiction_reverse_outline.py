@@ -6,6 +6,8 @@ import re
 import sys
 from pathlib import Path
 
+from fiction_composed_data import load_manuscript_index, load_reverse_outline
+
 ROOT = Path(__file__).resolve().parents[1]
 FICTION = ROOT / "fiction"
 ANALYSIS = FICTION / "analysis"
@@ -19,21 +21,21 @@ for path in (OUTLINE, REPORT, GATES):
         errors.append(f"missing {path.relative_to(ROOT)}")
 
 try:
-    index = json.loads((FICTION / "MANUSCRIPT_INDEX.json").read_text(encoding="utf-8"))
+    index = load_manuscript_index(FICTION)
     index_entries = {int(item["chapter"]): item for item in index.get("chapters", [])}
 except Exception as exc:
     index_entries = {}
     errors.append(f"invalid MANUSCRIPT_INDEX.json: {exc}")
 
 try:
-    outline = json.loads(OUTLINE.read_text(encoding="utf-8"))
+    outline = load_reverse_outline(FICTION)
     chapters = outline.get("chapters", [])
 except Exception as exc:
     outline = {}
     chapters = []
     errors.append(f"invalid reverse outline JSON: {exc}")
 
-if outline.get("status") != "ACTIVE_ANALYSIS / EXTRACTIVE_BASELINE / MANUAL_REVIEW_REQUIRED":
+if "MANUAL_REVIEW_REQUIRED" not in outline.get("status", ""):
     errors.append("reverse outline status must preserve manual-review requirement")
 if "No manuscript body" not in outline.get("protected_content", ""):
     errors.append("reverse outline must state that manuscript bodies are protected")
@@ -112,7 +114,10 @@ for stale in (
     "컨소시엄",
     "협상 책임자",
 ):
-    for path in (OUTLINE, REPORT, GATES):
+    effective_outline_text = json.dumps(outline, ensure_ascii=False)
+    if stale in effective_outline_text:
+        errors.append(f"stale reference in effective reverse outline: {stale}")
+    for path in (REPORT, GATES):
         if path.is_file() and stale in path.read_text(encoding="utf-8"):
             errors.append(f"stale reference in {path.relative_to(ROOT)}: {stale}")
 
