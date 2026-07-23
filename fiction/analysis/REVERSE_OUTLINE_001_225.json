@@ -5,23 +5,11 @@
   "status": "ACTIVE_ANALYSIS / COMPOSED_BASELINE / MANUAL_REVIEW_REQUIRED",
   "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
   "overrides": [
-    "REVERSE_OUTLINE_OVERRIDE_006_010.json"
+    "REVERSE_OUTLINE_OVERRIDE_006_010.json",
+    "REVERSE_OUTLINE_OVERRIDE_091_095.json"
   ],
   "expected_chapters": 225,
-  "representative_gate_chapters": [
-    1,
-    3,
-    10,
-    20,
-    70,
-    95,
-    130,
-    165,
-    166,
-    180,
-    200,
-    225
-  ],
+  "representative_gate_chapters": [1,3,10,20,70,95,130,165,166,180,200,225],
   "protected_content": "No manuscript body or existing body SHA is changed by this artifact.",
   "consumer": "tools/fiction_composed_data.py::load_reverse_outline"
 }

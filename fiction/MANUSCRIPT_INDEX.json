@@ -5,7 +5,8 @@
   "status": "ACTIVE / COMPOSED / 225_CHAPTERS",
   "baseline": "analysis/baselines/MANUSCRIPT_INDEX_2026-07-23_PILOT.json",
   "overrides": [
-    "analysis/MANUSCRIPT_INDEX_OVERRIDE_006_010.json"
+    "analysis/MANUSCRIPT_INDEX_OVERRIDE_006_010.json",
+    "analysis/MANUSCRIPT_INDEX_OVERRIDE_091_095.json"
   ],
   "counting_rule": "본문만 집계하며 시작·끝 마커와 POV 표식은 제외한다. 공백과 줄바꿈은 포함한다.",
   "expected_chapters": 225,

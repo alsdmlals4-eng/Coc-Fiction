@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-07-23",
+  "status": "ACTIVE_OVERRIDE / SOURCE_PASS_091_095",
+  "baseline": "analysis/baselines/MANUSCRIPT_INDEX_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 91,
+      "title": "답을 찾았느냐",
+      "pov": "주안",
+      "body_chars": 2049,
+      "body_sha256": "fdbc8ddf2d7ed58ff482543672bf9e7ee2f6aeb1b48bacf3934999f8b839ca44",
+      "bundle": "fiction/manuscript/side-story-lake/091-095.md"
+    },
+    {
+      "chapter": 92,
+      "title": "세 사람이 사는 집",
+      "pov": "주안",
+      "body_chars": 2262,
+      "body_sha256": "82939a9d94164790f0a94e508ea6b5e91f11fb0ce947494fb4bc55481d63551d",
+      "bundle": "fiction/manuscript/side-story-lake/091-095.md"
+    },
+    {
+      "chapter": 93,
+      "title": "카터가의 진로 상담",
+      "pov": "엘리스",
+      "body_chars": 2186,
+      "body_sha256": "fff1beece00334bcc1d1a777590f40debb60abe6bdd4a2ad8bcc7e6d10ebd72e",
+      "bundle": "fiction/manuscript/side-story-lake/091-095.md"
+    },
+    {
+      "chapter": 94,
+      "title": "오랜만의 전화",
+      "pov": "엘리스",
+      "body_chars": 2266,
+      "body_sha256": "267e8626ebd31a0b8678af767dd8f8e2f3cbee6964e15d9a9b99f378d9d08ef9",
+      "bundle": "fiction/manuscript/side-story-lake/091-095.md"
+    },
+    {
+      "chapter": 95,
+      "title": "다음 이야기의 문 앞",
+      "pov": "다빈",
+      "body_chars": 2402,
+      "body_sha256": "f15efb0650aae97f4dad79f9e2419838fd16918d85a6f3b41a4ba614aeba74e9",
+      "bundle": "fiction/manuscript/side-story-lake/091-095.md"
+    }
+  ]
+}

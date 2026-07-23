@@ -17,10 +17,15 @@ def _compose(manifest_path: Path, *, baseline_key: str = "baseline") -> dict[str
     base_path = manifest_path.parent / manifest[baseline_key]
     base = _load(base_path)
     by_chapter = {int(item["chapter"]): item for item in base.get("chapters", [])}
+    seen_override_chapters: set[int] = set()
     for rel in manifest.get("overrides", []):
         override = _load(manifest_path.parent / rel)
         for item in override.get("chapters", []):
-            by_chapter[int(item["chapter"])] = item
+            number = int(item["chapter"])
+            if number in seen_override_chapters:
+                raise ValueError(f"duplicate chapter across overrides: {number}")
+            seen_override_chapters.add(number)
+            by_chapter[number] = item
     result = dict(base)
     result["schema_version"] = manifest.get("schema_version", result.get("schema_version", 1))
     result["generated_at"] = manifest.get("generated_at", result.get("generated_at"))

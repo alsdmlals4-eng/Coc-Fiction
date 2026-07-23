@@ -1,48 +1,43 @@
 # SOURCE MANIFEST
 
-상태: **ACTIVE**  
+상태: **ACTIVE**
 최종 갱신: 2026-07-23
 
-## 활성 Google Docs
+## 활성 책임 원본
 
-| 역할 | 문서 | 상태 |
+| 역할 | 문서·경로 | 상태 |
 |---|---|---|
 | 현행 기획서·작품 코어 | [《폭풍의 눈》 현행 기획서·작품 코어](https://docs.google.com/document/d/1b7LL-q6p4UTV6DCYDj3CcLgemw3gyLcU_3WSaaSV6zE) | `ACTIVE / INTEGRATED VIEW` |
 | 현재 상태·인수인계 | [《폭풍의 눈》 활성 인수인계](https://docs.google.com/document/d/1gP0yTgT0eLgMcb-21FW1qwgWQVSKxfjiAvIVLyqlJ2E) | `ACTIVE` |
-| 225화 실제 편집 원고 | `fiction/manuscript/`의 45개 5화 묶음 | `ACTIVE / DRAFT` |
+| 실제 편집 원고 | `manuscript/` 45개 묶음 | `ACTIVE / DRAFT` |
+| 원본 로그 인벤토리 | `sources/PRIMARY_SOURCE_INVENTORY.md` | `ACTIVE` |
+| 묶음별 직접 대조 상태 | `analysis/SCENE_PASS_REGISTRY.json` | `ACTIVE` |
 
-Google Docs 기획서는 사람이 빠르게 읽는 통합 뷰다. 충돌 시 GitHub의 `FICTION_MASTER.md`, `CANON_REGISTRY.json`, `MANUSCRIPT_INDEX.json`과 개별 책임 원본을 우선한다.
+Google Docs는 통합 읽기 뷰다. 충돌 시 GitHub의 책임 원본과 같은 커밋의 원고·색인·장면 카드·Revision Report를 우선한다.
 
-## 이전 자료 판정
+## 원본 자료 가용성
 
-- 구 통합 문서: 최신 225화 확장 원고를 GitHub로 이전할 때 마이그레이션 원문 증거로 한 번 사용했다. 현행 편집은 GitHub 분할 원고에서만 수행한다.
-- 별도 225화 압축 초안: 최신 원고보다 짧고 오래된 파생본이다. 파일럿에서는 사건 뼈대가 바뀌지 않았는지 보는 보조 비교에만 사용했으며 문장·Canon 권한은 부여하지 않았다.
-- 구 인수인계: 원본 파일명과 과거 재감사 범위를 확인하는 보조 증거다. 현재 진행 상태와 원고 문장을 책임지지 않는다.
+원본 1부·외전1·2부 PDF 본체가 현재 대화 파일로 확보됐다. 파일명·SHA256·감사 상태는 `sources/PRIMARY_SOURCE_INVENTORY.md`에서 관리한다. `AVAILABLE`을 전체 원고 감사 완료로 해석하지 않으며, 묶음별 판정만 Registry에 기록한다.
 
-## 원본 자료 가용성 감사
+### 직접 대조 완료
 
-2026-07-23에 Google Drive와 대화·파일 라이브러리를 다시 검색했다. 과거 인수인계가 열거한 원본 1부·외전1·2부 PDF/텍스트와 원본 재감사 보고서의 **실제 본체는 확인되지 않았다**. 사용자가 원본 폴더 `https://drive.google.com/drive/folders/1EPA-bg8ExjvK-XPadKqdab2cCSNMWVt0`를 제공했으나 현재 연결 계정에서는 자식 파일 0개, 메타데이터 404로 반환됐다. 현재 확인 가능한 것은 파일명·존재 기록·일부 사건 교정 요약뿐이다.
+- 외전1 종결: 원본 `COC 외전 - 호수가 보이는 마을(2).pdf` 113~147쪽
+- 원고 범위: 제91~95화
+- 경계: 제90화·제96화
+- 판정: 사건 순서·동행·행선지·전화 내용·다음 이야기 예고 `SOURCE_MATCHED`
+- 상세: `reports/REVISION_2026-07-23_SOURCE_PASS_091_095.md`
 
-따라서 다음은 계속 `UNVERIFIED`다.
+### 아직 직접 대조 미완료
 
-- 제1화~제225화와 원본 로그의 장면 단위 완전 일치
-- 제6화~제10화, 제95화, 제180화의 원문 대사·세부 동선 보존
-- 과거 표본 검수 보고서의 전체 62개 항목
+- 제1~90화
+- 제96~225화
+- 완료된 `006-010` 내부 연속성 패스의 원본 재감사
+- 제180화 파일럿과 2부 원본 직접 대조
 
-원본 본체가 제공되면 `PRIMARY`로 등록하고, 현재 원고와의 차이를 finding으로 남긴 뒤 사용자 승인 범위에서만 반영한다.
+## 각색 제외 정책
 
-## 로컬 내보내기 해시
+원본에 존재해도 최신 사용자 지시와 Canon Registry에서 폐기한 요소는 복원하지 않는다. 이번 외전1 종결 패스에서는 오션 후일담·아프리카 임무·독립 마피아/동물 장기축을 명시적으로 제외했다. 제외 판단은 누락이 아니라 상위 정본 적용 결과다.
 
-- 최신 통합 문서 내보내기: SHA256 `5de05d6b332a4af4af9f44b041d743eeaf2387e277ea90143d5530efcb713e60`
-- 구 225화 압축 원고 내보내기: SHA256 `05975c5b941b1935456d91ce9f914d606b644cb3fe3bc7fd17f4f3fb0288cb7f`
-- 구 인수인계 내보내기: SHA256 `4700b5091c8aec7c6a4aa89db24180f48584b765c32322fef26c250ad6530c97`
+## 구형 자료 정책
 
-해시는 누락 대조와 파생본 판별용이다. 해시만으로 해당 파일을 현행 Canon으로 승격하지 않는다.
-
-## 구형 자료 접근
-
-구형 Google Docs의 ID·대체 관계는 `archive/SUPERSEDED_GOOGLE_DOCS.md`에만 기록한다. 활성 작업자는 직접 참조하지 않으며, 누락 감사나 변경 근거 확인 시에만 Source Manifest를 경유한다.
-
-## 확인 불가 자료
-
-기존 검수 보고서 Google Doc은 연결 계정에서 직접 열리지 않았다. 활성 근거로 사용하지 않으며 현행 검수 결과는 `reports/`와 자동 검사에 기록한다.
+과거 통합 문서·압축 초안·구 인수인계는 현행 편집 입력이 아니다. 대체 관계와 식별 정보는 archive 인벤토리에서만 관리하며, 활성 문서는 해당 파일을 직접 링크하거나 원고 근거로 사용하지 않는다.
