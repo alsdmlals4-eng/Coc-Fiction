@@ -17,6 +17,7 @@
 | 대표 게이트·완료 묶음 패스 | `analysis/REPRESENTATIVE_CHAPTER_GATES.md`, `analysis/SCENE_PASS_REGISTRY.json` |
 | 원본 파일·감사 상태 | `SOURCE_MANIFEST.md`, `sources/PRIMARY_SOURCE_INVENTORY.md` |
 | 현재 상태·다음 작업 | `ACTIVE_CONTEXT.md` |
+| 현재 묶음 범위·보호·완료 조건 | `../docs/coordination/SOURCE_PASS_176_180_WORK_CONTRACT.md` |
 | 인수인계 | `HANDOFF.md` |
 
 ## 2. 정본 우선순위
@@ -56,7 +57,9 @@
 
 ## 6. 퇴고 순서
 
-Source inventory → Canon audit → Developmental → Structural reverse outline → Scene diagnostic → Continuity → Line edit → Copyedit → Proofread 순서를 지킨다. 5화 단위로 원본·인과·POV·시간·동선·상태를 검수하고 부 단위와 225화 전체 회귀를 별도로 수행한다.
+Source inventory → Canon audit → Developmental → Structural reverse outline → Scene diagnostic → Continuity → Line edit → Copyedit → Proofread 순서를 지킨다.
+
+5화 단위 원본·구조·연속성 작업은 `fiction-revision-and-validation: serial-arc-pass`로 실행한다. 직전·직후 경계와 원본 범위를 작업 계약에 고정하고, 장면 카드·원고·색인·역개요 override·Scene Pass Registry·Revision Report·활성 기획 문서를 같은 PR에서 갱신한다. 완료 묶음의 규칙은 동일 결함이 확인된 범위에만 적용하며, 부 단위와 225화 전체 회귀를 별도로 수행한다.
 
 완료:
 
@@ -65,7 +68,7 @@ Source inventory → Canon audit → Developmental → Structural reverse outlin
 - `006-010` 내부 연속성 패스
 - `091-095` 원본 직접 대조 패스
 
-다음: `176-180` 원본 직접 대조 패스.
+다음: `docs/coordination/SOURCE_PASS_176_180_WORK_CONTRACT.md`에 따른 `176-180` 원본 직접 대조 패스.
 
 ## 7. 폐기 설정 정책
 
