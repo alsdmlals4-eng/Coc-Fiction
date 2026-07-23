@@ -11,6 +11,7 @@ docs/coordination/CONCURRENT_WORK.md
 → fiction/CANON_REGISTRY.json
 → fiction/SOURCE_MANIFEST.md
 → fiction/sources/PRIMARY_SOURCE_INVENTORY.md
+→ docs/coordination/SOURCE_PASS_176_180_WORK_CONTRACT.md
 → fiction/analysis/SCENE_PASS_REGISTRY.json
 → 현재 묶음의 Scene Card·Revision Report
 → fiction/analysis/REPRESENTATIVE_CHAPTER_GATES.md
@@ -35,7 +36,7 @@ docs/coordination/CONCURRENT_WORK.md
 - `fiction-story-development`: 코어·인과·인물·장면 카드·stress-test
 - `fiction-drafting`: 승인된 POV·대화·묘사·리듬 수정
 - `fiction-canon-and-research`: 원본 로그·Canon·연표·출처·구형 참조 감사
-- `fiction-revision-and-validation`: 구조·연속성·적대적 검토·회귀·PR 검수
+- `fiction-revision-and-validation`: `serial-arc-pass`로 묶음 경계·원본·Canon·파생 자료·기획 문서를 통합 검수하고, 구조·연속성·적대적 검토·회귀·PR 검수를 수행
 
 ## 절대 우선순위
 
@@ -51,7 +52,13 @@ docs/coordination/CONCURRENT_WORK.md
 
 ## 다음 시작 묶음
 
-`fiction/manuscript/part-2/176-180.md`를 제175·181화 경계와 원본 2부 로그까지 포함해 직접 대조한다.
+`docs/coordination/SOURCE_PASS_176_180_WORK_CONTRACT.md`를 기준으로 `fiction/manuscript/part-2/176-180.md`를 제175·181화 경계와 원본 2부 로그까지 포함해 직접 대조한다.
+
+라우팅:
+
+- 주 Skill: `fiction-canon-and-research: source-log / canon-audit / continuity-map / timeline-and-state`
+- 통합 묶음 mode: `fiction-revision-and-validation: serial-arc-pass`
+- 보조: `fiction-story-development: scene-card / plot-and-causality / stress-test`, 승인된 수정이 있을 때만 `fiction-drafting: approved-rewrite`
 
 ## 작업 단계 지도
 
