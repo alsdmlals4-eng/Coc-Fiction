@@ -28,12 +28,22 @@ if actual_archive_sha != expected_archive_sha:
     raise SystemExit(f"archive SHA mismatch: {actual_archive_sha}")
 archive.write_bytes(raw)
 
+extracted_files: list[Path] = []
 with tarfile.open(archive, "r:gz") as tf:
     for member in tf.getmembers():
         dest = (ROOT / member.name).resolve()
         if ROOT.resolve() not in dest.parents and dest != ROOT.resolve():
             raise SystemExit(f"unsafe archive path: {member.name}")
+        if member.isfile():
+            extracted_files.append(ROOT / member.name)
     tf.extractall(ROOT)
+
+for path in extracted_files:
+    if path.suffix.lower() not in {".md", ".json", ".py", ".yml", ".yaml"}:
+        continue
+    text = path.read_text(encoding="utf-8")
+    normalized = "\n".join(line.rstrip(" \t") for line in text.splitlines()) + "\n"
+    path.write_text(normalized, encoding="utf-8")
 
 start_text = START_HERE.read_text(encoding="utf-8")
 if "## 작업 단계 지도" not in start_text:
