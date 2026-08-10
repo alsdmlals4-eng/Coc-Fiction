@@ -50,9 +50,9 @@ external latest Ch1-5
 | 2 | 6139 | `4a365526b359afa128989f9cd2a01def075e39b9a192495b6f7532580502d16e` |
 | 3 | 6226 | `46fecaa8909019393038e4f34a13790bc17c0ff3596a831774b8583258e204e8` |
 | 4 | 6850 | `61176e16405b95064210a7e071e5bcca7bc2f9435aed422235fca5a8df4a1747` |
-| 5 | 5998 | `794ade62ba047c98fed4cac48ddfd7ab9c77858323359c3a1b51b2fad37fee6a` |
+| 5 | 5996 | `2b7d2e242e69cf43cc4063aad1dafd9a968b66c93d5d4c3f16f93bcaaf1b19e2` |
 
-본문 해시는 명시적 POV 표식과 장면 구분선을 포함하고 제목/POV 메타 헤더와 source comment는 제외한 GitHub manuscript body 기준이다.
+본문 해시는 명시적 POV 표식과 장면 구분선을 포함하고 제목/POV 메타 헤더와 source comment는 제외한 **현재 PR branch의 실제 GitHub manuscript body** 기준이다. 외부 DOCX staging copy와 branch body 사이의 미세한 문자 차이가 있더라도 GitHub 정본 소비자는 branch body exact SHA를 사용한다.
 
 ## Canon / character regression
 
@@ -87,7 +87,7 @@ next_bundle: fiction/manuscript/part-1/006-010.md
 - `fiction/analysis/REVERSE_OUTLINE_OVERRIDE_006_010.json`
 - `fiction/analysis/SCENE_PASS_REGISTRY.json`
 - `fiction/analysis/SCENE_CARDS_001_005.md`
-- 대표 게이트·역개요 보고·FICTION_MASTER·START_HERE·Active Context/Handoff
+- 대표 게이트·역개요 보고·FICTION_MASTER·START_HERE
 - `tools/build_fiction_reverse_outline.py`
 - `tools/check_fiction_scene_passes.py`
 
