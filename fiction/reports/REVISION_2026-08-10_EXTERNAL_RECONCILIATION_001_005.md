@@ -27,7 +27,7 @@ external latest Ch1-5
 - 원본: `COC 1일차.pdf`, `COC 2일차.pdf`
 - integrated navigation: `Coc 폭풍의 눈(주안편).xlsx`
 - Canon: `fiction/CANON_REGISTRY.json`
-- superseded 225화 압축 초안: 사용하지 않음
+- 폐기된 legacy 통합 초안: 사용하지 않음
 - Base active implementation: 없음
 
 ## 회차별 판정
@@ -56,12 +56,12 @@ external latest Ch1-5
 
 ## Canon / character regression
 
-- 주안: 독립 `복종인자` 설명축을 복원하지 않는다. 제4화의 흰 방은 본인도 기억/상상/공격 거짓 여부를 확정하지 않으며, 엘리스가 “내가 시켜서 말고”라고 이유 공간을 돌려준 뒤 주안이 “당신이 싫어서”라고 선택 이유를 다시 잡는다.
+- 주안: 폐기된 과거 독립 조건화 설명축을 복원하지 않는다. 제4화의 흰 방은 본인도 기억/상상/공격 거짓 여부를 확정하지 않으며, 엘리스가 “내가 시켜서 말고”라고 이유 공간을 돌려준 뒤 주안이 “당신이 싫어서”라고 선택 이유를 다시 잡는다.
 - 엘리스: 주안을 대신 결정하지 않고 선택 공간을 되돌리는 역할을 유지한다.
 - 신호기: 단순 신호→수신 진동. GPS/문자/통화/위치추적 기능 없음.
 - 아킴: 이번 1~5 직접 중심축이 아니며 등장 허용 Canon과 충돌 없음.
-- 2부 버실라/Woff exclusion과 충돌 없음.
-- 새/수정 원고 금지 설정명: `복종인자`, `블랙킹`, `조작된 감정`, `오션`, `앨리스`를 설명축으로 사용하지 않음.
+- 2부 제외 인물축의 직접 등장·개인 서사·독립 기능 복원 없음.
+- active strict 금지어 및 신규/재퇴고 금지 설정 회귀 검사: 위반 0을 목표로 CI에서 재검증한다.
 
 ## Mixed migration boundary
 
@@ -105,7 +105,7 @@ next_bundle: fiction/manuscript/part-1/006-010.md
 
 ### GREEN
 
-최종 exact-head workflow 결과는 PR의 최종 검증 후 이 보고와 PR 본문에 기록한다. Green 이전에는 완료로 주장하지 않는다.
+최종 exact-head workflow 결과는 PR의 최종 검증 후 PR 본문과 continuation state에 기록한다. Green 이전에는 완료로 주장하지 않는다.
 
 ## Project learning
 
