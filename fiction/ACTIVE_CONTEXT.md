@@ -10,142 +10,139 @@
 - 프로젝트 보조 책임: `fiction-revision-and-validation: serial-arc-pass / scene-diagnostic / adversarial-loop / regression-check / pr-review`, `fiction-story-development: scene-card / plot-and-causality / stress-test`, `fiction-drafting: approved-rewrite / pov-and-distance / dialogue-and-subtext`, `fiction-project-operations: checkpoint / handoff / execution-report`
 - Base 공용 작법: `developing-and-revising-serial-fiction`의 Canon/각색 경계, POV·voice, 회차 가치, Local Payoff/Open Loop를 선택적으로 재사용한다.
 
-## GitHub main에서 검증된 완료 상태
+## Continuation State
 
 ```yaml
-repository:
+baseline:
   default_branch: main
-  last_observed_main_sha: 3f90929f33de6a829521f9ed39c23becc7ed9d11
-  last_observed_reason: PR #15 merge 직후 post-merge runtime truth 재조회
-integration:
-  last_merged_pr: 15
-  merge_commit_sha: 3f90929f33de6a829521f9ed39c23becc7ed9d11
+  last_observed_main_sha: 9a7b2e2419465bd76daf0cf09b96ed7c0cd7d54c
+  last_integrated_pr: 17
+  merge_commit_sha: 9a7b2e2419465bd76daf0cf09b96ed7c0cd7d54c
+
+progress:
+  completed_verified:
+    - PR #13 project/Base operating reconciliation
+    - PR #14 latest Canon synchronization
+    - PR #15 Base proposal locator persistence
+    - PR #16 post-merge live-router semantics correction
+    - external latest chapters 001-005 source/canon reconciliation and merge
+  in_progress:
+    - external latest chapters 001-105 gradual canon reconciliation
+  ready_next:
+    - external latest chapters 006-010 versus stored legacy 006-010
+  deferred:
+    - stored 176-180 primary-source pass after current external reconciliation sequence
+
 verification:
+  pr17_exact_head: 31a4d959cef54ad77576672ff7cca8a53db72c42
+  pr17_exact_head_ci: PASS
+  pr17_exact_head_run: 31355669160
   post_merge_ci: PASS
-  post_merge_run: 31353037984
+  post_merge_run: 31355813027
+  unresolved_pr_threads: 0
+
+migration:
+  artifact: 폭풍의눈_2차퇴고_제001-105화_POV후크_캐릭터_통합최종본.zip
+  target_chapters: [1, 105]
+  reconciled_prefix_end: 5
+  legacy_tail_starts_at: 6
+  boundary_after_chapter: 5
+  whole_manuscript_continuity: NOT_YET_CLAIMED
+  next_bundle: fiction/manuscript/part-1/006-010.md
+
+resume:
+  next_executable_step: 제6~10 외부 최신본과 저장 legacy 006-010을 원본·최신 Canon 기준으로 KEEP/APPLY/REWORK/REJECT 판정
+  stop_conditions:
+    - USER_DECISION_REQUIRED
+    - source/canon conflict that cannot be resolved from existing approved authority
+    - P0/P1 that invalidates the approved reconciliation contract
+  user_decision_needed: false
 ```
 
-`last_observed_main_sha`는 이 live-router 갱신 commit 자신의 SHA를 영원히 자기참조하는 필드가 아니다. 새 세션은 항상 GitHub `main`과 open PR을 다시 조회하고, 이 값은 마지막으로 직접 관측한 integration 기준점으로만 사용한다.
+`last_observed_main_sha`는 이 live-router 문서가 자신의 새 commit SHA를 무한 추적하는 값이 아니다. 새 세션은 항상 GitHub `main`과 open PR을 먼저 재조회하고, 위 SHA는 마지막 검증된 integration checkpoint로만 사용한다.
 
-- 제1화~제225화와 45개 5화 묶음 유지
-- 구조 역개요 기준선·대표 게이트·제10·95·180화 파일럿 완료
-- `006-010` 내부 연속성 패스와 제6·7·9화 최소 수정 완료
-- 원본 1부·외전1·2부 PDF 파일 인벤토리와 SHA256 등록
-- `091-095` 원본 직접 대조 패스 완료
-- 외전1 종결의 이가레스 문답 → 한국 정착 → 엘리스·이안 통화 → 다빈·예나 예고 순서 복원
-- 제90·96화 SHA 보존, 제91~95화만 색인·역개요 override 갱신
-- PR #13에서 Base 공용 `developing-and-revising-serial-fiction` 재사용, 프로젝트 `serial-arc-pass` 흡수, `001-105 canon reconciliation`을 다음 우선순위로 정리했다.
-- PR #14에서 최신 사용자 Decision을 Canon에 동기화했다: 주안 `반응 → 멈춤 → 이유 → 선택`, 2부 `버실라 / 바실라 / Versilla / Woff` 제외, 아킴 등장 허용.
-- PR #14는 기존 DRAFT의 폐기 설정 debt를 blind rewrite하지 않고 정확한 consumer set으로 봉인해 신규 확산만 fail-closed하는 migration debt 계약을 프로젝트에 적용했다.
-- PR #15에서 Base BCP-012 locator와 Base 구현 분리 경계를 live continuation owner에 영속화했고, merge 후 `main@3f90929f...`의 push workflow까지 `SUCCESS`를 확인했다.
+## 현재 GitHub 원고 상태
 
-## 현재 대화에서 완료된 외부 작업 산출물
+- 저장소는 기존 225화·45묶음 **storage topology**를 migration 컨테이너로 유지한다.
+- 이 225화 저장 토폴로지를 최신 narrative numbering의 최종 편성으로 사용하지 않는다.
+- 외부 최신 제1~5화는 원본 사건·최신 Canon·현재 사용자 Decision과 대조 후 GitHub manuscript에 반영됐다.
+- 합성 색인·역개요·Scene Pass Registry·대표 게이트·Revision Report가 같은 merge 기준으로 갱신됐다.
+- 새 제5화 뒤의 저장 제6화는 아직 최신 서사의 다음 사건으로 간주하지 않는다.
+- reverse outline에서 제5화 `next_chapter=null`, 저장 제6화 `previous_chapter=null`로 mixed-migration 경계를 fail-closed 처리한다.
+- 기존 저장 `006-010` 내부 연속성 패스는 삭제하지 않고 역사적 검증 증거로 보존하되, 최신 외부 편성과의 reconciliation은 별도 `PENDING`이다.
+- `091-095` 원본 직접 대조 패스도 실제 과거 검증 증거로 보존하며 최신 외부 묶음이 도달하면 원본 우선으로 다시 판정한다.
 
-2026-08-10 현재 프로젝트 대화에서 **제1~105화 POV·후크·캐릭터 통합 재퇴고본**이 별도 DOCX 묶음으로 제작·검수됐다.
+## 제1~5화 reconciliation 결과
 
-확인된 산출물 이름:
+- 제1화 `위대한 심연의 군주`: `APPLY`
+- 제2화 `내가 고른 경호원`: `APPLY`
+- 제3화 `식탁 아래의 축배`: `APPLY`
+- 제4화 `카르코사의 낭독`: `APPLY`
+- 제5화 `신호기를 잃지 마세요`: `APPLY`
 
-- `폭풍의눈_2차퇴고_제001-105화_POV후크_캐릭터_통합최종본.zip`
-- `폭풍의눈_제001-105화_통합최종_QA보고서.md`
+보존한 핵심:
 
-해당 산출물에서 사용한 주요 편집 원칙:
-
-- 한 화의 실제 POV 인물은 필요에 따라 1~3명까지 사용한다. **이 숫자는 작품별 production rule이며 Base 공용 규칙이 아니다.**
-- 같은 사건도 POV에 따라 정보·감정·판단·대화 반응·연출이 달라져야 한다.
-- 주연뿐 아니라 조연·엑스트라 POV도, 주연이 모르는 정보·오해·공포·외부평가·직업적 관찰을 실제로 추가할 때 사용할 수 있다.
-- 화 안에서 상태 변화와 Local Payoff를 주고, 다음 행동을 요구하는 질문·발견·선택·위험·감정 변화 중 하나를 Open Loop로 남긴다.
-- 캐릭터의 판단 습관·말투·윤리선·관계 상태를 회귀 검사한다.
-- 2부 `버실라 / 바실라 / Versilla / Woff` 직접 등장·개인 서사·독립 기능 복원은 금지한다. 아킴은 등장 가능하다.
-
-### 증거 경계
-
-위 제1~105화 산출물은 **현재 대화의 최신 작업 결과**다. 그러나 아직 GitHub `fiction/manuscript/`의 225화 Markdown과 동일한 정본으로 병합됐다는 증거는 없다.
-
-따라서 현재 상태는 다음처럼 분리한다.
-
-```yaml
-github_manuscript_main: 225화 DRAFT / 006-010 및 091-095 검증 반영
-external_current_chat_revision_001_105: COMPLETE_AS_ARTIFACT
-external_revision_github_canon_propagation: NOT_RUN
-```
-
-외부 DOCX를 GitHub 정본보다 우선한다고 자동 선언하거나, 반대로 GitHub의 오래된 해당 회차를 최신 대화 작업보다 최신이라고 추정하지 않는다. 양쪽을 원본 사건 기록·최신 사용자 결정과 대조해 선택적으로 통합해야 한다.
+- 주안의 현재 판단은 `반응 → 멈춤 → 이유 → 선택`이다.
+- 엘리스는 주안 대신 결론을 내리지 않고 선택 이유를 되찾도록 돕는다.
+- 제4화의 흰 방 이미지는 인물 스스로도 기억·상상·정신공격이 만든 거짓 중 무엇인지 확정하지 않는다.
+- 신호기는 단순 비상 신호와 수신 진동만 담당한다. 위치·문자·통화 기능을 추가하지 않는다.
+- 제5화에서 이안의 구조 경로와 주안·탈론의 분리 경로를 원본 사건 순서에 맞게 분리한다.
+- 최신 사용자 결정으로 제외된 축을 원본에 있다는 이유만으로 복원하지 않는다.
 
 ## Base 적용 상태
 
-- 프로젝트 운영 호환성 감사의 adopted Base 기준점: `53e63f7ebefbb5b2fc0dc528e335252692801421`
-- 현재 확인한 Base main: `49f6190b9b5a535ceb7986755c1b68b221754cf5`
-- Base BCP-009의 `developing-and-revising-serial-fiction`은 공용 작법·검수 책임으로 재사용한다.
-- Coc-Fiction의 프로젝트 Skill은 5개를 유지한다.
-- stale PR #9의 유효 고유 delta는 새 Skill이 아니라 `fiction-revision-and-validation: serial-arc-pass`로 선택적 흡수했다.
-- stale #9 전체 branch를 merge/rebase하지 않는다.
+- 현재 재조회한 Base main: `16af66ff51027f74193b60469e7c20281a1cade6`
+- Base BCP-009의 `developing-and-revising-serial-fiction`을 공용 작법·검수 owner로 재사용한다.
+- Coc-Fiction 프로젝트 Skill은 기존 5개를 유지한다.
+- 새 broad Skill을 만들지 않았다.
 
 ### Base proposal locator
 
 ```yaml
-base_proposal:
-  id: BCP-2026-012-serial-fiction-canon-migration-debt
-  proposal_pr: https://github.com/alsdmlals4-eng/Base/pull/234
-  merged_to_base_main: true
-  base_main_after_merge: 49f6190b9b5a535ceb7986755c1b68b221754cf5
-  proposal_status: SUBMITTED
-  existing_solution_verdict: ABSORB
-  proposal_storage_merge_authority: GRANTED_BY_SINGLE_FILE_EXECUTION_CONTRACT
+base_proposals:
+  canon_migration_debt:
+    id: BCP-2026-012-serial-fiction-canon-migration-debt
+    proposal_pr: https://github.com/alsdmlals4-eng/Base/pull/234
+    merged: true
+    status: SUBMITTED
+    existing_solution_verdict: ABSORB
+    project_verdict_this_cycle: REUSE_EXISTING_BCP
+  post_merge_continuation:
+    id: BCP-2026-013-post-merge-continuation-state-reconciliation
+    proposal_pr: https://github.com/alsdmlals4-eng/Base/pull/235
+    merged: true
+    status: SUBMITTED
+    project_verdict_this_cycle: REUSE_EXISTING_BCP
+
+base_boundary:
+  proposal_storage_merge_authority: already_consumed_for_relevant_proposals
   base_implementation_authority: NOT_GRANTED_IN_THIS_STAGE
-  implementation_status: NOT_STARTED_IN_THIS_STAGE
+  active_base_files_changed_by_this_cycle: 0
   implementation_boundary: SEPARATE_FOLLOWUP_STAGE
-  active_base_files_changed_by_proposal_pr: 0
-  next_action: 별도 후속 단계에서 구현 승인·추가 증거를 확인하기 전까지 Base 활성 구현 금지
 ```
 
-BCP-012는 프로젝트에서 검증된 `Canon Decision의 즉시 유효성`과 `기존 DRAFT migration 완료 상태`를 분리하고, 기존 debt를 정확한 consumer set으로 봉인해 새 위치로 증가하면 실패시키는 lifecycle을 공용 후보로 제안한다. 이 제안 병합은 Base 활성 구현 승인이 아니다.
-
-### Concurrent same-goal Base proposal — read/reference only
-
-PR #15 병합 직후 live continuation state가 한 단계 stale해지는 문제를 실제 재현했다. Base에는 다른 프로젝트 실행자가 이미 동일 공용 Goal을 `BCP-2026-013-post-merge-continuation-state-reconciliation` / Base PR #235로 제안 중이다.
-
-```yaml
-base_concurrency:
-  source_project: alsdmlals4-eng/Coc-Fiction
-  base_main_seen: 49f6190b9b5a535ceb7986755c1b68b221754cf5
-  same_goal_state: CONCURRENT_SAME_GOAL
-  related_proposal_id: BCP-2026-013-post-merge-continuation-state-reconciliation
-  related_proposal_pr: https://github.com/alsdmlals4-eng/Base/pull/235
-  action: REUSE_EXISTING_BCP_IF_MERGED_OR_REFERENCE_WHILE_OPEN
-  coc_fiction_base_write_for_this_goal: NONE
-  other_project_changes_preserved: true
-```
-
-따라서 Coc-Fiction은 이 Goal로 새 중복 BCP를 만들거나 PR #235 branch를 수정하지 않는다. 프로젝트 live router에는 `stable main ref + last_observed_sha + last integrated PR + post-merge CI` 의미만 최소 적용한다.
-
-## 작품별 고정 연속성
-
-1. 원본 사건 순서가 현행 각색 장면으로 대체됐다면 주제적 장점만으로 유지하지 않는다.
-2. 이미 다음 시간대에 도착한 경계 뒤에서 원본 선행 사건을 복원할 때는 명시적 회상 앵커를 둔다.
-3. 호출기와 일반 전화·녹음 장치를 기능별로 분리한다.
-4. 원본에 있어도 최신 사용자 지시가 폐기한 사건·인물축은 복원하지 않는다.
-5. `SOURCE_MATCHED`는 사건 순서·동행·결과 판정이며 문장 전체 복사를 뜻하지 않는다.
-6. 외부 재퇴고본의 fixed POV count 같은 작품 값은 Base 공용 표준으로 승격하지 않는다.
+이번 001-005 작업에서 발견한 `current prefix + unreconciled legacy tail` 문제는 BCP-012의 기존 범위로 충분하다. 새 중복 BCP를 만들지 않았다. post-merge live-router 문제도 BCP-013이 이미 Base main에 병합됐으므로 재사용한다. **두 제안의 병합은 Base 활성 구현 승인과 무관하다.**
 
 ## 다음 정확한 저장소 작업
 
-**제1~105화 외부 통합 재퇴고본을 GitHub 정본에 바로 덮어쓰지 말고, 먼저 source/canon/current manuscript와 대조해 delta를 회수하는 `001-105 canon reconciliation`을 수행한다.**
-
-순서:
+`fiction/manuscript/part-1/006-010.md`를 현재 외부 최신 제6~10화와 대조한다.
 
 ```text
-제1~105 최신 외부 산출물 확보
-→ GitHub current manuscript의 같은 화 대조
-→ 원본 사건 기록·최신 사용자 Decision 우선순위 확인
-→ 회차별 KEEP / APPLY / REWORK / REJECT 판정
-→ 5화 단위 serial-arc-pass
-→ 승인된 원고 delta만 적용
-→ MANUSCRIPT_INDEX·역개요 override·Scene Pass Registry·Revision Report 전파
-→ 적대적 회귀·PR
+새 제5화 종료 상태 확인
+→ 외부 최신 제6~10화 실제 원고 확보
+→ 저장 legacy 006-010과 회차별 delta 생성
+→ 원본 사건 기록·최신 사용자 Decision·Canon 대조
+→ KEEP / APPLY / REWORK / REJECT
+→ 승인된 delta만 manuscript에 반영
+→ MANUSCRIPT_INDEX / reverse-outline override / Scene Pass Registry / Scene Cards / Revision Report 전파
+→ reconciled_prefix_end를 10으로 확장
+→ exact-head CI + adversarial review + PR merge + post-merge verification
 ```
-
-이 reconciliation이 끝나기 전에 GitHub 225화 원고를 기준으로 제106화 이후를 ‘이미 연속된 최신본’이라고 간주하지 않는다. 기존 `176-180` 원본 대조 작업은 삭제하지 않고 **001-105 최신본 정본화 뒤의 대기 작업**으로 유지한다.
 
 ## 변경 금지
 
-`FICTION_MASTER.md`와 `CANON_REGISTRY.json`을 따른다. 자동 역개요는 수정 명령이 아니다. 원고 수정 시 색인·역개요·Scene Pass Registry·Revision Report·활성 기획 문서를 같은 PR에서 갱신한다. 외부 산출물 존재만으로 GitHub Canon 완료를 주장하지 않는다. Base BCP-012의 병합을 Base 활성 구현 승인으로 해석하지 않는다.
+- 외부 산출물의 `최종` 표기만으로 남은 제6~105화를 자동 덮어쓰지 않는다.
+- 저장 225화 토폴로지를 최신 서사 화수표로 되돌리지 않는다.
+- 자동 역개요를 원고 수정 명령으로 사용하지 않는다.
+- 구형 통합 초안·archive·baseline을 current prose 입력으로 사용하지 않는다.
+- Base proposal 병합을 Base 활성 구현 승인으로 해석하지 않는다.
