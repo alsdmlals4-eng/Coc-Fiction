@@ -118,8 +118,12 @@ for source_marker in (
     if source_marker not in lake_bundle:
         errors.append(f"missing primary source marker: {source_marker}")
 
-if registry.get("next_bundle_passes") != ["fiction/manuscript/part-2/176-180.md"]:
+if registry.get("next_pass_mode") != "EXTERNAL_ARTIFACT_CANON_RECONCILIATION":
+    errors.append("next pass mode must be external artifact canon reconciliation")
+if registry.get("next_bundle_passes") != ["fiction/manuscript/part-1/001-005.md"]:
     errors.append("next bundle pass order mismatch")
+if registry.get("deferred_bundle_passes") != ["fiction/manuscript/part-2/176-180.md"]:
+    errors.append("deferred source-pass order mismatch")
 
 if errors:
     print("Fiction scene-pass validation FAILED")
@@ -127,4 +131,4 @@ if errors:
         print(f"- {error}")
     raise SystemExit(1)
 
-print("Fiction scene-pass validation PASSED (006-010 internal, 091-095 source-matched)")
+print("Fiction scene-pass validation PASSED (006-010 internal, 091-095 source-matched; 001-005 reconciliation next)")
