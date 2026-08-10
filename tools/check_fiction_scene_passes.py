@@ -6,7 +6,7 @@ import json
 import re
 from pathlib import Path
 
-from fiction_composed_data import load_manuscript_index
+from fiction_composed_data import load_manuscript_index, load_reverse_outline
 
 ROOT = Path(__file__).resolve().parents[1]
 FICTION = ROOT / "fiction"
@@ -18,6 +18,8 @@ errors: list[str] = []
 
 index = load_manuscript_index(FICTION)
 index_entries = {int(item["chapter"]): item for item in index["chapters"]}
+outline = load_reverse_outline(FICTION)
+outline_entries = {int(item["chapter"]): item for item in outline["chapters"]}
 registry = json.loads((FICTION / "analysis" / "SCENE_PASS_REGISTRY.json").read_text(encoding="utf-8"))
 
 parsed: dict[int, str] = {}
@@ -27,6 +29,11 @@ for path in sorted((FICTION / "manuscript").rglob("*.md")):
         parsed[int(match.group(1))] = match.group(4).strip()
 
 expected_passes = {
+    "fiction/manuscript/part-1/001-005.md": {
+        "chapters": [1, 2, 3, 4, 5],
+        "boundaries": [6],
+        "card_boundaries": ["제1→2화", "제2→3화", "제3→4화", "제4→5화", "제5→legacy-tail"],
+    },
     "fiction/manuscript/part-1/006-010.md": {
         "chapters": [6, 7, 8, 9, 10],
         "boundaries": [5, 11],
@@ -80,6 +87,11 @@ for bundle, expected in expected_passes.items():
                 errors.append(f"scene card missing boundary {boundary}")
 
 required_phrases = {
+    1: "위대한 심연의 군주.",
+    2: "제가 골랐거든요.",
+    3: "머나먼 카르코사에서 온 나의 동지들에게.",
+    4: "내가 시켜서 말고.",
+    5: "신호기 잃어버리지 마세요",
     6: "복도에서 첫 총성이 울리기 전",
     7: "자기 안의 차가운 보호 반응",
     9: "조금 전 서비스 통로에서 데커와 총을 주고받는 동안",
@@ -118,9 +130,37 @@ for source_marker in (
     if source_marker not in lake_bundle:
         errors.append(f"missing primary source marker: {source_marker}")
 
+reconciliation = registry.get("external_artifact_reconciliation", {})
+if reconciliation.get("artifact") != "폭풍의눈_2차퇴고_제001-105화_POV후크_캐릭터_통합최종본.zip":
+    errors.append("external reconciliation artifact mismatch")
+if reconciliation.get("target_chapters") != [1, 105]:
+    errors.append("external reconciliation target range mismatch")
+if reconciliation.get("reconciled_prefix_end") != 5:
+    errors.append("reconciled prefix must end at chapter 5 after the first pass")
+if reconciliation.get("legacy_tail_starts_at") != 6:
+    errors.append("legacy tail must begin at chapter 6 after the first pass")
+if reconciliation.get("boundary_after_chapter") != 5:
+    errors.append("migration boundary must be declared after chapter 5")
+if reconciliation.get("whole_manuscript_continuity") != "NOT_YET_CLAIMED":
+    errors.append("whole-manuscript continuity must remain unclaimed during mixed migration")
+
+chapter5_outline = outline_entries.get(5, {})
+if chapter5_outline.get("next_chapter") is not None:
+    errors.append("chapter 5 reverse outline must not claim a legacy-tail next chapter")
+if "RECONCILIATION_MIGRATION_BOUNDARY" not in chapter5_outline.get("structural_flags", []):
+    errors.append("chapter 5 reverse outline missing migration-boundary flag")
+if "정본 마이그레이션 경계" not in chapter5_outline.get("evidence", {}).get("next_pressure", ""):
+    errors.append("chapter 5 reverse outline missing migration-boundary pressure")
+
+chapter6_outline = outline_entries.get(6, {})
+if chapter6_outline.get("previous_chapter") is not None:
+    errors.append("legacy chapter 6 reverse outline must not claim migrated chapter 5 as previous continuity")
+if "LEGACY_TAIL_BOUNDARY" not in chapter6_outline.get("structural_flags", []):
+    errors.append("chapter 6 reverse outline missing legacy-tail boundary flag")
+
 if registry.get("next_pass_mode") != "EXTERNAL_ARTIFACT_CANON_RECONCILIATION":
     errors.append("next pass mode must be external artifact canon reconciliation")
-if registry.get("next_bundle_passes") != ["fiction/manuscript/part-1/001-005.md"]:
+if registry.get("next_bundle_passes") != ["fiction/manuscript/part-1/006-010.md"]:
     errors.append("next bundle pass order mismatch")
 if registry.get("deferred_bundle_passes") != ["fiction/manuscript/part-2/176-180.md"]:
     errors.append("deferred source-pass order mismatch")
@@ -131,4 +171,8 @@ if errors:
         print(f"- {error}")
     raise SystemExit(1)
 
-print("Fiction scene-pass validation PASSED (006-010 internal, 091-095 source-matched; 001-005 reconciliation next)")
+print(
+    "Fiction scene-pass validation PASSED "
+    "(001-005 external reconciled with migration boundary; 006-010 next; "
+    "091-095 source-matched)"
+)
