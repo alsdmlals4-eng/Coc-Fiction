@@ -42,7 +42,16 @@
 - 앞 화가 이미 이후 시간대에 도착했으면 선행 사건은 명시적 회상 앵커로 복원해 경계 SHA를 보존한다.
 - 제한적 3인칭 패스에서는 다른 인물의 상태를 독자가 아는 사실이라는 이유로 현재 POV에 직접 넣지 않는다.
 
+## 2026-08-10 — stale PR 회수와 Base 공용 연재소설 책임 재사용
+
+- 오래된 PR #9는 현재 main보다 뒤처져 있어 branch 전체를 살리지 않았다. #9의 고유 2파일 delta를 최신 main 위에서 재구성한 #12와 patch를 비교하고 동일한 `serial-arc-pass`만 기존 `fiction-revision-and-validation`에 흡수했다.
+- Base에 `developing-and-revising-serial-fiction`이 생겼다고 프로젝트의 5개 Skill을 복제·대체하지 않는다. Reader Promise·Episode Value·POV/voice·payoff 같은 공용 작법은 Base에서 재사용하고, source-log·Canon·합성 색인·override·Scene Pass Registry 같은 작품 고유 전파는 프로젝트 mode가 소유한다.
+- 대화/파일 산출물이 최신이어도 GitHub 원고 정본에 전파됐다는 증거가 없으면 `EXTERNAL_ARTIFACT`와 `GITHUB_CANON`을 분리한다. 파일명에 `최종`이 들어간다는 이유로 정본 상태를 자동 승격하지 않는다.
+- 한 화에서 여러 POV를 쓰는 경우 숫자 자체보다 **새 시점이 다른 정보·가치 판단·감정·외부 평가를 실제로 추가하는지**를 먼저 본다. 조연·엑스트라도 독립 시점의 기능이 있으면 사용할 수 있지만, 무표식 head-hopping은 피한다.
+- 작품별 `1~3 POV` 같은 production value는 프로젝트 규칙이며 Base 공용 규칙으로 승격하지 않는다.
+
 ## 다음 재검토 조건
 
+- 제1~105화 최신 외부 통합본을 GitHub manuscript/source/canon과 회차별로 대조해 실제 정본 delta를 회수한다.
 - `006-010`은 확보된 1부 원본으로 재감사한다.
-- `176-180` 원본 직접 대조 뒤 의료·기관 절차 규칙의 과잉 각색 여부를 재평가한다.
+- 보류된 `176-180` 원본 직접 대조는 001-105 최신본의 GitHub 정본화 이후 우선순위를 다시 판정한다.
