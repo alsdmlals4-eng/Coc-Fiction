@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "[소설]/00_운영체계/SKILL_REGISTRY.json"
+EXPECTED_BASE_COMMIT = "53e63f7ebefbb5b2fc0dc528e335252692801421"
 
 REQUIRED_FILES = [
     "docs/coordination/CONCURRENT_WORK.md",
@@ -65,7 +66,17 @@ EXPECTED_BASE_CAPABILITIES = {
     "designing-art-prompts-and-technique-cards",
     "auditing-and-refining-ui-art",
     "managing-base-change-proposals",
+    "developing-and-revising-serial-fiction",
 }
+
+SERIAL_ARC_TRIGGERS = {
+    "serial-arc",
+    "chapter-batch",
+    "scene-pass",
+    "representative-gate",
+    "canon-propagation",
+}
+SERIAL_ARC_MODE = "serial-arc-pass"
 
 REQUIRED_RESEARCH_URLS = [
     "https://owl.purdue.edu/",
@@ -127,6 +138,12 @@ def main() -> int:
         print(f"Fiction operating system FAILED: {exc}")
         return 1
 
+    if registry.get("base_commit") != EXPECTED_BASE_COMMIT:
+        errors.append(
+            "registry base_commit mismatch; "
+            f"expected {EXPECTED_BASE_COMMIT}, got {registry.get('base_commit')}"
+        )
+
     policy = registry.get("routing_policy", {})
     if policy.get("load_all_skills") is not False:
         errors.append("registry must keep load_all_skills=false")
@@ -159,6 +176,23 @@ def main() -> int:
         for mode in item.get("skill_modes", []):
             if mode not in text:
                 errors.append(f"{skill_id}: mode absent from SKILL.md: {mode}")
+
+    revision = next(
+        (item for item in skills if item.get("skill_id") == "fiction-revision-and-validation"),
+        None,
+    )
+    if revision is None:
+        errors.append("fiction-revision-and-validation missing from registry")
+    else:
+        triggers = set(revision.get("trigger_tags", []))
+        missing_triggers = sorted(SERIAL_ARC_TRIGGERS - triggers)
+        if missing_triggers:
+            errors.append(f"fiction revision serial-arc triggers missing: {missing_triggers}")
+        if SERIAL_ARC_MODE not in revision.get("skill_modes", []):
+            errors.append(f"fiction revision mode missing: {SERIAL_ARC_MODE}")
+        revision_path = ROOT / str(revision.get("path", ""))
+        if revision_path.is_file() and SERIAL_ARC_MODE not in revision_path.read_text(encoding="utf-8"):
+            errors.append(f"fiction revision SKILL.md missing mode body: {SERIAL_ARC_MODE}")
 
     research = (ROOT / "docs/fiction-ops/CRAFT_RESEARCH.md").read_text(encoding="utf-8")
     for url in REQUIRED_RESEARCH_URLS:
