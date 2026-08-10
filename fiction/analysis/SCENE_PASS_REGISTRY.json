@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-07-23",
+  "updated_at": "2026-08-10",
   "status": "ACTIVE / MANUAL_SCENE_AND_SOURCE_PASS_TRACKER",
   "source_policy": {
     "inventory": "fiction/sources/PRIMARY_SOURCE_INVENTORY.md",
@@ -49,5 +49,7 @@
       "status": "COMPLETE_SOURCE_MATCHED_CORE_EVENTS / ADAPTATION_EXCLUSIONS_APPLIED"
     }
   ],
-  "next_bundle_passes": ["fiction/manuscript/part-2/176-180.md"]
+  "next_pass_mode": "EXTERNAL_ARTIFACT_CANON_RECONCILIATION",
+  "next_bundle_passes": ["fiction/manuscript/part-1/001-005.md"],
+  "deferred_bundle_passes": ["fiction/manuscript/part-2/176-180.md"]
 }
