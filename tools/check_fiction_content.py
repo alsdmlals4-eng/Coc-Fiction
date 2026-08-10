@@ -32,9 +32,45 @@ try:
     forbidden_terms = list(registry.get("validation", {}).get("forbidden_in_active_manuscript", []))
     if not forbidden_terms:
         errors.append("canon registry forbidden term list is empty")
+    part2_forbidden_terms = list(registry.get("validation", {}).get("forbidden_in_part2_manuscript", []))
+    required_global_forbidden = {"복종인자", "블랙킹", "조작된 감정", "오션", "앨리스"}
+    missing_global = sorted(required_global_forbidden - set(forbidden_terms))
+    if missing_global:
+        errors.append(f"latest global forbidden terms missing: {missing_global}")
+    required_part2_forbidden = {"버실라", "바실라", "Versilla", "Woff"}
+    missing_part2 = sorted(required_part2_forbidden - set(part2_forbidden_terms))
+    if missing_part2:
+        errors.append(f"latest part2 forbidden terms missing: {missing_part2}")
+    if "아킴" in forbidden_terms or "아킴" in part2_forbidden_terms:
+        errors.append("Akim must remain allowed")
+
+    canon_by_id = {item.get("id"): item for item in registry.get("canon", []) if isinstance(item, dict)}
+    self_control = canon_by_id.get("juan.self-control-protocol")
+    if not self_control or self_control.get("status") != "CANON":
+        errors.append("juan.self-control-protocol CANON is missing")
+    else:
+        summary = str(self_control.get("summary", ""))
+        for token in ("반응", "멈춤", "이유", "선택"):
+            if token not in summary:
+                errors.append(f"juan self-control summary missing token: {token}")
+        if "복종" not in summary:
+            errors.append("juan self-control summary must explicitly reject obedience framing")
+
+    old_obedience = canon_by_id.get("juan.obedience-conditioning")
+    if old_obedience and old_obedience.get("status") == "CANON":
+        errors.append("juan.obedience-conditioning must not remain CANON")
+
+    versilla_exclusion = canon_by_id.get("part2.versilla-exclusion")
+    if not versilla_exclusion or versilla_exclusion.get("status") != "CANON":
+        errors.append("part2.versilla-exclusion CANON is missing")
+
+    akim = canon_by_id.get("part2.akim-allowed")
+    if not akim or akim.get("status") != "CANON":
+        errors.append("part2.akim-allowed CANON is missing")
 except Exception as exc:
     registry = {}
     forbidden_terms = []
+    part2_forbidden_terms = []
     errors.append(f"invalid canon registry: {exc}")
 
 try:
@@ -93,6 +129,13 @@ for path in bundles:
     for term in forbidden_terms:
         if term in text:
             errors.append(f"superseded term {term} in active manuscript {path.relative_to(ROOT)}")
+
+part2_root = FICTION / "manuscript" / "part-2"
+for path in sorted(part2_root.rglob("*.md")) if part2_root.exists() else []:
+    text = path.read_text(encoding="utf-8")
+    for term in part2_forbidden_terms:
+        if term in text:
+            errors.append(f"part2 forbidden term {term} in active manuscript {path.relative_to(ROOT)}")
 
 active_roots = (FICTION, ROOT / "[소설]" / "00_운영체계", ROOT / "docs" / "coordination")
 active_files: set[Path] = set()
