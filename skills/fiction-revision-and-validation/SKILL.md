@@ -7,7 +7,7 @@ description: 원고를 구조·인과·연속성·장면·문장·교정 층으�
 
 ## Modes
 
-`contract-check | developmental-edit | structural-reverse-outline | scene-diagnostic | continuity-check | line-edit | copyedit | proofread | reader-feedback | adversarial-loop | regression-check | evidence-report | pr-review`
+`contract-check | developmental-edit | structural-reverse-outline | serial-arc-pass | scene-diagnostic | continuity-check | line-edit | copyedit | proofread | reader-feedback | adversarial-loop | regression-check | evidence-report | pr-review`
 
 한 번에 필요한 mode만 실행한다. `proofread`를 구조 검토보다 먼저 하지 않는다.
 
@@ -21,6 +21,20 @@ description: 원고를 구조·인과·연속성·장면·문장·교정 층으�
 - 반드시 보존할 장점·복선·문장·이미지
 - 현재 실패 사례와 기대 결과
 - 동시 작업 중인 브랜치·겹치는 파일
+
+## Serial arc pass
+
+장편 연재의 묶음 단위 퇴고에는 `serial-arc-pass`를 사용한다. 이 mode는 새 장르 공식이나 별도 Canon을 만들지 않고, 기존 역개요·Scene Card·Canon·원고 색인을 같은 기준 커밋으로 묶어 다음을 검증한다.
+
+1. 작업 묶음의 앞·뒤 경계 화를 포함해 시간, 위치, POV, 지식, 부상, 소지품, 관계, 비밀 상태를 비교한다.
+2. 해당 묶음이 부별 약속·주제·인물 선택·복선·다음 압력에 어떤 기능을 하는지 한 문장으로 판정한다.
+3. 대표 화 품질 게이트와 변경 묶음의 장면 카드를 대조해 같은 문제를 전체 원고 결함으로 일반화하지 않는다.
+4. 원고를 바꾸면 `MANUSCRIPT_INDEX`, 역개요 override, Scene Pass Registry, Revision Report의 SHA·화수·제목·POV·분량 소비자를 같은 변경 범위에서 재생성·검증한다.
+5. 자동 역개요·분량 통계는 finding 후보일 뿐 수정 명령이 아니다. 원고 문맥과 Canon 근거로 재판정한다.
+
+Base의 `developing-and-revising-serial-fiction`은 Reader Promise, Episode Value, POV·voice, Local Payoff/Open Loop 같은 공용 작법 원리를 제공한다. 이 프로젝트 mode는 그 공용 원리를 복제하지 않고, Coc-Fiction 고유의 원본 로그·Canon·묶음 경계·합성 색인·역개요 override·Scene Pass Registry·Revision Report 전파를 책임진다.
+
+결과는 `묶음 진단 / 경계 연속성 / 최소 수정 / Canon 전파 / 파생 자료 재생성 / 전체 감사로 일반화하지 않은 범위 / 다음 묶음`으로 보고한다.
 
 ## 층별 검토
 
