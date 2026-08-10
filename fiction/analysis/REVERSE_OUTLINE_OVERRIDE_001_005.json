@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-10",
+  "status": "ACTIVE_OVERRIDE / EXTERNAL_RECONCILIATION_001_005 / MIXED_MIGRATION",
+  "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 1,
+      "section": {"key": "part-1", "label": "1부 《폭풍의 눈》"},
+      "title": "위대한 심연의 군주",
+      "pov": "이안",
+      "source": {"bundle": "fiction/manuscript/part-1/001-005.md", "body_sha256": "68a7ef71ecb2ef804580a07a6acbb663ee055a8faa95cd917bd9d5895b26a175", "body_chars": 6047},
+      "chapter_function": ["OPENING", "INVESTIGATION", "REVELATION", "RELATIONSHIP", "AFTERMATH", "SECTION_ENTRY"],
+      "state_change_axes": ["EVENT", "INFORMATION", "RELATIONSHIP", "AGENCY", "EMOTION", "BODY_OR_RESOURCE", "WORLD_RULE"],
+      "evidence": {
+        "starting_state": "5월의 햇빛은 아직 여름처럼 독하지 않았다. 미국 동부의 항구는 새벽부터 사람 목소리와 쇳소리로 들끓었다.",
+        "immediate_goal_or_focus": "첫 출항을 취재하러 온 기자와 꽃다발을 든 관계자, 객실 번호를 확인하는 승객들이 흰 선체 아래를 가득 메웠다.",
+        "opposition_and_cost": "브루스는 이번 여행을 ‘가벼운 현장 조사’라고 불렀지만 평범한 관광객의 짐은 아니었다.",
+        "turn_or_discovery": "그때 출항을 알리는 기적이 길게 울렸다.",
+        "decision_or_choice": "커튼까지 닫은 뒤 책을 탁자에 내려놓았다.",
+        "ending_state": "위대한 심연의 군주. 그리고 그 이름도 자신을 알고 있는 것 같았다.",
+        "next_pressure": "다음 제2화 「내가 고른 경호원」(엘리스 POV)로 압력이 이월된다. 현재 화 마지막 증거: 그리고 그 이름도 자신을 알고 있는 것 같았다."
+      },
+      "metrics": {"paragraphs": 250, "average_paragraph_chars": 24.2, "dialogue_ratio": 0.1908, "theme_term_hits": {"안전": 1, "사람": 7}},
+      "structural_flags": ["MULTI_TURN_DENSITY", "LONG_CHAPTER", "SECTION_ENTRY"],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": true,
+      "previous_chapter": null,
+      "next_chapter": {"chapter": 2, "title": "내가 고른 경호원", "pov": "엘리스"}
+    },
+    {
+      "chapter": 2,
+      "section": {"key": "part-1", "label": "1부 《폭풍의 눈》"},
+      "title": "내가 고른 경호원",
+      "pov": "엘리스",
+      "source": {"bundle": "fiction/manuscript/part-1/001-005.md", "body_sha256": "4a365526b359afa128989f9cd2a01def075e39b9a192495b6f7532580502d16e", "body_chars": 6139},
+      "chapter_function": ["OPENING", "INVESTIGATION", "REVELATION", "RELATIONSHIP", "AFTERMATH", "FINALE"],
+      "state_change_axes": ["EVENT", "INFORMATION", "RELATIONSHIP", "AGENCY", "EMOTION", "BODY_OR_RESOURCE", "WORLD_RULE"],
+      "evidence": {
+        "starting_state": "부두가 점처럼 작아질 때까지 엘리스 카터는 창문에서 떨어지지 않았다. 네오 타이타닉호는 이미 항구를 벗어나고 있었다.",
+        "immediate_goal_or_focus": "갑판에서는 첫 항해를 축하하는 음악이 계속됐고, 승객들은 샴페인 잔을 들고 지나가는 배에 손을 흔들었다.",
+        "opposition_and_cost": "다른 경호원처럼 등을 곧게 세우지도 않았다.",
+        "turn_or_discovery": "그때 뒤에서 낮은 목소리가 끼어들었다.",
+        "decision_or_choice": "대부분은 자신이 무엇을 원하는지 묻기 전에 안전한 답부터 정해놓았다.",
+        "ending_state": "그리고 바로 그때. 무전기 너머에서 짧은 비명이 들렸다.",
+        "next_pressure": "다음 제3화 「식탁 아래의 축배」(엘리스 → 주안 → 엘리스 POV)로 압력이 이월된다. 현재 화 마지막 증거: 무전기 너머에서 짧은 비명이 들렸다."
+      },
+      "metrics": {"paragraphs": 278, "average_paragraph_chars": 22.1, "dialogue_ratio": 0.2318, "theme_term_hits": {"책임": 1, "보호": 3, "명령": 1, "안전": 2, "사람": 21}},
+      "structural_flags": ["MULTI_TURN_DENSITY", "LONG_CHAPTER", "TIMELINE_SHIFT", "POV_HANDOFF"],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {"chapter": 1, "title": "위대한 심연의 군주", "pov": "이안"},
+      "next_chapter": {"chapter": 3, "title": "식탁 아래의 축배", "pov": "엘리스 → 주안 → 엘리스"}
+    },
+    {
+      "chapter": 3,
+      "section": {"key": "part-1", "label": "1부 《폭풍의 눈》"},
+      "title": "식탁 아래의 축배",
+      "pov": "엘리스 → 주안 → 엘리스",
+      "source": {"bundle": "fiction/manuscript/part-1/001-005.md", "body_sha256": "46fecaa8909019393038e4f34a13790bc17c0ff3596a831774b8583258e204e8", "body_chars": 6226},
+      "chapter_function": ["OPENING", "INVESTIGATION", "REVELATION", "RELATIONSHIP", "CHOICE_AND_COST", "AFTERMATH", "FINALE"],
+      "state_change_axes": ["EVENT", "INFORMATION", "RELATIONSHIP", "AGENCY", "EMOTION", "BODY_OR_RESOURCE", "WORLD_RULE"],
+      "evidence": {
+        "starting_state": "저녁 식사는 지나치게 평화로웠다. 네오 타이타닉호가 미국 영해를 벗어났다는 안내가 나오자 식당 여기저기서 잔이 부딪쳤다.",
+        "immediate_goal_or_focus": "엘리스는 마지막 디저트 앞에서 빈 의자를 한 번 봤다.",
+        "opposition_and_cost": "그는 이유를 묻지 않았다.",
+        "turn_or_discovery": "샹들리에가 두 개로 겹쳤다가 하나로 돌아왔다.",
+        "decision_or_choice": "주안은 이름을 붙이려는 걸 포기했다.",
+        "ending_state": "엘리스는 버튼을 다시 눌렀다. 이번에는 약속을 확인하려고.",
+        "next_pressure": "다음 제4화 「카르코사의 낭독」(주안 → 엘리스 → 주안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 이번에는 약속을 확인하려고."
+      },
+      "metrics": {"paragraphs": 338, "average_paragraph_chars": 18.4, "dialogue_ratio": 0.1412, "theme_term_hits": {"책임": 1, "보호": 1, "명령": 2, "사람": 20, "괴물": 5}},
+      "structural_flags": ["MULTI_TURN_DENSITY", "LONG_CHAPTER", "ONE_OFF_POV", "POV_HANDOFF"],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": true,
+      "previous_chapter": {"chapter": 2, "title": "내가 고른 경호원", "pov": "엘리스"},
+      "next_chapter": {"chapter": 4, "title": "카르코사의 낭독", "pov": "주안 → 엘리스 → 주안"}
+    },
+    {
+      "chapter": 4,
+      "section": {"key": "part-1", "label": "1부 《폭풍의 눈》"},
+      "title": "카르코사의 낭독",
+      "pov": "주안 → 엘리스 → 주안",
+      "source": {"bundle": "fiction/manuscript/part-1/001-005.md", "body_sha256": "61176e16405b95064210a7e071e5bcca7bc2f9435aed422235fca5a8df4a1747", "body_chars": 6850},
+      "chapter_function": ["OPENING", "REVELATION"],
+      "state_change_axes": ["EVENT", "INFORMATION", "RELATIONSHIP", "AGENCY", "EMOTION", "BODY_OR_RESOURCE", "WORLD_RULE"],
+      "evidence": {
+        "starting_state": "객실을 나온 주안은 바로 복도로 뛰지 않았다. 노란 양복 한 명이 방 번호를 확인하며 지나가는 것을 기다렸다.",
+        "immediate_goal_or_focus": "노란 양복 한 명이 방 번호를 확인하며 지나가는 것을 기다렸다.",
+        "opposition_and_cost": "주안은 큰 공격 뒤 생기는 빈틈을 밟았다.",
+        "turn_or_discovery": "오히려 따라왔다.",
+        "decision_or_choice": "엘리스가 문을 열었다.",
+        "ending_state": "노란 코트의 페이지들이 갈라지는 선 위로 빨려 들어갔다. 그리고 네오 타이타닉호가 비명을 질렀다.",
+        "next_pressure": "다음 제5화 「신호기를 잃지 마세요」(이안 → 주안 → 엘리스 → 주안 → 엘리스 → 주안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 그리고 네오 타이타닉호가 비명을 질렀다."
+      },
+      "metrics": {"paragraphs": 411, "average_paragraph_chars": 16.7, "dialogue_ratio": 0.1444, "theme_term_hits": {"보호": 1, "명령": 1, "안전": 3, "사람": 13, "괴물": 1}},
+      "structural_flags": ["MULTI_TURN_DENSITY", "LONG_CHAPTER", "ONE_OFF_POV", "POV_HANDOFF"],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {"chapter": 3, "title": "식탁 아래의 축배", "pov": "엘리스 → 주안 → 엘리스"},
+      "next_chapter": {"chapter": 5, "title": "신호기를 잃지 마세요", "pov": "이안 → 주안 → 엘리스 → 주안 → 엘리스 → 주안"}
+    },
+    {
+      "chapter": 5,
+      "section": {"key": "part-1", "label": "1부 《폭풍의 눈》"},
+      "title": "신호기를 잃지 마세요",
+      "pov": "이안 → 주안 → 엘리스 → 주안 → 엘리스 → 주안",
+      "source": {"bundle": "fiction/manuscript/part-1/001-005.md", "body_sha256": "794ade62ba047c98fed4cac48ddfd7ab9c77858323359c3a1b51b2fad37fee6a", "body_chars": 5998},
+      "chapter_function": ["OPENING", "INCITING_INCIDENT", "INVESTIGATION", "REVELATION", "CHOICE_AND_COST"],
+      "state_change_axes": ["EVENT", "INFORMATION", "RELATIONSHIP", "AGENCY", "EMOTION", "BODY_OR_RESOURCE", "WORLD_RULE"],
+      "evidence": {
+        "starting_state": "배가 갈라지는 소리는 폭발보다 길었다. 이안은 소리를 세 단계로 나눴다.",
+        "immediate_goal_or_focus": "그들은 승객을 구하는 게 아니었다.",
+        "opposition_and_cost": "적도 모르는 문제라면 공평하다고 생각해서.",
+        "turn_or_discovery": "그때 등 위에 무언가 떨어졌다.",
+        "decision_or_choice": "엘리스가 몸을 내밀었다.",
+        "ending_state": "주안은 창살에 힘을 줬다. 나무가 생각보다 쉽게 삐걱거렸다.",
+        "next_pressure": "정본 마이그레이션 경계. 저장소 제6화 이후는 아직 legacy tail이며 현재 제5화와의 서사 연속성을 주장하지 않는다."
+      },
+      "metrics": {"paragraphs": 361, "average_paragraph_chars": 16.6, "dialogue_ratio": 0.0759, "theme_term_hits": {"선택": 2, "사람": 25}},
+      "structural_flags": ["MULTI_TURN_DENSITY", "LONG_CHAPTER", "ONE_OFF_POV", "POV_HANDOFF", "RECONCILIATION_MIGRATION_BOUNDARY"],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {"chapter": 4, "title": "카르코사의 낭독", "pov": "주안 → 엘리스 → 주안"},
+      "next_chapter": null
+    }
+  ]
+}
