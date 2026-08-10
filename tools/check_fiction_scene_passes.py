@@ -148,13 +148,15 @@ if reconciliation.get("whole_manuscript_continuity") != "NOT_YET_CLAIMED":
     errors.append("whole-manuscript continuity must remain unclaimed during mixed migration")
 
 chapter5_outline = outline_entries.get(5, {})
-if chapter5_outline.get("next_chapter", {}).get("chapter") != 6:
+chapter5_next = chapter5_outline.get("next_chapter") or {}
+if chapter5_next.get("chapter") != 6:
     errors.append("chapter 5 must reconnect to reconciled chapter 6")
 if "RECONCILIATION_MIGRATION_BOUNDARY" in chapter5_outline.get("structural_flags", []):
     errors.append("chapter 5 migration-boundary flag must move forward after chapter 6-10 reconciliation")
 
 chapter6_outline = outline_entries.get(6, {})
-if chapter6_outline.get("previous_chapter", {}).get("chapter") != 5:
+chapter6_previous = chapter6_outline.get("previous_chapter") or {}
+if chapter6_previous.get("chapter") != 5:
     errors.append("reconciled chapter 6 must reconnect to chapter 5")
 if "LEGACY_TAIL_BOUNDARY" in chapter6_outline.get("structural_flags", []):
     errors.append("chapter 6 legacy-tail flag must move forward after reconciliation")
