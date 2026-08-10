@@ -12,7 +12,20 @@
 
 ## GitHub main에서 검증된 완료 상태
 
-기준 main: `c9c4fa647c833470759ada2514e45d1b2abb1e8b`
+```yaml
+repository:
+  default_branch: main
+  last_observed_main_sha: 3f90929f33de6a829521f9ed39c23becc7ed9d11
+  last_observed_reason: PR #15 merge 직후 post-merge runtime truth 재조회
+integration:
+  last_merged_pr: 15
+  merge_commit_sha: 3f90929f33de6a829521f9ed39c23becc7ed9d11
+verification:
+  post_merge_ci: PASS
+  post_merge_run: 31353037984
+```
+
+`last_observed_main_sha`는 이 live-router 갱신 commit 자신의 SHA를 영원히 자기참조하는 필드가 아니다. 새 세션은 항상 GitHub `main`과 open PR을 다시 조회하고, 이 값은 마지막으로 직접 관측한 integration 기준점으로만 사용한다.
 
 - 제1화~제225화와 45개 5화 묶음 유지
 - 구조 역개요 기준선·대표 게이트·제10·95·180화 파일럿 완료
@@ -24,6 +37,7 @@
 - PR #13에서 Base 공용 `developing-and-revising-serial-fiction` 재사용, 프로젝트 `serial-arc-pass` 흡수, `001-105 canon reconciliation`을 다음 우선순위로 정리했다.
 - PR #14에서 최신 사용자 Decision을 Canon에 동기화했다: 주안 `반응 → 멈춤 → 이유 → 선택`, 2부 `버실라 / 바실라 / Versilla / Woff` 제외, 아킴 등장 허용.
 - PR #14는 기존 DRAFT의 폐기 설정 debt를 blind rewrite하지 않고 정확한 consumer set으로 봉인해 신규 확산만 fail-closed하는 migration debt 계약을 프로젝트에 적용했다.
+- PR #15에서 Base BCP-012 locator와 Base 구현 분리 경계를 live continuation owner에 영속화했고, merge 후 `main@3f90929f...`의 push workflow까지 `SUCCESS`를 확인했다.
 
 ## 현재 대화에서 완료된 외부 작업 산출물
 
@@ -85,6 +99,24 @@ base_proposal:
 ```
 
 BCP-012는 프로젝트에서 검증된 `Canon Decision의 즉시 유효성`과 `기존 DRAFT migration 완료 상태`를 분리하고, 기존 debt를 정확한 consumer set으로 봉인해 새 위치로 증가하면 실패시키는 lifecycle을 공용 후보로 제안한다. 이 제안 병합은 Base 활성 구현 승인이 아니다.
+
+### Concurrent same-goal Base proposal — read/reference only
+
+PR #15 병합 직후 live continuation state가 한 단계 stale해지는 문제를 실제 재현했다. Base에는 다른 프로젝트 실행자가 이미 동일 공용 Goal을 `BCP-2026-013-post-merge-continuation-state-reconciliation` / Base PR #235로 제안 중이다.
+
+```yaml
+base_concurrency:
+  source_project: alsdmlals4-eng/Coc-Fiction
+  base_main_seen: 49f6190b9b5a535ceb7986755c1b68b221754cf5
+  same_goal_state: CONCURRENT_SAME_GOAL
+  related_proposal_id: BCP-2026-013-post-merge-continuation-state-reconciliation
+  related_proposal_pr: https://github.com/alsdmlals4-eng/Base/pull/235
+  action: REUSE_EXISTING_BCP_IF_MERGED_OR_REFERENCE_WHILE_OPEN
+  coc_fiction_base_write_for_this_goal: NONE
+  other_project_changes_preserved: true
+```
+
+따라서 Coc-Fiction은 이 Goal로 새 중복 BCP를 만들거나 PR #235 branch를 수정하지 않는다. 프로젝트 live router에는 `stable main ref + last_observed_sha + last integrated PR + post-merge CI` 의미만 최소 적용한다.
 
 ## 작품별 고정 연속성
 
