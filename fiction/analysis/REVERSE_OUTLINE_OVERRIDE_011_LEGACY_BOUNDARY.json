@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-10",
+  "status": "ACTIVE_OVERRIDE / CH11_LEGACY_TAIL_BOUNDARY",
+  "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
+  "chapters": []
+}
