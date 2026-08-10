@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-23",
+  "updated_at": "2026-08-10",
   "core_status": "CORE_CONFIRMED",
   "active_sources": {
     "master": "fiction/FICTION_MASTER.md",
@@ -16,9 +16,18 @@
       "summary": "선의도 타인의 선택권을 대신 결정하는 순간 폭력이 된다."
     },
     {
-      "id": "juan.obedience-conditioning",
+      "id": "juan.self-control-protocol",
       "status": "CANON",
-      "summary": "복종인자는 물리 장치가 아닌 내면화된 행동 편향이다."
+      "summary": "주안은 위협·명령·보호 자극에 몸이 먼저 반응할 수 있으나, 반응 → 멈춤 → 이유 → 선택의 절차로 자신의 결정을 회수한다. 엘리스와의 관계는 복종 관계로 단순화하지 않는다."
+    },
+    {
+      "id": "juan.obedience-conditioning",
+      "status": "SUPERSEDED",
+      "aliases": [
+        "복종인자"
+      ],
+      "replacement": "juan.self-control-protocol",
+      "summary": "과거 각색에서 사용한 독립 설정명과 그 설정을 중심으로 한 설명은 폐기한다. 주안의 현재 갈등은 자기통제와 선택 회수로 설명한다."
     },
     {
       "id": "alice.mental-ability",
@@ -34,6 +43,22 @@
       "id": "part2.external-pressure",
       "status": "CANON",
       "summary": "황색 과격파·외부 용병은 단발 전투·압박 기능만 수행하며 독립 장기 서사가 없다."
+    },
+    {
+      "id": "part2.versilla-exclusion",
+      "status": "CANON",
+      "aliases": [
+        "버실라",
+        "바실라",
+        "Versilla",
+        "Woff"
+      ],
+      "summary": "2부에서 해당 인물의 직접 등장, 개인 서사, 독립 전투·기능 복원을 사용하지 않는다. 필요한 기능은 현재 2부 주연·기존 조연·단역의 책임 경계 안에서만 재판정한다."
+    },
+    {
+      "id": "part2.akim-allowed",
+      "status": "CANON",
+      "summary": "아킴은 한국·2부 관련 구간에 등장할 수 있다. 현장 지원과 외부 사선 판단은 가능하지만 2부 세 주연의 중앙 선택과 결말 결정권을 대신하지 않으며, 폐기 인물축의 대체자로 자동 간주하지 않는다."
     },
     {
       "id": "legacy.russian-mafia-axis",
@@ -61,7 +86,41 @@
       "피엘렛토",
       "붉은 늑대",
       "컨소시엄",
-      "협상 책임자"
+      "협상 책임자",
+      "조작된 감정",
+      "오션",
+      "앨리스"
+    ],
+    "forbidden_in_new_or_revised_manuscript": [
+      "복종인자",
+      "블랙킹",
+      "조작된 감정",
+      "오션",
+      "앨리스"
+    ],
+    "known_manuscript_reconciliation_debt": {
+      "복종인자": [
+        "fiction/manuscript/part-1/066-070.md",
+        "fiction/manuscript/part-2/201-205.md",
+        "fiction/manuscript/part-2/221-225.md",
+        "fiction/manuscript/side-story-alice/096-100.md",
+        "fiction/manuscript/side-story-alice/101-105.md",
+        "fiction/manuscript/side-story-ian/151-155.md",
+        "fiction/manuscript/side-story-lake/071-075.md",
+        "fiction/manuscript/side-story-lake/076-080.md",
+        "fiction/manuscript/side-story-lake/081-085.md",
+        "fiction/manuscript/side-story-lake/086-090.md",
+        "fiction/manuscript/side-story-lake/091-095.md"
+      ],
+      "블랙킹": [
+        "fiction/manuscript/part-1/066-070.md"
+      ]
+    },
+    "forbidden_in_part2_manuscript": [
+      "버실라",
+      "바실라",
+      "Versilla",
+      "Woff"
     ],
     "allowed_only_in_registry_or_archive": [
       "구 140화 편성"
