@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-10",
+  "status": "ACTIVE_OVERRIDE / EXTERNAL_RECONCILIATION_001_005",
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "위대한 심연의 군주",
+      "pov": "이안",
+      "body_chars": 6047,
+      "body_sha256": "68a7ef71ecb2ef804580a07a6acbb663ee055a8faa95cd917bd9d5895b26a175",
+      "bundle": "fiction/manuscript/part-1/001-005.md"
+    },
+    {
+      "chapter": 2,
+      "title": "내가 고른 경호원",
+      "pov": "엘리스",
+      "body_chars": 6139,
+      "body_sha256": "4a365526b359afa128989f9cd2a01def075e39b9a192495b6f7532580502d16e",
+      "bundle": "fiction/manuscript/part-1/001-005.md"
+    },
+    {
+      "chapter": 3,
+      "title": "식탁 아래의 축배",
+      "pov": "엘리스 → 주안 → 엘리스",
+      "body_chars": 6226,
+      "body_sha256": "46fecaa8909019393038e4f34a13790bc17c0ff3596a831774b8583258e204e8",
+      "bundle": "fiction/manuscript/part-1/001-005.md"
+    },
+    {
+      "chapter": 4,
+      "title": "카르코사의 낭독",
+      "pov": "주안 → 엘리스 → 주안",
+      "body_chars": 6850,
+      "body_sha256": "61176e16405b95064210a7e071e5bcca7bc2f9435aed422235fca5a8df4a1747",
+      "bundle": "fiction/manuscript/part-1/001-005.md"
+    },
+    {
+      "chapter": 5,
+      "title": "신호기를 잃지 마세요",
+      "pov": "이안 → 주안 → 엘리스 → 주안 → 엘리스 → 주안",
+      "body_chars": 5996,
+      "body_sha256": "2b7d2e242e69cf43cc4063aad1dafd9a968b66c93d5d4c3f16f93bcaaf1b19e2",
+      "bundle": "fiction/manuscript/part-1/001-005.md"
+    }
+  ]
+}
