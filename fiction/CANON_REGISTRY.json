@@ -87,12 +87,35 @@
       "붉은 늑대",
       "컨소시엄",
       "협상 책임자",
+      "조작된 감정",
+      "오션",
+      "앨리스"
+    ],
+    "forbidden_in_new_or_revised_manuscript": [
       "복종인자",
       "블랙킹",
       "조작된 감정",
       "오션",
       "앨리스"
     ],
+    "known_manuscript_reconciliation_debt": {
+      "복종인자": [
+        "fiction/manuscript/part-1/066-070.md",
+        "fiction/manuscript/part-2/201-205.md",
+        "fiction/manuscript/part-2/221-225.md",
+        "fiction/manuscript/side-story-alice/096-100.md",
+        "fiction/manuscript/side-story-alice/101-105.md",
+        "fiction/manuscript/side-story-ian/151-155.md",
+        "fiction/manuscript/side-story-lake/071-075.md",
+        "fiction/manuscript/side-story-lake/076-080.md",
+        "fiction/manuscript/side-story-lake/081-085.md",
+        "fiction/manuscript/side-story-lake/086-090.md",
+        "fiction/manuscript/side-story-lake/091-095.md"
+      ],
+      "블랙킹": [
+        "fiction/manuscript/part-1/066-070.md"
+      ]
+    },
     "forbidden_in_part2_manuscript": [
       "버실라",
       "바실라",
