@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-23",
-  "status": "ACTIVE_OVERRIDE / BUNDLE_006_010",
+  "updated_at": "2026-08-10",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_006_010 / LEGACY_TAIL_PENDING_RECONCILIATION",
   "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
   "chapters": [
     {
@@ -22,10 +22,10 @@
         "next_pressure": "다음 제7화 「노란 코트가 들어온 밤」(엘리스 POV)로 압력이 이월된다. 현재 화 마지막 증거: 문밖의 노란 소매만이 그 평범함과 맞지 않았다."
       },
       "metrics": {"paragraphs": 39, "average_paragraph_chars": 60.1, "dialogue_ratio": 0.1651, "theme_term_hits": {"선택": 2, "보호": 3, "사람": 4}},
-      "structural_flags": ["MULTI_TURN_DENSITY", "POV_HANDOFF"],
+      "structural_flags": ["MULTI_TURN_DENSITY", "POV_HANDOFF", "LEGACY_TAIL_BOUNDARY"],
       "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
       "representative_gate": false,
-      "previous_chapter": {"chapter": 5, "title": "황색의 승선", "pov": "아킴"},
+      "previous_chapter": null,
       "next_chapter": {"chapter": 7, "title": "노란 코트가 들어온 밤", "pov": "엘리스"}
     },
     {
