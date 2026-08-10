@@ -20,13 +20,15 @@
 
 ## 현재 GitHub main 상태
 
-기준: `27e0dd4e429d447145596ee8aa36ecdb58ac9161`
+기준: `c9c4fa647c833470759ada2514e45d1b2abb1e8b`
 
 - 225화·45개 묶음 정상
 - `006-010` 내부 연속성 패스 완료
 - `091-095` 원본 직접 대조 패스 완료
 - 원본 PDF 인벤토리 확보, 전체 직접 감사는 진행 중
 - 기존 다음 대기 작업 `176-180` 원본 대조는 보존되어 있음
+- PR #13 운영 통합 완료: Base 공용 serial-fiction 책임 재사용, 프로젝트 `serial-arc-pass` 흡수, `001-105 canon reconciliation`을 현재 우선순위로 통일.
+- PR #14 Canon 동기화 완료: 주안 자기통제 프로토콜, 2부 버실라/Woff 제외, 아킴 허용, 기존 DRAFT migration debt의 fail-closed 봉인.
 
 ## 현재 대화의 최신 외부 산출물
 
@@ -57,11 +59,32 @@ github_canon_propagation: NOT_RUN
 
 ## Base / 프로젝트 운영 경계
 
-- Base 호환성 감사 기준: `53e63f7ebefbb5b2fc0dc528e335252692801421`
+- 프로젝트 운영 호환성 감사 adopted Base 기준점: `53e63f7ebefbb5b2fc0dc528e335252692801421`
+- 현재 확인한 Base main: `49f6190b9b5a535ceb7986755c1b68b221754cf5`
 - Base `developing-and-revising-serial-fiction`의 공용 작법 원칙을 재사용한다.
 - Coc-Fiction 프로젝트 Skill은 기존 5개를 유지한다.
 - 장편 묶음 작업의 프로젝트 고유 파생자료 전파는 `fiction-revision-and-validation: serial-arc-pass`가 담당한다.
-- stale PR #9 전체를 병합하지 않는다. closed/unmerged #12에서 검증된 고유 delta만 현재 main 위에 흡수한다.
+- stale PR #9 전체를 병합하지 않는다. closed/unmerged #12에서 검증된 고유 delta만 현재 main 위에 흡수했다.
+
+### Base proposal handoff
+
+```yaml
+base_proposal:
+  id: BCP-2026-012-serial-fiction-canon-migration-debt
+  proposal_pr: https://github.com/alsdmlals4-eng/Base/pull/234
+  merged_to_base_main: true
+  base_main_after_merge: 49f6190b9b5a535ceb7986755c1b68b221754cf5
+  proposal_status: SUBMITTED
+  existing_solution_verdict: ABSORB
+  proposal_storage_merge_authority: GRANTED_BY_SINGLE_FILE_EXECUTION_CONTRACT
+  base_implementation_authority: NOT_GRANTED_IN_THIS_STAGE
+  implementation_status: NOT_STARTED_IN_THIS_STAGE
+  implementation_boundary: SEPARATE_FOLLOWUP_STAGE
+  active_base_files_changed_by_proposal_pr: 0
+  next_action: 별도 후속 단계에서 구현 승인·추가 증거를 확인하기 전까지 Base 활성 구현 금지
+```
+
+BCP-012는 새 Canon Decision과 기존 DRAFT migration 완료 상태를 분리하고, 기존 legacy debt를 정확한 consumer set으로 봉인해 새 위치로 확산되면 실패시키는 공용 lifecycle 제안이다. **Proposal PR 병합은 Base 활성 구현 승인과 무관하다.**
 
 ## 외전1 종결 고정 — GitHub current canon
 
@@ -102,3 +125,4 @@ github_canon_propagation: NOT_RUN
 - 원본 사건과 최신 사용자 지시가 충돌하면 사용자 지시를 우선하고 제외 근거를 기록한다.
 - 외부 DOCX의 ‘최종’ 표기만으로 GitHub Canon 승격을 선언하지 않는다.
 - 과거 CI·과거 PR head의 검증을 현재 head 검증처럼 재사용하지 않는다.
+- Base BCP-012의 proposal-only 병합을 Base 활성 구현 승인으로 해석하지 않는다.

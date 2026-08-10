@@ -12,7 +12,7 @@
 
 ## GitHub main에서 검증된 완료 상태
 
-기준 main: `27e0dd4e429d447145596ee8aa36ecdb58ac9161`
+기준 main: `c9c4fa647c833470759ada2514e45d1b2abb1e8b`
 
 - 제1화~제225화와 45개 5화 묶음 유지
 - 구조 역개요 기준선·대표 게이트·제10·95·180화 파일럿 완료
@@ -21,6 +21,9 @@
 - `091-095` 원본 직접 대조 패스 완료
 - 외전1 종결의 이가레스 문답 → 한국 정착 → 엘리스·이안 통화 → 다빈·예나 예고 순서 복원
 - 제90·96화 SHA 보존, 제91~95화만 색인·역개요 override 갱신
+- PR #13에서 Base 공용 `developing-and-revising-serial-fiction` 재사용, 프로젝트 `serial-arc-pass` 흡수, `001-105 canon reconciliation`을 다음 우선순위로 정리했다.
+- PR #14에서 최신 사용자 Decision을 Canon에 동기화했다: 주안 `반응 → 멈춤 → 이유 → 선택`, 2부 `버실라 / 바실라 / Versilla / Woff` 제외, 아킴 등장 허용.
+- PR #14는 기존 DRAFT의 폐기 설정 debt를 blind rewrite하지 않고 정확한 consumer set으로 봉인해 신규 확산만 fail-closed하는 migration debt 계약을 프로젝트에 적용했다.
 
 ## 현재 대화에서 완료된 외부 작업 산출물
 
@@ -56,11 +59,32 @@ external_revision_github_canon_propagation: NOT_RUN
 
 ## Base 적용 상태
 
-- 현재 호환성 감사 기준 Base main: `53e63f7ebefbb5b2fc0dc528e335252692801421`
+- 프로젝트 운영 호환성 감사의 adopted Base 기준점: `53e63f7ebefbb5b2fc0dc528e335252692801421`
+- 현재 확인한 Base main: `49f6190b9b5a535ceb7986755c1b68b221754cf5`
 - Base BCP-009의 `developing-and-revising-serial-fiction`은 공용 작법·검수 책임으로 재사용한다.
 - Coc-Fiction의 프로젝트 Skill은 5개를 유지한다.
-- stale PR #9의 유효 고유 delta는 새 Skill이 아니라 `fiction-revision-and-validation: serial-arc-pass`로 선택적 흡수한다.
+- stale PR #9의 유효 고유 delta는 새 Skill이 아니라 `fiction-revision-and-validation: serial-arc-pass`로 선택적 흡수했다.
 - stale #9 전체 branch를 merge/rebase하지 않는다.
+
+### Base proposal locator
+
+```yaml
+base_proposal:
+  id: BCP-2026-012-serial-fiction-canon-migration-debt
+  proposal_pr: https://github.com/alsdmlals4-eng/Base/pull/234
+  merged_to_base_main: true
+  base_main_after_merge: 49f6190b9b5a535ceb7986755c1b68b221754cf5
+  proposal_status: SUBMITTED
+  existing_solution_verdict: ABSORB
+  proposal_storage_merge_authority: GRANTED_BY_SINGLE_FILE_EXECUTION_CONTRACT
+  base_implementation_authority: NOT_GRANTED_IN_THIS_STAGE
+  implementation_status: NOT_STARTED_IN_THIS_STAGE
+  implementation_boundary: SEPARATE_FOLLOWUP_STAGE
+  active_base_files_changed_by_proposal_pr: 0
+  next_action: 별도 후속 단계에서 구현 승인·추가 증거를 확인하기 전까지 Base 활성 구현 금지
+```
+
+BCP-012는 프로젝트에서 검증된 `Canon Decision의 즉시 유효성`과 `기존 DRAFT migration 완료 상태`를 분리하고, 기존 debt를 정확한 consumer set으로 봉인해 새 위치로 증가하면 실패시키는 lifecycle을 공용 후보로 제안한다. 이 제안 병합은 Base 활성 구현 승인이 아니다.
 
 ## 작품별 고정 연속성
 
@@ -92,4 +116,4 @@ external_revision_github_canon_propagation: NOT_RUN
 
 ## 변경 금지
 
-`FICTION_MASTER.md`와 `CANON_REGISTRY.json`을 따른다. 자동 역개요는 수정 명령이 아니다. 원고 수정 시 색인·역개요·Scene Pass Registry·Revision Report·활성 기획 문서를 같은 PR에서 갱신한다. 외부 산출물 존재만으로 GitHub Canon 완료를 주장하지 않는다.
+`FICTION_MASTER.md`와 `CANON_REGISTRY.json`을 따른다. 자동 역개요는 수정 명령이 아니다. 원고 수정 시 색인·역개요·Scene Pass Registry·Revision Report·활성 기획 문서를 같은 PR에서 갱신한다. 외부 산출물 존재만으로 GitHub Canon 완료를 주장하지 않는다. Base BCP-012의 병합을 Base 활성 구현 승인으로 해석하지 않는다.
