@@ -1,10 +1,11 @@
 {
   "schema_version": 2,
   "format": "COMPOSED_MANUSCRIPT_INDEX",
-  "generated_at": "2026-07-23",
-  "status": "ACTIVE / COMPOSED / 225_CHAPTERS",
+  "generated_at": "2026-08-10",
+  "status": "ACTIVE / COMPOSED / 225_STORAGE_CHAPTERS / MIXED_MIGRATION",
   "baseline": "analysis/baselines/MANUSCRIPT_INDEX_2026-07-23_PILOT.json",
   "overrides": [
+    "analysis/MANUSCRIPT_INDEX_OVERRIDE_001_005.json",
     "analysis/MANUSCRIPT_INDEX_OVERRIDE_006_010.json",
     "analysis/MANUSCRIPT_INDEX_OVERRIDE_091_095.json"
   ],

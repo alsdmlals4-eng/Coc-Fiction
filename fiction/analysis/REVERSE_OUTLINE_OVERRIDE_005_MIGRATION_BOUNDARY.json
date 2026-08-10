@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-10",
+  "status": "ACTIVE_OVERRIDE / CH5_EXACT_BRANCH_BODY / MIGRATION_BOUNDARY",
+  "baseline": "REVERSE_OUTLINE_OVERRIDE_001_005.json",
+  "chapters": [
+    {
+      "chapter": 5,
+      "section": {"key": "part-1", "label": "1부 《폭풍의 눈》"},
+      "title": "신호기를 잃지 마세요",
+      "pov": "이안 → 주안 → 엘리스 → 주안 → 엘리스 → 주안",
+      "source": {"bundle": "fiction/manuscript/part-1/001-005.md", "body_sha256": "2b7d2e242e69cf43cc4063aad1dafd9a968b66c93d5d4c3f16f93bcaaf1b19e2", "body_chars": 5996},
+      "chapter_function": ["OPENING", "INCITING_INCIDENT", "INVESTIGATION", "REVELATION", "CHOICE_AND_COST"],
+      "state_change_axes": ["EVENT", "INFORMATION", "RELATIONSHIP", "AGENCY", "EMOTION", "BODY_OR_RESOURCE", "WORLD_RULE"],
+      "evidence": {
+        "starting_state": "배가 갈라지는 소리는 폭발보다 길었다. 이안은 소리를 세 단계로 나눴다.",
+        "immediate_goal_or_focus": "그들은 승객을 구하는 게 아니었다.",
+        "opposition_and_cost": "적도 모르는 문제라면 공평하다고 생각해서.",
+        "turn_or_discovery": "그때 등 위에 무언가 떨어졌다.",
+        "decision_or_choice": "엘리스가 몸을 내밀었다.",
+        "ending_state": "주안은 창살에 힘을 줬다. 나무가 생각보다 쉽게 삐걱거렸다.",
+        "next_pressure": "정본 마이그레이션 경계. 저장소 제6화 이후는 아직 legacy tail이며 현재 제5화와의 서사 연속성을 주장하지 않는다."
+      },
+      "metrics": {"paragraphs": 361, "average_paragraph_chars": 16.6, "dialogue_ratio": 0.0759, "theme_term_hits": {"선택": 2, "사람": 25}},
+      "structural_flags": ["MULTI_TURN_DENSITY", "LONG_CHAPTER", "ONE_OFF_POV", "POV_HANDOFF", "RECONCILIATION_MIGRATION_BOUNDARY"],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {"chapter": 4, "title": "카르코사의 낭독", "pov": "주안 → 엘리스 → 주안"},
+      "next_chapter": null
+    }
+  ]
+}

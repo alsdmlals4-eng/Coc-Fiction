@@ -11,6 +11,40 @@ from fiction_composed_data import load_manuscript_index, load_reverse_outline
 from reverse_outline_generator_base import build
 
 
+def apply_reconciliation_boundary(root: Path, generated: dict) -> dict:
+    registry_path = root / "fiction" / "analysis" / "SCENE_PASS_REGISTRY.json"
+    if not registry_path.is_file():
+        return generated
+    registry = json.loads(registry_path.read_text(encoding="utf-8"))
+    reconciliation = registry.get("external_artifact_reconciliation", {})
+    if reconciliation.get("whole_manuscript_continuity") != "NOT_YET_CLAIMED":
+        return generated
+    boundary = reconciliation.get("boundary_after_chapter")
+    if not isinstance(boundary, int):
+        return generated
+
+    by_chapter = {int(item["chapter"]): item for item in generated.get("chapters", [])}
+    left = by_chapter.get(boundary)
+    right = by_chapter.get(boundary + 1)
+    if left:
+        left["next_chapter"] = None
+        flags = list(left.get("structural_flags", []))
+        if "RECONCILIATION_MIGRATION_BOUNDARY" not in flags:
+            flags.append("RECONCILIATION_MIGRATION_BOUNDARY")
+        left["structural_flags"] = flags
+        left.setdefault("evidence", {})["next_pressure"] = (
+            "정본 마이그레이션 경계. 저장소 제6화 이후는 아직 legacy tail이며 "
+            "현재 제5화와의 서사 연속성을 주장하지 않는다."
+        )
+    if right:
+        right["previous_chapter"] = None
+        flags = list(right.get("structural_flags", []))
+        if "LEGACY_TAIL_BOUNDARY" not in flags:
+            flags.append("LEGACY_TAIL_BOUNDARY")
+        right["structural_flags"] = flags
+    return generated
+
+
 def build_current(root: Path) -> dict:
     with tempfile.TemporaryDirectory(prefix="fiction-outline-") as tmp:
         temp_root = Path(tmp)
@@ -21,7 +55,8 @@ def build_current(root: Path) -> dict:
             encoding="utf-8",
         )
         os.symlink(root / "fiction" / "manuscript", fiction / "manuscript", target_is_directory=True)
-        return build(temp_root)
+        generated = build(temp_root)
+        return apply_reconciliation_boundary(root, generated)
 
 
 def main() -> None:
