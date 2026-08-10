@@ -26,10 +26,13 @@ docs/coordination/CONCURRENT_WORK.md
 
 - Work Mode: `REVIEW`
 - Manuscript Stage: `REVISE`
-- GitHub main 완료: 225화 확장, 구조 역개요 기준선, 대표 3화 파일럿, `006-010` 내부 연속성 패스, `091-095` 원본 직접 대조 패스
-- 외부 최신 작업: 현재 프로젝트 대화에서 제1~105화 POV·후크·캐릭터 통합 재퇴고본이 생성됐지만 GitHub manuscript 전파는 `NOT_RUN`
-- 진행 중 우선순위: 외부 제1~105화와 GitHub source/canon/manuscript의 선택적 정본 reconciliation
-- 기존 `176-180` 원본 직접 대조는 삭제하지 않고 reconciliation 이후 대기 작업으로 유지
+- GitHub 저장 토폴로지: 225화/45묶음 구조를 유지하지만, 외부 최신 제1~105화의 압축 편성을 5화씩 선택적으로 정본화하는 **mixed migration** 상태다.
+- 외부 최신 작업: 제1~105화 POV·후크·캐릭터 통합 재퇴고본 존재.
+- 외부 reconciliation 완료 prefix: **제1~5화**.
+- 제1~5 최신 제목/본문은 GitHub manuscript에 적용했고 원본 COC 사건·최신 Canon·신호기 제한을 대조했다.
+- 저장소 구 제6화 이후는 아직 legacy tail이며 제5→6의 서사 연속성은 `NOT_YET_CLAIMED`다.
+- 진행 중 우선순위: 외부 최신 제6~10화와 legacy 저장 묶음 `fiction/manuscript/part-1/006-010.md`의 선택적 정본 reconciliation.
+- 기존 `176-180` 원본 직접 대조는 삭제하지 않고 reconciliation 이후 대기 작업으로 유지.
 
 ## 프로젝트 Skill
 
@@ -55,19 +58,22 @@ Base의 `developing-and-revising-serial-fiction`은 공용 작법·연재 pacing
 - `SOURCE_MATCHED`를 문장 전체 복사로 해석하지 않는다.
 - 묶음 수정 뒤 원본·인과·POV·시간·동선·상태·금지 설정·색인·역개요·Registry·기획 문서 회귀를 남긴다.
 - stale PR은 전체 rebase/merge보다 current main 위 고유 delta 선택적 재적용을 우선한다.
+- 외부 최신 prefix와 unreconciled legacy tail 사이에는 `SCENE_PASS_REGISTRY.external_artifact_reconciliation`의 migration boundary를 따른다. 그 경계를 자동 역개요의 정상 `next_chapter`로 해석하지 않는다.
 
 ## 다음 시작 묶음
 
-`fiction/manuscript/part-1/001-005.md`부터 시작한다.
+`fiction/manuscript/part-1/006-010.md`.
 
-목적은 과거 패스를 반복하는 것이 아니라, 현재 대화의 제1~105화 통합 재퇴고본과 GitHub current manuscript의 delta를 원본·최신 사용자 Decision·Canon으로 판정하는 `EXTERNAL_ARTIFACT_CANON_RECONCILIATION`이다.
+목적은 구 `006-010` 내부 연속성 패스를 반복하는 것이 아니라, 현재 대화의 최신 외부 제6~10화와 GitHub legacy `006-010`의 delta를 원본·최신 사용자 Decision·Canon으로 다시 판정하는 `EXTERNAL_ARTIFACT_CANON_RECONCILIATION`이다.
 
 ```text
-001-005 외부/현재 원고 대조
+006-010 외부/legacy 원고 대조
+→ 제5화 새 종료 상태에서 앞 경계 확인
 → KEEP / APPLY / REWORK / REJECT
-→ 앞뒤 경계·POV·인물 상태 검증
+→ 원본 사건·POV·인물 상태 검증
 → 승인된 delta만 적용
 → index / outline override / Scene Pass Registry / Revision Report 전파
+→ reconciled prefix를 10까지 확장
 → 다음 5화
 ```
 
