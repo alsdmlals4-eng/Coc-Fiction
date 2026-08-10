@@ -29,20 +29,44 @@ try:
     registry = json.loads((FICTION / "CANON_REGISTRY.json").read_text(encoding="utf-8"))
     if registry.get("core_status") != "CORE_CONFIRMED":
         errors.append("canon registry core status is not CORE_CONFIRMED")
-    forbidden_terms = list(registry.get("validation", {}).get("forbidden_in_active_manuscript", []))
+    validation = registry.get("validation", {})
+    forbidden_terms = list(validation.get("forbidden_in_active_manuscript", []))
     if not forbidden_terms:
         errors.append("canon registry forbidden term list is empty")
-    part2_forbidden_terms = list(registry.get("validation", {}).get("forbidden_in_part2_manuscript", []))
-    required_global_forbidden = {"복종인자", "블랙킹", "조작된 감정", "오션", "앨리스"}
-    missing_global = sorted(required_global_forbidden - set(forbidden_terms))
-    if missing_global:
-        errors.append(f"latest global forbidden terms missing: {missing_global}")
+
+    # Strict bans are safe to enforce against the entire current GitHub manuscript now.
+    required_strict_forbidden = {"오션", "앨리스", "조작된 감정"}
+    missing_strict = sorted(required_strict_forbidden - set(forbidden_terms))
+    if missing_strict:
+        errors.append(f"latest strict forbidden terms missing: {missing_strict}")
+
+    # These were superseded after the current GitHub DRAFT was produced. New/revised prose may not
+    # reintroduce them, but existing debt must be bounded and removed through source/canon reconciliation.
+    future_forbidden_terms = list(validation.get("forbidden_in_new_or_revised_manuscript", []))
+    required_future_forbidden = {"복종인자", "블랙킹", "조작된 감정", "오션", "앨리스"}
+    missing_future = sorted(required_future_forbidden - set(future_forbidden_terms))
+    if missing_future:
+        errors.append(f"new/revised manuscript forbidden terms missing: {missing_future}")
+    for debt_term in ("복종인자", "블랙킹"):
+        if debt_term in forbidden_terms:
+            errors.append(f"reconciliation debt term must not be strict-global before source pass: {debt_term}")
+
+    part2_forbidden_terms = list(validation.get("forbidden_in_part2_manuscript", []))
     required_part2_forbidden = {"버실라", "바실라", "Versilla", "Woff"}
     missing_part2 = sorted(required_part2_forbidden - set(part2_forbidden_terms))
     if missing_part2:
         errors.append(f"latest part2 forbidden terms missing: {missing_part2}")
-    if "아킴" in forbidden_terms or "아킴" in part2_forbidden_terms:
+    if "아킴" in forbidden_terms or "아킴" in future_forbidden_terms or "아킴" in part2_forbidden_terms:
         errors.append("Akim must remain allowed")
+
+    debt_registry = validation.get("known_manuscript_reconciliation_debt", {})
+    if not isinstance(debt_registry, dict):
+        debt_registry = {}
+        errors.append("known_manuscript_reconciliation_debt must be an object")
+    for debt_term in ("복종인자", "블랙킹"):
+        paths = debt_registry.get(debt_term)
+        if not isinstance(paths, list) or not paths:
+            errors.append(f"known reconciliation debt paths missing for {debt_term}")
 
     canon_by_id = {item.get("id"): item for item in registry.get("canon", []) if isinstance(item, dict)}
     self_control = canon_by_id.get("juan.self-control-protocol")
@@ -70,7 +94,9 @@ try:
 except Exception as exc:
     registry = {}
     forbidden_terms = []
+    future_forbidden_terms = []
     part2_forbidden_terms = []
+    debt_registry = {}
     errors.append(f"invalid canon registry: {exc}")
 
 try:
@@ -124,12 +150,28 @@ for number, (title, pov, body, path) in seen.items():
     if entry.get("body_sha256") != digest:
         errors.append(f"chapter {number} body SHA mismatch")
 
+# Strict bans must already be absent from all current manuscript bundles.
 for path in bundles:
     text = path.read_text(encoding="utf-8")
     for term in forbidden_terms:
         if term in text:
             errors.append(f"superseded term {term} in active manuscript {path.relative_to(ROOT)}")
 
+# Debt terms may exist only in the exact bundles registered for future source/canon reconciliation.
+for term in ("복종인자", "블랙킹"):
+    actual_paths = sorted(
+        path.relative_to(ROOT).as_posix()
+        for path in bundles
+        if term in path.read_text(encoding="utf-8")
+    )
+    declared_paths = sorted(str(x) for x in debt_registry.get(term, []) if isinstance(x, str))
+    if actual_paths != declared_paths:
+        errors.append(
+            f"known reconciliation debt mismatch for {term}; "
+            f"declared={declared_paths}, actual={actual_paths}"
+        )
+
+# Part 2 exclusion is current and strict: there is no approved historical debt for this character axis.
 part2_root = FICTION / "manuscript" / "part-2"
 for path in sorted(part2_root.rglob("*.md")) if part2_root.exists() else []:
     text = path.read_text(encoding="utf-8")
@@ -142,7 +184,12 @@ active_files: set[Path] = set()
 for active_root in active_roots:
     if active_root.exists():
         for path in active_root.rglob("*"):
-            if path.is_file() and "archive" not in path.parts and path.suffix in {".md", ".json"}:
+            if (
+                path.is_file()
+                and "archive" not in path.parts
+                and "baselines" not in path.parts
+                and path.suffix in {".md", ".json"}
+            ):
                 active_files.add(path)
 
 # Canon/evidence documents may name rejected terms only to record the exclusion.
@@ -151,6 +198,8 @@ superseded_evidence_allowlist = {
     FICTION / "SOURCE_MANIFEST.md", FICTION / "sources/PRIMARY_SOURCE_INVENTORY.md",
     FICTION / "analysis/SCENE_CARDS_091_095.md",
     FICTION / "reports/REVISION_2026-07-23_SOURCE_PASS_091_095.md",
+    ROOT / "docs" / "coordination" / "SOURCE_PASS_091_095_WORK_CONTRACT.md",
+    ROOT / "docs" / "coordination" / "2026-08-10_COC_FICTION_INTEGRATION_ADVERSARIAL_REVIEW.md",
 }
 for path in sorted(active_files):
     if path in superseded_evidence_allowlist:
