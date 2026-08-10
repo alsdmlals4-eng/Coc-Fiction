@@ -20,7 +20,19 @@
 
 ## 현재 GitHub main 상태
 
-기준: `c9c4fa647c833470759ada2514e45d1b2abb1e8b`
+```yaml
+repository:
+  default_branch: main
+  last_observed_main_sha: 3f90929f33de6a829521f9ed39c23becc7ed9d11
+integration:
+  last_merged_pr: 15
+  merge_commit_sha: 3f90929f33de6a829521f9ed39c23becc7ed9d11
+verification:
+  post_merge_ci: PASS
+  post_merge_run: 31353037984
+```
+
+`last_observed_main_sha`는 이 Handoff 갱신 commit 자신의 SHA를 계속 따라가는 자기참조 값이 아니다. Resume 시에는 이 값을 현재 truth로 단정하지 말고 GitHub `main`과 open PR을 먼저 재조회한다.
 
 - 225화·45개 묶음 정상
 - `006-010` 내부 연속성 패스 완료
@@ -29,6 +41,7 @@
 - 기존 다음 대기 작업 `176-180` 원본 대조는 보존되어 있음
 - PR #13 운영 통합 완료: Base 공용 serial-fiction 책임 재사용, 프로젝트 `serial-arc-pass` 흡수, `001-105 canon reconciliation`을 현재 우선순위로 통일.
 - PR #14 Canon 동기화 완료: 주안 자기통제 프로토콜, 2부 버실라/Woff 제외, 아킴 허용, 기존 DRAFT migration debt의 fail-closed 봉인.
+- PR #15 Continuation 상태 영속화 완료: Base BCP-012 locator와 Base 구현 분리 경계를 기록했고, merge 후 `main@3f90929f...` push workflow까지 `SUCCESS` 확인.
 
 ## 현재 대화의 최신 외부 산출물
 
@@ -85,6 +98,23 @@ base_proposal:
 ```
 
 BCP-012는 새 Canon Decision과 기존 DRAFT migration 완료 상태를 분리하고, 기존 legacy debt를 정확한 consumer set으로 봉인해 새 위치로 확산되면 실패시키는 공용 lifecycle 제안이다. **Proposal PR 병합은 Base 활성 구현 승인과 무관하다.**
+
+### Post-merge continuation 공용 후보 — 중복 제안 금지
+
+PR #15 병합 직후 live Handoff의 current-main 표기가 한 단계 stale해지는 실패 유형을 Coc-Fiction에서도 재현했다. Base에서는 다른 프로젝트가 동일 Goal의 `BCP-2026-013-post-merge-continuation-state-reconciliation`을 PR #235로 이미 제안 중이다.
+
+```yaml
+base_concurrency:
+  base_main_seen: 49f6190b9b5a535ceb7986755c1b68b221754cf5
+  same_goal_state: CONCURRENT_SAME_GOAL
+  related_proposal_id: BCP-2026-013-post-merge-continuation-state-reconciliation
+  related_proposal_pr: https://github.com/alsdmlals4-eng/Base/pull/235
+  action: REFERENCE_ONLY_WHILE_OPEN / REUSE_IF_MERGED
+  new_coc_fiction_bcp_for_same_goal: NONE
+  other_project_branch_or_pr_modified: false
+```
+
+이 실행은 다른 프로젝트의 Base proposal branch/PR을 수정하지 않는다. Coc-Fiction 쪽 live router만 `stable main ref + last_observed_sha + last integrated PR + post-merge CI` 방식으로 최소 보정한다.
 
 ## 외전1 종결 고정 — GitHub current canon
 
