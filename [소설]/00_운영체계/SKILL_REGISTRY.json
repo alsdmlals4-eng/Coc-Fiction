@@ -42,7 +42,11 @@
         "dependency-map",
         "checkpoint",
         "handoff",
-        "pr-integration"
+        "pr-integration",
+        "external-artifact",
+        "artifact-promotion",
+        "delivery-manifest",
+        "canon-migration-handoff"
       ],
       "skill_modes": [
         "route",
@@ -50,11 +54,13 @@
         "coordinate-concurrent-work",
         "decompose-and-sequence",
         "checkpoint",
+        "artifact-promotion-gate",
         "handoff",
         "execution-report"
       ],
       "use_when": [
-        "요청을 Work Mode·Manuscript Stage·최소 Skill로 라우팅하고 동시 작업 충돌, 범위, 보호 대상, 순서, 체크포인트를 관리한다."
+        "요청을 Work Mode·Manuscript Stage·최소 Skill로 라우팅하고 동시 작업 충돌, 범위, 보호 대상, 순서, 체크포인트를 관리한다.",
+        "외부 최종 산출물의 전달·QA 상태와 GitHub production manuscript 정본 승격 상태가 서로 다른 lifecycle일 때 두 상태를 분리해 인수인계한다."
       ],
       "do_not_use_when": [
         "명확한 단일 문장 교정 또는 같은 입력의 단순 검사 재실행이다."
