@@ -3,7 +3,7 @@
 ## 기준
 
 - Base 저장소: `alsdmlals4-eng/Base`
-- 현재 호환성 감사 기준 커밋: `069f0c9654a6cde7cea6f3343dd2fa81c6248d5d`
+- 현재 호환성 감사 기준 커밋: `7a49390bd840f5f5dc80fe661b44ad45e9ebeb7f`
 - Base current active Skill view: 30개
 - 목표: Base의 공용 작업 능력은 재사용하고, Coc-Fiction의 작품 Canon·원본 로그·원고 파생자료처럼 프로젝트 고유 책임은 프로젝트에 남긴다.
 - 전략: Base Skill을 복제하지 않고 **기존 5개 Coc-Fiction Skill과 조건부 Base 공용 Skill**을 조합한다.
@@ -42,7 +42,7 @@
 | `designing-art-prompts-and-technique-cards` | DEFER | 표지·삽화·시각 참고가 승인된 경우만 |
 | `auditing-and-refining-ui-art` | EXCLUDE | 게임/Web UI 전용 |
 | `managing-base-change-proposals` | ADAPT | 프로젝트 교훈의 공용성 판정과 proposal-only 제출 |
-| `developing-and-revising-serial-fiction` | REUSE | Reader Promise·Episode Value·POV/voice·Local Payoff/Open Loop·캐릭터 개성/상대 위상·원본 기능 복원·반복 변주·결과 기억·setup/payoff debt·독자 반응 근거. 프로젝트 고유 Canon/원본/파생자료는 복제하지 않음 |
+| `developing-and-revising-serial-fiction` | REUSE | Reader Promise·Episode Value·POV/voice·정보/맥락 분리·`READER_KNOWLEDGE_MATRIX`·`CHOICE_PROOF`·대표 하이라이트 proof·캐릭터 개성/상대 위상·원본 기능 복원·Local Payoff/Open Loop·반복 변주·결과 기억·setup/payoff debt·장기 복선 `RECONTEXTUALIZE/AFTERMATH`·독자 반응 근거. 프로젝트 고유 Canon/원본/파생자료는 복제하지 않음 |
 
 ## 현재 Base 30개 중 프로젝트 adapter에 직접 넣지 않은 추가 책임
 
@@ -54,6 +54,11 @@
 
 - Reader Promise와 Episode Value
 - POV를 카메라가 아니라 정보·가치·어휘 필터로 쓰는 원리
+- **답을 숨기더라도 현재 장면의 목표·위험·선택·결과 같은 맥락은 숨기지 않는 원리**
+- 중요 정보 비대칭을 `READER_KNOWLEDGE_MATRIX`로 분리해 POV 지식·독자 지식·지금 필요한 맥락·숨은 진실·공개 트리거를 감사하는 원리
+- 캐릭터 변화가 설정 설명이 아니라 압박 속 선택의 반복·회귀·변형으로 증명되는 `CHOICE_PROOF`
+- 후반의 큰 선택이 앞선 가치·상처·작은 행동과 연결되는 `SURPRISING_BUT_COHERENT`
+- 대표 캐릭터 하이라이트를 `IDENTITY + COMPETENCE + COST + CHOICE + CONSEQUENCE`로 감사하되 기계적 점수표로 사용하지 않는 원리
 - 캐릭터별 관찰 필터·voice·문제 해결 방식·결점·대표 하이라이트 구분
 - 중요 적대자의 화면 안 위협 증명과 `own turn`
 - 승리를 위해 상대를 약체화·우둔화하지 않는 위상 보존
@@ -62,6 +67,7 @@
 - 반복 구조의 의미 있는 변주
 - 선택·피해·능력 사용의 consequence memory
 - setup/payoff debt
+- 장기 복선·반전에서 필요할 때 `SETUP → RECALL → RECONTEXTUALIZE → PARTIAL_PAYOFF → PAYOFF → AFTERMATH`를 추적하는 원리
 - 독자 피드백을 Canon이 아닌 evidence로 처리하는 절차
 - 특정 작가 문체를 복제하지 않는 벤치마킹 경계
 
@@ -69,9 +75,11 @@
 
 - 《폭풍의 눈》 작품 Canon·인물·세계관·사건 결과·금지 설정
 - TRPG/PDF/source-log 우선순위와 각색 허용 경계
-- 225화 압축 초안을 원본과 분리한 비교자료로 취급하는 프로젝트 우선순위
+- 구 225화 전체 압축본을 원본과 분리한 비교자료로 취급하는 프로젝트 우선순위
 - 황진청·팽무악 등 작품별 강자·전투 하이라이트의 실제 배치와 횟수
 - 주안–엘리스, 라르고–엘리스 등 작품 고유 관계 Canon
+- Juan–Alice, Ian–Milly–Hatem, Elliott Ch47, Largo `[규율]` 등 작품별 복선 ladder의 실제 위치와 회수 방식
+- 작품별 `READER_KNOWLEDGE_MATRIX`의 실제 지식 상태와 숨김 이유
 - 5화 묶음과 앞뒤 경계 화 직접 대조
 - `MANUSCRIPT_INDEX` baseline+override 합성
 - reverse-outline override
@@ -79,7 +87,7 @@
 - Revision Report의 SHA·화수·제목·POV·분량 전파
 - 작품별 호출기/장비/관계/정보 상태 등 고유 연속성 규칙
 
-따라서 Base BCP-009가 구현됐다는 이유로 Coc-Fiction 프로젝트 Skill을 삭제하거나 여섯 번째 복제 Skill을 만들지 않는다. 공용 원리는 `REUSE`, 프로젝트 고유 실행 계약은 기존 5개 Skill의 mode로 `ABSORB`한다.
+따라서 Base 공용 serial-fiction Skill이 확장됐다는 이유로 Coc-Fiction 프로젝트 Skill을 삭제하거나 여섯 번째 복제 Skill을 만들지 않는다. 공용 원리는 `REUSE`, 프로젝트 고유 실행 계약은 기존 5개 Skill의 mode로 `ABSORB`한다.
 
 ## Serial arc pass 판정
 
@@ -118,7 +126,9 @@ stale PR #9와 closed/unmerged PR #12를 비교한 결과, 유효 고유 delta�
 - Canon 상태와 인물·연표·지식·소지품·부상·관계 변화 추적
 - 인과 플롯과 장면 전후 상태 변경 검사
 - 장면 카드 기반 집필
-- 캐릭터 개성·강적 위상·승리 개연성의 프로젝트 적용 감사
+- 캐릭터 `CHOICE_PROOF`, 개성·강적 위상·승리 개연성의 프로젝트 적용 감사
+- 대표 하이라이트 proof와 작품별 highlight tier
+- 작품별 복선 ladder와 `READER_KNOWLEDGE_MATRIX`
 - POV 거리·대화 서브텍스트·묘사·행동-반응·문장 리듬 모드
 - Developmental→Structural→Continuity→Line→Copyedit→Proofread 순서
 - 참고문장·연출을 저작권 안전한 Reference Card로 추상화
@@ -127,14 +137,16 @@ stale PR #9와 closed/unmerged PR #12를 비교한 결과, 유효 고유 delta�
 
 ## 현재 검증 경계
 
-이번 2026-08-11 호환성 갱신은 Base PR #281 병합 결과 `069f0c9654a6cde7cea6f3343dd2fa81c6248d5d`의 serial-fiction 공용 계약과 Coc-Fiction의 Registry·5-Skill 운영 파일을 대조했다. Base의 향후 commit은 자동 호환으로 간주하지 않는다.
+이번 2026-08-11 호환성 갱신은 Base PR #281과 #282 병합 결과인 `7a49390bd840f5f5dc80fe661b44ad45e9ebeb7f`의 serial-fiction 공용 계약과 Coc-Fiction의 Registry·5-Skill 운영 파일·작법 Research를 대조했다. Base의 향후 commit은 자동 호환으로 간주하지 않는다.
 
 현재 외부 최신 원고와 GitHub migration 컨테이너는 아직 전면 동기화 완료 상태가 아니다. GitHub 저장 225화 topology를 최신 narrative numbering의 최종 편성으로 간주하지 않으며, 원고 이관은 검증된 prefix 단위로 계속 진행한다.
 
+이번 작법 재조사의 공용 계약과 프로젝트 적용 문서는 자동 검증 가능하지만, **사람 독자 만족·상업 성과·특정 플랫폼 전환율은 검증하지 않았다.** 외부 편집·작가 자료는 진단 Evidence이며 작품 정본이나 판매 인과의 증거가 아니다.
+
 ## 미검증·다음 확인
 
-- 제11~105화 외부 통합본과 GitHub manuscript/canon/source의 실제 delta 재대조·정본 승격: `NOT_RUN`
+- 제6~105화 외부 통합본과 GitHub manuscript/canon/source의 실제 production delta 재대조·정본 승격: `IN_PROGRESS / 006-010 ANALYZED_NOT_INTEGRATED`
 - 이후 106화 이상 새 원고의 GitHub Canon 전파: `NOT_RUN`
 - 실제 독자 반응 기반 reader-feedback gate: `HUMAN_READER_NOT_RUN`
 - Base의 향후 새 main에 대한 자동 호환성: `UNVERIFIED_UNTIL_REAUDIT`
-- Base `character-and-opponent-integrity`의 두 번째 별도 소설 프로젝트 pilot과 사람 독자 효용: `NOT_RUN`
+- Base `character-and-opponent-integrity` 및 새 정보/하이라이트 Guide의 두 번째 별도 소설 프로젝트 pilot과 사람 독자 효용: `NOT_RUN`

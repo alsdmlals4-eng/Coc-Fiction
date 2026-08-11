@@ -145,3 +145,161 @@ Coc-Fiction 적용 순서:
 - 외부 작품의 플롯을 이름만 바꿔 이식하지 않는다.
 
 상세 기록 형식은 `REFERENCE_CARD_TEMPLATE.md`를 사용한다.
+
+## 9. 2026-08-11 벤치마킹·현업 재조사 — 정보·캐릭터 선택·하이라이트·복선
+
+이번 재조사는 《폭풍의 눈》의 전체 캐릭터 → 주요 사건/하이라이트 → 복선·정보 구조 감사를 시작하기 직전 수행했다. 외부 자료는 **작품 정본을 바꾸는 근거가 아니라 진단 질문을 개선하는 Evidence**로 사용한다.
+
+### 9.1 미스터리는 답을 숨기되 현재 맥락을 숨기지 않는다
+
+Erin Halden의 2026년 Jane Friedman 기고는 `withholding information`과 `withholding context`를 구분한다. 전자는 인물이 알고 싶어 하는 답·결과를 늦추는 서사 장치지만, 후자는 현재 장면의 시간·장소·관계·욕망·stakes를 독자가 이해하지 못하게 만들 수 있다.
+
+Coc-Fiction 전이 판정:
+
+```yaml
+source_type: working_editor_craft_guidance
+transfer: ADAPT
+require:
+  - 현재 POV·즉시 목표·위험·행동 결과는 추적 가능
+  - 독자에게 숨긴 답과 현재 이해에 필요한 맥락을 분리
+reject:
+  - CONTEXT_WITHHELD_AS_MYSTERY
+  - POV가 자연스럽게 아는 사실을 독자만 속이려고 감추는 FALSE_SUSPENSE_BY_POV_SUPPRESSION
+```
+
+Peter Selgin의 POV critique 역시 작가가 반전을 위해 POV 인물의 실제 인식보다 정보를 인위적으로 덜 주는 경우를 `false suspense` 문제로 다룬다. 따라서 《폭풍의 눈》의 정보 비대칭은 **인물이 실제로 모르거나, 말하지 않을 이유가 있거나, 자기기만/트라우마 때문에 회피하는 경우**에만 유지한다.
+
+출처:
+
+- https://janefriedman.com/how-not-to-confuse-your-readers/
+- https://janefriedman.com/two-kinds-of-narrative-suspense/
+
+### 9.2 캐릭터 아크는 설정표가 아니라 선택으로 증명한다
+
+Reedsy의 2026 character-arc 정리는 인물 변화가 장애에 대한 반응과 선택으로 표시된다고 설명한다. Reedsy Live의 character workshop 자료도 캐릭터의 active choice가 아크를 플롯 안에 실체화하며, 강한 후반 선택은 **surprising but coherent**해야 한다고 설명한다.
+
+Coc-Fiction 전이 판정:
+
+```text
+캐릭터 핵심 명제
+→ 초기 선택 패턴
+→ 압박 속 반복 선택
+→ 회귀/모순
+→ 임계 선택
+→ 후반 echo
+→ aftermath 행동
+```
+
+따라서 주안·엘리스·이안·다빈·주민뿐 아니라 라르고·가론·밀리·하템·팽무악·황진청 등 주요 조연도 `무슨 사람이라고 설명되었는가`보다 **같은 종류의 문제에서 실제로 무엇을 선택했는가**를 비교한다.
+
+출처:
+
+- https://reedsy.com/blog/character-arc/
+- https://reedsy.com/live/reedsy-write-in-characters/
+
+### 9.3 구조 퇴고를 문장 퇴고보다 먼저 잠근다
+
+Reedsy의 현행 developmental-editing 설명은 developmental edit이 characterization·structure·plot·voice 같은 큰 요소를 먼저 다루며, 감정적 payoff가 벌어졌는지, 주인공이 플롯에 끌려가는지 아니면 스스로 움직이는지, 조연에게 필요한 지면이 있는지 같은 문제를 검사한다고 설명한다. copy edit과 proofreading은 이 구조 작업 뒤 단계다.
+
+Coc-Fiction 전이 판정:
+
+- 현재 고정 순서 `캐릭터 → 주요 사건/하이라이트 → 복선·정보 구조 → 본문 퇴고`를 유지한다.
+- 조연의 지면과 하이라이트는 늘릴 수 있지만 주연의 핵심 선택·결말을 대신하면 실패다.
+- 문장이 좋은데 구조가 틀린 장면은 line edit로 구제하려 하지 않는다.
+
+출처:
+
+- https://reedsy.com/editing/developmental-editing
+- https://reedsy.com/faq/common-questions/services/editing
+
+### 9.4 대표 하이라이트는 캐릭터와 능력의 증거다
+
+이번 조사와 기존 Base `character-and-opponent-integrity`를 결합해 대표 캐릭터 하이라이트를 다음 렌즈로 본다.
+
+```text
+IDENTITY
++ COMPETENCE
++ COST
++ CHOICE
++ CONSEQUENCE
+```
+
+이는 점수표가 아니다. 전투가 아닌 장례·협상·고백·공포 이미지처럼 한 기능에 집중하는 장면에 다섯 요소를 억지로 넣지 않는다. 다만 `이 인물이 강하다/변했다/중요하다`고 작품이 크게 약속할수록 대표 장면에서 그 약속을 독자가 체험할 증거가 필요하다.
+
+《폭풍의 눈》에서는 다음을 추가 감사한다.
+
+- 주안의 승리 때문에 적이 갑자기 약해지지 않는가.
+- 팽무악·황진청·라르고처럼 설정상 강한 조연의 위상은 화면 안에서 필요한 만큼 증명되는가.
+- 조연의 강함 증명이 다빈·주민·엘리스의 중앙 결정을 빼앗지 않는가.
+- 하이라이트 뒤 부상·관계·정보·책임·선택의 결과가 남는가.
+
+### 9.5 복선은 SETUP보다 RECONTEXTUALIZE와 AFTERMATH까지 본다
+
+Reedsy의 2025 foreshadowing 정리는 복선이 미래 사건을 준비해 anticipation을 만들고, 이후 사건이 우연이 아니라 준비된 것으로 느껴지게 하는 기능을 강조한다. 이를 기존 setup/payoff ledger와 결합해 장기 축은 필요할 때 다음 상태로 확장한다.
+
+```text
+SETUP
+→ RECALL
+→ RECONTEXTUALIZE
+→ PARTIAL_PAYOFF
+→ PAYOFF
+→ AFTERMATH
+```
+
+《폭풍의 눈》 적용에서는 특히 다음을 본다.
+
+- 1부의 작은 단서가 45~60화 또는 2부에서 두 번째 의미를 얻는가.
+- Elliott의 Ch47 조기 노출처럼 장기 seed가 2부에서 자연스럽게 회수되는가.
+- Juan–Alice의 선택/감정 문제처럼 정답을 `객관적 순수성 증명`으로 바꾸지 않고 과거 선택을 재맥락화하는가.
+- Largo의 1부 위화감 → 2부 교관 공개 → Rift Accord `[규율]`이 단계적으로 의미를 바꾸는가.
+- payoff 뒤 인물의 행동이 달라지는 `AFTERMATH`가 있는가.
+
+출처:
+
+- https://reedsy.com/blog/what-is-foreshadowing/
+
+### 9.6 한국 웹소설 현업 신호는 플랫폼 고유값으로 분리한다
+
+2025년 출간된 《북마녀의 웹소설 프로듀싱 아카데미》의 공개 소개는 웹소설 실무가 독자·플랫폼·장르 특성과 PD의 편집·출판 workflow를 함께 다룬다는 점을 보여준다. 이는 **플랫폼과 장르에 따른 시장·제작 차이를 무시하면 안 된다는 현업 신호**로만 사용한다.
+
+Coc-Fiction 전이 판정:
+
+- 플랫폼 독자 취향·회차 길이·과금 구조는 필요할 때 현재 플랫폼 자료로 재검증한다.
+- `한국 웹소설은 무조건 이런 문체/클리프행어/분량이어야 한다`는 universal rule은 만들지 않는다.
+- 작품의 캐릭터·주제·CoC 미스터리 구조를 일시적 시장 공식보다 우선한다.
+
+출처:
+
+- https://series.naver.com/ebook/detail.series?productNo=12685487
+- https://www.yes24.com/product/goods/143343634
+
+## 10. 이번 재조사 뒤 《폭풍의 눈》 적용 Gate
+
+구조 감사 단계에서는 아래 네 렌즈를 묶어 사용한다.
+
+```yaml
+character:
+  contract: CHOICE_PROOF
+  check: 초기 선택 → 압박 → 회귀/모순 → 임계 선택 → 후반 echo
+highlight:
+  contract: IDENTITY + COMPETENCE + COST + CHOICE + CONSEQUENCE
+information:
+  contract: WITHHOLD_INFORMATION_NOT_CONTEXT
+  artifact: READER_KNOWLEDGE_MATRIX
+foreshadow:
+  contract: SETUP → RECALL → RECONTEXTUALIZE → PARTIAL_PAYOFF → PAYOFF → AFTERMATH
+```
+
+적대적 검토 실패 코드:
+
+- `CONTEXT_WITHHELD_AS_MYSTERY`
+- `FALSE_SUSPENSE_BY_POV_SUPPRESSION`
+- `ARC_TOLD_NOT_PROVEN`
+- `UNSEEDED_CHARACTER_TURN`
+- `HIGHLIGHT_WITHOUT_COST_OR_CHOICE`
+- `SPECTACLE_WITHOUT_CHARACTER`
+- `FORESHADOW_WITHOUT_PAYOFF`
+- `PAYOFF_WITHOUT_SETUP`
+- `PAYOFF_WITHOUT_AFTERMATH`
+
+이 Gate를 통과하기 전에는 전체 본문 line edit로 넘어가지 않는다.

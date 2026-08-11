@@ -9,7 +9,8 @@
 - 현재 작품 작업 순서: `캐릭터 정본 → 주요 사건/하이라이트 → 복선·정보 구조 → 전체 본문 퇴고`.
 - 현재 프로젝트 주 책임: `fiction-canon-and-research: source-log / canon-audit / continuity-map / timeline-and-state`
 - 현재 프로젝트 보조 책임: `fiction-story-development: character-and-opponent-integrity / character-and-arc / plot-and-causality / scene-card`, `fiction-revision-and-validation: character-opponent-integrity / serial-arc-pass / adversarial-loop / regression-check / pr-review`, `fiction-project-operations: checkpoint / handoff / execution-report`.
-- Base 공용 작법: `developing-and-revising-serial-fiction`의 Canon/각색 경계, POV·voice, 캐릭터 개성·상대 위상, 회차 가치, Local Payoff/Open Loop를 선택적으로 재사용한다.
+- Base 공용 작법: `developing-and-revising-serial-fiction`의 Canon/각색 경계, POV·voice, 캐릭터 개성·상대 위상, `WITHHOLD_INFORMATION_NOT_CONTEXT`, `CHOICE_PROOF`, highlight proof, 복선 `RECONTEXTUALIZE/AFTERMATH`, 회차 가치, Local Payoff/Open Loop를 선택적으로 재사용한다.
+- 2026-08-11 작법 재조사 결과는 `docs/fiction-ops/CRAFT_RESEARCH.md`와 Base serial-fiction knowledge hub에 반영됐다. 본문 대규모 퇴고 전 구조 감사에 먼저 적용한다.
 
 ## Source authority for current story audit
 
@@ -31,22 +32,26 @@
 ```yaml
 baseline:
   default_branch: main
-  last_observed_main_sha: e829fecf7e52d2b2aefaa13d0b1e1e689f69dac0
-  last_integrated_pr: 19
-  merge_commit_sha: e829fecf7e52d2b2aefaa13d0b1e1e689f69dac0
+  last_observed_main_sha: 43a307b1cd8a5b1f39ba859a44dadfb517b77f74
+  last_integrated_pr: 21
+  merge_commit_sha: 43a307b1cd8a5b1f39ba859a44dadfb517b77f74
 
 progress:
   completed_verified:
     - external latest chapters 001-005 production reconciliation
     - side-story-lake 091-095 primary-source matched pass
     - Base PR #281 character/opponent integrity mode merge
+    - Coc-Fiction PR #21 character/opponent integrity + Largo instructor/affection canon merge
+    - Base PR #282 serial-fiction information/choice/highlight/foreshadow craft refresh
+    - 2026-08-11 project craft benchmark refresh and application Gate
   analyzed_not_integrated:
     - PR #19 produced source/canon audit cards and a report for external latest chapters 006-010, but the merged PR did not propagate the approved production body, manuscript index, reverse outline, or Scene Pass Registry. This is not counted as completed migration.
   in_progress:
     - character canon / event-highlight / foreshadow-information architecture audit before prose rewrite
     - external latest chapters 001-105 gradual GitHub canon reconciliation
   ready_next:
-    - finish global character/event/foreshadow architecture
+    - apply CHOICE_PROOF / highlight proof / foreshadow ladder / reader knowledge matrix to remaining global story audit
+    - continue Part2 major-event chronology and POV/information-asymmetry audit
     - migrate external latest chapters 006-010 as one atomic production pass when manuscript migration resumes
   deferred:
     - full prose rewrite until global story architecture is locked
@@ -63,6 +68,98 @@ migration:
 ```
 
 `last_observed_main_sha`는 이 문서 자신의 새 commit을 무한 추적하는 값이 아니다. 새 세션은 GitHub `main`과 열린 PR을 먼저 재조회한다.
+
+## 2026-08-11 구조 감사용 작법 Gate
+
+### 1. Character — CHOICE_PROOF
+
+주요 인물마다 다음을 실제 장면 선택으로 증명한다.
+
+```yaml
+core_value_or_wound:
+initial_choice_pattern:
+pressure_tests:
+regression_or_contradiction:
+threshold_choice:
+late_choice_echo:
+aftermath_behavior:
+```
+
+- 성장 선언이나 캐릭터 소개문만으로 아크 완료를 주장하지 않는다.
+- 후반 선택은 앞의 작은 선택을 다시 보면 가능성이 있었던 `SURPRISING_BUT_COHERENT`를 지향한다.
+- 회귀·실수·모순은 결함이 아니라 아크의 압력 증거가 될 수 있다.
+
+### 2. Highlight — IDENTITY + COMPETENCE + COST + CHOICE + CONSEQUENCE
+
+대표 장면마다 필요한 범위에서 확인한다.
+
+- `IDENTITY`: 다른 인물로 바꾸면 같은 장면이 되지 않는가.
+- `COMPETENCE`: 설정상 능력·직업·지위가 실제 화면에서 작동하는가.
+- `COST`: 저항·손실·포기 가능성이 있는가.
+- `CHOICE`: 결정적 행동을 해당 인물이 소유하는가.
+- `CONSEQUENCE`: 관계·정보·몸·자원·목표가 이후 실제로 바뀌는가.
+
+조연 하이라이트는 강하게 만들되 다빈·주민·엘리스 등 해당 부 주연의 중앙 결정권과 결말을 빼앗지 않는다.
+
+### 3. Information — WITHHOLD_INFORMATION_NOT_CONTEXT
+
+중요 사건은 필요할 때 `READER_KNOWLEDGE_MATRIX`를 사용한다.
+
+```yaml
+pov_knows:
+pov_suspects:
+other_character_knows:
+reader_knows:
+reader_needs_now:
+hidden_truth:
+withholding_reason:
+behavioral_trace:
+reveal_trigger:
+post_scene_information_change:
+```
+
+- 답·배후·괴이 원리는 숨길 수 있다.
+- 현재 POV·즉시 목표·위험·행동 결과처럼 독자가 장면을 따라갈 맥락은 숨기지 않는다.
+- POV가 이미 아는 사실을 독자만 속이려고 부자연스럽게 감추면 `FALSE_SUSPENSE_BY_POV_SUPPRESSION`이다.
+- 인물이 타인에게 정보를 숨기면 character-specific reason과 행동 흔적이 필요하다.
+
+### 4. Foreshadow — staged payoff ladder
+
+장기 복선은 필요할 때 다음으로 추적한다.
+
+```text
+SETUP
+→ RECALL
+→ RECONTEXTUALIZE
+→ PARTIAL_PAYOFF
+→ PAYOFF
+→ AFTERMATH
+```
+
+특히 1부 → Ch45–60 → 2부 → Rift Accord 사이의 장기 seed가 단순 재등장이 아니라 **두 번째 의미**를 얻는지 본다.
+
+우선 감사 대상:
+
+- Juan–Alice 선택/감정 불확실성
+- Ian–Milly–Hatem 동일 얼굴/상실/광기 구조
+- Elliott의 Ch47 조기 노출과 2부 antagonist payoff
+- Largo의 1부 위화감 → 8년 교관 관계 → 2부 유능한 교관 → Rift Accord `[규율]`
+- William/Alice, Choseikan/outer armor, Elliott/Dabin의 `보호가 선택을 빼앗는 순간` 주제 변주
+
+### 적대적 실패 코드
+
+- `CONTEXT_WITHHELD_AS_MYSTERY`
+- `FALSE_SUSPENSE_BY_POV_SUPPRESSION`
+- `ARC_TOLD_NOT_PROVEN`
+- `UNSEEDED_CHARACTER_TURN`
+- `HIGHLIGHT_WITHOUT_COST_OR_CHOICE`
+- `SPECTACLE_WITHOUT_CHARACTER`
+- `COMPETENCE_CLAIM_WITHOUT_PROOF`
+- `FORESHADOW_WITHOUT_PAYOFF`
+- `PAYOFF_WITHOUT_SETUP`
+- `PAYOFF_WITHOUT_AFTERMATH`
+
+이 Gate를 통과하기 전에는 전체 본문 line edit로 넘어가지 않는다.
 
 ## 현재 캐릭터·관계 Canon 핵심
 
@@ -105,14 +202,19 @@ migration:
 
 ```yaml
 base_repository: alsdmlals4-eng/Base
-base_pr: 281
-base_commit: 069f0c9654a6cde7cea6f3343dd2fa81c6248d5d
+base_prs:
+  - 281
+  - 282
+base_commit: 7a49390bd840f5f5dc80fe661b44ad45e9ebeb7f
 base_skill: developing-and-revising-serial-fiction
-base_mode: character-and-opponent-integrity
+base_modes_and_guides:
+  - character-and-opponent-integrity
+  - SERIAL_NARRATIVE_INFORMATION_AND_HIGHLIGHT_GUIDE.md
 project_modes:
   - fiction-story-development: character-and-opponent-integrity
   - fiction-revision-and-validation: character-opponent-integrity
 base_implementation_authority: USER_APPROVED_AND_MERGED
+craft_refresh_status: MERGED_AND_PROJECT_APPLIED
 new_broad_skill_created: false
 second_project_pilot: NOT_RUN
 human_reader_quality: NOT_RUN
