@@ -30,6 +30,8 @@ REQUIRED_FILES = [
     "templates/fiction-ops/SCENE_CARD.template.md",
     "templates/fiction-ops/STYLE_GUIDE.template.md",
     "templates/fiction-ops/REVISION_REPORT.template.md",
+    "fiction/ACTIVE_CONTEXT.md",
+    "fiction/HANDOFF.md",
 ]
 
 EXPECTED_SKILLS = {
@@ -77,6 +79,19 @@ SERIAL_ARC_TRIGGERS = {
     "canon-propagation",
 }
 SERIAL_ARC_MODE = "serial-arc-pass"
+
+ARTIFACT_PROMOTION_TRIGGERS = {
+    "external-artifact",
+    "artifact-promotion",
+    "delivery-manifest",
+    "canon-migration-handoff",
+}
+ARTIFACT_PROMOTION_MODE = "artifact-promotion-gate"
+ARTIFACT_PROMOTION_STATE_TOKENS = {
+    "delivery_state",
+    "repository_promotion_state",
+    "FETCH_LATEST_MAIN_BEFORE_USE",
+}
 
 REQUIRED_RESEARCH_URLS = [
     "https://owl.purdue.edu/",
@@ -177,6 +192,25 @@ def main() -> int:
             if mode not in text:
                 errors.append(f"{skill_id}: mode absent from SKILL.md: {mode}")
 
+    operations = next(
+        (item for item in skills if item.get("skill_id") == "fiction-project-operations"),
+        None,
+    )
+    if operations is None:
+        errors.append("fiction-project-operations missing from registry")
+    else:
+        triggers = set(operations.get("trigger_tags", []))
+        missing_triggers = sorted(ARTIFACT_PROMOTION_TRIGGERS - triggers)
+        if missing_triggers:
+            errors.append(f"fiction operations artifact-promotion triggers missing: {missing_triggers}")
+        if ARTIFACT_PROMOTION_MODE not in operations.get("skill_modes", []):
+            errors.append(f"fiction operations mode missing: {ARTIFACT_PROMOTION_MODE}")
+        operations_path = ROOT / str(operations.get("path", ""))
+        if operations_path.is_file():
+            operations_text = operations_path.read_text(encoding="utf-8")
+            if ARTIFACT_PROMOTION_MODE not in operations_text:
+                errors.append(f"fiction operations SKILL.md missing mode body: {ARTIFACT_PROMOTION_MODE}")
+
     revision = next(
         (item for item in skills if item.get("skill_id") == "fiction-revision-and-validation"),
         None,
@@ -224,6 +258,15 @@ def main() -> int:
         missing = sorted(EXPECTED_BASE_CAPABILITIES - mapped_base_ids)
         extra = sorted(mapped_base_ids - EXPECTED_BASE_CAPABILITIES)
         errors.append(f"Base capability mapping mismatch; missing={missing}, extra={extra}")
+
+    for relative in ("fiction/ACTIVE_CONTEXT.md", "fiction/HANDOFF.md"):
+        path = ROOT / relative
+        if not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8")
+        for token in ARTIFACT_PROMOTION_STATE_TOKENS:
+            if token not in text:
+                errors.append(f"{relative}: missing artifact-promotion handoff token: {token}")
 
     for json_path in ROOT.rglob("*.json"):
         if ".git" in json_path.parts:

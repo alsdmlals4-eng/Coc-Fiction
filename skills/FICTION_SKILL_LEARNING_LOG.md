@@ -61,10 +61,20 @@
 - 라르고는 1부에서 윌리엄의 평범한 비서로 보이고, 주안 이탈 뒤 8년 동안 엘리스의 실제 교관이 된다. 라르고의 호감은 비서 시절의 선행 짝사랑이 아니라 **엘리스를 직접 가르치고 성장과 선택을 오래 지켜보는 과정에서 생긴 감정**으로 정본화한다.
 - 라르고는 엘리스가 주안을 사랑함을 알고도 경쟁·정보 차단을 하지 않는다. `좋아하니까 대신 결정하지 않는다`는 태도는 윌리엄의 보호 논리와 대비되며, 실제 `[규율]` 공개는 Rift Accord 외전까지 지연한다.
 
+## 2026-08-12 — 전달 완료와 repository 정본 승격은 다른 lifecycle
+
+- PR #24에서 제156~161화 Rift Accord DOCX는 내용·분량·금지어·문서 무결성·렌더 QA를 통과해 사용자 전달까지 끝났지만, GitHub의 225화 `migration storage topology`에는 본문을 blind overwrite하지 않았다.
+- 따라서 `DELIVERED`와 `REPOSITORY_PROMOTED`를 하나의 `완료`로 쓰면 다음 세션이 잘못된 원고를 정본으로 읽거나, 반대로 이미 전달 완료된 산출물을 다시 집필하는 오류가 생긴다.
+- 기존 `fiction-project-operations`에 `artifact-promotion-gate`를 ABSORB하고 `delivery_state`와 `repository_promotion_state`를 별도 기록한다. 새 sixth Skill은 만들지 않는다.
+- staged migration에서는 외부 artifact 이름의 `최종` 표기를 Canon 권위로 쓰지 않고, 검증된 prefix·migration boundary·legacy tail·validation gate를 함께 본다.
+- Base Existing Solution First 결과: 새 BCP가 필요하지 않다. BCP-012는 Canon 결정과 legacy migration debt 분리, BCP-017은 reconciliation frontier와 external artifact 자동 권위 금지, BCP-013은 post-merge live handoff reconciliation을 이미 소유하고 모두 Base에 구현된 상태다. 이번 교훈은 `REUSE_EXISTING_BCP`로 닫는다.
+- Base `main`의 최신 관측 SHA를 프로젝트 `base_commit` adoption pin으로 자동 승격하지 않는다. 공용 pin 갱신은 별도 Base-adoption audit가 있을 때만 한다.
+
 ## 다음 재검토 조건
 
-- 제1~105화 최신 외부 통합본을 GitHub manuscript/source/canon과 회차별로 대조해 실제 정본 delta를 회수한다.
-- `006-010`은 확보된 1부 원본으로 재감사한다.
-- 보류된 `176-180` 원본 직접 대조는 001-105 최신본의 GitHub 정본화 이후 우선순위를 다시 판정한다.
+- 외부 최신 작업본을 제1~161화 통합 정본 후보로 만들 때 각 기존 배치의 실제 파일·해시·중복·누락을 다시 대조한다.
+- 통합 001~161 산출물이 완성·검증돼도 GitHub production manuscript promotion은 별도 상태로 유지한다.
+- bounded GitHub migration을 재개한다면 현재 verified frontier 1~5를 보존하고 `006-010`부터 source/Canon reconciliation을 다시 수행한다.
+- 보류된 `176-180` 원본 직접 대조는 최신 001~161 통합본 및 repository migration 전략 확정 뒤 우선순위를 다시 판정한다.
 - 황진청·팽무악 전투 보강 시 원본 결과, 주연 결정권, 상대 위상 장부를 함께 회귀검사한다.
 - 다른 장편 프로젝트에서도 `설정상 강자지만 약해 보임` 또는 `주인공 승리를 위해 적이 바보가 됨` 문제가 반복되면 Base 공용 mode의 두 번째 프로젝트 pilot 근거로 승격한다.
