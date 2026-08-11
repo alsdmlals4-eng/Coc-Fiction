@@ -7,7 +7,7 @@ description: 원고를 구조·인과·연속성·장면·문장·교정 층으�
 
 ## Modes
 
-`contract-check | developmental-edit | structural-reverse-outline | serial-arc-pass | scene-diagnostic | continuity-check | line-edit | copyedit | proofread | reader-feedback | adversarial-loop | regression-check | evidence-report | pr-review`
+`contract-check | developmental-edit | structural-reverse-outline | serial-arc-pass | scene-diagnostic | continuity-check | character-opponent-integrity | line-edit | copyedit | proofread | reader-feedback | adversarial-loop | regression-check | evidence-report | pr-review`
 
 한 번에 필요한 mode만 실행한다. `proofread`를 구조 검토보다 먼저 하지 않는다.
 
@@ -32,7 +32,7 @@ description: 원고를 구조·인과·연속성·장면·문장·교정 층으�
 4. 원고를 바꾸면 `MANUSCRIPT_INDEX`, 역개요 override, Scene Pass Registry, Revision Report의 SHA·화수·제목·POV·분량 소비자를 같은 변경 범위에서 재생성·검증한다.
 5. 자동 역개요·분량 통계는 finding 후보일 뿐 수정 명령이 아니다. 원고 문맥과 Canon 근거로 재판정한다.
 
-Base의 `developing-and-revising-serial-fiction`은 Reader Promise, Episode Value, POV·voice, Local Payoff/Open Loop 같은 공용 작법 원리를 제공한다. 이 프로젝트 mode는 그 공용 원리를 복제하지 않고, Coc-Fiction 고유의 원본 로그·Canon·묶음 경계·합성 색인·역개요 override·Scene Pass Registry·Revision Report 전파를 책임진다.
+Base의 `developing-and-revising-serial-fiction`은 Reader Promise, Episode Value, POV·voice, 캐릭터 개성·상대 위상, Local Payoff/Open Loop 같은 공용 작법 원리를 제공한다. 이 프로젝트 mode는 그 공용 원리를 복제하지 않고, Coc-Fiction 고유의 원본 로그·Canon·묶음 경계·합성 색인·역개요 override·Scene Pass Registry·Revision Report 전파를 책임진다.
 
 결과는 `묶음 진단 / 경계 연속성 / 최소 수정 / Canon 전파 / 파생 자료 재생성 / 전체 감사로 일반화하지 않은 범위 / 다음 묶음`으로 보고한다.
 
@@ -49,6 +49,17 @@ Base의 `developing-and-revising-serial-fiction`은 Reader Promise, Episode Valu
 ### Scene diagnostic
 
 장면 전후 변화, 인물 의도, 장애, 대가, 정보 공개의 공정성, 정서 변화, 장면 연결을 본다. Goal-Conflict-Setback과 Reaction-Dilemma-Decision은 선택적 렌즈다.
+
+### Character & opponent integrity
+
+`skills/fiction-story-development/references/character-and-opponent-integrity.md`를 기준으로 주요 인물·조연·적대자의 개성과 위상을 감사한다.
+
+- 이름을 가리고도 관찰·판단·대사·문제 해결 방식이 구분되는가
+- 설정상 강한 인물은 실제 장면에서 강함을 증명했는가
+- 중요 상대가 최소 한 번 자기 규칙을 강제하고 실제 성공·비용을 남겼는가
+- 주인공의 승리가 상대의 갑작스러운 약화·우둔화에 의존하지 않는가
+- 원본/225화에 존재했던 강함·관계 기능이 압축 과정에서 사라졌다면 `KEEP / RESTORE / REWORK / NEW / REMOVE`가 근거와 함께 판정됐는가
+- 조연 하이라이트가 주연의 중앙 결정과 결말을 빼앗지 않는가
 
 ### Continuity
 
@@ -77,6 +88,11 @@ attack
 
 - 인과 단절·편의적 우연·해결의 무대책성
 - 인물 동기 붕괴·능력과 선택의 편의적 변화
+- 캐릭터 말투·관찰·해결법의 균질화
+- 설정상 강한 인물의 화면 밖 위상 주장
+- 주인공을 띄우기 위한 적대자 약체화·바보화
+- 강적의 own turn 부재 또는 패배 뒤 위상 붕괴
+- 조연 하이라이트가 주연의 핵심 선택을 대신하는 문제
 - 독자에게만 숨기는 부정직한 정보
 - 감정 비약·결과 없는 장면·반복되는 기능
 - 세계 규칙의 선택적 적용
@@ -108,15 +124,16 @@ attack
 - 최신 main·열린 PR과 겹치는 파일을 재확인한다.
 - 작품 코어·Canon·원고·장면 카드의 변경 전파를 확인한다.
 - 수정 권한을 넘은 의미·톤·사건 변경을 찾는다.
+- 캐릭터·상대 위상 수정이 새 continuity 모순이나 주연 결정권 침범을 만들지 않았는지 확인한다.
 - 자동 검사와 실제 원고 검수를 구분한다.
 - 미검증과 롤백을 기록한다.
 
 ## Output
 
-finding-first로 작성한다. 각 finding에 위치, 증거, 심각도, 영향, 판정, 승인된 수정, 회귀 결과를 연결한다.
+finding-first로 작성한다. 각 finding에 위치, 증거, 심각도, 영향, 판정, 승인된 수정, 회귀 결과를 연결한다. 캐릭터·상대 위상 작업에서는 `character_identity_matrix`, `opponent_threat_ledger`, `source_function_reconciliation`을 함께 남긴다.
 
 ## Quality gate
 
-모든 비판을 자동 반영하거나, 표면 문장만 고쳐 구조 결함을 숨기거나, 사용자 문체를 AI 문체로 바꾸거나, 테스트·문서를 삭제해 문제를 없애거나, 수정 뒤 회귀 검토를 생략하면 실패다.
+모든 비판을 자동 반영하거나, 표면 문장만 고쳐 구조 결함을 숨기거나, 사용자 문체를 AI 문체로 바꾸거나, 테스트·문서를 삭제해 문제를 없애거나, 주인공 승리를 위해 상대를 약체화하거나, 설정상 강한 인물의 위상을 소문으로만 처리하거나, 수정 뒤 회귀 검토를 생략하면 실패다.
 
 Learning Log: `skills/FICTION_SKILL_LEARNING_LOG.md`
