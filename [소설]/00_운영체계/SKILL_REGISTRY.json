@@ -2,7 +2,7 @@
   "schema_version": 1,
   "registry_role": "coc-fiction-skill-router",
   "base_repository": "alsdmlals4-eng/Base",
-  "base_commit": "315c66eea9614c284b9c11c4d522141065dfa4b0",
+  "base_commit": "069f0c9654a6cde7cea6f3343dd2fa81c6248d5d",
   "routing_policy": {
     "load_all_skills": false,
     "default_selection": "automatic-trigger-match",
