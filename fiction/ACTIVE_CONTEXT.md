@@ -9,8 +9,8 @@
 - 현재 작품 작업 순서: `캐릭터 정본 → 주요 사건/하이라이트 → 복선·정보 구조 → 전체 본문 퇴고`.
 - 현재 프로젝트 주 책임: `fiction-canon-and-research: source-log / canon-audit / continuity-map / timeline-and-state`
 - 현재 프로젝트 보조 책임: `fiction-story-development: character-and-opponent-integrity / character-and-arc / plot-and-causality / scene-card`, `fiction-revision-and-validation: character-opponent-integrity / serial-arc-pass / adversarial-loop / regression-check / pr-review`, `fiction-project-operations: checkpoint / handoff / execution-report`.
-- Base 공용 작법: `developing-and-revising-serial-fiction`의 Canon/각색 경계, POV·voice, 캐릭터 개성·상대 위상, 회차 가치, Local Payoff/Open Loop를 선택적으로 재사용한다.
-- 2026-08-11 작법 재조사 결과를 `docs/fiction-ops/CRAFT_RESEARCH.md`와 Base serial-fiction knowledge hub에 반영 중이며, 본문 대규모 퇴고 전 구조 감사에 우선 적용한다.
+- Base 공용 작법: `developing-and-revising-serial-fiction`의 Canon/각색 경계, POV·voice, 캐릭터 개성·상대 위상, `WITHHOLD_INFORMATION_NOT_CONTEXT`, `CHOICE_PROOF`, highlight proof, 복선 `RECONTEXTUALIZE/AFTERMATH`, 회차 가치, Local Payoff/Open Loop를 선택적으로 재사용한다.
+- 2026-08-11 작법 재조사 결과는 `docs/fiction-ops/CRAFT_RESEARCH.md`와 Base serial-fiction knowledge hub에 반영됐다. 본문 대규모 퇴고 전 구조 감사에 먼저 적용한다.
 
 ## Source authority for current story audit
 
@@ -42,15 +42,16 @@ progress:
     - side-story-lake 091-095 primary-source matched pass
     - Base PR #281 character/opponent integrity mode merge
     - Coc-Fiction PR #21 character/opponent integrity + Largo instructor/affection canon merge
+    - Base PR #282 serial-fiction information/choice/highlight/foreshadow craft refresh
+    - 2026-08-11 project craft benchmark refresh and application Gate
   analyzed_not_integrated:
     - PR #19 produced source/canon audit cards and a report for external latest chapters 006-010, but the merged PR did not propagate the approved production body, manuscript index, reverse outline, or Scene Pass Registry. This is not counted as completed migration.
   in_progress:
-    - 2026-08-11 external craft benchmark refresh and project application
     - character canon / event-highlight / foreshadow-information architecture audit before prose rewrite
     - external latest chapters 001-105 gradual GitHub canon reconciliation
   ready_next:
-    - finish craft refresh verification
-    - apply CHOICE_PROOF / highlight proof / foreshadow ladder / reader knowledge matrix to global story audit
+    - apply CHOICE_PROOF / highlight proof / foreshadow ladder / reader knowledge matrix to remaining global story audit
+    - continue Part2 major-event chronology and POV/information-asymmetry audit
     - migrate external latest chapters 006-010 as one atomic production pass when manuscript migration resumes
   deferred:
     - full prose rewrite until global story architecture is locked
@@ -201,16 +202,19 @@ SETUP
 
 ```yaml
 base_repository: alsdmlals4-eng/Base
-base_pr: 281
-base_commit: 069f0c9654a6cde7cea6f3343dd2fa81c6248d5d
+base_prs:
+  - 281
+  - 282
+base_commit: 7a49390bd840f5f5dc80fe661b44ad45e9ebeb7f
 base_skill: developing-and-revising-serial-fiction
-base_mode: character-and-opponent-integrity
-craft_refresh_pr: 282
-craft_refresh_status: IN_PROGRESS
+base_modes_and_guides:
+  - character-and-opponent-integrity
+  - SERIAL_NARRATIVE_INFORMATION_AND_HIGHLIGHT_GUIDE.md
 project_modes:
   - fiction-story-development: character-and-opponent-integrity
   - fiction-revision-and-validation: character-opponent-integrity
 base_implementation_authority: USER_APPROVED_AND_MERGED
+craft_refresh_status: MERGED_AND_PROJECT_APPLIED
 new_broad_skill_created: false
 second_project_pilot: NOT_RUN
 human_reader_quality: NOT_RUN
