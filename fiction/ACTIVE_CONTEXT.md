@@ -37,14 +37,17 @@ baseline:
 
 progress:
   completed_verified:
-    - PR #19 external latest chapters 006-010 source/canon reconciliation
+    - external latest chapters 001-005 production reconciliation
+    - side-story-lake 091-095 primary-source matched pass
     - Base PR #281 character/opponent integrity mode merge
+  analyzed_not_integrated:
+    - PR #19 produced source/canon audit cards and a report for external latest chapters 006-010, but the merged PR did not propagate the approved production body, manuscript index, reverse outline, or Scene Pass Registry. This is not counted as completed migration.
   in_progress:
     - character canon / event-highlight / foreshadow-information architecture audit before prose rewrite
     - external latest chapters 001-105 gradual GitHub canon reconciliation
   ready_next:
     - finish global character/event/foreshadow architecture
-    - external latest chapters 011-015 versus stored legacy 011-015 when manuscript migration resumes
+    - migrate external latest chapters 006-010 as one atomic production pass when manuscript migration resumes
   deferred:
     - full prose rewrite until global story architecture is locked
     - stored 176-180 primary-source pass until current external reconciliation priority is reassessed
@@ -52,11 +55,11 @@ progress:
 migration:
   artifact: 폭풍의눈_2차퇴고_제001-105화_POV후크_캐릭터_통합최종본.zip
   target_chapters: [1, 105]
-  reconciled_prefix_end: 10
-  legacy_tail_starts_at: 11
-  boundary_after_chapter: 10
+  reconciled_prefix_end: 5
+  legacy_tail_starts_at: 6
+  boundary_after_chapter: 5
   whole_manuscript_continuity: NOT_YET_CLAIMED
-  next_bundle: fiction/manuscript/part-1/011-015.md
+  next_bundle: fiction/manuscript/part-1/006-010.md
 ```
 
 `last_observed_main_sha`는 이 문서 자신의 새 commit을 무한 추적하는 값이 아니다. 새 세션은 GitHub `main`과 열린 PR을 먼저 재조회한다.
