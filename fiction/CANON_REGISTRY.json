@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-10",
+  "updated_at": "2026-08-11",
   "core_status": "CORE_CONFIRMED",
   "active_sources": {
     "master": "fiction/FICTION_MASTER.md",
@@ -21,6 +21,11 @@
       "summary": "주안은 위협·명령·보호 자극에 몸이 먼저 반응할 수 있으나, 반응 → 멈춤 → 이유 → 선택의 절차로 자신의 결정을 회수한다. 엘리스와의 관계는 복종 관계로 단순화하지 않는다."
     },
     {
+      "id": "juan-alice.relationship-arc",
+      "status": "CANON",
+      "summary": "엘리스가 먼저 지속적으로 호감을 표현하고, 주안은 나이·경호원/아가씨·신분·직업윤리 때문에 초기에 거절한다. 이후 주안도 좋아하게 되지만 윌리엄의 설계가 자신과 엘리스의 감정에 미친 범위를 확신하지 못해 엘리스의 선택까지 충분히 믿지 못하고 회피한다. 2부 외전에서 그 점을 사과하고 주안이 스스로 좋아한다고 고백하며 관계 아크를 닫는다."
+    },
+    {
       "id": "juan.obedience-conditioning",
       "status": "SUPERSEDED",
       "aliases": [
@@ -33,6 +38,16 @@
       "id": "alice.mental-ability",
       "status": "CANON",
       "summary": "정신 능력은 외부 간섭 차단·환각 필터·선택 보존이며 지배 능력이 아니다."
+    },
+    {
+      "id": "largo.alice-instructor-affection",
+      "status": "CANON",
+      "summary": "라르고는 1부에서 윌리엄의 평범하고 유능한 비서로 보인다. 주안 이탈 뒤 8년 동안 엘리스의 실제 교관/훈련 담당자가 되며, 가르치고 성장과 선택을 오래 지켜보는 과정에서 엘리스를 좋아하게 된다. 엘리스가 주안을 사랑한다는 것을 알고도 경쟁하거나 정보를 막지 않는다."
+    },
+    {
+      "id": "largo.reveal-sequence",
+      "status": "CANON",
+      "summary": "1부에는 라르고의 객관적 전투력 증명을 금지하고 주안의 신체 경계·이안의 질서감처럼 윌리엄 탓으로 오인 가능한 위화감만 허용한다. 2부에서는 유능한 교관·연락책까지 공개하고, 실제 최상위 능력과 [규율]의 최초 공개는 2부 외전 Rift Accord 회의로 미룬다."
     },
     {
       "id": "part2.protagonists",
@@ -59,6 +74,26 @@
       "id": "part2.akim-allowed",
       "status": "CANON",
       "summary": "아킴은 한국·2부 관련 구간에 등장할 수 있다. 현장 지원과 외부 사선 판단은 가능하지만 2부 세 주연의 중앙 선택과 결말 결정권을 대신하지 않으며, 폐기 인물축의 대체자로 자동 간주하지 않는다."
+    },
+    {
+      "id": "dabin.time-magic-residue-awakening",
+      "status": "CANON",
+      "summary": "타임리프 인자 제거 뒤에도 장기 반복과 시간마법 노출의 잔재가 다빈의 몸과 정신에 남아 시간계 각성자가 된다. 자유로운 회귀나 확정 미래예지가 아니라 짧은 시간잔향·기시감·선행감각이 불완전하게 발현하며, 미래를 보려는 집착에는 기억·죽음 감각·시간 혼선의 비용이 따른다."
+    },
+    {
+      "id": "jumin.elliott-sword-scalpel",
+      "status": "CANON",
+      "summary": "엘리엇 사후 그의 검은 주민에게 보관·계승되고 2부 외전에서 주민의 손에 맞춰 백은의 메스 형태로 변한다. 미래를 고정하고 죽이던 검을 불확실한 환자를 살리는 수술도구로 재해석한다."
+    },
+    {
+      "id": "part2.dabin-jumin-dg-cooperation",
+      "status": "CANON",
+      "summary": "2부 외전에서 다빈과 주민은 델타그린에 회수되는 소유물이 아니라 자기 조건을 건 협력 각성자 방향으로 활동한다. 다빈은 현장·근접·시간잔향, 주민은 초상외과·분석·금기술식을 맡는다."
+    },
+    {
+      "id": "story.character-opponent-integrity",
+      "status": "CANON",
+      "summary": "주요 캐릭터는 관찰·말투·해결법·결점·대표 하이라이트가 서로 구분되고, 설정상 강한 인물·적대자는 중요도에 비례한 화면 안 증명 장면을 가진다. 주인공을 강하게 보이게 하려고 상대를 갑자기 약화·우둔화하지 않으며 조연의 위상 증명이 주연의 중앙 결정을 빼앗지 않는다."
     },
     {
       "id": "legacy.russian-mafia-axis",

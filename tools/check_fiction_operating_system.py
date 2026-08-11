@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "[소설]/00_운영체계/SKILL_REGISTRY.json"
-EXPECTED_BASE_COMMIT = "53e63f7ebefbb5b2fc0dc528e335252692801421"
+EXPECTED_BASE_COMMIT = "069f0c9654a6cde7cea6f3343dd2fa81c6248d5d"
 
 REQUIRED_FILES = [
     "docs/coordination/CONCURRENT_WORK.md",
