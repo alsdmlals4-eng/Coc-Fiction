@@ -1,148 +1,128 @@
 # ACTIVE CONTEXT
 
-갱신: 2026-08-10
+갱신: 2026-08-11
 
 ## 현재 단계
 
 - Work Mode: `REVIEW`
 - Manuscript Stage: `REVISE`
-- 프로젝트 주 책임: `fiction-canon-and-research: source-log / canon-audit / continuity-map / timeline-and-state`
-- 프로젝트 보조 책임: `fiction-revision-and-validation: serial-arc-pass / scene-diagnostic / adversarial-loop / regression-check / pr-review`, `fiction-story-development: scene-card / plot-and-causality / stress-test`, `fiction-drafting: approved-rewrite / pov-and-distance / dialogue-and-subtext`, `fiction-project-operations: checkpoint / handoff / execution-report`
-- Base 공용 작법: `developing-and-revising-serial-fiction`의 Canon/각색 경계, POV·voice, 회차 가치, Local Payoff/Open Loop를 선택적으로 재사용한다.
+- 현재 작품 작업 순서: `캐릭터 정본 → 주요 사건/하이라이트 → 복선·정보 구조 → 전체 본문 퇴고`.
+- 현재 프로젝트 주 책임: `fiction-canon-and-research: source-log / canon-audit / continuity-map / timeline-and-state`
+- 현재 프로젝트 보조 책임: `fiction-story-development: character-and-opponent-integrity / character-and-arc / plot-and-causality / scene-card`, `fiction-revision-and-validation: character-opponent-integrity / serial-arc-pass / adversarial-loop / regression-check / pr-review`, `fiction-project-operations: checkpoint / handoff / execution-report`.
+- Base 공용 작법: `developing-and-revising-serial-fiction`의 Canon/각색 경계, POV·voice, 캐릭터 개성·상대 위상, 회차 가치, Local Payoff/Open Loop를 선택적으로 재사용한다.
+
+## Source authority for current story audit
+
+```text
+최신 사용자 Decision
+→ Google Drive 실제 원본 로그/문서 및 원본사건감사
+→ 현재 활성 원고
+→ [SUPERSEDED] 225화 압축 초안(비교자료)
+→ 구형 기획·archive
+```
+
+- `원본`은 Google Drive 실제 로그/원본 문서를 뜻한다.
+- 225화 압축 초안은 원본과 동일 권위가 아니며, 사건 기능·인물 동선·하이라이트 후보를 비교하는 자료다.
+- 원본에 있던 강함·관계·위협 증명 기능이 현행 압축 과정에서 사라졌다면 신규 창작 전에 `KEEP / RESTORE / REWORK / NEW / REMOVE`로 판정한다.
+- 최신 사용자 Decision이 원본/구각색과 충돌하면 최신 승인 Canon을 따른다.
 
 ## Continuation State
 
 ```yaml
 baseline:
   default_branch: main
-  last_observed_main_sha: 9a7b2e2419465bd76daf0cf09b96ed7c0cd7d54c
-  last_integrated_pr: 17
-  merge_commit_sha: 9a7b2e2419465bd76daf0cf09b96ed7c0cd7d54c
+  last_observed_main_sha: e829fecf7e52d2b2aefaa13d0b1e1e689f69dac0
+  last_integrated_pr: 19
+  merge_commit_sha: e829fecf7e52d2b2aefaa13d0b1e1e689f69dac0
 
 progress:
   completed_verified:
-    - PR #13 project/Base operating reconciliation
-    - PR #14 latest Canon synchronization
-    - PR #15 Base proposal locator persistence
-    - PR #16 post-merge live-router semantics correction
-    - external latest chapters 001-005 source/canon reconciliation and merge
+    - PR #19 external latest chapters 006-010 source/canon reconciliation
+    - Base PR #281 character/opponent integrity mode merge
   in_progress:
-    - external latest chapters 001-105 gradual canon reconciliation
+    - character canon / event-highlight / foreshadow-information architecture audit before prose rewrite
+    - external latest chapters 001-105 gradual GitHub canon reconciliation
   ready_next:
-    - external latest chapters 006-010 versus stored legacy 006-010
+    - finish global character/event/foreshadow architecture
+    - external latest chapters 011-015 versus stored legacy 011-015 when manuscript migration resumes
   deferred:
-    - stored 176-180 primary-source pass after current external reconciliation sequence
-
-verification:
-  pr17_exact_head: 31a4d959cef54ad77576672ff7cca8a53db72c42
-  pr17_exact_head_ci: PASS
-  pr17_exact_head_run: 31355669160
-  post_merge_ci: PASS
-  post_merge_run: 31355813027
-  unresolved_pr_threads: 0
+    - full prose rewrite until global story architecture is locked
+    - stored 176-180 primary-source pass until current external reconciliation priority is reassessed
 
 migration:
   artifact: 폭풍의눈_2차퇴고_제001-105화_POV후크_캐릭터_통합최종본.zip
   target_chapters: [1, 105]
-  reconciled_prefix_end: 5
-  legacy_tail_starts_at: 6
-  boundary_after_chapter: 5
+  reconciled_prefix_end: 10
+  legacy_tail_starts_at: 11
+  boundary_after_chapter: 10
   whole_manuscript_continuity: NOT_YET_CLAIMED
-  next_bundle: fiction/manuscript/part-1/006-010.md
-
-resume:
-  next_executable_step: 제6~10 외부 최신본과 저장 legacy 006-010을 원본·최신 Canon 기준으로 KEEP/APPLY/REWORK/REJECT 판정
-  stop_conditions:
-    - USER_DECISION_REQUIRED
-    - source/canon conflict that cannot be resolved from existing approved authority
-    - P0/P1 that invalidates the approved reconciliation contract
-  user_decision_needed: false
+  next_bundle: fiction/manuscript/part-1/011-015.md
 ```
 
-`last_observed_main_sha`는 이 live-router 문서가 자신의 새 commit SHA를 무한 추적하는 값이 아니다. 새 세션은 항상 GitHub `main`과 open PR을 먼저 재조회하고, 위 SHA는 마지막 검증된 integration checkpoint로만 사용한다.
+`last_observed_main_sha`는 이 문서 자신의 새 commit을 무한 추적하는 값이 아니다. 새 세션은 GitHub `main`과 열린 PR을 먼저 재조회한다.
 
-## 현재 GitHub 원고 상태
+## 현재 캐릭터·관계 Canon 핵심
 
-- 저장소는 기존 225화·45묶음 **storage topology**를 migration 컨테이너로 유지한다.
-- 이 225화 저장 토폴로지를 최신 narrative numbering의 최종 편성으로 사용하지 않는다.
-- 외부 최신 제1~5화는 원본 사건·최신 Canon·현재 사용자 Decision과 대조 후 GitHub manuscript에 반영됐다.
-- 합성 색인·역개요·Scene Pass Registry·대표 게이트·Revision Report가 같은 merge 기준으로 갱신됐다.
-- 새 제5화 뒤의 저장 제6화는 아직 최신 서사의 다음 사건으로 간주하지 않는다.
-- reverse outline에서 제5화 `next_chapter=null`, 저장 제6화 `previous_chapter=null`로 mixed-migration 경계를 fail-closed 처리한다.
-- 기존 저장 `006-010` 내부 연속성 패스는 삭제하지 않고 역사적 검증 증거로 보존하되, 최신 외부 편성과의 reconciliation은 별도 `PENDING`이다.
-- `091-095` 원본 직접 대조 패스도 실제 과거 검증 증거로 보존하며 최신 외부 묶음이 도달하면 원본 우선으로 다시 판정한다.
+### 주안–엘리스
 
-## 제1~5화 reconciliation 결과
+- 엘리스가 먼저 지속적으로 호감을 표현한다.
+- 주안은 초기에 나이 차이, 경호원/아가씨, 신분 차이, 직업윤리 때문에 알고도 거절한다.
+- 공동 생존 뒤 주안도 실제 호감이 생긴다.
+- 윌리엄의 설계가 드러난 뒤 주안은 자기 감정뿐 아니라 엘리스의 마음까지 외부 영향이 있었을지 확신하지 못해 회피한다.
+- 2부 외전에서 엘리스의 선택까지 의심했던 일을 사과한 뒤 주안이 `좋아한다`고 고백하며 관계 아크를 닫는다.
 
-- 제1화 `위대한 심연의 군주`: `APPLY`
-- 제2화 `내가 고른 경호원`: `APPLY`
-- 제3화 `식탁 아래의 축배`: `APPLY`
-- 제4화 `카르코사의 낭독`: `APPLY`
-- 제5화 `신호기를 잃지 마세요`: `APPLY`
+### 라르고–엘리스
 
-보존한 핵심:
+- 1부의 라르고는 윌리엄의 평범하고 유능한 비서로 보인다. 실제 최상위 전투력은 공개하지 않는다.
+- 1부 최종 윌리엄–엘리스 협상에는 라르고가 곁에 있으며, 주안의 신체 경계와 이안의 `질서` 감각은 윌리엄 탓으로 오인 가능해야 한다.
+- 주안 이탈 뒤 8년 동안 라르고는 **엘리스의 실제 교관/훈련 담당자**다.
+- 라르고는 엘리스를 직접 가르치고 성장·실패·고집·선택을 오래 지켜보는 과정에서 좋아하게 된다.
+- 엘리스가 주안을 사랑한다는 사실을 알고도 경쟁하거나 주안 정보를 질투로 막지 않는다.
+- 다른 사람에게는 업무적이고 엘리스에게만 능글맞고 장난스러운 교관 관계가 두드러진다.
+- `[규율]`과 실제 최상위 능력의 최초 공개는 2부 외전 Rift Accord 회의까지 보존한다.
 
-- 주안의 현재 판단은 `반응 → 멈춤 → 이유 → 선택`이다.
-- 엘리스는 주안 대신 결론을 내리지 않고 선택 이유를 되찾도록 돕는다.
-- 제4화의 흰 방 이미지는 인물 스스로도 기억·상상·정신공격이 만든 거짓 중 무엇인지 확정하지 않는다.
-- 신호기는 단순 비상 신호와 수신 진동만 담당한다. 위치·문자·통화 기능을 추가하지 않는다.
-- 제5화에서 이안의 구조 경로와 주안·탈론의 분리 경로를 원본 사건 순서에 맞게 분리한다.
-- 최신 사용자 결정으로 제외된 축을 원본에 있다는 이유만으로 복원하지 않는다.
+### 2부 후일
+
+- 다빈: 타임리프 인자 제거 뒤 시간마법의 `[잔재]`가 남은 각성자. 자유 회귀·확정 미래예지가 아니라 시간잔향·기시감·짧은 선행감각이 불완전하게 발현한다.
+- 주민: 엘리엇의 검을 보관/계승하고 외전에서 백은의 메스로 형상변화한다. 델타그린 협력 초상외과의 방향을 암시한다.
+- 다빈·주민: 델타그린에 소유되는 것이 아니라 자기 조건을 건 협력 각성자 방향으로 활동한다.
+- 이안·미스캐토닉: 브루스 생존 Canon을 전제로 외전 Rift Accord의 공식 대표는 브루스, 이안은 보좌·현장 마도사·기술보고 담당으로 배치한다.
+
+## 캐릭터·상대 위상 공통 검수
+
+- 주요 인물은 `관찰 필터 / 말투·사고 / 문제 해결 / 화면 안 유능함 증명 / 인간적 매력 / 대가를 만드는 결점 / 대표 하이라이트`가 서로 교환 가능하지 않아야 한다.
+- 설정상 강한 주요 인물은 중요도에 비례한 화면 안 증명 장면을 갖는다.
+- 중요 상대는 최소 한 번 자신의 규칙을 강제하는 `own turn`과 실제 성공·비용을 갖는다.
+- 주인공을 강하게 보이게 하려고 상대를 갑자기 약화·우둔화하지 않는다.
+- 팽무악은 원본/225에서 확인되는 순수 검술 강자 기능을 `RESTORE` 우선으로 처리한다.
+- 황진청은 능글맞은 강자이며, 설정문·전투 흔적만으로 끝내지 않고 실제 전투를 배치해 약하지 않음을 증명한다.
+- 조연의 강함 증명은 다빈·주민·엘리스 등 해당 부 주연의 중앙 결정권과 결말을 대신하지 않는다.
 
 ## Base 적용 상태
 
-- 현재 재조회한 Base main: `16af66ff51027f74193b60469e7c20281a1cade6`
-- Base BCP-009의 `developing-and-revising-serial-fiction`을 공용 작법·검수 owner로 재사용한다.
-- Coc-Fiction 프로젝트 Skill은 기존 5개를 유지한다.
-- 새 broad Skill을 만들지 않았다.
-
-### Base proposal locator
-
 ```yaml
-base_proposals:
-  canon_migration_debt:
-    id: BCP-2026-012-serial-fiction-canon-migration-debt
-    proposal_pr: https://github.com/alsdmlals4-eng/Base/pull/234
-    merged: true
-    status: SUBMITTED
-    existing_solution_verdict: ABSORB
-    project_verdict_this_cycle: REUSE_EXISTING_BCP
-  post_merge_continuation:
-    id: BCP-2026-013-post-merge-continuation-state-reconciliation
-    proposal_pr: https://github.com/alsdmlals4-eng/Base/pull/235
-    merged: true
-    status: SUBMITTED
-    project_verdict_this_cycle: REUSE_EXISTING_BCP
-
-base_boundary:
-  proposal_storage_merge_authority: already_consumed_for_relevant_proposals
-  base_implementation_authority: NOT_GRANTED_IN_THIS_STAGE
-  active_base_files_changed_by_this_cycle: 0
-  implementation_boundary: SEPARATE_FOLLOWUP_STAGE
+base_repository: alsdmlals4-eng/Base
+base_pr: 281
+base_commit: 069f0c9654a6cde7cea6f3343dd2fa81c6248d5d
+base_skill: developing-and-revising-serial-fiction
+base_mode: character-and-opponent-integrity
+project_modes:
+  - fiction-story-development: character-and-opponent-integrity
+  - fiction-revision-and-validation: character-opponent-integrity
+base_implementation_authority: USER_APPROVED_AND_MERGED
+new_broad_skill_created: false
+second_project_pilot: NOT_RUN
+human_reader_quality: NOT_RUN
 ```
 
-이번 001-005 작업에서 발견한 `current prefix + unreconciled legacy tail` 문제는 BCP-012의 기존 범위로 충분하다. 새 중복 BCP를 만들지 않았다. post-merge live-router 문제도 BCP-013이 이미 Base main에 병합됐으므로 재사용한다. **두 제안의 병합은 Base 활성 구현 승인과 무관하다.**
-
-## 다음 정확한 저장소 작업
-
-`fiction/manuscript/part-1/006-010.md`를 현재 외부 최신 제6~10화와 대조한다.
-
-```text
-새 제5화 종료 상태 확인
-→ 외부 최신 제6~10화 실제 원고 확보
-→ 저장 legacy 006-010과 회차별 delta 생성
-→ 원본 사건 기록·최신 사용자 Decision·Canon 대조
-→ KEEP / APPLY / REWORK / REJECT
-→ 승인된 delta만 manuscript에 반영
-→ MANUSCRIPT_INDEX / reverse-outline override / Scene Pass Registry / Scene Cards / Revision Report 전파
-→ reconciled_prefix_end를 10으로 확장
-→ exact-head CI + adversarial review + PR merge + post-merge verification
-```
+Base에는 공용 판단 규칙만 두고 《폭풍의 눈》 고유 캐릭터·관계·전투 위치·회차 값은 Coc-Fiction이 소유한다.
 
 ## 변경 금지
 
-- 외부 산출물의 `최종` 표기만으로 남은 제6~105화를 자동 덮어쓰지 않는다.
-- 저장 225화 토폴로지를 최신 서사 화수표로 되돌리지 않는다.
+- 전체 캐릭터·사건·복선 구조가 잠기기 전에 본문 대규모 재작성으로 넘어가지 않는다.
+- 외부 산출물의 `최종` 표기만으로 남은 미이관 원고를 자동 덮어쓰지 않는다.
+- GitHub의 225화 storage topology를 최신 narrative numbering의 최종 편성으로 되돌리지 않는다.
 - 자동 역개요를 원고 수정 명령으로 사용하지 않는다.
-- 구형 통합 초안·archive·baseline을 current prose 입력으로 사용하지 않는다.
-- Base proposal 병합을 Base 활성 구현 승인으로 해석하지 않는다.
+- 구형 통합 초안·archive·225화 압축 초안을 Google Drive 실제 원본보다 높은 권위로 취급하지 않는다.
+- 라르고의 `[규율]`·최상위 전투력을 1부/2부 본편에서 객관적으로 공개하지 않는다.
+- 하템 사후의 새 정보·새 주문·실제 물리 행위를 허용하지 않는다. 사후 하템은 이안의 환각/환청이며 이안이 모르는 새 정보를 제공하지 않는다.
