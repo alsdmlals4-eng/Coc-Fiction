@@ -2,7 +2,7 @@
   "schema_version": 1,
   "registry_role": "coc-fiction-skill-router",
   "base_repository": "alsdmlals4-eng/Base",
-  "base_commit": "53e63f7ebefbb5b2fc0dc528e335252692801421",
+  "base_commit": "315c66eea9614c284b9c11c4d522141065dfa4b0",
   "routing_policy": {
     "load_all_skills": false,
     "default_selection": "automatic-trigger-match",
@@ -73,6 +73,10 @@
         "premise",
         "theme",
         "character-arc",
+        "character-distinctiveness",
+        "opponent-threat",
+        "combat-staging",
+        "antagonist",
         "plot",
         "subplot",
         "outline",
@@ -86,6 +90,7 @@
         "core-contract",
         "premise-and-theme",
         "character-and-arc",
+        "character-and-opponent-integrity",
         "plot-and-causality",
         "progressive-outline",
         "scene-list",
@@ -94,7 +99,8 @@
         "stress-test"
       ],
       "use_when": [
-        "작품 코어·주제·인물·플롯·인과·장면 설계와 대표 장면 품질 기준을 만들거나 재검토한다."
+        "작품 코어·주제·인물·플롯·인과·장면 설계와 대표 장면 품질 기준을 만들거나 재검토한다.",
+        "주요 인물의 개성이 흐려지거나 설정상 강한 인물·적대자의 위상이 장면에서 증명되지 않는 문제를 설계 단계에서 바로잡는다."
       ],
       "do_not_use_when": [
         "확정된 장면 카드에 따른 문장 집필, 맞춤법 교정, 자료 사실 확인만 필요하다."
@@ -189,6 +195,8 @@
         "structural-edit",
         "scene-diagnostic",
         "serial-arc",
+        "character-integrity",
+        "opponent-integrity",
         "chapter-batch",
         "scene-pass",
         "representative-gate",
@@ -209,6 +217,7 @@
         "serial-arc-pass",
         "scene-diagnostic",
         "continuity-check",
+        "character-opponent-integrity",
         "line-edit",
         "copyedit",
         "proofread",
@@ -219,7 +228,8 @@
         "pr-review"
       ],
       "use_when": [
-        "원고를 큰 구조부터 표면 교정까지 층별로 검토하고 적대적 finding을 검증·최소 수정·회귀 재검토한다."
+        "원고를 큰 구조부터 표면 교정까지 층별로 검토하고 적대적 finding을 검증·최소 수정·회귀 재검토한다.",
+        "이미 쓰인 원고에서 캐릭터 구분, 화면 안 강함 증명, 적대자 위상, 승리 개연성의 회귀를 감사한다."
       ],
       "do_not_use_when": [
         "아직 쓸 장면의 자유 초안만 필요하거나 검토 대상 원고·정본·승인 범위가 없다."
