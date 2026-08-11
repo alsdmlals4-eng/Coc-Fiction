@@ -71,7 +71,7 @@ recovery: Library에서 실제 파일을 다시 찾아 001-161 통합 전에 해
 ## Rift Accord 최종 회수
 
 - 중심은 연애가 아니라 협약 자체의 이해관계·검증·관할·자율권·관리된 묵인·비상공동목표·탈퇴/인계다.
-- 주안–앨리스: 재회 → 주안의 사과 → 현재 선택으로 고백. 화해는 시작됐지만 관계는 열린 상태다.
+- 주안–엘리스: 재회 → 주안의 사과 → 현재 선택으로 고백. 화해는 시작됐지만 관계는 열린 상태다.
 - 이안: 브루스 매시의 공식 대표 지위를 침범하지 않고 미스캐토닉 실무·검증·기록 축으로 협상에 참여한다.
 - 하템 환각: `신규 정보 없음` 계약 유지.
 - 라르고: `회의 중입니다.`와 `[규율]` 최초 공개 완료. 협상 결론을 강제하는 권력으로 쓰지 않는다.
@@ -137,11 +137,12 @@ Registry trigger와 `tools/check_fiction_operating_system.py`가 이 mode/state 
 
 ## Base Existing Solution First / 동시 BCP 충돌 방지
 
-2026-08-12 인수인계 preflight 관측:
+2026-08-12 인수인계 preflight 및 병합 직전 재조회 관측:
 
 ```yaml
 base_main_observed: 1d6cc79ae95ffb67ba4de618f010a6540fc6e02c
 open_base_prs_observed_at_preflight: 0
+open_base_prs_observed_before_project_merge: 0
 project_adoption_pin: 7a49390bd840f5f5dc80fe661b44ad45e9ebeb7f
 adoption_pin_auto_advanced: false
 continuous_work_active: false
