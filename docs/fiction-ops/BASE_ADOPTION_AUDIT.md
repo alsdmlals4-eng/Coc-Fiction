@@ -3,7 +3,7 @@
 ## 기준
 
 - Base 저장소: `alsdmlals4-eng/Base`
-- 현재 호환성 감사 기준 커밋: `53e63f7ebefbb5b2fc0dc528e335252692801421`
+- 현재 호환성 감사 기준 커밋: `069f0c9654a6cde7cea6f3343dd2fa81c6248d5d`
 - Base current active Skill view: 30개
 - 목표: Base의 공용 작업 능력은 재사용하고, Coc-Fiction의 작품 Canon·원본 로그·원고 파생자료처럼 프로젝트 고유 책임은 프로젝트에 남긴다.
 - 전략: Base Skill을 복제하지 않고 **기존 5개 Coc-Fiction Skill과 조건부 Base 공용 Skill**을 조합한다.
@@ -42,7 +42,7 @@
 | `designing-art-prompts-and-technique-cards` | DEFER | 표지·삽화·시각 참고가 승인된 경우만 |
 | `auditing-and-refining-ui-art` | EXCLUDE | 게임/Web UI 전용 |
 | `managing-base-change-proposals` | ADAPT | 프로젝트 교훈의 공용성 판정과 proposal-only 제출 |
-| `developing-and-revising-serial-fiction` | REUSE | Reader Promise·Episode Value·POV/voice·Local Payoff/Open Loop·반복 변주·결과 기억·setup/payoff debt·독자 반응 근거. 프로젝트 고유 Canon/원본/파생자료는 복제하지 않음 |
+| `developing-and-revising-serial-fiction` | REUSE | Reader Promise·Episode Value·POV/voice·Local Payoff/Open Loop·캐릭터 개성/상대 위상·원본 기능 복원·반복 변주·결과 기억·setup/payoff debt·독자 반응 근거. 프로젝트 고유 Canon/원본/파생자료는 복제하지 않음 |
 
 ## 현재 Base 30개 중 프로젝트 adapter에 직접 넣지 않은 추가 책임
 
@@ -54,6 +54,10 @@
 
 - Reader Promise와 Episode Value
 - POV를 카메라가 아니라 정보·가치·어휘 필터로 쓰는 원리
+- 캐릭터별 관찰 필터·voice·문제 해결 방식·결점·대표 하이라이트 구분
+- 중요 적대자의 화면 안 위협 증명과 `own turn`
+- 승리를 위해 상대를 약체화·우둔화하지 않는 위상 보존
+- 원작·로그·구초안의 기능을 `KEEP / RESTORE / REWORK / NEW / REMOVE`로 대조하는 각색 원리
 - Local Payoff + Open Loop
 - 반복 구조의 의미 있는 변주
 - 선택·피해·능력 사용의 consequence memory
@@ -65,6 +69,9 @@
 
 - 《폭풍의 눈》 작품 Canon·인물·세계관·사건 결과·금지 설정
 - TRPG/PDF/source-log 우선순위와 각색 허용 경계
+- 225화 압축 초안을 원본과 분리한 비교자료로 취급하는 프로젝트 우선순위
+- 황진청·팽무악 등 작품별 강자·전투 하이라이트의 실제 배치와 횟수
+- 주안–엘리스, 라르고–엘리스 등 작품 고유 관계 Canon
 - 5화 묶음과 앞뒤 경계 화 직접 대조
 - `MANUSCRIPT_INDEX` baseline+override 합성
 - reverse-outline override
@@ -111,6 +118,7 @@ stale PR #9와 closed/unmerged PR #12를 비교한 결과, 유효 고유 delta�
 - Canon 상태와 인물·연표·지식·소지품·부상·관계 변화 추적
 - 인과 플롯과 장면 전후 상태 변경 검사
 - 장면 카드 기반 집필
+- 캐릭터 개성·강적 위상·승리 개연성의 프로젝트 적용 감사
 - POV 거리·대화 서브텍스트·묘사·행동-반응·문장 리듬 모드
 - Developmental→Structural→Continuity→Line→Copyedit→Proofread 순서
 - 참고문장·연출을 저작권 안전한 Reference Card로 추상화
@@ -119,13 +127,14 @@ stale PR #9와 closed/unmerged PR #12를 비교한 결과, 유효 고유 delta�
 
 ## 현재 검증 경계
 
-이번 2026-08-10 호환성 갱신은 Base main의 Registry/활성 Skill view와 Coc-Fiction의 현재 운영 파일을 실제로 대조했다. 다만 Base의 향후 commit은 자동 호환으로 간주하지 않는다.
+이번 2026-08-11 호환성 갱신은 Base PR #281 병합 결과 `069f0c9654a6cde7cea6f3343dd2fa81c6248d5d`의 serial-fiction 공용 계약과 Coc-Fiction의 Registry·5-Skill 운영 파일을 대조했다. Base의 향후 commit은 자동 호환으로 간주하지 않는다.
 
-또한 현재 대화에서 제작된 제1~105화 통합 DOCX 재퇴고본은 프로젝트 작업 증거지만, GitHub `fiction/manuscript/`의 225화 Markdown 정본에 병합됐다는 증거가 아직 없다. 두 상태를 동일시하지 않는다.
+현재 외부 최신 원고와 GitHub migration 컨테이너는 아직 전면 동기화 완료 상태가 아니다. GitHub 저장 225화 topology를 최신 narrative numbering의 최종 편성으로 간주하지 않으며, 원고 이관은 검증된 prefix 단위로 계속 진행한다.
 
 ## 미검증·다음 확인
 
-- 제1~105화 외부 통합본과 GitHub manuscript/canon/source의 실제 delta 재대조·정본 승격: `NOT_RUN`
+- 제11~105화 외부 통합본과 GitHub manuscript/canon/source의 실제 delta 재대조·정본 승격: `NOT_RUN`
 - 이후 106화 이상 새 원고의 GitHub Canon 전파: `NOT_RUN`
 - 실제 독자 반응 기반 reader-feedback gate: `HUMAN_READER_NOT_RUN`
 - Base의 향후 새 main에 대한 자동 호환성: `UNVERIFIED_UNTIL_REAUDIT`
+- Base `character-and-opponent-integrity`의 두 번째 별도 소설 프로젝트 pilot과 사람 독자 효용: `NOT_RUN`
