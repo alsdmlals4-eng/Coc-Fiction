@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "contract_role": "LOOP_REQUIREMENT_COVERAGE_LEDGER",
+  "project_id": "COC_FICTION",
+  "package_id": "COC_LOOP_NARRATIVE_PILOT_001",
+  "source_main_sha": "ad3a9cd24fb40b4f9f43dce779d2a2ed6f0f5d05",
+  "status": "INITIALIZED",
+  "requirements": [{
+    "requirement_id": "COC_LOOP_CANON_PRESERVATION_001",
+    "status": "MAPPED",
+    "tasks": ["TASK_VALIDATE_NARRATIVE_SHADOW"],
+    "outputs": [
+      ".github/workflows/validate-universal-loop-narrative-pilot.yml",
+      "docs/operations/loop/PROJECT_EXECUTION_CAPSULE.json",
+      "docs/operations/loop/PLANNING_LOCK.json",
+      "docs/operations/loop/VISUAL_LOCK.json",
+      "docs/operations/loop/RUNTIME_ADAPTER.json",
+      "docs/operations/loop/IMPLEMENTATION_PACKAGE.json",
+      "docs/operations/loop/REQUIREMENT_COVERAGE_LEDGER.json",
+      "docs/operations/loop/ACTIVE_LOOP_RUN.json",
+      "docs/operations/loop/runs/COC_NARRATIVE_SHADOW_001.json",
+      "tests/test_universal_loop_narrative_pilot.py"
+    ],
+    "tests": ["tests/test_universal_loop_narrative_pilot.py", ".github/workflows/validate-universal-loop-narrative-pilot.yml"],
+    "evidence": ["E1_STATIC", "E2_TEST"]
+  }]
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "contract_role": "LOOP_VISUAL_LOCK",
+  "project_id": "COC_FICTION",
+  "status": "VISUAL_NOT_APPLICABLE",
+  "source_commit": "ad3a9cd24fb40b4f9f43dce779d2a2ed6f0f5d05",
+  "provider": "NONE",
+  "reference_ids": [],
+  "keep": [],
+  "avoid": [],
+  "do_not_drift": [],
+  "target_platforms": [],
+  "aspect_ratios": []
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "contract_role": "LOOP_PLANNING_LOCK",
+  "project_id": "COC_FICTION",
+  "status": "PLANNING_LOCKED",
+  "source_commit": "ad3a9cd24fb40b4f9f43dce779d2a2ed6f0f5d05",
+  "user_review": {"status": "APPROVED", "approval_ref": "USER_APPROVAL_UNIVERSAL_LOOP_CROSS_PROJECT_PILOT_20260814"},
+  "authority_sources": [
+    {"authority_id": "CANON_REGISTRY", "path": "fiction/CANON_REGISTRY.json", "source_commit": "ad3a9cd24fb40b4f9f43dce779d2a2ed6f0f5d05"},
+    {"authority_id": "FICTION_MASTER", "path": "fiction/FICTION_MASTER.md", "source_commit": "ad3a9cd24fb40b4f9f43dce779d2a2ed6f0f5d05"},
+    {"authority_id": "STYLE_GUIDE", "path": "fiction/STYLE_GUIDE.md", "source_commit": "ad3a9cd24fb40b4f9f43dce779d2a2ed6f0f5d05"},
+    {"authority_id": "ACTIVE_CONTEXT", "path": "fiction/ACTIVE_CONTEXT.md", "source_commit": "ad3a9cd24fb40b4f9f43dce779d2a2ed6f0f5d05"}
+  ],
+  "approved_requirements": [{
+    "requirement_id": "COC_LOOP_CANON_PRESERVATION_001",
+    "statement": "Validate the Universal Loop M2 to M3 SHADOW pipeline against the existing Coc-Fiction narrative authority without changing fiction content.",
+    "acceptance_criteria": [
+      "Existing canon, master fiction, style guide, and active context remain unchanged.",
+      "Universal Capsule translation uses only approved narrative authority.",
+      "The unmodified Base SHADOW Kernel completes without product or canon mutation."
+    ]
+  }],
+  "protected_meanings": [
+    "CANON facts and registry identity remain unchanged.",
+    "CHARACTER identity and continuity remain unchanged.",
+    "TIMELINE and causal ordering remain unchanged.",
+    "STYLE rules remain unchanged.",
+    "MANUSCRIPT meaning remains unchanged."
+  ],
+  "excluded_scope": [
+    "No UNAPPROVED fiction content or canon is added.",
+    "No manuscript, character, timeline, style, skill, template, or tool behavior is changed.",
+    "No new visual design or asset work is included."
+  ]
+}

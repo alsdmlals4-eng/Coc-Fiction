@@ -1,0 +1,74 @@
+name: Universal Loop narrative SHADOW pilot
+
+on:
+  pull_request:
+    paths:
+      - "docs/operations/loop/**"
+      - "tests/test_universal_loop_narrative_pilot.py"
+      - ".github/workflows/validate-universal-loop-narrative-pilot.yml"
+  push:
+    branches: [main]
+    paths:
+      - "docs/operations/loop/**"
+      - "tests/test_universal_loop_narrative_pilot.py"
+      - ".github/workflows/validate-universal-loop-narrative-pilot.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  narrative-shadow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate local pilot contract
+        run: python -m unittest tests.test_universal_loop_narrative_pilot -v
+      - name: Check out pinned Base Universal Loop Kernel
+        uses: actions/checkout@v4
+        with:
+          repository: alsdmlals4-eng/Base
+          ref: 8e7238a1bb9f49bd6e2403a2a6cb20d7aee863c7
+          path: .base-loop
+          persist-credentials: false
+      - name: Install pinned Base contract dependencies
+        run: python -m pip install --requirement .base-loop/.github/validation-requirements.txt
+      - name: Run unmodified Base M2 to M3 SHADOW pipeline
+        shell: bash
+        run: |
+          set -euo pipefail
+          set +e
+          python .base-loop/tools/loop_capsule_to_shadow.py \
+            docs/operations/loop/PROJECT_EXECUTION_CAPSULE.json \
+            --run-id COC_NARRATIVE_SHADOW_001 \
+            --observed-main-sha ad3a9cd24fb40b4f9f43dce779d2a2ed6f0f5d05 \
+            --planning-drift NO_DRIFT \
+            --visual-drift NOT_APPLICABLE | tee "$RUNNER_TEMP/loop-request.json"
+          adapter_status=${PIPESTATUS[0]}
+          set -e
+          if [ "$adapter_status" -ne 0 ]; then
+            exit "$adapter_status"
+          fi
+          set +e
+          python .base-loop/tools/loopctl.py shadow \
+            "$RUNNER_TEMP/loop-request.json" \
+            --project-root "$GITHUB_WORKSPACE" \
+            --state-root "$GITHUB_WORKSPACE/.loop-engineering" \
+            --now 2026-08-14T00:00:00Z | tee "$RUNNER_TEMP/loop-result.json"
+          shadow_status=${PIPESTATUS[0]}
+          set -e
+          if [ "$shadow_status" -ne 0 ]; then
+            exit "$shadow_status"
+          fi
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          result = json.loads((Path(os.environ['RUNNER_TEMP']) / 'loop-result.json').read_text(encoding='utf-8'))
+          assert result['state'] == 'SHADOW_COMPLETE', result
+          assert result['findings'] == [], result
+          assert result['semantic_input_digest'], result
+          assert result['receipt_digest'], result
+          PY

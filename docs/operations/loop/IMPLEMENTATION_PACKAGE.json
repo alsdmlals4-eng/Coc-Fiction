@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "contract_role": "LOOP_IMPLEMENTATION_PACKAGE",
+  "project_id": "COC_FICTION",
+  "package_id": "COC_LOOP_NARRATIVE_PILOT_001",
+  "source_main_sha": "ad3a9cd24fb40b4f9f43dce779d2a2ed6f0f5d05",
+  "requirement_ids": ["COC_LOOP_CANON_PRESERVATION_001"],
+  "allowed_paths": [
+    ".github/workflows/validate-universal-loop-narrative-pilot.yml",
+    "docs/operations/loop/PROJECT_EXECUTION_CAPSULE.json",
+    "docs/operations/loop/PLANNING_LOCK.json",
+    "docs/operations/loop/VISUAL_LOCK.json",
+    "docs/operations/loop/RUNTIME_ADAPTER.json",
+    "docs/operations/loop/IMPLEMENTATION_PACKAGE.json",
+    "docs/operations/loop/REQUIREMENT_COVERAGE_LEDGER.json",
+    "docs/operations/loop/ACTIVE_LOOP_RUN.json",
+    "docs/operations/loop/runs/COC_NARRATIVE_SHADOW_001.json",
+    "tests/test_universal_loop_narrative_pilot.py"
+  ],
+  "forbidden_paths": ["fiction/", "skills/", "tools/", "templates/"],
+  "visual_impact": "NONE",
+  "visual_lock_requirement": "VISUAL_NOT_APPLICABLE",
+  "required_evidence_levels": ["E1_STATIC", "E2_TEST"],
+  "resource_locks": ["FICTION_CANON_OPERATIONS"],
+  "acceptance_criteria": [
+    "Local narrative pilot contract passes.",
+    "Pinned unmodified Base M2 to M3 SHADOW pipeline returns SHADOW_COMPLETE.",
+    "All actual pilot outputs are mapped and no fiction authority file changes."
+  ],
+  "rollback": "Revert the pilot PR; no canon/manuscript migration is involved.",
+  "execution_gate": "AUTONOMOUS_IMPLEMENTATION_READY"
+}
