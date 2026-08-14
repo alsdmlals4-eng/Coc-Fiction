@@ -40,17 +40,29 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          set +e
           python .base-loop/tools/loop_capsule_to_shadow.py \
             docs/operations/loop/PROJECT_EXECUTION_CAPSULE.json \
             --run-id COC_NARRATIVE_SHADOW_001 \
             --observed-main-sha ad3a9cd24fb40b4f9f43dce779d2a2ed6f0f5d05 \
             --planning-drift NO_DRIFT \
-            --visual-drift NOT_APPLICABLE > "$RUNNER_TEMP/loop-request.json"
+            --visual-drift NOT_APPLICABLE | tee "$RUNNER_TEMP/loop-request.json"
+          adapter_status=${PIPESTATUS[0]}
+          set -e
+          if [ "$adapter_status" -ne 0 ]; then
+            exit "$adapter_status"
+          fi
+          set +e
           python .base-loop/tools/loopctl.py shadow \
             "$RUNNER_TEMP/loop-request.json" \
             --project-root "$GITHUB_WORKSPACE" \
             --state-root "$GITHUB_WORKSPACE/.loop-engineering" \
-            --now 2026-08-14T00:00:00Z > "$RUNNER_TEMP/loop-result.json"
+            --now 2026-08-14T00:00:00Z | tee "$RUNNER_TEMP/loop-result.json"
+          shadow_status=${PIPESTATUS[0]}
+          set -e
+          if [ "$shadow_status" -ne 0 ]; then
+            exit "$shadow_status"
+          fi
           python - <<'PY'
           import json, os
           from pathlib import Path
