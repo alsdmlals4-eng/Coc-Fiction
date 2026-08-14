@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "contract_role": "LOOP_PROJECT_EXECUTION_CAPSULE",
+  "project_id": "COC_FICTION",
+  "status": "ADOPTED",
+  "source_main_sha": "ad3a9cd24fb40b4f9f43dce779d2a2ed6f0f5d05",
+  "planning_lock_path": "PLANNING_LOCK.json",
+  "visual_lock_path": "VISUAL_LOCK.json",
+  "runtime_adapter_path": "RUNTIME_ADAPTER.json",
+  "implementation_package_path": "IMPLEMENTATION_PACKAGE.json",
+  "coverage_ledger_path": "REQUIREMENT_COVERAGE_LEDGER.json",
+  "active_run_path": "ACTIVE_LOOP_RUN.json",
+  "immutable_run_path": "runs/COC_NARRATIVE_SHADOW_001.json",
+  "protected_surfaces": ["CANON", "CHARACTER_CONTINUITY", "TIMELINE", "STYLE", "MANUSCRIPT"],
+  "semantic_resource_domains": ["FICTION_CANON_OPERATIONS"],
+  "capabilities": ["GITHUB_CANON", "REQUIREMENT_COVERAGE", "NARRATIVE_CONTINUITY", "DATA_SCHEMA"],
+  "context_isolation": {
+    "cross_project_canon_import": "FORBIDDEN",
+    "cross_project_visual_reference_import": "FORBIDDEN",
+    "cross_project_asset_import": "FORBIDDEN",
+    "cross_project_session_reuse": "FORBIDDEN"
+  },
+  "budgets": {"max_agents": 2, "max_parallel_agents": 1, "max_ci_runs": 4, "max_repair_cycles": 2},
+  "autonomy": "A2_EXECUTE_ISOLATED",
+  "a3_auto_merge_allowlist": [],
+  "scheduler_runtime_provider": "NOT_CONFIGURED"
+}

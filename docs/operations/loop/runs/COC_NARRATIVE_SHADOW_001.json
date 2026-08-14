@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "contract_role": "LOOP_IMMUTABLE_RUN",
+  "project_id": "COC_FICTION",
+  "run_id": "COC_NARRATIVE_SHADOW_001",
+  "package_id": "COC_LOOP_NARRATIVE_PILOT_001",
+  "source_main_sha": "ad3a9cd24fb40b4f9f43dce779d2a2ed6f0f5d05",
+  "state": "CREATED",
+  "evidence": [],
+  "findings": [],
+  "design_drift_status": "NOT_CHECKED",
+  "receipt_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+}

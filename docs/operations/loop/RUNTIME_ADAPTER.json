@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "contract_role": "LOOP_RUNTIME_ADAPTER",
+  "project_id": "COC_FICTION",
+  "status": "PROJECT_ADAPTER_VALIDATED",
+  "engine": {"name": "FictionOps", "version": "1"},
+  "languages": ["Python", "Markdown", "JSON"],
+  "source_roots": ["fiction/", "docs/", "skills/", "tools/", "tests/"],
+  "test_commands": [{
+    "command_id": "UNIVERSAL_LOOP_NARRATIVE_PILOT",
+    "argv": ["python", "-m", "unittest", "tests.test_universal_loop_narrative_pilot", "-v"],
+    "working_directory": ".",
+    "timeout_seconds": 600,
+    "network": "DENIED"
+  }],
+  "runtime_commands": [],
+  "build_commands": [],
+  "protected_paths": ["fiction/", "skills/", "tools/", "templates/"],
+  "semantic_resource_domains": ["FICTION_CANON_OPERATIONS"],
+  "rollback_strategy": "Revert the narrative Universal Loop pilot PR; no fiction content migration is involved."
+}
