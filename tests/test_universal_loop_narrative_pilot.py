@@ -62,10 +62,7 @@ class UniversalLoopNarrativePilotTests(unittest.TestCase):
         self.assertEqual(visual["status"], "VISUAL_NOT_APPLICABLE")
         self.assertEqual(visual["provider"], "NONE")
         allowed = set(package["allowed_paths"])
-        self.assertEqual(
-            allowed,
-            {path for item in coverage["requirements"] for path in item["outputs"]},
-        )
+        self.assertEqual(allowed, {path for item in coverage["requirements"] for path in item["outputs"]})
         for path in allowed:
             self.assertTrue(
                 path.startswith("docs/operations/loop/")
@@ -78,6 +75,7 @@ class UniversalLoopNarrativePilotTests(unittest.TestCase):
     def test_active_run_is_null_and_immutable_pilot_is_shadow_only(self) -> None:
         active = load("ACTIVE_LOOP_RUN.json")
         immutable = load("runs/COC_NARRATIVE_SHADOW_001.json")
+        self.assertEqual(active["contract_role"], "LOOP_ACTIVE_RUN_POINTER")
         self.assertIsNone(active["active_run"])
         self.assertEqual(immutable["project_id"], PROJECT)
         self.assertEqual(immutable["package_id"], PACKAGE)
@@ -93,14 +91,8 @@ class UniversalLoopNarrativePilotTests(unittest.TestCase):
         self.assertEqual(adapter["test_commands"][0]["network"], "DENIED")
 
     def test_authority_hash_snapshot_is_stable_for_the_test_process(self) -> None:
-        first = {
-            path: hashlib.sha256((ROOT / path).read_bytes()).hexdigest()
-            for path in AUTHORITY
-        }
-        second = {
-            path: hashlib.sha256((ROOT / path).read_bytes()).hexdigest()
-            for path in AUTHORITY
-        }
+        first = {path: hashlib.sha256((ROOT / path).read_bytes()).hexdigest() for path in AUTHORITY}
+        second = {path: hashlib.sha256((ROOT / path).read_bytes()).hexdigest() for path in AUTHORITY}
         self.assertEqual(first, second)
 
 
