@@ -6,6 +6,7 @@ on:
       - "**/00_운영체계/**"
       - "docs/fiction-ops/**"
       - "docs/coordination/**"
+      - "docs/base-reuse-adoption.json"
       - "templates/fiction-ops/**"
       - "skills/fiction-*/**"
       - "skills/FICTION_SKILL_LEARNING_LOG.md"
@@ -24,6 +25,7 @@ on:
       - "**/00_운영체계/**"
       - "docs/fiction-ops/**"
       - "docs/coordination/**"
+      - "docs/base-reuse-adoption.json"
       - "templates/fiction-ops/**"
       - "skills/fiction-*/**"
       - "skills/FICTION_SKILL_LEARNING_LOG.md"
@@ -46,6 +48,27 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Validate Base reuse adoption manifest
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('docs/base-reuse-adoption.json')
+          data = json.loads(path.read_text(encoding='utf-8'))
+          assert data['schema_version'] == 1
+          assert data['base_source_commit'] == '8553678f70e22f193a2336b591f677dcfa5a8965'
+          modules = data['modules']
+          expected = {
+              'RM-TOOL-001': 'planned',
+              'RM-SYS-001': 'not_applicable',
+              'RM-SYS-003': 'not_applicable',
+              'RM-VIS-001': 'not_applicable',
+              'RM-VIS-002': 'not_applicable',
+          }
+          assert {key: value['state'] for key, value in modules.items()} == expected
+          print('base reuse adoption manifest pass')
+          PY
       - name: Validate fiction operating system
         run: python tools/check_fiction_operating_system.py
       - name: Validate active fiction canon and manuscript
