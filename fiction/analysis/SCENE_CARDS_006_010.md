@@ -1,6 +1,6 @@
 # 제6화~제10화 Current Candidate 장면 카드·연속성 패스
 
-상태: **CURRENT_RECONCILED / BUNDLE_006_010 / PROMOTION_CANDIDATE**  
+상태: **CURRENT_RECONCILED / BUNDLE_006_010 / PROMOTED_CURRENT_PREFIX**  
 갱신: 2026-08-20
 
 ## 범위와 근거
@@ -8,7 +8,7 @@
 - 대상 원고: `fiction/manuscript/part-1/006-010.md`
 - current candidate: `폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx`
 - candidate SHA256: `248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9`
-- 경계: current 제5화 / legacy 제11화
+- 경계: current 제5화 / current 제11화
 - 판정: 제6~10화 5/5 `APPLY`.
 
 ## 제6화 · 따뜻한 피난처
@@ -83,13 +83,13 @@ protected_rule: `밀리 사망`은 이안의 정서적 상실이지 객관적 �
 | `제7→8화` | 동굴 깊은 곳 `선배?` → 밀리 생존 재등장 | `PASS` |
 | `제8→9화` | 동굴 기록 탐사 → CARTER/석판 기록 분석 | `PASS` |
 | `제9→10화` | 밀리 신뢰 경계 → 실제 강제 제압/배신 압력 | `PASS` |
-| `제10→11화` | current Ch10 종료 뒤 저장 제11화는 아직 legacy | `MIGRATION_BOUNDARY / NOT_YET_CLAIMED` |
+| `제10→11화` | 이안의 밀리 소실 직후 주안 병렬 전선과 하템 동일 얼굴 문제로 이어지며 제12화에서 다시 이안 전선과 결합 | `PASS / CURRENT / PARALLEL_FRONT` |
 
 ## Finding-first 판정
 
-- `APPLY 5/5`: QA_GREEN current candidate의 제6~10화를 production bundle로 승격한다.
+- `APPLY 5/5`: QA_GREEN current candidate의 제6~10화가 production prefix에 포함된다.
 - `KEEP`: 제5→6 current continuity와 신호기 단방향 제한.
 - `KEEP`: 밀리의 생존/배신/소실은 객관적 사망 확정이 아니라 증거 불충분 상태.
 - `KEEP`: 하템은 황색과 동일 소속으로 단정하지 않는 별도 계약자.
 - `REJECT`: 구 제10화의 폐기 복종 프레이밍과 구 `히템` 표기.
-- `BOUNDARY`: 제11화 이후는 다음 reconciliation 전까지 legacy tail.
+- `CURRENT CONTINUITY`: 제10→11 경계는 더 이상 migration boundary가 아니다. 새 fail-closed 경계는 제15→16화다.

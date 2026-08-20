@@ -31,10 +31,10 @@ current_candidate: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT
 current_candidate_sha256: 248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9
 candidate_coverage: 001-161
 candidate_qa: QA_GREEN
-repository_reconciled_prefix: 001-010
-legacy_tail_starts_at: 011
+repository_reconciled_prefix: 001-015
+legacy_tail_starts_at: 016
 whole_manuscript_continuity: NOT_YET_CLAIMED
-next_bundle: fiction/manuscript/part-1/011-015.md
+next_bundle: fiction/manuscript/part-1/016-020.md
 ```
 
 ## 전체 lifecycle vocabulary
@@ -73,31 +73,34 @@ Base의 공용 serial-fiction 작법은 재사용하되 작품 Canon과 current 
 - Elliott sword: 귀속 미정·공동봉인; Jumin 반응/메스 변형은 후계 인증 아님.
 - POV: Scene-Locked Hybrid; scene break 없는 head hopping 금지.
 - current Ch10 Milly disappearance는 객관적 사망 확정이 아니다.
+- current Ch12 Hatem/Milly same-face evidence는 동일인 확정이 아니라 별도 인물 + 얼굴 기원 미스터리다.
+- current Ch13–14 Elise arc는 부모의 죄·보호 자아가 엘리스의 선택권을 대신하지 못한다는 규칙을 보호한다.
 
 ## current prefix / migration boundary
 
-- `001–010`: current production prefix.
+- `001–015`: current production prefix.
 - `005→006`: current continuity `PASS`.
-- `010→011`: `MIGRATION_BOUNDARY / NOT_YET_CLAIMED`.
-- Ch10 reverse outline: `next_chapter=null`.
-- legacy Ch11 reverse outline: `previous_chapter=null`.
+- `010→011`: current continuity `PASS / PARALLEL_FRONT`.
+- `015→016`: `MIGRATION_BOUNDARY / NOT_YET_CLAIMED`.
+- Ch15 reverse outline: `next_chapter=null`.
+- legacy Ch16 reverse outline: `previous_chapter=null`.
 
 current candidate 전체가 Green이어도 GitHub production authority는 5화 단위 검증 없이 자동 확장하지 않는다.
 
 ## 다음 시작 묶음
 
-`fiction/manuscript/part-1/011-015.md`
+`fiction/manuscript/part-1/016-020.md`
 
 ```text
-current candidate 011-015 exact extraction
-→ Ch10 current 종료 상태와 앞 경계 검증
+current candidate 016-020 exact extraction
+→ Ch15 current 종료 상태와 앞 경계 검증
 → 원본·Canon·사용자 Decision 대조
 → KEEP / APPLY / REWORK / REJECT
 → manuscript/index/reverse-outline/Scene Pass/routers 원자 갱신
 → exact-head Fiction operating-system CI
 → review thread 0 / main freshness 확인
 → squash merge + post-merge readback
-→ frontier 15로 이동
+→ frontier 20으로 이동
 ```
 
 기존 deferred source-pass는 `SCENE_PASS_REGISTRY.json`에서 보존하며 bounded migration 순서를 건너뛰지 않는다.

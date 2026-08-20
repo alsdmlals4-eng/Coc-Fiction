@@ -52,14 +52,14 @@ repository_promotion_state: PARTIAL
 현재 bounded production state:
 
 ```yaml
-reconciled_prefix: 001-010
-legacy_tail_starts_at: 011
-boundary_after_chapter: 010
+reconciled_prefix: 001-015
+legacy_tail_starts_at: 016
+boundary_after_chapter: 015
 whole_manuscript_continuity: NOT_YET_CLAIMED
-next_reconciliation: 011-015
+next_reconciliation: 016-020
 ```
 
-제5→6은 current continuity로 재연결됐다. 제10→11은 현재 fail-closed migration boundary이며 제11화 이후 stored chapter를 current 제10화의 정상 다음 사건으로 자동 해석하지 않는다.
+제5→6과 제10→11은 current continuity로 재연결됐다. 제15→16이 현재 fail-closed migration boundary이며 제16화 이후 stored chapter를 current 제15화의 정상 다음 사건으로 자동 해석하지 않는다.
 
 ## 4. 저장 토폴로지와 narrative migration
 
@@ -98,7 +98,7 @@ next_reconciliation: 011-015
 
 폐기·금지 별칭과 축의 정확한 목록은 `CANON_REGISTRY.json`만 책임진다. 이 Master에서 목록을 중복 복제하지 않는다.
 
-## 7. current prefix 001–010 readback
+## 7. current prefix 001–015 readback
 
 - 001–005: 기존 current reconciliation 유지.
 - 006 `따뜻한 피난처`: 해안 엘리스/이안과 감옥 주안 두 전선이 제5화에서 직접 이어짐. 신호기는 단방향.
@@ -106,20 +106,25 @@ next_reconciliation: 011-015
 - 008 `같은 편은 아닙니다`: 밀리 생존, 하템 별도 계약자, 같은 목적지의 임시 동행.
 - 009 `카터라는 이름`: 증거와 추론 분리.
 - 010 `친구를 쏜 날`: 밀리 소실 후 시체·피가 없어 객관적 사망은 미확정. 이안의 정서적 상실과 사실 판정을 분리.
+- 011 `비야키를 타는 법`: 주안은 하템·아킴과 협력하지만 신뢰/도덕 동의와 분리하고, 자신의 비정상적 힘을 실제 위험으로 인식.
+- 012 `못 본 척 해줄게`: 하템은 밀리와 같은 얼굴을 가졌지만 별도 인물. 밀리 생존은 하템 증언으로 가능성이 높아졌으나 독립 검증 전.
+- 013 `아버지 대신`: 윌리엄의 과거 학살과 엘리스 자신의 책임을 분리하고 `부모의 죄 = 자식의 선택`을 거부.
+- 014 `후회하지 않는 선택`: 보호 자아는 같은 엘리스의 보호적 부분으로 통합되고, 다음 방향을 스스로 선택.
+- 015 `섬의 왕과의 거래`: 데이비드를 신뢰하지 않으면서도 조건을 명시한 거래로 이틀의 안전가옥을 확보.
 
 ## 8. 실행 순서
 
-현재 다음 작업은 `fiction/manuscript/part-1/011-015.md`의 current candidate reconciliation이다.
+현재 다음 작업은 `fiction/manuscript/part-1/016-020.md`의 current candidate reconciliation이다.
 
 ```text
-current candidate 011-015 추출
-→ current Ch10 종료와 앞 경계 검증
+current candidate 016-020 추출
+→ current Ch15 종료와 앞 경계 검증
 → 원본·Canon·사용자 Decision 대조
 → KEEP / APPLY / REWORK / REJECT
 → manuscript + index + reverse outline + Scene Pass + routers 원자 갱신
 → exact-head CI
 → merge/readback
-→ frontier 15로 이동
+→ frontier 20으로 이동
 ```
 
 기존 deferred source-pass는 `SCENE_PASS_REGISTRY.json`이 보존하며 bounded migration 순서를 건너뛰는 근거로 사용하지 않는다.

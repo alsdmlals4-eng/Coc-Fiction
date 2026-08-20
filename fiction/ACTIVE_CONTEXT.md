@@ -9,17 +9,17 @@
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
 work_mode: IMPLEMENT / REVIEW
-state_observed_at_main: 60bc62ed3ee4f7870656c8ed5b4ab6b035c71930
+state_observed_at_main: b9d4523eb2c057215948598aa74beb451a0b5a67
 current_candidate: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 current_candidate_sha256: 248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9
 delivery_state: QA_VERIFIED
 candidate_state: QA_GREEN
 repository_promotion_state: PARTIAL
-reconciled_prefix_end: 10
-legacy_tail_starts_at: 11
-boundary_after_chapter: 10
+reconciled_prefix_end: 15
+legacy_tail_starts_at: 16
+boundary_after_chapter: 15
 whole_manuscript_continuity: NOT_YET_CLAIMED
-next_bounded_bundle: fiction/manuscript/part-1/011-015.md
+next_bounded_bundle: fiction/manuscript/part-1/016-020.md
 ```
 
 새 세션 첫 행동:
@@ -56,12 +56,13 @@ current candidate는 `QA_VERIFIED/QA_GREEN`이지만 repository manuscript는 �
 
 ## Completed implementation milestones
 
-- PR #29: 2026-08-20 Canon reconciliation. D01/D02/D03, sword custody, `엘리스`, current Part2 numbering synced.
+- PR #29: Canon reconciliation. D01/D02/D03, sword custody, `엘리스`, current Part2 numbering synced.
 - PR #30: exact 17-file current-candidate manifest and hashes locked.
 - PR #31: QA_GREEN current candidate evidence locked.
-- current bounded promotion target: 006–010 current candidate, with frontier moving to 10 only after exact-head CI/merge.
+- PR #32: current Ch006–010 bounded promotion merged; exact-head and post-merge Fiction operating-system validation Green.
+- current bounded promotion target: Ch011–015 current candidate, with frontier moving to 15 only after exact-head CI/merge.
 
-## Current prefix 001–010 contract
+## Current prefix 001–015 contract
 
 ### Ch5→6
 
@@ -77,18 +78,27 @@ Current continuity is direct:
 - Ch9: `CARTER` evidence does not prove William knowingly caused the current event.
 - Ch10: Ian shoots Milly, but no body/blood remains; objective death is unresolved. Emotional loss ≠ proven death.
 
+### Ch10→11 and Ch11–15 protected state
+
+- Ch10→11 is current continuity, not a migration boundary. Ch11 resumes Jooan's parallel front and Ch12 returns to Ian/Elise, so the switch is a deliberate parallel-front structure.
+- Ch11: Jooan cooperates with Hatem/Akim without converting cooperation into trust or moral agreement.
+- Ch12: Hatem's face matches the face Milly used, but Hatem and Milly are different people. Milly survival remains testimony-supported, not independently proven.
+- Ch13: William's past violence is evidence about William; it does not make Elise responsible for her father's choices.
+- Ch14: Elise's protective self is part of the same self, not an external possessing entity. Her mental axis remains choice protection rather than domination.
+- Ch15: David is competent, cruel, relational, and negotiable at once. Elise makes a bounded deal without granting trust or absolution.
+
 ## Current migration boundary
 
 ```yaml
-left_current: 10
-right_legacy: 11
+left_current: 15
+right_legacy: 16
 left_next_chapter: null
 right_previous_chapter: null
 left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-Do not infer current Ch10→legacy Ch11 continuity from adjacent numbering.
+Do not infer current Ch15→legacy Ch16 continuity from adjacent numbering.
 
 ## Canon protection
 
@@ -121,9 +131,9 @@ For each 5-chapter bundle:
 
 ## Next exact work
 
-`fiction/manuscript/part-1/011-015.md`
+`fiction/manuscript/part-1/016-020.md`
 
-The next pass must start at the **Ch10→11 migration boundary**, not by trusting legacy Ch11. After Green propagation, move frontier to 15 and repeat.
+The next pass must start at the **Ch15→16 migration boundary**, not by trusting legacy Ch16. After Green propagation, move frontier to 20 and repeat.
 
 Deferred `176-180` source audit remains recorded in `SCENE_PASS_REGISTRY.json`; it does not bypass the bounded migration order.
 
