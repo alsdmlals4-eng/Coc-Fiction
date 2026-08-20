@@ -14,11 +14,11 @@
     "qa_report": "docs/fiction-ops/2026-08-20_WORKING_001_161_CANDIDATE_QA.md",
     "candidate_manifest": "docs/fiction-ops/2026-08-20_CURRENT_001_161_CANDIDATE_MANIFEST.json",
     "target_chapters": [1, 161],
-    "reconciled_prefix_end": 15,
-    "legacy_tail_starts_at": 16,
-    "boundary_after_chapter": 15,
+    "reconciled_prefix_end": 20,
+    "legacy_tail_starts_at": 21,
+    "boundary_after_chapter": 20,
     "whole_manuscript_continuity": "NOT_YET_CLAIMED",
-    "rule": "The QA_GREEN external candidate is the current revision input, not automatic GitHub production authority. Chapters 1-15 are now the bounded reconciled production prefix; stored chapters 16+ remain legacy-tail artifacts until their own 5-chapter promotion pass."
+    "rule": "The QA_GREEN external candidate is the current revision input, not automatic GitHub production authority. Chapters 1-20 are now the bounded reconciled production prefix; stored chapters 21+ remain legacy-tail artifacts until their own 5-chapter promotion pass."
   },
   "representative_pilots": [10, 95, 180],
   "completed_bundle_passes": [
@@ -82,10 +82,33 @@
         "15": "d26da36ff8d59d9fcad5393c28189b61f50579eb100aeb7965bf562e45e8692d"
       },
       "preserved_boundary_shas": {
-        "10": "4a3e60159d639f4125bcc960032afead1aba8fb160097ab36f06488fb06ab211",
-        "16": "d7bbe9d0ca159543803b52436dbb1344a40ba5c6ca79cc1274972adf9b85450e"
+        "10": "4a3e60159d639f4125bcc960032afead1aba8fb160097ab36f06488fb06ab211"
       },
-      "status": "COMPLETE_CURRENT_CANDIDATE_CANON_RECONCILIATION / CURRENT_PREFIX / MIGRATION_BOUNDARY_AFTER_015"
+      "status": "COMPLETE_CURRENT_CANDIDATE_CANON_RECONCILIATION / CURRENT_PREFIX"
+    },
+    {
+      "bundle": "fiction/manuscript/part-1/016-020.md",
+      "chapters": [16, 17, 18, 19, 20],
+      "boundary_chapters": [15, 21],
+      "scene_cards": "fiction/analysis/SCENE_CARDS_016_020.md",
+      "revision_report": "fiction/reports/REVISION_2026-08-20_CURRENT_RECONCILIATION_016_020.md",
+      "source_files": [
+        {"name": "폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx", "sha256": "248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9", "role": "current QA_GREEN revision input"},
+        {"name": "docs/fiction-ops/2026-08-20_CURRENT_001_161_CANDIDATE_MANIFEST.json", "role": "locked external source-artifact authority manifest"},
+        {"name": "fiction/CANON_REGISTRY.json", "role": "current approved adaptation canon"}
+      ],
+      "chapter_shas": {
+        "16": "752de081c6189ab8646a43108a1e63bf7a27f8de399b4488c4c980eec71fabca",
+        "17": "7146cc26b37a56ed87e29162dc2f5b1b6cd33bf0e3bd7bf9c4cdcaa791da929c",
+        "18": "8d2c1ca43ae980884f24a39d45bb548f872287b49790d12e2db59be2d474adf0",
+        "19": "39adeba785e49f7127529d46a1c80800e630b35564e2523b32b01854b7057b06",
+        "20": "dc78dd2f3ab00d853225ca4c98a85832d5fbb088df0b304258172e2ffd754523"
+      },
+      "preserved_boundary_shas": {
+        "15": "d26da36ff8d59d9fcad5393c28189b61f50579eb100aeb7965bf562e45e8692d",
+        "21": "35e36f50ada14710e283e1d0408c80b6506a0a20c9f59bab1490565e459f89cb"
+      },
+      "status": "COMPLETE_CURRENT_CANDIDATE_CANON_RECONCILIATION / CURRENT_PREFIX / MIGRATION_BOUNDARY_AFTER_020"
     },
     {
       "bundle": "fiction/manuscript/side-story-lake/091-095.md",
@@ -112,6 +135,6 @@
     }
   ],
   "next_pass_mode": "EXTERNAL_ARTIFACT_CANON_RECONCILIATION",
-  "next_bundle_passes": ["fiction/manuscript/part-1/016-020.md"],
+  "next_bundle_passes": ["fiction/manuscript/part-1/021-025.md"],
   "deferred_bundle_passes": ["fiction/manuscript/part-2/176-180.md"]
 }
