@@ -37,6 +37,14 @@ whole_manuscript_continuity: NOT_YET_CLAIMED
 next_bundle: fiction/manuscript/part-1/011-015.md
 ```
 
+## 전체 lifecycle vocabulary
+
+운영체계 라우팅 이름은 축약하지 않는다.
+
+- Work Mode: `PLAN → BUILD → REVIEW`
+- Manuscript Stage: `DISCOVER → OUTLINE → DRAFT → REVISE → POLISH`
+- 현재는 `BUILD/REVIEW` 안의 bounded promotion과 `REVISE` 단계다.
+
 GitHub의 225화/45묶음 경로는 migration container다. current narrative 최종 numbering은 001–161이며, 저장 225화 토폴로지를 최신 서사 편성으로 재해석하지 않는다.
 
 ## 프로젝트 Skill
