@@ -33,8 +33,8 @@ def apply_reconciliation_boundary(root: Path, generated: dict) -> dict:
             flags.append("RECONCILIATION_MIGRATION_BOUNDARY")
         left["structural_flags"] = flags
         left.setdefault("evidence", {})["next_pressure"] = (
-            "정본 마이그레이션 경계. 저장소 제6화 이후는 아직 legacy tail이며 "
-            "현재 제5화와의 서사 연속성을 주장하지 않는다."
+            f"정본 마이그레이션 경계. 저장소 제{boundary + 1}화 이후는 아직 legacy tail이며 "
+            f"현재 제{boundary}화와의 서사 연속성을 주장하지 않는다."
         )
     if right:
         right["previous_chapter"] = None

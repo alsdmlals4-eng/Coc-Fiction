@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-08-10",
+  "updated_at": "2026-08-20",
   "status": "ACTIVE / MANUAL_SCENE_AND_SOURCE_PASS_TRACKER / MIXED_MIGRATION",
   "source_policy": {
     "inventory": "fiction/sources/PRIMARY_SOURCE_INVENTORY.md",
@@ -9,14 +9,16 @@
     "rule": "Bundle-level status only; source availability does not imply whole-manuscript audit completion."
   },
   "external_artifact_reconciliation": {
-    "artifact": "폭풍의눈_2차퇴고_제001-105화_POV후크_캐릭터_통합최종본.zip",
-    "qa_report": "폭풍의눈_제001-105화_통합최종_QA보고서.md",
-    "target_chapters": [1, 105],
-    "reconciled_prefix_end": 5,
-    "legacy_tail_starts_at": 6,
-    "boundary_after_chapter": 5,
+    "artifact": "폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx",
+    "artifact_sha256": "248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9",
+    "qa_report": "docs/fiction-ops/2026-08-20_WORKING_001_161_CANDIDATE_QA.md",
+    "candidate_manifest": "docs/fiction-ops/2026-08-20_CURRENT_001_161_CANDIDATE_MANIFEST.json",
+    "target_chapters": [1, 161],
+    "reconciled_prefix_end": 10,
+    "legacy_tail_starts_at": 11,
+    "boundary_after_chapter": 10,
     "whole_manuscript_continuity": "NOT_YET_CLAIMED",
-    "rule": "The reconciled prefix is current for its reviewed chapters. Stored chapters after the boundary remain legacy-tail artifacts until their own 5-chapter reconciliation pass; do not infer narrative continuity across the boundary."
+    "rule": "The QA_GREEN external candidate is the current revision input, not automatic GitHub production authority. Chapters 1-10 are now the bounded reconciled production prefix; stored chapters 11+ remain legacy-tail artifacts until their own 5-chapter promotion pass."
   },
   "representative_pilots": [10, 95, 180],
   "completed_bundle_passes": [
@@ -30,7 +32,7 @@
         {"name": "COC 1일차.pdf", "role": "primary event order / departure, book, Jooan-Alice meeting"},
         {"name": "COC 2일차.pdf", "role": "primary event order / restaurant attack, sinking, separation, shore-prison handoff"},
         {"name": "Coc 폭풍의 눈(주안편).xlsx", "role": "current integrated scene/source navigation"},
-        {"name": "폭풍의눈_2차퇴고_제001-105화_POV후크_캐릭터_통합최종본.zip", "role": "external latest revision artifact"}
+        {"name": "폭풍의눈_2차퇴고_제001-105화_POV후크_캐릭터_통합최종본.zip", "role": "historical external revision evidence used in the completed 001-005 pass"}
       ],
       "chapter_shas": {
         "1": "68a7ef71ecb2ef804580a07a6acbb663ee055a8faa95cd917bd9d5895b26a175",
@@ -39,22 +41,27 @@
         "4": "61176e16405b95064210a7e071e5bcca7bc2f9435aed422235fca5a8df4a1747",
         "5": "2b7d2e242e69cf43cc4063aad1dafd9a968b66c93d5d4c3f16f93bcaaf1b19e2"
       },
-      "status": "COMPLETE_EXTERNAL_ARTIFACT_CANON_RECONCILIATION / MIXED_MIGRATION_BOUNDARY"
+      "status": "COMPLETE_EXTERNAL_ARTIFACT_CANON_RECONCILIATION / CURRENT_PREFIX"
     },
     {
       "bundle": "fiction/manuscript/part-1/006-010.md",
       "chapters": [6, 7, 8, 9, 10],
       "boundary_chapters": [5, 11],
       "scene_cards": "fiction/analysis/SCENE_CARDS_006_010.md",
-      "revision_report": "fiction/reports/REVISION_2026-07-23_SCENE_PASS_006_010.md",
+      "revision_report": "fiction/reports/REVISION_2026-08-20_CURRENT_RECONCILIATION_006_010.md",
+      "source_files": [
+        {"name": "폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx", "sha256": "248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9", "role": "current QA_GREEN revision input"},
+        {"name": "docs/fiction-ops/2026-08-20_CURRENT_001_161_CANDIDATE_MANIFEST.json", "role": "locked external source-artifact authority manifest"},
+        {"name": "fiction/CANON_REGISTRY.json", "role": "current approved adaptation canon"}
+      ],
       "chapter_shas": {
-        "6": "1b2681bdb7f660583b2a1a9f59b059f95d89ca2dd692cdcb6a1db162ce96e92a",
-        "7": "11fcb4fe99c8840fb3845def385df801b5cdec35e7bfbc285a8747d9caa850d0",
-        "8": "9c5c5e4b5fef29eb98de705a5af331881fa49078b5e9db66ee912a452591cbe2",
-        "9": "9bc13a600ddc48f3284c01cf9522b41a8575c72e081fe65f26d82aa5aacdeab3",
-        "10": "62492d465a2cb3e0a83761ad050c04858e145596c44285accc63b3468ea72bdb"
+        "6": "b22b54836e90bead8aa73c1cc5ed4bc0eb04edd3a2356effd9dd01ddcbffa28d",
+        "7": "71fecab94096819faa67b29706bf45e9fb67ee6a11a64b159665f39e25fd3ca2",
+        "8": "cccf0a1a59bdf1ed60a6616a4fc190c46458fa9892348405b187a63ad2e4163e",
+        "9": "ff54282bd4d18572881da4a8a11728da18ebbd21cff6e2feee0ce6367b1f3580",
+        "10": "4a3e60159d639f4125bcc960032afead1aba8fb160097ab36f06488fb06ab211"
       },
-      "status": "COMPLETE_INTERNAL_CONTINUITY / SOURCE_REAUDIT_PENDING / EXTERNAL_RECONCILIATION_PENDING_LEGACY_TAIL"
+      "status": "COMPLETE_CURRENT_CANDIDATE_CANON_RECONCILIATION / CURRENT_PREFIX / MIGRATION_BOUNDARY_AFTER_010"
     },
     {
       "bundle": "fiction/manuscript/side-story-lake/091-095.md",
@@ -81,6 +88,6 @@
     }
   ],
   "next_pass_mode": "EXTERNAL_ARTIFACT_CANON_RECONCILIATION",
-  "next_bundle_passes": ["fiction/manuscript/part-1/006-010.md"],
+  "next_bundle_passes": ["fiction/manuscript/part-1/011-015.md"],
   "deferred_bundle_passes": ["fiction/manuscript/part-2/176-180.md"]
 }

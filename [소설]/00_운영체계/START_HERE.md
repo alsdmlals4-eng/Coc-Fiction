@@ -9,10 +9,10 @@ docs/coordination/CONCURRENT_WORK.md
 → fiction/FICTION_MASTER.md
 → fiction/ACTIVE_CONTEXT.md
 → fiction/CANON_REGISTRY.json
-→ fiction/SOURCE_MANIFEST.md
-→ fiction/sources/PRIMARY_SOURCE_INVENTORY.md
 → fiction/analysis/SCENE_PASS_REGISTRY.json
-→ 현재 묶음의 Scene Card·Revision Report
+→ docs/fiction-ops/2026-08-20_CURRENT_001_161_CANDIDATE_MANIFEST.json
+→ docs/fiction-ops/2026-08-20_WORKING_001_161_CANDIDATE_QA.md
+→ 현재 묶음 Scene Card·Revision Report
 → fiction/analysis/REPRESENTATIVE_CHAPTER_GATES.md
 → fiction/analysis/REVERSE_OUTLINE_REPORT.md
 → fiction/MANUSCRIPT_INDEX.json
@@ -24,15 +24,28 @@ docs/coordination/CONCURRENT_WORK.md
 
 ## 현재 단계
 
-- Work Mode: `REVIEW`
-- Manuscript Stage: `REVISE`
-- GitHub 저장 토폴로지: 225화/45묶음 구조를 유지하지만, 외부 최신 제1~105화의 압축 편성을 5화씩 선택적으로 정본화하는 **mixed migration** 상태다.
-- 외부 최신 작업: 제1~105화 POV·후크·캐릭터 통합 재퇴고본 존재.
-- 외부 reconciliation 완료 prefix: **제1~5화**.
-- 제1~5 최신 제목/본문은 GitHub manuscript에 적용했고 원본 COC 사건·최신 Canon·신호기 제한을 대조했다.
-- 저장소 구 제6화 이후는 아직 legacy tail이며 제5→6의 서사 연속성은 `NOT_YET_CLAIMED`다.
-- 진행 중 우선순위: 외부 최신 제6~10화와 legacy 저장 묶음 `fiction/manuscript/part-1/006-010.md`의 선택적 정본 reconciliation.
-- 기존 `176-180` 원본 직접 대조는 삭제하지 않고 reconciliation 이후 대기 작업으로 유지.
+```yaml
+work_mode: IMPLEMENT / REVIEW
+manuscript_stage: REVISE / PROMOTE_BOUNDED
+current_candidate: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
+current_candidate_sha256: 248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9
+candidate_coverage: 001-161
+candidate_qa: QA_GREEN
+repository_reconciled_prefix: 001-010
+legacy_tail_starts_at: 011
+whole_manuscript_continuity: NOT_YET_CLAIMED
+next_bundle: fiction/manuscript/part-1/011-015.md
+```
+
+## 전체 lifecycle vocabulary
+
+운영체계 라우팅 이름은 축약하지 않는다.
+
+- Work Mode: `PLAN → BUILD → REVIEW`
+- Manuscript Stage: `DISCOVER → OUTLINE → DRAFT → REVISE → POLISH`
+- 현재는 `BUILD/REVIEW` 안의 bounded promotion과 `REVISE` 단계다.
+
+GitHub의 225화/45묶음 경로는 migration container다. current narrative 최종 numbering은 001–161이며, 저장 225화 토폴로지를 최신 서사 편성으로 재해석하지 않는다.
 
 ## 프로젝트 Skill
 
@@ -42,45 +55,57 @@ docs/coordination/CONCURRENT_WORK.md
 - `fiction-canon-and-research`: 원본 로그·Canon·연표·출처·구형 참조 감사
 - `fiction-revision-and-validation`: 구조·묶음 퇴고·연속성·적대적 검토·회귀·PR 검수
 
-Base의 `developing-and-revising-serial-fiction`은 공용 작법·연재 pacing·POV/voice 원칙을 제공한다. 작품 Canon, 원본 로그, 합성 색인, reverse-outline override, Scene Pass Registry 같은 프로젝트 고유 책임은 위 5개 프로젝트 Skill에 남긴다.
+Base의 공용 serial-fiction 작법은 재사용하되 작품 Canon과 current candidate authority는 Coc-Fiction 내부 정본이 책임진다.
 
 ## 절대 우선순위
 
-최신 사용자 지시 → 작품 코어·Canon Registry → 접근 가능한 원본 사건 기록 → 부별 바이블·연속성 → 현재 원고 → 수동 장면 카드·Revision Report → 역개요·진단 → 외부 참고.
+최신 사용자 지시 → 작품 코어·Canon Registry → 접근 가능한 원본 사건 기록 → 부별 바이블·연속성 → QA_GREEN current candidate → current GitHub production prefix → 수동 장면 카드·Revision Report → 역개요·진단 → 외부 참고.
 
-외부 최신 재퇴고본과 GitHub current manuscript가 충돌하면 파일명의 `최종` 표기만으로 어느 한쪽을 자동 승격하지 않는다. 위 우선순위로 회차별 delta를 재판정한다.
+## 현재 보호 규칙
 
-## 보호 규칙
+- `엘리스`가 Alice Carter의 한국어 정본 표기다.
+- 주안: `반응 → 멈춤 → 이유 → 선택`.
+- 엘리스 정신 능력: 지배가 아니라 선택 보존.
+- 이안: 기록·검증, unknown을 사실로 승격하지 않음.
+- D01: bounded external acquisition network; 상위 client/hierarchy 미확정.
+- D02: +2h 사진은 fixed future가 아니라 authentic non-current cross-loop evidence.
+- D03: 다른 회차 세 시신은 명시적 사건이 바꾸기 전까지 물리적 경찰 증거.
+- Elliott sword: 귀속 미정·공동봉인; Jumin 반응/메스 변형은 후계 인증 아님.
+- POV: Scene-Locked Hybrid; scene break 없는 head hopping 금지.
+- current Ch10 Milly disappearance는 객관적 사망 확정이 아니다.
 
-- 구형 Google Docs·압축 초안·구 편성을 활성 입력으로 사용하지 않는다.
-- 원본에 존재해도 최신 사용자 지시가 폐기한 축은 복원하지 않는다.
-- 자동 역개요와 정량 플래그를 수정 명령으로 쓰지 않는다.
-- `SOURCE_MATCHED`를 문장 전체 복사로 해석하지 않는다.
-- 묶음 수정 뒤 원본·인과·POV·시간·동선·상태·금지 설정·색인·역개요·Registry·기획 문서 회귀를 남긴다.
-- stale PR은 전체 rebase/merge보다 current main 위 고유 delta 선택적 재적용을 우선한다.
-- 외부 최신 prefix와 unreconciled legacy tail 사이에는 `SCENE_PASS_REGISTRY.external_artifact_reconciliation`의 migration boundary를 따른다. 그 경계를 자동 역개요의 정상 `next_chapter`로 해석하지 않는다.
+## current prefix / migration boundary
+
+- `001–010`: current production prefix.
+- `005→006`: current continuity `PASS`.
+- `010→011`: `MIGRATION_BOUNDARY / NOT_YET_CLAIMED`.
+- Ch10 reverse outline: `next_chapter=null`.
+- legacy Ch11 reverse outline: `previous_chapter=null`.
+
+current candidate 전체가 Green이어도 GitHub production authority는 5화 단위 검증 없이 자동 확장하지 않는다.
 
 ## 다음 시작 묶음
 
-`fiction/manuscript/part-1/006-010.md`.
-
-목적은 구 `006-010` 내부 연속성 패스를 반복하는 것이 아니라, 현재 대화의 최신 외부 제6~10화와 GitHub legacy `006-010`의 delta를 원본·최신 사용자 Decision·Canon으로 다시 판정하는 `EXTERNAL_ARTIFACT_CANON_RECONCILIATION`이다.
+`fiction/manuscript/part-1/011-015.md`
 
 ```text
-006-010 외부/legacy 원고 대조
-→ 제5화 새 종료 상태에서 앞 경계 확인
+current candidate 011-015 exact extraction
+→ Ch10 current 종료 상태와 앞 경계 검증
+→ 원본·Canon·사용자 Decision 대조
 → KEEP / APPLY / REWORK / REJECT
-→ 원본 사건·POV·인물 상태 검증
-→ 승인된 delta만 적용
-→ index / outline override / Scene Pass Registry / Revision Report 전파
-→ reconciled prefix를 10까지 확장
-→ 다음 5화
+→ manuscript/index/reverse-outline/Scene Pass/routers 원자 갱신
+→ exact-head Fiction operating-system CI
+→ review thread 0 / main freshness 확인
+→ squash merge + post-merge readback
+→ frontier 15로 이동
 ```
 
-`176-180` 원본 직접 대조는 `SCENE_PASS_REGISTRY.json#/deferred_bundle_passes`에 보존한다.
+기존 deferred source-pass는 `SCENE_PASS_REGISTRY.json`에서 보존하며 bounded migration 순서를 건너뛰지 않는다.
 
-## 작업 단계 지도
+## 금지
 
-- Work Mode: `PLAN → BUILD → REVIEW`
-- Manuscript Stage: `DISCOVER → OUTLINE → DRAFT → REVISE → POLISH`
-- 현재 단계는 `REVIEW / REVISE`이며, 다음 묶음도 계획·원본 대조·승인된 수정·회귀 검증 순서를 생략하지 않는다.
+- 구 압축본·구 저장 편성을 current source authority로 다시 올리지 않는다.
+- 파일명의 `최종`만으로 자동 승격하지 않는다.
+- current migration boundary를 정상 next chapter로 가정하지 않는다.
+- 다른 workstream의 open/draft/ready PR을 수정하지 않는다.
+- 과거 CI Green을 현재 exact head의 Green으로 재사용하지 않는다.

@@ -1,31 +1,47 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-23",
-  "status": "ACTIVE_OVERRIDE / BUNDLE_006_010",
+  "updated_at": "2026-08-20",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_006_010 / CURRENT_RECONCILED",
   "baseline": "analysis/baselines/MANUSCRIPT_INDEX_2026-07-23_PILOT.json",
   "chapters": [
     {
       "chapter": 6,
-      "title": "평생의 과제",
-      "pov": "이안",
-      "body_chars": 2344,
-      "body_sha256": "1b2681bdb7f660583b2a1a9f59b059f95d89ca2dd692cdcb6a1db162ce96e92a",
+      "title": "따뜻한 피난처",
+      "pov": "엘리스 → 이안 → 주안",
+      "body_chars": 6506,
+      "body_sha256": "b22b54836e90bead8aa73c1cc5ed4bc0eb04edd3a2356effd9dd01ddcbffa28d",
       "bundle": "fiction/manuscript/part-1/006-010.md"
     },
     {
       "chapter": 7,
-      "title": "노란 코트가 들어온 밤",
-      "pov": "엘리스",
-      "body_chars": 2644,
-      "body_sha256": "11fcb4fe99c8840fb3845def385df801b5cdec35e7bfbc285a8747d9caa850d0",
+      "title": "죽은 척해야 사는 곳",
+      "pov": "이안 → 엘리스 → 이안",
+      "body_chars": 5309,
+      "body_sha256": "71fecab94096819faa67b29706bf45e9fb67ee6a11a64b159665f39e25fd3ca2",
+      "bundle": "fiction/manuscript/part-1/006-010.md"
+    },
+    {
+      "chapter": 8,
+      "title": "같은 편은 아닙니다",
+      "pov": "이안 → 주안",
+      "body_chars": 5087,
+      "body_sha256": "cccf0a1a59bdf1ed60a6616a4fc190c46458fa9892348405b187a63ad2e4163e",
       "bundle": "fiction/manuscript/part-1/006-010.md"
     },
     {
       "chapter": 9,
-      "title": "납치된 세실리아",
-      "pov": "아킴",
-      "body_chars": 2598,
-      "body_sha256": "9bc13a600ddc48f3284c01cf9522b41a8575c72e081fe65f26d82aa5aacdeab3",
+      "title": "카터라는 이름",
+      "pov": "엘리스 → 이안",
+      "body_chars": 4580,
+      "body_sha256": "ff54282bd4d18572881da4a8a11728da18ebbd21cff6e2feee0ce6367b1f3580",
+      "bundle": "fiction/manuscript/part-1/006-010.md"
+    },
+    {
+      "chapter": 10,
+      "title": "친구를 쏜 날",
+      "pov": "이안 → 엘리스 → 이안",
+      "body_chars": 6696,
+      "body_sha256": "4a3e60159d639f4125bcc960032afead1aba8fb160097ab36f06488fb06ab211",
       "bundle": "fiction/manuscript/part-1/006-010.md"
     }
   ]
