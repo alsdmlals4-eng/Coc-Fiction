@@ -77,9 +77,11 @@ jobs:
         run: |
           python - <<'PY'
           import json
+          import sys
           from pathlib import Path
-          from tools.build_fiction_reverse_outline import build_current
-          from tools.fiction_composed_data import load_reverse_outline
+          sys.path.insert(0, str((Path('.') / 'tools').resolve()))
+          from build_fiction_reverse_outline import build_current
+          from fiction_composed_data import load_reverse_outline
 
           root = Path('.').resolve()
           generated = {int(x['chapter']): x for x in build_current(root)['chapters']}
