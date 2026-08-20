@@ -1,0 +1,53 @@
+name: Assemble current Ch016-020 source
+
+on:
+  push:
+    branches:
+      - work/coc-promote-016-020-20260820
+    paths:
+      - ".github/workflows/assemble-current-016-020.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: work/coc-promote-016-020-20260820
+          fetch-depth: 0
+      - name: Reconstruct exact source and verify
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat \
+            docs/fiction-ops/tmp/016020.part01.gz.b64 \
+            docs/fiction-ops/tmp/016020.part02a.gz.b64 \
+            docs/fiction-ops/tmp/016020.part02b.gz.b64 \
+            docs/fiction-ops/tmp/016020.part03.gz.b64 \
+            > /tmp/016020.gz.b64
+          test "$(wc -c < /tmp/016020.gz.b64 | tr -d ' ')" = "31124"
+          base64 -d /tmp/016020.gz.b64 > /tmp/016020.gz
+          gzip -t /tmp/016020.gz
+          gzip -dc /tmp/016020.gz > /tmp/016-020.current.md
+          test "$(wc -c < /tmp/016-020.current.md | tr -d ' ')" = "70401"
+          actual="$(sha256sum /tmp/016-020.current.md | awk '{print $1}')"
+          test "$actual" = "bd4b699aa9a43548371867d85fc083c76e0b378165ec817d6d16934e02201842"
+          grep -Fq '## 제16화 · 마시면 돌아갈 수 있다면' /tmp/016-020.current.md
+          grep -Fq '## 제17화 · 주안 씨, 정신 차려요' /tmp/016-020.current.md
+          grep -Fq '## 제18화 · 지금은 주안이 중요하니까' /tmp/016-020.current.md
+          grep -Fq '## 제19화 · 스승이 남긴 질문' /tmp/016-020.current.md
+          grep -Fq '## 제20화 · 지도 한 장을 훔치는 시간' /tmp/016-020.current.md
+          cp /tmp/016-020.current.md fiction/manuscript/part-1/016-020.md
+      - name: Commit exact source to isolated branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add fiction/manuscript/part-1/016-020.md
+          git diff --cached --check
+          git commit -m 'build: materialize exact current Ch016-020 source'
+          git push origin HEAD:work/coc-promote-016-020-20260820
