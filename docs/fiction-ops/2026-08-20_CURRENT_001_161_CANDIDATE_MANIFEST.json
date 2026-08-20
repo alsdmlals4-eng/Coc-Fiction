@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "candidate_id": "coc-fiction-current-001-161-20260820",
+  "project": "Coc-Fiction",
+  "generated_at": "2026-08-20",
+  "authority": {
+    "source_surface": "ChatGPT Library",
+    "source_folder": "/coc 소설/",
+    "repository_main_after_canon_reconciliation": "bd9a9f7c510756e3f96a9300f778f222be608da2",
+    "promotion_state": "NOT_PROMOTED",
+    "repository_verified_prefix_end": 5,
+    "legacy_tail_starts_at": 6
+  },
+  "coverage": {
+    "start_chapter": 1,
+    "end_chapter": 161,
+    "observed_heading_count": 161,
+    "missing_chapters": [],
+    "duplicate_chapters": [],
+    "bundle_count": 17,
+    "status": "PASS"
+  },
+  "normalization_debt": {
+    "canonical_alice_korean": "엘리스",
+    "alternate_alice_occurrences": 1103,
+    "canonical_pannington_korean": "패닝턴",
+    "alternate_pannington_occurrences": 2,
+    "canonical_choseikan_korean": "쵸세이칸",
+    "alternate_choseikan_occurrences": 3,
+    "forbidden_chorbrat_occurrences": 1,
+    "hatem_canonical": "하템",
+    "obsolete_hitem_occurrences": 0
+  },
+  "bundles": [
+    {
+      "coverage": [1, 10],
+      "filename": "폭풍의눈_2차퇴고_제001-010화_몰입도입부_가독성강화본.docx",
+      "sha256": "ee2ec785a6e66bb06cba80d3d3dbe1954934ad14e6c568408222906ad7892f96",
+      "size_bytes": 90621,
+      "observed_chapters": [1,2,3,4,5,6,7,8,9,10],
+      "heading_count": 10,
+      "artifact_state": "CURRENT_EXTERNAL_CANDIDATE",
+      "repository_promotion_state": "PENDING",
+      "normalization_counts": {"엘리스":253,"앨리스":0,"패닝턴":3,"페닝턴":0,"쵸세이칸":0,"조세이칸":0,"쵸르브라트":0,"히템":0,"하템":4}
+    },
+    {
+      "coverage": [11, 20],
+      "filename": "폭풍의눈_2차퇴고_제011-020화_캐릭터복선_가독성강화본.docx",
+      "sha256": "559ceeaa00cbf59a839b4bdb75b19165db2c49037940769e5ffb6852b1372e56",
+      "size_bytes": 91801,
+      "observed_chapters": [11,12,13,14,15,16,17,18,19,20],
+      "heading_count": 10,
+      "artifact_state": "CURRENT_EXTERNAL_CANDIDATE",
+      "repository_promotion_state": "PENDING",
+      "normalization_counts": {"엘리스":306,"앨리스":0,"패닝턴":2,"페닝턴":0,"쵸세이칸":0,"조세이칸":0,"쵸르브라트":0,"히템":0,"하템":91}
+    },
+    {
+      "coverage": [21, 30],
+      "filename": "폭풍의눈_2차퇴고_제021-030화_상실광기_강적위상_가독성강화본.docx",
+      "sha256": "e15c8fb4ed4ab1b6980c2c57f3979986bdbfa02f77aafef3cc84d3652cb70547",
+      "size_bytes": 104909,
+      "observed_chapters": [21,22,23,24,25,26,27,28,29,30],
+      "heading_count": 10,
+      "artifact_state": "CURRENT_EXTERNAL_CANDIDATE",
+      "repository_promotion_state": "PENDING",
+      "normalization_counts": {"엘리스":313,"앨리스":0,"패닝턴":5,"페닝턴":0,"쵸세이칸":0,"조세이칸":0,"쵸르브라트":0,"히템":0,"하템":44}
+    },
+    {
+      "coverage": [31, 40],
+      "filename": "폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본.docx",
+      "sha256": "89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10",
+      "size_bytes": 105508,
+      "observed_chapters": [31,32,33,34,35,36,37,38,39,40],
+      "heading_count": 10,
+      "artifact_state": "CURRENT_EXTERNAL_CANDIDATE",
+      "repository_promotion_state": "PENDING",
+      "normalization_counts": {"엘리스":362,"앨리스":0,"패닝턴":0,"페닝턴":0,"쵸세이칸":0,"조세이칸":0,"쵸르브라트":0,"히템":0,"하템":14}
+    },
+    {
+      "coverage": [41, 50],
+      "filename": "폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본.docx",
+      "sha256": "9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad",
+      "size_bytes": 102218,
+      "observed_chapters": [41,42,43,44,45,46,47,48,49,50],
+      "heading_count": 10,
+      "artifact_state": "CURRENT_EXTERNAL_CANDIDATE",
+      "repository_promotion_state": "PENDING",
+      "normalization_counts": {"엘리스":129,"앨리스":0,"패닝턴":2,"페닝턴":0,"쵸세이칸":7,"조세이칸":3,"쵸르브라트":1,"히템":0,"하템":6}
+    },
+    {
+      "coverage": [51, 60],
+      "filename": "폭풍의눈_2차퇴고_제051-060화_기억외갑_선택회수_가독성강화본.docx",
+      "sha256": "84ad0be254a8c4faedb89f2dd9f8433143eaabfef1bc6ff57db1b418e0036496",
+      "size_bytes": 86340,
+      "observed_chapters": [51,52,53,54,55,56,57,58,59,60],
+      "heading_count": 10,
+      "artifact_state": "CURRENT_EXTERNAL_CANDIDATE",
+      "repository_promotion_state": "PENDING",
+      "normalization_counts": {"엘리스":0,"앨리스":20,"패닝턴":0,"페닝턴":1,"쵸세이칸":116,"조세이칸":0,"쵸르브라트":0,"히템":0,"하템":3}
+    },
+    {
+      "coverage": [61, 70],
+      "filename": "폭풍의눈_2차퇴고_제061-070화_2부진입_타임리프도입_가독성강화본.docx",
+      "sha256": "74108e1494342b43f0c3e19d60e84e0db45e2f30d03fc530ae044db251862f14",
+      "size_bytes": 69856,
+      "observed_chapters": [61,62,63,64,65,66,67,68,69,70],
+      "heading_count": 10,
+      "artifact_state": "CURRENT_EXTERNAL_CANDIDATE",
+      "repository_promotion_state": "PENDING",
+      "normalization_counts": {"엘리스":0,"앨리스":71,"패닝턴":3,"페닝턴":0,"쵸세이칸":34,"조세이칸":0,"쵸르브라트":0,"히템":0,"하템":1}
+    },
+    {
+      "coverage": [71, 80],
+      "filename": "폭풍의눈_2차퇴고_제071-080화_다빈엘리엇_앨리스합류_가독성강화본.docx",
+      "sha256": "b29257351c0f08813d1a428857c623c824df3d581e896bef4faa9cc52184db62",
+      "size_bytes": 63639,
+      "observed_chapters": [71,72,73,74,75,76,77,78,79,80],
+      "heading_count": 10,
+      "artifact_state": "CURRENT_EXTERNAL_CANDIDATE",
+      "repository_promotion_state": "PENDING",
+      "normalization_counts": {"엘리스":0,"앨리스":75,"패닝턴":0,"페닝턴":0,"쵸세이칸":0,"조세이칸":0,"쵸르브라트":0,"히템":0,"하템":0}
+    },
+    {
+      "coverage": [81, 90],
+      "filename": "폭풍의눈_2차퇴고_제081-090화_동행신뢰_금기의료_가독성강화본.docx",
+      "sha256": "7e729cf378fade4f362b7e34bbdbdf3f2e2e433057ac1f6bcc91ab16d53f18dc",
+      "size_bytes": 62927,
+      "observed_chapters": [81,82,83,84,85,86,87,88,89,90],
+      "heading_count": 10,
+      "artifact_state": "CURRENT_EXTERNAL_CANDIDATE",
+      "repository_promotion_state": "PENDING",
+      "normalization_counts": {"엘리스":0,"앨리스":69,"패닝턴":2,"페닝턴":0,"쵸세이칸":0,"조세이칸":0,"쵸르브라트":0,"히템":0,"하템":0}
+    },
+    {
+      "coverage": [91, 100],
+      "filename": "폭풍의눈_2차퇴고_제091-100화_정본복원_강자위상_금기진단_가독성강화본.docx",
+      "sha256": "24de4c716fd1c01165fc046406fb341ca65b0c2a7193a2ccd8a87948107348d8",
+      "size_bytes": 64822,
+      "observed_chapters": [91,92,93,94,95,96,97,98,99,100],
+      "heading_count": 10,
+      "artifact_state": "CURRENT_EXTERNAL_CANDIDATE",
+      "repository_promotion_state": "PENDING",
+      "normalization_counts": {"엘리스":0,"앨리스":69,"패닝턴":1,"페닝턴":0,"쵸세이칸":0,"조세이칸":0,"쵸르브라트":0,"히템":0,"하템":0}
+    },
+    {
+      "coverage": [101, 105],
+      "filename": "폭풍의눈_2차퇴고_제101-105화_팽무악검전_동기교정_가독성강화본.docx",
+      "sha256": "6ef7643aae8ffa358dcd0b5594dc73ac978aedc59b4b597ddda895e508c2b15b",
+      "size_bytes": 54954,
+      "observed_chapters": [101,102,103,104,105],
+      "heading_count": 5,
+      "artifact_state": "CURRENT_EXTERNAL_CANDIDATE",
+      "repository_promotion_state": "PENDING",
+      "normalization_counts": {"엘리스":0,"앨리스":50,"패닝턴":0,"페닝턴":0,"쵸세이칸":0,"조세이칸":0,"쵸르브라트":0,"히템":0,"하템":0}
+    },
+    {
+      "coverage": [106, 115],
+      "filename": "폭풍의눈_2차퇴고_제106-115화_시신소유권_금기수술_반복증명_가독성강화본.docx",
+      "sha256": "e19fe8c97fd33dd9fe14326d71cf1af2b63409cdeccdf4728df19c774755e192",
+      "size_bytes": 74665,
+      "observed_chapters": [106,107,108,109,110,111,112,113,114,115],
+      "heading_count": 10,
+      "artifact_state": "CURRENT_EXTERNAL_CANDIDATE",
+      "repository_promotion_state": "PENDING",
+      "normalization_counts": {"엘리스":0,"앨리스":142,"패닝턴":0,"페닝턴":0,"쵸세이칸":0,"조세이칸":0,"쵸르브라트":0,"히템":0,"하템":0}
+    },
+    {
+      "coverage": [116, 125],
+      "filename": "폭풍의눈_2차퇴고_제116-125화_주독역보호_독립공동전선_가독성강화본.docx",
+      "sha256": "ae75ec7308e835763b5cbf3eb6f7b8070ef6245f46d5fa1570457d258b0f2716",
+      "size_bytes": 76839,
+      "observed_chapters": [116,117,118,119,120,121,122,123,124,125],
+      "heading_count": 10,
+      "artifact_state": "CURRENT_EXTERNAL_CANDIDATE",
+      "repository_promotion_state": "PENDING",
+      "normalization_counts": {"엘리스":0,"앨리스":219,"패닝턴":0,"페닝턴":0,"쵸세이칸":0,"조세이칸":0,"쵸르브라트":0,"히템":0,"하템":0}
+    },
+    {
+      "coverage": [126, 135],
+      "filename": "폭풍의눈_2차퇴고_제126-135화_세력전쟁_강자위상_선택권_가독성강화본.docx",
+      "sha256": "4f6d4a8ded7ddb606789fe1f86e983fbf33729d2d2bf988ee3293665dbed40fa",
+      "size_bytes": 65539,
+      "observed_chapters": [126,127,128,129,130,131,132,133,134,135],
+      "heading_count": 10,
+      "artifact_state": "CURRENT_EXTERNAL_CANDIDATE",
+      "repository_promotion_state": "PENDING",
+      "normalization_counts": {"엘리스":0,"앨리스":151,"패닝턴":0,"페닝턴":0,"쵸세이칸":0,"조세이칸":0,"쵸르브라트":0,"히템":0,"하템":0}
+    },
+    {
+      "coverage": [136, 145],
+      "filename": "폭풍의눈_2차퇴고_제136-145화_반복수술_실패기억_시간잔류_가독성강화본.docx",
+      "sha256": "85d2448b209c8b1dbbe21362cf05a05674640435ed7a3abeca62e1ce8300f17f",
+      "size_bytes": 64103,
+      "observed_chapters": [136,137,138,139,140,141,142,143,144,145],
+      "heading_count": 10,
+      "artifact_state": "CURRENT_EXTERNAL_CANDIDATE",
+      "repository_promotion_state": "PENDING",
+      "normalization_counts": {"엘리스":0,"앨리스":100,"패닝턴":0,"페닝턴":0,"쵸세이칸":0,"조세이칸":0,"쵸르브라트":0,"히템":0,"하템":0}
+    },
+    {
+      "coverage": [146, 155],
+      "filename": "폭풍의눈_2차퇴고_제146-155화_최종선택_후일담_가독성강화본.docx",
+      "sha256": "fc3e781772439b3d39f76f4510bebc4057eae9c67bfaaf0221cb024a187f60de",
+      "size_bytes": 62225,
+      "observed_chapters": [146,147,148,149,150,151,152,153,154,155],
+      "heading_count": 10,
+      "artifact_state": "QA_VERIFIED_EXTERNAL",
+      "repository_promotion_state": "PENDING",
+      "normalization_counts": {"엘리스":0,"앨리스":91,"패닝턴":0,"페닝턴":0,"쵸세이칸":0,"조세이칸":0,"쵸르브라트":0,"히템":0,"하템":5}
+    },
+    {
+      "coverage": [156, 161],
+      "filename": "폭풍의눈_2차퇴고_2부외전_제156-161화_Rift_Accord_협약완결본.docx",
+      "sha256": "f9ddf90970a4760652f9bbac21c315daa24a51b47a32bfccfd47ef22a865f8d5",
+      "size_bytes": 56353,
+      "observed_chapters": [156,157,158,159,160,161],
+      "heading_count": 6,
+      "artifact_state": "DELIVERED_EXTERNAL",
+      "repository_promotion_state": "PENDING",
+      "normalization_counts": {"엘리스":0,"앨리스":46,"패닝턴":0,"페닝턴":1,"쵸세이칸":0,"조세이칸":0,"쵸르브라트":0,"히템":0,"하템":2}
+    }
+  ]
+}
