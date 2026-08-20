@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-20",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_011_015 / CURRENT_RECONCILED",
+  "baseline": "analysis/baselines/MANUSCRIPT_INDEX_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 11,
+      "title": "비야키를 타는 법",
+      "pov": "주안",
+      "body_chars": 7350,
+      "body_sha256": "b868068e8036a7ea22fae778ec3c71059a3f1bf2bd3b9759cca0663c4e6da7f3",
+      "bundle": "fiction/manuscript/part-1/011-015.md"
+    },
+    {
+      "chapter": 12,
+      "title": "못 본 척 해줄게",
+      "pov": "이안 → 엘리스 → 이안 → 엘리스 → 이안 → 엘리스 → 이안",
+      "body_chars": 6269,
+      "body_sha256": "b020e14d87c94884f2dceae271930bdc36953512091a9d5136a37030ff477cb2",
+      "bundle": "fiction/manuscript/part-1/011-015.md"
+    },
+    {
+      "chapter": 13,
+      "title": "아버지 대신",
+      "pov": "이안 → 엘리스",
+      "body_chars": 7410,
+      "body_sha256": "6d5da0c205ecfd0626cb6977f62b6d274631127e940e0af55dd95f1c3aebbfc3",
+      "bundle": "fiction/manuscript/part-1/011-015.md"
+    },
+    {
+      "chapter": 14,
+      "title": "후회하지 않는 선택",
+      "pov": "엘리스 → 주안 → 이안",
+      "body_chars": 4787,
+      "body_sha256": "9ae2e7b58baf3b9f91890f74b502e4ef2c09f4efb5f7f137c280a3f0b4d69182",
+      "bundle": "fiction/manuscript/part-1/011-015.md"
+    },
+    {
+      "chapter": 15,
+      "title": "섬의 왕과의 거래",
+      "pov": "엘리스 → 주안",
+      "body_chars": 6031,
+      "body_sha256": "d26da36ff8d59d9fcad5393c28189b61f50579eb100aeb7965bf562e45e8692d",
+      "bundle": "fiction/manuscript/part-1/011-015.md"
+    }
+  ]
+}
