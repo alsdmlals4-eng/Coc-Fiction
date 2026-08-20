@@ -1,0 +1,63 @@
+{
+  "sha256": "248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9",
+  "chapter_heading_count": 161,
+  "unique_chapters": 161,
+  "missing": [],
+  "duplicates": {},
+  "forbidden_counts": {
+    "쵸르브라트": 0,
+    "미하일 카쉬프": 0,
+    "피엘렛토": 0,
+    "붉은 늑대": 0,
+    "컨소시엄": 0,
+    "협상 책임자": 0,
+    "조작된 감정": 0,
+    "오션": 0,
+    "앨리스": 0,
+    "복종인자": 0,
+    "블랙킹": 0,
+    "버실라": 0,
+    "바실라": 0,
+    "Versilla": 0,
+    "Woff": 0,
+    "페닝턴": 0,
+    "조세이칸": 0,
+    "히템": 0
+  },
+  "forbidden_total": 0,
+  "pov_scene_break_violations": [],
+  "hotspot_pov": {
+    "12": {"markers": ["[이안]", "[엘리스]", "[이안]", "[엘리스]", "[이안]", "[엘리스]", "[이안]"], "changes": 6},
+    "19": {"markers": ["[이안]", "[주안]", "[이안]", "[이안]", "[엘리스]", "[이안]", "[주안]", "[이안]"], "changes": 6},
+    "22": {"markers": ["[주안]", "[엘리스]", "[주안]", "[엘리스]", "[주안]", "[엘리스]"], "changes": 5},
+    "23": {"markers": ["[주안]", "[주안]", "[엘리스]", "[이안]", "[엘리스]", "[이안]", "[주안]"], "changes": 5},
+    "24": {"markers": ["[주안]", "[이안]", "[엘리스]", "[주안]", "[이안]", "[엘리스]", "[엘리스]", "[주안]", "[이안]"], "changes": 7},
+    "30": {"markers": ["[이안]", "[엘리스]", "[이안]", "[엘리스]", "[이안]", "[주안]"], "changes": 5},
+    "31": {"markers": ["[주안]", "[엘리스]", "[주안]", "[엘리스]", "[주안]", "[엘리스]", "[이안]"], "changes": 6},
+    "35": {"markers": ["[이안]", "[주안]", "[엘리스]", "[이안]", "[주안]", "[엘리스]"], "changes": 5},
+    "43": {"markers": ["[주안]", "[엘리스]", "[주안]", "[엘리스]", "[이안]", "[주안]", "[엘리스]"], "changes": 6},
+    "44": {"markers": ["[주안]", "[엘리스]", "[주안]", "[이안]", "[엘리스]", "[주안]", "[엘리스]", "[이안]"], "changes": 7},
+    "53": {"markers": ["[주안]", "[이안]", "[주안]", "[이안]", "[주안]", "[이안]"], "changes": 5}
+  },
+  "chapter_specific_checks": {
+    "Ch121_D02": true,
+    "Ch151_N04": true,
+    "Ch156_chronology": true,
+    "D01_operational_evidence": true,
+    "D03_physical_bodies": true,
+    "Ch77_compressed": true,
+    "Ch102_compressed": true
+  },
+  "boundary_order_all_pass": true,
+  "document_render_qa": {
+    "pages": 796,
+    "blank_pages": 0,
+    "low_ink_pages": 0,
+    "edge_touch_pages": 0,
+    "near_bottom_pages": 0,
+    "contact_sheets": 20,
+    "manual_contact_sheets_inspected": 20,
+    "obvious_visual_defects": 0
+  },
+  "status": "QA_GREEN_NOT_PROMOTED"
+}
