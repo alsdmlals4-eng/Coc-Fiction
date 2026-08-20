@@ -1,0 +1,342 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-20",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_016_020 / CURRENT_RECONCILED / MIGRATION_BOUNDARY_AFTER_020",
+  "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 16,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "마시면 돌아갈 수 있다면",
+      "pov": "엘리스 → 주안 → 엘리스 → 주안 → 엘리스",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/016-020.md",
+        "body_sha256": "752de081c6189ab8646a43108a1e63bf7a27f8de399b4488c4c980eec71fabca",
+        "body_chars": 6051
+      },
+      "chapter_function": [
+        "OPENING",
+        "INVESTIGATION",
+        "REVELATION",
+        "RELATIONSHIP",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "데이비드가 준 안전가옥은 정말 아무도 찾지 않았다. 첫날 밤이 지나고, 다음 날 해가 기울 때까지도.",
+        "immediate_goal_or_focus": "데이비드가 준 안전가옥은 정말 아무도 찾지 않았다.",
+        "opposition_and_cost": "사람 발이 다닌 흔적은 거의 없었다.",
+        "turn_or_discovery": "복도 끝에 제단이 나타났다.",
+        "decision_or_choice": "엘리스가 즉시 말했다.",
+        "ending_state": "마치 부서진 조각들이. 제자리를 다시 찾는 것처럼.",
+        "next_pressure": "다음 제17화 「주안 씨, 정신 차려요」(엘리스 → 주안 → 엘리스 → 주안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 제자리를 다시 찾는 것처럼."
+      },
+      "metrics": {
+        "paragraphs": 328,
+        "average_paragraph_chars": 18.4,
+        "dialogue_ratio": 0.1605,
+        "theme_term_hits": {
+          "선택": 3,
+          "명령": 2,
+          "안전": 2,
+          "사람": 18,
+          "괴물": 1
+        }
+      },
+      "structural_flags": [
+        "LONG_CHAPTER",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 15,
+        "title": "섬의 왕과의 거래",
+        "pov": "엘리스 → 주안"
+      },
+      "next_chapter": {
+        "chapter": 17,
+        "title": "주안 씨, 정신 차려요",
+        "pov": "엘리스 → 주안 → 엘리스 → 주안"
+      }
+    },
+    {
+      "chapter": 17,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "주안 씨, 정신 차려요",
+      "pov": "엘리스 → 주안 → 엘리스 → 주안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/016-020.md",
+        "body_sha256": "7146cc26b37a56ed87e29162dc2f5b1b6cd33bf0e3bd7bf9c4cdcaa791da929c",
+        "body_chars": 5999
+      },
+      "chapter_function": [
+        "INCITING_INCIDENT",
+        "REVELATION",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "주안의 가슴 아래에서 움직임이 이어졌다. 심장은 아니었다.",
+        "immediate_goal_or_focus": "갈비뼈 하나가 안쪽으로 밀려 들어갔다가, 다시 바깥으로 돌아왔다.",
+        "opposition_and_cost": "얼굴이 없었다.",
+        "turn_or_discovery": "하지만 배에서부터 지금까지 함께 가자고 선택한 건 자기였다.",
+        "decision_or_choice": "하지만 배에서부터 지금까지 함께 가자고 선택한 건 자기였다.",
+        "ending_state": "적어도 지금은. 자기 몸을 다시 자기 것으로 만드는 일이 먼저였다.",
+        "next_pressure": "다음 제18화 「지금은 주안이 중요하니까」(엘리스 → 주안 → 엘리스 → 주안 → 엘리스 POV)로 압력이 이월된다. 현재 화 마지막 증거: 자기 몸을 다시 자기 것으로 만드는 일이 먼저였다."
+      },
+      "metrics": {
+        "paragraphs": 338,
+        "average_paragraph_chars": 17.7,
+        "dialogue_ratio": 0.0992,
+        "theme_term_hits": {
+          "선택": 2,
+          "명령": 3,
+          "사람": 12,
+          "괴물": 1
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "LONG_CHAPTER",
+        "ONE_OFF_POV",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 16,
+        "title": "마시면 돌아갈 수 있다면",
+        "pov": "엘리스 → 주안 → 엘리스 → 주안 → 엘리스"
+      },
+      "next_chapter": {
+        "chapter": 18,
+        "title": "지금은 주안이 중요하니까",
+        "pov": "엘리스 → 주안 → 엘리스 → 주안 → 엘리스"
+      }
+    },
+    {
+      "chapter": 18,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "지금은 주안이 중요하니까",
+      "pov": "엘리스 → 주안 → 엘리스 → 주안 → 엘리스",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/016-020.md",
+        "body_sha256": "8d2c1ca43ae980884f24a39d45bb548f872287b49790d12e2db59be2d474adf0",
+        "body_chars": 4570
+      },
+      "chapter_function": [
+        "REVELATION",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "도망친다는 말은 쉬웠다. 문제는 주안이 걷지 못한다는 것이었다.",
+        "immediate_goal_or_focus": "주안은 바위에 등을 기대고 몸 상태를 확인했다.",
+        "opposition_and_cost": "“죽어야 멈추는 것보다야 낫지만, 네가 원할 때 멈추는 건 또 다른 문제지.”",
+        "turn_or_discovery": "“저 사람 몸이 내 말에 이상하게 반응한다고 해서 그걸 이용하면, 살리는 게 아니라 내가 대신 고르는 거잖아.”",
+        "decision_or_choice": "엘리스는 바로 대답했다.",
+        "ending_state": "쓰겠다고 고르는 순간부터 책임이 생긴다. 적어도 자기 힘은 그렇게 만들 생각이었다.",
+        "next_pressure": "다음 제19화 「스승이 남긴 질문」(이안 → 주안 → 이안 → 엘리스 → 이안 → 주안 → 이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 적어도 자기 힘은 그렇게 만들 생각이었다."
+      },
+      "metrics": {
+        "paragraphs": 199,
+        "average_paragraph_chars": 23.0,
+        "dialogue_ratio": 0.293,
+        "theme_term_hits": {
+          "책임": 1,
+          "명령": 1,
+          "안전": 2,
+          "사람": 7,
+          "괴물": 1
+        }
+      },
+      "structural_flags": [
+        "LONG_CHAPTER",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 17,
+        "title": "주안 씨, 정신 차려요",
+        "pov": "엘리스 → 주안 → 엘리스 → 주안"
+      },
+      "next_chapter": {
+        "chapter": 19,
+        "title": "스승이 남긴 질문",
+        "pov": "이안 → 주안 → 이안 → 엘리스 → 이안 → 주안 → 이안"
+      }
+    },
+    {
+      "chapter": 19,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "스승이 남긴 질문",
+      "pov": "이안 → 주안 → 이안 → 엘리스 → 이안 → 주안 → 이안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/016-020.md",
+        "body_sha256": "39adeba785e49f7127529d46a1c80800e630b35564e2523b32b01854b7057b06",
+        "body_chars": 7274
+      },
+      "chapter_function": [
+        "OPENING",
+        "INVESTIGATION",
+        "REVELATION",
+        "NEGOTIATION",
+        "CHOICE_AND_COST",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "하템이 남긴 판은 읽히지 않았다. 이안은 글자보다 먼저 가면 아래의 얼굴을 떠올렸다.",
+        "immediate_goal_or_focus": "마지막 항목은 관찰이라기보다 문제였다.",
+        "opposition_and_cost": "그리고 자기 다리는 아직 완전히 말을 듣지 않았다.",
+        "turn_or_discovery": "이미지가 바뀌었다.",
+        "decision_or_choice": "“제가 특별히 선택된 건 아니군요.”",
+        "ending_state": "스승이 남긴 것은 답이 아니었다. 질문하는 순서였다.",
+        "next_pressure": "다음 제20화 「지도 한 장을 훔치는 시간」(이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 질문하는 순서였다."
+      },
+      "metrics": {
+        "paragraphs": 397,
+        "average_paragraph_chars": 18.3,
+        "dialogue_ratio": 0.182,
+        "theme_term_hits": {
+          "선택": 5,
+          "책임": 1,
+          "명령": 2,
+          "안전": 2,
+          "사람": 16
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "LONG_CHAPTER",
+        "TIMELINE_SHIFT",
+        "ONE_OFF_POV",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 18,
+        "title": "지금은 주안이 중요하니까",
+        "pov": "엘리스 → 주안 → 엘리스 → 주안 → 엘리스"
+      },
+      "next_chapter": {
+        "chapter": 20,
+        "title": "지도 한 장을 훔치는 시간",
+        "pov": "이안"
+      }
+    },
+    {
+      "chapter": 20,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "지도 한 장을 훔치는 시간",
+      "pov": "이안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/016-020.md",
+        "body_sha256": "dc78dd2f3ab00d853225ca4c98a85832d5fbb088df0b304258172e2ffd754523",
+        "body_chars": 6208
+      },
+      "chapter_function": [
+        "OPENING",
+        "INVESTIGATION",
+        "REVELATION",
+        "NEGOTIATION",
+        "ACTION",
+        "AFTERMATH",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "중앙신전 외곽 진지는 생각보다 평범했다. 그게 첫 번째 문제였다.",
+        "immediate_goal_or_focus": "천막과 등불과 물통, 말뚝에 걸린 젖은 옷, 순찰을 마치고 돌아온 사람이 빵을 뜯어 먹는 모습은 그렇지 않았다.",
+        "opposition_and_cost": "“나쁜 길은 감시가 적어.”",
+        "turn_or_discovery": "경비가 지나간 뒤 다시 열렸다.",
+        "decision_or_choice": "이안은 숨을 멈추지 않았다.",
+        "ending_state": "조금 전 훔친 지도에서. 그쪽이 가장 늦게 닫히는 길이었다.",
+        "next_pressure": "정본 마이그레이션 경계. 저장소 제21화 이후는 아직 legacy tail이며 현재 제20화와의 서사 연속성을 주장하지 않는다."
+      },
+      "metrics": {
+        "paragraphs": 327,
+        "average_paragraph_chars": 19.0,
+        "dialogue_ratio": 0.0955,
+        "theme_term_hits": {
+          "선택": 2,
+          "명령": 1,
+          "사람": 9,
+          "괴물": 1
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "LONG_CHAPTER",
+        "POV_HANDOFF",
+        "RECONCILIATION_MIGRATION_BOUNDARY"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": true,
+      "previous_chapter": {
+        "chapter": 19,
+        "title": "스승이 남긴 질문",
+        "pov": "이안 → 주안 → 이안 → 엘리스 → 이안 → 주안 → 이안"
+      },
+      "next_chapter": null
+    }
+  ]
+}
