@@ -4,13 +4,15 @@
 
 ## Resume-first
 
-이 문서는 live router다. 저장된 SHA를 최신값으로 믿지 않는다.
+이 문서는 live router다. 저장된 SHA를 절대 최신값으로 믿지 않는다.
 
 ```yaml
+resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
 work_mode: IMPLEMENT / REVIEW
 state_observed_at_main: 60bc62ed3ee4f7870656c8ed5b4ab6b035c71930
 current_candidate: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 current_candidate_sha256: 248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9
+delivery_state: QA_VERIFIED
 candidate_state: QA_GREEN
 repository_promotion_state: PARTIAL
 reconciled_prefix_end: 10
@@ -31,6 +33,17 @@ latest Coc-Fiction main
 → current-candidate manifest/QA
 → next bounded bundle
 ```
+
+## Artifact-promotion gate
+
+```yaml
+states:
+  delivery_state: DRAFT | QA_VERIFIED | DELIVERED
+  repository_promotion_state: NOT_REQUIRED | PENDING | PARTIAL | PROMOTED
+rule: delivery_state와 repository_promotion_state를 서로 자동 승격하지 않는다.
+```
+
+current candidate는 `QA_VERIFIED/QA_GREEN`이지만 repository manuscript는 아직 `PARTIAL`이다.
 
 ## Current candidate authority
 
