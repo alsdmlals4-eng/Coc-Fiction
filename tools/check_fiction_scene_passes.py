@@ -44,6 +44,11 @@ expected_passes = {
         "boundaries": [10, 16],
         "card_boundaries": ["제10→11화", "제11→12화", "제12→13화", "제13→14화", "제14→15화", "제15→16화"],
     },
+    "fiction/manuscript/part-1/016-020.md": {
+        "chapters": [16, 17, 18, 19, 20],
+        "boundaries": [15, 21],
+        "card_boundaries": ["제15→16화", "제16→17화", "제17→18화", "제18→19화", "제19→20화", "제20→21화"],
+    },
     "fiction/manuscript/side-story-lake/091-095.md": {
         "chapters": [91, 92, 93, 94, 95],
         "boundaries": [90, 96],
@@ -107,6 +112,11 @@ required_phrases = {
     13: "누구도 부모의 죄를 딸의 선택으로 바꿔 쓸 수는 없다.",
     14: "이번 방향은 처음으로 자신이 정했다.",
     15: "안 믿으면 계약이죠.",
+    16: "살아서 해.",
+    17: "자기 몸을 다시 자기 것으로 만드는 일이 먼저였다.",
+    18: "읽을지는 당신이 정해.",
+    19: "하템. 밀리와 별개 인물. 같은 얼굴은 동일인의 증거가 아니다.",
+    20: "마음에 드는 규칙만 적으면 규칙이 아니라 희망사항이니까요.",
     91: "답을 찾았느냐",
     92: "세 사람이 함께 살기로 고른 집",
     93: "2018년 2월",
@@ -129,7 +139,7 @@ for number, phrases in forbidden_phrases.items():
         if phrase in parsed.get(number, ""):
             errors.append(f"chapter {number} stale scene remains: {phrase}")
 
-for bundle_name in ("006-010.md", "011-015.md"):
+for bundle_name in ("006-010.md", "011-015.md", "016-020.md"):
     current_bundle = (FICTION / "manuscript" / "part-1" / bundle_name).read_text(encoding="utf-8")
     for excluded in ("복종인자", "히템", "앨리스", "쵸르브라트", "미하일 카쉬프", "피엘렛토", "붉은 늑대", "컨소시엄"):
         if excluded in current_bundle:
@@ -153,12 +163,12 @@ if reconciliation.get("artifact_sha256") != "248d1e0076114c10724a480333421353c03
     errors.append("external reconciliation artifact SHA mismatch")
 if reconciliation.get("target_chapters") != [1, 161]:
     errors.append("external reconciliation target range mismatch")
-if reconciliation.get("reconciled_prefix_end") != 15:
-    errors.append("reconciled prefix must be chapter 15 after current 011-015 propagation")
-if reconciliation.get("legacy_tail_starts_at") != 16:
-    errors.append("legacy tail must begin at chapter 16 after current 011-015 propagation")
-if reconciliation.get("boundary_after_chapter") != 15:
-    errors.append("migration boundary must be after chapter 15")
+if reconciliation.get("reconciled_prefix_end") != 20:
+    errors.append("reconciled prefix must be chapter 20 after current 016-020 propagation")
+if reconciliation.get("legacy_tail_starts_at") != 21:
+    errors.append("legacy tail must begin at chapter 21 after current 016-020 propagation")
+if reconciliation.get("boundary_after_chapter") != 20:
+    errors.append("migration boundary must be after chapter 20")
 if reconciliation.get("whole_manuscript_continuity") != "NOT_YET_CLAIMED":
     errors.append("whole-manuscript continuity must remain unclaimed during mixed migration")
 
@@ -169,30 +179,37 @@ if not isinstance(chapter10_next, dict) or chapter10_next.get("chapter") != 11:
 if "RECONCILIATION_MIGRATION_BOUNDARY" in chapter10_outline.get("structural_flags", []):
     errors.append("chapter 10 must no longer carry the migration-boundary flag")
 
-chapter11_outline = outline_entries.get(11, {})
-chapter11_previous = chapter11_outline.get("previous_chapter")
-if not isinstance(chapter11_previous, dict) or chapter11_previous.get("chapter") != 10:
-    errors.append("current chapter 11 reverse outline must connect back to chapter 10")
-if "LEGACY_TAIL_BOUNDARY" in chapter11_outline.get("structural_flags", []):
-    errors.append("current chapter 11 must no longer carry the legacy-tail boundary flag")
-
 chapter15_outline = outline_entries.get(15, {})
-if chapter15_outline.get("next_chapter") is not None:
-    errors.append("chapter 15 reverse outline must stop at the current migration boundary")
-if "RECONCILIATION_MIGRATION_BOUNDARY" not in chapter15_outline.get("structural_flags", []):
-    errors.append("chapter 15 reverse outline missing migration-boundary flag")
-if "제16화 이후는 아직 legacy tail" not in chapter15_outline.get("evidence", {}).get("next_pressure", ""):
-    errors.append("chapter 15 reverse outline missing boundary pressure")
+chapter15_next = chapter15_outline.get("next_chapter")
+if not isinstance(chapter15_next, dict) or chapter15_next.get("chapter") != 16:
+    errors.append("current chapter 15 reverse outline must connect to current chapter 16")
+if "RECONCILIATION_MIGRATION_BOUNDARY" in chapter15_outline.get("structural_flags", []):
+    errors.append("chapter 15 must no longer carry the migration-boundary flag")
 
 chapter16_outline = outline_entries.get(16, {})
-if chapter16_outline.get("previous_chapter") is not None:
-    errors.append("legacy chapter 16 reverse outline must not claim current chapter 15 as previous continuity")
-if "LEGACY_TAIL_BOUNDARY" not in chapter16_outline.get("structural_flags", []):
-    errors.append("chapter 16 reverse outline missing legacy-tail boundary flag")
+chapter16_previous = chapter16_outline.get("previous_chapter")
+if not isinstance(chapter16_previous, dict) or chapter16_previous.get("chapter") != 15:
+    errors.append("current chapter 16 reverse outline must connect back to chapter 15")
+if "LEGACY_TAIL_BOUNDARY" in chapter16_outline.get("structural_flags", []):
+    errors.append("current chapter 16 must no longer carry the legacy-tail boundary flag")
+
+chapter20_outline = outline_entries.get(20, {})
+if chapter20_outline.get("next_chapter") is not None:
+    errors.append("chapter 20 reverse outline must stop at the current migration boundary")
+if "RECONCILIATION_MIGRATION_BOUNDARY" not in chapter20_outline.get("structural_flags", []):
+    errors.append("chapter 20 reverse outline missing migration-boundary flag")
+if "제21화 이후는 아직 legacy tail" not in chapter20_outline.get("evidence", {}).get("next_pressure", ""):
+    errors.append("chapter 20 reverse outline missing boundary pressure")
+
+chapter21_outline = outline_entries.get(21, {})
+if chapter21_outline.get("previous_chapter") is not None:
+    errors.append("legacy chapter 21 reverse outline must not claim current chapter 20 as previous continuity")
+if "LEGACY_TAIL_BOUNDARY" not in chapter21_outline.get("structural_flags", []):
+    errors.append("chapter 21 reverse outline missing legacy-tail boundary flag")
 
 if registry.get("next_pass_mode") != "EXTERNAL_ARTIFACT_CANON_RECONCILIATION":
     errors.append("next pass mode must be external artifact canon reconciliation")
-if registry.get("next_bundle_passes") != ["fiction/manuscript/part-1/016-020.md"]:
+if registry.get("next_bundle_passes") != ["fiction/manuscript/part-1/021-025.md"]:
     errors.append("next bundle pass order mismatch")
 if registry.get("deferred_bundle_passes") != ["fiction/manuscript/part-2/176-180.md"]:
     errors.append("deferred source-pass order mismatch")
@@ -205,6 +222,6 @@ if errors:
 
 print(
     "Fiction scene-pass validation PASSED "
-    "(001-015 current production prefix; migration boundary 15→16; "
-    "016-020 next; 091-095 source-matched)"
+    "(001-020 current production prefix; migration boundary 20→21; "
+    "021-025 next; 091-095 source-matched)"
 )
