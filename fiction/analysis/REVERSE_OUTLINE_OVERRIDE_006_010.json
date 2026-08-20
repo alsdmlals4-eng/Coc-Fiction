@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_at": "2026-08-20",
-  "status": "ACTIVE_OVERRIDE / BUNDLE_006_010 / CURRENT_RECONCILED / MIGRATION_BOUNDARY_AFTER_010",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_006_010 / CURRENT_RECONCILED / CURRENT_CONTINUITY_TO_011",
   "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
   "chapters": [
     {
@@ -115,14 +115,14 @@
         "turn_or_discovery": "그때 오두막 반대편에서 여자가 하나 나타났다.",
         "decision_or_choice": "여자가 짜증 난 얼굴로 말했다.",
         "ending_state": "이안은 그날 처음으로 지식을 얻지 못한 채 답 하나를 잃었다. 그리고 그 손실은 책보다 무거웠다.",
-        "next_pressure": "정본 마이그레이션 경계. 저장소 제11화 이후는 아직 legacy tail이며 현재 제10화와의 서사 연속성을 주장하지 않는다."
+        "next_pressure": "다음 제11화 「비야키를 타는 법」(주안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 그리고 그 손실은 책보다 무거웠다."
       },
       "metrics": {"paragraphs": 397, "average_paragraph_chars": 16.9, "dialogue_ratio": 0.2149, "theme_term_hits": {"책임": 1, "보호": 1, "안전": 2, "사람": 16}},
-      "structural_flags": ["MULTI_TURN_DENSITY", "LONG_CHAPTER", "POV_HANDOFF", "RECONCILIATION_MIGRATION_BOUNDARY"],
+      "structural_flags": ["MULTI_TURN_DENSITY", "LONG_CHAPTER", "POV_HANDOFF"],
       "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
       "representative_gate": true,
       "previous_chapter": {"chapter": 9, "title": "카터라는 이름", "pov": "엘리스 → 이안"},
-      "next_chapter": null
+      "next_chapter": {"chapter": 11, "title": "비야키를 타는 법", "pov": "주안"}
     }
   ]
 }
