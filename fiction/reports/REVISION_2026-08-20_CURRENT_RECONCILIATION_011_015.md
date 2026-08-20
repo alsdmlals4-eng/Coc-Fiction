@@ -26,7 +26,7 @@ QA_GREEN integrated working candidate의 제11–15화를 GitHub production manu
 - `Validate completed scene passes`만 의도한 이유로 실패:
   - 011–015 completed pass 부재
   - current Ch11–15 invariant 부재
-  - legacy `히템` 잔존
+  - Hatem legacy 표기 잔존
   - frontier가 여전히 10→11
   - Ch10/11 old boundary 상태
   - Ch15/16 new boundary 부재
@@ -52,8 +52,8 @@ Source-line provenance retained:
 
 ## Canon/readability corrections realized by the current candidate
 
-- `히템` legacy spelling → canonical `하템`.
-- `앨리스`가 아니라 canonical `엘리스` 유지.
+- Hatem 표기를 canonical `하템`으로 통일하고 legacy variant를 복원하지 않는다.
+- Alice Carter의 한국어 정본 표기 `엘리스`를 유지한다.
 - Ch12–13에서 하템과 밀리의 같은 얼굴은 동일인 떡밥이 아니라 **별도 인물 + 얼굴 기원 미스터리**로 정리된다.
 - 밀리 소실은 객관적 사망 확정이 아니다.
 - Ch13–14에서 엘리스 보호 자아는 외부 존재가 아니라 같은 자아의 보호적 부분으로 유지된다.
