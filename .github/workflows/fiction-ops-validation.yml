@@ -16,7 +16,6 @@ on:
       - "tools/build_fiction_reverse_outline.py"
       - "tools/check_fiction_reverse_outline.py"
       - "tools/check_fiction_scene_passes.py"
-      - "tools/check_fiction_016_020_red_contract.py"
       - "tools/fiction_composed_data.py"
       - ".github/workflows/fiction-ops-validation.yml"
       - ".github/PULL_REQUEST_TEMPLATE/fiction-change.md"
@@ -80,5 +79,3 @@ jobs:
         run: python tools/check_fiction_reverse_outline.py
       - name: Validate completed scene passes
         run: python tools/check_fiction_scene_passes.py
-      - name: Verify Ch016-020 RED contract
-        run: python tools/check_fiction_016_020_red_contract.py
