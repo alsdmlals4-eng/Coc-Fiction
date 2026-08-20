@@ -8,88 +8,89 @@
 
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
-state_observed_at_main: b9d4523eb2c057215948598aa74beb451a0b5a67
-work_mode: IMPLEMENT / REVIEW
-open_project_prs_observed_before_branch: 0
-self_merge_sha_required_in_file: false
-```
-
-새 세션은 반드시 `Coc-Fiction main → open PR → ACTIVE_CONTEXT → 이 HANDOFF → SCENE_PASS_REGISTRY → current candidate manifest/QA` 순으로 fresh-read한다.
-
-## 현재 authority
-
-```yaml
+delivery_state: QA_VERIFIED
+repository_promotion_state: PARTIAL
 current_candidate: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 current_candidate_sha256: 248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9
-delivery_state: QA_VERIFIED
-candidate_state: QA_GREEN
-repository_promotion_state: PARTIAL
-candidate_coverage: [1, 161]
-reconciled_prefix_end: 15
-legacy_tail_starts_at: 16
-boundary_after_chapter: 15
+reconciled_prefix_end: 20
+legacy_tail_starts_at: 21
+boundary_after_chapter: 20
 whole_manuscript_continuity: NOT_YET_CLAIMED
-next_bounded_bundle_if_resumed: fiction/manuscript/part-1/016-020.md
+next_bounded_bundle: fiction/manuscript/part-1/021-025.md
 ```
 
-`delivery_state`와 `repository_promotion_state`를 자동으로 동일시하지 않는다. 외부/통합 candidate가 Green이어도 GitHub production authority는 bounded reconciliation이 Green인 범위까지만 이동한다.
+재개 순서:
+`latest Coc-Fiction main → open PR → ACTIVE_CONTEXT → HANDOFF → CANON_REGISTRY → SCENE_PASS_REGISTRY → candidate manifest/QA → next bounded bundle`
 
-## 2026-08-20 implementation chain
+## 현재 완료 상태
 
-- PR #29: Canon reconciliation merged.
-- PR #30: 17-file current-candidate manifest + hashes merged.
-- PR #31: 001–161 integrated working candidate QA_GREEN evidence merged.
-- PR #32: current Ch006–010 bounded promotion merged; frontier 10→11까지 검증.
-- current work: Ch011–015 bounded promotion. TDD RED는 closed-unmerged PR #34 / run `32331920404`에서 의도한 scene-pass contract failure로 확인.
-- reverse-outline current Ch10–16 구조는 closed-unmerged diagnostic PR #35의 repository generator 출력으로 exact readback 후 override에 반영.
+- PR #29 Canon reconciliation.
+- PR #30 exact 17-file candidate manifest.
+- PR #31 QA_GREEN integrated candidate evidence.
+- PR #32 current Ch006–010 bounded promotion.
+- PR #36 current Ch011–015 bounded promotion.
+- current branch: Ch016–020 exact source + composed index + generator-derived reverse outline + scene-pass contract.
 
-## Current prefix 001–015 protection
+## Current candidate / repository authority 분리
 
-- Ch5→6, Ch10→11은 current continuity다.
-- Ch11: 주안은 하템·아킴과 협력하지만 협력/신뢰/도덕 동의를 분리한다.
-- Ch12: 하템은 밀리와 같은 얼굴을 가졌어도 별도 인물이다. 밀리 생존은 증언 수준에서 남긴다.
-- Ch13: 윌리엄의 과거 죄를 엘리스에게 상속시키지 않는다.
-- Ch14: 엘리스 보호 자아는 외부 존재가 아니라 같은 자아의 보호적 부분이다.
-- Ch15: 데이비드와의 거래는 신뢰가 아니라 조건이 명시된 협상이다.
-- current fail-closed boundary는 **Ch15→16**이다. legacy Ch16의 adjacent numbering을 current continuity 증거로 사용하지 않는다.
+```yaml
+artifact_coverage: [1, 161]
+candidate_state: QA_GREEN
+repository_verified_prefix: [1, 20]
+legacy_tail: [21, 225]
+```
 
-## Canon protection
+QA_GREEN 외부/통합 산출물은 GitHub production 전체 승격과 동일하지 않다. verified prefix 밖 저장 원고는 자신의 bounded reconciliation 전까지 legacy다.
 
-- 중심 질문: 선의·보호·대의도 타인의 선택권을 자동으로 가져오지 않는다.
-- 주안: `반응 → 멈춤 → 이유 → 선택`.
-- 엘리스: 정신 능력은 지배가 아니라 외부 간섭 차단·선택 보존.
-- 이안: 관찰·가설·검증·기록. 모르는 것은 모른다고 남긴다.
-- 다빈: 자기 몸과 미래의 결정권.
-- 주민: 치료 최적화보다 당사자 동의·현재 환자 우선.
-- 엘리엇: 더 많이 안다는 이유로 타인의 미래를 대신 고정하는 비극적 반례.
-- D01: 경계형 외부 회수망 `의뢰인 → 브로커/오래된 연락 노드 → 전문 회수팀`; 최상위 client/hierarchy 미확정.
-- D02: +2h 사진은 fixed future가 아닌 authentic non-current cross-loop evidence.
-- D03: 다른 회차 세 시신은 명시적 사건 전까지 물리적 경찰 증거.
-- 백은검: 귀속 미정·공동봉인; 주민 반응/메스 변형은 후계 인증이 아니다.
-- Alice Carter 한국어 정본 표기: `엘리스`.
-- POV: Scene-Locked Hybrid.
+## Ch016–020 보호 readback
+
+- Ch15→16: current continuity.
+- Ch16: 위험한 해결책도 당사자 선택 없이 강행하지 않는다.
+- Ch17: 주안의 신체 반응/회복은 복종·소유의 증거가 아니다.
+- Ch18: 정보·힘 제공과 결정 대행을 분리한다.
+- Ch19: 하템과 밀리는 별도 인물. 같은 얼굴은 동일인 증거가 아니다.
+- Ch19: Ian은 `관찰 → 가설 → 검증 → 기록` 순서를 유지한다.
+- Ch20: 지도 확보 성공과 잠입 실패를 동시에 기록한다.
+
+## Current migration truth
+
+```yaml
+left_current: 20
+right_legacy: 21
+left_next_chapter: null
+right_previous_chapter: null
+left_flag: RECONCILIATION_MIGRATION_BOUNDARY
+right_flag: LEGACY_TAIL_BOUNDARY
+```
+
+Ch20→21은 fail-closed boundary다. 인접 번호를 근거로 현재 연속성을 추정하지 않는다.
 
 ## 다음 정확한 작업
 
-Ch011–015 promotion이 exact-head CI + merge + post-merge readback까지 Green이면 다음은:
+`fiction/manuscript/part-1/021-025.md`
 
-```text
-fiction/manuscript/part-1/016-020.md
-→ current candidate 016-020 추출
-→ Ch15→16 경계 대조
-→ Canon/source/readability 검증
-→ manuscript + index + outline + scene pass + routers 원자 갱신
-→ exact-head CI
-→ squash merge
-→ frontier 20→21 post-change readback
-```
+1. latest main/open PR 재조회.
+2. locked QA_GREEN candidate에서 Ch21–25 exact 추출.
+3. Ch20 종료 상태와 앞 경계 검증.
+4. Canon/원본/사용자 Decision 대조.
+5. manuscript/index/reverse-outline/scene-card/registry/router/validator 동시 갱신.
+6. exact-head hosted CI Green + review thread 0 + main freshness.
+7. squash merge 후 main readback + Notion sync.
 
-## 운영 금지
+## 장기 보호 Canon
 
-- open/draft/ready PR을 다른 후속 작업의 수정 대상으로 삼지 않는다.
+- central question: 선의·보호·사랑이 타인의 선택을 빼앗을 권리를 주지 않는다.
+- Jooan: `반응 → 멈춤 → 이유 → 선택`.
+- Elise: 정신 능력은 선택 보호, 지배 아님.
+- Ian: unknown을 사실로 승격하지 않음.
+- D01/D02/D03 및 sword 공동봉인 규칙 유지.
+- Alice Carter 한국어 정본은 `엘리스`.
+- POV는 Scene-Locked Hybrid.
+
+## 금지
+
 - old-head Green을 current-head Green으로 재사용하지 않는다.
-- 외부 파일명 `최종`만 보고 blind overwrite하지 않는다.
+- 파일명의 `최종`만으로 production authority를 부여하지 않는다.
 - verified frontier를 validation 없이 이동시키지 않는다.
-- generator/validator를 약화해 Green을 만들지 않는다.
-- `whole_manuscript_continuity`를 mixed migration 중 임의로 PASS 처리하지 않는다.
-- Base adoption pin은 Base main이 바뀌었다는 이유만으로 자동 advance하지 않는다.
+- 다른 workstream의 open/draft/ready PR을 수정하지 않는다.
+- Base adoption pin을 자동 상승시키지 않는다.
