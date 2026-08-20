@@ -71,6 +71,20 @@ jobs:
           PY
       - name: Validate fiction operating system
         run: python tools/check_fiction_operating_system.py
+      - name: Diagnose promoted chapter hashes
+        run: |
+          python - <<'PY'
+          import hashlib
+          import re
+          from pathlib import Path
+
+          text = Path('fiction/manuscript/part-1/006-010.md').read_text(encoding='utf-8')
+          pattern = re.compile(r'^## 제(\d+)화 · (.*?)\n\n\*\*POV:\*\* ([^\n]+)\n\n(.*?)(?=\n\n<!-- source-lines:)', re.M | re.S)
+          for match in pattern.finditer(text):
+              number = int(match.group(1))
+              body = match.group(4).strip()
+              print(number, len(body), hashlib.sha256(body.encode('utf-8')).hexdigest())
+          PY
       - name: Validate active fiction canon and manuscript
         run: python tools/check_fiction_content.py
       - name: Check reverse-outline reproducibility
