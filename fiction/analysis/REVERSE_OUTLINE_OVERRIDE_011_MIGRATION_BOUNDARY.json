@@ -22,7 +22,7 @@
         "next_pressure": "다음 제12화 「해안의 두 사람」(이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 둘 중 한 명만 살아남는 문제는 그다음이었다."
       },
       "metrics": {"paragraphs": 58, "average_paragraph_chars": 44.7, "dialogue_ratio": 0.0552, "theme_term_hits": {"보호": 1, "사람": 6}},
-      "structural_flags": ["MULTI_TURN_DENSITY", "LEGACY_TAIL_BOUNDARY"],
+      "structural_flags": ["MULTI_TURN_DENSITY", "POV_HANDOFF", "LEGACY_TAIL_BOUNDARY"],
       "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
       "representative_gate": false,
       "previous_chapter": null,
