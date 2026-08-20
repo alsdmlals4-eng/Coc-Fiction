@@ -14,11 +14,11 @@
     "qa_report": "docs/fiction-ops/2026-08-20_WORKING_001_161_CANDIDATE_QA.md",
     "candidate_manifest": "docs/fiction-ops/2026-08-20_CURRENT_001_161_CANDIDATE_MANIFEST.json",
     "target_chapters": [1, 161],
-    "reconciled_prefix_end": 10,
-    "legacy_tail_starts_at": 11,
-    "boundary_after_chapter": 10,
+    "reconciled_prefix_end": 15,
+    "legacy_tail_starts_at": 16,
+    "boundary_after_chapter": 15,
     "whole_manuscript_continuity": "NOT_YET_CLAIMED",
-    "rule": "The QA_GREEN external candidate is the current revision input, not automatic GitHub production authority. Chapters 1-10 are now the bounded reconciled production prefix; stored chapters 11+ remain legacy-tail artifacts until their own 5-chapter promotion pass."
+    "rule": "The QA_GREEN external candidate is the current revision input, not automatic GitHub production authority. Chapters 1-15 are now the bounded reconciled production prefix; stored chapters 16+ remain legacy-tail artifacts until their own 5-chapter promotion pass."
   },
   "representative_pilots": [10, 95, 180],
   "completed_bundle_passes": [
@@ -61,7 +61,31 @@
         "9": "ff54282bd4d18572881da4a8a11728da18ebbd21cff6e2feee0ce6367b1f3580",
         "10": "4a3e60159d639f4125bcc960032afead1aba8fb160097ab36f06488fb06ab211"
       },
-      "status": "COMPLETE_CURRENT_CANDIDATE_CANON_RECONCILIATION / CURRENT_PREFIX / MIGRATION_BOUNDARY_AFTER_010"
+      "status": "COMPLETE_CURRENT_CANDIDATE_CANON_RECONCILIATION / CURRENT_PREFIX"
+    },
+    {
+      "bundle": "fiction/manuscript/part-1/011-015.md",
+      "chapters": [11, 12, 13, 14, 15],
+      "boundary_chapters": [10, 16],
+      "scene_cards": "fiction/analysis/SCENE_CARDS_011_015.md",
+      "revision_report": "fiction/reports/REVISION_2026-08-20_CURRENT_RECONCILIATION_011_015.md",
+      "source_files": [
+        {"name": "폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx", "sha256": "248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9", "role": "current QA_GREEN revision input"},
+        {"name": "docs/fiction-ops/2026-08-20_CURRENT_001_161_CANDIDATE_MANIFEST.json", "role": "locked external source-artifact authority manifest"},
+        {"name": "fiction/CANON_REGISTRY.json", "role": "current approved adaptation canon"}
+      ],
+      "chapter_shas": {
+        "11": "b868068e8036a7ea22fae778ec3c71059a3f1bf2bd3b9759cca0663c4e6da7f3",
+        "12": "b020e14d87c94884f2dceae271930bdc36953512091a9d5136a37030ff477cb2",
+        "13": "6d5da0c205ecfd0626cb6977f62b6d274631127e940e0af55dd95f1c3aebbfc3",
+        "14": "9ae2e7b58baf3b9f91890f74b502e4ef2c09f4efb5f7f137c280a3f0b4d69182",
+        "15": "d26da36ff8d59d9fcad5393c28189b61f50579eb100aeb7965bf562e45e8692d"
+      },
+      "preserved_boundary_shas": {
+        "10": "4a3e60159d639f4125bcc960032afead1aba8fb160097ab36f06488fb06ab211",
+        "16": "d7bbe9d0ca159543803b52436dbb1344a40ba5c6ca79cc1274972adf9b85450e"
+      },
+      "status": "COMPLETE_CURRENT_CANDIDATE_CANON_RECONCILIATION / CURRENT_PREFIX / MIGRATION_BOUNDARY_AFTER_015"
     },
     {
       "bundle": "fiction/manuscript/side-story-lake/091-095.md",
@@ -88,6 +112,6 @@
     }
   ],
   "next_pass_mode": "EXTERNAL_ARTIFACT_CANON_RECONCILIATION",
-  "next_bundle_passes": ["fiction/manuscript/part-1/011-015.md"],
+  "next_bundle_passes": ["fiction/manuscript/part-1/016-020.md"],
   "deferred_bundle_passes": ["fiction/manuscript/part-2/176-180.md"]
 }
