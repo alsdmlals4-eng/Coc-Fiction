@@ -9,30 +9,22 @@
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
 work_mode: IMPLEMENT / REVIEW
-state_observed_at_main: b9d4523eb2c057215948598aa74beb451a0b5a67
+state_observed_at_main: 58f3432b882ae08db8e3d44ada45d62c02f50855
 current_candidate: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 current_candidate_sha256: 248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9
 delivery_state: QA_VERIFIED
 candidate_state: QA_GREEN
 repository_promotion_state: PARTIAL
-reconciled_prefix_end: 15
-legacy_tail_starts_at: 16
-boundary_after_chapter: 15
+reconciled_prefix_end: 20
+legacy_tail_starts_at: 21
+boundary_after_chapter: 20
 whole_manuscript_continuity: NOT_YET_CLAIMED
-next_bounded_bundle: fiction/manuscript/part-1/016-020.md
+next_bounded_bundle: fiction/manuscript/part-1/021-025.md
 ```
 
 새 세션 첫 행동:
 
-```text
-latest Coc-Fiction main
-→ open PR
-→ this ACTIVE_CONTEXT
-→ CANON_REGISTRY
-→ SCENE_PASS_REGISTRY
-→ current-candidate manifest/QA
-→ next bounded bundle
-```
+`latest main → open PR → ACTIVE_CONTEXT → CANON_REGISTRY → SCENE_PASS_REGISTRY → candidate manifest/QA → next bundle`
 
 ## Artifact-promotion gate
 
@@ -43,102 +35,75 @@ states:
 rule: delivery_state와 repository_promotion_state를 서로 자동 승격하지 않는다.
 ```
 
-current candidate는 `QA_VERIFIED/QA_GREEN`이지만 repository manuscript는 아직 `PARTIAL`이다.
-
-## Current candidate authority
-
-- Library artifact: `/coc 소설/폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx`
-- provenance: `docs/fiction-ops/2026-08-20_CURRENT_001_161_CANDIDATE_MANIFEST.json`
-- QA: `docs/fiction-ops/2026-08-20_WORKING_001_161_CANDIDATE_QA.md`
-- chapter coverage: 001–161 / missing 0 / duplicate 0
-- forbidden/superseded variant: 0 in the QA_GREEN integrated candidate
-- candidate Green does **not** auto-promote GitHub manuscript authority.
+QA_GREEN current candidate 전체가 있어도 GitHub production authority는 bounded Green pass를 통과한 범위까지만 확장한다.
 
 ## Completed implementation milestones
 
-- PR #29: Canon reconciliation. D01/D02/D03, sword custody, `엘리스`, current Part2 numbering synced.
-- PR #30: exact 17-file current-candidate manifest and hashes locked.
-- PR #31: QA_GREEN current candidate evidence locked.
-- PR #32: current Ch006–010 bounded promotion merged; exact-head and post-merge Fiction operating-system validation Green.
-- current bounded promotion target: Ch011–015 current candidate, with frontier moving to 15 only after exact-head CI/merge.
+- PR #29: Canon reconciliation.
+- PR #30: exact 17-file candidate manifest.
+- PR #31: QA_GREEN integrated candidate evidence.
+- PR #32: Ch006–010 bounded production promotion.
+- PR #36: Ch011–015 bounded production promotion.
+- current pass: Ch016–020 exact source/index/reverse-outline/scene-pass Green candidate.
 
-## Current prefix 001–015 contract
+## Current prefix 001–020 contract
 
-### Ch5→6
-
-Current continuity is direct:
-- Ch5: 엘리스+이안 해안 / 주안 감옥.
-- Ch6: same shore and prison fronts resume.
-- old false continuity into a pre-disaster shipboard scene is no longer allowed.
-
-### Ch6–10 protected state
-
-- Ch6: one-way signal receiver limitation remains explicit.
-- Ch8: Milly and Hatem are separate people; Hatem is a separate embodied contractor, not automatically Yellow.
-- Ch9: `CARTER` evidence does not prove William knowingly caused the current event.
-- Ch10: Ian shoots Milly, but no body/blood remains; objective death is unresolved. Emotional loss ≠ proven death.
-
-### Ch10→11 and Ch11–15 protected state
-
-- Ch10→11 is current continuity, not a migration boundary. Ch11 resumes Jooan's parallel front and Ch12 returns to Ian/Elise, so the switch is a deliberate parallel-front structure.
-- Ch11: Jooan cooperates with Hatem/Akim without converting cooperation into trust or moral agreement.
-- Ch12: Hatem's face matches the face Milly used, but Hatem and Milly are different people. Milly survival remains testimony-supported, not independently proven.
-- Ch13: William's past violence is evidence about William; it does not make Elise responsible for her father's choices.
-- Ch14: Elise's protective self is part of the same self, not an external possessing entity. Her mental axis remains choice protection rather than domination.
-- Ch15: David is competent, cruel, relational, and negotiable at once. Elise makes a bounded deal without granting trust or absolution.
+- Ch5→6, Ch10→11, Ch15→16: current continuity.
+- Ch16: 위험한 해결책도 당사자 선택 없이 강행하지 않는다.
+- Ch17: 주안의 반응성과 신체 회복은 복종·소유의 증거가 아니다.
+- Ch18: 정보·힘 제공과 결정 대행을 분리한다.
+- Ch19: 하템과 밀리는 별도 인물이며 같은 얼굴만으로 동일인 결론을 내리지 않는다.
+- Ch19 Ian: `관찰 → 가설 → 검증 → 기록`; unknown은 unknown으로 남긴다.
+- Ch20: 지도 확보 성공과 잠입 실패를 동시에 기록한다.
 
 ## Current migration boundary
 
 ```yaml
-left_current: 15
-right_legacy: 16
+left_current: 20
+right_legacy: 21
 left_next_chapter: null
 right_previous_chapter: null
 left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-Do not infer current Ch15→legacy Ch16 continuity from adjacent numbering.
+저장 화수가 인접하다는 이유만으로 current Ch20→legacy Ch21 연속성을 주장하지 않는다.
 
 ## Canon protection
 
-- central question: protection/love/good intentions do not grant authority to steal another person's choice.
+- central question: 보호·사랑·선의가 타인의 선택을 빼앗을 권리를 주지 않는다.
 - Jooan: `반응 → 멈춤 → 이유 → 선택`.
-- Elise: mental ability protects choice; it is not domination.
-- Ian: observation → hypothesis → verification → record; unknown stays unknown.
-- Dabin: owns decisions about body/future.
-- Jumin: consent before optimization.
-- Elliott: tragic counterexample; knowledge and repeated failure become paternalistic decision authority.
-- D01: bounded external acquisition network = client → broker/old contact node → professional recovery team; top client/hierarchy unresolved.
-- D02: +2h photo = authentic non-current cross-loop evidence, not fixed future.
-- D03: dead trio remains physical police evidence unless an explicit later event changes its state.
-- Elliott sword: ownership unresolved / joint seal; Jumin reaction or scalpel-form transformation is not succession proof.
-- Alice Carter canonical Korean spelling: `엘리스`.
-- POV: Scene-Locked Hybrid; no scene-internal head hopping.
+- Elise: 정신 능력은 지배가 아니라 선택 보존.
+- Ian: observation → hypothesis → verification → record.
+- Dabin: 자신의 몸과 미래를 선택할 권리.
+- Jumin: 최적화보다 당사자 동의 우선.
+- Elliott: 타인의 미래를 대신 고정하려는 비극적 반례.
+- D01: bounded external acquisition network; 최상위 client/hierarchy unresolved.
+- D02: +2h 사진은 fixed future가 아닌 authentic non-current cross-loop evidence.
+- D03: 다른 회차 세 시신은 명시적 사건 전까지 물리적 경찰 증거.
+- Elliott sword: 귀속 미정 / joint seal; 반응·형상변화는 후계 인증이 아니다.
+- Alice Carter 한국어 정본: `엘리스`.
+- POV: Scene-Locked Hybrid; scene break 없는 head-hopping 금지.
 
 ## Promotion gate
 
-For each 5-chapter bundle:
-
-1. extract exact chapters from the locked QA_GREEN candidate;
-2. compare front boundary to current prefix;
-3. apply only current/canon-approved delta;
-4. atomically update manuscript + composed index + reverse outline + scene cards + registry + routers + validators;
-5. exact-head hosted Fiction operating-system CI must be Green;
-6. unresolved review threads must be zero;
-7. current main must not have moved incompatibly;
-8. only then squash-merge and perform post-merge readback.
+각 5화 묶음마다:
+1. locked QA_GREEN candidate에서 exact 추출
+2. 앞 경계 검증
+3. manuscript + index + reverse outline + scene cards + registry + routers + validators 동시 갱신
+4. exact-head Fiction operating-system CI Green
+5. unresolved review thread 0
+6. main freshness 확인
+7. squash merge
+8. post-merge main readback + Notion sync
 
 ## Next exact work
 
-`fiction/manuscript/part-1/016-020.md`
+`fiction/manuscript/part-1/021-025.md`
 
-The next pass must start at the **Ch15→16 migration boundary**, not by trusting legacy Ch16. After Green propagation, move frontier to 20 and repeat.
-
-Deferred `176-180` source audit remains recorded in `SCENE_PASS_REGISTRY.json`; it does not bypass the bounded migration order.
+다음 pass는 **Ch20→21 migration boundary**에서 시작한다. `176-180` deferred source audit은 bounded migration 순서를 건너뛰는 근거가 아니다.
 
 ## Base / shared governance
 
-- Do not auto-advance a stored Base adoption pin merely because Base main changes.
-- Fresh-read the project reuse-profile/adoption manifest and current Base proposal state only when a Base write is actually required.
-- Do not modify another workstream's open/draft/ready PR.
+- Base adoption pin은 별도 감사 없이 자동 상승시키지 않는다.
+- 다른 workstream의 open/draft/ready PR은 수정하지 않는다.
