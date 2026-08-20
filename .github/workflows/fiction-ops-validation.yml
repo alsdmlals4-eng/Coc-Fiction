@@ -73,6 +73,29 @@ jobs:
         run: python tools/check_fiction_operating_system.py
       - name: Validate active fiction canon and manuscript
         run: python tools/check_fiction_content.py
+      - name: Diagnose reverse-outline drift
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.build_fiction_reverse_outline import build_current
+          from tools.fiction_composed_data import load_reverse_outline
+
+          root = Path('.').resolve()
+          generated = {int(x['chapter']): x for x in build_current(root)['chapters']}
+          effective = {int(x['chapter']): x for x in load_reverse_outline(root / 'fiction')['chapters']}
+          for n in range(5, 12):
+              if generated[n] == effective[n]:
+                  print(f'CH{n}: MATCH')
+                  continue
+              print(f'CH{n}: DIFF')
+              keys = sorted(set(generated[n]) | set(effective[n]))
+              for key in keys:
+                  if generated[n].get(key) != effective[n].get(key):
+                      print(' KEY', key)
+                      print('  GENERATED=', json.dumps(generated[n].get(key), ensure_ascii=False, sort_keys=True))
+                      print('  EFFECTIVE=', json.dumps(effective[n].get(key), ensure_ascii=False, sort_keys=True))
+          PY
       - name: Check reverse-outline reproducibility
         run: python tools/build_fiction_reverse_outline.py --check
       - name: Validate reverse-outline analysis
