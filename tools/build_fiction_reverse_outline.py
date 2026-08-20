@@ -77,10 +77,6 @@ def main() -> None:
         raise SystemExit("use --check or --materialize PATH; active data is maintained by baseline plus bundle overrides")
     effective = load_reverse_outline(root / "fiction")
     if effective.get("chapters") != generated.get("chapters"):
-        diagnostic = [item for item in generated.get("chapters", []) if 10 <= int(item.get("chapter", 0)) <= 16]
-        print("GENERATED_REVERSE_OUTLINE_010_016_BEGIN")
-        print(json.dumps(diagnostic, ensure_ascii=False, indent=2))
-        print("GENERATED_REVERSE_OUTLINE_010_016_END")
         raise SystemExit("reverse outline composition is stale; update the bundle override")
     print("Reverse outline reproducibility PASSED (225 composed chapters)")
 
