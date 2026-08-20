@@ -70,7 +70,7 @@
         "next_pressure": "다음 제9화 「카터라는 이름」(엘리스 → 이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 주안은 오늘 처음으로 그 약속을 믿고 싶지 않았다."
       },
       "metrics": {"paragraphs": 314, "average_paragraph_chars": 16.2, "dialogue_ratio": 0.2599, "theme_term_hits": {"선택": 1, "안전": 1, "사람": 13}},
-      "structural_flags": ["LONG_CHAPTER", "POV_HANDOFF"],
+      "structural_flags": ["LONG_CHAPTER", "ONE_OFF_POV", "POV_HANDOFF"],
       "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
       "representative_gate": false,
       "previous_chapter": {"chapter": 7, "title": "죽은 척해야 사는 곳", "pov": "이안 → 엘리스 → 이안"},
@@ -94,7 +94,7 @@
         "next_pressure": "다음 제10화 「친구를 쏜 날」(이안 → 엘리스 → 이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 계속 다른 문장이었다."
       },
       "metrics": {"paragraphs": 259, "average_paragraph_chars": 17.7, "dialogue_ratio": 0.1426, "theme_term_hits": {"선택": 1, "안전": 3, "사람": 10}},
-      "structural_flags": ["MULTI_TURN_DENSITY", "LONG_CHAPTER", "POV_HANDOFF"],
+      "structural_flags": ["MULTI_TURN_DENSITY", "LONG_CHAPTER", "ONE_OFF_POV", "POV_HANDOFF"],
       "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
       "representative_gate": false,
       "previous_chapter": {"chapter": 8, "title": "같은 편은 아닙니다", "pov": "이안 → 주안"},
