@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-20",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_016_020 / CURRENT_RECONCILED",
+  "baseline": "analysis/baselines/MANUSCRIPT_INDEX_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 16,
+      "title": "마시면 돌아갈 수 있다면",
+      "pov": "엘리스 → 주안 → 엘리스 → 주안 → 엘리스",
+      "body_chars": 6051,
+      "body_sha256": "752de081c6189ab8646a43108a1e63bf7a27f8de399b4488c4c980eec71fabca",
+      "bundle": "fiction/manuscript/part-1/016-020.md"
+    },
+    {
+      "chapter": 17,
+      "title": "주안 씨, 정신 차려요",
+      "pov": "엘리스 → 주안 → 엘리스 → 주안",
+      "body_chars": 5999,
+      "body_sha256": "7146cc26b37a56ed87e29162dc2f5b1b6cd33bf0e3bd7bf9c4cdcaa791da929c",
+      "bundle": "fiction/manuscript/part-1/016-020.md"
+    },
+    {
+      "chapter": 18,
+      "title": "지금은 주안이 중요하니까",
+      "pov": "엘리스 → 주안 → 엘리스 → 주안 → 엘리스",
+      "body_chars": 4570,
+      "body_sha256": "8d2c1ca43ae980884f24a39d45bb548f872287b49790d12e2db59be2d474adf0",
+      "bundle": "fiction/manuscript/part-1/016-020.md"
+    },
+    {
+      "chapter": 19,
+      "title": "스승이 남긴 질문",
+      "pov": "이안 → 주안 → 이안 → 엘리스 → 이안 → 주안 → 이안",
+      "body_chars": 7274,
+      "body_sha256": "39adeba785e49f7127529d46a1c80800e630b35564e2523b32b01854b7057b06",
+      "bundle": "fiction/manuscript/part-1/016-020.md"
+    },
+    {
+      "chapter": 20,
+      "title": "지도 한 장을 훔치는 시간",
+      "pov": "이안",
+      "body_chars": 6208,
+      "body_sha256": "dc78dd2f3ab00d853225ca4c98a85832d5fbb088df0b304258172e2ffd754523",
+      "bundle": "fiction/manuscript/part-1/016-020.md"
+    }
+  ]
+}
