@@ -30,6 +30,12 @@ class CurrentStateClosureTests(unittest.TestCase):
         frontier = scene["external_artifact_reconciliation"]
 
         self.assertEqual(receipt["schema_version"], 1)
+        self.assertEqual(
+            receipt["frontier_observed_at_main"],
+            "395f0af0120f5ab6949c86772d3b77b5b3eb9f3a",
+        )
+        self.assertEqual(receipt["last_frontier_change_pr"], 39)
+        self.assertNotIn("last_integrated_pr", receipt)
         self.assertEqual(receipt["verified_prefix_end"], 20)
         self.assertEqual(receipt["legacy_tail_starts_at"], 21)
         self.assertEqual(receipt["boundary_after_chapter"], 20)
@@ -45,14 +51,16 @@ class CurrentStateClosureTests(unittest.TestCase):
             receipt["candidate_sha256"], frontier["artifact_sha256"]
         )
 
-    def test_active_routers_describe_pr39_as_completed(self):
+    def test_active_routers_describe_pr39_as_frontier_change_not_latest_repo_pr(self):
         active = (ROOT / "fiction/ACTIVE_CONTEXT.md").read_text(encoding="utf-8")
         handoff = (ROOT / "fiction/HANDOFF.md").read_text(encoding="utf-8")
 
         for text, name in ((active, "ACTIVE_CONTEXT"), (handoff, "HANDOFF")):
-            self.assertIn("PR #39", text, f"{name} must identify the integrated PR")
+            self.assertIn("PR #39", text, f"{name} must identify the frontier-changing PR")
+            self.assertIn("last_frontier_change_pr: 39", text)
             self.assertIn("001–020", text, f"{name} must state the current prefix")
             self.assertIn("021-025", text, f"{name} must state the next bounded bundle")
+            self.assertNotIn("last_integrated_pr: 39", text)
 
         self.assertNotIn(
             "current pass: Ch016–020 exact source/index/reverse-outline/scene-pass Green candidate",
