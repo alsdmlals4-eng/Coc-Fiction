@@ -48,34 +48,16 @@ on:
       - "tools/fiction_composed_data.py"
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          ref: ${{ github.event.pull_request.head.ref }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Apply deterministic Ch021-025 promotion
-        if: ${{ hashFiles('tools/_apply_ch021_025_promotion.py') != '' }}
-        run: python tools/_apply_ch021_025_promotion.py
-      - name: Normalize active reconciliation evidence wording
-        if: ${{ hashFiles('tools/_apply_ch021_025_promotion.py') != '' }}
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          path = Path('fiction/reports/REVISION_2026-08-21_CURRENT_RECONCILIATION_021_025.md')
-          text = path.read_text(encoding='utf-8')
-          old = 'Forbidden/superseded terms checked in Ch21–25: `앨리스`, `복종인자`, `블랙킹`, `오션`, `쵸르브라트`, `미하일 카쉬프`, `피엘렛토`, `붉은 늑대`, `컨소시엄`, `조작된 감정` → 0 hits.'
-          new = 'Forbidden/superseded-term scan: 10 blocked variants checked against Ch21–25 → 0 hits.'
-          assert text.count(old) == 1
-          path.write_text(text.replace(old, new, 1), encoding='utf-8')
-          PY
       - name: Validate Base reuse adoption manifest
         run: |
           python - <<'PY'
@@ -113,12 +95,3 @@ jobs:
         run: python -m unittest tests.test_fiction_docx_packaging -v
       - name: Validate Ch021-025 promotion contract
         run: python -m unittest tests.test_promote_021_025_contract -v
-      - name: Commit validated Ch021-025 promotion
-        if: ${{ hashFiles('tools/_apply_ch021_025_promotion.py') != '' }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git rm tools/_apply_ch021_025_promotion.py
-          git add -A
-          git commit -m "fiction: propagate current chapters 021-025"
-          git push origin HEAD:work/coc-promote-021-025-20260821
