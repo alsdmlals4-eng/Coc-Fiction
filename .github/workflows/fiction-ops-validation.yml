@@ -90,10 +90,8 @@ jobs:
           assert len(payload) == 32456
           assert hashlib.sha256(payload.encode()).hexdigest() == '64db708e2704f8453e76469a9fad3ba1aa8d80f331fb67883f464d76ec0dcf4f'
           raw = gzip.decompress(base64.b64decode(payload, validate=True))
-          expected_file_sha = '3ce5aeb71bea4ee5a4565cf30b4794e08489622d3e450fcae285213d68ffe48c'
-          assert hashlib.sha256(raw).hexdigest() == expected_file_sha
-          target = Path('fiction/manuscript/part-1/021-025.md')
-          target.write_bytes(raw)
+          assert hashlib.sha256(raw).hexdigest() == '3ce5aeb71bea4ee5a4565cf30b4794e08489622d3e450fcae285213d68ffe48c'
+          Path('fiction/manuscript/part-1/021-025.md').write_bytes(raw)
 
           chapter_re = re.compile(
               r'^## 제(\d+)화 · (.*?)\n\n\*\*POV:\*\* ([^\n]+)\n\n(.*?)(?=\n\n<!-- source-lines:)',
@@ -108,19 +106,16 @@ jobs:
           }
           found = {}
           for match in chapter_re.finditer(raw.decode('utf-8')):
-              number = int(match.group(1))
               body = match.group(4).strip()
-              found[number] = (len(body), hashlib.sha256(body.encode('utf-8')).hexdigest())
+              found[int(match.group(1))] = (len(body), hashlib.sha256(body.encode('utf-8')).hexdigest())
           assert found == expected, found
           print('exact Ch021-025 candidate transfer PASS')
           PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git show 9f23c660ee666ca3463e6be976847acf6841a706:.github/workflows/fiction-ops-validation.yml > .github/workflows/fiction-ops-validation.yml
-          git add fiction/manuscript/part-1/021-025.md .github/workflows/fiction-ops-validation.yml
+          git add fiction/manuscript/part-1/021-025.md
           git rm docs/coordination/.tmp/ch021-025.current.md.gz.b64
           git rm docs/coordination/.tmp/ch021-025.part*.b64
-          git rm .github/workflows/materialize-ch021-025.yml
           git commit -m "fiction: install exact current chapters 021-025 source"
           git push origin HEAD:work/coc-promote-021-025-20260821
       - name: Validate Base reuse adoption manifest
@@ -128,11 +123,9 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-          path = Path('docs/base-reuse-adoption.json')
-          data = json.loads(path.read_text(encoding='utf-8'))
+          data = json.loads(Path('docs/base-reuse-adoption.json').read_text(encoding='utf-8'))
           assert data['schema_version'] == 1
           assert data['base_source_commit'] == '8553678f70e22f193a2336b591f677dcfa5a8965'
-          modules = data['modules']
           expected = {
               'RM-TOOL-001': 'planned',
               'RM-SYS-001': 'not_applicable',
@@ -140,7 +133,7 @@ jobs:
               'RM-VIS-001': 'not_applicable',
               'RM-VIS-002': 'not_applicable',
           }
-          assert {key: value['state'] for key, value in modules.items()} == expected
+          assert {key: value['state'] for key, value in data['modules'].items()} == expected
           print('base reuse adoption manifest pass')
           PY
       - name: Validate fiction operating system
