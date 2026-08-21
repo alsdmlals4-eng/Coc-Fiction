@@ -6,6 +6,7 @@
 docs/coordination/CONCURRENT_WORK.md
 → [소설]/00_운영체계/OPERATING_MODEL.md
 → fiction/FICTION_MASTER.md
+→ docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 → fiction/ACTIVE_CONTEXT.md
 → fiction/CANON_REGISTRY.json
 → fiction/analysis/SCENE_PASS_REGISTRY.json
@@ -17,6 +18,8 @@ docs/coordination/CONCURRENT_WORK.md
 → fiction/STYLE_GUIDE.md
 → 현재 원고 묶음
 ```
+
+`CURRENT_STATE_RECEIPT.json`의 SHA/PR은 production frontier가 마지막으로 바뀐 증거다. 저장소 최신값을 고정하는 포인터가 아니므로 실제 작업 전 최신 `main`과 open PR을 다시 조회한다.
 
 색인과 역개요는 immutable baseline + 승인 bundle override를 합성한다. baseline을 직접 수정하지 않는다.
 
