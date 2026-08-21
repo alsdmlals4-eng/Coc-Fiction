@@ -11,6 +11,7 @@ on:
       - "skills/fiction-*/**"
       - "skills/FICTION_SKILL_LEARNING_LOG.md"
       - "fiction/**"
+      - "tests/test_current_state_closure.py"
       - "tools/check_fiction_operating_system.py"
       - "tools/check_fiction_content.py"
       - "tools/build_fiction_reverse_outline.py"
@@ -30,6 +31,7 @@ on:
       - "skills/fiction-*/**"
       - "skills/FICTION_SKILL_LEARNING_LOG.md"
       - "fiction/**"
+      - "tests/test_current_state_closure.py"
       - "tools/check_fiction_operating_system.py"
       - "tools/check_fiction_content.py"
       - "tools/build_fiction_reverse_outline.py"
@@ -69,6 +71,8 @@ jobs:
           assert {key: value['state'] for key, value in modules.items()} == expected
           print('base reuse adoption manifest pass')
           PY
+      - name: Validate current-state closure contract
+        run: python -m unittest tests.test_current_state_closure -v
       - name: Validate fiction operating system
         run: python tools/check_fiction_operating_system.py
       - name: Validate active fiction canon and manuscript
