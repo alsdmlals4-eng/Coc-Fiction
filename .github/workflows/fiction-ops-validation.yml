@@ -3,6 +3,7 @@ name: Fiction operating system
 on:
   pull_request:
     paths:
+      - "AGENTS.md"
       - "**/00_운영체계/**"
       - "docs/fiction-ops/**"
       - "docs/coordination/**"
@@ -25,6 +26,7 @@ on:
   push:
     branches: [main]
     paths:
+      - "AGENTS.md"
       - "**/00_운영체계/**"
       - "docs/fiction-ops/**"
       - "docs/coordination/**"
