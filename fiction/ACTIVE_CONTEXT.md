@@ -9,8 +9,8 @@
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
 work_mode: IMPLEMENT / REVIEW
-state_observed_at_main: 395f0af0120f5ab6949c86772d3b77b5b3eb9f3a
-last_integrated_pr: 39
+frontier_observed_at_main: 395f0af0120f5ab6949c86772d3b77b5b3eb9f3a
+last_frontier_change_pr: 39
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 current_candidate: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 current_candidate_sha256: 248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9
@@ -23,6 +23,8 @@ boundary_after_chapter: 20
 whole_manuscript_continuity: NOT_YET_CLAIMED
 next_bounded_bundle: fiction/manuscript/part-1/021-025.md
 ```
+
+`frontier_observed_at_main`과 `last_frontier_change_pr`은 **현재 production frontier가 마지막으로 바뀐 증거**다. 저장소의 영구적인 최신 SHA/PR을 의미하지 않으며, 재개 시 GitHub에서 최신 `main`과 open PR을 다시 조회한다.
 
 새 세션 첫 행동:
 
