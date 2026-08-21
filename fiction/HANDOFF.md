@@ -1,6 +1,6 @@
 # 《폭풍의 눈》 활성 인수인계
 
-갱신: 2026-08-21
+갱신: 2026-08-22
 
 ## Resume-first
 
@@ -8,9 +8,8 @@
 
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
-frontier_observed_at_main: null
-last_frontier_change_pr: 39
-pending_frontier_change_pr: 42
+frontier_observed_at_main: e6817e38042c783be8169f6c385230e75f1253db
+last_frontier_change_pr: 42
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 delivery_state: QA_VERIFIED
 repository_promotion_state: PARTIAL
@@ -35,10 +34,10 @@ next_bounded_bundle: fiction/manuscript/part-1/026-030.md
 - PR #31 QA_GREEN integrated candidate evidence.
 - PR #32 current Ch006–010 bounded promotion.
 - PR #36 current Ch011–015 bounded promotion.
-- **PR #39 current Ch016–020 bounded promotion merged.**
-- **PR #42: Ch021–025 bounded promotion pending exact-head merge/readback.**
-- branch-verified repository prefix: **001–025**.
-- next bounded promotion after merge: **026–030**.
+- PR #39 current Ch016–020 bounded promotion.
+- **PR #42 current Ch021–025 bounded promotion merged at `e6817e38042c783be8169f6c385230e75f1253db`.**
+- current repository prefix: **001–025**.
+- next bounded promotion: **026–030**.
 
 ## Current candidate / repository authority 분리
 
@@ -51,15 +50,15 @@ legacy_tail: [26, 225]
 
 QA_GREEN 외부/통합 산출물은 GitHub production 전체 승격과 동일하지 않다. verified prefix 밖 저장 원고는 자신의 bounded reconciliation 전까지 legacy다.
 
-## Ch016–020 보호 readback
+## Ch021–025 보호 readback
 
-- Ch15→16: current continuity.
-- Ch16: 위험한 해결책도 당사자 선택 없이 강행하지 않는다.
-- Ch17: 주안의 신체 반응/회복은 복종·소유의 증거가 아니다.
-- Ch18: 정보·힘 제공과 결정 대행을 분리한다.
-- Ch19: 하템과 밀리는 별도 인물. 같은 얼굴은 동일인 증거가 아니다.
-- Ch19: Ian은 `관찰 → 가설 → 검증 → 기록` 순서를 유지한다.
-- Ch20: 지도 확보 성공과 잠입 실패를 동시에 기록한다.
+- Ch20→21: current continuity PASS; 지도 확보·배수로 도주가 current Ch21의 같은 탈출선으로 직접 이어진다.
+- Ch21: Ian은 마법·기억의 unknown을 `확인` 상태로 남기며 계획 없는 구조 돌입을 하지 않는다.
+- Ch22: Jooan은 정찰/추적 회피 중 몸의 힘을 자동 해결책으로 쓰지 않고 제동을 자기 선택으로 유지한다.
+- Ch23: 데이비드를 놓고 엘리스를 받는 구조 행동과 설명되지 않은 신체 반응을 구별한다.
+- Ch24: `반응 → 멈춤 → 이유 → 선택`을 개인 의지가 아니라 팀 지원 가능한 실제 전술로 확장한다.
+- Ch25: 실제 위험을 확인한 뒤 엘리스에게 `갈 겁니까?`라고 묻고 중앙 선택을 대신하지 않는다.
+- Ch25의 `제3세력` 표현은 임시 현장 협력/작전 표현이다. 정식 신규 조직 Canon으로 올리지 않으며 Part2 D01 외부 회수망과 구분한다.
 
 ## Current migration truth
 
@@ -72,7 +71,7 @@ left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-Ch20→21 current continuity는 PASS다. Ch25→26은 fail-closed boundary이며 인접 번호만으로 현재 연속성을 추정하지 않는다.
+Ch25→26은 fail-closed boundary다. 인접 번호를 근거로 현재 연속성을 추정하지 않는다.
 
 ## 다음 정확한 작업
 

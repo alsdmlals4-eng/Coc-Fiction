@@ -1,6 +1,6 @@
 # ACTIVE CONTEXT
 
-갱신: 2026-08-21
+갱신: 2026-08-22
 
 ## Resume-first
 
@@ -9,9 +9,8 @@
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
 work_mode: IMPLEMENT / REVIEW
-frontier_observed_at_main: null
-last_frontier_change_pr: 39
-pending_frontier_change_pr: 42
+frontier_observed_at_main: e6817e38042c783be8169f6c385230e75f1253db
+last_frontier_change_pr: 42
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 current_candidate: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 current_candidate_sha256: 248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9
@@ -49,11 +48,12 @@ QA_GREEN current candidate 전체가 있어도 GitHub production authority는 bo
 - PR #31: QA_GREEN integrated candidate evidence.
 - PR #32: Ch006–010 bounded production promotion.
 - PR #36: Ch011–015 bounded production promotion.
-- **PR #39: Ch016–020 bounded production promotion merged; current repository prefix is 001–020.**
+- PR #39: Ch016–020 bounded production promotion.
+- **PR #42: Ch021–025 bounded production promotion merged; current repository prefix is 001–025.**
 
 ## Current prefix 001–025 contract
 
-- Ch5→6, Ch10→11, Ch15→16: current continuity.
+- Ch5→6, Ch10→11, Ch15→16, Ch20→21: current continuity.
 - Ch16: 위험한 해결책도 당사자 선택 없이 강행하지 않는다.
 - Ch17: 주안의 반응성과 신체 회복은 복종·소유의 증거가 아니다.
 - Ch18: 정보·힘 제공과 결정 대행을 분리한다.
@@ -65,6 +65,7 @@ QA_GREEN current candidate 전체가 있어도 GitHub production authority는 bo
 - Ch23: 구출 행동과 설명되지 않은 신체 반응을 구별하고 접촉 전 기다린다.
 - Ch24: `반응 → 멈춤 → 이유 → 선택`을 팀 전술로 실행한다.
 - Ch25: 실제 위험만 막고 엘리스에게 `갈 겁니까?`라고 선택을 묻는다.
+- Ch25의 `제3세력` 표현은 현장 임시 협력/작전 표현이며 정식 신규 조직 Canon이나 D01 외부 회수망이 아니다.
 
 ## Current migration boundary
 
