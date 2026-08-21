@@ -8,18 +8,19 @@
 
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
-frontier_observed_at_main: 395f0af0120f5ab6949c86772d3b77b5b3eb9f3a
+frontier_observed_at_main: null
 last_frontier_change_pr: 39
+pending_frontier_change_pr: 42
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 delivery_state: QA_VERIFIED
 repository_promotion_state: PARTIAL
 current_candidate: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 current_candidate_sha256: 248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9
-reconciled_prefix_end: 20
-legacy_tail_starts_at: 21
-boundary_after_chapter: 20
+reconciled_prefix_end: 25
+legacy_tail_starts_at: 26
+boundary_after_chapter: 25
 whole_manuscript_continuity: NOT_YET_CLAIMED
-next_bounded_bundle: fiction/manuscript/part-1/021-025.md
+next_bounded_bundle: fiction/manuscript/part-1/026-030.md
 ```
 
 `frontier_observed_at_main`과 `last_frontier_change_pr`은 마지막 **production frontier 변경**을 가리킨다. 이 handoff가 저장소의 영구적인 최신 SHA나 최신 PR 번호를 주장하지 않도록 재개 시 GitHub를 fresh-read한다.
@@ -35,16 +36,17 @@ next_bounded_bundle: fiction/manuscript/part-1/021-025.md
 - PR #32 current Ch006–010 bounded promotion.
 - PR #36 current Ch011–015 bounded promotion.
 - **PR #39 current Ch016–020 bounded promotion merged.**
-- current repository prefix: **001–020**.
-- next bounded promotion: **021–025**.
+- **PR #42: Ch021–025 bounded promotion pending exact-head merge/readback.**
+- branch-verified repository prefix: **001–025**.
+- next bounded promotion after merge: **026–030**.
 
 ## Current candidate / repository authority 분리
 
 ```yaml
 artifact_coverage: [1, 161]
 candidate_state: QA_GREEN
-repository_verified_prefix: [1, 20]
-legacy_tail: [21, 225]
+repository_verified_prefix: [1, 25]
+legacy_tail: [26, 225]
 ```
 
 QA_GREEN 외부/통합 산출물은 GitHub production 전체 승격과 동일하지 않다. verified prefix 밖 저장 원고는 자신의 bounded reconciliation 전까지 legacy다.
@@ -62,23 +64,23 @@ QA_GREEN 외부/통합 산출물은 GitHub production 전체 승격과 동일하
 ## Current migration truth
 
 ```yaml
-left_current: 20
-right_legacy: 21
+left_current: 25
+right_legacy: 26
 left_next_chapter: null
 right_previous_chapter: null
 left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-Ch20→21은 fail-closed boundary다. 인접 번호를 근거로 현재 연속성을 추정하지 않는다.
+Ch20→21 current continuity는 PASS다. Ch25→26은 fail-closed boundary이며 인접 번호만으로 현재 연속성을 추정하지 않는다.
 
 ## 다음 정확한 작업
 
-`fiction/manuscript/part-1/021-025.md`
+`fiction/manuscript/part-1/026-030.md`
 
 1. latest main/open PR 재조회.
-2. locked QA_GREEN candidate에서 Ch21–25 exact 추출.
-3. Ch20 종료 상태와 앞 경계 검증.
+2. locked QA_GREEN candidate에서 Ch26–30 exact 추출.
+3. Ch25 종료 상태와 앞 경계 검증.
 4. Canon/원본/사용자 Decision 대조.
 5. manuscript/index/reverse-outline/scene-card/registry/router/validator 동시 갱신.
 6. exact-head hosted CI Green + review thread 0 + main freshness.

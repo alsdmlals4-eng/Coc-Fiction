@@ -41,11 +41,11 @@ sha256: 248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9
 candidate_qa: QA_GREEN
 candidate_coverage: 001-161
 repository_promotion_state: PARTIAL
-reconciled_prefix: 001-020
-legacy_tail_starts_at: 021
-boundary_after_chapter: 020
+reconciled_prefix: 001-025
+legacy_tail_starts_at: 026
+boundary_after_chapter: 025
 whole_manuscript_continuity: NOT_YET_CLAIMED
-next_reconciliation: 021-025
+next_reconciliation: 026-030
 ```
 
 QA_GREEN은 revision input의 상태다. GitHub production authority는 5화 단위 bounded reconciliation이 Green일 때만 이동한다.
@@ -77,7 +77,7 @@ QA_GREEN은 revision input의 상태다. GitHub production authority는 5화 단
 - Alice Carter 한국어 정본 표기: `엘리스`.
 - POV: Scene-Locked Hybrid; scene-internal head hopping 금지.
 
-## 6. current prefix 001–020 readback
+## 6. current prefix 001–025 readback
 
 - 001–015: 이전 bounded pass Green 상태 유지.
 - 016 `마시면 돌아갈 수 있다면`: 위험한 해결책도 당사자 선택 없이 강행하지 않는다.
@@ -85,24 +85,25 @@ QA_GREEN은 revision input의 상태다. GitHub production authority는 5화 단
 - 018 `지금은 주안이 중요하니까`: 정보·힘 제공과 결정 대행을 분리한다.
 - 019 `스승이 남긴 질문`: 하템/밀리 별도 인물, same-face는 unknown; Ian의 검증 규율 강화.
 - 020 `지도 한 장을 훔치는 시간`: 지도 획득 성공과 잠입 실패를 동시에 기록한다.
+- 021–025: 배수로 탈출→정찰→구출→한 박자 선택 규칙→쇼거스 전면 압력으로 current continuity를 잇고, 각 장면에서 정보·보호·선택을 분리한다.
 
 ## 7. current migration boundary
 
 ```yaml
-left_current: 20
-right_legacy: 21
+left_current: 25
+right_legacy: 26
 left_next_chapter: null
 right_previous_chapter: null
 left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-Ch20→21은 fail-closed다. 인접 numbering으로 연속성을 자동 주장하지 않는다.
+Ch20→21 current continuity는 PASS다. Ch25→26은 fail-closed이며 인접 numbering으로 연속성을 자동 주장하지 않는다.
 
 ## 8. 실행 순서
 
-현재 다음 작업은 `fiction/manuscript/part-1/021-025.md`다.
+현재 다음 작업은 PR #42 merge/readback 뒤 `fiction/manuscript/part-1/026-030.md`다.
 
-`candidate exact extraction → Ch20 boundary 검증 → Canon/source 대조 → manuscript/index/outline/cards/registry/routers 원자 갱신 → exact-head CI → review thread 0/main freshness → squash merge/readback`
+`candidate exact extraction → Ch25 boundary 검증 → Canon/source 대조 → manuscript/index/outline/cards/registry/routers 원자 갱신 → exact-head CI → review thread 0/main freshness → squash merge/readback`
 
 `176-180` deferred source-pass는 bounded migration 순서를 건너뛰지 않는다.

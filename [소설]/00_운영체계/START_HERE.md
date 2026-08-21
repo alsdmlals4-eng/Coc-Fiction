@@ -32,8 +32,8 @@ current_candidate: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT
 current_candidate_sha256: 248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9
 candidate_coverage: 001-161
 candidate_qa: QA_GREEN
-repository_reconciled_prefix: 001-020
-legacy_tail_starts_at: 021
+repository_reconciled_prefix: 001-025
+legacy_tail_starts_at: 026
 whole_manuscript_continuity: NOT_YET_CLAIMED
 next_bundle: fiction/manuscript/part-1/021-025.md
 ```
@@ -60,21 +60,23 @@ GitHub 225화/45묶음 경로는 migration container이며 current narrative 최
 
 ## current prefix / migration boundary
 
-- `001–020`: current production prefix.
+- `001–025`: branch-verified current production prefix; PR #42 merge/readback pending.
 - `005→006`, `010→011`, `015→016`: current continuity PASS.
-- `020→021`: `MIGRATION_BOUNDARY / NOT_YET_CLAIMED`.
-- Ch20 reverse outline: `next_chapter=null`.
-- legacy Ch21 reverse outline: `previous_chapter=null`.
+- `020→021`: current continuity PASS.
+- `025→026`: `MIGRATION_BOUNDARY / NOT_YET_CLAIMED`.
+- Ch20 reverse outline: `next_chapter=21`.
+- Ch25 reverse outline: `next_chapter=null`.
+- legacy Ch26 reverse outline: `previous_chapter=null`.
 
 current candidate 전체가 Green이어도 GitHub production authority는 5화 단위 Green 없이 자동 확장하지 않는다.
 
 ## 다음 시작 묶음
 
-`fiction/manuscript/part-1/021-025.md`
+`fiction/manuscript/part-1/026-030.md`
 
 ```text
-current candidate Ch21-25 exact extraction
-→ Ch20 current 종료 상태와 앞 경계 검증
+current candidate Ch26-30 exact extraction
+→ Ch25 current 종료 상태와 앞 경계 검증
 → 원본·Canon·사용자 Decision 대조
 → KEEP / APPLY / REWORK / REJECT
 → manuscript/index/reverse-outline/Scene Pass/routers 원자 갱신

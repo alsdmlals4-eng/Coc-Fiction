@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-21",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_021_025 / CURRENT_RECONCILED",
+  "baseline": "analysis/baselines/MANUSCRIPT_INDEX_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 21,
+      "title": "삼 분만 기다립니다",
+      "pov": "이안 → 엘리스 → 이안 → 엘리스 → 이안",
+      "body_chars": 6472,
+      "body_sha256": "feb8df2a30c678e174a8cafbbeb8e33ec4d64042339f514a8b771e3b5b61b389",
+      "bundle": "fiction/manuscript/part-1/021-025.md"
+    },
+    {
+      "chapter": 22,
+      "title": "다음에는 냄새부터 지워라",
+      "pov": "주안 → 엘리스 → 주안 → 엘리스 → 주안 → 엘리스",
+      "body_chars": 5916,
+      "body_sha256": "6ae4dba9533cad99139cfef11fdadfbddf5a381bf95091bc939296694c68e801",
+      "bundle": "fiction/manuscript/part-1/021-025.md"
+    },
+    {
+      "chapter": 23,
+      "title": "떨어지면 받겠습니다",
+      "pov": "주안 → 엘리스 → 이안 → 엘리스 → 이안 → 주안",
+      "body_chars": 6779,
+      "body_sha256": "cd506e7449f718dfdda9d67db3aba654619457991ffb0fe0cba2ef43f660c40b",
+      "bundle": "fiction/manuscript/part-1/021-025.md"
+    },
+    {
+      "chapter": 24,
+      "title": "한 박자 늦게",
+      "pov": "주안 → 이안 → 엘리스 → 주안 → 이안 → 엘리스 → 주안 → 이안",
+      "body_chars": 6961,
+      "body_sha256": "c111f79f73c034a6bc2f5dea8606e8b35c687b6a55842a6fd873adbda18b8549",
+      "bundle": "fiction/manuscript/part-1/021-025.md"
+    },
+    {
+      "chapter": 25,
+      "title": "승자를 만들지 않기로 했다",
+      "pov": "이안 → 엘리스 → 주안 → 이안 → 주안",
+      "body_chars": 5870,
+      "body_sha256": "09a945739b8438e30b3721c4c777a0f1c4736f5d6ac7a0684f02877e399869e8",
+      "bundle": "fiction/manuscript/part-1/021-025.md"
+    }
+  ]
+}
