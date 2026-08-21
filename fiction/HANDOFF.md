@@ -1,6 +1,6 @@
 # 《폭풍의 눈》 활성 인수인계
 
-갱신: 2026-08-20
+갱신: 2026-08-21
 
 ## Resume-first
 
@@ -8,6 +8,9 @@
 
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
+frontier_observed_at_main: 395f0af0120f5ab6949c86772d3b77b5b3eb9f3a
+last_frontier_change_pr: 39
+current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 delivery_state: QA_VERIFIED
 repository_promotion_state: PARTIAL
 current_candidate: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
@@ -19,8 +22,10 @@ whole_manuscript_continuity: NOT_YET_CLAIMED
 next_bounded_bundle: fiction/manuscript/part-1/021-025.md
 ```
 
+`frontier_observed_at_main`과 `last_frontier_change_pr`은 마지막 **production frontier 변경**을 가리킨다. 이 handoff가 저장소의 영구적인 최신 SHA나 최신 PR 번호를 주장하지 않도록 재개 시 GitHub를 fresh-read한다.
+
 재개 순서:
-`latest Coc-Fiction main → open PR → ACTIVE_CONTEXT → HANDOFF → CANON_REGISTRY → SCENE_PASS_REGISTRY → candidate manifest/QA → next bounded bundle`
+`latest Coc-Fiction main → open PR → AGENTS → CURRENT_STATE_RECEIPT → ACTIVE_CONTEXT → HANDOFF → CANON_REGISTRY → SCENE_PASS_REGISTRY → candidate manifest/QA → next bounded bundle`
 
 ## 현재 완료 상태
 
@@ -29,7 +34,9 @@ next_bounded_bundle: fiction/manuscript/part-1/021-025.md
 - PR #31 QA_GREEN integrated candidate evidence.
 - PR #32 current Ch006–010 bounded promotion.
 - PR #36 current Ch011–015 bounded promotion.
-- current branch: Ch016–020 exact source + composed index + generator-derived reverse outline + scene-pass contract.
+- **PR #39 current Ch016–020 bounded promotion merged.**
+- current repository prefix: **001–020**.
+- next bounded promotion: **021–025**.
 
 ## Current candidate / repository authority 분리
 

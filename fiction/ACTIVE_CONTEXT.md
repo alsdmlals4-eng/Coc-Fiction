@@ -1,6 +1,6 @@
 # ACTIVE CONTEXT
 
-갱신: 2026-08-20
+갱신: 2026-08-21
 
 ## Resume-first
 
@@ -9,7 +9,9 @@
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
 work_mode: IMPLEMENT / REVIEW
-state_observed_at_main: 58f3432b882ae08db8e3d44ada45d62c02f50855
+frontier_observed_at_main: 395f0af0120f5ab6949c86772d3b77b5b3eb9f3a
+last_frontier_change_pr: 39
+current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 current_candidate: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 current_candidate_sha256: 248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9
 delivery_state: QA_VERIFIED
@@ -22,9 +24,11 @@ whole_manuscript_continuity: NOT_YET_CLAIMED
 next_bounded_bundle: fiction/manuscript/part-1/021-025.md
 ```
 
+`frontier_observed_at_main`과 `last_frontier_change_pr`은 **현재 production frontier가 마지막으로 바뀐 증거**다. 저장소의 영구적인 최신 SHA/PR을 의미하지 않으며, 재개 시 GitHub에서 최신 `main`과 open PR을 다시 조회한다.
+
 새 세션 첫 행동:
 
-`latest main → open PR → ACTIVE_CONTEXT → CANON_REGISTRY → SCENE_PASS_REGISTRY → candidate manifest/QA → next bundle`
+`latest main → open PR → AGENTS → CURRENT_STATE_RECEIPT → ACTIVE_CONTEXT → CANON_REGISTRY → SCENE_PASS_REGISTRY → candidate manifest/QA → next bundle`
 
 ## Artifact-promotion gate
 
@@ -44,7 +48,7 @@ QA_GREEN current candidate 전체가 있어도 GitHub production authority는 bo
 - PR #31: QA_GREEN integrated candidate evidence.
 - PR #32: Ch006–010 bounded production promotion.
 - PR #36: Ch011–015 bounded production promotion.
-- current pass: Ch016–020 exact source/index/reverse-outline/scene-pass Green candidate.
+- **PR #39: Ch016–020 bounded production promotion merged; current repository prefix is 001–020.**
 
 ## Current prefix 001–020 contract
 
