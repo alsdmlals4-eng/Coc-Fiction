@@ -12,6 +12,8 @@ on:
       - "skills/FICTION_SKILL_LEARNING_LOG.md"
       - "fiction/**"
       - "tests/test_current_state_closure.py"
+      - "tests/test_fiction_docx_packaging.py"
+      - "tools/check_fiction_docx_packaging.py"
       - "tools/check_fiction_operating_system.py"
       - "tools/check_fiction_content.py"
       - "tools/build_fiction_reverse_outline.py"
@@ -32,6 +34,8 @@ on:
       - "skills/FICTION_SKILL_LEARNING_LOG.md"
       - "fiction/**"
       - "tests/test_current_state_closure.py"
+      - "tests/test_fiction_docx_packaging.py"
+      - "tools/check_fiction_docx_packaging.py"
       - "tools/check_fiction_operating_system.py"
       - "tools/check_fiction_content.py"
       - "tools/build_fiction_reverse_outline.py"
@@ -83,3 +87,5 @@ jobs:
         run: python tools/check_fiction_scene_passes.py
       - name: Validate current-state closure contract
         run: python -m unittest tests.test_current_state_closure -v
+      - name: Validate DOCX packaging contract
+        run: python -m unittest tests.test_fiction_docx_packaging -v
