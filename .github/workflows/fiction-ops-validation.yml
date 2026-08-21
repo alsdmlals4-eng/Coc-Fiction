@@ -57,11 +57,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.ref }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Materialize exact Ch021-025 candidate transfer
-        if: ${{ hashFiles('docs/coordination/.tmp/ch021-025.current.md.gz.b64') != '' }}
+        if: ${{ hashFiles('docs/coordination/.tmp/ch021-025.part06.b64') != '' }}
         run: |
           python - <<'PY'
           import base64
@@ -70,8 +71,25 @@ jobs:
           import re
           from pathlib import Path
 
-          payload = Path('docs/coordination/.tmp/ch021-025.current.md.gz.b64').read_text(encoding='utf-8').strip()
-          raw = gzip.decompress(base64.b64decode(payload))
+          expected_chunks = [
+              (1, 6000, 'ba1c208501d28238411d24c48ce144d3764da98bd4305ed3f12dba55df37d477'),
+              (2, 6000, '04e783d0c1f39f44618c24960e4a915b55576d67f51d3393d49dacc9d3f39c1a'),
+              (3, 6000, 'a7716957eb84f532bc5283f6f730ffe5c335844a1e02c02707567c34f9f555c4'),
+              (4, 6000, '3fbfb3095555f2e059fe86ccccf20f71c22b549fe5272f1960c50c71aaec46bc'),
+              (5, 6000, '6ef67e43c0ea886a6c535c0166360406017d2c5e5f2a6933e0d7973e4b8e8e80'),
+              (6, 2456, '8099846de594012fe938948c80c507f8a299dc90f3c70731db8e877e1dea88d2'),
+          ]
+          pieces = []
+          for number, expected_len, expected_sha in expected_chunks:
+              path = Path(f'docs/coordination/.tmp/ch021-025.part{number:02d}.b64')
+              piece = path.read_text(encoding='utf-8').strip()
+              assert len(piece) == expected_len, (number, len(piece), expected_len)
+              assert hashlib.sha256(piece.encode()).hexdigest() == expected_sha, number
+              pieces.append(piece)
+          payload = ''.join(pieces)
+          assert len(payload) == 32456
+          assert hashlib.sha256(payload.encode()).hexdigest() == '64db708e2704f8453e76469a9fad3ba1aa8d80f331fb67883f464d76ec0dcf4f'
+          raw = gzip.decompress(base64.b64decode(payload, validate=True))
           expected_file_sha = '3ce5aeb71bea4ee5a4565cf30b4794e08489622d3e450fcae285213d68ffe48c'
           assert hashlib.sha256(raw).hexdigest() == expected_file_sha
           target = Path('fiction/manuscript/part-1/021-025.md')
@@ -94,12 +112,14 @@ jobs:
               body = match.group(4).strip()
               found[number] = (len(body), hashlib.sha256(body.encode('utf-8')).hexdigest())
           assert found == expected, found
+          print('exact Ch021-025 candidate transfer PASS')
           PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git show 9f23c660ee666ca3463e6be976847acf6841a706:.github/workflows/fiction-ops-validation.yml > .github/workflows/fiction-ops-validation.yml
           git add fiction/manuscript/part-1/021-025.md .github/workflows/fiction-ops-validation.yml
           git rm docs/coordination/.tmp/ch021-025.current.md.gz.b64
+          git rm docs/coordination/.tmp/ch021-025.part*.b64
           git rm .github/workflows/materialize-ch021-025.yml
           git commit -m "fiction: install exact current chapters 021-025 source"
           git push origin HEAD:work/coc-promote-021-025-20260821
@@ -108,7 +128,6 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-
           path = Path('docs/base-reuse-adoption.json')
           data = json.loads(path.read_text(encoding='utf-8'))
           assert data['schema_version'] == 1
