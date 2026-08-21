@@ -1,8 +1,7 @@
 {
   "schema_version": 1,
-  "frontier_observed_at_main": null,
-  "last_frontier_change_pr": 39,
-  "pending_frontier_change_pr": 42,
+  "frontier_observed_at_main": "e6817e38042c783be8169f6c385230e75f1253db",
+  "last_frontier_change_pr": 42,
   "verified_prefix_end": 25,
   "legacy_tail_starts_at": 26,
   "boundary_after_chapter": 25,
