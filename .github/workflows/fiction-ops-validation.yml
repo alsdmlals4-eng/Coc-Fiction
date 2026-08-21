@@ -71,8 +71,6 @@ jobs:
           assert {key: value['state'] for key, value in modules.items()} == expected
           print('base reuse adoption manifest pass')
           PY
-      - name: Validate current-state closure contract
-        run: python -m unittest tests.test_current_state_closure -v
       - name: Validate fiction operating system
         run: python tools/check_fiction_operating_system.py
       - name: Validate active fiction canon and manuscript
@@ -83,3 +81,5 @@ jobs:
         run: python tools/check_fiction_reverse_outline.py
       - name: Validate completed scene passes
         run: python tools/check_fiction_scene_passes.py
+      - name: Validate current-state closure contract
+        run: python -m unittest tests.test_current_state_closure -v
