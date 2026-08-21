@@ -35,7 +35,7 @@ candidate_qa: QA_GREEN
 repository_reconciled_prefix: 001-025
 legacy_tail_starts_at: 026
 whole_manuscript_continuity: NOT_YET_CLAIMED
-next_bundle: fiction/manuscript/part-1/021-025.md
+next_bundle: fiction/manuscript/part-1/026-030.md
 ```
 
 ## lifecycle vocabulary
