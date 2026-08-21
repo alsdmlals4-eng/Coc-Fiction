@@ -29,6 +29,7 @@ Status: `CURRENT_CANDIDATE_EXACT / CANON_RECONCILED / BOUNDED_PROMOTION_PENDING_
 - Ch23: Jooan distinguishes chosen rescue from unexplained body impulse and waits before contact.
 - Ch24: `반응 → 멈춤 → 이유 → 선택` becomes explicit team behavior; no one-person domination solution.
 - Ch25: Jooan pauses, checks reason, blocks only the actual hazard, and asks Elise's choice before the next threat.
+- Ch25의 대사상 `제3세력`은 **임시 현장 협력/작전 표현**으로만 읽는다. 정식 신규 조직명·새 거대세력 Canon이 아니며 Part2 D01 `경계형 외부 회수망`과 별개다. exact candidate 본문은 이 해석 경계 때문에 재작성하지 않는다.
 
 Forbidden/superseded-term scan: 10 blocked variants checked against Ch21–25 → 0 hits.
 
