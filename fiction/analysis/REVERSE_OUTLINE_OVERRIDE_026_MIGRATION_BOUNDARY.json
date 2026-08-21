@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-21",
+  "status": "ACTIVE_OVERRIDE / CH26_LEGACY_TAIL_BOUNDARY",
+  "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 26,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "아버지의 사랑과 학살",
+      "pov": "엘리스",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/026-030.md",
+        "body_sha256": "13e7273f2f7a685fc7548edfc28963da673c77936ad0575f2f31ac7830cf1d13",
+        "body_chars": 2261
+      },
+      "chapter_function": [
+        "INCITING_INCIDENT",
+        "INVESTIGATION",
+        "REVELATION",
+        "RELATIONSHIP",
+        "NEGOTIATION",
+        "ACTION",
+        "CHOICE_AND_COST"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "엘리스는 아버지의 기억 속 해안을 걸었다. 바닷바람은 차갑고 마을은 불타고 있었다.",
+        "immediate_goal_or_focus": "얼굴에는 비늘이 있었고 손가락 사이에는 얇은 막이 붙어 있었다.",
+        "opposition_and_cost": "어린 개체가 포함됐다는 보고에도 표정이 변하지 않았다.",
+        "turn_or_discovery": "대신 죄책감과 공포가 곧바로 명령이 되지 못하게 막았다.",
+        "decision_or_choice": "제사장의 촉수가 더 깊이 파고들었다.",
+        "ending_state": "살아 있으라는 말은 도망치라는 명령이 아니라, 돌아와 다시 선택하라는 부탁이었다. 엘리스는 그 차이를 기억한 채 발을 옮겼다.",
+        "next_pressure": "다음 제27화 「히템이 남긴 몸」(이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 엘리스는 그 차이를 기억한 채 발을 옮겼다."
+      },
+      "metrics": {
+        "paragraphs": 66,
+        "average_paragraph_chars": 34.3,
+        "dialogue_ratio": 0.1495,
+        "theme_term_hits": {
+          "선택": 4,
+          "보호": 1,
+          "명령": 3,
+          "사람": 3
+        }
+      },
+      "structural_flags": [
+        "POV_HANDOFF",
+        "LEGACY_TAIL_BOUNDARY"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": null,
+      "next_chapter": {
+        "chapter": 27,
+        "title": "히템이 남긴 몸",
+        "pov": "이안"
+      }
+    }
+  ]
+}
