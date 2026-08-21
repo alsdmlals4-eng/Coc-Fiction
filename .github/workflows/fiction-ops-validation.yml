@@ -14,6 +14,7 @@ on:
       - "fiction/**"
       - "tests/test_current_state_closure.py"
       - "tests/test_fiction_docx_packaging.py"
+      - "tests/test_promote_021_025_contract.py"
       - "tools/check_fiction_docx_packaging.py"
       - "tools/check_fiction_operating_system.py"
       - "tools/check_fiction_content.py"
@@ -37,6 +38,7 @@ on:
       - "fiction/**"
       - "tests/test_current_state_closure.py"
       - "tests/test_fiction_docx_packaging.py"
+      - "tests/test_promote_021_025_contract.py"
       - "tools/check_fiction_docx_packaging.py"
       - "tools/check_fiction_operating_system.py"
       - "tools/check_fiction_content.py"
@@ -91,3 +93,5 @@ jobs:
         run: python -m unittest tests.test_current_state_closure -v
       - name: Validate DOCX packaging contract
         run: python -m unittest tests.test_fiction_docx_packaging -v
+      - name: Validate Ch021-025 promotion contract
+        run: python -m unittest tests.test_promote_021_025_contract -v
