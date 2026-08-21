@@ -8,8 +8,8 @@
 
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
-last_integrated_pr: 39
-last_integrated_merge: 395f0af0120f5ab6949c86772d3b77b5b3eb9f3a
+frontier_observed_at_main: 395f0af0120f5ab6949c86772d3b77b5b3eb9f3a
+last_frontier_change_pr: 39
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 delivery_state: QA_VERIFIED
 repository_promotion_state: PARTIAL
@@ -21,6 +21,8 @@ boundary_after_chapter: 20
 whole_manuscript_continuity: NOT_YET_CLAIMED
 next_bounded_bundle: fiction/manuscript/part-1/021-025.md
 ```
+
+`frontier_observed_at_main`과 `last_frontier_change_pr`은 마지막 **production frontier 변경**을 가리킨다. 이 handoff가 저장소의 영구적인 최신 SHA나 최신 PR 번호를 주장하지 않도록 재개 시 GitHub를 fresh-read한다.
 
 재개 순서:
 `latest Coc-Fiction main → open PR → AGENTS → CURRENT_STATE_RECEIPT → ACTIVE_CONTEXT → HANDOFF → CANON_REGISTRY → SCENE_PASS_REGISTRY → candidate manifest/QA → next bounded bundle`
