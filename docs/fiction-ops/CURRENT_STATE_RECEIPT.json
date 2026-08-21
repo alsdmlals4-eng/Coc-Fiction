@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "observed_main_sha": "395f0af0120f5ab6949c86772d3b77b5b3eb9f3a",
-  "last_integrated_pr": 39,
+  "frontier_observed_at_main": "395f0af0120f5ab6949c86772d3b77b5b3eb9f3a",
+  "last_frontier_change_pr": 39,
   "verified_prefix_end": 20,
   "legacy_tail_starts_at": 21,
   "boundary_after_chapter": 20,
