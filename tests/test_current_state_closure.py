@@ -20,6 +20,10 @@ class CurrentStateClosureTests(unittest.TestCase):
         ):
             self.assertIn(required, text)
 
+    def test_internal_start_here_routes_through_current_state_receipt(self):
+        start = (ROOT / "[소설]/00_운영체계/START_HERE.md").read_text(encoding="utf-8")
+        self.assertIn("docs/fiction-ops/CURRENT_STATE_RECEIPT.json", start)
+
     def test_current_state_receipt_matches_scene_pass_frontier(self):
         receipt_path = ROOT / "docs/fiction-ops/CURRENT_STATE_RECEIPT.json"
         self.assertTrue(receipt_path.exists(), "current-state receipt must exist")
