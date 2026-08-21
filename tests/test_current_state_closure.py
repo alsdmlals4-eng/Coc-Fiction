@@ -36,6 +36,17 @@ class CurrentStateClosureTests(unittest.TestCase):
         start = (ROOT / "[소설]/00_운영체계/START_HERE.md").read_text(encoding="utf-8")
         self.assertIn("docs/fiction-ops/CURRENT_STATE_RECEIPT.json", start)
 
+    def test_start_here_state_matches_current_receipt(self):
+        receipt = json.loads(
+            (ROOT / "docs/fiction-ops/CURRENT_STATE_RECEIPT.json").read_text(encoding="utf-8")
+        )
+        start = (ROOT / "[소설]/00_운영체계/START_HERE.md").read_text(encoding="utf-8")
+        prefix = receipt["verified_prefix_end"]
+        tail = receipt["legacy_tail_starts_at"]
+        self.assertIn(f"repository_reconciled_prefix: 001-{prefix:03d}", start)
+        self.assertIn(f"legacy_tail_starts_at: {tail:03d}", start)
+        self.assertIn(f"next_bundle: {receipt['next_bounded_bundle']}", start)
+
     def test_current_state_receipt_matches_scene_pass_frontier(self):
         receipt_path = ROOT / "docs/fiction-ops/CURRENT_STATE_RECEIPT.json"
         self.assertTrue(receipt_path.exists(), "current-state receipt must exist")
