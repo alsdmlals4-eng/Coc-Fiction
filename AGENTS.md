@@ -22,7 +22,7 @@
 → 현재 묶음 Scene Card / Revision Report / 실제 manuscript
 ```
 
-`CURRENT_STATE_RECEIPT.json`의 저장 SHA는 마지막 통합 readback 증거다. 재개할 때는 반드시 최신 `main`과 open PR 상태를 다시 조회한다.
+`CURRENT_STATE_RECEIPT.json`의 SHA/PR은 현재 production frontier가 마지막으로 바뀐 readback 증거다. 저장소의 영구적인 최신 SHA/PR이 아니므로 재개할 때는 반드시 최신 `main`과 open PR 상태를 다시 조회한다.
 
 ## 정본 경계
 
@@ -51,6 +51,7 @@ python tools/build_fiction_reverse_outline.py --check
 python tools/check_fiction_reverse_outline.py
 python tools/check_fiction_scene_passes.py
 python -m unittest tests.test_current_state_closure -v
+python -m unittest tests.test_fiction_docx_packaging -v
 ```
 
 추가 테스트가 도입된 변경은 해당 테스트도 함께 실행한다. 과거 Green을 현재 head의 Green으로 재사용하지 않는다.
