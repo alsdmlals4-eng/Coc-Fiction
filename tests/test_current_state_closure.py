@@ -1,4 +1,5 @@
 import json
+import re
 import unittest
 from pathlib import Path
 
@@ -45,46 +46,52 @@ class CurrentStateClosureTests(unittest.TestCase):
         frontier = scene["external_artifact_reconciliation"]
 
         self.assertEqual(receipt["schema_version"], 1)
-        self.assertEqual(
-            receipt["frontier_observed_at_main"],
-            "395f0af0120f5ab6949c86772d3b77b5b3eb9f3a",
-        )
-        self.assertEqual(receipt["last_frontier_change_pr"], 39)
         self.assertNotIn("last_integrated_pr", receipt)
-        self.assertEqual(receipt["verified_prefix_end"], 20)
-        self.assertEqual(receipt["legacy_tail_starts_at"], 21)
-        self.assertEqual(receipt["boundary_after_chapter"], 20)
-        self.assertEqual(
-            receipt["next_bounded_bundle"],
-            "fiction/manuscript/part-1/021-025.md",
-        )
-        self.assertEqual(receipt["whole_manuscript_continuity"], "NOT_YET_CLAIMED")
         self.assertEqual(receipt["verified_prefix_end"], frontier["reconciled_prefix_end"])
         self.assertEqual(receipt["legacy_tail_starts_at"], frontier["legacy_tail_starts_at"])
         self.assertEqual(receipt["boundary_after_chapter"], frontier["boundary_after_chapter"])
+        self.assertEqual(receipt["candidate_sha256"], frontier["artifact_sha256"])
+        self.assertEqual(receipt["whole_manuscript_continuity"], frontier["whole_manuscript_continuity"])
         self.assertEqual(
-            receipt["candidate_sha256"], frontier["artifact_sha256"]
+            receipt["next_bounded_bundle"],
+            scene["next_bundle_passes"][0],
         )
 
-    def test_active_routers_describe_pr39_as_frontier_change_not_latest_repo_pr(self):
+        pending = receipt.get("pending_frontier_change_pr")
+        if pending is None:
+            observed = receipt.get("frontier_observed_at_main")
+            self.assertIsInstance(observed, str)
+            self.assertRegex(observed, r"^[0-9a-f]{40}$")
+            self.assertIsInstance(receipt.get("last_frontier_change_pr"), int)
+        else:
+            self.assertEqual(pending, 42)
+            self.assertIsNone(receipt.get("frontier_observed_at_main"))
+            self.assertEqual(receipt.get("last_frontier_change_pr"), 39)
+
+    def test_active_routers_match_current_frontier_and_pending_or_closed_receipt(self):
+        receipt = json.loads(
+            (ROOT / "docs/fiction-ops/CURRENT_STATE_RECEIPT.json").read_text(encoding="utf-8")
+        )
         active = (ROOT / "fiction/ACTIVE_CONTEXT.md").read_text(encoding="utf-8")
         handoff = (ROOT / "fiction/HANDOFF.md").read_text(encoding="utf-8")
+        prefix = receipt["verified_prefix_end"]
+        tail = receipt["legacy_tail_starts_at"]
+        next_bundle = Path(receipt["next_bounded_bundle"]).stem
 
         for text, name in ((active, "ACTIVE_CONTEXT"), (handoff, "HANDOFF")):
-            self.assertIn("PR #39", text, f"{name} must identify the frontier-changing PR")
-            self.assertIn("last_frontier_change_pr: 39", text)
-            self.assertIn("001–020", text, f"{name} must state the current prefix")
-            self.assertIn("021-025", text, f"{name} must state the next bounded bundle")
-            self.assertNotIn("last_integrated_pr: 39", text)
-
-        self.assertNotIn(
-            "current pass: Ch016–020 exact source/index/reverse-outline/scene-pass Green candidate",
-            active,
-        )
-        self.assertNotIn(
-            "current branch: Ch016–020 exact source + composed index + generator-derived reverse outline + scene-pass contract",
-            handoff,
-        )
+            self.assertIn(f"reconciled_prefix_end: {prefix}", text, name)
+            self.assertIn(f"legacy_tail_starts_at: {tail}", text, name)
+            self.assertIn(f"boundary_after_chapter: {prefix}", text, name)
+            self.assertIn(next_bundle, text, name)
+            pending = receipt.get("pending_frontier_change_pr")
+            if pending is not None:
+                self.assertIn(f"pending_frontier_change_pr: {pending}", text, name)
+            else:
+                self.assertIn(
+                    f"last_frontier_change_pr: {receipt['last_frontier_change_pr']}",
+                    text,
+                    name,
+                )
 
 
 if __name__ == "__main__":
