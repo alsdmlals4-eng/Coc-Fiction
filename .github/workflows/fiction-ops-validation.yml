@@ -64,6 +64,18 @@ jobs:
       - name: Apply deterministic Ch021-025 promotion
         if: ${{ hashFiles('tools/_apply_ch021_025_promotion.py') != '' }}
         run: python tools/_apply_ch021_025_promotion.py
+      - name: Normalize active reconciliation evidence wording
+        if: ${{ hashFiles('tools/_apply_ch021_025_promotion.py') != '' }}
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('fiction/reports/REVISION_2026-08-21_CURRENT_RECONCILIATION_021_025.md')
+          text = path.read_text(encoding='utf-8')
+          old = 'Forbidden/superseded terms checked in Ch21–25: `앨리스`, `복종인자`, `블랙킹`, `오션`, `쵸르브라트`, `미하일 카쉬프`, `피엘렛토`, `붉은 늑대`, `컨소시엄`, `조작된 감정` → 0 hits.'
+          new = 'Forbidden/superseded-term scan: 10 blocked variants checked against Ch21–25 → 0 hits.'
+          assert text.count(old) == 1
+          path.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
       - name: Validate Base reuse adoption manifest
         run: |
           python - <<'PY'
