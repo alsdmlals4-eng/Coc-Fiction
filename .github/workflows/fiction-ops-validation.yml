@@ -48,84 +48,27 @@ on:
       - "tools/fiction_composed_data.py"
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          ref: ${{ github.event.pull_request.head.ref }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Materialize exact Ch021-025 candidate transfer
-        if: ${{ hashFiles('docs/coordination/.tmp/ch021-025.part06.b64') != '' }}
-        run: |
-          python - <<'PY'
-          import base64
-          import gzip
-          import hashlib
-          import re
-          from pathlib import Path
-
-          expected_chunks = [
-              (1, 6000, 'ba1c208501d28238411d24c48ce144d3764da98bd4305ed3f12dba55df37d477'),
-              (2, 6000, '04e783d0c1f39f44618c24960e4a915b55576d67f51d3393d49dacc9d3f39c1a'),
-              (3, 6000, 'a7716957eb84f532bc5283f6f730ffe5c335844a1e02c02707567c34f9f555c4'),
-              (4, 6000, '3fbfb3095555f2e059fe86ccccf20f71c22b549fe5272f1960c50c71aaec46bc'),
-              (5, 6000, '6ef67e43c0ea886a6c535c0166360406017d2c5e5f2a6933e0d7973e4b8e8e80'),
-              (6, 2456, '8099846de594012fe938948c80c507f8a299dc90f3c70731db8e877e1dea88d2'),
-          ]
-          pieces = []
-          for number, expected_len, expected_sha in expected_chunks:
-              path = Path(f'docs/coordination/.tmp/ch021-025.part{number:02d}.b64')
-              piece = path.read_text(encoding='utf-8').strip()
-              assert len(piece) == expected_len, (number, len(piece), expected_len)
-              assert hashlib.sha256(piece.encode()).hexdigest() == expected_sha, number
-              pieces.append(piece)
-          payload = ''.join(pieces)
-          assert len(payload) == 32456
-          assert hashlib.sha256(payload.encode()).hexdigest() == '64db708e2704f8453e76469a9fad3ba1aa8d80f331fb67883f464d76ec0dcf4f'
-          raw = gzip.decompress(base64.b64decode(payload, validate=True))
-          assert hashlib.sha256(raw).hexdigest() == '3ce5aeb71bea4ee5a4565cf30b4794e08489622d3e450fcae285213d68ffe48c'
-          Path('fiction/manuscript/part-1/021-025.md').write_bytes(raw)
-
-          chapter_re = re.compile(
-              r'^## 제(\d+)화 · (.*?)\n\n\*\*POV:\*\* ([^\n]+)\n\n(.*?)(?=\n\n<!-- source-lines:)',
-              re.M | re.S,
-          )
-          expected = {
-              21: (6472, 'feb8df2a30c678e174a8cafbbeb8e33ec4d64042339f514a8b771e3b5b61b389'),
-              22: (5916, '6ae4dba9533cad99139cfef11fdadfbddf5a381bf95091bc939296694c68e801'),
-              23: (6779, 'cd506e7449f718dfdda9d67db3aba654619457991ffb0fe0cba2ef43f660c40b'),
-              24: (6961, 'c111f79f73c034a6bc2f5dea8606e8b35c687b6a55842a6fd873adbda18b8549'),
-              25: (5870, '09a945739b8438e30b3721c4c777a0f1c4736f5d6ac7a0684f02877e399869e8'),
-          }
-          found = {}
-          for match in chapter_re.finditer(raw.decode('utf-8')):
-              body = match.group(4).strip()
-              found[int(match.group(1))] = (len(body), hashlib.sha256(body.encode('utf-8')).hexdigest())
-          assert found == expected, found
-          print('exact Ch021-025 candidate transfer PASS')
-          PY
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add fiction/manuscript/part-1/021-025.md
-          git rm docs/coordination/.tmp/ch021-025.current.md.gz.b64
-          git rm docs/coordination/.tmp/ch021-025.part*.b64
-          git commit -m "fiction: install exact current chapters 021-025 source"
-          git push origin HEAD:work/coc-promote-021-025-20260821
       - name: Validate Base reuse adoption manifest
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          data = json.loads(Path('docs/base-reuse-adoption.json').read_text(encoding='utf-8'))
+
+          path = Path('docs/base-reuse-adoption.json')
+          data = json.loads(path.read_text(encoding='utf-8'))
           assert data['schema_version'] == 1
           assert data['base_source_commit'] == '8553678f70e22f193a2336b591f677dcfa5a8965'
+          modules = data['modules']
           expected = {
               'RM-TOOL-001': 'planned',
               'RM-SYS-001': 'not_applicable',
@@ -133,7 +76,7 @@ jobs:
               'RM-VIS-001': 'not_applicable',
               'RM-VIS-002': 'not_applicable',
           }
-          assert {key: value['state'] for key, value in data['modules'].items()} == expected
+          assert {key: value['state'] for key, value in modules.items()} == expected
           print('base reuse adoption manifest pass')
           PY
       - name: Validate fiction operating system
