@@ -20,6 +20,17 @@ class CurrentStateClosureTests(unittest.TestCase):
         ):
             self.assertIn(required, text)
 
+    def test_root_agents_changes_trigger_fiction_validation(self):
+        workflow = (ROOT / ".github/workflows/fiction-ops-validation.yml").read_text(
+            encoding="utf-8"
+        )
+        trigger_line = '      - "AGENTS.md"'
+        self.assertGreaterEqual(
+            workflow.count(trigger_line),
+            2,
+            "root AGENTS.md must trigger both pull_request and main push validation",
+        )
+
     def test_internal_start_here_routes_through_current_state_receipt(self):
         start = (ROOT / "[소설]/00_운영체계/START_HERE.md").read_text(encoding="utf-8")
         self.assertIn("docs/fiction-ops/CURRENT_STATE_RECEIPT.json", start)
