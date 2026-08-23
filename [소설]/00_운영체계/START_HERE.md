@@ -28,14 +28,14 @@ docs/coordination/CONCURRENT_WORK.md
 work_mode: IMPLEMENT / REVIEW
 manuscript_stage: REVISE / PROMOTE_BOUNDED
 source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
-current_bundle_source: 폭풍의눈_2차퇴고_제021-030화_상실광기_강적위상_가독성강화본(1).docx
-current_bundle_source_sha256: e15c8fb4ed4ab1b6980c2c57f3979986bdbfa02f77aafef3cc84d3652cb70547
+current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx
+current_bundle_source_sha256: 89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10
 derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
-repository_candidate_prefix: 001-030
+repository_reconciled_prefix: 001-030
 legacy_tail_starts_at: 031
 whole_manuscript_continuity: NOT_YET_CLAIMED
-pending_frontier_pr: 48
-next_bundle_after_merge: fiction/manuscript/part-1/031-035.md
+last_frontier_change_pr: 48
+next_bundle: fiction/manuscript/part-1/031-035.md
 source_coverage_gap: 101-105
 ```
 
@@ -74,9 +74,9 @@ GitHub 225화/45묶음 경로는 migration container이며 current narrative 최
 - Elliott sword: 귀속 미정·공동봉인; 반응/형상변화는 후계 인증 아님.
 - POV: Scene-Locked Hybrid; scene break 없는 head hopping 금지.
 
-## current candidate prefix / migration boundary
+## current production prefix / migration boundary
 
-- `001–030`: PR #48 candidate prefix. merge 전 main 완료라고 부르지 않는다.
+- `001–030`: PR #48을 통해 production으로 승격 완료.
 - `005→006`, `010→011`, `015→016`, `020→021`, `025→026`: current continuity PASS.
 - `030→031`: `MIGRATION_BOUNDARY / NOT_YET_CLAIMED`.
 - Ch25 reverse outline: `next_chapter=26`.
@@ -85,24 +85,22 @@ GitHub 225화/45묶음 경로는 migration container이며 current narrative 최
 
 ## 현재 작업
 
-PR #48:
+다음 시작 묶음:
+`fiction/manuscript/part-1/031-035.md`
+
+사용자 지정 `031–040` source를 사용한다.
 
 ```text
-user source Ch26-30 exact extraction
-→ latest user Canon conflict scan
-→ Ch25→26 continuity verification
-→ manuscript/index/reverse-outline/Scene Pass/routers atomic propagation
+Ch30→31 boundary verification
+→ exact source Ch31-35 extraction
+→ latest direct-user Canon conflict scan
+→ manuscript/index/reverse-outline/Scene Pass/router propagation
 → 5× adversarial review
-→ exact-head Fiction operating-system CI
+→ exact-head CI
 → review thread 0 / main freshness
 → squash merge
 → receipt closure + Notion readback
 ```
-
-그 다음 시작 묶음:
-`fiction/manuscript/part-1/031-035.md`
-
-사용자 지정 `031–040` source를 사용한다.
 
 ## 금지
 

@@ -9,13 +9,13 @@
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
 work_mode: IMPLEMENT / REVIEW
-frontier_observed_at_main: null
-last_frontier_change_pr: 42
-pending_frontier_change_pr: 48
+frontier_observed_at_main: fb97068c714f5731bf712316d59a58adab7f4a86
+last_frontier_change_pr: 48
+pending_frontier_change_pr: null
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 current_source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
-current_bundle_source: 폭풍의눈_2차퇴고_제021-030화_상실광기_강적위상_가독성강화본(1).docx
-current_bundle_source_sha256: e15c8fb4ed4ab1b6980c2c57f3979986bdbfa02f77aafef3cc84d3652cb70547
+current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx
+current_bundle_source_sha256: 89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10
 derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 delivery_state: QA_VERIFIED
 repository_promotion_state: PARTIAL
@@ -27,7 +27,7 @@ next_bounded_bundle: fiction/manuscript/part-1/031-035.md
 source_coverage_gap: 101-105
 ```
 
-`frontier_observed_at_main`과 `last_frontier_change_pr`은 **현재 production frontier의 마지막 merged 증거**다. PR #48이 merge되기 전에는 미래 main SHA를 기록하지 않는다.
+`frontier_observed_at_main`은 production frontier를 실제로 이동시킨 merge 증거다. 저장소의 영구 최신 SHA 포인터가 아니므로 재개 시에는 GitHub에서 최신 `main`과 open PR을 다시 조회한다.
 
 새 세션 첫 행동:
 
@@ -60,9 +60,9 @@ rule: source authority != automatic production authority
 - PR #39: Ch016–020 bounded production promotion.
 - PR #42: Ch021–025 bounded production promotion merged.
 - PR #47: Talon/Milly/Hatem direct user Canon protections merged.
-- **PR #48: Ch026–030 user-source bounded promotion in progress; production completion not yet claimed.**
+- **PR #48: Ch026–030 user-source bounded promotion merged; production frontier is 001–030.**
 
-## Current candidate prefix 001–030 contract
+## Current production prefix 001–030 contract
 
 - Ch5→6, Ch10→11, Ch15→16, Ch20→21, Ch25→26: current continuity.
 - Ch16: 위험한 해결책도 당사자 선택 없이 강행하지 않는다.
