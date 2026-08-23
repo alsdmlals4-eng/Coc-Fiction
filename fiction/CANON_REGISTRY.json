@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-20",
+  "updated_at": "2026-08-24",
   "core_status": "CORE_CONFIRMED",
   "active_sources": {
     "master": "fiction/FICTION_MASTER.md",
@@ -38,6 +38,24 @@
       "id": "alice.mental-ability",
       "status": "CANON",
       "summary": "정신 능력은 외부 간섭 차단·환각 필터·선택 보존이며 지배 능력이 아니다."
+    },
+    {
+      "id": "part1.talon-core-antagonist",
+      "status": "CANON",
+      "summary": "탈론은 1부 핵심 적대 인물이자 황색 측 수호사제다. 주안과 직접 충돌하고, 현행 001–025에서 쇼거스와 정면으로 맞붙을 정도의 육체·전격 전투력을 화면 안에서 증명한다. 단순 추격자·보조 적으로 강등하지 않으며 주인공을 강하게 보이게 하려고 갑자기 약화·우둔화하지 않는다."
+    },
+    {
+      "id": "part1.milly-sex-and-miskatonic-disguise",
+      "status": "CANON",
+      "summary": "밀리 코사의 실제 성별은 남성이다. 미스캐토닉 대학 잠입 시 하템의 여성 외형을 이용해 여장했기 때문에 '밀리 양'으로 불렸다. 본래 남성 모습과 대학 잠입용 여성 변장을 별도 상태로 관리하며, 하템과 동일인이 아니다."
+    },
+    {
+      "id": "part1.hatem-sex-and-default-mask",
+      "status": "CANON",
+      "aliases": [
+        "하템"
+      ],
+      "summary": "하템은 여성이다. 평상시 기본 외형은 가면을 쓴 광신도이며 맨얼굴은 별도 reveal 상태로 취급한다. 밀리와 별도 인물이고 황색과 자동 동일 소속으로 단정하지 않는다. 새·수정 정본에서는 구 표기 '히템'을 사용하지 않는다."
     },
     {
       "id": "largo.alice-instructor-affection",
@@ -148,6 +166,14 @@
         "fiction/manuscript/side-story-lake/091-095.md"
       ],
       "블랙킹": [
+        "fiction/manuscript/part-1/066-070.md"
+      ],
+      "히템→하템 구 표기": [
+        "fiction/manuscript/part-1/026-030.md",
+        "fiction/manuscript/part-1/031-035.md",
+        "fiction/manuscript/part-1/036-040.md",
+        "fiction/manuscript/part-1/041-045.md",
+        "fiction/manuscript/part-1/056-060.md",
         "fiction/manuscript/part-1/066-070.md"
       ]
     },
