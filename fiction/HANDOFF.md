@@ -8,13 +8,13 @@
 
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
-frontier_observed_at_main: null
-last_frontier_change_pr: 42
-pending_frontier_change_pr: 48
+frontier_observed_at_main: fb97068c714f5731bf712316d59a58adab7f4a86
+last_frontier_change_pr: 48
+pending_frontier_change_pr: null
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
-current_bundle_source: 폭풍의눈_2차퇴고_제021-030화_상실광기_강적위상_가독성강화본(1).docx
-current_bundle_source_sha256: e15c8fb4ed4ab1b6980c2c57f3979986bdbfa02f77aafef3cc84d3652cb70547
+current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx
+current_bundle_source_sha256: 89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10
 delivery_state: QA_VERIFIED
 repository_promotion_state: PARTIAL
 reconciled_prefix_end: 30
@@ -25,7 +25,7 @@ next_bounded_bundle: fiction/manuscript/part-1/031-035.md
 source_coverage_gap: 101-105
 ```
 
-PR #48 merge 전에는 `001–030`을 main production 완료라고 부르지 않는다. `frontier_observed_at_main=null`은 의도적인 fail-closed 상태다.
+`frontier_observed_at_main`은 PR #48이 production frontier를 `001–030`으로 이동시킨 실제 merge 증거다. 최신 저장소 SHA는 작업 시작 때 다시 조회한다.
 
 재개 순서:
 `latest main → open PR → AGENTS → CURRENT_STATE_RECEIPT → ACTIVE_CONTEXT → HANDOFF → CANON_REGISTRY → SCENE_PASS_REGISTRY → USER_SOURCE_CHUNK_MANIFEST → next bounded bundle`
@@ -34,10 +34,10 @@ PR #48 merge 전에는 `001–030`을 main production 완료라고 부르지 않
 
 - PR #42: Ch021–025 bounded promotion merged.
 - PR #47: `탈론=핵심 적대`, `밀리=남성/미스캐토닉 여성 위장`, `하템=여성/기본 가면` Canon merged.
-- **PR #48: Ch026–030 user-source bounded promotion 진행 중.**
-- candidate prefix: `001–030`.
+- **PR #48: Ch026–030 user-source bounded promotion merged.**
+- production prefix: `001–030`.
 - fail-closed boundary: `30→31`.
-- next source bundle after merge: `031–035` from user-designated 031–040 DOCX.
+- next source bundle: `031–035` from user-designated 031–040 DOCX.
 
 ## Source authority
 
@@ -73,12 +73,9 @@ Ch30→31은 fail-closed boundary다. 인접 번호를 근거로 현재 연속�
 
 ## 다음 정확한 작업
 
-현재: PR #48 consumer propagation → adversarial review 5회 → exact-head CI Green → review thread 0/main freshness → squash merge → receipt closure → Notion sync.
-
-그 후:
 `fiction/manuscript/part-1/031-035.md`
 
-사용자 지정 `031–040` 원본을 기준으로 동일한 bounded pass를 반복한다.
+사용자 지정 `031–040` 원본을 기준으로 Ch30→31 경계를 다시 열고, exact body → index → reverse outline → Scene Pass → router → regression contract 순으로 동일한 bounded promotion을 진행한다.
 
 ## 장기 보호 Canon
 
