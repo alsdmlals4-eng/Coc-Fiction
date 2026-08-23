@@ -7,6 +7,12 @@ on:
     paths:
       - tools/_materialize_026_030_payload.py
       - .github/trigger-026-030.txt
+  pull_request:
+    branches:
+      - main
+    paths:
+      - tools/_materialize_026_030_payload.py
+      - .github/trigger-026-030.txt
 
 permissions:
   contents: write
@@ -19,6 +25,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: promote/026-030-current-source-20260824
       - name: Materialize exact source body
         run: python tools/_materialize_026_030_payload.py
       - name: Verify exact manuscript file
