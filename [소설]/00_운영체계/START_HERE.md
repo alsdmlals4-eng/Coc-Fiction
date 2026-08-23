@@ -9,9 +9,8 @@ docs/coordination/CONCURRENT_WORK.md
 → docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 → fiction/ACTIVE_CONTEXT.md
 → fiction/CANON_REGISTRY.json
+→ docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
 → fiction/analysis/SCENE_PASS_REGISTRY.json
-→ docs/fiction-ops/2026-08-20_CURRENT_001_161_CANDIDATE_MANIFEST.json
-→ docs/fiction-ops/2026-08-20_WORKING_001_161_CANDIDATE_QA.md
 → 현재 묶음 Scene Card·Revision Report
 → fiction/analysis/REVERSE_OUTLINE_REPORT.md
 → fiction/MANUSCRIPT_INDEX.json
@@ -28,15 +27,29 @@ docs/coordination/CONCURRENT_WORK.md
 ```yaml
 work_mode: IMPLEMENT / REVIEW
 manuscript_stage: REVISE / PROMOTE_BOUNDED
-current_candidate: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
-current_candidate_sha256: 248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9
-candidate_coverage: 001-161
-candidate_qa: QA_GREEN
-repository_reconciled_prefix: 001-025
-legacy_tail_starts_at: 026
+source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
+current_bundle_source: 폭풍의눈_2차퇴고_제021-030화_상실광기_강적위상_가독성강화본(1).docx
+current_bundle_source_sha256: e15c8fb4ed4ab1b6980c2c57f3979986bdbfa02f77aafef3cc84d3652cb70547
+derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
+repository_candidate_prefix: 001-030
+legacy_tail_starts_at: 031
 whole_manuscript_continuity: NOT_YET_CLAIMED
-next_bundle: fiction/manuscript/part-1/026-030.md
+pending_frontier_pr: 48
+next_bundle_after_merge: fiction/manuscript/part-1/031-035.md
+source_coverage_gap: 101-105
 ```
+
+## Source authority
+
+1. 최신 사용자 직접 결정
+2. 사용자 지정 구간별 `폭풍의눈_2차퇴고_...` DOCX
+3. bounded reconciliation을 통과한 GitHub production canon
+4. Notion 승인 요약/Event/Relation
+5. 파생 통합본·Legacy 분석
+
+Source authority가 존재한다는 사실만으로 production authority가 되지 않는다. 각 5화 묶음은 exact body receipt·Canon conflict scan·consumer propagation·적대적 검토·exact-head CI를 통과해야 한다.
+
+현재 source set에는 `101–105`가 없으므로 다른 자료에서 자동 보충하지 않는다.
 
 ## lifecycle vocabulary
 
@@ -44,7 +57,7 @@ next_bundle: fiction/manuscript/part-1/026-030.md
 - Manuscript Stage: `DISCOVER → OUTLINE → DRAFT → REVISE → POLISH`
 - 현재는 BUILD/REVIEW 안의 bounded promotion + REVISE 단계다.
 
-GitHub 225화/45묶음 경로는 migration container이며 current narrative 최종 numbering은 001–161이다.
+GitHub 225화/45묶음 경로는 migration container이며 current narrative 최종 numbering 선언으로 사용하지 않는다.
 
 ## 현재 보호 규칙
 
@@ -52,43 +65,50 @@ GitHub 225화/45묶음 경로는 migration container이며 current narrative 최
 - Jooan: `반응 → 멈춤 → 이유 → 선택`.
 - Elise 정신 능력: 지배가 아니라 선택 보존.
 - Ian: 기록·검증, unknown을 사실로 승격하지 않음.
+- Milly: 실제 남성. 미스캐토닉에서는 하템의 여성 외형을 이용해 위장했기 때문에 `밀리 양`으로 인식됨.
+- Hatem: 실제 여성. 기본 외형은 검은 가면의 광신도. Ch27 사망 뒤에는 새 정보 없는 환각/기억만 허용.
+- Talon: Part 1 핵심 적대 / 황색 수호사제 / 높은 화면 안 전투 위상 유지.
 - D01: bounded external acquisition network.
 - D02: +2h 사진은 fixed future가 아닌 authentic non-current cross-loop evidence.
 - D03: 다른 회차 세 시신은 명시적 사건이 바꾸기 전까지 물리적 경찰 증거.
 - Elliott sword: 귀속 미정·공동봉인; 반응/형상변화는 후계 인증 아님.
 - POV: Scene-Locked Hybrid; scene break 없는 head hopping 금지.
 
-## current prefix / migration boundary
+## current candidate prefix / migration boundary
 
-- `001–025`: branch-verified current production prefix; PR #42 merge/readback pending.
-- `005→006`, `010→011`, `015→016`: current continuity PASS.
-- `020→021`: current continuity PASS.
-- `025→026`: `MIGRATION_BOUNDARY / NOT_YET_CLAIMED`.
-- Ch20 reverse outline: `next_chapter=21`.
-- Ch25 reverse outline: `next_chapter=null`.
-- legacy Ch26 reverse outline: `previous_chapter=null`.
+- `001–030`: PR #48 candidate prefix. merge 전 main 완료라고 부르지 않는다.
+- `005→006`, `010→011`, `015→016`, `020→021`, `025→026`: current continuity PASS.
+- `030→031`: `MIGRATION_BOUNDARY / NOT_YET_CLAIMED`.
+- Ch25 reverse outline: `next_chapter=26`.
+- Ch30 reverse outline: `next_chapter=null`.
+- legacy Ch31 reverse outline: `previous_chapter=null`.
 
-current candidate 전체가 Green이어도 GitHub production authority는 5화 단위 Green 없이 자동 확장하지 않는다.
+## 현재 작업
 
-## 다음 시작 묶음
-
-`fiction/manuscript/part-1/026-030.md`
+PR #48:
 
 ```text
-current candidate Ch26-30 exact extraction
-→ Ch25 current 종료 상태와 앞 경계 검증
-→ 원본·Canon·사용자 Decision 대조
-→ KEEP / APPLY / REWORK / REJECT
-→ manuscript/index/reverse-outline/Scene Pass/routers 원자 갱신
+user source Ch26-30 exact extraction
+→ latest user Canon conflict scan
+→ Ch25→26 continuity verification
+→ manuscript/index/reverse-outline/Scene Pass/routers atomic propagation
+→ 5× adversarial review
 → exact-head Fiction operating-system CI
 → review thread 0 / main freshness
-→ squash merge + post-merge readback
+→ squash merge
+→ receipt closure + Notion readback
 ```
+
+그 다음 시작 묶음:
+`fiction/manuscript/part-1/031-035.md`
+
+사용자 지정 `031–040` source를 사용한다.
 
 ## 금지
 
-- 구 저장 편성을 current source authority로 되돌리지 않는다.
-- 파일명의 `최종`만으로 자동 승격하지 않는다.
+- 구 저장 편성이나 파생 통합본을 user source authority로 되돌리지 않는다.
+- source 파일명의 `최종`만으로 자동 승격하지 않는다.
 - migration boundary를 정상 next chapter로 가정하지 않는다.
+- `101–105`를 추론이나 다른 파일로 자동 보충하지 않는다.
 - 다른 workstream의 open/draft/ready PR을 수정하지 않는다.
 - 과거 CI Green을 current exact head Green으로 재사용하지 않는다.

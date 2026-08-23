@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-24",
+  "status": "ACTIVE_OVERRIDE / CH31_LEGACY_TAIL_BOUNDARY",
+  "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 31,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "가론의 조건",
+      "pov": "주안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/031-035.md",
+        "body_sha256": "ddf006beaf4a34b1855cc138677e2bcdb139056aeed6624a2295411cc20ec9c3",
+        "body_chars": 2260
+      },
+      "chapter_function": [
+        "INVESTIGATION",
+        "REVELATION",
+        "RELATIONSHIP",
+        "NEGOTIATION",
+        "ACTION",
+        "CHOICE_AND_COST"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "황색의 임시 진지는 군대와 시장의 중간처럼 보였다. 탄약과 통신 장비 옆에 제물용 그릇이 놓여 있었고, 치료 천막에서는 부상자를 살리는 의사와 쓸모를 계산하는 관리자가 같은 표를 보고 있었다.",
+        "immediate_goal_or_focus": "탄약과 통신 장비 옆에 제물용 그릇이 놓여 있었고, 치료 천막에서는 부상자를 살리는 의사와 쓸모를 계산하는 관리자가 같은 표를 보고 있었다.",
+        "opposition_and_cost": "“그럼 적어도 우리 작전 범위에서는 하지 마십시오.”",
+        "turn_or_discovery": "`보호 협력자.`",
+        "decision_or_choice": "엘리스는 가론에게 직접 말했다.",
+        "ending_state": "가론은 문장을 지우지 않았다. 불편한 조건을 남기는 것이 지금 이 동맹을 유지하는 유일한 방식이었다.",
+        "next_pressure": "다음 제32화 「두 얼굴의 꿈」(엘리스 POV)로 압력이 이월된다. 현재 화 마지막 증거: 불편한 조건을 남기는 것이 지금 이 동맹을 유지하는 유일한 방식이었다."
+      },
+      "metrics": {
+        "paragraphs": 60,
+        "average_paragraph_chars": 37.7,
+        "dialogue_ratio": 0.2398,
+        "theme_term_hits": {
+          "보호": 3,
+          "사람": 9,
+          "괴물": 1
+        }
+      },
+      "structural_flags": [
+        "POV_HANDOFF",
+        "LEGACY_TAIL_BOUNDARY"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": null,
+      "next_chapter": {
+        "chapter": 32,
+        "title": "두 얼굴의 꿈",
+        "pov": "엘리스"
+      }
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 # 《폭풍의 눈》 현행 정본·작업 기준
 
 상태: **ACTIVE / SINGLE SOURCE OF TRUTH / MIXED MIGRATION**  
-최종 갱신: 2026-08-20
+최종 갱신: 2026-08-24
 
 ## 1. 책임 원본
 
@@ -9,11 +9,10 @@
 |---|---|
 | 작품 정체성·주제·변경 금지 | `bible/01_PROJECT_CORE.md` |
 | Canon 상태·별칭·폐기 | `CANON_REGISTRY.json` |
-| 세계·인물·연속성 | `bible/02_CANON_AND_CONTINUITY.md`, `bible/03_PART1_STORY_BIBLE.md`, `bible/04_PART2_STORY_BIBLE.md` |
+| 사용자 지정 원본 목록·SHA·누락 | `docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json` |
+| 세계·인물·연속성 | `bible/02_CANON_AND_CONTINUITY.md`, 부별 Bible |
 | POV·문체·표기 | `STYLE_GUIDE.md` |
 | GitHub production manuscript | `manuscript/` |
-| current revision input | Library `폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx` |
-| candidate provenance / QA | `docs/fiction-ops/2026-08-20_CURRENT_001_161_CANDIDATE_MANIFEST.json`, `docs/fiction-ops/2026-08-20_WORKING_001_161_CANDIDATE_QA.md` |
 | 제목·POV·본문 SHA | `MANUSCRIPT_INDEX.json` |
 | 구조 역개요 | `analysis/REVERSE_OUTLINE_001_225.json`, `analysis/REVERSE_OUTLINE_REPORT.md` |
 | 완료 bundle / frontier | `analysis/SCENE_PASS_REGISTRY.json` |
@@ -23,32 +22,30 @@
 ## 2. 정본 우선순위
 
 1. 최신 사용자 직접 지시
-2. 작품 코어·Canon Registry
-3. 접근 가능한 원본 TRPG 기록
-4. 부별 Bible·연속성
-5. 현재 승인·검증 원고 delta
-6. 장면 카드·Revision Report
-7. 구조 역개요·진단
-8. 외부 참고
+2. 사용자 지정 구간별 `폭풍의눈_2차퇴고_...` DOCX
+3. bounded reconciliation을 통과한 GitHub production canon
+4. Notion 승인 요약·Event·Relation
+5. 파생 통합본·Legacy 분석
 
-파생 분석이 원고·Canon과 충돌하면 파생 자료를 갱신한다. 분석 결과로 원고를 자동 덮어쓰지 않는다.
+파생 분석이 원본·Canon과 충돌하면 파생 자료를 갱신한다. 원본도 최신 사용자 직접 결정과 충돌하면 bounded reconciliation에서 최소 교정한 뒤 production으로 승격한다.
 
-## 3. current candidate와 production authority
+## 3. Source authority와 production authority
 
 ```yaml
-artifact: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
-sha256: 248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9
-candidate_qa: QA_GREEN
-candidate_coverage: 001-161
+source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
+current_bundle_source: 폭풍의눈_2차퇴고_제021-030화_상실광기_강적위상_가독성강화본(1).docx
+current_bundle_source_sha256: e15c8fb4ed4ab1b6980c2c57f3979986bdbfa02f77aafef3cc84d3652cb70547
+derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 repository_promotion_state: PARTIAL
-reconciled_prefix: 001-025
-legacy_tail_starts_at: 026
-boundary_after_chapter: 025
+reconciled_prefix: 001-030
+legacy_tail_starts_at: 031
+boundary_after_chapter: 030
 whole_manuscript_continuity: NOT_YET_CLAIMED
-next_reconciliation: 026-030
+next_reconciliation: 031-035
+source_coverage_gap: 101-105
 ```
 
-QA_GREEN은 revision input의 상태다. GitHub production authority는 5화 단위 bounded reconciliation이 Green일 때만 이동한다.
+Source authority는 reconstruction input의 권위다. GitHub production authority는 bounded reconciliation·Canon conflict scan·exact-head Green을 통과한 범위까지만 이동한다.
 
 ## 4. 저장 토폴로지
 
@@ -67,6 +64,9 @@ QA_GREEN은 revision input의 상태다. GitHub production authority는 5화 단
 - Jooan: `반응 → 멈춤 → 이유 → 선택`; 반응성을 복종으로 환원하지 않는다.
 - Elise: 정신 능력은 외부 간섭 차단·선택 보존, 지배 아님.
 - Ian: 관찰·가설·검증·기록; 모르는 것을 정답으로 올리지 않는다.
+- Milly: 실제 남성. 미스캐토닉에서는 하템 외형을 이용한 여성 위장 때문에 `밀리 양`으로 인식됐을 뿐이다.
+- Hatem: 실제 여성. 평소 기본 외형은 검은 가면의 광신도. Ch27 사망 이후에는 새 정보 없는 환각/기억만 허용한다.
+- Talon: Part 1 핵심 적대 / 황색 수호사제; 쇼거스와 정면 교전 가능한 높은 전투 위상 유지.
 - Dabin: 자신의 몸과 미래를 선택할 권리.
 - Jumin: 치료 가능성보다 당사자 동의·현재 환자 우선.
 - Elliott: 반복 실패와 애정 때문에 타인의 미래를 대신 고정하려는 비극적 반례.
@@ -77,33 +77,33 @@ QA_GREEN은 revision input의 상태다. GitHub production authority는 5화 단
 - Alice Carter 한국어 정본 표기: `엘리스`.
 - POV: Scene-Locked Hybrid; scene-internal head hopping 금지.
 
-## 6. current prefix 001–025 readback
+## 6. current candidate prefix 001–030 readback
 
-- 001–015: 이전 bounded pass Green 상태 유지.
-- 016 `마시면 돌아갈 수 있다면`: 위험한 해결책도 당사자 선택 없이 강행하지 않는다.
-- 017 `주안 씨, 정신 차려요`: 자기 몸을 다시 자기 것으로 만드는 일을 먼저 둔다.
-- 018 `지금은 주안이 중요하니까`: 정보·힘 제공과 결정 대행을 분리한다.
-- 019 `스승이 남긴 질문`: 하템/밀리 별도 인물, same-face는 unknown; Ian의 검증 규율 강화.
-- 020 `지도 한 장을 훔치는 시간`: 지도 획득 성공과 잠입 실패를 동시에 기록한다.
-- 021–025: 배수로 탈출→정찰→구출→한 박자 선택 규칙→쇼거스 전면 압력으로 current continuity를 잇고, 각 장면에서 정보·보호·선택을 분리한다.
+- 001–020: 이전 bounded pass Green 상태 유지.
+- 021–025: 배수로 탈출→정찰→한 박자 선택 규칙→쇼거스 전면 압력으로 current continuity를 잇는다.
+- 026 `네 책임은 지금`: 엘리스는 쇼거스를 지배하지 않고 책임을 재판단하게 한다. 탈론은 핵심 적대 전투 위상을 화면에서 증명한다.
+- 027 `친구가 적진에 있었다`: 밀리는 남성 현재 몸으로 재등장하고, 하템은 별도 여성 인물로 이안을 지키다 사망한다.
+- 028 `편해져도 된다는 말`: 사후 하템은 이안의 환각/기억이며 새 정보를 주지 않는다. 엘리스는 허락 후 경계 지원만 한다.
+- 029 `친구를 막는 법`: 이안은 사람을 직접 쓰러뜨리기보다 의식 연결을 최소비용으로 끊고, 밀리와 친구였던 과거/현재 적대를 동시에 보존한다.
+- 030 `폭풍을 걷는 자`: 밀리의 storm-walk와 쿠바라 창의 연결 절단을 관찰하지만 기원·전체 기능·소유권은 미확정으로 둔다.
 
 ## 7. current migration boundary
 
 ```yaml
-left_current: 25
-right_legacy: 26
+left_current: 30
+right_legacy: 31
 left_next_chapter: null
 right_previous_chapter: null
 left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-Ch20→21 current continuity는 PASS다. Ch25→26은 fail-closed이며 인접 numbering으로 연속성을 자동 주장하지 않는다.
+Ch25→26 current continuity는 PASS다. Ch30→31은 fail-closed이며 numbering만으로 연속성을 주장하지 않는다.
 
 ## 8. 실행 순서
 
-현재 다음 작업은 PR #42 merge/readback 뒤 `fiction/manuscript/part-1/026-030.md`다.
+현재 promotion PR은 #48이다. merge 전에는 candidate frontier일 뿐 main production frontier라고 부르지 않는다.
 
-`candidate exact extraction → Ch25 boundary 검증 → Canon/source 대조 → manuscript/index/outline/cards/registry/routers 원자 갱신 → exact-head CI → review thread 0/main freshness → squash merge/readback`
+`exact user-source extraction → latest Canon conflict scan → boundary 검증 → manuscript/index/outline/cards/registry/routers 동시 갱신 → 5× adversarial review → exact-head CI → review thread 0/main freshness → squash merge → receipt closure → Notion sync`
 
-`176-180` deferred source-pass는 bounded migration 순서를 건너뛰지 않는다.
+다음 bounded source는 사용자 지정 `031–040` 원본이며 우선 `031–035`를 처리한다. `101–105`는 원본이 제공되기 전 자동 보충 금지다.

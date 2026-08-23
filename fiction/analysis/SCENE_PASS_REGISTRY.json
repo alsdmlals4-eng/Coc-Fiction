@@ -1,65 +1,40 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-08-21",
+  "updated_at": "2026-08-24",
   "status": "ACTIVE / MANUAL_SCENE_AND_SOURCE_PASS_TRACKER / MIXED_MIGRATION",
   "source_policy": {
-    "inventory": "fiction/sources/PRIMARY_SOURCE_INVENTORY.md",
+    "inventory": "docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json",
     "primary_files_available": true,
     "whole_manuscript_direct_match": "IN_PROGRESS",
-    "rule": "Bundle-level status only; source availability does not imply whole-manuscript audit completion."
+    "rule": "Latest direct user decisions override conflicting source details. User-designated per-range DOCX files are reconstruction source authority; source availability does not imply GitHub production authority or whole-manuscript continuity."
   },
   "external_artifact_reconciliation": {
-    "artifact": "폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx",
-    "artifact_sha256": "248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9",
-    "qa_report": "docs/fiction-ops/2026-08-20_WORKING_001_161_CANDIDATE_QA.md",
-    "candidate_manifest": "docs/fiction-ops/2026-08-20_CURRENT_001_161_CANDIDATE_MANIFEST.json",
-    "target_chapters": [
-      1,
-      161
-    ],
-    "reconciled_prefix_end": 25,
-    "legacy_tail_starts_at": 26,
-    "boundary_after_chapter": 25,
+    "artifact": "폭풍의눈_2차퇴고_제021-030화_상실광기_강적위상_가독성강화본(1).docx",
+    "artifact_sha256": "e15c8fb4ed4ab1b6980c2c57f3979986bdbfa02f77aafef3cc84d3652cb70547",
+    "source_manifest": "docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json",
+    "source_authority": "USER_DESIGNATED_SOURCE_CHUNK_SET",
+    "derived_cross_check": "폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx",
+    "derived_cross_check_sha256": "248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9",
+    "target_chapters": [1, 161],
+    "reconciled_prefix_end": 30,
+    "legacy_tail_starts_at": 31,
+    "boundary_after_chapter": 30,
     "whole_manuscript_continuity": "NOT_YET_CLAIMED",
-    "rule": "The QA_GREEN external candidate is the current revision input, not automatic GitHub production authority. Chapters 1-25 are the bounded reconciled production prefix on this promotion branch; stored chapters 26+ remain legacy-tail artifacts until their own 5-chapter promotion pass."
+    "rule": "Chapters 1-30 are the bounded reconciled production prefix on this promotion branch. Stored Ch31+ remain legacy-tail artifacts until their own 5-chapter promotion pass. The user source set currently has a declared 101-105 coverage gap and must not be auto-filled from derived or legacy sources."
   },
-  "representative_pilots": [
-    10,
-    95,
-    180
-  ],
+  "representative_pilots": [10, 95, 180],
   "completed_bundle_passes": [
     {
       "bundle": "fiction/manuscript/part-1/001-005.md",
-      "chapters": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "boundary_chapters": [
-        6
-      ],
+      "chapters": [1, 2, 3, 4, 5],
+      "boundary_chapters": [6],
       "scene_cards": "fiction/analysis/SCENE_CARDS_001_005.md",
       "revision_report": "fiction/reports/REVISION_2026-08-10_EXTERNAL_RECONCILIATION_001_005.md",
       "source_files": [
-        {
-          "name": "COC 1일차.pdf",
-          "role": "primary event order / departure, book, Jooan-Alice meeting"
-        },
-        {
-          "name": "COC 2일차.pdf",
-          "role": "primary event order / restaurant attack, sinking, separation, shore-prison handoff"
-        },
-        {
-          "name": "Coc 폭풍의 눈(주안편).xlsx",
-          "role": "current integrated scene/source navigation"
-        },
-        {
-          "name": "폭풍의눈_2차퇴고_제001-105화_POV후크_캐릭터_통합최종본.zip",
-          "role": "historical external revision evidence used in the completed 001-005 pass"
-        }
+        {"name": "COC 1일차.pdf", "role": "primary event order / departure, book, Jooan-Alice meeting"},
+        {"name": "COC 2일차.pdf", "role": "primary event order / restaurant attack, sinking, separation, shore-prison handoff"},
+        {"name": "Coc 폭풍의 눈(주안편).xlsx", "role": "current integrated scene/source navigation"},
+        {"name": "폭풍의눈_2차퇴고_제001-105화_POV후크_캐릭터_통합최종본.zip", "role": "historical external revision evidence used in the completed 001-005 pass"}
       ],
       "chapter_shas": {
         "1": "68a7ef71ecb2ef804580a07a6acbb663ee055a8faa95cd917bd9d5895b26a175",
@@ -72,33 +47,13 @@
     },
     {
       "bundle": "fiction/manuscript/part-1/006-010.md",
-      "chapters": [
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "boundary_chapters": [
-        5,
-        11
-      ],
+      "chapters": [6, 7, 8, 9, 10],
+      "boundary_chapters": [5, 11],
       "scene_cards": "fiction/analysis/SCENE_CARDS_006_010.md",
       "revision_report": "fiction/reports/REVISION_2026-08-20_CURRENT_RECONCILIATION_006_010.md",
       "source_files": [
-        {
-          "name": "폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx",
-          "sha256": "248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9",
-          "role": "current QA_GREEN revision input"
-        },
-        {
-          "name": "docs/fiction-ops/2026-08-20_CURRENT_001_161_CANDIDATE_MANIFEST.json",
-          "role": "locked external source-artifact authority manifest"
-        },
-        {
-          "name": "fiction/CANON_REGISTRY.json",
-          "role": "current approved adaptation canon"
-        }
+        {"name": "폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx", "sha256": "248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9", "role": "historical promotion input / now derived cross-check only"},
+        {"name": "fiction/CANON_REGISTRY.json", "role": "current approved adaptation canon"}
       ],
       "chapter_shas": {
         "6": "b22b54836e90bead8aa73c1cc5ed4bc0eb04edd3a2356effd9dd01ddcbffa28d",
@@ -111,33 +66,13 @@
     },
     {
       "bundle": "fiction/manuscript/part-1/011-015.md",
-      "chapters": [
-        11,
-        12,
-        13,
-        14,
-        15
-      ],
-      "boundary_chapters": [
-        10,
-        16
-      ],
+      "chapters": [11, 12, 13, 14, 15],
+      "boundary_chapters": [10, 16],
       "scene_cards": "fiction/analysis/SCENE_CARDS_011_015.md",
       "revision_report": "fiction/reports/REVISION_2026-08-20_CURRENT_RECONCILIATION_011_015.md",
       "source_files": [
-        {
-          "name": "폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx",
-          "sha256": "248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9",
-          "role": "current QA_GREEN revision input"
-        },
-        {
-          "name": "docs/fiction-ops/2026-08-20_CURRENT_001_161_CANDIDATE_MANIFEST.json",
-          "role": "locked external source-artifact authority manifest"
-        },
-        {
-          "name": "fiction/CANON_REGISTRY.json",
-          "role": "current approved adaptation canon"
-        }
+        {"name": "폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx", "sha256": "248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9", "role": "historical promotion input / now derived cross-check only"},
+        {"name": "fiction/CANON_REGISTRY.json", "role": "current approved adaptation canon"}
       ],
       "chapter_shas": {
         "11": "b868068e8036a7ea22fae778ec3c71059a3f1bf2bd3b9759cca0663c4e6da7f3",
@@ -146,40 +81,18 @@
         "14": "9ae2e7b58baf3b9f91890f74b502e4ef2c09f4efb5f7f137c280a3f0b4d69182",
         "15": "d26da36ff8d59d9fcad5393c28189b61f50579eb100aeb7965bf562e45e8692d"
       },
-      "preserved_boundary_shas": {
-        "10": "4a3e60159d639f4125bcc960032afead1aba8fb160097ab36f06488fb06ab211"
-      },
+      "preserved_boundary_shas": {"10": "4a3e60159d639f4125bcc960032afead1aba8fb160097ab36f06488fb06ab211"},
       "status": "COMPLETE_CURRENT_CANDIDATE_CANON_RECONCILIATION / CURRENT_PREFIX"
     },
     {
       "bundle": "fiction/manuscript/part-1/016-020.md",
-      "chapters": [
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "boundary_chapters": [
-        15,
-        21
-      ],
+      "chapters": [16, 17, 18, 19, 20],
+      "boundary_chapters": [15, 21],
       "scene_cards": "fiction/analysis/SCENE_CARDS_016_020.md",
       "revision_report": "fiction/reports/REVISION_2026-08-20_CURRENT_RECONCILIATION_016_020.md",
       "source_files": [
-        {
-          "name": "폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx",
-          "sha256": "248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9",
-          "role": "current QA_GREEN revision input"
-        },
-        {
-          "name": "docs/fiction-ops/2026-08-20_CURRENT_001_161_CANDIDATE_MANIFEST.json",
-          "role": "locked external source-artifact authority manifest"
-        },
-        {
-          "name": "fiction/CANON_REGISTRY.json",
-          "role": "current approved adaptation canon"
-        }
+        {"name": "폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx", "sha256": "248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9", "role": "historical promotion input / now derived cross-check only"},
+        {"name": "fiction/CANON_REGISTRY.json", "role": "current approved adaptation canon"}
       ],
       "chapter_shas": {
         "16": "752de081c6189ab8646a43108a1e63bf7a27f8de399b4488c4c980eec71fabca",
@@ -188,43 +101,20 @@
         "19": "39adeba785e49f7127529d46a1c80800e630b35564e2523b32b01854b7057b06",
         "20": "dc78dd2f3ab00d853225ca4c98a85832d5fbb088df0b304258172e2ffd754523"
       },
-      "preserved_boundary_shas": {
-        "15": "d26da36ff8d59d9fcad5393c28189b61f50579eb100aeb7965bf562e45e8692d"
-      },
-      "status": "COMPLETE_CURRENT_CANDIDATE_CANON_RECONCILIATION / CURRENT_PREFIX / HISTORICAL_BOUNDARY_020_021_RESOLVED",
-      "historical_boundary_shas": {
-        "21": "35e36f50ada14710e283e1d0408c80b6506a0a20c9f59bab1490565e459f89cb"
-      }
+      "preserved_boundary_shas": {"15": "d26da36ff8d59d9fcad5393c28189b61f50579eb100aeb7965bf562e45e8692d"},
+      "historical_boundary_shas": {"21": "35e36f50ada14710e283e1d0408c80b6506a0a20c9f59bab1490565e459f89cb"},
+      "status": "COMPLETE_CURRENT_CANDIDATE_CANON_RECONCILIATION / CURRENT_PREFIX / HISTORICAL_BOUNDARY_020_021_RESOLVED"
     },
     {
       "bundle": "fiction/manuscript/part-1/021-025.md",
-      "chapters": [
-        21,
-        22,
-        23,
-        24,
-        25
-      ],
-      "boundary_chapters": [
-        20,
-        26
-      ],
+      "chapters": [21, 22, 23, 24, 25],
+      "boundary_chapters": [20, 26],
       "scene_cards": "fiction/analysis/SCENE_CARDS_021_025.md",
       "revision_report": "fiction/reports/REVISION_2026-08-21_CURRENT_RECONCILIATION_021_025.md",
       "source_files": [
-        {
-          "name": "폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx",
-          "sha256": "248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9",
-          "role": "current QA_GREEN revision input"
-        },
-        {
-          "name": "docs/fiction-ops/2026-08-20_CURRENT_001_161_CANDIDATE_MANIFEST.json",
-          "role": "locked external source-artifact authority manifest"
-        },
-        {
-          "name": "fiction/CANON_REGISTRY.json",
-          "role": "current approved adaptation canon"
-        }
+        {"name": "폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx", "sha256": "248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9", "role": "historical promotion input; body cross-checks user 021-030 source"},
+        {"name": "폭풍의눈_2차퇴고_제021-030화_상실광기_강적위상_가독성강화본(1).docx", "sha256": "e15c8fb4ed4ab1b6980c2c57f3979986bdbfa02f77aafef3cc84d3652cb70547", "role": "current user-designated source authority / cross-check confirmed"},
+        {"name": "fiction/CANON_REGISTRY.json", "role": "current approved adaptation canon"}
       ],
       "chapter_shas": {
         "21": "feb8df2a30c678e174a8cafbbeb8e33ec4d64042339f514a8b771e3b5b61b389",
@@ -233,38 +123,43 @@
         "24": "c111f79f73c034a6bc2f5dea8606e8b35c687b6a55842a6fd873adbda18b8549",
         "25": "09a945739b8438e30b3721c4c777a0f1c4736f5d6ac7a0684f02877e399869e8"
       },
-      "preserved_boundary_shas": {
-        "20": "dc78dd2f3ab00d853225ca4c98a85832d5fbb088df0b304258172e2ffd754523",
-        "26": "13e7273f2f7a685fc7548edfc28963da673c77936ad0575f2f31ac7830cf1d13"
+      "preserved_boundary_shas": {"20": "dc78dd2f3ab00d853225ca4c98a85832d5fbb088df0b304258172e2ffd754523"},
+      "historical_boundary_shas": {"26": "13e7273f2f7a685fc7548edfc28963da673c77936ad0575f2f31ac7830cf1d13"},
+      "status": "COMPLETE_CURRENT_CANDIDATE_CANON_RECONCILIATION / CURRENT_PREFIX / HISTORICAL_BOUNDARY_025_026_RESOLVED"
+    },
+    {
+      "bundle": "fiction/manuscript/part-1/026-030.md",
+      "chapters": [26, 27, 28, 29, 30],
+      "boundary_chapters": [25, 31],
+      "scene_cards": "fiction/analysis/SCENE_CARDS_026_030.md",
+      "revision_report": "fiction/reports/REVISION_2026-08-24_CURRENT_RECONCILIATION_026_030.md",
+      "source_files": [
+        {"name": "폭풍의눈_2차퇴고_제021-030화_상실광기_강적위상_가독성강화본(1).docx", "sha256": "e15c8fb4ed4ab1b6980c2c57f3979986bdbfa02f77aafef3cc84d3652cb70547", "role": "user-designated source authority"},
+        {"name": "docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json", "role": "user source-set authority manifest"},
+        {"name": "fiction/CANON_REGISTRY.json", "role": "latest direct user decisions and approved canon protection"}
+      ],
+      "chapter_shas": {
+        "26": "9af7d74668a8deeab176923f704514f1dc8fd9ba2996efef2bd4c1869db64539",
+        "27": "341f3d7d86018f7c02a2fe9f396e9e5e0a30b985b9185d50dfa3791a343dc9b8",
+        "28": "a809db4608f35c625d421288b62176e85480bf1b74ac8a61f63627547f0022f6",
+        "29": "cb8095dff21ba84a94433460df1b50e0b2b5a6e0930a8b846e3248f93db33891",
+        "30": "5ca93e6979b8beaa0d6ffe07809c664c0b7b907387b47b1732b431be364baac1"
       },
-      "status": "COMPLETE_CURRENT_CANDIDATE_CANON_RECONCILIATION / CURRENT_PREFIX / MIGRATION_BOUNDARY_AFTER_025"
+      "preserved_boundary_shas": {
+        "25": "09a945739b8438e30b3721c4c777a0f1c4736f5d6ac7a0684f02877e399869e8",
+        "31": "ddf006beaf4a34b1855cc138677e2bcdb139056aeed6624a2295411cc20ec9c3"
+      },
+      "status": "COMPLETE_USER_SOURCE_CANON_RECONCILIATION / CURRENT_PREFIX / MIGRATION_BOUNDARY_AFTER_030"
     },
     {
       "bundle": "fiction/manuscript/side-story-lake/091-095.md",
-      "chapters": [
-        91,
-        92,
-        93,
-        94,
-        95
-      ],
-      "boundary_chapters": [
-        90,
-        96
-      ],
+      "chapters": [91, 92, 93, 94, 95],
+      "boundary_chapters": [90, 96],
       "scene_cards": "fiction/analysis/SCENE_CARDS_091_095.md",
       "revision_report": "fiction/reports/REVISION_2026-07-23_SOURCE_PASS_091_095.md",
       "source_files": [
-        {
-          "name": "COC 외전 - 호수가 보이는 마을(2).pdf",
-          "sha256": "c0576e6f5e293077a0a37646e56671415ba7a04b5e6a5da87f6ebdae8a78b36a",
-          "pages": "113-147"
-        },
-        {
-          "name": "COC 외전 잡담 - 호수가 보이는 마을(2).pdf",
-          "sha256": "fac68ccbae21ce301263cbd22e7951db9057d8acadc104fcd656fbab3ddac589",
-          "role": "supplemental"
-        }
+        {"name": "COC 외전 - 호수가 보이는 마을(2).pdf", "sha256": "c0576e6f5e293077a0a37646e56671415ba7a04b5e6a5da87f6ebdae8a78b36a", "pages": "113-147"},
+        {"name": "COC 외전 잡담 - 호수가 보이는 마을(2).pdf", "sha256": "fac68ccbae21ce301263cbd22e7951db9057d8acadc104fcd656fbab3ddac589", "role": "supplemental"}
       ],
       "chapter_shas": {
         "91": "fdbc8ddf2d7ed58ff482543672bf9e7ee2f6aeb1b48bacf3934999f8b839ca44",
@@ -280,11 +175,7 @@
       "status": "COMPLETE_SOURCE_MATCHED_CORE_EVENTS / ADAPTATION_EXCLUSIONS_APPLIED"
     }
   ],
-  "next_pass_mode": "EXTERNAL_ARTIFACT_CANON_RECONCILIATION",
-  "next_bundle_passes": [
-    "fiction/manuscript/part-1/026-030.md"
-  ],
-  "deferred_bundle_passes": [
-    "fiction/manuscript/part-2/176-180.md"
-  ]
+  "next_pass_mode": "USER_SOURCE_CHUNK_CANON_RECONCILIATION",
+  "next_bundle_passes": ["fiction/manuscript/part-1/031-035.md"],
+  "deferred_bundle_passes": ["fiction/manuscript/part-2/176-180.md"]
 }

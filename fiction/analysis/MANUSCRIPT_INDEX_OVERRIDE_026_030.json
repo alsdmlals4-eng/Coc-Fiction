@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-24",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_026_030 / CURRENT_RECONCILED",
+  "baseline": "analysis/baselines/MANUSCRIPT_INDEX_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 26,
+      "title": "네 책임은 지금",
+      "pov": "엘리스 → 주안 → 이안 → 엘리스 → 주안",
+      "body_chars": 5852,
+      "body_sha256": "9af7d74668a8deeab176923f704514f1dc8fd9ba2996efef2bd4c1869db64539",
+      "bundle": "fiction/manuscript/part-1/026-030.md"
+    },
+    {
+      "chapter": 27,
+      "title": "친구가 적진에 있었다",
+      "pov": "이안 → 이안 → 이안 → 이안",
+      "body_chars": 7317,
+      "body_sha256": "341f3d7d86018f7c02a2fe9f396e9e5e0a30b985b9185d50dfa3791a343dc9b8",
+      "bundle": "fiction/manuscript/part-1/026-030.md"
+    },
+    {
+      "chapter": 28,
+      "title": "편해져도 된다는 말",
+      "pov": "이안 → 엘리스 → 엘리스 → 이안",
+      "body_chars": 6334,
+      "body_sha256": "a809db4608f35c625d421288b62176e85480bf1b74ac8a61f63627547f0022f6",
+      "bundle": "fiction/manuscript/part-1/026-030.md"
+    },
+    {
+      "chapter": 29,
+      "title": "친구를 막는 법",
+      "pov": "이안 → 엘리스 → 이안 → 주안",
+      "body_chars": 6545,
+      "body_sha256": "cb8095dff21ba84a94433460df1b50e0b2b5a6e0930a8b846e3248f93db33891",
+      "bundle": "fiction/manuscript/part-1/026-030.md"
+    },
+    {
+      "chapter": 30,
+      "title": "폭풍을 걷는 자",
+      "pov": "이안 → 엘리스 → 이안 → 엘리스 → 이안 → 주안",
+      "body_chars": 6499,
+      "body_sha256": "5ca93e6979b8beaa0d6ffe07809c664c0b7b907387b47b1732b431be364baac1",
+      "bundle": "fiction/manuscript/part-1/026-030.md"
+    }
+  ]
+}

@@ -43,9 +43,15 @@ class CurrentStateClosureTests(unittest.TestCase):
         start = (ROOT / "[소설]/00_운영체계/START_HERE.md").read_text(encoding="utf-8")
         prefix = receipt["verified_prefix_end"]
         tail = receipt["legacy_tail_starts_at"]
-        self.assertIn(f"repository_reconciled_prefix: 001-{prefix:03d}", start)
+        pending = receipt.get("pending_frontier_change_pr")
+        if pending is None:
+            self.assertIn(f"repository_reconciled_prefix: 001-{prefix:03d}", start)
+            self.assertIn(f"next_bundle: {receipt['next_bounded_bundle']}", start)
+        else:
+            self.assertIn(f"repository_candidate_prefix: 001-{prefix:03d}", start)
+            self.assertIn(f"pending_frontier_pr: {pending}", start)
+            self.assertIn(f"next_bundle_after_merge: {receipt['next_bounded_bundle']}", start)
         self.assertIn(f"legacy_tail_starts_at: {tail:03d}", start)
-        self.assertIn(f"next_bundle: {receipt['next_bounded_bundle']}", start)
 
     def test_current_state_receipt_matches_scene_pass_frontier(self):
         receipt_path = ROOT / "docs/fiction-ops/CURRENT_STATE_RECEIPT.json"
@@ -75,9 +81,13 @@ class CurrentStateClosureTests(unittest.TestCase):
             self.assertRegex(observed, r"^[0-9a-f]{40}$")
             self.assertIsInstance(receipt.get("last_frontier_change_pr"), int)
         else:
-            self.assertEqual(pending, 42)
+            self.assertIsInstance(pending, int)
+            self.assertGreater(pending, 0)
             self.assertIsNone(receipt.get("frontier_observed_at_main"))
-            self.assertEqual(receipt.get("last_frontier_change_pr"), 39)
+            last = receipt.get("last_frontier_change_pr")
+            self.assertIsInstance(last, int)
+            self.assertGreater(last, 0)
+            self.assertNotEqual(last, pending)
 
     def test_active_routers_match_current_frontier_and_pending_or_closed_receipt(self):
         receipt = json.loads(

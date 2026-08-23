@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-24",
+  "status": "USER_DESIGNATED_SOURCE_SET / PARTIAL_COVERAGE / GAP_101_105",
+  "authority_policy": [
+    "LATEST_DIRECT_USER_DECISION",
+    "USER_DESIGNATED_SOURCE_CHUNK",
+    "BOUNDED_RECONCILED_GITHUB_PRODUCTION_CANON",
+    "NOTION_APPROVED_SUMMARY_EVENT_RELATION",
+    "DERIVED_INTEGRATED_CANDIDATE",
+    "LEGACY_OR_HISTORICAL_ANALYSIS"
+  ],
+  "production_rule": "Source authority is reconstruction input, not automatic GitHub production authority. Promote only through bounded reconciliation, exact-transfer receipts, coupled-consumer propagation, adversarial review, and exact-head hosted validation.",
+  "coverage_gaps": [
+    "101-105"
+  ],
+  "duplicate_policy": "Byte-identical duplicates are retained as receipt metadata but only one filename is canonical for navigation.",
+  "chunks": [
+    {
+      "range": "001-010",
+      "filename": "폭풍의눈_2차퇴고_제001-010화_몰입도입부_가독성강화본(1).docx",
+      "sha256": "ee2ec785a6e66bb06cba80d3d3dbe1954934ad14e6c568408222906ad7892f96",
+      "authority": "USER_DESIGNATED_SOURCE",
+      "canonical": true
+    },
+    {
+      "range": "011-020",
+      "filename": "폭풍의눈_2차퇴고_제011-020화_캐릭터복선_가독성강화본(1).docx",
+      "sha256": "559ceeaa00cbf59a839b4bdb75b19165db2c49037940769e5ffb6852b1372e56",
+      "authority": "USER_DESIGNATED_SOURCE",
+      "canonical": true
+    },
+    {
+      "range": "021-030",
+      "filename": "폭풍의눈_2차퇴고_제021-030화_상실광기_강적위상_가독성강화본(1).docx",
+      "sha256": "e15c8fb4ed4ab1b6980c2c57f3979986bdbfa02f77aafef3cc84d3652cb70547",
+      "authority": "USER_DESIGNATED_SOURCE",
+      "canonical": true,
+      "cross_check": "Ch021-030 bodies match the previously used QA_GREEN integrated candidate for the promotion contract."
+    },
+    {
+      "range": "031-040",
+      "filename": "폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx",
+      "sha256": "89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10",
+      "authority": "USER_DESIGNATED_SOURCE",
+      "canonical": true
+    },
+    {
+      "range": "031-040",
+      "filename": "폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본 (1)(1).docx",
+      "sha256": "89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10",
+      "authority": "BYTE_IDENTICAL_DUPLICATE",
+      "canonical": false,
+      "duplicate_of": "폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx"
+    },
+    {
+      "range": "041-050",
+      "filename": "폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx",
+      "sha256": "9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad",
+      "authority": "USER_DESIGNATED_SOURCE",
+      "canonical": true
+    },
+    {
+      "range": "051-060",
+      "filename": "폭풍의눈_2차퇴고_제051-060화_기억외갑_선택회수_가독성강화본(1).docx",
+      "sha256": "84ad0be254a8c4faedb89f2dd9f8433143eaabfef1bc6ff57db1b418e0036496",
+      "authority": "USER_DESIGNATED_SOURCE",
+      "canonical": true
+    },
+    {
+      "range": "061-070",
+      "filename": "폭풍의눈_2차퇴고_제061-070화_2부진입_타임리프도입_가독성강화본(1).docx",
+      "sha256": "74108e1494342b43f0c3e19d60e84e0db45e2f30d03fc530ae044db251862f14",
+      "authority": "USER_DESIGNATED_SOURCE",
+      "canonical": true
+    },
+    {
+      "range": "071-080",
+      "filename": "폭풍의눈_2차퇴고_제071-080화_다빈엘리엇_앨리스합류_가독성강화본(1).docx",
+      "sha256": "b29257351c0f08813d1a428857c623c824df3d581e896bef4faa9cc52184db62",
+      "authority": "USER_DESIGNATED_SOURCE",
+      "canonical": true
+    },
+    {
+      "range": "081-090",
+      "filename": "폭풍의눈_2차퇴고_제081-090화_동행신뢰_금기의료_가독성강화본(1).docx",
+      "sha256": "7e729cf378fade4f362b7e34bbdbdf3f2e2e433057ac1f6bcc91ab16d53f18dc",
+      "authority": "USER_DESIGNATED_SOURCE",
+      "canonical": true
+    },
+    {
+      "range": "091-100",
+      "filename": "폭풍의눈_2차퇴고_제091-100화_정본복원_강자위상_금기진단_가독성강화본(1).docx",
+      "sha256": "24de4c716fd1c01165fc046406fb341ca65b0c2a7193a2ccd8a87948107348d8",
+      "authority": "USER_DESIGNATED_SOURCE",
+      "canonical": true
+    },
+    {
+      "range": "106-115",
+      "filename": "폭풍의눈_2차퇴고_제106-115화_시신소유권_금기수술_반복증명_가독성강화본(1).docx",
+      "sha256": "e19fe8c97fd33dd9fe14326d71cf1af2b63409cdeccdf4728df19c774755e192",
+      "authority": "USER_DESIGNATED_SOURCE",
+      "canonical": true
+    },
+    {
+      "range": "116-125",
+      "filename": "폭풍의눈_2차퇴고_제116-125화_주독역보호_독립공동전선_가독성강화본(1).docx",
+      "sha256": "ae75ec7308e835763b5cbf3eb6f7b8070ef6245f46d5fa1570457d258b0f2716",
+      "authority": "USER_DESIGNATED_SOURCE",
+      "canonical": true
+    },
+    {
+      "range": "126-135",
+      "filename": "폭풍의눈_2차퇴고_제126-135화_세력전쟁_강자위상_선택권_가독성강화본(1).docx",
+      "sha256": "4f6d4a8ded7ddb606789fe1f86e983fbf33729d2d2bf988ee3293665dbed40fa",
+      "authority": "USER_DESIGNATED_SOURCE",
+      "canonical": true
+    },
+    {
+      "range": "126-135",
+      "filename": "폭풍의눈_2차퇴고_제126-135화_세력전쟁_강자위상_선택권_가독성강화본 (1)(1).docx",
+      "sha256": "4f6d4a8ded7ddb606789fe1f86e983fbf33729d2d2bf988ee3293665dbed40fa",
+      "authority": "BYTE_IDENTICAL_DUPLICATE",
+      "canonical": false,
+      "duplicate_of": "폭풍의눈_2차퇴고_제126-135화_세력전쟁_강자위상_선택권_가독성강화본(1).docx"
+    },
+    {
+      "range": "136-145",
+      "filename": "폭풍의눈_2차퇴고_제136-145화_반복수술_실패기억_시간잔류_가독성강화본(1).docx",
+      "sha256": "85d2448b209c8b1dbbe21362cf05a05674640435ed7a3abeca62e1ce8300f17f",
+      "authority": "USER_DESIGNATED_SOURCE",
+      "canonical": true
+    },
+    {
+      "range": "146-155",
+      "filename": "폭풍의눈_2차퇴고_제146-155화_최종선택_후일담_가독성강화본(1).docx",
+      "sha256": "fc3e781772439b3d39f76f4510bebc4057eae9c67bfaaf0221cb024a187f60de",
+      "authority": "USER_DESIGNATED_SOURCE",
+      "canonical": true
+    },
+    {
+      "range": "156-161",
+      "filename": "폭풍의눈_2차퇴고_2부외전_제156-161화_Rift_Accord_협약완결본(1).docx",
+      "sha256": "f9ddf90970a4760652f9bbac21c315daa24a51b47a32bfccfd47ef22a865f8d5",
+      "authority": "USER_DESIGNATED_SOURCE",
+      "canonical": true
+    }
+  ],
+  "derived_sources": [
+    {
+      "filename": "폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx",
+      "sha256": "248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9",
+      "authority": "DERIVED_INTEGRATED_CROSS_CHECK_ONLY",
+      "production_authority": false
+    }
+  ]
+}

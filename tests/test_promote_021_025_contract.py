@@ -83,35 +83,39 @@ class Promote021025ContractTests(unittest.TestCase):
         ):
             self.assertNotIn(forbidden, text)
 
-    def test_frontier_advances_only_to_25(self):
+    def test_historical_021_025_promotion_receipt_is_preserved(self):
         registry = json.loads(
             (FICTION / "analysis" / "SCENE_PASS_REGISTRY.json").read_text(encoding="utf-8")
         )
         rec = registry["external_artifact_reconciliation"]
-        self.assertEqual(rec["reconciled_prefix_end"], 25)
-        self.assertEqual(rec["legacy_tail_starts_at"], 26)
-        self.assertEqual(rec["boundary_after_chapter"], 25)
+        self.assertGreaterEqual(rec["reconciled_prefix_end"], 25)
         self.assertEqual(rec["whole_manuscript_continuity"], "NOT_YET_CLAIMED")
-        self.assertEqual(registry["next_bundle_passes"], ["fiction/manuscript/part-1/026-030.md"])
 
         passes = {item["bundle"]: item for item in registry["completed_bundle_passes"]}
         item = passes["fiction/manuscript/part-1/021-025.md"]
         self.assertEqual(item["chapters"], [21, 22, 23, 24, 25])
         self.assertEqual(item["boundary_chapters"], [20, 26])
-        self.assertEqual(item["preserved_boundary_shas"]["20"], "dc78dd2f3ab00d853225ca4c98a85832d5fbb088df0b304258172e2ffd754523")
-        self.assertEqual(item["preserved_boundary_shas"]["26"], "13e7273f2f7a685fc7548edfc28963da673c77936ad0575f2f31ac7830cf1d13")
+        self.assertEqual(
+            item["preserved_boundary_shas"]["20"],
+            "dc78dd2f3ab00d853225ca4c98a85832d5fbb088df0b304258172e2ffd754523",
+        )
+        self.assertEqual(
+            item["historical_boundary_shas"]["26"],
+            "13e7273f2f7a685fc7548edfc28963da673c77936ad0575f2f31ac7830cf1d13",
+        )
+        for number, expected in EXPECTED.items():
+            self.assertEqual(item["chapter_shas"][str(number)], expected["sha"])
 
     def test_required_bundle_consumers_exist(self):
         for rel in (
             "analysis/MANUSCRIPT_INDEX_OVERRIDE_021_025.json",
             "analysis/REVERSE_OUTLINE_OVERRIDE_021_025.json",
-            "analysis/REVERSE_OUTLINE_OVERRIDE_026_MIGRATION_BOUNDARY.json",
             "analysis/SCENE_CARDS_021_025.md",
             "reports/REVISION_2026-08-21_CURRENT_RECONCILIATION_021_025.md",
         ):
             self.assertTrue((FICTION / rel).is_file(), rel)
 
-    def test_reverse_outline_moves_fail_closed_boundary_to_25_26(self):
+    def test_reverse_outline_keeps_promoted_021_025_connected_after_later_promotions(self):
         from tools.fiction_composed_data import load_reverse_outline
 
         outline = load_reverse_outline(FICTION)
@@ -121,10 +125,13 @@ class Promote021025ContractTests(unittest.TestCase):
         self.assertNotIn("RECONCILIATION_MIGRATION_BOUNDARY", by_chapter[20]["structural_flags"])
         self.assertEqual(by_chapter[21]["previous_chapter"]["chapter"], 20)
         self.assertNotIn("LEGACY_TAIL_BOUNDARY", by_chapter[21]["structural_flags"])
-        self.assertIsNone(by_chapter[25]["next_chapter"])
-        self.assertIn("RECONCILIATION_MIGRATION_BOUNDARY", by_chapter[25]["structural_flags"])
-        self.assertIsNone(by_chapter[26]["previous_chapter"])
-        self.assertIn("LEGACY_TAIL_BOUNDARY", by_chapter[26]["structural_flags"])
+        self.assertEqual(by_chapter[24]["next_chapter"]["chapter"], 25)
+        self.assertEqual(by_chapter[25]["previous_chapter"]["chapter"], 24)
+        if by_chapter[25].get("next_chapter") is not None:
+            self.assertEqual(by_chapter[25]["next_chapter"]["chapter"], 26)
+            self.assertNotIn("RECONCILIATION_MIGRATION_BOUNDARY", by_chapter[25]["structural_flags"])
+            self.assertEqual(by_chapter[26]["previous_chapter"]["chapter"], 25)
+            self.assertNotIn("LEGACY_TAIL_BOUNDARY", by_chapter[26]["structural_flags"])
 
 
 if __name__ == "__main__":
