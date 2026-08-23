@@ -1,15 +1,8 @@
 name: One-time materialize Ch026-030
 
 on:
-  push:
-    branches:
-      - promote/026-030-current-source-20260824
-    paths:
-      - tools/_materialize_026_030_payload.py
-      - .github/trigger-026-030.txt
   pull_request:
-    branches:
-      - main
+    branches: [main]
     paths:
       - tools/_materialize_026_030_payload.py
       - .github/trigger-026-030.txt
@@ -26,6 +19,20 @@ jobs:
         with:
           fetch-depth: 0
           ref: promote/026-030-current-source-20260824
+      - name: Inspect transfer payload
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          text=Path('tools/_materialize_026_030_payload.py').read_text()
+          m=re.search(r"PAYLOAD = '''(.*?)'''", text, re.S)
+          assert m
+          p=m.group(1)
+          print('payload_len=', len(p))
+          print('payload_mod4=', len(p)%4)
+          print('payload_tail=', p[-32:])
+          PY
       - name: Materialize exact source body
         run: python tools/_materialize_026_030_payload.py
       - name: Verify exact manuscript file
@@ -39,13 +46,7 @@ jobs:
           assert hashlib.sha256(data).hexdigest() == '5efa519c30ad9d1bfa18bc0b2c04f93ad1fcf2351ef203fcfb4074611bc2af05'
           text = data.decode('utf-8')
           pat = re.compile(r'^## 제(\d+)화 · (.*?)\n\n\*\*POV:\*\* ([^\n]+)\n\n(.*?)(?=\n\n<!-- source-lines:)', re.M|re.S)
-          expected = {
-            26:(5852,'9af7d74668a8deeab176923f704514f1dc8fd9ba2996efef2bd4c1869db64539'),
-            27:(7317,'341f3d7d86018f7c02a2fe9f396e9e5e0a30b985b9185d50dfa3791a343dc9b8'),
-            28:(6334,'a809db4608f35c625d421288b62176e85480bf1b74ac8a61f63627547f0022f6'),
-            29:(6545,'cb8095dff21ba84a94433460df1b50e0b2b5a6e0930a8b846e3248f93db33891'),
-            30:(6499,'5ca93e6979b8beaa0d6ffe07809c664c0b7b907387b47b1732b431be364baac1'),
-          }
+          expected = {26:(5852,'9af7d74668a8deeab176923f704514f1dc8fd9ba2996efef2bd4c1869db64539'),27:(7317,'341f3d7d86018f7c02a2fe9f396e9e5e0a30b985b9185d50dfa3791a343dc9b8'),28:(6334,'a809db4608f35c625d421288b62176e85480bf1b74ac8a61f63627547f0022f6'),29:(6545,'cb8095dff21ba84a94433460df1b50e0b2b5a6e0930a8b846e3248f93db33891'),30:(6499,'5ca93e6979b8beaa0d6ffe07809c664c0b7b907387b47b1732b431be364baac1')}
           got = {}
           for m in pat.finditer(text):
             body=m.group(4).strip(); n=int(m.group(1)); got[n]=(len(body), hashlib.sha256(body.encode()).hexdigest())
