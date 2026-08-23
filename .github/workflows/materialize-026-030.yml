@@ -6,6 +6,7 @@ on:
       - promote/026-030-current-source-20260824
     paths:
       - tools/_materialize_026_030_payload.py
+      - .github/trigger-026-030.txt
 
 permissions:
   contents: write
