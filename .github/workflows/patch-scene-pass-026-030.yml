@@ -1,0 +1,71 @@
+name: One-time patch Ch026-030 scene-pass validator
+
+on:
+  push:
+    branches:
+      - promote/026-030-current-source-20260824
+    paths:
+      - '.github/trigger-scene-pass-026-030.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: promote/026-030-current-source-20260824
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Patch validator without weakening gates
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('tools/check_fiction_scene_passes.py')
+          t = p.read_text(encoding='utf-8')
+
+          marker = '''    "fiction/manuscript/side-story-lake/091-095.md": {\n'''
+          addition = '''    "fiction/manuscript/part-1/026-030.md": {\n        "chapters": [26, 27, 28, 29, 30],\n        "boundaries": [25, 31],\n        "card_boundaries": ["제25→26화", "제26→27화", "제27→28화", "제28→29화", "제29→30화", "제30→31화"],\n    },\n'''
+          if addition not in t:
+              assert marker in t
+              t = t.replace(marker, addition + marker, 1)
+
+          t = t.replace(
+              '''for bundle_name in ("006-010.md", "011-015.md", "016-020.md", "021-025.md"):\n''',
+              '''for bundle_name in ("006-010.md", "011-015.md", "016-020.md", "021-025.md", "026-030.md"):\n''',
+              1,
+          )
+
+          old_recon = '''reconciliation = registry.get("external_artifact_reconciliation", {})\nif reconciliation.get("artifact") != "폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx":\n    errors.append("external reconciliation artifact mismatch")\nif reconciliation.get("artifact_sha256") != "248d1e0076114c10724a480333421353c03ea4f76d5e629cf865c730796643d9":\n    errors.append("external reconciliation artifact SHA mismatch")\nif reconciliation.get("target_chapters") != [1, 161]:\n    errors.append("external reconciliation target range mismatch")\nif reconciliation.get("reconciled_prefix_end") != 25:\n    errors.append("reconciled prefix must be chapter 25 after current 021-025 propagation")\nif reconciliation.get("legacy_tail_starts_at") != 26:\n    errors.append("legacy tail must begin at chapter 26 after current 021-025 propagation")\nif reconciliation.get("boundary_after_chapter") != 25:\n    errors.append("migration boundary must be after chapter 25")\nif reconciliation.get("whole_manuscript_continuity") != "NOT_YET_CLAIMED":\n    errors.append("whole-manuscript continuity must remain unclaimed during mixed migration")\n'''
+          new_recon = '''reconciliation = registry.get("external_artifact_reconciliation", {})\nif reconciliation.get("artifact") != "폭풍의눈_2차퇴고_제021-030화_상실광기_강적위상_가독성강화본(1).docx":\n    errors.append("external reconciliation artifact mismatch")\nif reconciliation.get("artifact_sha256") != "e15c8fb4ed4ab1b6980c2c57f3979986bdbfa02f77aafef3cc84d3652cb70547":\n    errors.append("external reconciliation artifact SHA mismatch")\nif reconciliation.get("source_manifest") != "docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json":\n    errors.append("user source manifest mismatch")\nif reconciliation.get("source_authority") != "USER_DESIGNATED_SOURCE_CHUNK_SET":\n    errors.append("source authority mode mismatch")\nif reconciliation.get("target_chapters") != [1, 161]:\n    errors.append("external reconciliation target range mismatch")\nif reconciliation.get("reconciled_prefix_end") != 30:\n    errors.append("reconciled prefix must be chapter 30 after current 026-030 propagation")\nif reconciliation.get("legacy_tail_starts_at") != 31:\n    errors.append("legacy tail must begin at chapter 31 after current 026-030 propagation")\nif reconciliation.get("boundary_after_chapter") != 30:\n    errors.append("migration boundary must be after chapter 30")\nif reconciliation.get("whole_manuscript_continuity") != "NOT_YET_CLAIMED":\n    errors.append("whole-manuscript continuity must remain unclaimed during mixed migration")\n'''
+          assert old_recon in t
+          t = t.replace(old_recon, new_recon, 1)
+
+          old_boundary = '''chapter25_outline = outline_entries.get(25, {})\nif chapter25_outline.get("next_chapter") is not None:\n    errors.append("chapter 25 reverse outline must stop at the current migration boundary")\nif "RECONCILIATION_MIGRATION_BOUNDARY" not in chapter25_outline.get("structural_flags", []):\n    errors.append("chapter 25 reverse outline missing migration-boundary flag")\nif "제26화 이후는 아직 legacy tail" not in chapter25_outline.get("evidence", {}).get("next_pressure", ""):\n    errors.append("chapter 25 reverse outline missing boundary pressure")\n\nchapter26_outline = outline_entries.get(26, {})\nif chapter26_outline.get("previous_chapter") is not None:\n    errors.append("legacy chapter 26 reverse outline must not claim current chapter 25 as previous continuity")\nif "LEGACY_TAIL_BOUNDARY" not in chapter26_outline.get("structural_flags", []):\n    errors.append("chapter 26 reverse outline missing legacy-tail boundary flag")\n'''
+          new_boundary = '''chapter25_outline = outline_entries.get(25, {})\nchapter25_next = chapter25_outline.get("next_chapter")\nif not isinstance(chapter25_next, dict) or chapter25_next.get("chapter") != 26:\n    errors.append("current chapter 25 reverse outline must connect to current chapter 26")\nif "RECONCILIATION_MIGRATION_BOUNDARY" in chapter25_outline.get("structural_flags", []):\n    errors.append("chapter 25 must no longer carry the migration-boundary flag")\n\nchapter26_outline = outline_entries.get(26, {})\nchapter26_previous = chapter26_outline.get("previous_chapter")\nif not isinstance(chapter26_previous, dict) or chapter26_previous.get("chapter") != 25:\n    errors.append("current chapter 26 reverse outline must connect back to chapter 25")\nif "LEGACY_TAIL_BOUNDARY" in chapter26_outline.get("structural_flags", []):\n    errors.append("current chapter 26 must no longer carry the legacy-tail boundary flag")\n\nchapter30_outline = outline_entries.get(30, {})\nif chapter30_outline.get("next_chapter") is not None:\n    errors.append("chapter 30 reverse outline must stop at the current migration boundary")\nif "RECONCILIATION_MIGRATION_BOUNDARY" not in chapter30_outline.get("structural_flags", []):\n    errors.append("chapter 30 reverse outline missing migration-boundary flag")\nif "제31화 이후는 아직 legacy tail" not in chapter30_outline.get("evidence", {}).get("next_pressure", ""):\n    errors.append("chapter 30 reverse outline missing boundary pressure")\n\nchapter31_outline = outline_entries.get(31, {})\nif chapter31_outline.get("previous_chapter") is not None:\n    errors.append("legacy chapter 31 reverse outline must not claim current chapter 30 as previous continuity")\nif "LEGACY_TAIL_BOUNDARY" not in chapter31_outline.get("structural_flags", []):\n    errors.append("chapter 31 reverse outline missing legacy-tail boundary flag")\n'''
+          assert old_boundary in t
+          t = t.replace(old_boundary, new_boundary, 1)
+
+          t = t.replace(
+              '''if registry.get("next_bundle_passes") != ["fiction/manuscript/part-1/026-030.md"]:\n''',
+              '''if registry.get("next_bundle_passes") != ["fiction/manuscript/part-1/031-035.md"]:\n''',
+              1,
+          )
+          t = t.replace(
+              '''    "(001-025 current production prefix; migration boundary 25→26; "\n    "026-030 next; 091-095 source-matched)"\n''',
+              '''    "(001-030 current production prefix; migration boundary 30→31; "\n    "031-035 next; 091-095 source-matched)"\n''',
+              1,
+          )
+          p.write_text(t, encoding='utf-8')
+          PY
+          python tools/check_fiction_scene_passes.py
+      - name: Commit validator migration
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tools/check_fiction_scene_passes.py
+          git commit -m 'fix: advance scene-pass validator to 026-030' || exit 0
+          git push origin HEAD:promote/026-030-current-source-20260824
