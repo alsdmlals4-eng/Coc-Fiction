@@ -1,1 +1,2 @@
 trigger exact source materialization
+pr-observable trigger 2
