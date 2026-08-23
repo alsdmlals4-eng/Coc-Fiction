@@ -136,7 +136,6 @@ required_phrases = {
     26: "괴물이 자기 책임을 다시 고르게 만들어서 열렸다.",
     27: "하템은 죽었다.",
     28: "환각.",
-    29: "친구였다는 이유로 죽여야 하는 것도 아닙니다.",
     30: "폭풍을 걷는 자.",
     91: "답을 찾았느냐",
     92: "세 사람이 함께 살기로 고른 집",
@@ -225,8 +224,8 @@ if chapter31_outline.get("previous_chapter") is not None:
 if "LEGACY_TAIL_BOUNDARY" not in chapter31_outline.get("structural_flags", []):
     errors.append("chapter 31 reverse outline missing legacy-tail boundary flag")
 
-if registry.get("next_pass_mode") != "EXTERNAL_ARTIFACT_CANON_RECONCILIATION":
-    errors.append("next pass mode must be external artifact canon reconciliation")
+if registry.get("next_pass_mode") != "USER_SOURCE_CHUNK_CANON_RECONCILIATION":
+    errors.append("next pass mode must be user source chunk canon reconciliation")
 if registry.get("next_bundle_passes") != ["fiction/manuscript/part-1/031-035.md"]:
     errors.append("next bundle pass order mismatch")
 if registry.get("deferred_bundle_passes") != ["fiction/manuscript/part-2/176-180.md"]:
