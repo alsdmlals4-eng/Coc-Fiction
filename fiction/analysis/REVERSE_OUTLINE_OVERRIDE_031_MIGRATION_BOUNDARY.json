@@ -18,9 +18,11 @@
         "body_chars": 2260
       },
       "chapter_function": [
-        "NEGOTIATION",
+        "INVESTIGATION",
         "REVELATION",
         "RELATIONSHIP",
+        "NEGOTIATION",
+        "ACTION",
         "CHOICE_AND_COST"
       ],
       "state_change_axes": [
@@ -28,30 +30,30 @@
         "INFORMATION",
         "RELATIONSHIP",
         "AGENCY",
-        "EMOTION",
         "BODY_OR_RESOURCE",
         "WORLD_RULE"
       ],
       "evidence": {
-        "starting_state": "황색의 임시 진지는 군대와 시장의 중간처럼 보였다.",
-        "immediate_goal_or_focus": "가론 코퍼는 탁자 위에 작전 조건을 적었다.",
-        "opposition_and_cost": "교단 전체의 관행을 현장 협약으로 폐지할 권한은 없습니다.",
-        "turn_or_discovery": "가론은 한참 뒤 조건을 추가했다. 도덕에 동의해서가 아니라 주안이 빠진 동맹의 손실이 더 크다고 판단해서였다.",
-        "decision_or_choice": "주안은 협약서의 마지막 줄에 자신의 이름을 적었다.",
-        "ending_state": "불편한 조건을 남기는 것이 지금 이 동맹을 유지하는 유일한 방식이었다.",
-        "next_pressure": "legacy tail. 제31화는 아직 사용자 지정 031–040 원본과 bounded reconciliation을 통과하지 않았으므로 current Ch30과의 연속성을 주장하지 않는다."
+        "starting_state": "황색의 임시 진지는 군대와 시장의 중간처럼 보였다. 탄약과 통신 장비 옆에 제물용 그릇이 놓여 있었고, 치료 천막에서는 부상자를 살리는 의사와 쓸모를 계산하는 관리자가 같은 표를 보고 있었다.",
+        "immediate_goal_or_focus": "탄약과 통신 장비 옆에 제물용 그릇이 놓여 있었고, 치료 천막에서는 부상자를 살리는 의사와 쓸모를 계산하는 관리자가 같은 표를 보고 있었다.",
+        "opposition_and_cost": "“그럼 적어도 우리 작전 범위에서는 하지 마십시오.”",
+        "turn_or_discovery": "`보호 협력자.`",
+        "decision_or_choice": "엘리스는 가론에게 직접 말했다.",
+        "ending_state": "가론은 문장을 지우지 않았다. 불편한 조건을 남기는 것이 지금 이 동맹을 유지하는 유일한 방식이었다.",
+        "next_pressure": "다음 제32화 「두 얼굴의 꿈」(엘리스 POV)로 압력이 이월된다. 현재 화 마지막 증거: 불편한 조건을 남기는 것이 지금 이 동맹을 유지하는 유일한 방식이었다."
       },
       "metrics": {
-        "paragraphs": 84,
-        "average_paragraph_chars": 26.9,
-        "dialogue_ratio": 0.16,
+        "paragraphs": 60,
+        "average_paragraph_chars": 37.7,
+        "dialogue_ratio": 0.2398,
         "theme_term_hits": {
-          "선택": 1,
-          "책임": 1,
-          "사람": 6
+          "보호": 3,
+          "사람": 9,
+          "괴물": 1
         }
       },
       "structural_flags": [
+        "POV_HANDOFF",
         "LEGACY_TAIL_BOUNDARY"
       ],
       "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
