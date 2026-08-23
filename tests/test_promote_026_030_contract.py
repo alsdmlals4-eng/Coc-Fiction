@@ -12,6 +12,8 @@ CHAPTER_RE = re.compile(
     re.M | re.S,
 )
 
+SOURCE_FILE = "폭풍의눈_2차퇴고_제021-030화_상실광기_강적위상_가독성강화본(1).docx"
+SOURCE_SHA256 = "e15c8fb4ed4ab1b6980c2c57f3979986bdbfa02f77aafef3cc84d3652cb70547"
 
 EXPECTED = {
     26: {
@@ -48,6 +50,17 @@ EXPECTED = {
 
 
 class Promote026030ContractTests(unittest.TestCase):
+    def test_source_manifest_tracks_user_designated_chunk(self):
+        manifest = json.loads(
+            (ROOT / "docs" / "fiction-ops" / "2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json").read_text(encoding="utf-8")
+        )
+        entries = {item["range"]: item for item in manifest["chunks"] if item.get("canonical", False)}
+        source = entries["021-030"]
+        self.assertEqual(source["filename"], SOURCE_FILE)
+        self.assertEqual(source["sha256"], SOURCE_SHA256)
+        self.assertEqual(source["authority"], "USER_DESIGNATED_SOURCE")
+        self.assertEqual(manifest["coverage_gaps"], ["101-105"])
+
     def test_exact_user_designated_source_bodies_are_installed(self):
         path = FICTION / "manuscript" / "part-1" / "026-030.md"
         text = path.read_text(encoding="utf-8")
