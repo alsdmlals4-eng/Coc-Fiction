@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_at": "2026-08-24",
-  "status": "ACTIVE_OVERRIDE / BUNDLE_036_040 / CURRENT_RECONCILED_PENDING_PR55",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_036_040 / CURRENT_RECONCILED",
   "baseline": "analysis/baselines/MANUSCRIPT_INDEX_2026-07-23_PILOT.json",
   "chapters": [
     {

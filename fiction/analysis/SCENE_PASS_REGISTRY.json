@@ -23,7 +23,7 @@
     "legacy_tail_starts_at": 41,
     "boundary_after_chapter": 40,
     "whole_manuscript_continuity": "NOT_YET_CLAIMED",
-    "rule": "Chapters 1-40 are the bounded reconciled candidate prefix on PR #55. Stored Ch41+ remain legacy tail until their own pass; 101-105 remains fail-closed."
+    "rule": "Chapters 1-40 are the bounded reconciled production prefix on main after PR #55. Stored Ch41+ remain legacy tail until their own pass; 101-105 remains fail-closed."
   },
   "representative_pilots": [
     10,
@@ -397,7 +397,7 @@
         "35": "c4b02af3eb326dfd18ec0331c762c92655cb97525b8b3223d407e69ce912d5f2",
         "41": "ad9c909c0656e0140f6fce400547f983d7d899a5409441371a64d893f787a890"
       },
-      "status": "COMPLETE_CURRENT_SOURCE_CANON_RECONCILIATION / CANDIDATE_PREFIX / PENDING_PR55"
+      "status": "COMPLETE_CURRENT_SOURCE_CANON_RECONCILIATION / CURRENT_PREFIX"
     }
   ],
   "next_pass_mode": "USER_SOURCE_CHUNK_CANON_RECONCILIATION",
