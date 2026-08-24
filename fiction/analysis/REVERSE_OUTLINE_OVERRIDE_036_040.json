@@ -1,0 +1,332 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-24",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_036_040 / CURRENT_RECONCILED_PENDING_PR55",
+  "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 36,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "사명은 끝났다",
+      "pov": "엘리스 → 주안 → 엘리스 → 이안 → 주안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/036-040.md",
+        "body_sha256": "a73ee6d8d4f99ab24e7604ae891b58da420ce5549777395c262da69ea340b358",
+        "body_chars": 6242
+      },
+      "chapter_function": [
+        "INVESTIGATION",
+        "REVELATION",
+        "RELATIONSHIP",
+        "ACTION",
+        "AFTERMATH",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "온돌로프는 자신을 부족장이라고 소개했다. 푸른 피부와 거대한 체격 때문에 처음에는 전사로 보였지만, 그가 벽화의 이름과 신전 구조를 설명하는 방식은 오래 살아남은 기록자의 것이었다.",
+        "immediate_goal_or_focus": "푸른 피부와 거대한 체격 때문에 처음에는 전사로 보였지만, 그가 벽화의 이름과 신전 구조를 설명하는 방식은 오래 살아남은 기록자의 것이었다.",
+        "opposition_and_cost": "이안은 그 반응이 불안했다.",
+        "turn_or_discovery": "그러나 시간이 지나자 가족의 얼굴과 고향의 냄새를 잊고, 성맥이 원하는 적만 찾는 존재가 됐다.",
+        "decision_or_choice": "온돌로프가 진지하게 말했다.",
+        "ending_state": "주안은 대답하지 않았다. 그 침묵이 부정이 아니라 들켰다는 표시처럼 보였다.",
+        "next_pressure": "다음 제37화 「입 없는 안내자 페스타」(이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 그 침묵이 부정이 아니라 들켰다는 표시처럼 보였다."
+      },
+      "metrics": {
+        "paragraphs": 67,
+        "average_paragraph_chars": 35.1,
+        "dialogue_ratio": 0.2381,
+        "theme_term_hits": {
+          "선택": 1,
+          "보호": 1,
+          "사람": 3
+        }
+      },
+      "structural_flags": [
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 35,
+        "title": "완전 소 생물",
+        "pov": "이안 → 주안 → 엘리스 → 이안 → 주안 → 엘리스"
+      },
+      "next_chapter": {
+        "chapter": 37,
+        "title": "승자의 손",
+        "pov": "엘리스 → 이안 → 엘리스"
+      }
+    },
+    {
+      "chapter": 37,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "승자의 손",
+      "pov": "엘리스 → 이안 → 엘리스",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/036-040.md",
+        "body_sha256": "53604e0ca6bcddd2beebb996aeb102ff7417a645c31e3340880bc451da8dc3e8",
+        "body_chars": 5872
+      },
+      "chapter_function": [
+        "INCITING_INCIDENT",
+        "REVELATION",
+        "RELATIONSHIP",
+        "NEGOTIATION",
+        "CHOICE_AND_COST",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "나이트건트는 입이 없었다. 그런데도 목소리는 들렸다.",
+        "immediate_goal_or_focus": "이 땅의 두 주인 외에, 심연을 사냥하고 경계를 지키는 오래된 존재가 있었다.",
+        "opposition_and_cost": "“공격하려는 겁니까?”",
+        "turn_or_discovery": "그러나 책을 읽을 사람이 언젠가 나타날 것이라고 믿었다.",
+        "decision_or_choice": "페스타는 브루스와 오래전 계약을 맺었다.",
+        "ending_state": "입 없는 존재의 뜻이 그렇게 전해졌다. 이안은 처음으로 페스타를 안내자 이전에 하나의 선택하는 존재로 보았다.",
+        "next_pressure": "다음 제38화 「검은 잔을 드는 사람」(주안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 이안은 처음으로 페스타를 안내자 이전에 하나의 선택하는 존재로 보았다."
+      },
+      "metrics": {
+        "paragraphs": 67,
+        "average_paragraph_chars": 34.8,
+        "dialogue_ratio": 0.0771,
+        "theme_term_hits": {
+          "선택": 3,
+          "명령": 2,
+          "자유": 1,
+          "사람": 1
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "TIMELINE_SHIFT"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 36,
+        "title": "사명은 끝났다",
+        "pov": "엘리스 → 주안 → 엘리스 → 이안 → 주안"
+      },
+      "next_chapter": {
+        "chapter": 38,
+        "title": "인질은 제가 되죠",
+        "pov": "엘리스 → 이안 → 엘리스 → 이안"
+      }
+    },
+    {
+      "chapter": 38,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "인질은 제가 되죠",
+      "pov": "엘리스 → 이안 → 엘리스 → 이안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/036-040.md",
+        "body_sha256": "c8a9f4a4c867009b73e11257af21bf6050e5b146e4d9c2dc3ffed34d541186d5",
+        "body_chars": 5821
+      },
+      "chapter_function": [
+        "OPENING",
+        "INCITING_INCIDENT",
+        "REVELATION",
+        "NEGOTIATION",
+        "CHOICE_AND_COST",
+        "AFTERMATH",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "검은 잔 앞에서 모두가 주안을 말렸다. 케인은 명령했다.",
+        "immediate_goal_or_focus": "“모두를 지키라는 사람이 누군데요?”",
+        "opposition_and_cost": "무엇이 먼저였는지 알 수 없었다.",
+        "turn_or_discovery": "“그때는 멈춰주십시오.”",
+        "decision_or_choice": "남은 액체가 바닥으로 흘러 성맥에 스며들었다.",
+        "ending_state": "모두 움직였지만 마지막 손가락의 감각은 조금 늦게 돌아왔다. 그는 그 차이도 숨기지 않고 이안에게 말했다.",
+        "next_pressure": "다음 제39화 「체셔와 검은 하늘」(엘리스 POV)로 압력이 이월된다. 현재 화 마지막 증거: 그는 그 차이도 숨기지 않고 이안에게 말했다."
+      },
+      "metrics": {
+        "paragraphs": 76,
+        "average_paragraph_chars": 30.3,
+        "dialogue_ratio": 0.17,
+        "theme_term_hits": {
+          "선택": 1,
+          "보호": 1,
+          "명령": 3,
+          "권리": 1,
+          "사람": 4
+        }
+      },
+      "structural_flags": [
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 37,
+        "title": "승자의 손",
+        "pov": "엘리스 → 이안 → 엘리스"
+      },
+      "next_chapter": {
+        "chapter": 39,
+        "title": "군함이 왔다",
+        "pov": "주안 → 엘리스 → 이안"
+      }
+    },
+    {
+      "chapter": 39,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "군함이 왔다",
+      "pov": "주안 → 엘리스 → 이안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/036-040.md",
+        "body_sha256": "8ad77ac006e209745a56b4cbba6d3ba26f7a5a55fa75ff00a8dd2efe39955472",
+        "body_chars": 6163
+      },
+      "chapter_function": [
+        "REVELATION",
+        "RELATIONSHIP",
+        "NEGOTIATION",
+        "CHOICE_AND_COST",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "위험구역의 하늘은 접혀 있었다. 페스타의 등에 올라 날아오르자 숲과 붉은 호수, 검은 구름이 서로 다른 높이에서 겹쳤다.",
+        "immediate_goal_or_focus": "“공주님, 또 만나는군!”",
+        "opposition_and_cost": "엘리스는 손을 대지 않았다.",
+        "turn_or_discovery": "창은 페스타를 빗나간 뒤 공중에서 방향을 바꿔 다시 돌아왔다.",
+        "decision_or_choice": "예전에 페스타의 동료를 죽이고 빼앗긴 무기.",
+        "ending_state": "엘리스는 정신 장벽으로 그 공포를 지우지 않고, 급강하와 회피에 필요한 방향만 전달했다. 강제로 복종시킨 탈것이 아니라 함께 위험을 건너는 동료라는 구분을 잃지 않으려 했다.",
+        "next_pressure": "다음 제40화 「하늘에서 던져진 사람」(주안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 강제로 복종시킨 탈것이 아니라 함께 위험을 건너는 동료라는 구분을 잃지 않으려 했다."
+      },
+      "metrics": {
+        "paragraphs": 65,
+        "average_paragraph_chars": 33.9,
+        "dialogue_ratio": 0.1095,
+        "theme_term_hits": {
+          "선택": 1,
+          "보호": 2,
+          "사람": 3
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 38,
+        "title": "인질은 제가 되죠",
+        "pov": "엘리스 → 이안 → 엘리스 → 이안"
+      },
+      "next_chapter": {
+        "chapter": 40,
+        "title": "아버지의 자리",
+        "pov": "엘리스 → 이안 → 엘리스"
+      }
+    },
+    {
+      "chapter": 40,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "아버지의 자리",
+      "pov": "엘리스 → 이안 → 엘리스",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/036-040.md",
+        "body_sha256": "1de35b4f4ecb19706f05bac827ed916484f59a2e167a0d4277012696cd1d9f19",
+        "body_chars": 6237
+      },
+      "chapter_function": [
+        "OPENING",
+        "REVELATION",
+        "RELATIONSHIP"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "주안은 떨어지는 동안 세 번 생각했다. 첫째, 쿠바라의 창대는 예상보다 무거웠다.",
+        "immediate_goal_or_focus": "데이비드가 상황을 보고 웃었다.",
+        "opposition_and_cost": "피부가 갈라졌지만 검은 실이 상처를 즉시 이어 붙였다.",
+        "turn_or_discovery": "그러나 그녀는 그의 검게 변한 팔을 잡았다.",
+        "decision_or_choice": "“노 리스크는 포기해야겠군!”",
+        "ending_state": "주안은 그 사실까지 말하지 않았다. 말하지 않은 순간부터 그것은 또 하나의 위험이 됐다.",
+        "next_pressure": "다음 제41화 「먼저 온 사람들」(주안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 말하지 않은 순간부터 그것은 또 하나의 위험이 됐다."
+      },
+      "metrics": {
+        "paragraphs": 64,
+        "average_paragraph_chars": 36.6,
+        "dialogue_ratio": 0.1076,
+        "theme_term_hits": {
+          "안전": 1,
+          "사람": 4,
+          "괴물": 2
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "POV_HANDOFF",
+        "RECONCILIATION_MIGRATION_BOUNDARY"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 39,
+        "title": "군함이 왔다",
+        "pov": "주안 → 엘리스 → 이안"
+      },
+      "next_chapter": null
+    }
+  ]
+}

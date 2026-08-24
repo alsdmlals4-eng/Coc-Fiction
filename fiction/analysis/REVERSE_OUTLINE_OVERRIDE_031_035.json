@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_at": "2026-08-24",
-  "status": "ACTIVE_OVERRIDE / BUNDLE_031_035 / CURRENT_RECONCILED_PENDING_PR50",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_031_035 / CURRENT_RECONCILED",
   "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
   "chapters": [
     {
@@ -326,8 +326,7 @@
         "MULTI_TURN_DENSITY",
         "LONG_CHAPTER",
         "ONE_OFF_POV",
-        "POV_HANDOFF",
-        "RECONCILIATION_MIGRATION_BOUNDARY"
+        "POV_HANDOFF"
       ],
       "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
       "representative_gate": false,
@@ -336,7 +335,11 @@
         "title": "핵은 붉었다",
         "pov": "주안 → 엘리스 → 이안 → 주안 → 엘리스"
       },
-      "next_chapter": null
+      "next_chapter": {
+        "chapter": 36,
+        "title": "사명은 끝났다",
+        "pov": "엘리스 → 주안 → 엘리스 → 이안 → 주안"
+      }
     }
   ]
 }

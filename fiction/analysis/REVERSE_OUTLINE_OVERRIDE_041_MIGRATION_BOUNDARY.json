@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-24",
+  "status": "ACTIVE_OVERRIDE / LEGACY_TAIL_BOUNDARY_041",
+  "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 41,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "먼저 온 사람들",
+      "pov": "주안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/041-045.md",
+        "body_sha256": "ad9c909c0656e0140f6fce400547f983d7d899a5409441371a64d893f787a890",
+        "body_chars": 2225
+      },
+      "chapter_function": [
+        "INCITING_INCIDENT",
+        "REVELATION",
+        "NEGOTIATION",
+        "CHOICE_AND_COST",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "절벽 위의 생존자들은 자신들을 ‘먼저 온 사람들’이라고 불렀다. 네오 타이타닉호보다 몇 달, 몇 년 먼저 섬에 표류한 이들이었다.",
+        "immediate_goal_or_focus": "우두머리인 여자는 주안의 검은 팔을 보고 창을 겨눴다.",
+        "opposition_and_cost": "“우리가 죽은 척하자 혼자 떠났지.",
+        "turn_or_discovery": "대신 떠날 때 이름과 목적을 다시 말하게 했다.",
+        "decision_or_choice": "주안은 그 대화를 들으며 자신도 같은 방식으로 받아들여질 수 있는지 생각했다.",
+        "ending_state": "그는 엘리스를 찾고 동료들과 합류하겠다고 답했다. 목적을 말하는 순간, 몸 안의 검은 박동이 아주 조금 느려졌다.",
+        "next_pressure": "다음 제42화 「물 위의 호출」(엘리스 POV)로 압력이 이월된다. 현재 화 마지막 증거: 목적을 말하는 순간, 몸 안의 검은 박동이 아주 조금 느려졌다."
+      },
+      "metrics": {
+        "paragraphs": 54,
+        "average_paragraph_chars": 41.2,
+        "dialogue_ratio": 0.1663,
+        "theme_term_hits": {
+          "선택": 2,
+          "보호": 3,
+          "명령": 3,
+          "안전": 2,
+          "사람": 12,
+          "괴물": 3
+        }
+      },
+      "structural_flags": [
+        "HIGH_THEME_EXPLICITNESS",
+        "LEGACY_TAIL_BOUNDARY"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": null,
+      "next_chapter": {
+        "chapter": 42,
+        "title": "물 위의 호출",
+        "pov": "엘리스"
+      }
+    }
+  ]
+}
