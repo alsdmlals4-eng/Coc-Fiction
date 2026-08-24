@@ -98,16 +98,13 @@ class Promote026030ContractTests(unittest.TestCase):
         ):
             self.assertNotIn(forbidden, text)
 
-    def test_frontier_advances_only_to_30(self):
+    def test_historical_026_030_promotion_receipt_is_preserved(self):
         registry = json.loads(
             (FICTION / "analysis" / "SCENE_PASS_REGISTRY.json").read_text(encoding="utf-8")
         )
         rec = registry["external_artifact_reconciliation"]
-        self.assertEqual(rec["reconciled_prefix_end"], 30)
-        self.assertEqual(rec["legacy_tail_starts_at"], 31)
-        self.assertEqual(rec["boundary_after_chapter"], 30)
+        self.assertGreaterEqual(rec["reconciled_prefix_end"], 30)
         self.assertEqual(rec["whole_manuscript_continuity"], "NOT_YET_CLAIMED")
-        self.assertEqual(registry["next_bundle_passes"], ["fiction/manuscript/part-1/031-035.md"])
 
         passes = {item["bundle"]: item for item in registry["completed_bundle_passes"]}
         item = passes["fiction/manuscript/part-1/026-030.md"]
@@ -118,7 +115,7 @@ class Promote026030ContractTests(unittest.TestCase):
             "09a945739b8438e30b3721c4c777a0f1c4736f5d6ac7a0684f02877e399869e8",
         )
         self.assertEqual(
-            item["preserved_boundary_shas"]["31"],
+            item["historical_boundary_shas"]["31"],
             "ddf006beaf4a34b1855cc138677e2bcdb139056aeed6624a2295411cc20ec9c3",
         )
 
@@ -126,13 +123,12 @@ class Promote026030ContractTests(unittest.TestCase):
         for rel in (
             "analysis/MANUSCRIPT_INDEX_OVERRIDE_026_030.json",
             "analysis/REVERSE_OUTLINE_OVERRIDE_026_030.json",
-            "analysis/REVERSE_OUTLINE_OVERRIDE_031_MIGRATION_BOUNDARY.json",
             "analysis/SCENE_CARDS_026_030.md",
             "reports/REVISION_2026-08-24_CURRENT_RECONCILIATION_026_030.md",
         ):
             self.assertTrue((FICTION / rel).is_file(), rel)
 
-    def test_reverse_outline_moves_fail_closed_boundary_to_30_31(self):
+    def test_reverse_outline_keeps_promoted_026_030_connected_after_later_promotions(self):
         from tools.fiction_composed_data import load_reverse_outline
 
         outline = load_reverse_outline(FICTION)
@@ -142,10 +138,10 @@ class Promote026030ContractTests(unittest.TestCase):
         self.assertNotIn("RECONCILIATION_MIGRATION_BOUNDARY", by_chapter[25]["structural_flags"])
         self.assertEqual(by_chapter[26]["previous_chapter"]["chapter"], 25)
         self.assertNotIn("LEGACY_TAIL_BOUNDARY", by_chapter[26]["structural_flags"])
-        self.assertIsNone(by_chapter[30]["next_chapter"])
-        self.assertIn("RECONCILIATION_MIGRATION_BOUNDARY", by_chapter[30]["structural_flags"])
-        self.assertIsNone(by_chapter[31]["previous_chapter"])
-        self.assertIn("LEGACY_TAIL_BOUNDARY", by_chapter[31]["structural_flags"])
+        self.assertEqual(by_chapter[30]["next_chapter"]["chapter"], 31)
+        self.assertNotIn("RECONCILIATION_MIGRATION_BOUNDARY", by_chapter[30]["structural_flags"])
+        self.assertEqual(by_chapter[31]["previous_chapter"]["chapter"], 30)
+        self.assertNotIn("LEGACY_TAIL_BOUNDARY", by_chapter[31]["structural_flags"])
 
     def test_new_character_canon_is_preserved(self):
         canon = json.loads((FICTION / "CANON_REGISTRY.json").read_text(encoding="utf-8"))

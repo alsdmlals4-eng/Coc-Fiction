@@ -270,10 +270,12 @@
         "30": "5ca93e6979b8beaa0d6ffe07809c664c0b7b907387b47b1732b431be364baac1"
       },
       "preserved_boundary_shas": {
-        "25": "09a945739b8438e30b3721c4c777a0f1c4736f5d6ac7a0684f02877e399869e8",
-        "31": "ddf006beaf4a34b1855cc138677e2bcdb139056aeed6624a2295411cc20ec9c3"
+        "25": "09a945739b8438e30b3721c4c777a0f1c4736f5d6ac7a0684f02877e399869e8"
       },
-      "status": "COMPLETE_USER_SOURCE_CANON_RECONCILIATION / CURRENT_PREFIX / MIGRATION_BOUNDARY_AFTER_030"
+      "status": "COMPLETE_USER_SOURCE_CANON_RECONCILIATION / CURRENT_PREFIX / HISTORICAL_BOUNDARY_030_031_RESOLVED",
+      "historical_boundary_shas": {
+        "31": "ddf006beaf4a34b1855cc138677e2bcdb139056aeed6624a2295411cc20ec9c3"
+      }
     },
     {
       "bundle": "fiction/manuscript/part-1/031-035.md",
