@@ -59,6 +59,11 @@ expected_passes = {
         "boundaries": [25, 31],
         "card_boundaries": ["제25→26화", "제26→27화", "제27→28화", "제28→29화", "제29→30화", "제30→31화"],
     },
+    "fiction/manuscript/part-1/031-035.md": {
+        "chapters": [31, 32, 33, 34, 35],
+        "boundaries": [30, 36],
+        "card_boundaries": ["제30→31화", "제31→32화", "제32→33화", "제33→34화", "제34→35화", "제35→36화"],
+    },
     "fiction/manuscript/side-story-lake/091-095.md": {
         "chapters": [91, 92, 93, 94, 95],
         "boundaries": [90, 96],
@@ -137,6 +142,11 @@ required_phrases = {
     27: "하템은 죽었다.",
     28: "환각.",
     30: "폭풍을 걷는 자.",
+    31: "내가 네 주인은 아니야.",
+    32: "그 질문이 틀렸을 가능성이 큽니다.",
+    33: "지금보다 괴물이 되어야 합니다.",
+    34: "핵은 보이지 않았다.",
+    35: "완전 소 생물씨.",
     91: "답을 찾았느냐",
     92: "세 사람이 함께 살기로 고른 집",
     93: "2018년 2월",
@@ -159,7 +169,7 @@ for number, phrases in forbidden_phrases.items():
         if phrase in parsed.get(number, ""):
             errors.append(f"chapter {number} stale scene remains: {phrase}")
 
-for bundle_name in ("006-010.md", "011-015.md", "016-020.md", "021-025.md", "026-030.md"):
+for bundle_name in ("006-010.md", "011-015.md", "016-020.md", "021-025.md", "026-030.md", "031-035.md"):
     current_bundle = (FICTION / "manuscript" / "part-1" / bundle_name).read_text(encoding="utf-8")
     for excluded in ("복종인자", "히템", "앨리스", "쵸르브라트", "미하일 카쉬프", "피엘렛토", "붉은 늑대", "컨소시엄"):
         if excluded in current_bundle:
@@ -177,9 +187,9 @@ for source_marker in (
         errors.append(f"missing primary source marker: {source_marker}")
 
 reconciliation = registry.get("external_artifact_reconciliation", {})
-if reconciliation.get("artifact") != "폭풍의눈_2차퇴고_제021-030화_상실광기_강적위상_가독성강화본(1).docx":
+if reconciliation.get("artifact") != "폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx":
     errors.append("external reconciliation artifact mismatch")
-if reconciliation.get("artifact_sha256") != "e15c8fb4ed4ab1b6980c2c57f3979986bdbfa02f77aafef3cc84d3652cb70547":
+if reconciliation.get("artifact_sha256") != "89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10":
     errors.append("external reconciliation artifact SHA mismatch")
 if reconciliation.get("source_manifest") != "docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json":
     errors.append("user source manifest mismatch")
@@ -187,16 +197,16 @@ if reconciliation.get("source_authority") != "USER_DESIGNATED_SOURCE_CHUNK_SET":
     errors.append("source authority mode mismatch")
 if reconciliation.get("target_chapters") != [1, 161]:
     errors.append("external reconciliation target range mismatch")
-if reconciliation.get("reconciled_prefix_end") != 30:
-    errors.append("reconciled prefix must be chapter 30 after current 026-030 propagation")
-if reconciliation.get("legacy_tail_starts_at") != 31:
-    errors.append("legacy tail must begin at chapter 31 after current 026-030 propagation")
-if reconciliation.get("boundary_after_chapter") != 30:
-    errors.append("migration boundary must be after chapter 30")
+if reconciliation.get("reconciled_prefix_end") != 35:
+    errors.append("reconciled prefix must be chapter 35 after current 031-035 propagation")
+if reconciliation.get("legacy_tail_starts_at") != 36:
+    errors.append("legacy tail must begin at chapter 36 after current 031-035 propagation")
+if reconciliation.get("boundary_after_chapter") != 35:
+    errors.append("migration boundary must be after chapter 35")
 if reconciliation.get("whole_manuscript_continuity") != "NOT_YET_CLAIMED":
     errors.append("whole-manuscript continuity must remain unclaimed during mixed migration")
 
-for left_number, right_number in ((10, 11), (15, 16), (20, 21), (25, 26)):
+for left_number, right_number in ((10, 11), (15, 16), (20, 21), (25, 26), (30, 31)):
     left = outline_entries.get(left_number, {})
     right = outline_entries.get(right_number, {})
     left_next = left.get("next_chapter")
@@ -210,23 +220,23 @@ for left_number, right_number in ((10, 11), (15, 16), (20, 21), (25, 26)):
     if "LEGACY_TAIL_BOUNDARY" in right.get("structural_flags", []):
         errors.append(f"chapter {right_number} must not carry legacy-tail boundary flag")
 
-chapter30_outline = outline_entries.get(30, {})
-if chapter30_outline.get("next_chapter") is not None:
-    errors.append("chapter 30 reverse outline must stop at the current migration boundary")
-if "RECONCILIATION_MIGRATION_BOUNDARY" not in chapter30_outline.get("structural_flags", []):
-    errors.append("chapter 30 reverse outline missing migration-boundary flag")
-if "제31화 이후는 아직 legacy tail" not in chapter30_outline.get("evidence", {}).get("next_pressure", ""):
-    errors.append("chapter 30 reverse outline missing boundary pressure")
+chapter35_outline = outline_entries.get(35, {})
+if chapter35_outline.get("next_chapter") is not None:
+    errors.append("chapter 35 reverse outline must stop at the current migration boundary")
+if "RECONCILIATION_MIGRATION_BOUNDARY" not in chapter35_outline.get("structural_flags", []):
+    errors.append("chapter 35 reverse outline missing migration-boundary flag")
+if "제36화 이후는 아직 legacy tail" not in chapter35_outline.get("evidence", {}).get("next_pressure", ""):
+    errors.append("chapter 35 reverse outline missing boundary pressure")
 
-chapter31_outline = outline_entries.get(31, {})
-if chapter31_outline.get("previous_chapter") is not None:
-    errors.append("legacy chapter 31 must not claim current chapter 30 as previous continuity")
-if "LEGACY_TAIL_BOUNDARY" not in chapter31_outline.get("structural_flags", []):
-    errors.append("chapter 31 reverse outline missing legacy-tail boundary flag")
+chapter36_outline = outline_entries.get(36, {})
+if chapter36_outline.get("previous_chapter") is not None:
+    errors.append("legacy chapter 36 must not claim current chapter 35 as previous continuity")
+if "LEGACY_TAIL_BOUNDARY" not in chapter36_outline.get("structural_flags", []):
+    errors.append("chapter 36 reverse outline missing legacy-tail boundary flag")
 
 if registry.get("next_pass_mode") != "USER_SOURCE_CHUNK_CANON_RECONCILIATION":
     errors.append("next pass mode must be user source chunk canon reconciliation")
-if registry.get("next_bundle_passes") != ["fiction/manuscript/part-1/031-035.md"]:
+if registry.get("next_bundle_passes") != ["fiction/manuscript/part-1/036-040.md"]:
     errors.append("next bundle pass order mismatch")
 if registry.get("deferred_bundle_passes") != ["fiction/manuscript/part-2/176-180.md"]:
     errors.append("deferred source-pass order mismatch")
@@ -239,6 +249,6 @@ if errors:
 
 print(
     "Fiction scene-pass validation PASSED "
-    "(001-030 current production prefix; migration boundary 30→31; "
-    "031-035 next; 091-095 source-matched)"
+    "(001-035 pending promotion prefix; migration boundary 35→36; "
+    "036-040 next; 091-095 source-matched)"
 )

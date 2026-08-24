@@ -1,0 +1,342 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-24",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_031_035 / CURRENT_RECONCILED_PENDING_PR50",
+  "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 31,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "창을 잡는 사람",
+      "pov": "주안 → 엘리스 → 주안 → 엘리스 → 주안 → 엘리스 → 이안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/031-035.md",
+        "body_sha256": "c24a4c8b236e12b54825c44c810a96588e4b1360b02f8e8a9f4df5d26fd20353",
+        "body_chars": 10305
+      },
+      "chapter_function": [
+        "OPENING",
+        "INVESTIGATION",
+        "REVELATION",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "쿠바라는 빈손이었다. 그래도 주안보다 강했다.",
+        "immediate_goal_or_focus": "주안이 막았다.",
+        "opposition_and_cost": "“합리적이군요.”",
+        "turn_or_discovery": "“그래도 사실은.”",
+        "decision_or_choice": "주안이 말했다.",
+        "ending_state": "검은 표면에 눈이 열렸다. 이번에는 누구의 명령도 기다리지 않았다.",
+        "next_pressure": "다음 제32화 「전장 전체가 몸이었다」(이안 → 주안 → 엘리스 → 이안 → 주안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 이번에는 누구의 명령도 기다리지 않았다."
+      },
+      "metrics": {
+        "paragraphs": 574,
+        "average_paragraph_chars": 18.0,
+        "dialogue_ratio": 0.1116,
+        "theme_term_hits": {
+          "선택": 2,
+          "책임": 1,
+          "명령": 3,
+          "사람": 15,
+          "괴물": 1
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "LONG_CHAPTER",
+        "ONE_OFF_POV",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 30,
+        "title": "폭풍을 걷는 자",
+        "pov": "이안 → 엘리스 → 이안 → 엘리스 → 이안 → 주안"
+      },
+      "next_chapter": {
+        "chapter": 32,
+        "title": "전장 전체가 몸이었다",
+        "pov": "이안 → 주안 → 엘리스 → 이안 → 주안"
+      }
+    },
+    {
+      "chapter": 32,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "전장 전체가 몸이었다",
+      "pov": "이안 → 주안 → 엘리스 → 이안 → 주안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/031-035.md",
+        "body_sha256": "e55613d4b68fd0d6222a680d3eba1d0416033504322fc9aaae6cf09a9cdc6bce",
+        "body_chars": 6291
+      },
+      "chapter_function": [
+        "INCITING_INCIDENT",
+        "REVELATION",
+        "CHOICE_AND_COST"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "쇼거스는 커진 것이 아니었다. 그 차이를 이안이 이해하는 데 몇 초가 걸렸다.",
+        "immediate_goal_or_focus": "“확인 중입니다.”",
+        "opposition_and_cost": "그래도 지금 쇼거스 파편 아래에 두면 죽는다.",
+        "turn_or_discovery": "대신 하템에게 배운 경계를 세웠다.",
+        "decision_or_choice": "엘리스도 들었다.",
+        "ending_state": "주안은 잠깐 눈을 감았다. “하나씩 합시다.”",
+        "next_pressure": "다음 제33화 「괴물이 되어야 합니다」(주안 → 엘리스 → 주안 → 엘리스 → 주안 POV)로 압력이 이월된다. 현재 화 마지막 증거: “하나씩 합시다.”"
+      },
+      "metrics": {
+        "paragraphs": 331,
+        "average_paragraph_chars": 19.0,
+        "dialogue_ratio": 0.0911,
+        "theme_term_hits": {
+          "명령": 2,
+          "안전": 1,
+          "사람": 11
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "LONG_CHAPTER",
+        "ONE_OFF_POV",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 31,
+        "title": "창을 잡는 사람",
+        "pov": "주안 → 엘리스 → 주안 → 엘리스 → 주안 → 엘리스 → 이안"
+      },
+      "next_chapter": {
+        "chapter": 33,
+        "title": "괴물이 되어야 합니다",
+        "pov": "주안 → 엘리스 → 주안 → 엘리스 → 주안"
+      }
+    },
+    {
+      "chapter": 33,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "괴물이 되어야 합니다",
+      "pov": "주안 → 엘리스 → 주안 → 엘리스 → 주안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/031-035.md",
+        "body_sha256": "a6042d9b3c6dc9b82e603c2088a45d9a2f09b974ff224d0a3de618eb5c1d4cec",
+        "body_chars": 5933
+      },
+      "chapter_function": [
+        "INCITING_INCIDENT",
+        "REVELATION",
+        "RELATIONSHIP",
+        "ACTION",
+        "CHOICE_AND_COST"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "“하나씩 합시다.” 말은 그렇게 했다.",
+        "immediate_goal_or_focus": "주안은 숨을 골랐다.",
+        "opposition_and_cost": "“확인 실패하면?”",
+        "turn_or_discovery": "주안은 쇼거스가 다가오는 발 대신 땅의 진동을 느꼈다.",
+        "decision_or_choice": "엘리스가 손을 들었다.",
+        "ending_state": "주안은 앞으로 한 걸음 나갔다. “지금은 일부터 하죠.”",
+        "next_pressure": "다음 제34화 「핵은 붉었다」(주안 → 엘리스 → 이안 → 주안 → 엘리스 POV)로 압력이 이월된다. 현재 화 마지막 증거: “지금은 일부터 하죠.”"
+      },
+      "metrics": {
+        "paragraphs": 328,
+        "average_paragraph_chars": 18.1,
+        "dialogue_ratio": 0.1283,
+        "theme_term_hits": {
+          "선택": 4,
+          "책임": 1,
+          "명령": 4,
+          "안전": 1,
+          "사람": 9,
+          "괴물": 10
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "LONG_CHAPTER",
+        "ONE_OFF_POV",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 32,
+        "title": "전장 전체가 몸이었다",
+        "pov": "이안 → 주안 → 엘리스 → 이안 → 주안"
+      },
+      "next_chapter": {
+        "chapter": 34,
+        "title": "핵은 붉었다",
+        "pov": "주안 → 엘리스 → 이안 → 주안 → 엘리스"
+      }
+    },
+    {
+      "chapter": 34,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "핵은 붉었다",
+      "pov": "주안 → 엘리스 → 이안 → 주안 → 엘리스",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/031-035.md",
+        "body_sha256": "ffbe4a8459f972bcdae6f9fa27416c63a64efb900c19006348d7718c9c20286d",
+        "body_chars": 5935
+      },
+      "chapter_function": [
+        "INCITING_INCIDENT",
+        "REVELATION",
+        "ACTION",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "“지금은 일부터 하죠.” 말을 끝내자 쇼거스가 왔다.",
+        "immediate_goal_or_focus": "전투 중 살아 있다는 보고였다.",
+        "opposition_and_cost": "미확인: 열, 독, 마법, 내부 공격.",
+        "turn_or_discovery": "창이 갑자기 울렸다.",
+        "decision_or_choice": "엘리스는 바로 대답했다.",
+        "ending_state": "넷이 같은 붉은 점을 볼 때만 괴물은 줄어들었다. 그 사실이, 완전함을 자처하는 괴물보다 훨씬 믿을 만했다.",
+        "next_pressure": "다음 제35화 「완전 소 생물」(이안 → 주안 → 엘리스 → 이안 → 주안 → 엘리스 POV)로 압력이 이월된다. 현재 화 마지막 증거: 그 사실이, 완전함을 자처하는 괴물보다 훨씬 믿을 만했다."
+      },
+      "metrics": {
+        "paragraphs": 307,
+        "average_paragraph_chars": 19.3,
+        "dialogue_ratio": 0.1225,
+        "theme_term_hits": {
+          "선택": 2,
+          "명령": 11,
+          "사람": 4,
+          "괴물": 4
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "LONG_CHAPTER",
+        "ONE_OFF_POV",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 33,
+        "title": "괴물이 되어야 합니다",
+        "pov": "주안 → 엘리스 → 주안 → 엘리스 → 주안"
+      },
+      "next_chapter": {
+        "chapter": 35,
+        "title": "완전 소 생물",
+        "pov": "이안 → 주안 → 엘리스 → 이안 → 주안 → 엘리스"
+      }
+    },
+    {
+      "chapter": 35,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "완전 소 생물",
+      "pov": "이안 → 주안 → 엘리스 → 이안 → 주안 → 엘리스",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/031-035.md",
+        "body_sha256": "c4b02af3eb326dfd18ec0331c762c92655cb97525b8b3223d407e69ce912d5f2",
+        "body_chars": 6194
+      },
+      "chapter_function": [
+        "INCITING_INCIDENT",
+        "REVELATION",
+        "CHOICE_AND_COST"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "핵 하나가 깨질 때마다 쇼거스는 작아졌다. 그 사실은 위안이 아니었다.",
+        "immediate_goal_or_focus": "핵 하나가 깨질 때마다 쇼거스는 작아졌다.",
+        "opposition_and_cost": "사람이 화날 때 얼굴에 피가 몰리는 것처럼.",
+        "turn_or_discovery": "대신 다음 선택의 조건을 묻는다.",
+        "decision_or_choice": "지금 서로에게 확인해야 할 것은 ‘누가 누구 것인가’가 아니라 ‘누가 지금 무엇을 선택했는가’였다.",
+        "ending_state": "엘리스가 멈췄다. 탈론이 뛰었다.",
+        "next_pressure": "정본 마이그레이션 경계. 저장소 제36화 이후는 아직 legacy tail이며 현재 제35화와의 서사 연속성을 주장하지 않는다."
+      },
+      "metrics": {
+        "paragraphs": 393,
+        "average_paragraph_chars": 15.8,
+        "dialogue_ratio": 0.1306,
+        "theme_term_hits": {
+          "선택": 4,
+          "보호": 2,
+          "명령": 2,
+          "사람": 12,
+          "괴물": 2
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "LONG_CHAPTER",
+        "ONE_OFF_POV",
+        "POV_HANDOFF",
+        "RECONCILIATION_MIGRATION_BOUNDARY"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 34,
+        "title": "핵은 붉었다",
+        "pov": "주안 → 엘리스 → 이안 → 주안 → 엘리스"
+      },
+      "next_chapter": null
+    }
+  ]
+}

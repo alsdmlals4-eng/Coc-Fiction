@@ -308,7 +308,7 @@
         "turn_or_discovery": "대신 뒤에 떠 있던 노란 페이지 한 장을 맞혔다.",
         "decision_or_choice": "이안이 말했다.",
         "ending_state": "숨을 들이켰다. “제 일이 맞네요.”",
-        "next_pressure": "정본 마이그레이션 경계. 저장소 제31화 이후는 아직 legacy tail이며 현재 제30화와의 서사 연속성을 주장하지 않는다."
+        "next_pressure": "다음 제31화 「창을 잡는 사람」(주안 → 엘리스 → 주안 → 엘리스 → 주안 → 엘리스 → 이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: “제 일이 맞네요.”"
       },
       "metrics": {
         "paragraphs": 324,
@@ -324,8 +324,7 @@
         "MULTI_TURN_DENSITY",
         "LONG_CHAPTER",
         "ONE_OFF_POV",
-        "POV_HANDOFF",
-        "RECONCILIATION_MIGRATION_BOUNDARY"
+        "POV_HANDOFF"
       ],
       "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
       "representative_gate": false,
@@ -334,7 +333,11 @@
         "title": "친구를 막는 법",
         "pov": "이안 → 엘리스 → 이안 → 주안"
       },
-      "next_chapter": null
+      "next_chapter": {
+        "chapter": 31,
+        "title": "창을 잡는 사람",
+        "pov": "주안 → 엘리스 → 주안 → 엘리스 → 주안 → 엘리스 → 이안"
+      }
     }
   ]
 }

@@ -37,12 +37,12 @@ current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거
 current_bundle_source_sha256: 89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10
 derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 repository_promotion_state: PARTIAL
-reconciled_prefix: 001-030
-legacy_tail_starts_at: 031
-boundary_after_chapter: 030
+reconciled_prefix: 001-035
+legacy_tail_starts_at: 036
+boundary_after_chapter: 035
 whole_manuscript_continuity: NOT_YET_CLAIMED
 pending_frontier_change_pr: 50
-next_reconciliation: 031-035
+next_reconciliation: 036-040
 source_coverage_gap: 101-105
 ```
 
@@ -78,7 +78,7 @@ Source authority는 reconstruction input의 권위다. GitHub production authori
 - Alice Carter 한국어 정본 표기: `엘리스`.
 - POV: Scene-Locked Hybrid; scene-internal head hopping 금지.
 
-## 6. current candidate prefix 001–030 readback
+## 6. pending candidate prefix 001–035 readback
 
 - 001–020: 이전 bounded pass Green 상태 유지.
 - 021–025: 배수로 탈출→정찰→한 박자 선택 규칙→쇼거스 전면 압력으로 current continuity를 잇는다.
@@ -87,24 +87,25 @@ Source authority는 reconstruction input의 권위다. GitHub production authori
 - 028 `편해져도 된다는 말`: 사후 하템은 이안의 환각/기억이며 새 정보를 주지 않는다. 엘리스는 허락 후 경계 지원만 한다.
 - 029 `친구를 막는 법`: 이안은 사람을 직접 쓰러뜨리기보다 의식 연결을 최소비용으로 끊고, 밀리와 친구였던 과거/현재 적대를 동시에 보존한다.
 - 030 `폭풍을 걷는 자`: 밀리의 storm-walk와 쿠바라 창의 연결 절단을 관찰하지만 기원·전체 기능·소유권은 미확정으로 둔다.
+- 031–035: 사용자 지정 031–040 source의 exact body를 candidate로 설치. 밀리 최종 상실, 쇼거스 핵 공략, 주안 강화와 엘리스 정신능력 사용을 최신 Canon 아래 검증한다. PR #50 병합 전에는 main production으로 과장하지 않는다.
 
 ## 7. current migration boundary
 
 ```yaml
-left_current: 30
-right_legacy: 31
+left_current: 35
+right_legacy: 36
 left_next_chapter: null
 right_previous_chapter: null
 left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-Ch25→26 current continuity는 PASS다. Ch30→31은 fail-closed이며 numbering만으로 연속성을 주장하지 않는다.
+Ch25→26 current continuity는 PASS다. PR #50 candidate에서 Ch30→31은 source/consumer 검증으로 다시 연결한다. 새 fail-closed 경계는 Ch35→36이며, Ch36은 별도 pass 전까지 legacy tail이다.
 
 ## 8. 실행 순서
 
-마지막 production frontier 변경은 PR #48 병합이다. 현재 다음 promotion PR #50은 `031–035` Draft / 진행 중이므로 이 Canon 교정 workstream에서는 수정하지 않는다.
+마지막 production frontier 변경은 PR #48 병합이다. 현재 promotion PR #50은 사용자 승인된 current-task workstream이며 `031–035` candidate를 검증 중이다. exact-head Green과 merge 전에는 production 완료로 간주하지 않는다.
 
 `exact user-source extraction → latest Canon conflict scan → boundary 검증 → manuscript/index/outline/cards/registry/routers 동시 갱신 → 5× adversarial review → exact-head CI → review thread 0/main freshness → squash merge → receipt closure → Notion sync`
 
-다음 bounded source는 사용자 지정 `031–040` 원본이며 우선 `031–035`를 처리한다. `101–105`는 원본이 제공되기 전 자동 보충 금지다.
+PR #50이 Green/merge되면 같은 사용자 지정 `031–040` 원본의 다음 bounded unit `036–040`을 처리한다. `101–105`는 원본이 제공되기 전 자동 보충 금지다.

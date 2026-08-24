@@ -9,7 +9,7 @@
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
 work_mode: IMPLEMENT / REVIEW
-frontier_observed_at_main: fb97068c714f5731bf712316d59a58adab7f4a86
+frontier_observed_at_main: null
 last_frontier_change_pr: 48
 pending_frontier_change_pr: 50
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
@@ -19,11 +19,11 @@ current_bundle_source_sha256: 89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e
 derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 delivery_state: QA_VERIFIED
 repository_promotion_state: PARTIAL
-reconciled_prefix_end: 30
-legacy_tail_starts_at: 31
-boundary_after_chapter: 30
+reconciled_prefix_end: 35
+legacy_tail_starts_at: 36
+boundary_after_chapter: 35
 whole_manuscript_continuity: NOT_YET_CLAIMED
-next_bounded_bundle: fiction/manuscript/part-1/031-035.md
+next_bounded_bundle: fiction/manuscript/part-1/036-040.md
 source_coverage_gap: 101-105
 ```
 
@@ -61,7 +61,7 @@ rule: source authority != automatic production authority
 - PR #42: Ch021–025 bounded production promotion merged.
 - PR #47: Talon/Milly/Hatem direct user Canon protections merged.
 - **PR #48: Ch026–030 user-source bounded promotion merged; production frontier is 001–030.**
-- **PR #50: Ch031–035 bounded promotion Draft / 진행 중. 이 workstream에서는 수정하지 않는다.**
+- **PR #50: Ch031–035 bounded promotion candidate / current-task 승인 범위. exact-head Green 전에는 production 완료 아님.**
 
 ## Current production prefix 001–030 contract
 
@@ -83,8 +83,8 @@ rule: source authority != automatic production authority
 ## Current migration boundary
 
 ```yaml
-left_current: 30
-right_legacy: 31
+left_current: 35
+right_legacy: 36
 left_next_chapter: null
 right_previous_chapter: null
 left_flag: RECONCILIATION_MIGRATION_BOUNDARY
@@ -130,7 +130,7 @@ Ch25→26 current continuity는 PASS다. 저장 화수가 인접하다는 이유
 
 `fiction/manuscript/part-1/031-035.md`
 
-다음 pass는 **Ch30→31 migration boundary**에서 사용자 지정 `031–040` source를 기준으로 시작한다. 현재 PR #50은 진행 중 workstream이므로 이 Canon 교정 작업에서 수정하지 않는다. `101–105`는 원본 파일이 제공되기 전 자동 보충 금지다.
+다음 pass는 **Ch30→31 migration boundary**에서 사용자 지정 `031–040` source를 기준으로 시작한다. 현재 PR #50은 사용자 승인으로 current-task workstream이 되었으며 exact-head Green 전에는 production 완료로 간주하지 않는다. `101–105`는 원본 파일이 제공되기 전 자동 보충 금지다.
 
 ## Base / shared governance
 
