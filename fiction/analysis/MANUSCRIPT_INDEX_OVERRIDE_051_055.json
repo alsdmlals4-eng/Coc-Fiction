@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-24",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_051_055 / BRIDGE_CURRENT_RECONCILED",
+  "baseline": "analysis/baselines/MANUSCRIPT_INDEX_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 51,
+      "title": "잊어도 되는 기억",
+      "pov": "주안 → 이안 → 주안",
+      "body_chars": 5568,
+      "body_sha256": "5c030e6bef2a802db670f600ad0bb5079bcba185b5bd134eae3ad44f3fe52880",
+      "bundle": "fiction/manuscript/part-1/051-055.md"
+    },
+    {
+      "chapter": 52,
+      "title": "잊으면 안 될 것",
+      "pov": "주안 → 이안 → 주안 → 이안",
+      "body_chars": 4934,
+      "body_sha256": "5ad14e30c75d7ce3a82514ebcd016aab92bf2f9a384962d47e4d5c4f69c396ce",
+      "bundle": "fiction/manuscript/part-1/051-055.md"
+    },
+    {
+      "chapter": 53,
+      "title": "주교님의 외갑",
+      "pov": "주안 → 이안 → 주안 → 이안 → 주안 → 이안",
+      "body_chars": 5244,
+      "body_sha256": "286f8768e7ccf046f9a51a500b59fd62ec95bbcc44354a3916075fd5b2a701e8",
+      "bundle": "fiction/manuscript/part-1/051-055.md"
+    },
+    {
+      "chapter": 54,
+      "title": "사슬을 끊는 법",
+      "pov": "주안 → 이안 → 주안 → 이안 → 주안",
+      "body_chars": 5666,
+      "body_sha256": "dba02380a691b8b2d68fe1a8c95734350e9233b2589f8776156052e64e2a2550",
+      "bundle": "fiction/manuscript/part-1/051-055.md"
+    },
+    {
+      "chapter": 55,
+      "title": "세상을 봐야 합니다",
+      "pov": "주안 → 이안 → 주안 → 이안",
+      "body_chars": 4981,
+      "body_sha256": "35b0cb9f53775945a9cafe2aa307e3ffe04a3355b38b3e1db831826db60d5fdc",
+      "bundle": "fiction/manuscript/part-1/051-055.md"
+    }
+  ]
+}

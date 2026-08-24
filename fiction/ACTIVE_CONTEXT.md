@@ -9,21 +9,21 @@
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
 work_mode: IMPLEMENT / REVIEW
-frontier_observed_at_main: 431acae9b6e62dfd3a26fe177724314dfe4004e7
+frontier_observed_at_main: null
 last_frontier_change_pr: 59
-pending_frontier_change_pr: null
+pending_frontier_change_pr: 61
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 current_source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
-current_bundle_source: 폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx
-current_bundle_source_sha256: 9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad
+current_bundle_source: 폭풍의눈_2차퇴고_제051-060화_기억외갑_선택회수_가독성강화본(1).docx
+current_bundle_source_sha256: 84ad0be254a8c4faedb89f2dd9f8433143eaabfef1bc6ff57db1b418e0036496
 derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 delivery_state: QA_VERIFIED
 repository_promotion_state: PARTIAL
-reconciled_prefix_end: 50
-legacy_tail_starts_at: 51
-boundary_after_chapter: 50
+reconciled_prefix_end: 55
+legacy_tail_starts_at: 56
+boundary_after_chapter: 55
 whole_manuscript_continuity: NOT_YET_CLAIMED
-next_bounded_bundle: fiction/manuscript/part-1/051-055.md
+next_bounded_bundle: fiction/manuscript/part-1/056-060.md
 source_coverage_gap: 101-105
 main_production_prefix_end: 50
 ```
@@ -160,3 +160,11 @@ PR #59 병합으로 Ch45→46은 current continuity가 되었고 현재 main fai
 
 - Base adoption pin은 별도 감사 없이 자동 상승시키지 않는다.
 - 다른 workstream의 open/draft/ready PR은 수정하지 않는다.
+
+## PR #61 candidate · Bridge 051–055 readback
+- Ch51 `잊어도 되는 기억`: 기억수의 효과·비가역 위험을 검증한다.
+- Ch52 `잊으면 안 될 것`: 반복된 선택의 맥락을 회수한다.
+- Ch53 `주교님의 외갑`: 쵸세이칸 본체와 외갑을 분리한다.
+- Ch54 `사슬을 끊는 법`: 현재 의사를 먼저 확보하고 필요한 연결만 끊는다.
+- Ch55 `세상을 봐야 합니다`: 보호와 감금을 분리하고 외부 세계를 직접 볼 권리를 연다.
+- main production은 merge 전 `001–050`; PR #61 candidate만 `001–055 / 055→056`이다.

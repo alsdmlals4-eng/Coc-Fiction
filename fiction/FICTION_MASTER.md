@@ -33,17 +33,17 @@
 
 ```yaml
 source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
-current_bundle_source: 폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx
-current_bundle_source_sha256: 9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad
+current_bundle_source: 폭풍의눈_2차퇴고_제051-060화_기억외갑_선택회수_가독성강화본(1).docx
+current_bundle_source_sha256: 84ad0be254a8c4faedb89f2dd9f8433143eaabfef1bc6ff57db1b418e0036496
 derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 repository_promotion_state: PARTIAL
-reconciled_prefix: 001-050
-legacy_tail_starts_at: 051
-boundary_after_chapter: 050
+reconciled_prefix: 001-055
+legacy_tail_starts_at: 056
+boundary_after_chapter: 055
 whole_manuscript_continuity: NOT_YET_CLAIMED
 last_frontier_change_pr: 59
-pending_frontier_change_pr: null
-next_reconciliation: 051-055
+pending_frontier_change_pr: 61
+next_reconciliation: 056-060
 source_coverage_gap: 101-105
 ```
 
@@ -129,3 +129,11 @@ PR #59 병합으로 Ch45→46은 current continuity가 되었고 새 main fail-c
 `exact user-source extraction → latest Canon conflict scan → boundary 검증 → manuscript/index/outline/cards/registry/routers 동시 갱신 → 5× adversarial review → exact-head CI → review thread 0/main freshness → squash merge → receipt closure → Notion sync`
 
 다음 bounded unit은 `폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx` / SHA256 `9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad`의 `051–055`다. 041–066은 Aftermath & 8년 Bridge이고 Part 2는 067+다. `101–105`는 원본이 제공되기 전 자동 보충 금지다.
+
+## PR #61 candidate · Bridge 051–055 readback
+- Ch51 `잊어도 되는 기억`: 기억수의 효과·비가역 위험을 검증한다.
+- Ch52 `잊으면 안 될 것`: 반복된 선택의 맥락을 회수한다.
+- Ch53 `주교님의 외갑`: 쵸세이칸 본체와 외갑을 분리한다.
+- Ch54 `사슬을 끊는 법`: 현재 의사를 먼저 확보하고 필요한 연결만 끊는다.
+- Ch55 `세상을 봐야 합니다`: 보호와 감금을 분리하고 외부 세계를 직접 볼 권리를 연다.
+- main production은 merge 전 `001–050`; PR #61 candidate만 `001–055 / 055→056`이다.

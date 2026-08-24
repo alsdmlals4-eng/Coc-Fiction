@@ -79,6 +79,11 @@ expected_passes = {
         "boundaries": [45, 51],
         "card_boundaries": ["제45→46화", "제46→47화", "제47→48화", "제48→49화", "제49→50화", "제50→51화"],
     },
+    "fiction/manuscript/part-1/051-055.md": {
+        "chapters": [51, 52, 53, 54, 55],
+        "boundaries": [50, 56],
+        "card_boundaries": ["제50→51화", "제51→52화", "제52→53화", "제53→54화", "제54→55화", "제55→56화"],
+    },
     "fiction/manuscript/side-story-lake/091-095.md": {
         "chapters": [91, 92, 93, 94, 95],
         "boundaries": [90, 96],
