@@ -57,6 +57,7 @@
       },
       "structural_flags": [
         "HIGH_THEME_EXPLICITNESS",
+        "POV_HANDOFF",
         "LEGACY_TAIL_BOUNDARY"
       ],
       "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
