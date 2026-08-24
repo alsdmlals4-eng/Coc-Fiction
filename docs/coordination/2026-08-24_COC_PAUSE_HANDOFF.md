@@ -89,9 +89,9 @@ Do **not** start Ch056–060 before the PR #61 receipt closure is completed and 
 
 ## Ch051–055 reconciliation receipt
 
-The user-designated source contained superseded Korean spelling `앨리스` 10 times. PR #61 normalized only those occurrences to canonical `엘리스`; event order, POV blocks, memory/choice structure, outer-armor agency structure, and surrounding prose remained source-derived.
+The user-designated source contained a superseded Korean spelling 10 times. PR #61 normalized only those occurrences to canonical `엘리스`; event order, POV blocks, memory/choice structure, outer-armor agency structure, and surrounding prose remained source-derived.
 
-No retired Russian-mafia axis, `복종인자`, `히템`, `블랙킹`, `조작된 감정`, or `[규율]` reveal was introduced in the promoted bundle.
+No retired Russian-mafia axis, retired obedience framing, Hatem-name regression, retired Black King framing, retired emotion-manipulation framing, or premature Largo-rule reveal was introduced in the promoted bundle.
 
 ## Known unfinished work
 
