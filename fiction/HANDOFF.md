@@ -8,9 +8,9 @@
 
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
-frontier_observed_at_main: null
-last_frontier_change_pr: 57
-pending_frontier_change_pr: 59
+frontier_observed_at_main: 431acae9b6e62dfd3a26fe177724314dfe4004e7
+last_frontier_change_pr: 59
+pending_frontier_change_pr: null
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
 current_bundle_source: 폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx
@@ -23,8 +23,7 @@ boundary_after_chapter: 50
 whole_manuscript_continuity: NOT_YET_CLAIMED
 next_bounded_bundle: fiction/manuscript/part-1/051-055.md
 source_coverage_gap: 101-105
-main_production_prefix_end: 45
-candidate_prefix_end: 50
+main_production_prefix_end: 50
 ```
 
 `frontier_observed_at_main`은 PR #55가 production frontier를 `001–040`으로 이동시킨 실제 merge `e4d904101635fad36b7d470251b48b370143f369`를 기록한다. 저장소 최신 SHA 포인터로 재사용하지 않고 재개 시 최신 main을 다시 조회한다.
@@ -40,10 +39,10 @@ candidate_prefix_end: 50
 - **PR #50: Ch031–035 user-source bounded promotion merged.**
 - **PR #55: Ch036–040 user-source bounded promotion merged.**
 - **PR #57: Bridge Ch041–045 user-source bounded promotion merged.**
-- main production prefix: `001–045`.
-- PR #59 candidate prefix: `001–050`.
-- candidate fail-closed boundary: `50→51`.
-- next bundle after merge: `051–055`.
+- **PR #59: Bridge Ch046–050 user-source bounded promotion merged.**
+- production prefix: `001–050`.
+- fail-closed boundary: `50→51`.
+- next bundle: `051–055`.
 
 ## Source authority
 
@@ -84,11 +83,11 @@ left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-Main production은 `001–045 / 045→046`이며 PR #59 candidate는 `001–050 / 050→051`로 이동 중이다. merge 전에는 candidate를 production으로 간주하지 않는다.
+PR #59 병합으로 Ch45→46은 current continuity가 되었고 main의 새 fail-closed 경계는 Ch50→51이다.
 
 ## 다음 정확한 작업
 
-`fiction/manuscript/part-1/046-050.md`를 `폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx` / SHA256 `9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad` 기준으로 bounded promotion한다. 041–066은 Aftermath & 8년 Bridge이고 Part 2 진입은 067+다.
+다음 bounded unit은 `fiction/manuscript/part-1/051-055.md`다. 재개 시 source manifest와 Library에서 해당 구간 사용자 지정 원본을 다시 확인한 뒤 작업한다. 041–066은 Aftermath & 8년 Bridge이고 Part 2 진입은 067+다.
 
 ## 장기 보호 Canon
 

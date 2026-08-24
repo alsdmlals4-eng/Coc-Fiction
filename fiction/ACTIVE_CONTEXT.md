@@ -9,9 +9,9 @@
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
 work_mode: IMPLEMENT / REVIEW
-frontier_observed_at_main: null
-last_frontier_change_pr: 57
-pending_frontier_change_pr: 59
+frontier_observed_at_main: 431acae9b6e62dfd3a26fe177724314dfe4004e7
+last_frontier_change_pr: 59
+pending_frontier_change_pr: null
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 current_source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
 current_bundle_source: 폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx
@@ -25,8 +25,7 @@ boundary_after_chapter: 50
 whole_manuscript_continuity: NOT_YET_CLAIMED
 next_bounded_bundle: fiction/manuscript/part-1/051-055.md
 source_coverage_gap: 101-105
-main_production_prefix_end: 45
-candidate_prefix_end: 50
+main_production_prefix_end: 50
 ```
 
 `frontier_observed_at_main`은 production frontier를 실제로 이동시킨 merge 증거다. 저장소의 영구 최신 SHA 포인터가 아니므로 재개 시에는 GitHub에서 최신 `main`과 open PR을 다시 조회한다.
@@ -65,9 +64,10 @@ rule: source authority != automatic production authority
 - PR #48: Ch026–030 user-source bounded promotion merged.
 - **PR #50: Ch031–035 user-source bounded promotion merged.**
 - **PR #55: Ch036–040 user-source bounded promotion merged.**
-- **PR #57: Bridge Ch041–045 user-source bounded promotion merged; production frontier is 001–045.**
+- **PR #57: Bridge Ch041–045 user-source bounded promotion merged.**
+- **PR #59: Bridge Ch046–050 user-source bounded promotion merged; production frontier is 001–050.**
 
-## Current main production 001–045 / PR #59 candidate 001–050 contract
+## Current production prefix 001–050 contract
 
 - Ch5→6, Ch10→11, Ch15→16, Ch20→21, Ch25→26, Ch30→31: current continuity.
 - Ch16: 위험한 해결책도 당사자 선택 없이 강행하지 않는다.
@@ -115,7 +115,7 @@ left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-Main production은 PR #57 기준 `001–045 / 045→046`이다. PR #59 candidate는 exact-source 검증을 거쳐 `001–050 / 050→051`로 이동 중이며 merge 전까지 production으로 간주하지 않는다.
+PR #59 병합으로 Ch45→46은 current continuity가 되었고 현재 main fail-closed 경계는 `050→051`이다.
 
 ## Canon protection
 

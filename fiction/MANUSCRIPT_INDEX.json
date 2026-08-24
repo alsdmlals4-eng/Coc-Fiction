@@ -2,7 +2,7 @@
   "schema_version": 2,
   "format": "COMPOSED_MANUSCRIPT_INDEX",
   "generated_at": "2026-08-24",
-  "status": "ACTIVE / COMPOSED / 225_STORAGE_CHAPTERS / MIXED_MIGRATION / PENDING_CURRENT_PREFIX_001_050_PR59",
+  "status": "ACTIVE / COMPOSED / 225_STORAGE_CHAPTERS / MIXED_MIGRATION / CURRENT_PREFIX_001_050",
   "baseline": "analysis/baselines/MANUSCRIPT_INDEX_2026-07-23_PILOT.json",
   "overrides": [
     "analysis/MANUSCRIPT_INDEX_OVERRIDE_001_005.json",
