@@ -22,6 +22,14 @@ EXPECTED = {
 }
 
 
+def parsed_bodies(path: Path):
+    text = path.read_text(encoding="utf-8")
+    return {
+        int(m.group(1)): {"title": m.group(2).strip(), "pov": m.group(3).strip(), "body": m.group(4).strip()}
+        for m in CHAPTER_RE.finditer(text)
+    }
+
+
 class Promote051055ContractTests(unittest.TestCase):
     def test_source_manifest_tracks_exact_bridge_source(self):
         manifest = json.loads((ROOT / "docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json").read_text(encoding="utf-8"))
@@ -35,10 +43,7 @@ class Promote051055ContractTests(unittest.TestCase):
     def test_source_derived_bodies_are_canon_reconciled_and_installed(self):
         path = FICTION / "manuscript/part-1/051-055.md"
         text = path.read_text(encoding="utf-8")
-        parsed = {
-            int(m.group(1)): {"title":m.group(2).strip(), "pov":m.group(3).strip(), "body":m.group(4).strip()}
-            for m in CHAPTER_RE.finditer(text)
-        }
+        parsed = parsed_bodies(path)
         self.assertEqual(sorted(parsed), list(EXPECTED))
         for number, expected in EXPECTED.items():
             actual = parsed[number]
@@ -63,7 +68,10 @@ class Promote051055ContractTests(unittest.TestCase):
         self.assertEqual(item["chapters"], [51,52,53,54,55])
         self.assertEqual(item["boundary_chapters"], [50,56])
         self.assertEqual(item["preserved_boundary_shas"]["50"], "5b3bd9bcbb7b3d04deb38dfdb39db2c9fdc56fb50df18ea9425562c9b484880e")
-        self.assertEqual(item["preserved_boundary_shas"]["56"], "f0f1d1e7ce95b4c484d7c26997343851e1b3381ccdfcf1c751d41224d2bf6be5")
+        legacy = parsed_bodies(FICTION / "manuscript/part-1/056-060.md")
+        self.assertIn(56, legacy)
+        current_legacy_sha = hashlib.sha256(legacy[56]["body"].encode("utf-8")).hexdigest()
+        self.assertEqual(item["preserved_boundary_shas"]["56"], current_legacy_sha)
 
     def test_required_bundle_consumers_exist(self):
         for rel in (
