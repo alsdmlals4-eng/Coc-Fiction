@@ -88,6 +88,7 @@ jobs:
           git checkout "$HEAD_BRANCH"
           python tools/_patch_041_045_consumers.py
           python tools/_fix_scene_pass_frontier_source.py
+          python tools/_patch_041_045_candidate_routers.py
           git checkout HEAD -- docs/coordination/2026-08-24_COC_PROMOTION_041_045_ADVERSARIAL_REVIEW.md 2>/dev/null || true
           python - <<'PY'
           from pathlib import Path
@@ -101,7 +102,7 @@ jobs:
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add fiction docs/fiction-ops tools/check_fiction_scene_passes.py
+            git add fiction docs/fiction-ops tools/check_fiction_scene_passes.py "[소설]/00_운영체계/START_HERE.md"
             git commit -m "fiction: propagate Bridge Ch041-045 consumers"
             git push origin HEAD:"$HEAD_BRANCH"
             echo "branch updated; this run intentionally stops before validation"
