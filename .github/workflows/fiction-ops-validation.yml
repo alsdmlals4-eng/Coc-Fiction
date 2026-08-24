@@ -78,6 +78,7 @@ jobs:
           git fetch origin "$HEAD_BRANCH"
           git checkout "$HEAD_BRANCH"
           python tools/_promote_051_055.py
+          python tools/_fix_051_055_boundary_receipt.py
           if git diff --quiet; then
             echo "Ch051-055 candidate already materialized"
           else
