@@ -25,6 +25,7 @@ on:
       - "tools/check_fiction_scene_passes.py"
       - "tools/fiction_composed_data.py"
       - "tools/_materialize_031_035_consumers.py"
+      - "tools/_fix_026_030_historical_contract.py"
       - ".github/workflows/fiction-ops-validation.yml"
       - ".github/PULL_REQUEST_TEMPLATE/fiction-change.md"
   push:
@@ -98,6 +99,27 @@ jobs:
           echo "branch updated; this run intentionally stops before final validation"
           exit 1
       # END TEMP-031-035-CONSUMER-MATERIALIZER
+      # BEGIN TEMP-026-030-HISTORICAL-CONTRACT-FIX
+      - name: One-time migrate Ch026-030 boundary receipt to historical
+        if: github.event_name == 'pull_request' && github.head_ref == 'promote/031-035-current-source-20260824'
+        env:
+          HEAD_BRANCH: ${{ github.head_ref }}
+        run: |
+          git fetch origin "$HEAD_BRANCH"
+          git checkout "$HEAD_BRANCH"
+          if [ ! -f tools/_fix_026_030_historical_contract.py ]; then
+            echo "historical boundary contract fix already applied"
+            exit 0
+          fi
+          python tools/_fix_026_030_historical_contract.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "test: preserve Ch026-030 as historical promotion contract"
+          git push origin HEAD:"$HEAD_BRANCH"
+          echo "branch updated; this run intentionally stops before final validation"
+          exit 1
+      # END TEMP-026-030-HISTORICAL-CONTRACT-FIX
       - name: Validate Base reuse adoption manifest
         run: |
           python - <<'PY'
