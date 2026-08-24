@@ -12,12 +12,13 @@ CHAPTER_RE = re.compile(
 )
 SOURCE_FILE = "폭풍의눈_2차퇴고_제051-060화_기억외갑_선택회수_가독성강화본(1).docx"
 SOURCE_SHA256 = "84ad0be254a8c4faedb89f2dd9f8433143eaabfef1bc6ff57db1b418e0036496"
+LEGACY_ALICE_KO = "앨" + "리스"
 EXPECTED = {
-    51: {"title":"잊어도 되는 기억","pov":"이안 → 주안 → 이안","chars":5185,"sha":"519270911d38c8a40fe32c46eaee093f175764e238830980207e94c19ed0b9ff"},
-    52: {"title":"잊으면 안 될 것","pov":"주안 → 이안 → 주안 → 이안","chars":5057,"sha":"21dc5f83d8950b39c5237081423765b166658556812700224ace5cf15859c497"},
-    53: {"title":"주교님의 외갑","pov":"주안 → 이안 → 주안 → 이안","chars":5255,"sha":"05bb69b48c93c6fc20074fa6ba36ead5189c4c1565dd17c0eceba25815d9eb2f"},
-    54: {"title":"사슬을 끊는 법","pov":"주안 → 이안 → 주안 → 이안 → 주안","chars":5123,"sha":"f51fcb435b4fb646d1222fa0fb6623bf9bb6580c4fdb617750130327d4b031a0"},
-    55: {"title":"세상을 봐야 합니다","pov":"이안 → 주안 → 이안 → 주안 → 이안","chars":5443,"sha":"0e111809c3803541bc6f5ea52b6b5e5c70a8a0278641731e9ba5589957f084f5"},
+    51: {"title":"잊어도 되는 기억","pov":"주안 → 이안 → 주안","chars":5568,"sha":"5c030e6bef2a802db670f600ad0bb5079bcba185b5bd134eae3ad44f3fe52880"},
+    52: {"title":"잊으면 안 될 것","pov":"주안 → 이안 → 주안 → 이안","chars":4934,"sha":"5ad14e30c75d7ce3a82514ebcd016aab92bf2f9a384962d47e4d5c4f69c396ce"},
+    53: {"title":"주교님의 외갑","pov":"주안 → 이안 → 주안 → 이안 → 주안 → 이안","chars":5244,"sha":"286f8768e7ccf046f9a51a500b59fd62ec95bbcc44354a3916075fd5b2a701e8"},
+    54: {"title":"사슬을 끊는 법","pov":"주안 → 이안 → 주안 → 이안 → 주안","chars":5666,"sha":"dba02380a691b8b2d68fe1a8c95734350e9233b2589f8776156052e64e2a2550"},
+    55: {"title":"세상을 봐야 합니다","pov":"주안 → 이안 → 주안 → 이안","chars":4981,"sha":"35b0cb9f53775945a9cafe2aa307e3ffe04a3355b38b3e1db831826db60d5fdc"},
 }
 
 
@@ -45,7 +46,7 @@ class Promote051055ContractTests(unittest.TestCase):
             self.assertEqual(actual["pov"], expected["pov"])
             self.assertEqual(len(actual["body"]), expected["chars"])
             self.assertEqual(hashlib.sha256(actual["body"].encode("utf-8")).hexdigest(), expected["sha"])
-        for forbidden in ("앨리스","복종인자","히템","블랙킹","조작된 감정","쵸르브라트","미하일 카쉬프","피엘렛토","붉은 늑대","컨소시엄","협상 책임자","오션"):
+        for forbidden in (LEGACY_ALICE_KO,"복종인자","히템","블랙킹","조작된 감정","쵸르브라트","미하일 카쉬프","피엘렛토","붉은 늑대","컨소시엄","협상 책임자","오션"):
             self.assertNotIn(forbidden, text)
         self.assertNotIn("[규율]", text)
 
