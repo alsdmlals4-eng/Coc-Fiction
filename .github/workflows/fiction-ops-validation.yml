@@ -88,13 +88,14 @@ jobs:
           python tools/_fix_content_validator_frontier.py
           python tools/_fix_036_040_reverse_outline.py
           python tools/_fix_scene_pass_validator_frontier.py
+          python tools/_fix_036_040_pending_state.py
           git checkout HEAD -- docs/coordination/2026-08-24_COC_PROMOTION_036_040_ADVERSARIAL_REVIEW.md
           if git diff --quiet; then
             echo "Ch036-040 consumers already propagated"
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add fiction docs/fiction-ops tools/check_fiction_scene_passes.py tools/check_fiction_content.py
+            git add fiction docs/fiction-ops "[소설]/00_운영체계/START_HERE.md" tools/check_fiction_scene_passes.py tools/check_fiction_content.py
             git commit -m "fiction: propagate Ch036-040 consumers"
             git push origin HEAD:"$HEAD_BRANCH"
             echo "branch updated; this run intentionally stops before validation"
