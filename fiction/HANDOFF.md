@@ -8,9 +8,9 @@
 
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
-frontier_observed_at_main: null
-last_frontier_change_pr: 50
-pending_frontier_change_pr: 55
+frontier_observed_at_main: e4d904101635fad36b7d470251b48b370143f369
+last_frontier_change_pr: 55
+pending_frontier_change_pr: null
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
 current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx
@@ -25,7 +25,7 @@ next_bounded_bundle: fiction/manuscript/part-1/041-045.md
 source_coverage_gap: 101-105
 ```
 
-`frontier_observed_at_main: null`은 PR #55가 아직 pending candidate임을 뜻한다. 마지막 실제 main frontier 변경은 PR #50의 `001–035`이며, PR #55 병합 전 `001–040`을 main production으로 부르지 않는다.
+`frontier_observed_at_main`은 PR #55가 production frontier를 `001–040`으로 이동시킨 실제 merge `e4d904101635fad36b7d470251b48b370143f369`를 기록한다. 저장소 최신 SHA 포인터로 재사용하지 않고 재개 시 최신 main을 다시 조회한다.
 
 재개 순서:
 `latest main → open PR → AGENTS → CURRENT_STATE_RECEIPT → ACTIVE_CONTEXT → HANDOFF → CANON_REGISTRY → SCENE_PASS_REGISTRY → USER_SOURCE_CHUNK_MANIFEST → next bounded bundle`
@@ -36,10 +36,10 @@ source_coverage_gap: 101-105
 - PR #47: `탈론=핵심 적대`, `밀리=남성/미스캐토닉 여성 위장`, `하템=여성/기본 가면` Canon merged.
 - PR #48: Ch026–030 user-source bounded promotion merged.
 - **PR #50: Ch031–035 user-source bounded promotion merged.**
-- **PR #55: Ch036–040 user-source bounded promotion pending candidate.**
-- main production prefix: `001–035`; pending candidate prefix: `001–040`.
-- candidate fail-closed boundary: `40→41`.
-- next bundle after PR #55 merge: `041–045` from the user-designated 041–050 source.
+- **PR #55: Ch036–040 user-source bounded promotion merged.**
+- production prefix: `001–040`.
+- fail-closed boundary: `40→41`.
+- next bundle: `041–045` from the user-designated 041–050 source.
 
 ## Source authority
 
@@ -51,7 +51,7 @@ source_coverage_gap: 101-105
 
 이전 `폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx`는 derived cross-check only다. 현재 사용자 source set에는 `101–105`가 없으므로 자동 보충하지 않는다.
 
-## Ch026–035 보호 readback
+## Ch026–040 보호 readback
 
 - Ch25→26, Ch30→31: current continuity PASS.
 - Ch26: 엘리스는 이 장면에서 쇼거스를 직접 정신조작하지 않고 질문/책임으로 자기 판단을 바꾸게 한다. 이는 엘리스에게 인간·비인간 정신조작 능력이 없다는 뜻이 아니다. 탈론은 쇼거스 다수를 정면 상대하는 core antagonist 위상.
@@ -64,6 +64,10 @@ source_coverage_gap: 101-105
 - Ch33: 주안의 위험한 변형은 자기선택이며 이름·장소·목표 확인 절차를 유지한다.
 - Ch34: 붉은 핵의 노출·제한·파괴를 반복 가능한 공략으로 정리한다.
 - Ch35: 4인 협업으로 쇼거스 핵을 소진하고 세실리아를 생존 상태로 노출한다. 세실리아가 쇼거스 안에 있었던 원인은 아직 미확정이다.
+- Ch36: 탈론의 사명과 결말을 source-supported 범위에서 닫고, 핵심 적대 위상과 황색 조직의 비소멸을 함께 보존한다.
+- Ch37–38: 승리=소유 프레임을 거부하고 엘리스가 협상·자발적 인질 선택으로 정치 전환을 주도한다.
+- Ch39: 델타그린 군함 도착으로 권력축이 재배치된다.
+- Ch40: 윌리엄의 사랑과 잘못을 동시에 보존한 채 엘리스가 자기 방식의 책임을 선택하고 Part 1 본편을 닫는다.
 
 ## Current migration truth
 
@@ -76,13 +80,11 @@ left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-PR #55 candidate에서 Ch35→36은 exact source와 consumer 검증으로 연결되며, 새 fail-closed candidate 경계는 Ch40→41이다. main은 PR #55 병합 전까지 001–035 production이다.
+PR #55 병합으로 Ch35→36은 current continuity가 되었고 main의 새 fail-closed 경계는 Ch40→41이다.
 
 ## 다음 정확한 작업
 
-현재: PR #55 exact-head validation → review thread 0 → main freshness → squash merge.
-
-병합 뒤: `fiction/manuscript/part-1/041-045.md`를 사용자 지정 `041–050` 원본으로 bounded promotion한다.
+`fiction/manuscript/part-1/041-045.md`를 `폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx` / SHA256 `9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad` 기준으로 bounded promotion한다. 041–066은 Aftermath & 8년 Bridge이고 Part 2 진입은 067+다.
 
 ## 장기 보호 Canon
 

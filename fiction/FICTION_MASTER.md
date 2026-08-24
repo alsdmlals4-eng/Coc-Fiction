@@ -41,10 +41,9 @@ reconciled_prefix: 001-040
 legacy_tail_starts_at: 041
 boundary_after_chapter: 040
 whole_manuscript_continuity: NOT_YET_CLAIMED
-last_frontier_change_pr: 50
-pending_frontier_change_pr: 55
-main_frontier_before_pending: 001-035
-next_reconciliation_after_merge: 041-045
+last_frontier_change_pr: 55
+pending_frontier_change_pr: null
+next_reconciliation: 041-045
 source_coverage_gap: 101-105
 ```
 
@@ -80,9 +79,7 @@ Source authority는 reconstruction input의 권위다. GitHub production authori
 - Alice Carter 한국어 정본 표기: `엘리스`.
 - POV: Scene-Locked Hybrid; scene-internal head hopping 금지.
 
-## 6. pending PR #55 candidate prefix 001–040 readback
-
-> `001–040`은 PR #55 branch candidate다. GitHub `main` production은 병합 전까지 `001–035`로 유지한다.
+## 6. current production prefix 001–040 readback
 
 - 001–020: 이전 bounded pass Green 상태 유지.
 - 021–025: 배수로 탈출→정찰→한 박자 선택 규칙→쇼거스 전면 압력으로 current continuity를 잇는다.
@@ -96,6 +93,11 @@ Source authority는 reconstruction input의 권위다. GitHub production authori
 - 033 `괴물이 되어야 합니다`: 주안은 위험한 자가변형을 스스로 선택하고 이름·장소·목표 확인으로 자기결정을 회수한다.
 - 034 `핵은 붉었다`: 핵 노출·이동 제한·파괴를 반복 가능한 전술로 정리하며, 강해진 육체의 미확인 위험을 별도로 남긴다.
 - 035 `완전 소 생물`: 주안·엘리스·이안·아킴의 협업으로 쇼거스 핵을 소진한다. 세실리아는 생존 상태로 노출되며, 왜 쇼거스 안에 있었는지는 아직 미확정이다.
+- 036 `사명은 끝났다`: 탈론의 사명과 결말을 source-supported 범위에서 닫고 핵심 적대 위상·황색 조직의 비소멸을 보존한다.
+- 037 `승자의 손`: 승리와 소유를 분리하고 전투에서 협상으로 갈등 방식을 전환한다.
+- 038 `인질은 제가 되죠`: 엘리스가 자발적 인질 제안을 협상 수단으로 선택해 결정권을 행사한다.
+- 039 `군함이 왔다`: 델타그린 군함 도착으로 전장 권력축이 재배치된다.
+- 040 `아버지의 자리`: 윌리엄의 사랑과 잘못을 동시에 인정하고 엘리스가 자기 방식의 책임을 선택하며 Part 1 본편을 닫는다.
 
 ## 7. current migration boundary
 
@@ -108,12 +110,12 @@ left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-PR #55 candidate에서는 Ch35→36 연결을 검증했고 새 fail-closed 경계는 Ch40→41이다. main production은 PR #55 병합 전까지 001–035다.
+PR #55 병합으로 Ch35→36은 current continuity가 되었고 새 main fail-closed 경계는 Ch40→41이다.
 
 ## 8. 실행 순서
 
-마지막 main production frontier 변경은 PR #50 병합이다. PR #55는 036–040 pending candidate이며 병합 전 production 완료로 부르지 않는다.
+마지막 main production frontier 변경은 PR #55 병합이다.
 
 `exact user-source extraction → latest Canon conflict scan → boundary 검증 → manuscript/index/outline/cards/registry/routers 동시 갱신 → 5× adversarial review → exact-head CI → review thread 0/main freshness → squash merge → receipt closure → Notion sync`
 
-PR #55 병합 뒤 다음 bounded unit은 사용자 지정 `041–050` 원본의 `041–045`다. `101–105`는 원본이 제공되기 전 자동 보충 금지다.
+다음 bounded unit은 `폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx` / SHA256 `9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad`의 `041–045`다. 041–066은 Aftermath & 8년 Bridge이고 Part 2는 067+다. `101–105`는 원본이 제공되기 전 자동 보충 금지다.

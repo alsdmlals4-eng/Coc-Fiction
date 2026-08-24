@@ -9,9 +9,9 @@
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
 work_mode: IMPLEMENT / REVIEW
-frontier_observed_at_main: null
-last_frontier_change_pr: 50
-pending_frontier_change_pr: 55
+frontier_observed_at_main: e4d904101635fad36b7d470251b48b370143f369
+last_frontier_change_pr: 55
+pending_frontier_change_pr: null
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 current_source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
 current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx
@@ -61,12 +61,10 @@ rule: source authority != automatic production authority
 - PR #42: Ch021–025 bounded production promotion merged.
 - PR #47: Talon/Milly/Hatem direct user Canon protections merged.
 - PR #48: Ch026–030 user-source bounded promotion merged.
-- **PR #50: Ch031–035 user-source bounded promotion merged; main production frontier is 001–035.**
-- **PR #55: Ch036–040 user-source bounded promotion pending candidate; candidate frontier 001–040, not main production until merge.**
+- **PR #50: Ch031–035 user-source bounded promotion merged.**
+- **PR #55: Ch036–040 user-source bounded promotion merged; production frontier is 001–040.**
 
-## Pending PR #55 candidate prefix 001–040 contract
-
-> GitHub `main` production은 PR #55 병합 전까지 `001–035`다. 아래 `001–040`은 exact-head 검증 중인 **pending candidate**이며 production 완료 주장이 아니다.
+## Current production prefix 001–040 contract
 
 - Ch5→6, Ch10→11, Ch15→16, Ch20→21, Ch25→26, Ch30→31: current continuity.
 - Ch16: 위험한 해결책도 당사자 선택 없이 강행하지 않는다.
@@ -86,7 +84,12 @@ rule: source authority != automatic production authority
 - Ch32: 쇼거스의 분열과 다중 핵 공략 단서를 확인한다. 엘리스의 쇼거스 행동 명령은 D04와 정합하며 비인간 한정 능력으로 축소하지 않는다.
 - Ch33: 주안은 위험한 자가변형을 스스로 선택하지만 이름·장소·목표를 확인해 자기결정을 회수한다.
 - Ch34: 붉은 핵을 노출·제한·파괴하는 반복 가능한 전술을 확립하고, 강해진 몸도 새 위험을 개별 검증한다.
-- Ch35: 주안·엘리스·이안·아킴의 협업으로 쇼거스 핵을 소진한다. 세실리아는 생존 상태로 노출되며 원인은 아직 미확정이다. 탈론의 세실리아 회수 행동은 Ch36으로 이어지지만 Ch36은 아직 legacy tail이다.
+- Ch35: 주안·엘리스·이안·아킴의 협업으로 쇼거스 핵을 소진한다. 세실리아는 생존 상태로 노출되며 원인은 아직 미확정이다. 탈론의 세실리아 회수 행동은 Ch36으로 이어진다.
+- Ch36: 세실리아 회수 직후 탈론의 사명과 결말을 닫되 그의 핵심 적대 위상을 약화하지 않는다. 황색 지휘부 손실을 조직 전체 소멸로 확대하지 않는다.
+- Ch37: 승리와 소유를 분리하고 전투 중지·협상으로 다음 갈등 방식을 전환한다.
+- Ch38: 엘리스가 자발적 인질 제안을 협상 수단으로 선택하며 결정권을 직접 행사한다.
+- Ch39: 델타그린 군함 도착으로 전장 권력축이 재배치되지만 기존 세력의 의미를 자동 소거하지 않는다.
+- Ch40: 윌리엄의 사랑과 잘못을 동시에 인정하고 엘리스가 아버지의 방식이 아닌 자기 방식의 책임을 선택하며 Part 1 본편을 닫는다.
 
 ## Current migration boundary
 
@@ -99,7 +102,7 @@ left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-PR #55 candidate에서는 Ch35→36 연결을 검증했고 현재 fail-closed 경계는 Ch40→41이다. 다만 GitHub `main` production frontier는 PR #55 병합 전까지 001–035로 유지한다.
+PR #55 병합으로 Ch35→36이 current continuity가 되었고 현재 main fail-closed 경계는 Ch40→41이다.
 
 ## Canon protection
 
@@ -134,11 +137,11 @@ PR #55 candidate에서는 Ch35→36 연결을 검증했고 현재 fail-closed �
 9. squash merge
 10. post-merge main readback + receipt closure + Notion sync
 
-## Next exact work after PR #55 merge
+## Next exact work
 
 `fiction/manuscript/part-1/041-045.md`
 
-PR #55가 exact-head Green·review thread 0·main freshness를 통과해 병합된 뒤 **Ch40→41 migration boundary**에서 다음 사용자 지정 `041–050` source로 진행한다. `101–105`는 원본 파일이 제공되기 전 자동 보충 금지다.
+**Ch40→41 migration boundary**에서 사용자 지정 `폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx` / SHA256 `9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad`를 기준으로 진행한다. 041–066은 Aftermath & 8년 Bridge이며 Part 2(067+)와 섞지 않는다. `101–105`는 원본 파일이 제공되기 전 자동 보충 금지다.
 
 ## Base / shared governance
 

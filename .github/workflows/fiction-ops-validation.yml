@@ -98,5 +98,5 @@ jobs:
         run: python -m unittest tests.test_promote_026_030_contract -v
       - name: Validate Ch031-035 historical promotion contract
         run: python -m unittest tests.test_promote_031_035_contract -v
-      - name: Validate Ch036-040 promotion contract
+      - name: Validate Ch036-040 historical promotion contract
         run: python -m unittest tests.test_promote_036_040_contract -v
