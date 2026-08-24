@@ -33,14 +33,15 @@
 
 ```yaml
 source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
-current_bundle_source: 폭풍의눈_2차퇴고_제021-030화_상실광기_강적위상_가독성강화본(1).docx
-current_bundle_source_sha256: e15c8fb4ed4ab1b6980c2c57f3979986bdbfa02f77aafef3cc84d3652cb70547
+current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx
+current_bundle_source_sha256: 89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10
 derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 repository_promotion_state: PARTIAL
 reconciled_prefix: 001-030
 legacy_tail_starts_at: 031
 boundary_after_chapter: 030
 whole_manuscript_continuity: NOT_YET_CLAIMED
+pending_frontier_change_pr: 50
 next_reconciliation: 031-035
 source_coverage_gap: 101-105
 ```
@@ -102,7 +103,7 @@ Ch25→26 current continuity는 PASS다. Ch30→31은 fail-closed이며 numberin
 
 ## 8. 실행 순서
 
-현재 promotion PR은 #48이다. merge 전에는 candidate frontier일 뿐 main production frontier라고 부르지 않는다.
+마지막 production frontier 변경은 PR #48 병합이다. 현재 다음 promotion PR #50은 `031–035` Draft / 진행 중이므로 이 Canon 교정 workstream에서는 수정하지 않는다.
 
 `exact user-source extraction → latest Canon conflict scan → boundary 검증 → manuscript/index/outline/cards/registry/routers 동시 갱신 → 5× adversarial review → exact-head CI → review thread 0/main freshness → squash merge → receipt closure → Notion sync`
 
