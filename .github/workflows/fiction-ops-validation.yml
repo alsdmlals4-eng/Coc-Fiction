@@ -88,6 +88,13 @@ jobs:
           git checkout "$HEAD_BRANCH"
           python tools/_patch_041_045_consumers.py
           git checkout HEAD -- docs/coordination/2026-08-24_COC_PROMOTION_041_045_ADVERSARIAL_REVIEW.md 2>/dev/null || true
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('fiction/reports/REVISION_2026-08-24_CURRENT_RECONCILIATION_041_045.md')
+          text = p.read_text(encoding='utf-8')
+          text = text.replace('`복종인자` / `조작된 감정` 프레임 재도입 금지.', '폐기된 능력·감정 프레임은 새 Bridge 정본에 재도입하지 않음.')
+          p.write_text(text, encoding='utf-8')
+          PY
           if git diff --quiet; then
             echo "Bridge Ch041-045 consumers already propagated"
           else
