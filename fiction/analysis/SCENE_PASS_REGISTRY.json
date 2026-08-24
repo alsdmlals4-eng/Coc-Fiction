@@ -512,7 +512,7 @@
       },
       "preserved_boundary_shas": {
         "50": "5b3bd9bcbb7b3d04deb38dfdb39db2c9fdc56fb50df18ea9425562c9b484880e",
-        "56": "f0f1d1e7ce95b4c484d7c26997343851e1b3381ccdfcf1c751d41224d2bf6be5"
+        "56": "c80b210d3c08101c6c56c3f05cda145541b985ed7331132e86bb657fd29bb453"
       },
       "status": "COMPLETE_CURRENT_SOURCE_CANON_RECONCILIATION / BRIDGE_CURRENT_PREFIX"
     }
