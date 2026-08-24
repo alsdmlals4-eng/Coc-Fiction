@@ -1,29 +1,53 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import base64, hashlib, re, zlib
+
+import base64
+import hashlib
+import re
+import zlib
 from pathlib import Path
+
 ROOT = Path(__file__).resolve().parents[1]
-TARGET = ROOT / "fiction/manuscript/part-1/041-045.md"
-PAYLOAD = """eNqVvVtvI1eWJvruXxGNBg7O9LF1bJftKvdcEj3zMpiHmQYGOC+Ng2p3uXq6gJmqgbsaOOdlQEkhmSlSTsoipZCSVDIrqRSVZnZSUkhJdjJtoH+K540RxPyFWde9194RVLqA6raSl2DE3muv67e+9afJX/zt73/91X/74vd/l/wfyS+KnTT5t1/95sv/8uvkn18n5bD/yUerk+7/wD8+hT/ee+/fJOX25mq7/+dJuTUpTy/Ls05SXjTKYS/5uJyOV1/ny5thUj7uFDezZDmbFtMs+Zvf/cNvv/z1l8lXv/7V7377q9/819988fvf/O63G3ixv//dP3z1q18nX/zD7//ud1/95vf//58nf7169HL17X45yIpm85f+mr+Ee/jwk48++PDTD+FGfrmcNsqnV+XZZHXa/mWZDlfbg+KuuTrpla1RmV79Ep+kmLWL5xO4O/x08WgHXl9Oe/BtuLf/86N/sfHl7371//118n8n//nf/8XHn36W/PXnf/PxF3/75d9+/ItffPnZpz//1ccfffjFx7/61Sc/+/yzzz798IsvP/v885999OHPvvjw559++eHPP/rF33zyNz//5Bd/+7NPfvbJrz769edffPnX9Ej0tF98BY/y7/7uww8/+rFx+OEnHyb/OvnLL776ffJR8t+++M1v/yW+9Qm99dln8NaaLfiX/J2P4RPw+c9+/n/B9f/0T92u0A6dZUnxqF320hIeqzV6770/+7O//E//z5//2Z8l5XGGT783Sn7c/TYpB3nZa/Kfzxbw53vv/ZX7xP/73ntlOoOVw3/2UlitpDgcLa+3y2PYXXh5OMIXyqMcfqUcpEnRa7/vf6DY6ybwteI6RUk4gS9P8nJvzL+5QCE4XySroyZ8Dj4A9zxczuG6Z3vlcRPuGZ6qnL4tHsFlt3L4qWL3sOxl8sawV84zeA/+Xp1cltsP+e/yaqc8S/nvHxv98jgtLpobPzYGNU/SbNItH+V8yeLF10lx3UzKvFkOO/hWOf2+HMAHvx0lKFZn50kxXpRDeKU7o6/mI/xqsnw9g/+Wg3ZS9kmyjlN5G+Tz/QTuAB6vuHhY9hfF0z48YAeePSl34Udy2LVecdHRF4sXM1zb4u4EFhVe1LVBAR7MVvD4h6/wmyi4g7d0k48b5cVmmTX4KeihZf35ueHuklWvD3dRdLu0cfo+rUJrAku7nHZlXc0iyfbB1ZPVWUb3erwrW0PP/GRa7E95MeC9XhMeAI/9qk2yUGZw5Rl9uNjrwJ+kAHpvccP1CnDZtJ8U+/BDF/BD/eAxeumq3S5Puw/oMfCVp9PlTHYT/wk71+3CQ7hXiukUfgS+JTtuH7Q8xXuhvx5vewHzGwZrAauA+5Pt0jKluFVN/OheFx4UBRHWMVlezXCri73nbi1uX4JwlIMFyj+uWtFMl7eT4gYlKynmY/gJWJVO0RrjDu5nqCOLszYs2/t0QLZw+c7gR+E3adXpyegmdkkSiwPYEDgrvSEKQ/FiXJzn9EG+znVWPIEfv8nd+sXCjosNh00klpev33YCAqoDr29WI48FC68g53krp8PMh2DVGy/fZLj97nDixa3+KXfll4oXl/A3/ARtA+0mnKxmMViUT9trbxxUPuzJ6+V8m8Tq7GnwQ8M+fgxWBs4ZrNUMdgpkxokEyekCNQhJO59f2IXl9dDdFkoO7SYqMvPd4tUMHgs+XGajSKJolw9oI1Gb4ZHdXMCvJ+VVagTMqz964nTCe+wV4YKW0KvAXlseLmHVRV8DaTga6YeL1tx9HkUS7pA/7xQI7cVxh9+k41tsvQJTqKe42BrD6yrburkkVYdDeiJUZg067bAgoLrpzvbcsvuzjw8Ge7g6eljc3NLhuN6m35WL5O4XaLFGB7j0xVaGsri8mpYXh6ITi4s2GBJ4N4UNIDlzqqZGc3dJJop/GpNAHM7cJ3HTLr4h6X0zK9KR38rLaTlHEWmziFTeeHSCZtCdS1j0BWrMrSxZbcK/mplRxsX0Ep8aDlN5dgT3VCcbWQc1jn+EQQ62BXfFqwdep+VVjicX9BYuCjw9vIUiF605nBE48/ApWoDJrJgeiSyhzjjPSpBnlI5DtDnkYNGKkc6ljSYT1FZznY3CHwDLNwKJpHsCDwvEEzXX5kDl9bJZvk5ZzgIdAerp4jC4XRJCUIMTtAoiL+yTHXeW12AiWy/BvPG3weGAe3FH/+IiELGzjG4nG5fDdHXWTOQyqA1acOhTK17/a7GXyP/Bhfgn0HC/n4QaHoSy1XcKG1a+kwXCQ6vgLUzWfF8+XLSyum2+bpf7Y/gxsH0zMWyhDU7Keb5Kp3SOj3O0aScP5YfxAqseK4/92Wq7gQ/9fIoeQdkaJKtHD9HKo9aePsaVQyPe8iLtVIuX5ZTtWwb3BotErhAJxUUH7s19MlwRcWVuctlClBheBuPiqColHQv3CzawuDgjJUEuNhuCTLUYqIxFH4X6um3XMlDKLJt4IHtvK/cFh9uaimLrH1GTqaDAFVZ78/+8nD2E3U1Xx6DVZqD+8Gur7KAYnsM/SKncNGB9k+LVgqRlphI4OijaDdRW+O1eTspo2kATgjEMeJMom7CIl3mNHyFuI27NXoaXcw4k7sDNDH8Hv8+rf9Fk3XG8S0qNQiQ4yvjo7BAUHTit12/L0+n7qMJlC/G83YmS0s2ANWmDLb6lVTdHhdb2cWmUHTvSdT6QeBOgA4zQlyf9RMyo6r8U93C1Ba7+EJ0mvNsjcYMS9DZaYzLfV3lx1wDpFn/V+WqBjgidZf5FEU0Un6ulWg5cBFJRIK4kS3Bcx3BZujEQ9hbccnM5F5FatRp4WMjo6/vWnlnfsvVd8Lz2WROxF6x1YcvdQ+i6wxO0boOz/ewt+nqofvpDPti76E48G26EnioZYvCvOywn+FhDFQe7XOLLDm/LvVt6StlK0F+q4ylKI7k6OxAZBgsFJlRcbJY+o0VITYIogiEe9kGPsk19idoPIl44PugD3XpXKQzaHpOrVbzpuueObXAJXm27obfXfMIBCSlseDj2MlbfzPSowPcWU3+jXXBStlAbqpOYjRPSHK2XcPBYeXc61h0LzY7o/0iq4Mtoysm4OJeN1gVEaSsrNzPnEoT22J2w8mwH7hZkjG5GNjHyg8UK5UF8Lc44e07vo3+H7s0p+vVvy9199fL4LKHkgTNXdawCK1bkD8mhbE7JGoChGFJwQGqYJAPXAeQBVkr2CG5gb0L2ZHJH330zXu2gO1OkTbS2oBDV37IGR36paIEim6MSOhzRKqdTDm9mTXiEhK9e/NDRw4jxDsaN5/SL094KTlPZHOLdgqwXpwOOmNDfK7uXyerbhhPWYgfOZ6M8OgC3UX/tMeVhjESj3DwdqpsheguiYoykrfIjHxd2zh4deDKSUgm16aiT2uvoUTQHGowGaGbVaKBkn/ZFSh6rJsKcB245KH8K1MQblLBQ3C33dNMMz8aLtwmeMPA3MYUxvcQb/XqoR0Ye6WjhhUBdNA5SykcVJ7BsDYs/TI0+RDU0bJbTMYcXfbhzchjQfHS97yfftkccpQjdGlB4A3qA8sgrufIPLVKq6g3jQcR7JpvAUSBKNd6syrdX0egjgsI9ymXpYGlxNU4oWlm+7pfzE3ZKyOMXzxp/gQLcvtyBlVyWT1p/TaWIXMlJtaJlpKbJLgwomoeT6ipodClOgezHVl7AAbfWYrfj1fpJ38aHIjfgJhdwNuBgXeJ534FHEiH0twJb/2yBEgb2AHfgyVvzoDakDTaJArbUKaLRxGtQyjeRILIZo2ukxXgu94Eu+POcgqzewviMeHdsGzIIbyl0Bpdp2lO9AAe60XY5jygaxjwGhKjFcITKBKUovHzxYgeeD8MBtYXlvI+hjiQOWroHw006E7hwWV10qa4/OrIkWzm5mP5IkO8IX9/2Bl9Cz+X1dHmzcOo6UKl/xXYU05rDtHyySSKFN9GnJB/G5/Bjy+mB6I1VlqJGH26SMoWIYbdN3pkqXPB+QAAw5wVG...TRUNCATED..."""
+PARTS = [ROOT / "tools" / f"_payload_041_045.part{i:02d}.txt" for i in range(1, 9)]
+TARGET = ROOT / "fiction" / "manuscript" / "part-1" / "041-045.md"
+EXPECTED_ENCODED_LEN = 30536
 EXPECTED_FILE_SHA = "cfec9e5149e067413b793e87ab3ccd02a77f2cf725e9b82f6f4f2fb30fd6ecb9"
 EXPECTED_BODIES = {
-41:(4255,"3879d479bec2458e7da2afd78a9c6cc748c9a20e5c0be935d9de365ea05f942a"),
-42:(6012,"e48ad4266831cc8b74ececc7e7fb6f831012a0464005e61eb06fb369d0945a2f"),
-43:(7004,"7da555457ebd2debd70fafb41283f9973440d0e99ef098c3c4acc3ba200baaac"),
-44:(6720,"6c885ee543a45f145e7d920f7fbb89b5ebb280bf1d4c891a2b671b3c428122dd"),
-45:(5876,"e73c81689638476f6736cd9361cdd22dc9e80a076822162856b7516e3a7c12a1"),
+    41: (4255, "3879d479bec2458e7da2afd78a9c6cc748c9a20e5c0be935d9de365ea05f942a"),
+    42: (6012, "e48ad4266831cc8b74ececc7e7fb6f831012a0464005e61eb06fb369d0945a2f"),
+    43: (7004, "7da555457ebd2debd70fafb41283f9973440d0e99ef098c3c4acc3ba200baaac"),
+    44: (6720, "6c885ee543a45f145e7d920f7fbb89b5ebb280bf1d4c891a2b671b3c428122dd"),
+    45: (5876, "e73c81689638476f6736cd9361cdd22dc9e80a076822162856b7516e3a7c12a1"),
 }
-CHAPTER_RE = re.compile(r"^## 제(\d+)화 · (.*?)\n\n\*\*POV:\*\* ([^\n]+)\n\n(.*?)(?=\n\n<!-- source-lines:)", re.M|re.S)
-def main():
- data=zlib.decompress(base64.b64decode(PAYLOAD))
- actual=hashlib.sha256(data).hexdigest()
- if actual != EXPECTED_FILE_SHA: raise SystemExit(f"file sha mismatch {actual}")
- text=data.decode("utf-8")
- parsed={int(m.group(1)):m.group(4).strip() for m in CHAPTER_RE.finditer(text)}
- if sorted(parsed)!=list(EXPECTED_BODIES): raise SystemExit(f"chapter set mismatch {sorted(parsed)}")
- for n,(chars,sha) in EXPECTED_BODIES.items():
-  body=parsed[n]; dig=hashlib.sha256(body.encode()).hexdigest()
-  if len(body)!=chars or dig!=sha: raise SystemExit(f"Ch{n} mismatch chars={len(body)} sha={dig}")
- TARGET.write_bytes(data)
- print(f"materialized {TARGET.relative_to(ROOT)} bytes={len(data)} sha256={actual}")
-if __name__ == "__main__": main()
+CHAPTER_RE = re.compile(
+    r"^## 제(\d+)화 · (.*?)\n\n\*\*POV:\*\* ([^\n]+)\n\n(.*?)(?=\n\n<!-- source-lines:)",
+    re.M | re.S,
+)
+
+
+def main() -> None:
+    missing = [str(p) for p in PARTS if not p.is_file()]
+    if missing:
+        raise SystemExit(f"missing payload parts: {missing}")
+    encoded = "".join(p.read_text(encoding="utf-8").strip() for p in PARTS)
+    if len(encoded) != EXPECTED_ENCODED_LEN:
+        raise SystemExit(f"payload length mismatch: {len(encoded)}")
+    data = zlib.decompress(base64.b64decode(encoded))
+    file_sha = hashlib.sha256(data).hexdigest()
+    if file_sha != EXPECTED_FILE_SHA:
+        raise SystemExit(f"materialized file SHA mismatch: {file_sha}")
+    text = data.decode("utf-8")
+    parsed = {int(m.group(1)): m.group(4).strip() for m in CHAPTER_RE.finditer(text)}
+    if sorted(parsed) != list(EXPECTED_BODIES):
+        raise SystemExit(f"chapter set mismatch: {sorted(parsed)}")
+    for number, (chars, sha) in EXPECTED_BODIES.items():
+        body = parsed[number]
+        actual = hashlib.sha256(body.encode("utf-8")).hexdigest()
+        if len(body) != chars or actual != sha:
+            raise SystemExit(f"chapter {number} mismatch chars={len(body)} sha={actual}")
+    TARGET.write_bytes(data)
+    print(f"materialized {TARGET.relative_to(ROOT)} bytes={len(data)} sha256={file_sha}")
+
+
+if __name__ == "__main__":
+    main()
