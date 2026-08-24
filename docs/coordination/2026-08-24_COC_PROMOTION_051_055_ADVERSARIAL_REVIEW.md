@@ -8,8 +8,9 @@
 
 ## Source re-read / RED harness correction
 - 최초 hosted RED는 promotion contract가 아니라 이 review 문서 안의 legacy 표기 설명문이 content validator를 먼저 건드려 **INVALID RED**로 판정했다.
-- 실제 사용자 지정 DOCX를 다시 파싱해 chapter title, POV marker sequence, body length, body SHA를 독립 재계산했다. 기존 test draft의 Ch51/53/55 POV 및 전 회차 body receipt 일부가 source와 맞지 않아 production 구현 전에 test expectation을 source truth로 교정한다.
+- 실제 사용자 지정 DOCX를 다시 파싱해 chapter title, POV marker sequence, body length, body SHA를 독립 재계산했다. 기존 test draft의 Ch51/53/55 POV 및 전 회차 body receipt 일부가 source와 맞지 않아 production 구현 전에 test expectation을 source truth로 교정했다.
 - 동일 POV marker가 scene break 뒤 연속 재등장하는 경우 header POV sequence는 기존 reverse-outline convention대로 연속 중복 identity를 압축하되 원고 본문의 `[POV]` marker 자체는 보존한다.
+- hosted run `32736064967`에서 기존 모든 검증은 Green이고 새 Ch051–055 계약만 `4 FAIL / 0 ERROR`로 실패해 **VALID RED**를 확보했다.
 
 ## Production body receipts after spelling-only reconciliation
 - Ch51 `잊어도 되는 기억` · POV `주안 → 이안 → 주안` · `5568` chars · `5c030e6bef2a802db670f600ad0bb5079bcba185b5bd134eae3ad44f3fe52880`
@@ -20,4 +21,10 @@
 - preserved Ch50: `5b3bd9bcbb7b3d04deb38dfdb39db2c9fdc56fb50df18ea9425562c9b484880e`
 - preserved legacy Ch56: `f0f1d1e7ce95b4c484d7c26997343851e1b3381ccdfcf1c751d41224d2bf6be5`
 
-`CLEAN_REVIEW_EXIT` requires a source-correct RED first, then fresh hosted full CI Green, unresolved review thread 0, latest-main freshness, and permanent read-only workflow state on the exact merge head.
+## GREEN materialization readback
+- staged payload was reconstructed only after whole markdown SHA `e4fe2a8f88feca6972a54eed6c395a27fd2f4753687878419d5f66411893b939` and all five body receipts matched.
+- one-time materializer committed exact manuscript + coupled index/reverse-outline/Scene Pass/router artifacts as bot commit `11dd0f0`.
+- the self-update run stopped intentionally after pushing the new branch head; this is not reused as validation evidence.
+- previous Ch046–050 test was converted to a historical contract: exact Ch46–50 source/body receipts stay fixed while later valid frontier advancement is allowed.
+
+`CLEAN_REVIEW_EXIT` requires fresh hosted full CI Green on the materialized human-triggered head, unresolved review thread 0, latest-main freshness, one-time helper/payload removal, and permanent read-only workflow state on the exact merge head.
