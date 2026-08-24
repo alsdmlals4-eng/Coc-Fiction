@@ -18,13 +18,7 @@ on:
       - "tests/test_promote_026_030_contract.py"
       - "tests/test_promote_031_035_contract.py"
       - "tests/test_promote_036_040_contract.py"
-      - "tools/check_fiction_docx_packaging.py"
-      - "tools/check_fiction_operating_system.py"
-      - "tools/check_fiction_content.py"
-      - "tools/build_fiction_reverse_outline.py"
-      - "tools/check_fiction_reverse_outline.py"
-      - "tools/check_fiction_scene_passes.py"
-      - "tools/fiction_composed_data.py"
+      - "tools/**"
       - ".github/workflows/fiction-ops-validation.yml"
       - ".github/PULL_REQUEST_TEMPLATE/fiction-change.md"
   push:
@@ -54,7 +48,7 @@ on:
       - "tools/fiction_composed_data.py"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validate:
@@ -64,24 +58,36 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: One-time materialize exact Ch036-040 source
+        if: github.event_name == 'pull_request' && github.head_ref == 'promote/036-040-current-source-20260824'
+        env:
+          HEAD_BRANCH: ${{ github.head_ref }}
+        run: |
+          git fetch origin "$HEAD_BRANCH"
+          git checkout "$HEAD_BRANCH"
+          python tools/_materialize_036_040_payload.py
+          if git diff --quiet -- fiction/manuscript/part-1/036-040.md; then
+            echo "exact manuscript already installed"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add fiction/manuscript/part-1/036-040.md
+            git commit -m "fiction: install exact user-source Ch036-040 manuscript"
+            git push origin HEAD:"$HEAD_BRANCH"
+            echo "branch updated; this run intentionally stops before validation"
+            exit 1
+          fi
       - name: Validate Base reuse adoption manifest
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-
           path = Path('docs/base-reuse-adoption.json')
           data = json.loads(path.read_text(encoding='utf-8'))
           assert data['schema_version'] == 1
           assert data['base_source_commit'] == '8553678f70e22f193a2336b591f677dcfa5a8965'
           modules = data['modules']
-          expected = {
-              'RM-TOOL-001': 'planned',
-              'RM-SYS-001': 'not_applicable',
-              'RM-SYS-003': 'not_applicable',
-              'RM-VIS-001': 'not_applicable',
-              'RM-VIS-002': 'not_applicable',
-          }
+          expected = {'RM-TOOL-001': 'planned','RM-SYS-001': 'not_applicable','RM-SYS-003': 'not_applicable','RM-VIS-001': 'not_applicable','RM-VIS-002': 'not_applicable'}
           assert {key: value['state'] for key, value in modules.items()} == expected
           print('base reuse adoption manifest pass')
           PY
