@@ -23,7 +23,7 @@
     "legacy_tail_starts_at": 36,
     "boundary_after_chapter": 35,
     "whole_manuscript_continuity": "NOT_YET_CLAIMED",
-    "rule": "Chapters 1-35 are the bounded reconciled candidate prefix on PR #50. Stored Ch36+ remain legacy-tail artifacts until their own 5-chapter promotion pass. The user source set currently has a declared 101-105 coverage gap and must not be auto-filled from derived or legacy sources."
+    "rule": "Chapters 1-35 are the bounded reconciled production prefix on main after PR #50. Stored Ch36+ remain legacy-tail artifacts until their own 5-chapter promotion pass. The user source set currently has a declared 101-105 coverage gap and must not be auto-filled from derived or legacy sources."
   },
   "representative_pilots": [
     10,
@@ -318,7 +318,7 @@
         "30": "5ca93e6979b8beaa0d6ffe07809c664c0b7b907387b47b1732b431be364baac1",
         "36": "c5dd1b067199247a221350efd77e555c5cc98d08a648eb0f06ec9bd5ddfaf96e"
       },
-      "status": "COMPLETE_USER_SOURCE_CANON_RECONCILIATION / PENDING_PR50"
+      "status": "COMPLETE_USER_SOURCE_CANON_RECONCILIATION / CURRENT_PREFIX / MIGRATION_BOUNDARY_AFTER_035"
     },
     {
       "bundle": "fiction/manuscript/side-story-lake/091-095.md",

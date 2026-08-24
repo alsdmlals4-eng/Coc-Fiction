@@ -31,13 +31,11 @@ source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
 current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx
 current_bundle_source_sha256: 89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10
 derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
-repository_candidate_prefix: 001-035
+repository_reconciled_prefix: 001-035
 legacy_tail_starts_at: 036
 whole_manuscript_continuity: NOT_YET_CLAIMED
-last_frontier_change_pr: 48
-pending_frontier_change_pr: 50
-pending_frontier_pr: 50
-next_bundle_after_merge: fiction/manuscript/part-1/036-040.md
+last_frontier_change_pr: 50
+next_bundle: fiction/manuscript/part-1/036-040.md
 source_coverage_gap: 101-105
 ```
 
@@ -78,10 +76,8 @@ GitHub 225화/45묶음 경로는 migration container이며 current narrative 최
 
 ## current production prefix / migration boundary
 
-- `001–030`: PR #48을 통해 production으로 승격 완료.
-- `005→006`, `010→011`, `015→016`, `020→021`, `025→026`: current continuity PASS.
-- main verified `030→031` 경계는 PR #50 candidate에서 재개되며, pending candidate frontier는 `001–035`.
-- Ch30 reverse outline: `next_chapter=31` candidate 연결.
+- `001–035`: PR #50까지 production으로 승격 완료.
+- `005→006`, `010→011`, `015→016`, `020→021`, `025→026`, `030→031`: current continuity PASS.
 - Ch35 reverse outline: `next_chapter=null`.
 - legacy Ch36 reverse outline: `previous_chapter=null`.
 - `035→036`: `MIGRATION_BOUNDARY / NOT_YET_CLAIMED`.
@@ -89,13 +85,13 @@ GitHub 225화/45묶음 경로는 migration container이며 current narrative 최
 ## 현재 작업
 
 다음 시작 묶음:
-`fiction/manuscript/part-1/031-035.md`
+`fiction/manuscript/part-1/036-040.md`
 
-사용자 지정 `031–040` source를 사용한다. 현재 PR #50은 사용자 승인으로 이 작업의 current-task workstream이다. exact-head Green과 병합 전에는 production 완료로 간주하지 않는다.
+같은 사용자 지정 `031–040` source를 사용한다.
 
 ```text
-Ch30→31 boundary verification
-→ exact source Ch31-35 extraction
+Ch35→36 boundary verification
+→ exact source Ch36-40 extraction
 → latest direct-user Canon conflict scan
 → manuscript/index/reverse-outline/Scene Pass/router propagation
 → 5× adversarial review

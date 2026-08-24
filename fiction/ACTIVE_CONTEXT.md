@@ -9,9 +9,9 @@
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
 work_mode: IMPLEMENT / REVIEW
-frontier_observed_at_main: null
-last_frontier_change_pr: 48
-pending_frontier_change_pr: 50
+frontier_observed_at_main: 7bc710f693bd4dec8c6929a6282653c288b252d9
+last_frontier_change_pr: 50
+pending_frontier_change_pr: null
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 current_source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
 current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx
@@ -60,12 +60,12 @@ rule: source authority != automatic production authority
 - PR #39: Ch016–020 bounded production promotion.
 - PR #42: Ch021–025 bounded production promotion merged.
 - PR #47: Talon/Milly/Hatem direct user Canon protections merged.
-- **PR #48: Ch026–030 user-source bounded promotion merged; production frontier is 001–030.**
-- **PR #50: Ch031–035 bounded promotion candidate / current-task 승인 범위. exact-head Green 전에는 production 완료 아님.**
+- PR #48: Ch026–030 user-source bounded promotion merged.
+- **PR #50: Ch031–035 user-source bounded promotion merged; production frontier is 001–035.**
 
-## Current production prefix 001–030 contract
+## Current production prefix 001–035 contract
 
-- Ch5→6, Ch10→11, Ch15→16, Ch20→21, Ch25→26: current continuity.
+- Ch5→6, Ch10→11, Ch15→16, Ch20→21, Ch25→26, Ch30→31: current continuity.
 - Ch16: 위험한 해결책도 당사자 선택 없이 강행하지 않는다.
 - Ch17: 주안의 반응성과 신체 회복은 복종·소유의 증거가 아니다.
 - Ch18: 정보·힘 제공과 결정 대행을 분리한다.
@@ -79,6 +79,11 @@ rule: source authority != automatic production authority
 - Ch28: 사후 하템은 이안의 환각/기억이며 새로운 객관 정보를 제공하지 않는다. 엘리스는 허락 후에만 정신 지원을 한다.
 - Ch29: 밀리와 이안은 친구였던 시간을 지우지 않으면서 현재 반대편 행동을 구분한다. 주안은 몸이 창을 원한다는 이유로 오히려 창을 잡지 않는다.
 - Ch30: 밀리의 storm-walk와 쿠바라 창의 연결 절단을 관찰하지만 기원·전체 기능·소유권은 과잉 확정하지 않는다.
+- Ch31: 주안은 쿠바라를 죽이는 대신 이동을 막는 목적을 선택한다. 엘리스는 필요 때문에 창을 사용하지만 소유권을 자동 주장하지 않는다. 밀리와 하템의 정체·죽음은 분리한다.
+- Ch32: 쇼거스의 분열과 다중 핵 공략 단서를 확인한다. 엘리스의 쇼거스 행동 명령은 D04와 정합하며 비인간 한정 능력으로 축소하지 않는다.
+- Ch33: 주안은 위험한 자가변형을 스스로 선택하지만 이름·장소·목표를 확인해 자기결정을 회수한다.
+- Ch34: 붉은 핵을 노출·제한·파괴하는 반복 가능한 전술을 확립하고, 강해진 몸도 새 위험을 개별 검증한다.
+- Ch35: 주안·엘리스·이안·아킴의 협업으로 쇼거스 핵을 소진한다. 세실리아는 생존 상태로 노출되며 원인은 아직 미확정이다. 탈론의 세실리아 회수 행동은 Ch36으로 이어지지만 Ch36은 아직 legacy tail이다.
 
 ## Current migration boundary
 
@@ -91,7 +96,7 @@ left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-Ch25→26 current continuity는 PASS다. 저장 화수가 인접하다는 이유만으로 current Ch30→legacy Ch31 연속성을 주장하지 않는다.
+Ch30→31 current continuity는 PASS다. 저장 화수가 인접하다는 이유만으로 current Ch35→legacy Ch36 연속성을 production으로 주장하지 않는다.
 
 ## Canon protection
 
@@ -128,9 +133,9 @@ Ch25→26 current continuity는 PASS다. 저장 화수가 인접하다는 이유
 
 ## Next exact work
 
-`fiction/manuscript/part-1/031-035.md`
+`fiction/manuscript/part-1/036-040.md`
 
-다음 pass는 **Ch30→31 migration boundary**에서 사용자 지정 `031–040` source를 기준으로 시작한다. 현재 PR #50은 사용자 승인으로 current-task workstream이 되었으며 exact-head Green 전에는 production 완료로 간주하지 않는다. `101–105`는 원본 파일이 제공되기 전 자동 보충 금지다.
+다음 pass는 **Ch35→36 migration boundary**에서 같은 사용자 지정 `031–040` source를 기준으로 시작한다. `101–105`는 원본 파일이 제공되기 전 자동 보충 금지다.
 
 ## Base / shared governance
 

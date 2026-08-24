@@ -8,9 +8,9 @@
 
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
-frontier_observed_at_main: null
-last_frontier_change_pr: 48
-pending_frontier_change_pr: 50
+frontier_observed_at_main: 7bc710f693bd4dec8c6929a6282653c288b252d9
+last_frontier_change_pr: 50
+pending_frontier_change_pr: null
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
 current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx
@@ -25,7 +25,7 @@ next_bounded_bundle: fiction/manuscript/part-1/036-040.md
 source_coverage_gap: 101-105
 ```
 
-`frontier_observed_at_main`은 PR #48이 production frontier를 `001–030`으로 이동시킨 실제 merge 증거다. 최신 저장소 SHA는 작업 시작 때 다시 조회한다.
+`frontier_observed_at_main`은 PR #50이 production frontier를 `001–035`로 이동시킨 실제 merge 증거다. 최신 저장소 SHA는 작업 시작 때 다시 조회한다.
 
 재개 순서:
 `latest main → open PR → AGENTS → CURRENT_STATE_RECEIPT → ACTIVE_CONTEXT → HANDOFF → CANON_REGISTRY → SCENE_PASS_REGISTRY → USER_SOURCE_CHUNK_MANIFEST → next bounded bundle`
@@ -34,11 +34,11 @@ source_coverage_gap: 101-105
 
 - PR #42: Ch021–025 bounded promotion merged.
 - PR #47: `탈론=핵심 적대`, `밀리=남성/미스캐토닉 여성 위장`, `하템=여성/기본 가면` Canon merged.
-- **PR #48: Ch026–030 user-source bounded promotion merged.**
-- **PR #50: Ch031–035 bounded promotion candidate / current-task 승인 범위. exact-head Green 전에는 production 완료 아님.**
-- production prefix: `001–030`.
-- fail-closed boundary: `30→31`.
-- next source bundle: `031–035` from user-designated 031–040 DOCX.
+- PR #48: Ch026–030 user-source bounded promotion merged.
+- **PR #50: Ch031–035 user-source bounded promotion merged.**
+- production prefix: `001–035`.
+- fail-closed boundary: `35→36`.
+- next source bundle: `036–040` from the same user-designated 031–040 DOCX.
 
 ## Source authority
 
@@ -50,14 +50,19 @@ source_coverage_gap: 101-105
 
 이전 `폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx`는 derived cross-check only다. 현재 사용자 source set에는 `101–105`가 없으므로 자동 보충하지 않는다.
 
-## Ch026–030 보호 readback
+## Ch026–035 보호 readback
 
-- Ch25→26: current continuity PASS.
+- Ch25→26, Ch30→31: current continuity PASS.
 - Ch26: 엘리스는 이 장면에서 쇼거스를 직접 정신조작하지 않고 질문/책임으로 자기 판단을 바꾸게 한다. 이는 엘리스에게 인간·비인간 정신조작 능력이 없다는 뜻이 아니다. 탈론은 쇼거스 다수를 정면 상대하는 core antagonist 위상.
 - Ch27: 밀리는 남성 현재 몸으로 재등장. 하템은 별도 여성 인물로 이안을 보호하다 육체적으로 사망.
 - Ch28: 사후 하템은 환각/기억이며 새 정보 제공 금지. 엘리스는 이안 허락 후 정신 경계 지원만 한다.
 - Ch29: 이안/밀리는 친구였던 과거와 현재 반대편 행동을 동시에 유지. 주안은 몸이 창을 원한다는 이유로 창을 잡지 않는다.
 - Ch30: 밀리 storm-walk, 쿠바라 창의 연결 절단을 관찰하지만 기원·전체 기능·소유권은 확정하지 않는다.
+- Ch31: 주안은 쿠바라를 죽이는 대신 이동을 막고, 엘리스는 창을 필요에 따라 사용하되 자동 소유권을 주장하지 않는다. 밀리와 하템은 별개의 인물·별개의 죽음이다.
+- Ch32: 쇼거스 다중 핵 공략 단서를 확인. 엘리스의 행동 명령은 D04와 정합하며 인간 대상 조작 가능 범위를 삭제하지 않는다.
+- Ch33: 주안의 위험한 변형은 자기선택이며 이름·장소·목표 확인 절차를 유지한다.
+- Ch34: 붉은 핵의 노출·제한·파괴를 반복 가능한 공략으로 정리한다.
+- Ch35: 4인 협업으로 쇼거스 핵을 소진하고 세실리아를 생존 상태로 노출한다. 세실리아가 쇼거스 안에 있었던 원인은 아직 미확정이다.
 
 ## Current migration truth
 
@@ -70,13 +75,13 @@ left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-Ch30→31은 fail-closed boundary다. 인접 번호를 근거로 현재 연속성을 추정하지 않는다.
+Ch30→31은 current continuity다. 인접 번호만으로 Ch35→36을 current continuity로 올리지 않는다.
 
 ## 다음 정확한 작업
 
-`fiction/manuscript/part-1/031-035.md`
+`fiction/manuscript/part-1/036-040.md`
 
-사용자 지정 `031–040` 원본을 기준으로 Ch30→31 경계를 다시 열고, exact body → index → reverse outline → Scene Pass → router → regression contract 순으로 동일한 bounded promotion을 진행한다. 단, 현재 PR #50은 사용자 승인으로 current-task workstream이 되었으며 exact-head Green 전에는 production 완료로 간주하지 않는다.
+같은 사용자 지정 `031–040` 원본을 기준으로 Ch35→36 경계를 다시 열고, exact body → index → reverse outline → Scene Pass → router → regression contract 순으로 동일한 bounded promotion을 진행한다.
 
 ## 장기 보호 Canon
 
