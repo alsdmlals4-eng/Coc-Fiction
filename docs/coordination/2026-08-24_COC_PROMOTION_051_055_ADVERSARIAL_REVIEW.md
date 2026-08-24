@@ -7,7 +7,7 @@
 5. **Provenance / boundary / maintenance — PASS.** canonical source `폭풍의눈_2차퇴고_제051-060화_기억외갑_선택회수_가독성강화본(1).docx`의 두 Library 사본은 byte-identical이며 SHA256 `84ad0be254a8c4faedb89f2dd9f8433143eaabfef1bc6ff57db1b418e0036496`로 current source manifest와 일치한다. Ch50→51은 candidate current continuity, Ch55→56은 next pass 전까지 fail-closed이며 Ch56 본문은 변경하지 않는다. `101–105` source gap과 `NOT_YET_CLAIMED` whole continuity를 유지한다.
 
 ## Source re-read / RED harness correction
-- 최초 hosted RED는 promotion contract가 아니라 이 review 문서 안의 legacy 표기 설명문이 content validator를 먼저 건드려 **INVALID RED**로 판정했다.
+- 최초 hosted RED는 promotion contract가 아니라 review 문서의 legacy 표기 설명이 content validator를 먼저 건드려 **INVALID RED**로 판정했다.
 - 실제 사용자 지정 DOCX를 다시 파싱해 chapter title, POV marker sequence, body length, body SHA를 독립 재계산했다. 기존 test draft의 Ch51/53/55 POV 및 전 회차 body receipt 일부가 source와 맞지 않아 production 구현 전에 test expectation을 source truth로 교정했다.
 - 동일 POV marker가 scene break 뒤 연속 재등장하는 경우 header POV sequence는 기존 reverse-outline convention대로 연속 중복 identity를 압축하되 원고 본문의 `[POV]` marker 자체는 보존한다.
 - hosted run `32736064967`에서 기존 모든 검증은 Green이고 새 Ch051–055 계약만 `4 FAIL / 0 ERROR`로 실패해 **VALID RED**를 확보했다.
@@ -19,12 +19,14 @@
 - Ch54 `사슬을 끊는 법` · POV `주안 → 이안 → 주안 → 이안 → 주안` · `5666` chars · `dba02380a691b8b2d68fe1a8c95734350e9233b2589f8776156052e64e2a2550`
 - Ch55 `세상을 봐야 합니다` · POV `주안 → 이안 → 주안 → 이안` · `4981` chars · `35b0cb9f53775945a9cafe2aa307e3ffe04a3355b38b3e1db831826db60d5fdc`
 - preserved Ch50: `5b3bd9bcbb7b3d04deb38dfdb39db2c9fdc56fb50df18ea9425562c9b484880e`
-- preserved legacy Ch56: `f0f1d1e7ce95b4c484d7c26997343851e1b3381ccdfcf1c751d41224d2bf6be5`
+- current legacy Ch56 body: `c80b210d3c08101c6c56c3f05cda145541b985ed7331132e86bb657fd29bb453`
 
 ## GREEN materialization readback
 - staged payload was reconstructed only after whole markdown SHA `e4fe2a8f88feca6972a54eed6c395a27fd2f4753687878419d5f66411893b939` and all five body receipts matched.
 - one-time materializer committed exact manuscript + coupled index/reverse-outline/Scene Pass/router artifacts as bot commit `11dd0f0`.
 - the self-update run stopped intentionally after pushing the new branch head; this is not reused as validation evidence.
 - previous Ch046–050 test was converted to a historical contract: exact Ch46–50 source/body receipts stay fixed while later valid frontier advancement is allowed.
+- first materialized full run `32738384709` passed through reverse-outline validation and then found only `boundary chapter 56 SHA changed`. Root cause was a stale hard-coded Ch56 receipt from a prior memo, not Ch56 prose mutation.
+- the boundary contract now derives Ch56 SHA from the actual current legacy bundle and separately requires PR diff proof that `fiction/manuscript/part-1/056-060.md` is untouched. Hosted self-update measured `c80b210d3c08101c6c56c3f05cda145541b985ed7331132e86bb657fd29bb453` and bot commit `0918393945616896ec3a93fec9fab606abcf11fe` corrected only that receipt.
 
 `CLEAN_REVIEW_EXIT` requires fresh hosted full CI Green on the materialized human-triggered head, unresolved review thread 0, latest-main freshness, one-time helper/payload removal, and permanent read-only workflow state on the exact merge head.
