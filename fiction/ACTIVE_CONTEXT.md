@@ -9,9 +9,9 @@
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
 work_mode: IMPLEMENT / REVIEW
-frontier_observed_at_main: 7bc710f693bd4dec8c6929a6282653c288b252d9
+frontier_observed_at_main: null
 last_frontier_change_pr: 50
-pending_frontier_change_pr: null
+pending_frontier_change_pr: 55
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 current_source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
 current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx
@@ -19,11 +19,11 @@ current_bundle_source_sha256: 89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e
 derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 delivery_state: QA_VERIFIED
 repository_promotion_state: PARTIAL
-reconciled_prefix_end: 35
-legacy_tail_starts_at: 36
-boundary_after_chapter: 35
+reconciled_prefix_end: 40
+legacy_tail_starts_at: 41
+boundary_after_chapter: 40
 whole_manuscript_continuity: NOT_YET_CLAIMED
-next_bounded_bundle: fiction/manuscript/part-1/036-040.md
+next_bounded_bundle: fiction/manuscript/part-1/041-045.md
 source_coverage_gap: 101-105
 ```
 
@@ -61,9 +61,12 @@ rule: source authority != automatic production authority
 - PR #42: Ch021–025 bounded production promotion merged.
 - PR #47: Talon/Milly/Hatem direct user Canon protections merged.
 - PR #48: Ch026–030 user-source bounded promotion merged.
-- **PR #50: Ch031–035 user-source bounded promotion merged; production frontier is 001–035.**
+- **PR #50: Ch031–035 user-source bounded promotion merged; main production frontier is 001–035.**
+- **PR #55: Ch036–040 user-source bounded promotion pending candidate; candidate frontier 001–040, not main production until merge.**
 
-## Current production prefix 001–035 contract
+## Pending PR #55 candidate prefix 001–040 contract
+
+> GitHub `main` production은 PR #55 병합 전까지 `001–035`다. 아래 `001–040`은 exact-head 검증 중인 **pending candidate**이며 production 완료 주장이 아니다.
 
 - Ch5→6, Ch10→11, Ch15→16, Ch20→21, Ch25→26, Ch30→31: current continuity.
 - Ch16: 위험한 해결책도 당사자 선택 없이 강행하지 않는다.
@@ -88,15 +91,15 @@ rule: source authority != automatic production authority
 ## Current migration boundary
 
 ```yaml
-left_current: 35
-right_legacy: 36
+left_current: 40
+right_legacy: 41
 left_next_chapter: null
 right_previous_chapter: null
 left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-Ch30→31 current continuity는 PASS다. 저장 화수가 인접하다는 이유만으로 current Ch35→legacy Ch36 연속성을 production으로 주장하지 않는다.
+PR #55 candidate에서는 Ch35→36 연결을 검증했고 현재 fail-closed 경계는 Ch40→41이다. 다만 GitHub `main` production frontier는 PR #55 병합 전까지 001–035로 유지한다.
 
 ## Canon protection
 
@@ -131,11 +134,11 @@ Ch30→31 current continuity는 PASS다. 저장 화수가 인접하다는 이유
 9. squash merge
 10. post-merge main readback + receipt closure + Notion sync
 
-## Next exact work
+## Next exact work after PR #55 merge
 
-`fiction/manuscript/part-1/036-040.md`
+`fiction/manuscript/part-1/041-045.md`
 
-다음 pass는 **Ch35→36 migration boundary**에서 같은 사용자 지정 `031–040` source를 기준으로 시작한다. `101–105`는 원본 파일이 제공되기 전 자동 보충 금지다.
+PR #55가 exact-head Green·review thread 0·main freshness를 통과해 병합된 뒤 **Ch40→41 migration boundary**에서 다음 사용자 지정 `041–050` source로 진행한다. `101–105`는 원본 파일이 제공되기 전 자동 보충 금지다.
 
 ## Base / shared governance
 

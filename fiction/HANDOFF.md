@@ -8,24 +8,24 @@
 
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
-frontier_observed_at_main: 7bc710f693bd4dec8c6929a6282653c288b252d9
+frontier_observed_at_main: null
 last_frontier_change_pr: 50
-pending_frontier_change_pr: null
+pending_frontier_change_pr: 55
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
 current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx
 current_bundle_source_sha256: 89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10
 delivery_state: QA_VERIFIED
 repository_promotion_state: PARTIAL
-reconciled_prefix_end: 35
-legacy_tail_starts_at: 36
-boundary_after_chapter: 35
+reconciled_prefix_end: 40
+legacy_tail_starts_at: 41
+boundary_after_chapter: 40
 whole_manuscript_continuity: NOT_YET_CLAIMED
-next_bounded_bundle: fiction/manuscript/part-1/036-040.md
+next_bounded_bundle: fiction/manuscript/part-1/041-045.md
 source_coverage_gap: 101-105
 ```
 
-`frontier_observed_at_main`은 PR #50이 production frontier를 `001–035`로 이동시킨 실제 merge 증거다. 최신 저장소 SHA는 작업 시작 때 다시 조회한다.
+`frontier_observed_at_main: null`은 PR #55가 아직 pending candidate임을 뜻한다. 마지막 실제 main frontier 변경은 PR #50의 `001–035`이며, PR #55 병합 전 `001–040`을 main production으로 부르지 않는다.
 
 재개 순서:
 `latest main → open PR → AGENTS → CURRENT_STATE_RECEIPT → ACTIVE_CONTEXT → HANDOFF → CANON_REGISTRY → SCENE_PASS_REGISTRY → USER_SOURCE_CHUNK_MANIFEST → next bounded bundle`
@@ -36,9 +36,10 @@ source_coverage_gap: 101-105
 - PR #47: `탈론=핵심 적대`, `밀리=남성/미스캐토닉 여성 위장`, `하템=여성/기본 가면` Canon merged.
 - PR #48: Ch026–030 user-source bounded promotion merged.
 - **PR #50: Ch031–035 user-source bounded promotion merged.**
-- production prefix: `001–035`.
-- fail-closed boundary: `35→36`.
-- next source bundle: `036–040` from the same user-designated 031–040 DOCX.
+- **PR #55: Ch036–040 user-source bounded promotion pending candidate.**
+- main production prefix: `001–035`; pending candidate prefix: `001–040`.
+- candidate fail-closed boundary: `40→41`.
+- next bundle after PR #55 merge: `041–045` from the user-designated 041–050 source.
 
 ## Source authority
 
@@ -67,21 +68,21 @@ source_coverage_gap: 101-105
 ## Current migration truth
 
 ```yaml
-left_current: 35
-right_legacy: 36
+left_current: 40
+right_legacy: 41
 left_next_chapter: null
 right_previous_chapter: null
 left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-Ch30→31은 current continuity다. 인접 번호만으로 Ch35→36을 current continuity로 올리지 않는다.
+PR #55 candidate에서 Ch35→36은 exact source와 consumer 검증으로 연결되며, 새 fail-closed candidate 경계는 Ch40→41이다. main은 PR #55 병합 전까지 001–035 production이다.
 
 ## 다음 정확한 작업
 
-`fiction/manuscript/part-1/036-040.md`
+현재: PR #55 exact-head validation → review thread 0 → main freshness → squash merge.
 
-같은 사용자 지정 `031–040` 원본을 기준으로 Ch35→36 경계를 다시 열고, exact body → index → reverse outline → Scene Pass → router → regression contract 순으로 동일한 bounded promotion을 진행한다.
+병합 뒤: `fiction/manuscript/part-1/041-045.md`를 사용자 지정 `041–050` 원본으로 bounded promotion한다.
 
 ## 장기 보호 Canon
 
