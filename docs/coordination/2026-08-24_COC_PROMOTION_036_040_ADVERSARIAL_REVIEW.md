@@ -24,4 +24,10 @@
 - Fix: derive the active frontier and migration boundary from `SCENE_PASS_REGISTRY`, treat superseded right-boundary SHAs as historical once a later pass promotes that chapter, and validate the next five-chapter range structurally.
 - This makes Scene Pass validation reusable for subsequent bounded promotions instead of requiring a new hard-coded boundary patch each time.
 
+## Pending-state closure follow-up
+- RED then showed that candidate Scene Pass state had advanced to `001–040` while CURRENT_STATE_RECEIPT and live routers still described main `001–035` as if no PR were pending.
+- Root cause: PR candidate truth and main production truth were not represented separately in the closure contract.
+- Fix: while PR #55 is pending, receipt/router candidate fields are `001–040 / 041+ / boundary 40→41 / next-after-merge 041–045`, `pending_frontier_change_pr=55`, and `frontier_observed_at_main=null`; the prose explicitly preserves main production at `001–035` until merge.
+- This matches `tests.test_current_state_closure` without falsely claiming a main production frontier move before merge.
+
 `CLEAN_REVIEW_EXIT` contingent on exact-head hosted validation Green.
