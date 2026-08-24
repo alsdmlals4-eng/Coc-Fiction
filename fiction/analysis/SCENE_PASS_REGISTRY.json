@@ -23,7 +23,7 @@
     "legacy_tail_starts_at": 46,
     "boundary_after_chapter": 45,
     "whole_manuscript_continuity": "NOT_YET_CLAIMED",
-    "rule": "Chapters 1-45 are the bounded reconciled candidate prefix on PR #57. Ch041-066 are Aftermath & 8-year Bridge; Part 2 begins Ch067+. Stored Ch46+ remain legacy until their own pass; 101-105 remains fail-closed."
+    "rule": "Chapters 1-45 are the bounded reconciled production prefix on main after PR #57. Ch041-066 are Aftermath & 8-year Bridge; stored Ch46+ remain legacy until their own pass; 101-105 remains fail-closed."
   },
   "representative_pilots": [
     10,
@@ -436,7 +436,7 @@
         "40": "1de35b4f4ecb19706f05bac827ed916484f59a2e167a0d4277012696cd1d9f19",
         "46": "33a9f6acb305e423e942789e62af90d7b446fd422cb81293f0ed87f084c5f0b2"
       },
-      "status": "COMPLETE_CURRENT_SOURCE_CANON_RECONCILIATION / BRIDGE_CANDIDATE_PREFIX / PENDING_PR57"
+      "status": "COMPLETE_CURRENT_SOURCE_CANON_RECONCILIATION / BRIDGE_CURRENT_PREFIX"
     }
   ],
   "next_pass_mode": "USER_SOURCE_CHUNK_CANON_RECONCILIATION",

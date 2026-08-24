@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_at": "2026-08-24",
-  "status": "ACTIVE_OVERRIDE / BUNDLE_041_045 / BRIDGE_CURRENT_RECONCILED_PENDING_PR57",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_041_045 / BRIDGE_CURRENT_RECONCILED",
   "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
   "chapters": [
     {

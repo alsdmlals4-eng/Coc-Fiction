@@ -31,16 +31,12 @@ source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
 current_bundle_source: 폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx
 current_bundle_source_sha256: 9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad
 derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
-repository_reconciled_prefix: 001-040
+repository_reconciled_prefix: 001-045
 legacy_tail_starts_at: 046
 whole_manuscript_continuity: NOT_YET_CLAIMED
-last_frontier_change_pr: 55
-next_bundle: fiction/manuscript/part-1/041-045.md
+last_frontier_change_pr: 57
+next_bundle: fiction/manuscript/part-1/046-050.md
 source_coverage_gap: 101-105
-main_production_prefix: 001-040
-repository_candidate_prefix: 001-045
-pending_frontier_pr: 57
-next_bundle_after_merge: fiction/manuscript/part-1/046-050.md
 ```
 
 ## Source authority
@@ -80,22 +76,23 @@ GitHub 225화/45묶음 경로는 migration container이며 current narrative 최
 
 ## current production prefix / migration boundary
 
-- GitHub `main` production: `001–040` (PR #55).
+- GitHub `main` production: `001–045` (PR #57).
 - `035→036`은 current continuity PASS.
 - Ch40 reverse outline: `next_chapter=null`.
 - legacy Ch41 reverse outline: `previous_chapter=null`.
-- `040→041`: `MIGRATION_BOUNDARY / NOT_YET_CLAIMED`.
+- `040→041`은 current continuity PASS.
+- `045→046`: `MIGRATION_BOUNDARY / NOT_YET_CLAIMED`.
 
 ## 현재 작업
 
 다음 시작 묶음:
-`fiction/manuscript/part-1/041-045.md`
+`fiction/manuscript/part-1/046-050.md`
 
 사용자 지정 `폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx` / SHA256 `9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad`를 사용한다. 041–066은 Aftermath & 8년 Bridge이며 Part 2는 067+다.
 
 ```text
-Ch40→41 boundary verification
-→ exact source Ch41-45 extraction
+Ch45→46 boundary verification
+→ exact source Ch46-50 extraction
 → latest direct-user Canon conflict scan
 → manuscript/index/reverse-outline/Scene Pass/router propagation
 → 5× adversarial review

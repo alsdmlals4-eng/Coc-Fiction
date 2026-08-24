@@ -33,17 +33,17 @@
 
 ```yaml
 source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
-current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx
-current_bundle_source_sha256: 89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10
+current_bundle_source: 폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx
+current_bundle_source_sha256: 9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad
 derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 repository_promotion_state: PARTIAL
-reconciled_prefix: 001-040
-legacy_tail_starts_at: 041
-boundary_after_chapter: 040
+reconciled_prefix: 001-045
+legacy_tail_starts_at: 046
+boundary_after_chapter: 045
 whole_manuscript_continuity: NOT_YET_CLAIMED
-last_frontier_change_pr: 55
+last_frontier_change_pr: 57
 pending_frontier_change_pr: null
-next_reconciliation: 041-045
+next_reconciliation: 046-050
 source_coverage_gap: 101-105
 ```
 
@@ -79,7 +79,7 @@ Source authority는 reconstruction input의 권위다. GitHub production authori
 - Alice Carter 한국어 정본 표기: `엘리스`.
 - POV: Scene-Locked Hybrid; scene-internal head hopping 금지.
 
-## 6. current production prefix 001–040 readback
+## 6. current production prefix 001–045 readback
 
 - 001–020: 이전 bounded pass Green 상태 유지.
 - 021–025: 배수로 탈출→정찰→한 박자 선택 규칙→쇼거스 전면 압력으로 current continuity를 잇는다.
@@ -98,24 +98,29 @@ Source authority는 reconstruction input의 권위다. GitHub production authori
 - 038 `인질은 제가 되죠`: 엘리스가 자발적 인질 제안을 협상 수단으로 선택해 결정권을 행사한다.
 - 039 `군함이 왔다`: 델타그린 군함 도착으로 전장 권력축이 재배치된다.
 - 040 `아버지의 자리`: 윌리엄의 사랑과 잘못을 동시에 인정하고 엘리스가 자기 방식의 책임을 선택하며 Part 1 본편을 닫는다.
+- 041 `잘 돌아왔다`: 가족 재회와 살아 돌아온 관계를 Aftermath & 8-year Bridge의 출발점으로 재정렬한다.
+- 042 `살아 돌아온 몸`: 주안의 변화한 몸을 보상으로 단순화하지 않고 선택 침식 가능성이 있는 후유 상태로 검증한다.
+- 043 `확인하고 설명하겠습니다`: 주안은 자기 감정의 기원을 검증하되 엘리스의 현재 선택을 대신 판정하지 않는다.
+- 044 `응답하지 않은 호출기`: 미응답을 영구 이별로 확정하지 않고 수신기를 보존한다.
+- 045 `노란 옷은 안 입습니다`: 황색과 거리를 둔 주안의 현재 선택을 고정하고 다음 Bridge 생활·훈련 축으로 넘긴다.
 
 ## 7. current migration boundary
 
 ```yaml
-left_current: 40
-right_legacy: 41
+left_current: 45
+right_legacy: 46
 left_next_chapter: null
 right_previous_chapter: null
 left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-PR #55 병합으로 Ch35→36은 current continuity가 되었고 새 main fail-closed 경계는 Ch40→41이다.
+PR #57 병합으로 Ch40→41은 current continuity가 되었고 새 main fail-closed 경계는 Ch45→46이다.
 
 ## 8. 실행 순서
 
-마지막 main production frontier 변경은 PR #55 병합이다.
+마지막 main production frontier 변경은 PR #57 병합이다.
 
 `exact user-source extraction → latest Canon conflict scan → boundary 검증 → manuscript/index/outline/cards/registry/routers 동시 갱신 → 5× adversarial review → exact-head CI → review thread 0/main freshness → squash merge → receipt closure → Notion sync`
 
-다음 bounded unit은 `폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx` / SHA256 `9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad`의 `041–045`다. 041–066은 Aftermath & 8년 Bridge이고 Part 2는 067+다. `101–105`는 원본이 제공되기 전 자동 보충 금지다.
+다음 bounded unit은 `폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx` / SHA256 `9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad`의 `046–050`다. 041–066은 Aftermath & 8년 Bridge이고 Part 2는 067+다. `101–105`는 원본이 제공되기 전 자동 보충 금지다.
