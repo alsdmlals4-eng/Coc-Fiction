@@ -72,6 +72,7 @@ jobs:
           python tools/_materialize_046_050_payload.py
           python tools/_fix_046_050_canon_receipts.py
           python tools/_patch_046_050_consumers.py
+          python tools/_fix_current_outline_metadata_drift.py
           if git diff --quiet; then
             echo "Bridge Ch046-050 source reconciliation and consumers already propagated"
           else
