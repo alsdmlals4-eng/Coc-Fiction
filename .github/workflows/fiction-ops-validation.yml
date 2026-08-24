@@ -71,12 +71,26 @@ jobs:
         run: |
           git fetch origin "$HEAD_BRANCH"
           git checkout "$HEAD_BRANCH"
+          if [ -f fiction/analysis/MANUSCRIPT_INDEX_OVERRIDE_031_035.json ]; then
+            echo "consumer materialization already applied"
+            exit 0
+          fi
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('tools/_materialize_031_035_consumers.py')
+          text = path.read_text(encoding='utf-8')
+          needle = '    clean_temporary_bootstrap()\n'
+          if text.count(needle) != 1:
+              raise SystemExit('materializer cleanup call marker mismatch')
+          path.write_text(text.replace(needle, '', 1), encoding='utf-8')
+          PY
           python tools/_materialize_031_035_consumers.py
+          git checkout -- tools/_materialize_031_035_consumers.py
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           if git diff --cached --quiet; then
-            echo "consumer materialization already applied"
+            echo "consumer materialization produced no changes"
             exit 0
           fi
           git commit -m "fiction: materialize Ch031-035 promotion consumers"
