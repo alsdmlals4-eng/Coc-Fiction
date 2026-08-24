@@ -79,9 +79,13 @@ class Promote051055ContractTests(unittest.TestCase):
         from tools.fiction_composed_data import load_reverse_outline
         outline = load_reverse_outline(FICTION)
         by = {int(item["chapter"]): item for item in outline["chapters"]}
-        self.assertEqual(by[50]["next_chapter"]["chapter"], 51)
+        self.assertIsNotNone(by[50]["next_chapter"])
+        if by[50]["next_chapter"] is not None:
+            self.assertEqual(by[50]["next_chapter"]["chapter"], 51)
         self.assertNotIn("RECONCILIATION_MIGRATION_BOUNDARY", by[50]["structural_flags"])
-        self.assertEqual(by[51]["previous_chapter"]["chapter"], 50)
+        self.assertIsNotNone(by[51]["previous_chapter"])
+        if by[51]["previous_chapter"] is not None:
+            self.assertEqual(by[51]["previous_chapter"]["chapter"], 50)
         self.assertNotIn("LEGACY_TAIL_BOUNDARY", by[51]["structural_flags"])
         self.assertIsNone(by[55]["next_chapter"])
         self.assertIn("RECONCILIATION_MIGRATION_BOUNDARY", by[55]["structural_flags"])
