@@ -11,7 +11,7 @@ resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
 work_mode: IMPLEMENT / REVIEW
 frontier_observed_at_main: fb97068c714f5731bf712316d59a58adab7f4a86
 last_frontier_change_pr: 48
-pending_frontier_change_pr: null
+pending_frontier_change_pr: 50
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 current_source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
 current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx
@@ -61,6 +61,7 @@ rule: source authority != automatic production authority
 - PR #42: Ch021–025 bounded production promotion merged.
 - PR #47: Talon/Milly/Hatem direct user Canon protections merged.
 - **PR #48: Ch026–030 user-source bounded promotion merged; production frontier is 001–030.**
+- **PR #50: Ch031–035 bounded promotion Draft / 진행 중. 이 workstream에서는 수정하지 않는다.**
 
 ## Current production prefix 001–030 contract
 
@@ -73,7 +74,7 @@ rule: source authority != automatic production authority
 - Ch20: 지도 확보 성공과 잠입 실패를 동시에 기록한다.
 - Ch21–24: 계획·대기·한 박자 선택과 팀 중단 규칙을 구체화한다.
 - Ch25: `제3세력`은 현장 임시 협력/작전 표현이며 정식 신규 조직 Canon이나 D01 외부 회수망이 아니다.
-- Ch26: 엘리스는 쇼거스를 지배하지 않고 책임을 스스로 재판단하게 한다. 탈론은 쇼거스 다수를 정면 상대하는 핵심 적대 위상을 유지한다.
+- Ch26: 엘리스는 이 장면에서 쇼거스를 직접 정신조작하지 않고 책임을 스스로 재판단하게 한다. 이는 인간·비인간 대상 정신조작 능력 자체가 없다는 뜻이 아니다. 탈론은 쇼거스 다수를 정면 상대하는 핵심 적대 위상을 유지한다.
 - Ch27: 밀리는 실제 남성으로 재등장한다. 하템은 별도 여성 인물이며 이안을 보호하다 육체적으로 사망한다.
 - Ch28: 사후 하템은 이안의 환각/기억이며 새로운 객관 정보를 제공하지 않는다. 엘리스는 허락 후에만 정신 지원을 한다.
 - Ch29: 밀리와 이안은 친구였던 시간을 지우지 않으면서 현재 반대편 행동을 구분한다. 주안은 몸이 창을 원한다는 이유로 오히려 창을 잡지 않는다.
@@ -96,7 +97,7 @@ Ch25→26 current continuity는 PASS다. 저장 화수가 인접하다는 이유
 
 - central question: 보호·사랑·선의가 타인의 선택을 빼앗을 권리를 주지 않는다.
 - Jooan: `반응 → 멈춤 → 이유 → 선택`.
-- Elise: 정신 능력은 지배가 아니라 선택 보존.
+- Elise: 인간을 포함한 정신 대상의 인지·판단·행동을 조작할 수 있다. 외부 정신간섭 차단·환각 필터도 가능하다. 선택 보존은 능력 제한이 아니라 사용 방식에 대한 자기규율이다.
 - Ian: observation → hypothesis → verification → record.
 - Milly: 실제 남성. 미스캐토닉에서는 하템의 여성 외형을 이용한 위장 신분 때문에 `밀리 양`으로 인식됨.
 - Hatem: 실제 여성. 평소 기본 외형은 검은 가면을 쓴 광신도; unmasked는 별도 reveal state. Ch27 사망 이후 화면은 새 정보 없는 환각/기억으로 제한.
@@ -129,7 +130,7 @@ Ch25→26 current continuity는 PASS다. 저장 화수가 인접하다는 이유
 
 `fiction/manuscript/part-1/031-035.md`
 
-다음 pass는 **Ch30→31 migration boundary**에서 사용자 지정 `031–040` source를 기준으로 시작한다. `101–105`는 원본 파일이 제공되기 전 자동 보충 금지다.
+다음 pass는 **Ch30→31 migration boundary**에서 사용자 지정 `031–040` source를 기준으로 시작한다. 현재 PR #50은 진행 중 workstream이므로 이 Canon 교정 작업에서 수정하지 않는다. `101–105`는 원본 파일이 제공되기 전 자동 보충 금지다.
 
 ## Base / shared governance
 
