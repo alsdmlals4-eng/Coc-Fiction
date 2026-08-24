@@ -6,6 +6,6 @@
 4. **Canon regression / omission** — 폐기된 능력·감정 프레임과 구 표기를 새 Bridge 정본에 복원하지 않는다. `101–105` source gap도 다른 자료로 자동 보충하지 않는다. **PASS**.
 5. **Provenance / boundary / maintenance** — 사용자 지정 041–050 DOCX에서 041–045를 exact-transfer하고 Ch40→41은 current 연결로, Ch45→46은 다음 pass 전까지 fail-closed로 유지한다. Ch46 legacy 본문은 변경하지 않는다. 임시 materializer/payload는 merge 전 제거한다. **PASS**.
 
-Candidate propagation readback: exact manuscript and coupled consumers are installed. Reverse-outline reproducibility debt at Ch6 was corrected without manuscript mutation. Scene Pass source validation was also changed from a historical hard-coded source to the source receipt owned by the current frontier pass; bot propagation commit `c9fd1616b33c3458f49c71c0c83798df67d13129` contains that validator correction.
+Candidate propagation readback: exact manuscript and coupled consumers are installed. Reverse-outline reproducibility debt at Ch6 was corrected without manuscript mutation. Scene Pass source validation now derives its active source from the frontier-owning completed pass. Candidate receipt/router propagation commit `3de42d8e01d87b1e272fbaa5aa4836a84bae21f2` now separates main production `001–040` from pending PR #57 candidate `001–045`, with `045→046` fail-closed and `046–050` as the post-merge next bundle.
 
 `CLEAN_REVIEW_EXIT`은 exact-head hosted CI Green, unresolved review thread 0, latest-main freshness, 임시 자동화 제거를 모두 확인한 뒤에만 성립한다.
