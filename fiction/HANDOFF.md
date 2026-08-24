@@ -8,21 +8,23 @@
 
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
-frontier_observed_at_main: e4d904101635fad36b7d470251b48b370143f369
+frontier_observed_at_main: null
 last_frontier_change_pr: 55
-pending_frontier_change_pr: null
+pending_frontier_change_pr: 57
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
-current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx
-current_bundle_source_sha256: 89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10
+current_bundle_source: 폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx
+current_bundle_source_sha256: 9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad
 delivery_state: QA_VERIFIED
 repository_promotion_state: PARTIAL
-reconciled_prefix_end: 40
-legacy_tail_starts_at: 41
-boundary_after_chapter: 40
+reconciled_prefix_end: 45
+legacy_tail_starts_at: 46
+boundary_after_chapter: 45
 whole_manuscript_continuity: NOT_YET_CLAIMED
-next_bounded_bundle: fiction/manuscript/part-1/041-045.md
+next_bounded_bundle: fiction/manuscript/part-1/046-050.md
 source_coverage_gap: 101-105
+main_production_prefix_end: 40
+candidate_prefix_end: 45
 ```
 
 `frontier_observed_at_main`은 PR #55가 production frontier를 `001–040`으로 이동시킨 실제 merge `e4d904101635fad36b7d470251b48b370143f369`를 기록한다. 저장소 최신 SHA 포인터로 재사용하지 않고 재개 시 최신 main을 다시 조회한다.
@@ -37,9 +39,11 @@ source_coverage_gap: 101-105
 - PR #48: Ch026–030 user-source bounded promotion merged.
 - **PR #50: Ch031–035 user-source bounded promotion merged.**
 - **PR #55: Ch036–040 user-source bounded promotion merged.**
-- production prefix: `001–040`.
-- fail-closed boundary: `40→41`.
-- next bundle: `041–045` from the user-designated 041–050 source.
+- **PR #57: Bridge Ch041–045 user-source bounded promotion candidate; merge 전 production 아님.**
+- main production prefix: `001–040`.
+- PR #57 candidate prefix: `001–045`.
+- candidate fail-closed boundary: `45→46`.
+- next bundle after merge: `046–050` from the same user-designated 041–050 source.
 
 ## Source authority
 

@@ -28,15 +28,19 @@ docs/coordination/CONCURRENT_WORK.md
 work_mode: IMPLEMENT / REVIEW
 manuscript_stage: REVISE / PROMOTE_BOUNDED
 source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
-current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx
-current_bundle_source_sha256: 89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10
+current_bundle_source: 폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx
+current_bundle_source_sha256: 9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad
 derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 repository_reconciled_prefix: 001-040
-legacy_tail_starts_at: 041
+legacy_tail_starts_at: 046
 whole_manuscript_continuity: NOT_YET_CLAIMED
 last_frontier_change_pr: 55
 next_bundle: fiction/manuscript/part-1/041-045.md
 source_coverage_gap: 101-105
+main_production_prefix: 001-040
+repository_candidate_prefix: 001-045
+pending_frontier_pr: 57
+next_bundle_after_merge: fiction/manuscript/part-1/046-050.md
 ```
 
 ## Source authority
