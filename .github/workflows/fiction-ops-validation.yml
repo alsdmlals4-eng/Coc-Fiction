@@ -68,6 +68,7 @@ jobs:
           git fetch origin "$HEAD_BRANCH"
           git checkout "$HEAD_BRANCH"
           python tools/_close_pr57_receipt.py
+          python tools/_dedupe_pr57_receipt.py
           if git diff --quiet; then
             echo "PR57 frontier receipt already closed"
           else
