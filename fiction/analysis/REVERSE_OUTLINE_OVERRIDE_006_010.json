@@ -22,7 +22,7 @@
         "next_pressure": "다음 제7화 「죽은 척해야 사는 곳」(이안 → 엘리스 → 이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 울릴 때까지 살아남는 것."
       },
       "metrics": {"paragraphs": 388, "average_paragraph_chars": 16.8, "dialogue_ratio": 0.1715, "theme_term_hits": {"선택": 2, "책임": 1, "보호": 1, "사람": 14}},
-      "structural_flags": ["MULTI_TURN_DENSITY", "LONG_CHAPTER", "ONE_OFF_POV", "POV_HANDOFF"],
+      "structural_flags": ["MULTI_TURN_DENSITY", "LONG_CHAPTER", "POV_HANDOFF"],
       "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
       "representative_gate": false,
       "previous_chapter": {"chapter": 5, "title": "신호기를 잃지 마세요", "pov": "이안 → 주안 → 엘리스 → 주안 → 엘리스 → 주안"},

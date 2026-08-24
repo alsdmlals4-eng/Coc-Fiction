@@ -9,8 +9,8 @@
     "rule": "Latest direct user decisions override conflicting source details. User-designated per-range DOCX files are reconstruction source authority; source availability does not imply GitHub production authority or whole-manuscript continuity."
   },
   "external_artifact_reconciliation": {
-    "artifact": "폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx",
-    "artifact_sha256": "89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10",
+    "artifact": "폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx",
+    "artifact_sha256": "9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad",
     "source_manifest": "docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json",
     "source_authority": "USER_DESIGNATED_SOURCE_CHUNK_SET",
     "derived_cross_check": "폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx",
@@ -19,11 +19,11 @@
       1,
       161
     ],
-    "reconciled_prefix_end": 40,
-    "legacy_tail_starts_at": 41,
-    "boundary_after_chapter": 40,
+    "reconciled_prefix_end": 45,
+    "legacy_tail_starts_at": 46,
+    "boundary_after_chapter": 45,
     "whole_manuscript_continuity": "NOT_YET_CLAIMED",
-    "rule": "Chapters 1-40 are the bounded reconciled production prefix on main after PR #55. Stored Ch41+ remain legacy tail until their own pass; 101-105 remains fail-closed."
+    "rule": "Chapters 1-45 are the bounded reconciled candidate prefix on PR #57. Ch041-066 are Aftermath & 8-year Bridge; Part 2 begins Ch067+. Stored Ch46+ remain legacy until their own pass; 101-105 remains fail-closed."
   },
   "representative_pilots": [
     10,
@@ -398,11 +398,50 @@
         "41": "ad9c909c0656e0140f6fce400547f983d7d899a5409441371a64d893f787a890"
       },
       "status": "COMPLETE_CURRENT_SOURCE_CANON_RECONCILIATION / CURRENT_PREFIX"
+    },
+    {
+      "bundle": "fiction/manuscript/part-1/041-045.md",
+      "chapters": [
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "boundary_chapters": [
+        40,
+        46
+      ],
+      "scene_cards": "fiction/analysis/SCENE_CARDS_041_045.md",
+      "revision_report": "fiction/reports/REVISION_2026-08-24_CURRENT_RECONCILIATION_041_045.md",
+      "source_files": [
+        {
+          "name": "폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx",
+          "sha256": "9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad",
+          "role": "user-designated Bridge source authority"
+        },
+        {
+          "name": "fiction/CANON_REGISTRY.json",
+          "role": "latest approved canon protection"
+        }
+      ],
+      "chapter_shas": {
+        "41": "3879d479bec2458e7da2afd78a9c6cc748c9a20e5c0be935d9de365ea05f942a",
+        "42": "e48ad4266831cc8b74ececc7e7fb6f831012a0464005e61eb06fb369d0945a2f",
+        "43": "7da555457ebd2debd70fafb41283f9973440d0e99ef098c3c4acc3ba200baaac",
+        "44": "6c885ee543a45f145e7d920f7fbb89b5ebb280bf1d4c891a2b671b3c428122dd",
+        "45": "e73c81689638476f6736cd9361cdd22dc9e80a076822162856b7516e3a7c12a1"
+      },
+      "preserved_boundary_shas": {
+        "40": "1de35b4f4ecb19706f05bac827ed916484f59a2e167a0d4277012696cd1d9f19",
+        "46": "33a9f6acb305e423e942789e62af90d7b446fd422cb81293f0ed87f084c5f0b2"
+      },
+      "status": "COMPLETE_CURRENT_SOURCE_CANON_RECONCILIATION / BRIDGE_CANDIDATE_PREFIX / PENDING_PR57"
     }
   ],
   "next_pass_mode": "USER_SOURCE_CHUNK_CANON_RECONCILIATION",
   "next_bundle_passes": [
-    "fiction/manuscript/part-1/041-045.md"
+    "fiction/manuscript/part-1/046-050.md"
   ],
   "deferred_bundle_passes": [
     "fiction/manuscript/part-2/176-180.md"

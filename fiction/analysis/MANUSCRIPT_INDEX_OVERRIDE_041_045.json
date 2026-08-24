@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-24",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_041_045 / BRIDGE_CURRENT_RECONCILED_PENDING_PR57",
+  "baseline": "analysis/baselines/MANUSCRIPT_INDEX_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 41,
+      "title": "잘 돌아왔다",
+      "pov": "엘리스 → 이안 → 주안",
+      "body_chars": 4255,
+      "body_sha256": "3879d479bec2458e7da2afd78a9c6cc748c9a20e5c0be935d9de365ea05f942a",
+      "bundle": "fiction/manuscript/part-1/041-045.md"
+    },
+    {
+      "chapter": 42,
+      "title": "살아 돌아온 몸",
+      "pov": "엘리스 → 이안 → 주안 → 엘리스",
+      "body_chars": 6012,
+      "body_sha256": "e48ad4266831cc8b74ececc7e7fb6f831012a0464005e61eb06fb369d0945a2f",
+      "bundle": "fiction/manuscript/part-1/041-045.md"
+    },
+    {
+      "chapter": 43,
+      "title": "확인하고 설명하겠습니다",
+      "pov": "주안 → 엘리스 → 주안 → 엘리스 → 이안 → 주안 → 엘리스",
+      "body_chars": 7004,
+      "body_sha256": "7da555457ebd2debd70fafb41283f9973440d0e99ef098c3c4acc3ba200baaac",
+      "bundle": "fiction/manuscript/part-1/041-045.md"
+    },
+    {
+      "chapter": 44,
+      "title": "응답하지 않은 호출기",
+      "pov": "주안 → 엘리스 → 주안 → 이안 → 엘리스 → 주안 → 엘리스 → 이안",
+      "body_chars": 6720,
+      "body_sha256": "6c885ee543a45f145e7d920f7fbb89b5ebb280bf1d4c891a2b671b3c428122dd",
+      "bundle": "fiction/manuscript/part-1/041-045.md"
+    },
+    {
+      "chapter": 45,
+      "title": "노란 옷은 안 입습니다",
+      "pov": "주안",
+      "body_chars": 5876,
+      "body_sha256": "e73c81689638476f6736cd9361cdd22dc9e80a076822162856b7516e3a7c12a1",
+      "bundle": "fiction/manuscript/part-1/041-045.md"
+    }
+  ]
+}

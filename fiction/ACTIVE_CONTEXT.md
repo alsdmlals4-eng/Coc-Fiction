@@ -9,22 +9,24 @@
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
 work_mode: IMPLEMENT / REVIEW
-frontier_observed_at_main: e4d904101635fad36b7d470251b48b370143f369
+frontier_observed_at_main: null
 last_frontier_change_pr: 55
-pending_frontier_change_pr: null
+pending_frontier_change_pr: 57
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 current_source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
-current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx
-current_bundle_source_sha256: 89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10
+current_bundle_source: 폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx
+current_bundle_source_sha256: 9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad
 derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 delivery_state: QA_VERIFIED
 repository_promotion_state: PARTIAL
-reconciled_prefix_end: 40
-legacy_tail_starts_at: 41
-boundary_after_chapter: 40
+reconciled_prefix_end: 45
+legacy_tail_starts_at: 46
+boundary_after_chapter: 45
 whole_manuscript_continuity: NOT_YET_CLAIMED
-next_bounded_bundle: fiction/manuscript/part-1/041-045.md
+next_bounded_bundle: fiction/manuscript/part-1/046-050.md
 source_coverage_gap: 101-105
+main_production_prefix_end: 40
+candidate_prefix_end: 45
 ```
 
 `frontier_observed_at_main`은 production frontier를 실제로 이동시킨 merge 증거다. 저장소의 영구 최신 SHA 포인터가 아니므로 재개 시에는 GitHub에서 최신 `main`과 open PR을 다시 조회한다.
@@ -102,7 +104,7 @@ left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-PR #55 병합으로 Ch35→36이 current continuity가 되었고 현재 main fail-closed 경계는 Ch40→41이다.
+PR #55 병합 기준 main production은 `001–040` / `040→041`이다. 현재 PR #57 candidate는 exact-source 검증을 거쳐 `001–045` / `045→046`으로 이동 중이며, merge 전까지 production으로 간주하지 않는다.
 
 ## Canon protection
 
