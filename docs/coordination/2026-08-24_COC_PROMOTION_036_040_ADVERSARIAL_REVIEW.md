@@ -18,4 +18,10 @@
 - Fix: regenerate Ch35–41 reverse-outline entries from the current exact manuscript plus composed manuscript index, then reapply the fail-closed Ch40→41 boundary.
 - The regeneration step is deterministic and runs before `build_fiction_reverse_outline.py --check`.
 
+## Scene-pass follow-up
+- RED then exposed hard-coded frontier=35 assumptions in `check_fiction_scene_passes.py`; exact manuscript and reverse-outline validation had already passed.
+- Root cause: the checker still treated the old Ch36 legacy SHA as an active boundary, used chapter titles as body-substring invariants, and hard-coded the Ch35→36 migration boundary and `036–040` next bundle.
+- Fix: derive the active frontier and migration boundary from `SCENE_PASS_REGISTRY`, treat superseded right-boundary SHAs as historical once a later pass promotes that chapter, and validate the next five-chapter range structurally.
+- This makes Scene Pass validation reusable for subsequent bounded promotions instead of requiring a new hard-coded boundary patch each time.
+
 `CLEAN_REVIEW_EXIT` contingent on exact-head hosted validation Green.
