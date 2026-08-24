@@ -9,9 +9,9 @@
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
 work_mode: IMPLEMENT / REVIEW
-frontier_observed_at_main: null
-last_frontier_change_pr: 55
-pending_frontier_change_pr: 57
+frontier_observed_at_main: 2a7d6d1267708b63797ccb429e111252068ad22e
+last_frontier_change_pr: 57
+pending_frontier_change_pr: null
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 current_source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
 current_bundle_source: 폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx
@@ -25,8 +25,7 @@ boundary_after_chapter: 45
 whole_manuscript_continuity: NOT_YET_CLAIMED
 next_bounded_bundle: fiction/manuscript/part-1/046-050.md
 source_coverage_gap: 101-105
-main_production_prefix_end: 40
-candidate_prefix_end: 45
+main_production_prefix_end: 45
 ```
 
 `frontier_observed_at_main`은 production frontier를 실제로 이동시킨 merge 증거다. 저장소의 영구 최신 SHA 포인터가 아니므로 재개 시에는 GitHub에서 최신 `main`과 open PR을 다시 조회한다.
@@ -64,9 +63,10 @@ rule: source authority != automatic production authority
 - PR #47: Talon/Milly/Hatem direct user Canon protections merged.
 - PR #48: Ch026–030 user-source bounded promotion merged.
 - **PR #50: Ch031–035 user-source bounded promotion merged.**
-- **PR #55: Ch036–040 user-source bounded promotion merged; production frontier is 001–040.**
+- **PR #55: Ch036–040 user-source bounded promotion merged.**
+- **PR #57: Bridge Ch041–045 user-source bounded promotion merged; production frontier is 001–045.**
 
-## Current production prefix 001–040 contract
+## Current production prefix 001–045 contract
 
 - Ch5→6, Ch10→11, Ch15→16, Ch20→21, Ch25→26, Ch30→31: current continuity.
 - Ch16: 위험한 해결책도 당사자 선택 없이 강행하지 않는다.
@@ -92,19 +92,24 @@ rule: source authority != automatic production authority
 - Ch38: 엘리스가 자발적 인질 제안을 협상 수단으로 선택하며 결정권을 직접 행사한다.
 - Ch39: 델타그린 군함 도착으로 전장 권력축이 재배치되지만 기존 세력의 의미를 자동 소거하지 않는다.
 - Ch40: 윌리엄의 사랑과 잘못을 동시에 인정하고 엘리스가 아버지의 방식이 아닌 자기 방식의 책임을 선택하며 Part 1 본편을 닫는다.
+- Ch41 `잘 돌아왔다`: Part 1 결전 이후 가족 재회와 살아 돌아온 관계의 비정상성을 Bridge의 출발점으로 정리한다.
+- Ch42 `살아 돌아온 몸`: 주안의 변화한 몸을 보상이 아니라 선택을 침식할 수 있는 후유 상태로 검증한다.
+- Ch43 `확인하고 설명하겠습니다`: 주안은 자기 감정의 기원을 확인하지만 엘리스의 현재 선택을 대신 판정하지 않는다.
+- Ch44 `응답하지 않은 호출기`: 미응답을 영구 이별로 확정하지 않고 관계의 불확실성과 수신기 보존을 함께 남긴다.
+- Ch45 `노란 옷은 안 입습니다`: 황색과 거리를 둔 주안의 현재 선택을 고정하고 다음 8년 Bridge 생활·훈련 축으로 넘긴다.
 
 ## Current migration boundary
 
 ```yaml
-left_current: 40
-right_legacy: 41
+left_current: 45
+right_legacy: 46
 left_next_chapter: null
 right_previous_chapter: null
 left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-PR #55 병합 기준 main production은 `001–040` / `040→041`이다. 현재 PR #57 candidate는 exact-source 검증을 거쳐 `001–045` / `045→046`으로 이동 중이며, merge 전까지 production으로 간주하지 않는다.
+PR #57 병합으로 Ch40→41은 current continuity가 되었고 현재 main fail-closed 경계는 `045→046`이다.
 
 ## Canon protection
 
@@ -141,9 +146,9 @@ PR #55 병합 기준 main production은 `001–040` / `040→041`이다. 현재 
 
 ## Next exact work
 
-`fiction/manuscript/part-1/041-045.md`
+`fiction/manuscript/part-1/046-050.md`
 
-**Ch40→41 migration boundary**에서 사용자 지정 `폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx` / SHA256 `9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad`를 기준으로 진행한다. 041–066은 Aftermath & 8년 Bridge이며 Part 2(067+)와 섞지 않는다. `101–105`는 원본 파일이 제공되기 전 자동 보충 금지다.
+**Ch45→46 migration boundary**에서 같은 사용자 지정 `폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx` / SHA256 `9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad`를 기준으로 진행한다. 041–066은 Aftermath & 8년 Bridge이며 Part 2(067+)와 섞지 않는다. `101–105`는 원본 파일이 제공되기 전 자동 보충 금지다.
 
 ## Base / shared governance
 
