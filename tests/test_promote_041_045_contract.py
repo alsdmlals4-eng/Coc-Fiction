@@ -20,6 +20,7 @@ EXPECTED = {
     45: {"title":"노란 옷은 안 입습니다","pov":"주안","chars":5876,"sha":"e73c81689638476f6736cd9361cdd22dc9e80a076822162856b7516e3a7c12a1"},
 }
 
+
 class Promote041045ContractTests(unittest.TestCase):
     def test_source_manifest_tracks_exact_bridge_source(self):
         manifest = json.loads((ROOT / "docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json").read_text(encoding="utf-8"))
@@ -48,32 +49,30 @@ class Promote041045ContractTests(unittest.TestCase):
             self.assertNotIn(forbidden, text)
         self.assertNotIn("[규율]", text)
 
-    def test_candidate_frontier_advances_only_to_45(self):
+    def test_historical_041_045_promotion_receipt_is_preserved(self):
         registry = json.loads((FICTION / "analysis/SCENE_PASS_REGISTRY.json").read_text(encoding="utf-8"))
         rec = registry["external_artifact_reconciliation"]
-        self.assertEqual(rec["reconciled_prefix_end"], 45)
-        self.assertEqual(rec["legacy_tail_starts_at"], 46)
-        self.assertEqual(rec["boundary_after_chapter"], 45)
+        self.assertGreaterEqual(rec["reconciled_prefix_end"], 45)
         self.assertEqual(rec["whole_manuscript_continuity"], "NOT_YET_CLAIMED")
-        self.assertEqual(registry["next_bundle_passes"], ["fiction/manuscript/part-1/046-050.md"])
         passes = {item["bundle"]: item for item in registry["completed_bundle_passes"]}
         item = passes["fiction/manuscript/part-1/041-045.md"]
         self.assertEqual(item["chapters"], [41,42,43,44,45])
         self.assertEqual(item["boundary_chapters"], [40,46])
         self.assertEqual(item["preserved_boundary_shas"]["40"], "1de35b4f4ecb19706f05bac827ed916484f59a2e167a0d4277012696cd1d9f19")
-        self.assertEqual(item["preserved_boundary_shas"]["46"], "33a9f6acb305e423e942789e62af90d7b446fd422cb81293f0ed87f084c5f0b2")
+        self.assertEqual(item["chapter_shas"], {str(n): EXPECTED[n]["sha"] for n in range(41,46)})
+        sources = [x for x in item.get("source_files", []) if isinstance(x, dict)]
+        self.assertTrue(any(x.get("name") == SOURCE_FILE and x.get("sha256") == SOURCE_SHA256 for x in sources))
 
     def test_required_bundle_consumers_exist(self):
         for rel in (
             "analysis/MANUSCRIPT_INDEX_OVERRIDE_041_045.json",
             "analysis/REVERSE_OUTLINE_OVERRIDE_041_045.json",
-            "analysis/REVERSE_OUTLINE_OVERRIDE_046_MIGRATION_BOUNDARY.json",
             "analysis/SCENE_CARDS_041_045.md",
             "reports/REVISION_2026-08-24_CURRENT_RECONCILIATION_041_045.md",
         ):
             self.assertTrue((FICTION / rel).is_file(), rel)
 
-    def test_reverse_outline_connects_part1_to_bridge_and_moves_boundary(self):
+    def test_reverse_outline_keeps_promoted_041_045_connected_after_later_promotions(self):
         from tools.fiction_composed_data import load_reverse_outline
         outline = load_reverse_outline(FICTION)
         by = {int(item["chapter"]): item for item in outline["chapters"]}
@@ -81,10 +80,18 @@ class Promote041045ContractTests(unittest.TestCase):
         self.assertNotIn("RECONCILIATION_MIGRATION_BOUNDARY", by[40]["structural_flags"])
         self.assertEqual(by[41]["previous_chapter"]["chapter"], 40)
         self.assertNotIn("LEGACY_TAIL_BOUNDARY", by[41]["structural_flags"])
-        self.assertIsNone(by[45]["next_chapter"])
-        self.assertIn("RECONCILIATION_MIGRATION_BOUNDARY", by[45]["structural_flags"])
-        self.assertIsNone(by[46]["previous_chapter"])
-        self.assertIn("LEGACY_TAIL_BOUNDARY", by[46]["structural_flags"])
+        registry = json.loads((FICTION / "analysis/SCENE_PASS_REGISTRY.json").read_text(encoding="utf-8"))
+        frontier = registry["external_artifact_reconciliation"]["reconciled_prefix_end"]
+        if frontier > 45:
+            self.assertEqual(by[45]["next_chapter"]["chapter"], 46)
+            self.assertNotIn("RECONCILIATION_MIGRATION_BOUNDARY", by[45]["structural_flags"])
+            self.assertEqual(by[46]["previous_chapter"]["chapter"], 45)
+            self.assertNotIn("LEGACY_TAIL_BOUNDARY", by[46]["structural_flags"])
+        else:
+            self.assertIsNone(by[45]["next_chapter"])
+            self.assertIn("RECONCILIATION_MIGRATION_BOUNDARY", by[45]["structural_flags"])
+            self.assertIsNone(by[46]["previous_chapter"])
+            self.assertIn("LEGACY_TAIL_BOUNDARY", by[46]["structural_flags"])
 
     def test_bridge_scope_and_canon_guards_hold(self):
         active = (FICTION / "ACTIVE_CONTEXT.md").read_text(encoding="utf-8")
@@ -92,11 +99,11 @@ class Promote041045ContractTests(unittest.TestCase):
         canon = json.loads((FICTION / "CANON_REGISTRY.json").read_text(encoding="utf-8"))
         by_id = {item["id"]: item for item in canon["canon"]}
         self.assertIn("041–066", active)
-        self.assertIn("Bridge", active)
         self.assertIn("067+", active)
         self.assertIn("041–066", master)
         self.assertEqual(by_id["alice.mental-ability"]["status"], "CANON")
         self.assertEqual(by_id["largo.reveal-sequence"]["status"], "CANON")
+
 
 if __name__ == "__main__":
     unittest.main()

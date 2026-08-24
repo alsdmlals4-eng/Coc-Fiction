@@ -6,12 +6,30 @@
   "chapters": [
     {
       "chapter": 6,
-      "section": {"key": "part-1", "label": "1부 《폭풍의 눈》"},
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
       "title": "따뜻한 피난처",
       "pov": "엘리스 → 이안 → 주안",
-      "source": {"bundle": "fiction/manuscript/part-1/006-010.md", "body_sha256": "b22b54836e90bead8aa73c1cc5ed4bc0eb04edd3a2356effd9dd01ddcbffa28d", "body_chars": 6506},
-      "chapter_function": ["REVELATION", "FINALE"],
-      "state_change_axes": ["EVENT", "INFORMATION", "RELATIONSHIP", "AGENCY", "EMOTION", "BODY_OR_RESOURCE", "WORLD_RULE"],
+      "source": {
+        "bundle": "fiction/manuscript/part-1/006-010.md",
+        "body_sha256": "b22b54836e90bead8aa73c1cc5ed4bc0eb04edd3a2356effd9dd01ddcbffa28d",
+        "body_chars": 6506
+      },
+      "chapter_function": [
+        "REVELATION",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
       "evidence": {
         "starting_state": "눈꺼풀이 움직인 뒤에도 이안은 바로 정신을 차리지 못했다. 엘리스는 그가 깨어나기를 기다리는 동안 송신기를 두 번 더 눌렀다.",
         "immediate_goal_or_focus": "엘리스는 그가 깨어나기를 기다리는 동안 송신기를 두 번 더 눌렀다.",
@@ -21,21 +39,62 @@
         "ending_state": "그래서 지금 할 수 있는 일도 하나뿐이었다. 울릴 때까지 살아남는 것.",
         "next_pressure": "다음 제7화 「죽은 척해야 사는 곳」(이안 → 엘리스 → 이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 울릴 때까지 살아남는 것."
       },
-      "metrics": {"paragraphs": 388, "average_paragraph_chars": 16.8, "dialogue_ratio": 0.1715, "theme_term_hits": {"선택": 2, "책임": 1, "보호": 1, "사람": 14}},
-      "structural_flags": ["MULTI_TURN_DENSITY", "LONG_CHAPTER", "POV_HANDOFF"],
+      "metrics": {
+        "paragraphs": 388,
+        "average_paragraph_chars": 16.8,
+        "dialogue_ratio": 0.1715,
+        "theme_term_hits": {
+          "선택": 2,
+          "책임": 1,
+          "보호": 1,
+          "사람": 14
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "LONG_CHAPTER",
+        "POV_HANDOFF"
+      ],
       "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
       "representative_gate": false,
-      "previous_chapter": {"chapter": 5, "title": "신호기를 잃지 마세요", "pov": "이안 → 주안 → 엘리스 → 주안 → 엘리스 → 주안"},
-      "next_chapter": {"chapter": 7, "title": "죽은 척해야 사는 곳", "pov": "이안 → 엘리스 → 이안"}
+      "previous_chapter": {
+        "chapter": 5,
+        "title": "신호기를 잃지 마세요",
+        "pov": "이안 → 주안 → 엘리스 → 주안 → 엘리스 → 주안"
+      },
+      "next_chapter": {
+        "chapter": 7,
+        "title": "죽은 척해야 사는 곳",
+        "pov": "이안 → 엘리스 → 이안"
+      }
     },
     {
       "chapter": 7,
-      "section": {"key": "part-1", "label": "1부 《폭풍의 눈》"},
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
       "title": "죽은 척해야 사는 곳",
       "pov": "이안 → 엘리스 → 이안",
-      "source": {"bundle": "fiction/manuscript/part-1/006-010.md", "body_sha256": "71fecab94096819faa67b29706bf45e9fb67ee6a11a64b159665f39e25fd3ca2", "body_chars": 5309},
-      "chapter_function": ["INCITING_INCIDENT", "REVELATION", "AFTERMATH"],
-      "state_change_axes": ["EVENT", "INFORMATION", "RELATIONSHIP", "AGENCY", "EMOTION", "BODY_OR_RESOURCE", "WORLD_RULE"],
+      "source": {
+        "bundle": "fiction/manuscript/part-1/006-010.md",
+        "body_sha256": "71fecab94096819faa67b29706bf45e9fb67ee6a11a64b159665f39e25fd3ca2",
+        "body_chars": 5309
+      },
+      "chapter_function": [
+        "INCITING_INCIDENT",
+        "REVELATION",
+        "AFTERMATH"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
       "evidence": {
         "starting_state": "숨소리는 시체 아래에서 났다. 길게 끊겼다가 다시 한 번.",
         "immediate_goal_or_focus": "숨소리는 시체 아래에서 났다.",
@@ -45,21 +104,60 @@
         "ending_state": "그중 한 글자 앞에서 엘리스가 멈췄다. 그리고 더 깊은 곳에서 익숙한 여자의 목소리가 들렸다.",
         "next_pressure": "다음 제8화 「같은 편은 아닙니다」(이안 → 주안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 그리고 더 깊은 곳에서 익숙한 여자의 목소리가 들렸다."
       },
-      "metrics": {"paragraphs": 312, "average_paragraph_chars": 17.0, "dialogue_ratio": 0.1548, "theme_term_hits": {"선택": 1, "사람": 30}},
-      "structural_flags": ["MULTI_TURN_DENSITY", "LONG_CHAPTER", "POV_HANDOFF"],
+      "metrics": {
+        "paragraphs": 312,
+        "average_paragraph_chars": 17.0,
+        "dialogue_ratio": 0.1548,
+        "theme_term_hits": {
+          "선택": 1,
+          "사람": 30
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "LONG_CHAPTER",
+        "POV_HANDOFF"
+      ],
       "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
       "representative_gate": false,
-      "previous_chapter": {"chapter": 6, "title": "따뜻한 피난처", "pov": "엘리스 → 이안 → 주안"},
-      "next_chapter": {"chapter": 8, "title": "같은 편은 아닙니다", "pov": "이안 → 주안"}
+      "previous_chapter": {
+        "chapter": 6,
+        "title": "따뜻한 피난처",
+        "pov": "엘리스 → 이안 → 주안"
+      },
+      "next_chapter": {
+        "chapter": 8,
+        "title": "같은 편은 아닙니다",
+        "pov": "이안 → 주안"
+      }
     },
     {
       "chapter": 8,
-      "section": {"key": "part-1", "label": "1부 《폭풍의 눈》"},
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
       "title": "같은 편은 아닙니다",
       "pov": "이안 → 주안",
-      "source": {"bundle": "fiction/manuscript/part-1/006-010.md", "body_sha256": "cccf0a1a59bdf1ed60a6616a4fc190c46458fa9892348405b187a63ad2e4163e", "body_chars": 5087},
-      "chapter_function": ["REVELATION", "RELATIONSHIP", "FINALE"],
-      "state_change_axes": ["EVENT", "INFORMATION", "RELATIONSHIP", "AGENCY", "EMOTION", "BODY_OR_RESOURCE", "WORLD_RULE"],
+      "source": {
+        "bundle": "fiction/manuscript/part-1/006-010.md",
+        "body_sha256": "cccf0a1a59bdf1ed60a6616a4fc190c46458fa9892348405b187a63ad2e4163e",
+        "body_chars": 5087
+      },
+      "chapter_function": [
+        "REVELATION",
+        "RELATIONSHIP",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
       "evidence": {
         "starting_state": "목소리는 틀릴 수 없었다. 이안은 손전등을 들었다.",
         "immediate_goal_or_focus": "마지막으로 얼굴.",
@@ -69,21 +167,59 @@
         "ending_state": "발톱이 바로 뒤의 땅을 갈아엎었다. 주안은 오늘 처음으로 그 약속을 믿고 싶지 않았다.",
         "next_pressure": "다음 제9화 「카터라는 이름」(엘리스 → 이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 주안은 오늘 처음으로 그 약속을 믿고 싶지 않았다."
       },
-      "metrics": {"paragraphs": 314, "average_paragraph_chars": 16.2, "dialogue_ratio": 0.2599, "theme_term_hits": {"선택": 1, "안전": 1, "사람": 13}},
-      "structural_flags": ["LONG_CHAPTER", "ONE_OFF_POV", "POV_HANDOFF"],
+      "metrics": {
+        "paragraphs": 314,
+        "average_paragraph_chars": 16.2,
+        "dialogue_ratio": 0.2599,
+        "theme_term_hits": {
+          "선택": 1,
+          "안전": 1,
+          "사람": 13
+        }
+      },
+      "structural_flags": [
+        "LONG_CHAPTER",
+        "POV_HANDOFF"
+      ],
       "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
       "representative_gate": false,
-      "previous_chapter": {"chapter": 7, "title": "죽은 척해야 사는 곳", "pov": "이안 → 엘리스 → 이안"},
-      "next_chapter": {"chapter": 9, "title": "카터라는 이름", "pov": "엘리스 → 이안"}
+      "previous_chapter": {
+        "chapter": 7,
+        "title": "죽은 척해야 사는 곳",
+        "pov": "이안 → 엘리스 → 이안"
+      },
+      "next_chapter": {
+        "chapter": 9,
+        "title": "카터라는 이름",
+        "pov": "엘리스 → 이안"
+      }
     },
     {
       "chapter": 9,
-      "section": {"key": "part-1", "label": "1부 《폭풍의 눈》"},
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
       "title": "카터라는 이름",
       "pov": "엘리스 → 이안",
-      "source": {"bundle": "fiction/manuscript/part-1/006-010.md", "body_sha256": "ff54282bd4d18572881da4a8a11728da18ebbd21cff6e2feee0ce6367b1f3580", "body_chars": 4580},
-      "chapter_function": ["REVELATION", "RELATIONSHIP"],
-      "state_change_axes": ["EVENT", "INFORMATION", "RELATIONSHIP", "AGENCY", "EMOTION", "BODY_OR_RESOURCE", "WORLD_RULE"],
+      "source": {
+        "bundle": "fiction/manuscript/part-1/006-010.md",
+        "body_sha256": "ff54282bd4d18572881da4a8a11728da18ebbd21cff6e2feee0ce6367b1f3580",
+        "body_chars": 4580
+      },
+      "chapter_function": [
+        "REVELATION",
+        "RELATIONSHIP"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
       "evidence": {
         "starting_state": "동굴 벽에는 이름이 너무 많았다. 처음에는 긁힌 자국처럼 보였다.",
         "immediate_goal_or_focus": "학교에서는 학생을 구분하는 이름이었고, 호텔에서는 예약을 확인하는 이름이었다.",
@@ -93,21 +229,62 @@
         "ending_state": "친구가 안전하다는 판단은. 계속 다른 문장이었다.",
         "next_pressure": "다음 제10화 「친구를 쏜 날」(이안 → 엘리스 → 이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 계속 다른 문장이었다."
       },
-      "metrics": {"paragraphs": 259, "average_paragraph_chars": 17.7, "dialogue_ratio": 0.1426, "theme_term_hits": {"선택": 1, "안전": 3, "사람": 10}},
-      "structural_flags": ["MULTI_TURN_DENSITY", "LONG_CHAPTER", "ONE_OFF_POV", "POV_HANDOFF"],
+      "metrics": {
+        "paragraphs": 259,
+        "average_paragraph_chars": 17.7,
+        "dialogue_ratio": 0.1426,
+        "theme_term_hits": {
+          "선택": 1,
+          "안전": 3,
+          "사람": 10
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "LONG_CHAPTER",
+        "ONE_OFF_POV",
+        "POV_HANDOFF"
+      ],
       "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
       "representative_gate": false,
-      "previous_chapter": {"chapter": 8, "title": "같은 편은 아닙니다", "pov": "이안 → 주안"},
-      "next_chapter": {"chapter": 10, "title": "친구를 쏜 날", "pov": "이안 → 엘리스 → 이안"}
+      "previous_chapter": {
+        "chapter": 8,
+        "title": "같은 편은 아닙니다",
+        "pov": "이안 → 주안"
+      },
+      "next_chapter": {
+        "chapter": 10,
+        "title": "친구를 쏜 날",
+        "pov": "이안 → 엘리스 → 이안"
+      }
     },
     {
       "chapter": 10,
-      "section": {"key": "part-1", "label": "1부 《폭풍의 눈》"},
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
       "title": "친구를 쏜 날",
       "pov": "이안 → 엘리스 → 이안",
-      "source": {"bundle": "fiction/manuscript/part-1/006-010.md", "body_sha256": "4a3e60159d639f4125bcc960032afead1aba8fb160097ab36f06488fb06ab211", "body_chars": 6696},
-      "chapter_function": ["OPENING", "INCITING_INCIDENT", "REVELATION", "RELATIONSHIP"],
-      "state_change_axes": ["EVENT", "INFORMATION", "RELATIONSHIP", "EMOTION", "BODY_OR_RESOURCE", "WORLD_RULE"],
+      "source": {
+        "bundle": "fiction/manuscript/part-1/006-010.md",
+        "body_sha256": "4a3e60159d639f4125bcc960032afead1aba8fb160097ab36f06488fb06ab211",
+        "body_chars": 6696
+      },
+      "chapter_function": [
+        "OPENING",
+        "INCITING_INCIDENT",
+        "REVELATION",
+        "RELATIONSHIP"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
       "evidence": {
         "starting_state": "동굴 밖에는 저녁이 내려앉고 있었다. 시간이 정상적으로 흐른다는 사실이 오히려 이상했다.",
         "immediate_goal_or_focus": "“근처에 낡은 오두막 하나가 있어.”",
@@ -117,12 +294,34 @@
         "ending_state": "이안은 그날 처음으로 지식을 얻지 못한 채 답 하나를 잃었다. 그리고 그 손실은 책보다 무거웠다.",
         "next_pressure": "다음 제11화 「비야키를 타는 법」(주안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 그리고 그 손실은 책보다 무거웠다."
       },
-      "metrics": {"paragraphs": 397, "average_paragraph_chars": 16.9, "dialogue_ratio": 0.2149, "theme_term_hits": {"책임": 1, "보호": 1, "안전": 2, "사람": 16}},
-      "structural_flags": ["MULTI_TURN_DENSITY", "LONG_CHAPTER", "POV_HANDOFF"],
+      "metrics": {
+        "paragraphs": 397,
+        "average_paragraph_chars": 16.9,
+        "dialogue_ratio": 0.2149,
+        "theme_term_hits": {
+          "책임": 1,
+          "보호": 1,
+          "안전": 2,
+          "사람": 16
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "LONG_CHAPTER",
+        "POV_HANDOFF"
+      ],
       "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
       "representative_gate": true,
-      "previous_chapter": {"chapter": 9, "title": "카터라는 이름", "pov": "엘리스 → 이안"},
-      "next_chapter": {"chapter": 11, "title": "비야키를 타는 법", "pov": "주안"}
+      "previous_chapter": {
+        "chapter": 9,
+        "title": "카터라는 이름",
+        "pov": "엘리스 → 이안"
+      },
+      "next_chapter": {
+        "chapter": 11,
+        "title": "비야키를 타는 법",
+        "pov": "주안"
+      }
     }
   ]
 }

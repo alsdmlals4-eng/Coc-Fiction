@@ -1,0 +1,332 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-24",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_046_050 / BRIDGE_CURRENT_RECONCILED_PENDING_PR59",
+  "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 46,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "자아를 찾으러 떠났습니다",
+      "pov": "주안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/046-050.md",
+        "body_sha256": "ae3928bb6234eb4086115c74614d43aee3b436aa52cc30d14641a5673878791d",
+        "body_chars": 5861
+      },
+      "chapter_function": [
+        "INVESTIGATION",
+        "REVELATION",
+        "NEGOTIATION",
+        "CHOICE_AND_COST",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "회의실에는 칼보다 호칭이 많았다. 주안은 자기 명패를 봤다.",
+        "immediate_goal_or_focus": "초반에는 비용을 계산해 설득했다.",
+        "opposition_and_cost": "고위직의 피보호자.",
+        "turn_or_discovery": "화면이 바뀌었다.",
+        "decision_or_choice": "주안이 말했다.",
+        "ending_state": "손님에게 귀환 의무는 없다. 그 문장을 속으로 확인하고 시선을 앞으로 돌렸다.",
+        "next_pressure": "다음 제47화 「호수가 보이는 마을」(이안 → 주안 → 이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 그 문장을 속으로 확인하고 시선을 앞으로 돌렸다."
+      },
+      "metrics": {
+        "paragraphs": 347,
+        "average_paragraph_chars": 16.9,
+        "dialogue_ratio": 0.238,
+        "theme_term_hits": {
+          "보호": 4,
+          "권리": 2,
+          "안전": 1,
+          "사람": 14
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "LONG_CHAPTER",
+        "TIMELINE_SHIFT"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 45,
+        "title": "노란 옷은 안 입습니다",
+        "pov": "주안"
+      },
+      "next_chapter": {
+        "chapter": 47,
+        "title": "호수가 보이는 마을",
+        "pov": "이안 → 주안 → 이안"
+      }
+    },
+    {
+      "chapter": 47,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "호수가 보이는 마을",
+      "pov": "이안 → 주안 → 이안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/046-050.md",
+        "body_sha256": "03e0e7c4fcbfedd4326f335bdc5f49b79fbaf3acc2c1ceaa8e56fa91c8bc6a83",
+        "body_chars": 6228
+      },
+      "chapter_function": [
+        "OPENING",
+        "REVELATION",
+        "RELATIONSHIP",
+        "NEGOTIATION",
+        "AFTERMATH"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "여덟 해 동안 이안 패닝턴에게 생긴 가장 큰 변화는. 교수가 됐다는 것이다.",
+        "immediate_goal_or_focus": "공항에서 후배를 만나면 선물을 받을 가능성보다 사건에 끌려갈 가능성을 먼저 계산한다는 것.",
+        "opposition_and_cost": "정보의 출처는 마음에 들지 않았다.",
+        "turn_or_discovery": "오히려 수상하다.",
+        "decision_or_choice": "엘리엇이 말했다.",
+        "ending_state": "먼저 노란 옷을 쫓는다. 주안에게는 살아 있는 걸 확인한 뒤 인사해도 늦지 않았다.",
+        "next_pressure": "다음 제48화 「돼지고기는 아니었습니다」(주안 → 이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 주안에게는 살아 있는 걸 확인한 뒤 인사해도 늦지 않았다."
+      },
+      "metrics": {
+        "paragraphs": 350,
+        "average_paragraph_chars": 17.8,
+        "dialogue_ratio": 0.1699,
+        "theme_term_hits": {
+          "책임": 1,
+          "안전": 1,
+          "사람": 15,
+          "괴물": 1
+        }
+      },
+      "structural_flags": [
+        "LONG_CHAPTER",
+        "TIMELINE_SHIFT",
+        "ONE_OFF_POV",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 46,
+        "title": "자아를 찾으러 떠났습니다",
+        "pov": "주안"
+      },
+      "next_chapter": {
+        "chapter": 48,
+        "title": "돼지고기는 아니었습니다",
+        "pov": "주안 → 이안"
+      }
+    },
+    {
+      "chapter": 48,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "돼지고기는 아니었습니다",
+      "pov": "주안 → 이안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/046-050.md",
+        "body_sha256": "4cd101ebbb686f269ae2efe1e3e40eba11edd75420c3782aa8918f58df8bb41e",
+        "body_chars": 5800
+      },
+      "chapter_function": [
+        "REVELATION",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "스튜는 식지 않았다. 주안은 숟가락도 들지 않았다.",
+        "immediate_goal_or_focus": "“확인하려면.”",
+        "opposition_and_cost": "“서로에게 적용될 수 있겠군요.”",
+        "turn_or_discovery": "하지만 비슷한 기분이 든다는 것과 같은 재료라는 건 다른 문제다.",
+        "decision_or_choice": "주안은 내려놓았다.",
+        "ending_state": "한 주민의 손이 허리춤으로 내려갔다. 대답은 충분했다.",
+        "next_pressure": "다음 제49화 「여덟 해 만입니다」(이안 → 주안 → 이안 → 주안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 대답은 충분했다."
+      },
+      "metrics": {
+        "paragraphs": 395,
+        "average_paragraph_chars": 14.7,
+        "dialogue_ratio": 0.2112,
+        "theme_term_hits": {
+          "선택": 2,
+          "안전": 1,
+          "사람": 21
+        }
+      },
+      "structural_flags": [
+        "LONG_CHAPTER",
+        "TIMELINE_SHIFT",
+        "ONE_OFF_POV",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 47,
+        "title": "호수가 보이는 마을",
+        "pov": "이안 → 주안 → 이안"
+      },
+      "next_chapter": {
+        "chapter": 49,
+        "title": "여덟 해 만입니다",
+        "pov": "이안 → 주안 → 이안 → 주안"
+      }
+    },
+    {
+      "chapter": 49,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "여덟 해 만입니다",
+      "pov": "이안 → 주안 → 이안 → 주안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/046-050.md",
+        "body_sha256": "6408f1e4b70b7fdbe43912c5b43c0ce2394d1303a6cbc81f31ea4d0ff9f307be",
+        "body_chars": 5793
+      },
+      "chapter_function": [
+        "REVELATION",
+        "RELATIONSHIP",
+        "CHOICE_AND_COST",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "대화로 끝날 가능성은 낮았다. 이안은 그래도 먼저 말했다.",
+        "immediate_goal_or_focus": "“쵸세이칸 주교님 찾기.”",
+        "opposition_and_cost": "“합리적입니다.”",
+        "turn_or_discovery": "“그때 다시 이야기하죠.”",
+        "decision_or_choice": "뒤에서 가론이 말했다.",
+        "ending_state": "“이번에는 정말 말부터.” 누군가 안쪽에서 달려오는 발소리가 들렸다.",
+        "next_pressure": "다음 제50화 「낙원의 손님분들」(이안 → 주안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 누군가 안쪽에서 달려오는 발소리가 들렸다."
+      },
+      "metrics": {
+        "paragraphs": 368,
+        "average_paragraph_chars": 15.7,
+        "dialogue_ratio": 0.2591,
+        "theme_term_hits": {
+          "선택": 2,
+          "보호": 1,
+          "권리": 1,
+          "사람": 17,
+          "괴물": 1
+        }
+      },
+      "structural_flags": [
+        "LONG_CHAPTER",
+        "ONE_OFF_POV",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 48,
+        "title": "돼지고기는 아니었습니다",
+        "pov": "주안 → 이안"
+      },
+      "next_chapter": {
+        "chapter": 50,
+        "title": "낙원의 손님분들",
+        "pov": "이안 → 주안"
+      }
+    },
+    {
+      "chapter": 50,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "낙원의 손님분들",
+      "pov": "이안 → 주안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/046-050.md",
+        "body_sha256": "5b3bd9bcbb7b3d04deb38dfdb39db2c9fdc56fb50df18ea9425562c9b484880e",
+        "body_chars": 5296
+      },
+      "chapter_function": [
+        "INVESTIGATION",
+        "REVELATION",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "문부터 두드리자는 말은 지켜졌다. 정확히 삼 초.",
+        "immediate_goal_or_focus": "“책임자를 만나러 왔습니다.”",
+        "opposition_and_cost": "그 시선은 가론의 총에서 아킴의 절단기로.",
+        "turn_or_discovery": "가론의 입이 열렸다.",
+        "decision_or_choice": "주안이 말했다.",
+        "ending_state": "주안의 수신기가 든 가방은. 의자 옆에 그대로 있었다.",
+        "next_pressure": "정본 마이그레이션 경계. 저장소 제51화 이후는 아직 legacy tail이며 현재 제50화와의 서사 연속성을 주장하지 않는다."
+      },
+      "metrics": {
+        "paragraphs": 333,
+        "average_paragraph_chars": 15.9,
+        "dialogue_ratio": 0.271,
+        "theme_term_hits": {
+          "책임": 1,
+          "보호": 5,
+          "사람": 15
+        }
+      },
+      "structural_flags": [
+        "LONG_CHAPTER",
+        "POV_HANDOFF",
+        "RECONCILIATION_MIGRATION_BOUNDARY"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 49,
+        "title": "여덟 해 만입니다",
+        "pov": "이안 → 주안 → 이안 → 주안"
+      },
+      "next_chapter": null
+    }
+  ]
+}

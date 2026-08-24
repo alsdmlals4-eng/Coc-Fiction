@@ -19,6 +19,7 @@ on:
       - "tests/test_promote_031_035_contract.py"
       - "tests/test_promote_036_040_contract.py"
       - "tests/test_promote_041_045_contract.py"
+      - "tests/test_promote_046_050_contract.py"
       - "tools/check_fiction_docx_packaging.py"
       - "tools/check_fiction_operating_system.py"
       - "tools/check_fiction_content.py"
@@ -47,6 +48,7 @@ on:
       - "tests/test_promote_031_035_contract.py"
       - "tests/test_promote_036_040_contract.py"
       - "tests/test_promote_041_045_contract.py"
+      - "tests/test_promote_046_050_contract.py"
       - "tools/check_fiction_docx_packaging.py"
       - "tools/check_fiction_operating_system.py"
       - "tools/check_fiction_content.py"
@@ -102,5 +104,7 @@ jobs:
         run: python -m unittest tests.test_promote_031_035_contract -v
       - name: Validate Ch036-040 historical promotion contract
         run: python -m unittest tests.test_promote_036_040_contract -v
-      - name: Validate Ch041-045 promotion contract
+      - name: Validate Ch041-045 historical promotion contract
         run: python -m unittest tests.test_promote_041_045_contract -v
+      - name: Validate Ch046-050 promotion contract
+        run: python -m unittest tests.test_promote_046_050_contract -v

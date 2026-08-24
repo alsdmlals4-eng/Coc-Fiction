@@ -74,6 +74,11 @@ expected_passes = {
         "boundaries": [40, 46],
         "card_boundaries": ["제40→41화", "제41→42화", "제42→43화", "제43→44화", "제44→45화", "제45→46화"],
     },
+    "fiction/manuscript/part-1/046-050.md": {
+        "chapters": [46, 47, 48, 49, 50],
+        "boundaries": [45, 51],
+        "card_boundaries": ["제45→46화", "제46→47화", "제47→48화", "제48→49화", "제49→50화", "제50→51화"],
+    },
     "fiction/manuscript/side-story-lake/091-095.md": {
         "chapters": [91, 92, 93, 94, 95],
         "boundaries": [90, 96],
@@ -189,7 +194,14 @@ for number, phrases in forbidden_phrases.items():
         if phrase in parsed.get(number, ""):
             errors.append(f"chapter {number} stale scene remains: {phrase}")
 
-for bundle_name in ("006-010.md", "011-015.md", "016-020.md", "021-025.md", "026-030.md", "031-035.md", "036-040.md"):
+current_part1_bundles = sorted(
+    Path(str(item.get("bundle"))).name
+    for item in passes
+    if str(item.get("bundle", "")).startswith("fiction/manuscript/part-1/")
+    and item.get("chapters")
+    and max(int(x) for x in item.get("chapters", [])) <= current_frontier
+)
+for bundle_name in current_part1_bundles:
     current_bundle = (FICTION / "manuscript" / "part-1" / bundle_name).read_text(encoding="utf-8")
     for excluded in ("복종인자", "히템", "앨리스", "쵸르브라트", "미하일 카쉬프", "피엘렛토", "붉은 늑대", "컨소시엄"):
         if excluded in current_bundle:
@@ -245,16 +257,35 @@ if reconciliation.get("source_authority") != "USER_DESIGNATED_SOURCE_CHUNK_SET":
     errors.append("source authority mode mismatch")
 if reconciliation.get("target_chapters") != [1, 161]:
     errors.append("external reconciliation target range mismatch")
-if reconciliation.get("reconciled_prefix_end") != 45:
-    errors.append("reconciled prefix must match the current bounded frontier")
-if reconciliation.get("legacy_tail_starts_at") != 46:
-    errors.append("legacy tail must begin immediately after the current bounded frontier")
-if reconciliation.get("boundary_after_chapter") != 45:
-    errors.append("migration boundary must be after chapter 45")
+part1_completed = []
+for item in passes:
+    bundle = str(item.get("bundle", ""))
+    chapters = sorted(int(x) for x in item.get("chapters", []))
+    if bundle.startswith("fiction/manuscript/part-1/") and chapters:
+        part1_completed.append((chapters[0], chapters[-1], item))
+part1_completed.sort(key=lambda row: row[0])
+expected_frontier = 0
+for start, end, _item in part1_completed:
+    if start == expected_frontier + 1 and list(range(start, end + 1)) == list(range(start, end + 1)):
+        expected_frontier = end
+    elif start > expected_frontier + 1:
+        break
+if reconciliation.get("reconciled_prefix_end") != expected_frontier:
+    errors.append(f"reconciled prefix must match completed sequential frontier {expected_frontier}")
+if reconciliation.get("legacy_tail_starts_at") != expected_frontier + 1:
+    errors.append("legacy tail must begin immediately after the completed sequential frontier")
+if reconciliation.get("boundary_after_chapter") != expected_frontier:
+    errors.append(f"migration boundary must be after chapter {expected_frontier}")
 if reconciliation.get("whole_manuscript_continuity") != "NOT_YET_CLAIMED":
     errors.append("whole-manuscript continuity must remain unclaimed during mixed migration")
 
-for left_number, right_number in ((10, 11), (15, 16), (20, 21), (25, 26), (30, 31), (35, 36), (40, 41)):
+sequential_boundaries = []
+for previous, current in zip(part1_completed, part1_completed[1:]):
+    left_number = previous[1]
+    right_number = current[0]
+    if left_number + 1 == right_number and right_number <= current_frontier:
+        sequential_boundaries.append((left_number, right_number))
+for left_number, right_number in sequential_boundaries:
     left = outline_entries.get(left_number, {})
     right = outline_entries.get(right_number, {})
     left_next = left.get("next_chapter")

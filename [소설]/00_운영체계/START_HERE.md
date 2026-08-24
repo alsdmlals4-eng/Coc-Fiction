@@ -32,11 +32,15 @@ current_bundle_source: 폭풍의눈_2차퇴고_제041-050화_가족재회_선택
 current_bundle_source_sha256: 9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad
 derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 repository_reconciled_prefix: 001-045
-legacy_tail_starts_at: 046
+legacy_tail_starts_at: 051
 whole_manuscript_continuity: NOT_YET_CLAIMED
 last_frontier_change_pr: 57
 next_bundle: fiction/manuscript/part-1/046-050.md
 source_coverage_gap: 101-105
+main_production_prefix: 001-045
+repository_candidate_prefix: 001-050
+pending_frontier_pr: 59
+next_bundle_after_merge: fiction/manuscript/part-1/051-055.md
 ```
 
 ## Source authority
@@ -81,7 +85,8 @@ GitHub 225화/45묶음 경로는 migration container이며 current narrative 최
 - Ch40 reverse outline: `next_chapter=null`.
 - legacy Ch41 reverse outline: `previous_chapter=null`.
 - `040→041`은 current continuity PASS.
-- `045→046`: `MIGRATION_BOUNDARY / NOT_YET_CLAIMED`.
+- main `045→046`은 아직 production 경계다.
+- PR #59 candidate `050→051`: `MIGRATION_BOUNDARY / NOT_YET_CLAIMED`.
 
 ## 현재 작업
 
@@ -91,8 +96,8 @@ GitHub 225화/45묶음 경로는 migration container이며 current narrative 최
 사용자 지정 `폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx` / SHA256 `9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad`를 사용한다. 041–066은 Aftermath & 8년 Bridge이며 Part 2는 067+다.
 
 ```text
-Ch45→46 boundary verification
-→ exact source Ch46-50 extraction
+Ch50→51 boundary verification
+→ exact source Ch46-50 receipt verification
 → latest direct-user Canon conflict scan
 → manuscript/index/reverse-outline/Scene Pass/router propagation
 → 5× adversarial review

@@ -315,7 +315,7 @@
         "turn_or_discovery": "“보고 싶네요.”",
         "decision_or_choice": "멀리 한 손에 장갑을 낀 남자가 손을 들었다.",
         "ending_state": "그래도 노란 옷은 챙기지 않았다. 그건 여덟 해 동안 한 번도 바뀌지 않은 항목이었다.",
-        "next_pressure": "정본 마이그레이션 경계. 저장소 제46화 이후는 아직 legacy tail이며 현재 제45화와의 서사 연속성을 주장하지 않는다."
+        "next_pressure": "다음 제46화 「자아를 찾으러 떠났습니다」(주안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 그건 여덟 해 동안 한 번도 바뀌지 않은 항목이었다."
       },
       "metrics": {
         "paragraphs": 308,
@@ -331,8 +331,7 @@
       "structural_flags": [
         "LONG_CHAPTER",
         "TIMELINE_SHIFT",
-        "POV_HANDOFF",
-        "RECONCILIATION_MIGRATION_BOUNDARY"
+        "POV_HANDOFF"
       ],
       "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
       "representative_gate": false,
@@ -341,7 +340,11 @@
         "title": "응답하지 않은 호출기",
         "pov": "주안 → 엘리스 → 주안 → 이안 → 엘리스 → 주안 → 엘리스 → 이안"
       },
-      "next_chapter": null
+      "next_chapter": {
+        "chapter": 46,
+        "title": "자아를 찾으러 떠났습니다",
+        "pov": "주안"
+      }
     }
   ]
 }
