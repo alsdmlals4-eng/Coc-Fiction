@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-24",
+  "status": "ACTIVE_OVERRIDE / LEGACY_TAIL_BOUNDARY_046",
+  "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 46,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "은색 가면과 르뤼에 점토판",
+      "pov": "이안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/046-050.md",
+        "body_sha256": "33a9f6acb305e423e942789e62af90d7b446fd422cb81293f0ed87f084c5f0b2",
+        "body_chars": 2209
+      },
+      "chapter_function": [
+        "OPENING",
+        "INCITING_INCIDENT",
+        "INVESTIGATION",
+        "REVELATION",
+        "RELATIONSHIP",
+        "ACTION",
+        "CHOICE_AND_COST"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "지휘 거점을 빠져나온 뒤에도 은색 가면의 제사장은 따라왔다. 그는 달리지 않았다.",
+        "immediate_goal_or_focus": "바닥과 벽의 구분이 없는 돌길, 물속에서도 타오르는 초록빛, 잠든 존재의 숨결.",
+        "opposition_and_cost": "“지금 죽는 표정인데.”",
+        "turn_or_discovery": "이안은 물기둥을 피하는 대신 고서 페이지를 그 안에 밀어 넣었다.",
+        "decision_or_choice": "제사장은 이안의 고서를 보며 말했다.",
+        "ending_state": "그 존재가 지금 부르는 목소리와 같다는 뜻은 아니었다. 세 사람은 대답하지 않고 통로를 빠져나왔다.",
+        "next_pressure": "다음 제47화 「브루스가 남긴 동료」(엘리스 POV)로 압력이 이월된다. 현재 화 마지막 증거: 세 사람은 대답하지 않고 통로를 빠져나왔다."
+      },
+      "metrics": {
+        "paragraphs": 61,
+        "average_paragraph_chars": 36.2,
+        "dialogue_ratio": 0.1403,
+        "theme_term_hits": {
+          "명령": 2,
+          "사람": 5,
+          "괴물": 1
+        }
+      },
+      "structural_flags": [
+        "POV_HANDOFF",
+        "LEGACY_TAIL_BOUNDARY"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": null,
+      "next_chapter": {
+        "chapter": 47,
+        "title": "브루스가 남긴 동료",
+        "pov": "엘리스"
+      }
+    }
+  ]
+}

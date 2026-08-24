@@ -69,6 +69,11 @@ expected_passes = {
         "boundaries": [35, 41],
         "card_boundaries": ["제35→36화", "제36→37화", "제37→38화", "제38→39화", "제39→40화", "제40→41화"],
     },
+    "fiction/manuscript/part-1/041-045.md": {
+        "chapters": [41, 42, 43, 44, 45],
+        "boundaries": [40, 46],
+        "card_boundaries": ["제40→41화", "제41→42화", "제42→43화", "제43→44화", "제44→45화", "제45→46화"],
+    },
     "fiction/manuscript/side-story-lake/091-095.md": {
         "chapters": [91, 92, 93, 94, 95],
         "boundaries": [90, 96],
@@ -212,16 +217,16 @@ if reconciliation.get("source_authority") != "USER_DESIGNATED_SOURCE_CHUNK_SET":
     errors.append("source authority mode mismatch")
 if reconciliation.get("target_chapters") != [1, 161]:
     errors.append("external reconciliation target range mismatch")
-if reconciliation.get("reconciled_prefix_end") != 40:
-    errors.append("reconciled prefix must be chapter 40 after current 036-040 propagation")
-if reconciliation.get("legacy_tail_starts_at") != 41:
-    errors.append("legacy tail must begin at chapter 41 after current 036-040 propagation")
-if reconciliation.get("boundary_after_chapter") != 40:
-    errors.append("migration boundary must be after chapter 40")
+if reconciliation.get("reconciled_prefix_end") != 45:
+    errors.append("reconciled prefix must be chapter 45 after current 036-040 propagation")
+if reconciliation.get("legacy_tail_starts_at") != 46:
+    errors.append("legacy tail must begin at chapter 46 after current 036-040 propagation")
+if reconciliation.get("boundary_after_chapter") != 45:
+    errors.append("migration boundary must be after chapter 45")
 if reconciliation.get("whole_manuscript_continuity") != "NOT_YET_CLAIMED":
     errors.append("whole-manuscript continuity must remain unclaimed during mixed migration")
 
-for left_number, right_number in ((10, 11), (15, 16), (20, 21), (25, 26), (30, 31), (35, 36)):
+for left_number, right_number in ((10, 11), (15, 16), (20, 21), (25, 26), (30, 31), (35, 36), (40, 41)):
     left = outline_entries.get(left_number, {})
     right = outline_entries.get(right_number, {})
     left_next = left.get("next_chapter")
