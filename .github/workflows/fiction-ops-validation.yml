@@ -77,6 +77,25 @@ jobs:
             echo "branch updated; this run intentionally stops before validation"
             exit 1
           fi
+      - name: One-time propagate Ch036-040 consumers
+        if: github.event_name == 'pull_request' && github.head_ref == 'promote/036-040-current-source-20260824'
+        env:
+          HEAD_BRANCH: ${{ github.head_ref }}
+        run: |
+          git fetch origin "$HEAD_BRANCH"
+          git checkout "$HEAD_BRANCH"
+          python tools/_patch_036_040_consumers.py
+          if git diff --quiet; then
+            echo "Ch036-040 consumers already propagated"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add fiction docs/fiction-ops docs/coordination tools/check_fiction_scene_passes.py
+            git commit -m "fiction: propagate Ch036-040 consumers"
+            git push origin HEAD:"$HEAD_BRANCH"
+            echo "branch updated; this run intentionally stops before validation"
+            exit 1
+          fi
       - name: Validate Base reuse adoption manifest
         run: |
           python - <<'PY'
