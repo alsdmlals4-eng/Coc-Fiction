@@ -52,7 +52,7 @@ on:
       - "tools/fiction_composed_data.py"
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   validate:
@@ -62,43 +62,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      # BEGIN TEMP-PR50-REGISTRY-CLOSURE
-      - name: One-time close PR50 registry semantics
-        if: github.event_name == 'pull_request' && github.head_ref == 'chore/close-pr50-frontier-receipt-20260824'
-        env:
-          HEAD_BRANCH: ${{ github.head_ref }}
-        run: |
-          git fetch origin "$HEAD_BRANCH"
-          git checkout "$HEAD_BRANCH"
-          python - <<'PY'
-          from pathlib import Path
-          path = Path('fiction/analysis/SCENE_PASS_REGISTRY.json')
-          text = path.read_text(encoding='utf-8')
-          old_rule = 'Chapters 1-35 are the bounded reconciled candidate prefix on PR #50. Stored Ch36+ remain legacy-tail artifacts until their own 5-chapter promotion pass.'
-          new_rule = 'Chapters 1-35 are the bounded reconciled production prefix on main after PR #50. Stored Ch36+ remain legacy-tail artifacts until their own 5-chapter promotion pass.'
-          old_status = 'COMPLETE_USER_SOURCE_CANON_RECONCILIATION / PENDING_PR50'
-          new_status = 'COMPLETE_USER_SOURCE_CANON_RECONCILIATION / CURRENT_PREFIX / MIGRATION_BOUNDARY_AFTER_035'
-          if old_rule not in text and old_status not in text:
-              print('registry closure already applied')
-              raise SystemExit(0)
-          if text.count(old_rule) != 1:
-              raise SystemExit(f'candidate rule match count={text.count(old_rule)}')
-          if text.count(old_status) != 1:
-              raise SystemExit(f'pending status match count={text.count(old_status)}')
-          path.write_text(text.replace(old_rule, new_rule, 1).replace(old_status, new_status, 1), encoding='utf-8')
-          PY
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add fiction/analysis/SCENE_PASS_REGISTRY.json
-          if git diff --cached --quiet; then
-            echo "registry closure already applied"
-            exit 0
-          fi
-          git commit -m "chore: close PR50 scene-pass registry state"
-          git push origin HEAD:"$HEAD_BRANCH"
-          echo "branch updated; this run intentionally stops before final validation"
-          exit 1
-      # END TEMP-PR50-REGISTRY-CLOSURE
       - name: Validate Base reuse adoption manifest
         run: |
           python - <<'PY'
