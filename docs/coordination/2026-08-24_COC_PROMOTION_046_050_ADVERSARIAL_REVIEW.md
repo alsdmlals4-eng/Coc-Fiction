@@ -14,5 +14,7 @@
 - Ch47 production body: `6228` chars / `03e0e7c4fcbfedd4326f335bdc5f49b79fbaf3acc2c1ceaa8e56fa91c8bc6a83`
 - Canon reconciliation + consumer propagation bot commit: `570ce1b`
 - payload staging issue was isolated to an extra `w==` suffix on part01; the one-time materializer normalizes only that known transport artifact, verifies the pre-reconciliation source-derived file/body hashes, then performs exactly one Canon substitution and verifies post-reconciliation production file/body hashes before writing.
+- reverse-outline audit exposed two pre-existing metadata drifts: Ch8 is inside current production authority and its stale `ONE_OFF_POV` flag was removed without manuscript mutation; Ch67 is still legacy tail and was intentionally not promoted or rewritten.
+- permanent reverse-outline reproducibility now remains strict for the sequential current production/candidate frontier plus separately completed source passes (for example 091–095), while still requiring all 225 storage chapters to exist exactly once. This prevents unreconciled legacy storage metadata from being treated as production truth.
 
 `CLEAN_REVIEW_EXIT` requires fresh full hosted CI Green on the current human-authored head, unresolved review thread 0, latest-main freshness, and one-time-tool cleanup followed by another exact-head Green run.
