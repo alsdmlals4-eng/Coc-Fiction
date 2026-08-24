@@ -28,8 +28,16 @@ CHAPTER_RE = re.compile(
 
 def main() -> None:
     chunks = [path.read_text(encoding="utf-8").strip() for path in PARTS]
+    raw_lengths = [len(chunk) for chunk in chunks]
+    # One staging write appended a duplicate base64 padding fragment to part01 only.
+    # Normalize that known transport artifact, then require the complete decoded file
+    # and every chapter body to match independently derived exact-source hashes.
+    if raw_lengths == [10003, 10000, 9940] and chunks[0].endswith("w=="):
+        chunks[0] = chunks[0][:-3]
     lengths = [len(chunk) for chunk in chunks]
-    print(f"payload part lengths: {lengths}; expected={EXPECTED_PART_LENGTHS}")
+    print(f"payload part lengths raw={raw_lengths} normalized={lengths}; expected={EXPECTED_PART_LENGTHS}")
+    if lengths != EXPECTED_PART_LENGTHS:
+        raise SystemExit(f"payload part length mismatch after normalization: {lengths}")
     encoded = "".join(chunks)
     if len(encoded) != EXPECTED_ENCODED_LENGTH:
         raise SystemExit(f"payload length mismatch: {len(encoded)}")
