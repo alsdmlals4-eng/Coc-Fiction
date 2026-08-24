@@ -11,7 +11,7 @@ resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
 work_mode: IMPLEMENT / REVIEW
 frontier_observed_at_main: fb97068c714f5731bf712316d59a58adab7f4a86
 last_frontier_change_pr: 48
-pending_frontier_change_pr: null
+pending_frontier_change_pr: 50
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 current_source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
 current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx
@@ -61,6 +61,7 @@ rule: source authority != automatic production authority
 - PR #42: Ch021–025 bounded production promotion merged.
 - PR #47: Talon/Milly/Hatem direct user Canon protections merged.
 - **PR #48: Ch026–030 user-source bounded promotion merged; production frontier is 001–030.**
+- **PR #50: Ch031–035 bounded promotion Draft / 진행 중. 이 workstream에서는 수정하지 않는다.**
 
 ## Current production prefix 001–030 contract
 
@@ -129,7 +130,7 @@ Ch25→26 current continuity는 PASS다. 저장 화수가 인접하다는 이유
 
 `fiction/manuscript/part-1/031-035.md`
 
-다음 pass는 **Ch30→31 migration boundary**에서 사용자 지정 `031–040` source를 기준으로 시작한다. `101–105`는 원본 파일이 제공되기 전 자동 보충 금지다.
+다음 pass는 **Ch30→31 migration boundary**에서 사용자 지정 `031–040` source를 기준으로 시작한다. 현재 PR #50은 진행 중 workstream이므로 이 Canon 교정 작업에서 수정하지 않는다. `101–105`는 원본 파일이 제공되기 전 자동 보충 금지다.
 
 ## Base / shared governance
 
