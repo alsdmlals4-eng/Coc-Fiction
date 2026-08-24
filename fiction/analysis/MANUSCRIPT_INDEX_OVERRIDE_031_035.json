@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-24",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_031_035 / CURRENT_RECONCILED_PENDING_PR50",
+  "baseline": "analysis/baselines/MANUSCRIPT_INDEX_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 31,
+      "title": "창을 잡는 사람",
+      "pov": "주안 → 엘리스 → 주안 → 엘리스 → 주안 → 엘리스 → 이안",
+      "body_chars": 10305,
+      "body_sha256": "c24a4c8b236e12b54825c44c810a96588e4b1360b02f8e8a9f4df5d26fd20353",
+      "bundle": "fiction/manuscript/part-1/031-035.md"
+    },
+    {
+      "chapter": 32,
+      "title": "전장 전체가 몸이었다",
+      "pov": "이안 → 주안 → 엘리스 → 이안 → 주안",
+      "body_chars": 6291,
+      "body_sha256": "e55613d4b68fd0d6222a680d3eba1d0416033504322fc9aaae6cf09a9cdc6bce",
+      "bundle": "fiction/manuscript/part-1/031-035.md"
+    },
+    {
+      "chapter": 33,
+      "title": "괴물이 되어야 합니다",
+      "pov": "주안 → 엘리스 → 주안 → 엘리스 → 주안",
+      "body_chars": 5933,
+      "body_sha256": "a6042d9b3c6dc9b82e603c2088a45d9a2f09b974ff224d0a3de618eb5c1d4cec",
+      "bundle": "fiction/manuscript/part-1/031-035.md"
+    },
+    {
+      "chapter": 34,
+      "title": "핵은 붉었다",
+      "pov": "주안 → 엘리스 → 이안 → 주안 → 엘리스",
+      "body_chars": 5935,
+      "body_sha256": "ffbe4a8459f972bcdae6f9fa27416c63a64efb900c19006348d7718c9c20286d",
+      "bundle": "fiction/manuscript/part-1/031-035.md"
+    },
+    {
+      "chapter": 35,
+      "title": "완전 소 생물",
+      "pov": "이안 → 주안 → 엘리스 → 이안 → 주안 → 엘리스",
+      "body_chars": 6194,
+      "body_sha256": "c4b02af3eb326dfd18ec0331c762c92655cb97525b8b3223d407e69ce912d5f2",
+      "bundle": "fiction/manuscript/part-1/031-035.md"
+    }
+  ]
+}

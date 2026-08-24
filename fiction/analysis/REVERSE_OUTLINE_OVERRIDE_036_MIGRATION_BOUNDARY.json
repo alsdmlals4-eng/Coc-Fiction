@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-24",
+  "status": "ACTIVE_OVERRIDE / CH036_LEGACY_TAIL_BOUNDARY / PENDING_PR50",
+  "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 36,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "푸른 심해인과 검은 혈관",
+      "pov": "이안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/036-040.md",
+        "body_sha256": "c5dd1b067199247a221350efd77e555c5cc98d08a648eb0f06ec9bd5ddfaf96e",
+        "body_chars": 2352
+      },
+      "chapter_function": [
+        "INVESTIGATION",
+        "REVELATION",
+        "RELATIONSHIP",
+        "ACTION",
+        "AFTERMATH",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "온돌로프는 자신을 부족장이라고 소개했다. 푸른 피부와 거대한 체격 때문에 처음에는 전사로 보였지만, 그가 벽화의 이름과 신전 구조를 설명하는 방식은 오래 살아남은 기록자의 것이었다.",
+        "immediate_goal_or_focus": "푸른 피부와 거대한 체격 때문에 처음에는 전사로 보였지만, 그가 벽화의 이름과 신전 구조를 설명하는 방식은 오래 살아남은 기록자의 것이었다.",
+        "opposition_and_cost": "이안은 그 반응이 불안했다.",
+        "turn_or_discovery": "그러나 시간이 지나자 가족의 얼굴과 고향의 냄새를 잊고, 성맥이 원하는 적만 찾는 존재가 됐다.",
+        "decision_or_choice": "온돌로프가 진지하게 말했다.",
+        "ending_state": "주안은 대답하지 않았다. 그 침묵이 부정이 아니라 들켰다는 표시처럼 보였다.",
+        "next_pressure": "다음 제37화 「입 없는 안내자 페스타」(이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 그 침묵이 부정이 아니라 들켰다는 표시처럼 보였다."
+      },
+      "metrics": {
+        "paragraphs": 67,
+        "average_paragraph_chars": 35.1,
+        "dialogue_ratio": 0.2381,
+        "theme_term_hits": {
+          "선택": 1,
+          "보호": 1,
+          "사람": 3
+        }
+      },
+      "structural_flags": [
+        "POV_HANDOFF",
+        "LEGACY_TAIL_BOUNDARY"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": null,
+      "next_chapter": {
+        "chapter": 37,
+        "title": "입 없는 안내자 페스타",
+        "pov": "이안"
+      }
+    }
+  ]
+}

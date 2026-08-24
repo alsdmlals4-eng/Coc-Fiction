@@ -8,7 +8,7 @@
 
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
-frontier_observed_at_main: fb97068c714f5731bf712316d59a58adab7f4a86
+frontier_observed_at_main: null
 last_frontier_change_pr: 48
 pending_frontier_change_pr: 50
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
@@ -17,11 +17,11 @@ current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거
 current_bundle_source_sha256: 89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10
 delivery_state: QA_VERIFIED
 repository_promotion_state: PARTIAL
-reconciled_prefix_end: 30
-legacy_tail_starts_at: 31
-boundary_after_chapter: 30
+reconciled_prefix_end: 35
+legacy_tail_starts_at: 36
+boundary_after_chapter: 35
 whole_manuscript_continuity: NOT_YET_CLAIMED
-next_bounded_bundle: fiction/manuscript/part-1/031-035.md
+next_bounded_bundle: fiction/manuscript/part-1/036-040.md
 source_coverage_gap: 101-105
 ```
 
@@ -35,7 +35,7 @@ source_coverage_gap: 101-105
 - PR #42: Ch021–025 bounded promotion merged.
 - PR #47: `탈론=핵심 적대`, `밀리=남성/미스캐토닉 여성 위장`, `하템=여성/기본 가면` Canon merged.
 - **PR #48: Ch026–030 user-source bounded promotion merged.**
-- **PR #50: Ch031–035 bounded promotion Draft / 진행 중. 다른 workstream open PR 보호 규칙에 따라 직접 수정하지 않는다.**
+- **PR #50: Ch031–035 bounded promotion candidate / current-task 승인 범위. exact-head Green 전에는 production 완료 아님.**
 - production prefix: `001–030`.
 - fail-closed boundary: `30→31`.
 - next source bundle: `031–035` from user-designated 031–040 DOCX.
@@ -62,8 +62,8 @@ source_coverage_gap: 101-105
 ## Current migration truth
 
 ```yaml
-left_current: 30
-right_legacy: 31
+left_current: 35
+right_legacy: 36
 left_next_chapter: null
 right_previous_chapter: null
 left_flag: RECONCILIATION_MIGRATION_BOUNDARY
@@ -76,7 +76,7 @@ Ch30→31은 fail-closed boundary다. 인접 번호를 근거로 현재 연속�
 
 `fiction/manuscript/part-1/031-035.md`
 
-사용자 지정 `031–040` 원본을 기준으로 Ch30→31 경계를 다시 열고, exact body → index → reverse outline → Scene Pass → router → regression contract 순으로 동일한 bounded promotion을 진행한다. 단, 현재 PR #50은 진행 중 workstream이므로 이 Canon 교정 작업에서 수정하지 않는다.
+사용자 지정 `031–040` 원본을 기준으로 Ch30→31 경계를 다시 열고, exact body → index → reverse outline → Scene Pass → router → regression contract 순으로 동일한 bounded promotion을 진행한다. 단, 현재 PR #50은 사용자 승인으로 current-task workstream이 되었으며 exact-head Green 전에는 production 완료로 간주하지 않는다.
 
 ## 장기 보호 Canon
 
