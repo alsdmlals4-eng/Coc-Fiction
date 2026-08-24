@@ -26,6 +26,7 @@ on:
       - "tools/check_fiction_scene_passes.py"
       - "tools/fiction_composed_data.py"
       - "tools/_close_pr55_frontier_receipt.py"
+      - "tools/_close_pr55_frontier_receipt_v2.py"
       - ".github/workflows/fiction-ops-validation.yml"
       - ".github/PULL_REQUEST_TEMPLATE/fiction-change.md"
   push:
@@ -72,7 +73,7 @@ jobs:
         run: |
           git fetch origin "$HEAD_BRANCH"
           git checkout "$HEAD_BRANCH"
-          python tools/_close_pr55_frontier_receipt.py
+          python tools/_close_pr55_frontier_receipt_v2.py
           if git diff --quiet; then
             echo "PR55 frontier receipt already closed"
           else
