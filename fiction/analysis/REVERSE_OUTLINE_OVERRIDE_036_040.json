@@ -1,0 +1,343 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-24",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_036_040 / CURRENT_RECONCILED_PENDING_PR55",
+  "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 36,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "사명은 끝났다",
+      "pov": "엘리스 → 주안 → 엘리스 → 이안 → 주안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/036-040.md",
+        "body_sha256": "a73ee6d8d4f99ab24e7604ae891b58da420ce5549777395c262da69ea340b358",
+        "body_chars": 6242
+      },
+      "chapter_function": [
+        "INCITING_INCIDENT",
+        "REVELATION",
+        "RELATIONSHIP",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "탈론이 뛰었다. 엘리스는 엄마에게 달리던 발을 멈췄다.",
+        "immediate_goal_or_focus": "전부 보고 움직였다.",
+        "opposition_and_cost": "그래도 창은 놓지 않았다.",
+        "turn_or_discovery": "오히려 기본 없이 쓰면 사람을 찢는다.",
+        "decision_or_choice": "아킴도 알고 쐈다.",
+        "ending_state": "“응답하십시오!” 아무도 대답하지 않았다.",
+        "next_pressure": "다음 제37화 「승자의 손」(엘리스 → 이안 → 엘리스 POV)로 압력이 이월된다. 현재 화 마지막 증거: 아무도 대답하지 않았다."
+      },
+      "metrics": {
+        "paragraphs": 362,
+        "average_paragraph_chars": 17.2,
+        "dialogue_ratio": 0.1194,
+        "theme_term_hits": {
+          "선택": 4,
+          "명령": 2,
+          "안전": 1,
+          "사람": 15,
+          "괴물": 4
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "LONG_CHAPTER",
+        "ONE_OFF_POV",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 35,
+        "title": "완전 소 생물",
+        "pov": "이안 → 주안 → 엘리스 → 이안 → 주안 → 엘리스"
+      },
+      "next_chapter": {
+        "chapter": 37,
+        "title": "승자의 손",
+        "pov": "엘리스 → 이안 → 엘리스"
+      }
+    },
+    {
+      "chapter": 37,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "승자의 손",
+      "pov": "엘리스 → 이안 → 엘리스",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/036-040.md",
+        "body_sha256": "53604e0ca6bcddd2beebb996aeb102ff7417a645c31e3340880bc451da8dc3e8",
+        "body_chars": 5872
+      },
+      "chapter_function": [
+        "REVELATION",
+        "CHOICE_AND_COST",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "가론 코퍼의 외침이 전장에 남았다. 대답은 없었다.",
+        "immediate_goal_or_focus": "그런데 명령을 내려줄 목소리가 사라지자 모두 같은 방향만 보고 있었다.",
+        "opposition_and_cost": "탄피가 굴러가는 소리.",
+        "turn_or_discovery": "섬에서는 그 구분이 계속 무너졌다.",
+        "decision_or_choice": "그래서 첫 결정은 거창할 필요가 없었다.",
+        "ending_state": "이번에는 아무도 쓰러뜨리지 않고 끝내고 싶었다. 그게 엘리스가 고른 승자의 손이었다.",
+        "next_pressure": "다음 제38화 「인질은 제가 되죠」(엘리스 → 이안 → 엘리스 → 이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 그게 엘리스가 고른 승자의 손이었다."
+      },
+      "metrics": {
+        "paragraphs": 267,
+        "average_paragraph_chars": 22.0,
+        "dialogue_ratio": 0.2505,
+        "theme_term_hits": {
+          "선택": 2,
+          "명령": 4,
+          "사람": 31,
+          "괴물": 2
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "LONG_CHAPTER",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 36,
+        "title": "사명은 끝났다",
+        "pov": "엘리스 → 주안 → 엘리스 → 이안 → 주안"
+      },
+      "next_chapter": {
+        "chapter": 38,
+        "title": "인질은 제가 되죠",
+        "pov": "엘리스 → 이안 → 엘리스 → 이안"
+      }
+    },
+    {
+      "chapter": 38,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "인질은 제가 되죠",
+      "pov": "엘리스 → 이안 → 엘리스 → 이안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/036-040.md",
+        "body_sha256": "c8a9f4a4c867009b73e11257af21bf6050e5b146e4d9c2dc3ffed34d541186d5",
+        "body_chars": 5821
+      },
+      "chapter_function": [
+        "REVELATION",
+        "RELATIONSHIP",
+        "NEGOTIATION",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "가론은 엘리스가 내민 손을 받지 않았다. “무섭습니다.”",
+        "immediate_goal_or_focus": "“본인이 제안했다는 사실을 숨기지 마십시오.”",
+        "opposition_and_cost": "“저 안 죽였죠?”",
+        "turn_or_discovery": "노란 선이 붉어졌다가 검게 바뀌었다.",
+        "decision_or_choice": "이안이 말했다.",
+        "ending_state": "총을 내린 사람들이 군함을 본 뒤에도 그대로 총을 내리고 있을 수 있는지. 대답은 이제 바다에서 다가오고 있었다.",
+        "next_pressure": "다음 제39화 「군함이 왔다」(주안 → 엘리스 → 이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 대답은 이제 바다에서 다가오고 있었다."
+      },
+      "metrics": {
+        "paragraphs": 248,
+        "average_paragraph_chars": 23.5,
+        "dialogue_ratio": 0.3053,
+        "theme_term_hits": {
+          "권리": 1,
+          "사람": 7
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "LONG_CHAPTER",
+        "ONE_OFF_POV",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 37,
+        "title": "승자의 손",
+        "pov": "엘리스 → 이안 → 엘리스"
+      },
+      "next_chapter": {
+        "chapter": 39,
+        "title": "군함이 왔다",
+        "pov": "주안 → 엘리스 → 이안"
+      }
+    },
+    {
+      "chapter": 39,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "군함이 왔다",
+      "pov": "주안 → 엘리스 → 이안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/036-040.md",
+        "body_sha256": "8ad77ac006e209745a56b4cbba6d3ba26f7a5a55fa75ff00a8dd2efe39955472",
+        "body_chars": 6163
+      },
+      "chapter_function": [
+        "OPENING",
+        "INVESTIGATION",
+        "REVELATION",
+        "RELATIONSHIP",
+        "ACTION",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "며칠이라는 시간은 몸을 확인하기엔 짧고. 전쟁을 다시 시작하기엔 충분했다.",
+        "immediate_goal_or_focus": "며칠이라는 시간은 몸을 확인하기엔 짧고.",
+        "opposition_and_cost": "현재 아킴은 자기가 탈론을 죽인 걸 정확히 모르고 있었다.",
+        "turn_or_discovery": "엘리스가 창을 들고 나타났다.",
+        "decision_or_choice": "엘리스가 먼저 말했다.",
+        "ending_state": "협상은 그 선택을 증명할 다음 싸움이었다. 총알 없이 버티는 싸움.",
+        "next_pressure": "다음 제40화 「아버지의 자리」(엘리스 → 이안 → 엘리스 POV)로 압력이 이월된다. 현재 화 마지막 증거: 총알 없이 버티는 싸움."
+      },
+      "metrics": {
+        "paragraphs": 228,
+        "average_paragraph_chars": 27.0,
+        "dialogue_ratio": 0.1245,
+        "theme_term_hits": {
+          "선택": 3,
+          "책임": 2,
+          "보호": 1,
+          "명령": 3,
+          "안전": 2,
+          "사람": 18,
+          "괴물": 8
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "LONG_CHAPTER",
+        "ONE_OFF_POV",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 38,
+        "title": "인질은 제가 되죠",
+        "pov": "엘리스 → 이안 → 엘리스 → 이안"
+      },
+      "next_chapter": {
+        "chapter": 40,
+        "title": "아버지의 자리",
+        "pov": "엘리스 → 이안 → 엘리스"
+      }
+    },
+    {
+      "chapter": 40,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "아버지의 자리",
+      "pov": "엘리스 → 이안 → 엘리스",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/036-040.md",
+        "body_sha256": "1de35b4f4ecb19706f05bac827ed916484f59a2e167a0d4277012696cd1d9f19",
+        "body_chars": 6237
+      },
+      "chapter_function": [
+        "INCITING_INCIDENT",
+        "INVESTIGATION",
+        "REVELATION",
+        "RELATIONSHIP",
+        "NEGOTIATION"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "협상은 생각보다 조용하게 시작됐다. 윌리엄의 오른쪽 뒤에는 라르고가 서 있었다.",
+        "immediate_goal_or_focus": "협상은 생각보다 조용하게 시작됐다.",
+        "opposition_and_cost": "“싸우면 다 죽을 것 같아서요.”",
+        "turn_or_discovery": "그 정직함이 엘리스에게는 오히려 나았다.",
+        "decision_or_choice": "엘리스는 계속 말했다.",
+        "ending_state": "엘리스는 그 차이를 잊지 않기로 했다. 다음 선택도 누군가를 이기는 것보다 무엇을 지킬지부터 정해야 했다.",
+        "next_pressure": "정본 마이그레이션 경계. 저장소 제41화 이후는 아직 legacy tail이며 현재 제40화와의 서사 연속성을 주장하지 않는다."
+      },
+      "metrics": {
+        "paragraphs": 282,
+        "average_paragraph_chars": 22.1,
+        "dialogue_ratio": 0.3288,
+        "theme_term_hits": {
+          "선택": 5,
+          "책임": 5,
+          "명령": 1,
+          "사람": 25,
+          "괴물": 5
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "LONG_CHAPTER",
+        "POV_HANDOFF",
+        "RECONCILIATION_MIGRATION_BOUNDARY"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 39,
+        "title": "군함이 왔다",
+        "pov": "주안 → 엘리스 → 이안"
+      },
+      "next_chapter": null
+    }
+  ]
+}

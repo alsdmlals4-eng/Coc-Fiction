@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-24",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_036_040 / CURRENT_RECONCILED_PENDING_PR55",
+  "baseline": "analysis/baselines/MANUSCRIPT_INDEX_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 36,
+      "title": "사명은 끝났다",
+      "pov": "엘리스 → 주안 → 엘리스 → 이안 → 주안",
+      "body_chars": 6242,
+      "body_sha256": "a73ee6d8d4f99ab24e7604ae891b58da420ce5549777395c262da69ea340b358",
+      "bundle": "fiction/manuscript/part-1/036-040.md"
+    },
+    {
+      "chapter": 37,
+      "title": "승자의 손",
+      "pov": "엘리스 → 이안 → 엘리스",
+      "body_chars": 5872,
+      "body_sha256": "53604e0ca6bcddd2beebb996aeb102ff7417a645c31e3340880bc451da8dc3e8",
+      "bundle": "fiction/manuscript/part-1/036-040.md"
+    },
+    {
+      "chapter": 38,
+      "title": "인질은 제가 되죠",
+      "pov": "엘리스 → 이안 → 엘리스 → 이안",
+      "body_chars": 5821,
+      "body_sha256": "c8a9f4a4c867009b73e11257af21bf6050e5b146e4d9c2dc3ffed34d541186d5",
+      "bundle": "fiction/manuscript/part-1/036-040.md"
+    },
+    {
+      "chapter": 39,
+      "title": "군함이 왔다",
+      "pov": "주안 → 엘리스 → 이안",
+      "body_chars": 6163,
+      "body_sha256": "8ad77ac006e209745a56b4cbba6d3ba26f7a5a55fa75ff00a8dd2efe39955472",
+      "bundle": "fiction/manuscript/part-1/036-040.md"
+    },
+    {
+      "chapter": 40,
+      "title": "아버지의 자리",
+      "pov": "엘리스 → 이안 → 엘리스",
+      "body_chars": 6237,
+      "body_sha256": "1de35b4f4ecb19706f05bac827ed916484f59a2e167a0d4277012696cd1d9f19",
+      "bundle": "fiction/manuscript/part-1/036-040.md"
+    }
+  ]
+}

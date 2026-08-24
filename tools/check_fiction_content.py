@@ -115,9 +115,25 @@ chapter_pattern = re.compile(
     re.M | re.S,
 )
 seen: dict[int, tuple[str, str, str, Path]] = {}
+try:
+    scene_pass_registry = json.loads(
+        (FICTION / "analysis/SCENE_PASS_REGISTRY.json").read_text(encoding="utf-8")
+    )
+    completed_bundle_paths = {
+        str(item.get("bundle"))
+        for item in scene_pass_registry.get("completed_bundle_passes", [])
+        if isinstance(item, dict) and item.get("bundle")
+    }
+except Exception as exc:
+    completed_bundle_paths = set()
+    errors.append(f"invalid scene-pass registry for manuscript status validation: {exc}")
+
 for path in bundles:
     text = path.read_text(encoding="utf-8")
-    if not re.search(r"^> 상태: 2,000자 이상 확장 원고 DRAFT\.", text, re.M):
+    relative_path = path.relative_to(ROOT).as_posix()
+    if relative_path not in completed_bundle_paths and not re.search(
+        r"^> 상태: 2,000자 이상 확장 원고 DRAFT\.", text, re.M
+    ):
         errors.append(f"missing expanded DRAFT status: {path.relative_to(ROOT)}")
     if re.search(r"^> 상태:.*(?:전체 퇴고 완료|최종 원고|교정 완료)", text, re.M):
         errors.append(f"false completion label: {path.relative_to(ROOT)}")

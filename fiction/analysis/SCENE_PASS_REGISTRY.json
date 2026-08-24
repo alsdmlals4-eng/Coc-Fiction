@@ -19,11 +19,11 @@
       1,
       161
     ],
-    "reconciled_prefix_end": 35,
-    "legacy_tail_starts_at": 36,
-    "boundary_after_chapter": 35,
+    "reconciled_prefix_end": 40,
+    "legacy_tail_starts_at": 41,
+    "boundary_after_chapter": 40,
     "whole_manuscript_continuity": "NOT_YET_CLAIMED",
-    "rule": "Chapters 1-35 are the bounded reconciled production prefix on main after PR #50. Stored Ch36+ remain legacy-tail artifacts until their own 5-chapter promotion pass. The user source set currently has a declared 101-105 coverage gap and must not be auto-filled from derived or legacy sources."
+    "rule": "Chapters 1-40 are the bounded reconciled candidate prefix on PR #55. Stored Ch41+ remain legacy tail until their own pass; 101-105 remains fail-closed."
   },
   "representative_pilots": [
     10,
@@ -359,11 +359,50 @@
         "96": "1e0bf9444fb14121db47396a5a44702190c587f6308d82e816c72d824f19d25e"
       },
       "status": "COMPLETE_SOURCE_MATCHED_CORE_EVENTS / ADAPTATION_EXCLUSIONS_APPLIED"
+    },
+    {
+      "bundle": "fiction/manuscript/part-1/036-040.md",
+      "chapters": [
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "boundary_chapters": [
+        35,
+        41
+      ],
+      "scene_cards": "fiction/analysis/SCENE_CARDS_036_040.md",
+      "revision_report": "fiction/reports/REVISION_2026-08-24_CURRENT_RECONCILIATION_036_040.md",
+      "source_files": [
+        {
+          "name": "폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx",
+          "sha256": "89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10",
+          "role": "user-designated source authority"
+        },
+        {
+          "name": "fiction/CANON_REGISTRY.json",
+          "role": "latest approved canon protection"
+        }
+      ],
+      "chapter_shas": {
+        "36": "a73ee6d8d4f99ab24e7604ae891b58da420ce5549777395c262da69ea340b358",
+        "37": "53604e0ca6bcddd2beebb996aeb102ff7417a645c31e3340880bc451da8dc3e8",
+        "38": "c8a9f4a4c867009b73e11257af21bf6050e5b146e4d9c2dc3ffed34d541186d5",
+        "39": "8ad77ac006e209745a56b4cbba6d3ba26f7a5a55fa75ff00a8dd2efe39955472",
+        "40": "1de35b4f4ecb19706f05bac827ed916484f59a2e167a0d4277012696cd1d9f19"
+      },
+      "preserved_boundary_shas": {
+        "35": "c4b02af3eb326dfd18ec0331c762c92655cb97525b8b3223d407e69ce912d5f2",
+        "41": "ad9c909c0656e0140f6fce400547f983d7d899a5409441371a64d893f787a890"
+      },
+      "status": "COMPLETE_CURRENT_SOURCE_CANON_RECONCILIATION / CANDIDATE_PREFIX / PENDING_PR55"
     }
   ],
   "next_pass_mode": "USER_SOURCE_CHUNK_CANON_RECONCILIATION",
   "next_bundle_passes": [
-    "fiction/manuscript/part-1/036-040.md"
+    "fiction/manuscript/part-1/041-045.md"
   ],
   "deferred_bundle_passes": [
     "fiction/manuscript/part-2/176-180.md"

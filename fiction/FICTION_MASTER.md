@@ -37,12 +37,14 @@ current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거
 current_bundle_source_sha256: 89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10
 derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 repository_promotion_state: PARTIAL
-reconciled_prefix: 001-035
-legacy_tail_starts_at: 036
-boundary_after_chapter: 035
+reconciled_prefix: 001-040
+legacy_tail_starts_at: 041
+boundary_after_chapter: 040
 whole_manuscript_continuity: NOT_YET_CLAIMED
 last_frontier_change_pr: 50
-next_reconciliation: 036-040
+pending_frontier_change_pr: 55
+main_frontier_before_pending: 001-035
+next_reconciliation_after_merge: 041-045
 source_coverage_gap: 101-105
 ```
 
@@ -78,7 +80,9 @@ Source authority는 reconstruction input의 권위다. GitHub production authori
 - Alice Carter 한국어 정본 표기: `엘리스`.
 - POV: Scene-Locked Hybrid; scene-internal head hopping 금지.
 
-## 6. current production prefix 001–035 readback
+## 6. pending PR #55 candidate prefix 001–040 readback
+
+> `001–040`은 PR #55 branch candidate다. GitHub `main` production은 병합 전까지 `001–035`로 유지한다.
 
 - 001–020: 이전 bounded pass Green 상태 유지.
 - 021–025: 배수로 탈출→정찰→한 박자 선택 규칙→쇼거스 전면 압력으로 current continuity를 잇는다.
@@ -96,20 +100,20 @@ Source authority는 reconstruction input의 권위다. GitHub production authori
 ## 7. current migration boundary
 
 ```yaml
-left_current: 35
-right_legacy: 36
+left_current: 40
+right_legacy: 41
 left_next_chapter: null
 right_previous_chapter: null
 left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-Ch30→31 current continuity는 PASS다. 새 fail-closed 경계는 Ch35→36이며 Ch36은 별도 pass 전까지 legacy tail이다.
+PR #55 candidate에서는 Ch35→36 연결을 검증했고 새 fail-closed 경계는 Ch40→41이다. main production은 PR #55 병합 전까지 001–035다.
 
 ## 8. 실행 순서
 
-마지막 production frontier 변경은 PR #50 병합이다.
+마지막 main production frontier 변경은 PR #50 병합이다. PR #55는 036–040 pending candidate이며 병합 전 production 완료로 부르지 않는다.
 
 `exact user-source extraction → latest Canon conflict scan → boundary 검증 → manuscript/index/outline/cards/registry/routers 동시 갱신 → 5× adversarial review → exact-head CI → review thread 0/main freshness → squash merge → receipt closure → Notion sync`
 
-다음 bounded unit은 같은 사용자 지정 `031–040` 원본의 `036–040`이다. `101–105`는 원본이 제공되기 전 자동 보충 금지다.
+PR #55 병합 뒤 다음 bounded unit은 사용자 지정 `041–050` 원본의 `041–045`다. `101–105`는 원본이 제공되기 전 자동 보충 금지다.

@@ -17,6 +17,7 @@ on:
       - "tests/test_promote_021_025_contract.py"
       - "tests/test_promote_026_030_contract.py"
       - "tests/test_promote_031_035_contract.py"
+      - "tests/test_promote_036_040_contract.py"
       - "tools/check_fiction_docx_packaging.py"
       - "tools/check_fiction_operating_system.py"
       - "tools/check_fiction_content.py"
@@ -43,6 +44,7 @@ on:
       - "tests/test_promote_021_025_contract.py"
       - "tests/test_promote_026_030_contract.py"
       - "tests/test_promote_031_035_contract.py"
+      - "tests/test_promote_036_040_contract.py"
       - "tools/check_fiction_docx_packaging.py"
       - "tools/check_fiction_operating_system.py"
       - "tools/check_fiction_content.py"
@@ -67,19 +69,12 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-
           path = Path('docs/base-reuse-adoption.json')
           data = json.loads(path.read_text(encoding='utf-8'))
           assert data['schema_version'] == 1
           assert data['base_source_commit'] == '8553678f70e22f193a2336b591f677dcfa5a8965'
           modules = data['modules']
-          expected = {
-              'RM-TOOL-001': 'planned',
-              'RM-SYS-001': 'not_applicable',
-              'RM-SYS-003': 'not_applicable',
-              'RM-VIS-001': 'not_applicable',
-              'RM-VIS-002': 'not_applicable',
-          }
+          expected = {'RM-TOOL-001': 'planned','RM-SYS-001': 'not_applicable','RM-SYS-003': 'not_applicable','RM-VIS-001': 'not_applicable','RM-VIS-002': 'not_applicable'}
           assert {key: value['state'] for key, value in modules.items()} == expected
           print('base reuse adoption manifest pass')
           PY
@@ -101,5 +96,7 @@ jobs:
         run: python -m unittest tests.test_promote_021_025_contract -v
       - name: Validate Ch026-030 historical promotion contract
         run: python -m unittest tests.test_promote_026_030_contract -v
-      - name: Validate Ch031-035 promotion contract
+      - name: Validate Ch031-035 historical promotion contract
         run: python -m unittest tests.test_promote_031_035_contract -v
+      - name: Validate Ch036-040 promotion contract
+        run: python -m unittest tests.test_promote_036_040_contract -v

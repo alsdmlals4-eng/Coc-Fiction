@@ -98,16 +98,13 @@ class Promote031035ContractTests(unittest.TestCase):
         ):
             self.assertNotIn(forbidden, text)
 
-    def test_frontier_advances_only_to_35(self):
+    def test_historical_031_035_promotion_receipt_is_preserved(self):
         registry = json.loads(
             (FICTION / "analysis" / "SCENE_PASS_REGISTRY.json").read_text(encoding="utf-8")
         )
         rec = registry["external_artifact_reconciliation"]
-        self.assertEqual(rec["reconciled_prefix_end"], 35)
-        self.assertEqual(rec["legacy_tail_starts_at"], 36)
-        self.assertEqual(rec["boundary_after_chapter"], 35)
+        self.assertGreaterEqual(rec["reconciled_prefix_end"], 35)
         self.assertEqual(rec["whole_manuscript_continuity"], "NOT_YET_CLAIMED")
-        self.assertEqual(registry["next_bundle_passes"], ["fiction/manuscript/part-1/036-040.md"])
 
         passes = {item["bundle"]: item for item in registry["completed_bundle_passes"]}
         item = passes["fiction/manuscript/part-1/031-035.md"]
@@ -117,6 +114,8 @@ class Promote031035ContractTests(unittest.TestCase):
             item["preserved_boundary_shas"]["30"],
             "5ca93e6979b8beaa0d6ffe07809c664c0b7b907387b47b1732b431be364baac1",
         )
+        # Ch36 was the legacy right boundary at the time of the 031–035 promotion.
+        # A later bounded pass may legitimately replace it; retain this SHA as historical receipt evidence.
         self.assertEqual(
             item["preserved_boundary_shas"]["36"],
             "c5dd1b067199247a221350efd77e555c5cc98d08a648eb0f06ec9bd5ddfaf96e",
@@ -126,13 +125,12 @@ class Promote031035ContractTests(unittest.TestCase):
         for rel in (
             "analysis/MANUSCRIPT_INDEX_OVERRIDE_031_035.json",
             "analysis/REVERSE_OUTLINE_OVERRIDE_031_035.json",
-            "analysis/REVERSE_OUTLINE_OVERRIDE_036_MIGRATION_BOUNDARY.json",
             "analysis/SCENE_CARDS_031_035.md",
             "reports/REVISION_2026-08-24_CURRENT_RECONCILIATION_031_035.md",
         ):
             self.assertTrue((FICTION / rel).is_file(), rel)
 
-    def test_reverse_outline_moves_fail_closed_boundary_to_35_36(self):
+    def test_reverse_outline_keeps_promoted_031_035_connected_after_later_promotions(self):
         from tools.fiction_composed_data import load_reverse_outline
 
         outline = load_reverse_outline(FICTION)
@@ -142,10 +140,20 @@ class Promote031035ContractTests(unittest.TestCase):
         self.assertNotIn("RECONCILIATION_MIGRATION_BOUNDARY", by_chapter[30]["structural_flags"])
         self.assertEqual(by_chapter[31]["previous_chapter"]["chapter"], 30)
         self.assertNotIn("LEGACY_TAIL_BOUNDARY", by_chapter[31]["structural_flags"])
-        self.assertIsNone(by_chapter[35]["next_chapter"])
-        self.assertIn("RECONCILIATION_MIGRATION_BOUNDARY", by_chapter[35]["structural_flags"])
-        self.assertIsNone(by_chapter[36]["previous_chapter"])
-        self.assertIn("LEGACY_TAIL_BOUNDARY", by_chapter[36]["structural_flags"])
+
+        current_frontier = json.loads(
+            (FICTION / "analysis" / "SCENE_PASS_REGISTRY.json").read_text(encoding="utf-8")
+        )["external_artifact_reconciliation"]["reconciled_prefix_end"]
+        if current_frontier >= 36:
+            self.assertEqual(by_chapter[35]["next_chapter"]["chapter"], 36)
+            self.assertNotIn("RECONCILIATION_MIGRATION_BOUNDARY", by_chapter[35]["structural_flags"])
+            self.assertEqual(by_chapter[36]["previous_chapter"]["chapter"], 35)
+            self.assertNotIn("LEGACY_TAIL_BOUNDARY", by_chapter[36]["structural_flags"])
+        else:
+            self.assertIsNone(by_chapter[35]["next_chapter"])
+            self.assertIn("RECONCILIATION_MIGRATION_BOUNDARY", by_chapter[35]["structural_flags"])
+            self.assertIsNone(by_chapter[36]["previous_chapter"])
+            self.assertIn("LEGACY_TAIL_BOUNDARY", by_chapter[36]["structural_flags"])
 
     def test_character_canon_protections_still_hold(self):
         canon = json.loads((FICTION / "CANON_REGISTRY.json").read_text(encoding="utf-8"))
