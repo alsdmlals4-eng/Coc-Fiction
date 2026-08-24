@@ -33,14 +33,15 @@
 
 ```yaml
 source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
-current_bundle_source: 폭풍의눈_2차퇴고_제021-030화_상실광기_강적위상_가독성강화본(1).docx
-current_bundle_source_sha256: e15c8fb4ed4ab1b6980c2c57f3979986bdbfa02f77aafef3cc84d3652cb70547
+current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx
+current_bundle_source_sha256: 89fa4cdbd5e9037ed65e829b958783adaa00b363720e7d178e52426752d3da10
 derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 repository_promotion_state: PARTIAL
 reconciled_prefix: 001-030
 legacy_tail_starts_at: 031
 boundary_after_chapter: 030
 whole_manuscript_continuity: NOT_YET_CLAIMED
+pending_frontier_change_pr: 50
 next_reconciliation: 031-035
 source_coverage_gap: 101-105
 ```
@@ -62,7 +63,7 @@ Source authority는 reconstruction input의 권위다. GitHub production authori
 ## 5. 현행 Canon 보호
 
 - Jooan: `반응 → 멈춤 → 이유 → 선택`; 반응성을 복종으로 환원하지 않는다.
-- Elise: 정신 능력은 외부 간섭 차단·선택 보존, 지배 아님.
+- Elise: 인간을 포함한 정신 대상의 인지·판단·행동에 개입·조작할 수 있는 정신계 능력자다. 외부 정신간섭 차단·환각 필터도 가능하다. 선택 보존은 능력의 한계가 아니라, 이 힘을 언제·왜·어디까지 쓸지에 대한 엘리스의 윤리·자기규율이다.
 - Ian: 관찰·가설·검증·기록; 모르는 것을 정답으로 올리지 않는다.
 - Milly: 실제 남성. 미스캐토닉에서는 하템 외형을 이용한 여성 위장 때문에 `밀리 양`으로 인식됐을 뿐이다.
 - Hatem: 실제 여성. 평소 기본 외형은 검은 가면의 광신도. Ch27 사망 이후에는 새 정보 없는 환각/기억만 허용한다.
@@ -81,7 +82,7 @@ Source authority는 reconstruction input의 권위다. GitHub production authori
 
 - 001–020: 이전 bounded pass Green 상태 유지.
 - 021–025: 배수로 탈출→정찰→한 박자 선택 규칙→쇼거스 전면 압력으로 current continuity를 잇는다.
-- 026 `네 책임은 지금`: 엘리스는 쇼거스를 지배하지 않고 책임을 재판단하게 한다. 탈론은 핵심 적대 전투 위상을 화면에서 증명한다.
+- 026 `네 책임은 지금`: 엘리스는 이 장면에서 쇼거스를 직접 정신조작하지 않고 책임을 재판단하게 한다. 이는 능력상 정신조작이 불가능하다는 뜻이 아니다. 탈론은 핵심 적대 전투 위상을 화면에서 증명한다.
 - 027 `친구가 적진에 있었다`: 밀리는 남성 현재 몸으로 재등장하고, 하템은 별도 여성 인물로 이안을 지키다 사망한다.
 - 028 `편해져도 된다는 말`: 사후 하템은 이안의 환각/기억이며 새 정보를 주지 않는다. 엘리스는 허락 후 경계 지원만 한다.
 - 029 `친구를 막는 법`: 이안은 사람을 직접 쓰러뜨리기보다 의식 연결을 최소비용으로 끊고, 밀리와 친구였던 과거/현재 적대를 동시에 보존한다.
@@ -102,7 +103,7 @@ Ch25→26 current continuity는 PASS다. Ch30→31은 fail-closed이며 numberin
 
 ## 8. 실행 순서
 
-현재 promotion PR은 #48이다. merge 전에는 candidate frontier일 뿐 main production frontier라고 부르지 않는다.
+마지막 production frontier 변경은 PR #48 병합이다. 현재 다음 promotion PR #50은 `031–035` Draft / 진행 중이므로 이 Canon 교정 workstream에서는 수정하지 않는다.
 
 `exact user-source extraction → latest Canon conflict scan → boundary 검증 → manuscript/index/outline/cards/registry/routers 동시 갱신 → 5× adversarial review → exact-head CI → review thread 0/main freshness → squash merge → receipt closure → Notion sync`
 

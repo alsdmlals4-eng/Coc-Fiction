@@ -35,6 +35,7 @@ repository_reconciled_prefix: 001-030
 legacy_tail_starts_at: 031
 whole_manuscript_continuity: NOT_YET_CLAIMED
 last_frontier_change_pr: 48
+pending_frontier_change_pr: 50
 next_bundle: fiction/manuscript/part-1/031-035.md
 source_coverage_gap: 101-105
 ```
@@ -63,7 +64,7 @@ GitHub 225화/45묶음 경로는 migration container이며 current narrative 최
 
 - Alice Carter 한국어 정본은 `엘리스`.
 - Jooan: `반응 → 멈춤 → 이유 → 선택`.
-- Elise 정신 능력: 지배가 아니라 선택 보존.
+- Elise 정신 능력: 인간을 포함한 정신 대상의 인지·판단·행동을 조작할 수 있다. 외부 정신간섭 차단·환각 필터도 가능하다. 선택 보존은 능력의 한계가 아니라 사용 방식에 대한 자기규율이다.
 - Ian: 기록·검증, unknown을 사실로 승격하지 않음.
 - Milly: 실제 남성. 미스캐토닉에서는 하템의 여성 외형을 이용해 위장했기 때문에 `밀리 양`으로 인식됨.
 - Hatem: 실제 여성. 기본 외형은 검은 가면의 광신도. Ch27 사망 뒤에는 새 정보 없는 환각/기억만 허용.
@@ -88,7 +89,7 @@ GitHub 225화/45묶음 경로는 migration container이며 current narrative 최
 다음 시작 묶음:
 `fiction/manuscript/part-1/031-035.md`
 
-사용자 지정 `031–040` source를 사용한다.
+사용자 지정 `031–040` source를 사용한다. 현재 PR #50은 이 묶음의 진행 중 Draft이므로 다른 workstream 보호 규칙에 따라 이 Canon 교정 작업에서 수정하지 않는다.
 
 ```text
 Ch30→31 boundary verification

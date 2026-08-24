@@ -10,7 +10,7 @@
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
 frontier_observed_at_main: fb97068c714f5731bf712316d59a58adab7f4a86
 last_frontier_change_pr: 48
-pending_frontier_change_pr: null
+pending_frontier_change_pr: 50
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
 current_bundle_source: 폭풍의눈_2차퇴고_제031-040화_밀리최종_쇼거스결전_정치클라이맥스_가독성강화본(1).docx
@@ -35,6 +35,7 @@ source_coverage_gap: 101-105
 - PR #42: Ch021–025 bounded promotion merged.
 - PR #47: `탈론=핵심 적대`, `밀리=남성/미스캐토닉 여성 위장`, `하템=여성/기본 가면` Canon merged.
 - **PR #48: Ch026–030 user-source bounded promotion merged.**
+- **PR #50: Ch031–035 bounded promotion Draft / 진행 중. 다른 workstream open PR 보호 규칙에 따라 직접 수정하지 않는다.**
 - production prefix: `001–030`.
 - fail-closed boundary: `30→31`.
 - next source bundle: `031–035` from user-designated 031–040 DOCX.
@@ -52,7 +53,7 @@ source_coverage_gap: 101-105
 ## Ch026–030 보호 readback
 
 - Ch25→26: current continuity PASS.
-- Ch26: 엘리스는 쇼거스를 조종하지 않고 질문/책임으로 자기 판단을 바꾸게 한다. 탈론은 쇼거스 다수를 정면 상대하는 core antagonist 위상.
+- Ch26: 엘리스는 이 장면에서 쇼거스를 직접 정신조작하지 않고 질문/책임으로 자기 판단을 바꾸게 한다. 이는 엘리스에게 인간·비인간 정신조작 능력이 없다는 뜻이 아니다. 탈론은 쇼거스 다수를 정면 상대하는 core antagonist 위상.
 - Ch27: 밀리는 남성 현재 몸으로 재등장. 하템은 별도 여성 인물로 이안을 보호하다 육체적으로 사망.
 - Ch28: 사후 하템은 환각/기억이며 새 정보 제공 금지. 엘리스는 이안 허락 후 정신 경계 지원만 한다.
 - Ch29: 이안/밀리는 친구였던 과거와 현재 반대편 행동을 동시에 유지. 주안은 몸이 창을 원한다는 이유로 창을 잡지 않는다.
@@ -75,13 +76,13 @@ Ch30→31은 fail-closed boundary다. 인접 번호를 근거로 현재 연속�
 
 `fiction/manuscript/part-1/031-035.md`
 
-사용자 지정 `031–040` 원본을 기준으로 Ch30→31 경계를 다시 열고, exact body → index → reverse outline → Scene Pass → router → regression contract 순으로 동일한 bounded promotion을 진행한다.
+사용자 지정 `031–040` 원본을 기준으로 Ch30→31 경계를 다시 열고, exact body → index → reverse outline → Scene Pass → router → regression contract 순으로 동일한 bounded promotion을 진행한다. 단, 현재 PR #50은 진행 중 workstream이므로 이 Canon 교정 작업에서 수정하지 않는다.
 
 ## 장기 보호 Canon
 
 - central question: 선의·보호·사랑이 타인의 선택을 빼앗을 권리를 주지 않는다.
 - Jooan: `반응 → 멈춤 → 이유 → 선택`.
-- Elise: 정신 능력은 선택 보호, 지배 아님.
+- Elise: 인간을 포함한 정신 대상의 인지·판단·행동을 조작할 수 있다. 외부 정신간섭 차단·환각 필터도 가능하다. 선택 보호는 능력의 한계가 아니라 사용 방식에 대한 자기규율이다.
 - Ian: unknown을 사실로 승격하지 않음.
 - Milly: male; Miskatonic female disguise uses Hatem's appearance.
 - Hatem: female; default black-mask cultist; Ch27 death, later no-new-info hallucination only.
