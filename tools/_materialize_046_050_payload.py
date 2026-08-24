@@ -12,6 +12,7 @@ PARTS = [ROOT / "tools" / f"_payload_046_050.part{i:02d}.txt" for i in range(1, 
 TARGET = ROOT / "fiction" / "manuscript" / "part-1" / "046-050.md"
 EXPECTED_FILE_SHA = "a8e9b44f86b4a8d599aa6ca05f191e82aee9daf9d9c1583fbdc6d6c869e3c7d7"
 EXPECTED_ENCODED_LENGTH = 29940
+EXPECTED_PART_LENGTHS = [10000, 10000, 9940]
 EXPECTED_BODIES = {
     46: (5861, "ae3928bb6234eb4086115c74614d43aee3b436aa52cc30d14641a5673878791d"),
     47: (6229, "ed332a61c44bdac0ca394b5f8f6f24ab75c4d388bc289677768aeaee015c9e6a"),
@@ -26,7 +27,10 @@ CHAPTER_RE = re.compile(
 
 
 def main() -> None:
-    encoded = "".join(path.read_text(encoding="utf-8").strip() for path in PARTS)
+    chunks = [path.read_text(encoding="utf-8").strip() for path in PARTS]
+    lengths = [len(chunk) for chunk in chunks]
+    print(f"payload part lengths: {lengths}; expected={EXPECTED_PART_LENGTHS}")
+    encoded = "".join(chunks)
     if len(encoded) != EXPECTED_ENCODED_LENGTH:
         raise SystemExit(f"payload length mismatch: {len(encoded)}")
     data = zlib.decompress(base64.b64decode(encoded))
