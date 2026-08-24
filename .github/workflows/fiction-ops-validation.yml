@@ -70,14 +70,15 @@ jobs:
           git fetch origin "$HEAD_BRANCH"
           git checkout "$HEAD_BRANCH"
           python tools/_materialize_046_050_payload.py
+          python tools/_fix_046_050_canon_receipts.py
           python tools/_patch_046_050_consumers.py
           if git diff --quiet; then
-            echo "Bridge Ch046-050 exact source and consumers already propagated"
+            echo "Bridge Ch046-050 source reconciliation and consumers already propagated"
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add fiction docs/fiction-ops "[소설]/00_운영체계/START_HERE.md" tools/check_fiction_scene_passes.py
-            git commit -m "fiction: install and propagate Bridge Ch046-050"
+            git add fiction docs/fiction-ops "[소설]/00_운영체계/START_HERE.md" tools/check_fiction_scene_passes.py tools/_patch_046_050_consumers.py tests/test_promote_046_050_contract.py
+            git commit -m "fiction: reconcile and propagate Bridge Ch046-050"
             git push origin HEAD:"$HEAD_BRANCH"
             echo "branch updated; this run intentionally stops before validation"
             exit 1
