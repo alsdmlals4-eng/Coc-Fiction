@@ -60,7 +60,7 @@ on:
       - "tools/fiction_composed_data.py"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validate:
@@ -70,6 +70,25 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: One-time materialize Ch051-055 candidate
+        if: github.event_name == 'pull_request' && github.head_ref == 'promote/051-055-current-source-20260824'
+        env:
+          HEAD_BRANCH: ${{ github.head_ref }}
+        run: |
+          git fetch origin "$HEAD_BRANCH"
+          git checkout "$HEAD_BRANCH"
+          python tools/_promote_051_055.py
+          if git diff --quiet; then
+            echo "Ch051-055 candidate already materialized"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "promote: materialize Ch051-055 candidate consumers"
+            git push origin HEAD:"$HEAD_BRANCH"
+            echo "branch updated; this run intentionally stops before validation"
+            exit 1
+          fi
       - name: Validate Base reuse adoption manifest
         run: |
           python - <<'PY'
