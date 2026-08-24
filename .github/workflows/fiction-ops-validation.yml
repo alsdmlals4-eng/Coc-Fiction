@@ -19,7 +19,13 @@ on:
       - "tests/test_promote_031_035_contract.py"
       - "tests/test_promote_036_040_contract.py"
       - "tests/test_promote_041_045_contract.py"
-      - "tools/**"
+      - "tools/check_fiction_docx_packaging.py"
+      - "tools/check_fiction_operating_system.py"
+      - "tools/check_fiction_content.py"
+      - "tools/build_fiction_reverse_outline.py"
+      - "tools/check_fiction_reverse_outline.py"
+      - "tools/check_fiction_scene_passes.py"
+      - "tools/fiction_composed_data.py"
       - ".github/workflows/fiction-ops-validation.yml"
       - ".github/PULL_REQUEST_TEMPLATE/fiction-change.md"
   push:
@@ -50,7 +56,7 @@ on:
       - "tools/fiction_composed_data.py"
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   validate:
@@ -60,54 +66,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: One-time materialize exact Ch041-045 Bridge source
-        if: github.event_name == 'pull_request' && github.head_ref == 'promote/041-045-current-source-20260824'
-        env:
-          HEAD_BRANCH: ${{ github.head_ref }}
-        run: |
-          git fetch origin "$HEAD_BRANCH"
-          git checkout "$HEAD_BRANCH"
-          python tools/_materialize_041_045_payload.py
-          if git diff --quiet -- fiction/manuscript/part-1/041-045.md; then
-            echo "exact Bridge manuscript already installed"
-          else
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add fiction/manuscript/part-1/041-045.md
-            git commit -m "fiction: install exact user-source Bridge Ch041-045"
-            git push origin HEAD:"$HEAD_BRANCH"
-            echo "branch updated; this run intentionally stops before validation"
-            exit 1
-          fi
-      - name: One-time propagate Ch041-045 Bridge consumers
-        if: github.event_name == 'pull_request' && github.head_ref == 'promote/041-045-current-source-20260824'
-        env:
-          HEAD_BRANCH: ${{ github.head_ref }}
-        run: |
-          git fetch origin "$HEAD_BRANCH"
-          git checkout "$HEAD_BRANCH"
-          python tools/_patch_041_045_consumers.py
-          python tools/_fix_scene_pass_frontier_source.py
-          python tools/_patch_041_045_candidate_routers.py
-          git checkout HEAD -- docs/coordination/2026-08-24_COC_PROMOTION_041_045_ADVERSARIAL_REVIEW.md 2>/dev/null || true
-          python - <<'PY'
-          from pathlib import Path
-          p = Path('fiction/reports/REVISION_2026-08-24_CURRENT_RECONCILIATION_041_045.md')
-          text = p.read_text(encoding='utf-8')
-          text = text.replace('`복종인자` / `조작된 감정` 프레임 재도입 금지.', '폐기된 능력·감정 프레임은 새 Bridge 정본에 재도입하지 않음.')
-          p.write_text(text, encoding='utf-8')
-          PY
-          if git diff --quiet; then
-            echo "Bridge Ch041-045 consumers already propagated"
-          else
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add fiction docs/fiction-ops tools/check_fiction_scene_passes.py "[소설]/00_운영체계/START_HERE.md"
-            git commit -m "fiction: propagate Bridge Ch041-045 consumers"
-            git push origin HEAD:"$HEAD_BRANCH"
-            echo "branch updated; this run intentionally stops before validation"
-            exit 1
-          fi
       - name: Validate Base reuse adoption manifest
         run: |
           python - <<'PY'
