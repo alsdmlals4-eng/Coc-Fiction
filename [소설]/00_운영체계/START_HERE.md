@@ -36,6 +36,7 @@ legacy_tail_starts_at: 036
 whole_manuscript_continuity: NOT_YET_CLAIMED
 last_frontier_change_pr: 48
 pending_frontier_change_pr: 50
+pending_frontier_pr: 50
 next_bundle_after_merge: fiction/manuscript/part-1/036-040.md
 source_coverage_gap: 101-105
 ```
