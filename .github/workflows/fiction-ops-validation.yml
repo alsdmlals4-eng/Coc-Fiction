@@ -87,6 +87,7 @@ jobs:
           git fetch origin "$HEAD_BRANCH"
           git checkout "$HEAD_BRANCH"
           python tools/_patch_041_045_consumers.py
+          python tools/_fix_scene_pass_frontier_source.py
           git checkout HEAD -- docs/coordination/2026-08-24_COC_PROMOTION_041_045_ADVERSARIAL_REVIEW.md 2>/dev/null || true
           python - <<'PY'
           from pathlib import Path
