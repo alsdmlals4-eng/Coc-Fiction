@@ -37,13 +37,13 @@ current_bundle_source: 폭풍의눈_2차퇴고_제041-050화_가족재회_선택
 current_bundle_source_sha256: 9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad
 derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 repository_promotion_state: PARTIAL
-reconciled_prefix: 001-045
-legacy_tail_starts_at: 046
-boundary_after_chapter: 045
+reconciled_prefix: 001-050
+legacy_tail_starts_at: 051
+boundary_after_chapter: 050
 whole_manuscript_continuity: NOT_YET_CLAIMED
-last_frontier_change_pr: 57
+last_frontier_change_pr: 59
 pending_frontier_change_pr: null
-next_reconciliation: 046-050
+next_reconciliation: 051-055
 source_coverage_gap: 101-105
 ```
 
@@ -79,7 +79,7 @@ Source authority는 reconstruction input의 권위다. GitHub production authori
 - Alice Carter 한국어 정본 표기: `엘리스`.
 - POV: Scene-Locked Hybrid; scene-internal head hopping 금지.
 
-## 6. current production prefix 001–045 readback
+## 6. current production prefix 001–050 readback
 
 - 001–020: 이전 bounded pass Green 상태 유지.
 - 021–025: 배수로 탈출→정찰→한 박자 선택 규칙→쇼거스 전면 압력으로 current continuity를 잇는다.
@@ -103,24 +103,29 @@ Source authority는 reconstruction input의 권위다. GitHub production authori
 - 043 `확인하고 설명하겠습니다`: 주안은 자기 감정의 기원을 검증하되 엘리스의 현재 선택을 대신 판정하지 않는다.
 - 044 `응답하지 않은 호출기`: 미응답을 영구 이별로 확정하지 않고 수신기를 보존한다.
 - 045 `노란 옷은 안 입습니다`: 황색과 거리를 둔 주안의 현재 선택을 고정하고 다음 Bridge 생활·훈련 축으로 넘긴다.
+- 046 `자아를 찾으러 떠났습니다`: 황색 내부의 소속을 계약 가능한 손님 관계로 제한하고 임무 뒤 귀환도 주안 자신의 선택으로 남긴다.
+- 047 `호수가 보이는 마을`: 8년 뒤 독립 성장한 이안과 주안의 동선을 실종·기억 혼란 사건과 재회 압력으로 모은다. 폐기된 연락축 표기 1건은 current Canon에 따라 일반 외부 연락책으로 최소 치환했다.
+- 048 `돼지고기는 아니었습니다`: 수상한 식당과 실종 흔적을 검증하고 묶인 아킴의 구조를 재회보다 먼저 선택한다.
+- 049 `여덟 해 만입니다`: 이안·주안·아킴 재회를 성립시키되 각자의 8년 성장과 가론의 반복되는 폭력 패턴을 동시에 보존한다.
+- 050 `낙원의 손님분들`: 문과 대화를 먼저 시도해 낙원에 환자 위장으로 진입하고, 루바의 기억 관련 물을 다음 Ch51 압력으로 넘긴다.
 
 ## 7. current migration boundary
 
 ```yaml
-left_current: 45
-right_legacy: 46
+left_current: 50
+right_legacy: 51
 left_next_chapter: null
 right_previous_chapter: null
 left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-PR #57 병합으로 Ch40→41은 current continuity가 되었고 새 main fail-closed 경계는 Ch45→46이다.
+PR #59 병합으로 Ch45→46은 current continuity가 되었고 새 main fail-closed 경계는 Ch50→51이다.
 
 ## 8. 실행 순서
 
-마지막 main production frontier 변경은 PR #57 병합이다.
+마지막 main production frontier 변경은 PR #59 병합이다.
 
 `exact user-source extraction → latest Canon conflict scan → boundary 검증 → manuscript/index/outline/cards/registry/routers 동시 갱신 → 5× adversarial review → exact-head CI → review thread 0/main freshness → squash merge → receipt closure → Notion sync`
 
-다음 bounded unit은 `폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx` / SHA256 `9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad`의 `046–050`다. 041–066은 Aftermath & 8년 Bridge이고 Part 2는 067+다. `101–105`는 원본이 제공되기 전 자동 보충 금지다.
+다음 bounded unit은 `폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx` / SHA256 `9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad`의 `051–055`다. 041–066은 Aftermath & 8년 Bridge이고 Part 2는 067+다. `101–105`는 원본이 제공되기 전 자동 보충 금지다.
