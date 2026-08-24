@@ -81,8 +81,8 @@
       "pov": "이안 → 주안 → 이안",
       "source": {
         "bundle": "fiction/manuscript/part-1/046-050.md",
-        "body_sha256": "ed332a61c44bdac0ca394b5f8f6f24ab75c4d388bc289677768aeaee015c9e6a",
-        "body_chars": 6229
+        "body_sha256": "03e0e7c4fcbfedd4326f335bdc5f49b79fbaf3acc2c1ceaa8e56fa91c8bc6a83",
+        "body_chars": 6228
       },
       "chapter_function": [
         "OPENING",
@@ -111,7 +111,7 @@
       "metrics": {
         "paragraphs": 350,
         "average_paragraph_chars": 17.8,
-        "dialogue_ratio": 0.17,
+        "dialogue_ratio": 0.1699,
         "theme_term_hits": {
           "책임": 1,
           "안전": 1,

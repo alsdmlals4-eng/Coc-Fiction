@@ -14,7 +14,7 @@ SOURCE_FILE = "폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확�
 SOURCE_SHA256 = "9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad"
 EXPECTED = {
     46: {"title":"자아를 찾으러 떠났습니다","pov":"주안","chars":5861,"sha":"ae3928bb6234eb4086115c74614d43aee3b436aa52cc30d14641a5673878791d"},
-    47: {"title":"호수가 보이는 마을","pov":"이안 → 주안 → 이안","chars":6229,"sha":"ed332a61c44bdac0ca394b5f8f6f24ab75c4d388bc289677768aeaee015c9e6a"},
+    47: {"title":"호수가 보이는 마을","pov":"이안 → 주안 → 이안","chars":6228,"sha":"03e0e7c4fcbfedd4326f335bdc5f49b79fbaf3acc2c1ceaa8e56fa91c8bc6a83"},
     48: {"title":"돼지고기는 아니었습니다","pov":"주안 → 이안","chars":5800,"sha":"4cd101ebbb686f269ae2efe1e3e40eba11edd75420c3782aa8918f58df8bb41e"},
     49: {"title":"여덟 해 만입니다","pov":"이안 → 주안 → 이안 → 주안","chars":5793,"sha":"6408f1e4b70b7fdbe43912c5b43c0ce2394d1303a6cbc81f31ea4d0ff9f307be"},
     50: {"title":"낙원의 손님분들","pov":"이안 → 주안","chars":5296,"sha":"5b3bd9bcbb7b3d04deb38dfdb39db2c9fdc56fb50df18ea9425562c9b484880e"},
@@ -31,7 +31,7 @@ class Promote046050ContractTests(unittest.TestCase):
         self.assertEqual(source["authority"], "USER_DESIGNATED_SOURCE")
         self.assertEqual(manifest["coverage_gaps"], ["101-105"])
 
-    def test_exact_user_designated_bridge_bodies_are_installed(self):
+    def test_user_designated_bridge_bodies_are_canon_reconciled_and_installed(self):
         path = FICTION / "manuscript/part-1/046-050.md"
         text = path.read_text(encoding="utf-8")
         parsed = {

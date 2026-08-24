@@ -20,7 +20,7 @@ TAIL = 51
 NEXT_BUNDLE = "fiction/manuscript/part-1/051-055.md"
 EXPECTED = {
     46: {"title":"자아를 찾으러 떠났습니다","pov":"주안","chars":5861,"sha":"ae3928bb6234eb4086115c74614d43aee3b436aa52cc30d14641a5673878791d"},
-    47: {"title":"호수가 보이는 마을","pov":"이안 → 주안 → 이안","chars":6229,"sha":"ed332a61c44bdac0ca394b5f8f6f24ab75c4d388bc289677768aeaee015c9e6a"},
+    47: {"title":"호수가 보이는 마을","pov":"이안 → 주안 → 이안","chars":6228,"sha":"03e0e7c4fcbfedd4326f335bdc5f49b79fbaf3acc2c1ceaa8e56fa91c8bc6a83"},
     48: {"title":"돼지고기는 아니었습니다","pov":"주안 → 이안","chars":5800,"sha":"4cd101ebbb686f269ae2efe1e3e40eba11edd75420c3782aa8918f58df8bb41e"},
     49: {"title":"여덟 해 만입니다","pov":"이안 → 주안 → 이안 → 주안","chars":5793,"sha":"6408f1e4b70b7fdbe43912c5b43c0ce2394d1303a6cbc81f31ea4d0ff9f307be"},
     50: {"title":"낙원의 손님분들","pov":"이안 → 주안","chars":5296,"sha":"5b3bd9bcbb7b3d04deb38dfdb39db2c9fdc56fb50df18ea9425562c9b484880e"},
@@ -268,7 +268,7 @@ def main() -> None:
         cards += [f"## 제{left}→{right}화", f"- 판정: {'DIRECT_CONTINUITY_PASS' if right <= 50 else 'FAIL_CLOSED_UNTIL_NEXT_PROMOTION'}", ""]
     (F / "analysis/SCENE_CARDS_046_050.md").write_text("\n".join(cards)+"\n", encoding="utf-8")
     (F / "reports/REVISION_2026-08-24_CURRENT_RECONCILIATION_046_050.md").write_text(
-        f"# REVISION · Bridge 046–050 current reconciliation · 2026-08-24\n\n- source: `{SOURCE}`\n- source SHA256: `{SOURCE_SHA}`\n- exact-transfer chapters: 46–50\n- structure: Part 1 `001–040` → Aftermath & 8-year Bridge `041–066` → Part 2 `067+`\n- candidate boundary: `050→051`\n- whole manuscript continuity: `NOT_YET_CLAIMED`\n\n## Canon guards\n- 주안의 황색 체류·이탈은 계약과 자기선택으로 읽고 복종 프레임으로 되돌리지 않음.\n- Ch49 재회는 8년의 독립 성장을 지우지 않음.\n- Ch50의 대화 우선과 환자 위장은 루바를 단순 악역으로 확정하지 않으며, 자발성만으로 충분한 설명·동의를 자동 확정하지 않음.\n- 엘리스 D04와 라르고 reveal timing은 기존 Canon을 그대로 유지.\n",
+        f"# REVISION · Bridge 046–050 current reconciliation · 2026-08-24\n\n- source: `{SOURCE}`\n- source SHA256: `{SOURCE_SHA}`\n- source-derived chapters: 46–50\n- Ch47 canon-directed reconciliation: source body `ed332a61c44bdac0ca394b5f8f6f24ab75c4d388bc289677768aeaee015c9e6a` → production body `03e0e7c4fcbfedd4326f335bdc5f49b79fbaf3acc2c1ceaa8e56fa91c8bc6a83`; deprecated contact-axis label replaced by generic old external contact wording; event/information function unchanged.\n- structure: Part 1 `001–040` → Aftermath & 8-year Bridge `041–066` → Part 2 `067+`\n- candidate boundary: `050→051`\n- whole manuscript continuity: `NOT_YET_CLAIMED`\n\n## Canon guards\n- 주안의 황색 체류·이탈은 계약과 자기선택으로 읽고 복종 프레임으로 되돌리지 않음.\n- Ch49 재회는 8년의 독립 성장을 지우지 않음.\n- Ch50의 대화 우선과 환자 위장은 루바를 단순 악역으로 확정하지 않으며, 자발성만으로 충분한 설명·동의를 자동 확정하지 않음.\n- 엘리스 D04와 라르고 reveal timing은 기존 Canon을 그대로 유지.\n",
         encoding="utf-8",
     )
 

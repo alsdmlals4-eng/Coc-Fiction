@@ -2,7 +2,8 @@
 
 - source: `폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx`
 - source SHA256: `9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad`
-- exact-transfer chapters: 46–50
+- source-derived chapters: 46–50
+- Ch47 canon-directed reconciliation: source body `ed332a61c44bdac0ca394b5f8f6f24ab75c4d388bc289677768aeaee015c9e6a` → production body `03e0e7c4fcbfedd4326f335bdc5f49b79fbaf3acc2c1ceaa8e56fa91c8bc6a83`; deprecated contact-axis label replaced by generic old external contact wording; event/information function unchanged.
 - structure: Part 1 `001–040` → Aftermath & 8-year Bridge `041–066` → Part 2 `067+`
 - candidate boundary: `050→051`
 - whole manuscript continuity: `NOT_YET_CLAIMED`
