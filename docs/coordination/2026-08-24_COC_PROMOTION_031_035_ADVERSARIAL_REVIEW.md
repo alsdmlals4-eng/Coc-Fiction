@@ -11,7 +11,7 @@ whole_manuscript_continuity: NOT_YET_CLAIMED
 ```
 
 ## Loop 1 · source / identity
-Exact user-source title·POV·body SHA를 promotion contract와 대조. `앨리스`, `히템`, 폐기 세력축 재유입 없음.
+Exact user-source title·POV·body SHA를 promotion contract와 대조. 구 Alice 한글 표기·구 Hatem 한글 표기·폐기 세력축의 active prose 재유입 없음.
 
 ## Loop 2 · character state
 밀리와 하템의 별도 인물/별도 사망을 유지. 세실리아는 Ch35에서 생존 노출까지, 원인 해설은 미확정. 라자크 상태는 자동 사망 확정 금지.
