@@ -1,0 +1,341 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-24",
+  "status": "ACTIVE_OVERRIDE / BUNDLE_051_055 / BRIDGE_CURRENT_RECONCILED",
+  "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 51,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "잊어도 되는 기억",
+      "pov": "주안 → 이안 → 주안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/051-055.md",
+        "body_sha256": "5c030e6bef2a802db670f600ad0bb5079bcba185b5bd134eae3ad44f3fe52880",
+        "body_chars": 5568
+      },
+      "chapter_function": [
+        "INCITING_INCIDENT",
+        "INVESTIGATION",
+        "REVELATION",
+        "RELATIONSHIP",
+        "CHOICE_AND_COST",
+        "AFTERMATH"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "빛나는 물은 맑았다. 냄새도 없었다.",
+        "immediate_goal_or_focus": "루바는 숨기지 않았다.",
+        "opposition_and_cost": "주안은 버튼을 누르지 않았다.",
+        "turn_or_discovery": "선택이 자발적이었다는 사실은.",
+        "decision_or_choice": "그녀가 낮게 말했다.",
+        "ending_state": "거대한 선글라스를 쓴 작은 소녀가. 파스텔을 들고 그를 보고 있었다.",
+        "next_pressure": "다음 제52화 「잊으면 안 될 것」(주안 → 이안 → 주안 → 이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 파스텔을 들고 그를 보고 있었다."
+      },
+      "metrics": {
+        "paragraphs": 175,
+        "average_paragraph_chars": 31.8,
+        "dialogue_ratio": 0.1282,
+        "theme_term_hits": {
+          "선택": 7,
+          "안전": 2,
+          "사람": 20,
+          "괴물": 2
+        }
+      },
+      "structural_flags": [
+        "LONG_CHAPTER",
+        "TIMELINE_SHIFT",
+        "ONE_OFF_POV",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 50,
+        "title": "낙원의 손님분들",
+        "pov": "이안 → 주안"
+      },
+      "next_chapter": {
+        "chapter": 52,
+        "title": "잊으면 안 될 것",
+        "pov": "주안 → 이안 → 주안 → 이안"
+      }
+    },
+    {
+      "chapter": 52,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "잊으면 안 될 것",
+      "pov": "주안 → 이안 → 주안 → 이안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/051-055.md",
+        "body_sha256": "5ad14e30c75d7ce3a82514ebcd016aab92bf2f9a384962d47e4d5c4f69c396ce",
+        "body_chars": 4934
+      },
+      "chapter_function": [
+        "INVESTIGATION",
+        "REVELATION",
+        "RELATIONSHIP"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "소녀의 옷은 너무 컸다. 소매가 손을 덮고.",
+        "immediate_goal_or_focus": "누군가 찾으러 왔다.",
+        "opposition_and_cost": "루바는 막지 않았다.",
+        "turn_or_discovery": "수첩이 대신 기억하게 해야 한다.",
+        "decision_or_choice": "이안이 말했다.",
+        "ending_state": "비명이 터졌다. 이안이 바로 뛰었다.",
+        "next_pressure": "다음 제53화 「주교님의 외갑」(주안 → 이안 → 주안 → 이안 → 주안 → 이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 이안이 바로 뛰었다."
+      },
+      "metrics": {
+        "paragraphs": 202,
+        "average_paragraph_chars": 24.4,
+        "dialogue_ratio": 0.1881,
+        "theme_term_hits": {
+          "선택": 6,
+          "명령": 2,
+          "권리": 1,
+          "사람": 13,
+          "괴물": 2
+        }
+      },
+      "structural_flags": [
+        "MULTI_TURN_DENSITY",
+        "LONG_CHAPTER",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 51,
+        "title": "잊어도 되는 기억",
+        "pov": "주안 → 이안 → 주안"
+      },
+      "next_chapter": {
+        "chapter": 53,
+        "title": "주교님의 외갑",
+        "pov": "주안 → 이안 → 주안 → 이안 → 주안 → 이안"
+      }
+    },
+    {
+      "chapter": 53,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "주교님의 외갑",
+      "pov": "주안 → 이안 → 주안 → 이안 → 주안 → 이안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/051-055.md",
+        "body_sha256": "286f8768e7ccf046f9a51a500b59fd62ec95bbcc44354a3916075fd5b2a701e8",
+        "body_chars": 5244
+      },
+      "chapter_function": [
+        "OPENING",
+        "INCITING_INCIDENT",
+        "REVELATION"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "첫 번째 비명은 소녀였다. 두 번째부터는.",
+        "immediate_goal_or_focus": "환자 하나가 옆 사람의 팔을 물었다.",
+        "opposition_and_cost": "피부가 썩어간다.",
+        "turn_or_discovery": "잘못된 방식으로 보호할 수 있다는 사실은 동시에 성립한다.",
+        "decision_or_choice": "이안이 말했다.",
+        "ending_state": "작은 주교 사이. 빛의 사슬에 두 번째 균열이 갔다.",
+        "next_pressure": "다음 제54화 「사슬을 끊는 법」(주안 → 이안 → 주안 → 이안 → 주안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 빛의 사슬에 두 번째 균열이 갔다."
+      },
+      "metrics": {
+        "paragraphs": 223,
+        "average_paragraph_chars": 23.5,
+        "dialogue_ratio": 0.1907,
+        "theme_term_hits": {
+          "선택": 1,
+          "보호": 3,
+          "명령": 1,
+          "사람": 8,
+          "괴물": 4
+        }
+      },
+      "structural_flags": [
+        "LONG_CHAPTER",
+        "TIMELINE_SHIFT",
+        "ONE_OFF_POV",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 52,
+        "title": "잊으면 안 될 것",
+        "pov": "주안 → 이안 → 주안 → 이안"
+      },
+      "next_chapter": {
+        "chapter": 54,
+        "title": "사슬을 끊는 법",
+        "pov": "주안 → 이안 → 주안 → 이안 → 주안"
+      }
+    },
+    {
+      "chapter": 54,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "사슬을 끊는 법",
+      "pov": "주안 → 이안 → 주안 → 이안 → 주안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/051-055.md",
+        "body_sha256": "dba02380a691b8b2d68fe1a8c95734350e9233b2589f8776156052e64e2a2550",
+        "body_chars": 5666
+      },
+      "chapter_function": [
+        "REVELATION",
+        "ACTION",
+        "CHOICE_AND_COST",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "외갑은 느려졌다. 그래도 빨랐다.",
+        "immediate_goal_or_focus": "주안은 아이가 고개를 끄덕일 때까지 기다렸다.",
+        "opposition_and_cost": "예전에는 이런 순간이 제일 위험했다.",
+        "turn_or_discovery": "이안의 표정이 바로 바뀌었다.",
+        "decision_or_choice": "이안이 말했다.",
+        "ending_state": "여덟 해 전과 같은 약속. 조금 더 지킬 준비가 되어 있었다.",
+        "next_pressure": "다음 제55화 「세상을 봐야 합니다」(주안 → 이안 → 주안 → 이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 조금 더 지킬 준비가 되어 있었다."
+      },
+      "metrics": {
+        "paragraphs": 241,
+        "average_paragraph_chars": 23.5,
+        "dialogue_ratio": 0.1675,
+        "theme_term_hits": {
+          "선택": 1,
+          "보호": 5,
+          "명령": 1,
+          "권리": 1,
+          "안전": 2,
+          "사람": 10,
+          "괴물": 1
+        }
+      },
+      "structural_flags": [
+        "LONG_CHAPTER",
+        "TIMELINE_SHIFT",
+        "ONE_OFF_POV",
+        "POV_HANDOFF"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 53,
+        "title": "주교님의 외갑",
+        "pov": "주안 → 이안 → 주안 → 이안 → 주안 → 이안"
+      },
+      "next_chapter": {
+        "chapter": 55,
+        "title": "세상을 봐야 합니다",
+        "pov": "주안 → 이안 → 주안 → 이안"
+      }
+    },
+    {
+      "chapter": 55,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "세상을 봐야 합니다",
+      "pov": "주안 → 이안 → 주안 → 이안",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/051-055.md",
+        "body_sha256": "35b0cb9f53775945a9cafe2aa307e3ffe04a3355b38b3e1db831826db60d5fdc",
+        "body_chars": 4981
+      },
+      "chapter_function": [
+        "REVELATION",
+        "CHOICE_AND_COST",
+        "FINALE"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "RELATIONSHIP",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "외갑이 멈춘 뒤. 가장 먼저 한 일은 사람 수를 세는 것이었다.",
+        "immediate_goal_or_focus": "확인할 수 있는 사람부터.",
+        "opposition_and_cost": "“아까는 불편해 보인댔잖아.”",
+        "turn_or_discovery": "“그때 다시 이야기해야죠.”",
+        "decision_or_choice": "이안이 옆에서 말했다.",
+        "ending_state": "한국 이야기는. 아직 시작도 안 한 것 같았다.",
+        "next_pressure": "정본 마이그레이션 경계. 저장소 제56화 이후는 아직 legacy tail이며 현재 제55화와의 서사 연속성을 주장하지 않는다."
+      },
+      "metrics": {
+        "paragraphs": 301,
+        "average_paragraph_chars": 16.5,
+        "dialogue_ratio": 0.3086,
+        "theme_term_hits": {
+          "선택": 1,
+          "보호": 2,
+          "안전": 1,
+          "사람": 20
+        }
+      },
+      "structural_flags": [
+        "LONG_CHAPTER",
+        "POV_HANDOFF",
+        "RECONCILIATION_MIGRATION_BOUNDARY"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": {
+        "chapter": 54,
+        "title": "사슬을 끊는 법",
+        "pov": "주안 → 이안 → 주안 → 이안 → 주안"
+      },
+      "next_chapter": null
+    }
+  ]
+}

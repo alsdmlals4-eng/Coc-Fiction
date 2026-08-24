@@ -9,8 +9,8 @@
     "rule": "Latest direct user decisions override conflicting source details. User-designated per-range DOCX files are reconstruction source authority; source availability does not imply GitHub production authority or whole-manuscript continuity."
   },
   "external_artifact_reconciliation": {
-    "artifact": "폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx",
-    "artifact_sha256": "9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad",
+    "artifact": "폭풍의눈_2차퇴고_제051-060화_기억외갑_선택회수_가독성강화본(1).docx",
+    "artifact_sha256": "84ad0be254a8c4faedb89f2dd9f8433143eaabfef1bc6ff57db1b418e0036496",
     "source_manifest": "docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json",
     "source_authority": "USER_DESIGNATED_SOURCE_CHUNK_SET",
     "derived_cross_check": "폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx",
@@ -19,11 +19,11 @@
       1,
       161
     ],
-    "reconciled_prefix_end": 50,
-    "legacy_tail_starts_at": 51,
-    "boundary_after_chapter": 50,
+    "reconciled_prefix_end": 55,
+    "legacy_tail_starts_at": 56,
+    "boundary_after_chapter": 55,
     "whole_manuscript_continuity": "NOT_YET_CLAIMED",
-    "rule": "Chapters 1-50 are the bounded reconciled production prefix on main after PR #59. Ch041-066 are Aftermath & 8-year Bridge; stored Ch51+ remain legacy until their own pass; 101-105 remains fail-closed."
+    "rule": "Chapters 1-55 are the bounded reconciled candidate prefix in PR #61. Ch041-066 are Aftermath & 8-year Bridge; stored Ch56+ remain legacy until their own pass; 101-105 remains fail-closed."
   },
   "representative_pilots": [
     10,
@@ -476,11 +476,50 @@
         "51": "f149a848ef8c2069d0e461a8b9fe1a73b657c77b9e5327196ce905cfafb60ac1"
       },
       "status": "COMPLETE_CURRENT_SOURCE_CANON_RECONCILIATION / BRIDGE_CURRENT_PREFIX"
+    },
+    {
+      "bundle": "fiction/manuscript/part-1/051-055.md",
+      "chapters": [
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "boundary_chapters": [
+        50,
+        56
+      ],
+      "scene_cards": "fiction/analysis/SCENE_CARDS_051_055.md",
+      "revision_report": "fiction/reports/REVISION_2026-08-24_CURRENT_RECONCILIATION_051_055.md",
+      "source_files": [
+        {
+          "name": "폭풍의눈_2차퇴고_제051-060화_기억외갑_선택회수_가독성강화본(1).docx",
+          "sha256": "84ad0be254a8c4faedb89f2dd9f8433143eaabfef1bc6ff57db1b418e0036496",
+          "role": "user-designated Bridge source authority"
+        },
+        {
+          "name": "fiction/CANON_REGISTRY.json",
+          "role": "latest approved canon protection"
+        }
+      ],
+      "chapter_shas": {
+        "51": "5c030e6bef2a802db670f600ad0bb5079bcba185b5bd134eae3ad44f3fe52880",
+        "52": "5ad14e30c75d7ce3a82514ebcd016aab92bf2f9a384962d47e4d5c4f69c396ce",
+        "53": "286f8768e7ccf046f9a51a500b59fd62ec95bbcc44354a3916075fd5b2a701e8",
+        "54": "dba02380a691b8b2d68fe1a8c95734350e9233b2589f8776156052e64e2a2550",
+        "55": "35b0cb9f53775945a9cafe2aa307e3ffe04a3355b38b3e1db831826db60d5fdc"
+      },
+      "preserved_boundary_shas": {
+        "50": "5b3bd9bcbb7b3d04deb38dfdb39db2c9fdc56fb50df18ea9425562c9b484880e",
+        "56": "c80b210d3c08101c6c56c3f05cda145541b985ed7331132e86bb657fd29bb453"
+      },
+      "status": "COMPLETE_CURRENT_SOURCE_CANON_RECONCILIATION / BRIDGE_CURRENT_PREFIX"
     }
   ],
   "next_pass_mode": "USER_SOURCE_CHUNK_CANON_RECONCILIATION",
   "next_bundle_passes": [
-    "fiction/manuscript/part-1/051-055.md"
+    "fiction/manuscript/part-1/056-060.md"
   ],
   "deferred_bundle_passes": [
     "fiction/manuscript/part-2/176-180.md"

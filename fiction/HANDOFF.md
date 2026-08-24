@@ -8,20 +8,20 @@
 
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
-frontier_observed_at_main: 431acae9b6e62dfd3a26fe177724314dfe4004e7
+frontier_observed_at_main: null
 last_frontier_change_pr: 59
-pending_frontier_change_pr: null
+pending_frontier_change_pr: 61
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
-current_bundle_source: 폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx
-current_bundle_source_sha256: 9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad
+current_bundle_source: 폭풍의눈_2차퇴고_제051-060화_기억외갑_선택회수_가독성강화본(1).docx
+current_bundle_source_sha256: 84ad0be254a8c4faedb89f2dd9f8433143eaabfef1bc6ff57db1b418e0036496
 delivery_state: QA_VERIFIED
 repository_promotion_state: PARTIAL
-reconciled_prefix_end: 50
-legacy_tail_starts_at: 51
-boundary_after_chapter: 50
+reconciled_prefix_end: 55
+legacy_tail_starts_at: 56
+boundary_after_chapter: 55
 whole_manuscript_continuity: NOT_YET_CLAIMED
-next_bounded_bundle: fiction/manuscript/part-1/051-055.md
+next_bounded_bundle: fiction/manuscript/part-1/056-060.md
 source_coverage_gap: 101-105
 main_production_prefix_end: 50
 ```

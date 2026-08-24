@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-24",
+  "status": "ACTIVE_OVERRIDE / LEGACY_TAIL_BOUNDARY_056",
+  "baseline": "baselines/REVERSE_OUTLINE_2026-07-23_PILOT.json",
+  "chapters": [
+    {
+      "chapter": 56,
+      "section": {
+        "key": "part-1",
+        "label": "1부 《폭풍의 눈》"
+      },
+      "title": "검은 주안",
+      "pov": "엘리스",
+      "source": {
+        "bundle": "fiction/manuscript/part-1/056-060.md",
+        "body_sha256": "c80b210d3c08101c6c56c3f05cda145541b985ed7331132e86bb657fd29bb453",
+        "body_chars": 2555
+      },
+      "chapter_function": [
+        "INCITING_INCIDENT",
+        "REVELATION",
+        "CHOICE_AND_COST"
+      ],
+      "state_change_axes": [
+        "EVENT",
+        "INFORMATION",
+        "AGENCY",
+        "EMOTION",
+        "BODY_OR_RESOURCE",
+        "WORLD_RULE"
+      ],
+      "evidence": {
+        "starting_state": "주안의 얼굴이 무너졌다. 검은 산양을 절벽 아래로 밀어낸 뒤 그는 무릎을 꿇었다.",
+        "immediate_goal_or_focus": "사람의 눈이 있어야 할 자리에 검은 구멍이 열렸고, 입은 사라졌다가 턱 아래에서 다시 생겼다.",
+        "opposition_and_cost": "검은 형체는 공격을 받은 순간 더 커졌다.",
+        "turn_or_discovery": "주안의 검은 눈 속에서 작은 사람의 눈동자가 나타났다.",
+        "decision_or_choice": "주안의 선택을 되찾으려 하면서 명령으로 몸을 세우면, 결국 다른 통제자가 될 뿐이었다.",
+        "ending_state": "제 판단과 섞이지 않게 적어주세요.” 정신 장벽의 대가는 단순 피로가 아니라 타인의 흔적을 자기 안에 남기는 일이었다.",
+        "next_pressure": "다음 제57화 「남은 얼굴의 히템」(이안 POV)로 압력이 이월된다. 현재 화 마지막 증거: 정신 장벽의 대가는 단순 피로가 아니라 타인의 흔적을 자기 안에 남기는 일이었다."
+      },
+      "metrics": {
+        "paragraphs": 70,
+        "average_paragraph_chars": 36.5,
+        "dialogue_ratio": 0.1335,
+        "theme_term_hits": {
+          "선택": 4,
+          "보호": 5,
+          "명령": 5,
+          "사람": 11
+        }
+      },
+      "structural_flags": [
+        "HIGH_THEME_EXPLICITNESS",
+        "MULTI_TURN_DENSITY",
+        "POV_HANDOFF",
+        "LEGACY_TAIL_BOUNDARY"
+      ],
+      "review_status": "AUTO_BASELINE_REVIEW_REQUIRED",
+      "representative_gate": false,
+      "previous_chapter": null,
+      "next_chapter": {
+        "chapter": 57,
+        "title": "남은 얼굴의 히템",
+        "pov": "이안"
+      }
+    }
+  ]
+}

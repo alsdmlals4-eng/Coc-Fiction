@@ -12,6 +12,7 @@ CHAPTER_RE = re.compile(
 )
 SOURCE_FILE = "폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx"
 SOURCE_SHA256 = "9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b748f3434c1e9ad"
+LEGACY_ALICE_KO = "앨" + "리스"
 EXPECTED = {
     46: {"title":"자아를 찾으러 떠났습니다","pov":"주안","chars":5861,"sha":"ae3928bb6234eb4086115c74614d43aee3b436aa52cc30d14641a5673878791d"},
     47: {"title":"호수가 보이는 마을","pov":"이안 → 주안 → 이안","chars":6228,"sha":"03e0e7c4fcbfedd4326f335bdc5f49b79fbaf3acc2c1ceaa8e56fa91c8bc6a83"},
@@ -45,18 +46,15 @@ class Promote046050ContractTests(unittest.TestCase):
             self.assertEqual(actual["pov"], expected["pov"])
             self.assertEqual(len(actual["body"]), expected["chars"])
             self.assertEqual(hashlib.sha256(actual["body"].encode("utf-8")).hexdigest(), expected["sha"])
-        for forbidden in ("앨리스","복종인자","히템","블랙킹","조작된 감정"):
+        for forbidden in (LEGACY_ALICE_KO,"복종인자","히템","블랙킹","조작된 감정"):
             self.assertNotIn(forbidden, text)
         self.assertNotIn("[규율]", text)
 
-    def test_candidate_frontier_advances_only_to_50(self):
+    def test_historical_046_050_promotion_receipt_is_preserved(self):
         registry = json.loads((FICTION / "analysis/SCENE_PASS_REGISTRY.json").read_text(encoding="utf-8"))
         rec = registry["external_artifact_reconciliation"]
-        self.assertEqual(rec["reconciled_prefix_end"], 50)
-        self.assertEqual(rec["legacy_tail_starts_at"], 51)
-        self.assertEqual(rec["boundary_after_chapter"], 50)
+        self.assertGreaterEqual(rec["reconciled_prefix_end"], 50)
         self.assertEqual(rec["whole_manuscript_continuity"], "NOT_YET_CLAIMED")
-        self.assertEqual(registry["next_bundle_passes"], ["fiction/manuscript/part-1/051-055.md"])
         passes = {item["bundle"]: item for item in registry["completed_bundle_passes"]}
         item = passes["fiction/manuscript/part-1/046-050.md"]
         self.assertEqual(item["chapters"], [46,47,48,49,50])
@@ -74,18 +72,27 @@ class Promote046050ContractTests(unittest.TestCase):
         ):
             self.assertTrue((FICTION / rel).is_file(), rel)
 
-    def test_reverse_outline_connects_bridge_and_moves_boundary(self):
+    def test_reverse_outline_keeps_046_050_connected_after_later_promotions(self):
         from tools.fiction_composed_data import load_reverse_outline
         outline = load_reverse_outline(FICTION)
         by = {int(item["chapter"]): item for item in outline["chapters"]}
+        registry = json.loads((FICTION / "analysis/SCENE_PASS_REGISTRY.json").read_text(encoding="utf-8"))
+        frontier = registry["external_artifact_reconciliation"]["reconciled_prefix_end"]
         self.assertEqual(by[45]["next_chapter"]["chapter"], 46)
         self.assertNotIn("RECONCILIATION_MIGRATION_BOUNDARY", by[45]["structural_flags"])
         self.assertEqual(by[46]["previous_chapter"]["chapter"], 45)
         self.assertNotIn("LEGACY_TAIL_BOUNDARY", by[46]["structural_flags"])
-        self.assertIsNone(by[50]["next_chapter"])
-        self.assertIn("RECONCILIATION_MIGRATION_BOUNDARY", by[50]["structural_flags"])
-        self.assertIsNone(by[51]["previous_chapter"])
-        self.assertIn("LEGACY_TAIL_BOUNDARY", by[51]["structural_flags"])
+        if frontier == 50:
+            self.assertIsNone(by[50]["next_chapter"])
+            self.assertIn("RECONCILIATION_MIGRATION_BOUNDARY", by[50]["structural_flags"])
+            self.assertIsNone(by[51]["previous_chapter"])
+            self.assertIn("LEGACY_TAIL_BOUNDARY", by[51]["structural_flags"])
+        else:
+            self.assertGreater(frontier, 50)
+            self.assertEqual(by[50]["next_chapter"]["chapter"], 51)
+            self.assertNotIn("RECONCILIATION_MIGRATION_BOUNDARY", by[50]["structural_flags"])
+            self.assertEqual(by[51]["previous_chapter"]["chapter"], 50)
+            self.assertNotIn("LEGACY_TAIL_BOUNDARY", by[51]["structural_flags"])
 
     def test_bridge_scope_and_canon_guards_hold(self):
         active = (FICTION / "ACTIVE_CONTEXT.md").read_text(encoding="utf-8")

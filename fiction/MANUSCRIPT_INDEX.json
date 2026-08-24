@@ -2,7 +2,7 @@
   "schema_version": 2,
   "format": "COMPOSED_MANUSCRIPT_INDEX",
   "generated_at": "2026-08-24",
-  "status": "ACTIVE / COMPOSED / 225_STORAGE_CHAPTERS / MIXED_MIGRATION / CURRENT_PREFIX_001_050",
+  "status": "ACTIVE / COMPOSED / 225_STORAGE_CHAPTERS / MIXED_MIGRATION / CURRENT_PREFIX_001_055",
   "baseline": "analysis/baselines/MANUSCRIPT_INDEX_2026-07-23_PILOT.json",
   "overrides": [
     "analysis/MANUSCRIPT_INDEX_OVERRIDE_001_005.json",
@@ -15,6 +15,7 @@
     "analysis/MANUSCRIPT_INDEX_OVERRIDE_036_040.json",
     "analysis/MANUSCRIPT_INDEX_OVERRIDE_041_045.json",
     "analysis/MANUSCRIPT_INDEX_OVERRIDE_046_050.json",
+    "analysis/MANUSCRIPT_INDEX_OVERRIDE_051_055.json",
     "analysis/MANUSCRIPT_INDEX_OVERRIDE_091_095.json"
   ],
   "counting_rule": "본문만 집계하며 시작·끝 마커와 POV 표식은 제외한다. 공백과 줄바꿈은 포함한다.",
