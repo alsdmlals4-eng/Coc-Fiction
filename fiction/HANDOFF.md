@@ -41,6 +41,7 @@ main_production_prefix_end: 50
 - **PR #57: Bridge Ch041–045 user-source bounded promotion merged.**
 - **PR #59: Bridge Ch046–050 user-source bounded promotion merged.**
 - **PR #59: Bridge Ch046–050 user-source bounded promotion merged.**
+- **PR #59: Bridge Ch046–050 user-source bounded promotion merged.**
 - production prefix: `001–050`.
 - fail-closed boundary: `50→51`.
 - next bundle: `051–055`.
