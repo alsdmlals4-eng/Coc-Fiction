@@ -12,4 +12,10 @@
 - Fix: only unpromoted/uncompleted bundles retain the expanded-DRAFT label requirement; completed bounded bundles remain governed by exact manuscript/index/scene-pass/contract checks.
 - The consumer materializer is now idempotent with respect to this review document so hosted validation can converge without bot-generated diff loops.
 
+## Reverse-outline follow-up
+- RED then caught stale derived reverse-outline evidence/metrics copied from the legacy Ch036–040 storage prose.
+- Root cause: source title/POV/body SHA had been replaced correctly, but derived chapter function/evidence/metrics still came from the pre-promotion legacy outline.
+- Fix: regenerate Ch35–41 reverse-outline entries from the current exact manuscript plus composed manuscript index, then reapply the fail-closed Ch40→41 boundary.
+- The regeneration step is deterministic and runs before `build_fiction_reverse_outline.py --check`.
+
 `CLEAN_REVIEW_EXIT` contingent on exact-head hosted validation Green.
