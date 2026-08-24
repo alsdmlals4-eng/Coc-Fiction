@@ -9,9 +9,9 @@
 ```yaml
 resume_rule: FETCH_LATEST_MAIN_BEFORE_USE
 work_mode: IMPLEMENT / REVIEW
-frontier_observed_at_main: 2a7d6d1267708b63797ccb429e111252068ad22e
+frontier_observed_at_main: null
 last_frontier_change_pr: 57
-pending_frontier_change_pr: null
+pending_frontier_change_pr: 59
 current_state_receipt: docs/fiction-ops/CURRENT_STATE_RECEIPT.json
 current_source_manifest: docs/fiction-ops/2026-08-24_USER_SOURCE_CHUNK_MANIFEST.json
 current_bundle_source: 폭풍의눈_2차퇴고_제041-050화_가족재회_선택불확실성_8년브리지_가독성강화본(1).docx
@@ -19,13 +19,14 @@ current_bundle_source_sha256: 9b2afdf288d657c210a2cc4396650ad6993103a075d0718b4b
 derived_cross_check_only: 폭풍의눈_001-161_통합현행후보_20260820_QA_GREEN_NOT_PROMOTED.docx
 delivery_state: QA_VERIFIED
 repository_promotion_state: PARTIAL
-reconciled_prefix_end: 45
-legacy_tail_starts_at: 46
-boundary_after_chapter: 45
+reconciled_prefix_end: 50
+legacy_tail_starts_at: 51
+boundary_after_chapter: 50
 whole_manuscript_continuity: NOT_YET_CLAIMED
-next_bounded_bundle: fiction/manuscript/part-1/046-050.md
+next_bounded_bundle: fiction/manuscript/part-1/051-055.md
 source_coverage_gap: 101-105
 main_production_prefix_end: 45
+candidate_prefix_end: 50
 ```
 
 `frontier_observed_at_main`은 production frontier를 실제로 이동시킨 merge 증거다. 저장소의 영구 최신 SHA 포인터가 아니므로 재개 시에는 GitHub에서 최신 `main`과 open PR을 다시 조회한다.
@@ -66,7 +67,7 @@ rule: source authority != automatic production authority
 - **PR #55: Ch036–040 user-source bounded promotion merged.**
 - **PR #57: Bridge Ch041–045 user-source bounded promotion merged; production frontier is 001–045.**
 
-## Current production prefix 001–045 contract
+## Current main production 001–045 / PR #59 candidate 001–050 contract
 
 - Ch5→6, Ch10→11, Ch15→16, Ch20→21, Ch25→26, Ch30→31: current continuity.
 - Ch16: 위험한 해결책도 당사자 선택 없이 강행하지 않는다.
@@ -97,19 +98,24 @@ rule: source authority != automatic production authority
 - Ch43 `확인하고 설명하겠습니다`: 주안은 자기 감정의 기원을 확인하지만 엘리스의 현재 선택을 대신 판정하지 않는다.
 - Ch44 `응답하지 않은 호출기`: 미응답을 영구 이별로 확정하지 않고 관계의 불확실성과 수신기 보존을 함께 남긴다.
 - Ch45 `노란 옷은 안 입습니다`: 황색과 거리를 둔 주안의 현재 선택을 고정하고 다음 8년 Bridge 생활·훈련 축으로 넘긴다.
+- Ch46 `자아를 찾으러 떠났습니다`: 황색 내부의 호칭·전력 분류를 계약으로 제한하고 귀환 의무 없는 손님 지위를 자기선택으로 유지한다.
+- Ch47 `호수가 보이는 마을`: 8년 뒤 독립 성장한 이안과 주안의 동선을 사건·재회 압력으로 모은다.
+- Ch48 `돼지고기는 아니었습니다`: 수상한 식당과 실종 흔적을 검증하고 묶인 아킴의 생존 구조를 재회보다 먼저 선택한다.
+- Ch49 `여덟 해 만입니다`: 이안·주안·아킴 재회를 성립시키고 가론의 오래된 폭력 패턴을 말과 중단 규칙으로 제어한다.
+- Ch50 `낙원의 손님분들`: 낙원에 대화·환자 위장으로 진입하고 루바의 기억 관련 물을 Ch51 압력으로 넘긴다.
 
 ## Current migration boundary
 
 ```yaml
-left_current: 45
-right_legacy: 46
+left_current: 50
+right_legacy: 51
 left_next_chapter: null
 right_previous_chapter: null
 left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-PR #57 병합으로 Ch40→41은 current continuity가 되었고 현재 main fail-closed 경계는 `045→046`이다.
+Main production은 PR #57 기준 `001–045 / 045→046`이다. PR #59 candidate는 exact-source 검증을 거쳐 `001–050 / 050→051`로 이동 중이며 merge 전까지 production으로 간주하지 않는다.
 
 ## Canon protection
 
