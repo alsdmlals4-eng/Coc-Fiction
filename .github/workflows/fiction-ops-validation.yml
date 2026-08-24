@@ -18,7 +18,13 @@ on:
       - "tests/test_promote_026_030_contract.py"
       - "tests/test_promote_031_035_contract.py"
       - "tests/test_promote_036_040_contract.py"
-      - "tools/**"
+      - "tools/check_fiction_docx_packaging.py"
+      - "tools/check_fiction_operating_system.py"
+      - "tools/check_fiction_content.py"
+      - "tools/build_fiction_reverse_outline.py"
+      - "tools/check_fiction_reverse_outline.py"
+      - "tools/check_fiction_scene_passes.py"
+      - "tools/fiction_composed_data.py"
       - ".github/workflows/fiction-ops-validation.yml"
       - ".github/PULL_REQUEST_TEMPLATE/fiction-change.md"
   push:
@@ -48,7 +54,7 @@ on:
       - "tools/fiction_composed_data.py"
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   validate:
@@ -58,49 +64,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: One-time materialize exact Ch036-040 source
-        if: github.event_name == 'pull_request' && github.head_ref == 'promote/036-040-current-source-20260824'
-        env:
-          HEAD_BRANCH: ${{ github.head_ref }}
-        run: |
-          git fetch origin "$HEAD_BRANCH"
-          git checkout "$HEAD_BRANCH"
-          python tools/_materialize_036_040_payload.py
-          if git diff --quiet -- fiction/manuscript/part-1/036-040.md; then
-            echo "exact manuscript already installed"
-          else
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add fiction/manuscript/part-1/036-040.md
-            git commit -m "fiction: install exact user-source Ch036-040 manuscript"
-            git push origin HEAD:"$HEAD_BRANCH"
-            echo "branch updated; this run intentionally stops before validation"
-            exit 1
-          fi
-      - name: One-time propagate Ch036-040 consumers
-        if: github.event_name == 'pull_request' && github.head_ref == 'promote/036-040-current-source-20260824'
-        env:
-          HEAD_BRANCH: ${{ github.head_ref }}
-        run: |
-          git fetch origin "$HEAD_BRANCH"
-          git checkout "$HEAD_BRANCH"
-          python tools/_patch_036_040_consumers.py
-          python tools/_fix_content_validator_frontier.py
-          python tools/_fix_036_040_reverse_outline.py
-          python tools/_fix_scene_pass_validator_frontier.py
-          python tools/_fix_036_040_pending_state.py
-          git checkout HEAD -- docs/coordination/2026-08-24_COC_PROMOTION_036_040_ADVERSARIAL_REVIEW.md
-          if git diff --quiet; then
-            echo "Ch036-040 consumers already propagated"
-          else
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add fiction docs/fiction-ops "[소설]/00_운영체계/START_HERE.md" tools/check_fiction_scene_passes.py tools/check_fiction_content.py
-            git commit -m "fiction: propagate Ch036-040 consumers"
-            git push origin HEAD:"$HEAD_BRANCH"
-            echo "branch updated; this run intentionally stops before validation"
-            exit 1
-          fi
       - name: Validate Base reuse adoption manifest
         run: |
           python - <<'PY'
