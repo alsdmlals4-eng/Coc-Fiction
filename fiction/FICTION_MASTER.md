@@ -41,7 +41,7 @@ reconciled_prefix: 001-035
 legacy_tail_starts_at: 036
 boundary_after_chapter: 035
 whole_manuscript_continuity: NOT_YET_CLAIMED
-pending_frontier_change_pr: 50
+last_frontier_change_pr: 50
 next_reconciliation: 036-040
 source_coverage_gap: 101-105
 ```
@@ -78,7 +78,7 @@ Source authority는 reconstruction input의 권위다. GitHub production authori
 - Alice Carter 한국어 정본 표기: `엘리스`.
 - POV: Scene-Locked Hybrid; scene-internal head hopping 금지.
 
-## 6. pending candidate prefix 001–035 readback
+## 6. current production prefix 001–035 readback
 
 - 001–020: 이전 bounded pass Green 상태 유지.
 - 021–025: 배수로 탈출→정찰→한 박자 선택 규칙→쇼거스 전면 압력으로 current continuity를 잇는다.
@@ -87,7 +87,11 @@ Source authority는 reconstruction input의 권위다. GitHub production authori
 - 028 `편해져도 된다는 말`: 사후 하템은 이안의 환각/기억이며 새 정보를 주지 않는다. 엘리스는 허락 후 경계 지원만 한다.
 - 029 `친구를 막는 법`: 이안은 사람을 직접 쓰러뜨리기보다 의식 연결을 최소비용으로 끊고, 밀리와 친구였던 과거/현재 적대를 동시에 보존한다.
 - 030 `폭풍을 걷는 자`: 밀리의 storm-walk와 쿠바라 창의 연결 절단을 관찰하지만 기원·전체 기능·소유권은 미확정으로 둔다.
-- 031–035: 사용자 지정 031–040 source의 exact body를 candidate로 설치. 밀리 최종 상실, 쇼거스 핵 공략, 주안 강화와 엘리스 정신능력 사용을 최신 Canon 아래 검증한다. PR #50 병합 전에는 main production으로 과장하지 않는다.
+- 031 `창을 잡는 사람`: 주안은 쿠바라의 이동을 막는 목표를 선택하고 엘리스는 필요 때문에 창을 사용하되 자동 소유권을 주장하지 않는다. 밀리는 최종 전투에서 사망한다.
+- 032 `전장 전체가 몸이었다`: 쇼거스 분열과 다중 핵 구조를 관찰하고 반복 가능한 공략의 첫 근거를 확보한다.
+- 033 `괴물이 되어야 합니다`: 주안은 위험한 자가변형을 스스로 선택하고 이름·장소·목표 확인으로 자기결정을 회수한다.
+- 034 `핵은 붉었다`: 핵 노출·이동 제한·파괴를 반복 가능한 전술로 정리하며, 강해진 육체의 미확인 위험을 별도로 남긴다.
+- 035 `완전 소 생물`: 주안·엘리스·이안·아킴의 협업으로 쇼거스 핵을 소진한다. 세실리아는 생존 상태로 노출되며, 왜 쇼거스 안에 있었는지는 아직 미확정이다.
 
 ## 7. current migration boundary
 
@@ -100,12 +104,12 @@ left_flag: RECONCILIATION_MIGRATION_BOUNDARY
 right_flag: LEGACY_TAIL_BOUNDARY
 ```
 
-Ch25→26 current continuity는 PASS다. PR #50 candidate에서 Ch30→31은 source/consumer 검증으로 다시 연결한다. 새 fail-closed 경계는 Ch35→36이며, Ch36은 별도 pass 전까지 legacy tail이다.
+Ch30→31 current continuity는 PASS다. 새 fail-closed 경계는 Ch35→36이며 Ch36은 별도 pass 전까지 legacy tail이다.
 
 ## 8. 실행 순서
 
-마지막 production frontier 변경은 PR #48 병합이다. 현재 promotion PR #50은 사용자 승인된 current-task workstream이며 `031–035` candidate를 검증 중이다. exact-head Green과 merge 전에는 production 완료로 간주하지 않는다.
+마지막 production frontier 변경은 PR #50 병합이다.
 
 `exact user-source extraction → latest Canon conflict scan → boundary 검증 → manuscript/index/outline/cards/registry/routers 동시 갱신 → 5× adversarial review → exact-head CI → review thread 0/main freshness → squash merge → receipt closure → Notion sync`
 
-PR #50이 Green/merge되면 같은 사용자 지정 `031–040` 원본의 다음 bounded unit `036–040`을 처리한다. `101–105`는 원본이 제공되기 전 자동 보충 금지다.
+다음 bounded unit은 같은 사용자 지정 `031–040` 원본의 `036–040`이다. `101–105`는 원본이 제공되기 전 자동 보충 금지다.
