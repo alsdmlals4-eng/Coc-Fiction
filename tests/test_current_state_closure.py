@@ -1,11 +1,11 @@
 import json
-import re
 import unittest
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 POLICY = ROOT / "docs/fiction-ops/REPOSITORY_AUTONOMOUS_RESEARCH_AND_LEARNING_POLICY_2026-08-29.md"
+RECEIPT = ROOT / "docs/fiction-ops/CURRENT_STATE_RECEIPT.json"
 
 
 class CurrentStateClosureTests(unittest.TestCase):
@@ -43,9 +43,7 @@ class CurrentStateClosureTests(unittest.TestCase):
         )
 
     def test_start_here_state_matches_current_receipt(self):
-        receipt = json.loads(
-            (ROOT / "docs/fiction-ops/CURRENT_STATE_RECEIPT.json").read_text(encoding="utf-8")
-        )
+        receipt = json.loads(RECEIPT.read_text(encoding="utf-8"))
         start = (ROOT / "[소설]/00_운영체계/START_HERE.md").read_text(encoding="utf-8")
         prefix = receipt["verified_prefix_end"]
         tail = receipt["legacy_tail_starts_at"]
@@ -60,9 +58,8 @@ class CurrentStateClosureTests(unittest.TestCase):
         self.assertIn(f"legacy_tail_starts_at: {tail:03d}", start)
 
     def test_current_state_receipt_matches_scene_pass_frontier(self):
-        receipt_path = ROOT / "docs/fiction-ops/CURRENT_STATE_RECEIPT.json"
-        self.assertTrue(receipt_path.exists(), "current-state receipt must exist")
-        receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+        self.assertTrue(RECEIPT.exists(), "current-state receipt must exist")
+        receipt = json.loads(RECEIPT.read_text(encoding="utf-8"))
         scene = json.loads(
             (ROOT / "fiction/analysis/SCENE_PASS_REGISTRY.json").read_text(encoding="utf-8")
         )
@@ -75,10 +72,7 @@ class CurrentStateClosureTests(unittest.TestCase):
         self.assertEqual(receipt["boundary_after_chapter"], frontier["boundary_after_chapter"])
         self.assertEqual(receipt["candidate_sha256"], frontier["artifact_sha256"])
         self.assertEqual(receipt["whole_manuscript_continuity"], frontier["whole_manuscript_continuity"])
-        self.assertEqual(
-            receipt["next_bounded_bundle"],
-            scene["next_bundle_passes"][0],
-        )
+        self.assertEqual(receipt["next_bounded_bundle"], scene["next_bundle_passes"][0])
 
         pending = receipt.get("pending_frontier_change_pr")
         if pending is None:
@@ -96,9 +90,7 @@ class CurrentStateClosureTests(unittest.TestCase):
             self.assertNotEqual(last, pending)
 
     def test_active_routers_match_current_frontier_and_pending_or_closed_receipt(self):
-        receipt = json.loads(
-            (ROOT / "docs/fiction-ops/CURRENT_STATE_RECEIPT.json").read_text(encoding="utf-8")
-        )
+        receipt = json.loads(RECEIPT.read_text(encoding="utf-8"))
         active = (ROOT / "fiction/ACTIVE_CONTEXT.md").read_text(encoding="utf-8")
         handoff = (ROOT / "fiction/HANDOFF.md").read_text(encoding="utf-8")
         prefix = receipt["verified_prefix_end"]
@@ -121,9 +113,7 @@ class CurrentStateClosureTests(unittest.TestCase):
                 )
 
     def test_pr61_receipt_is_closed_without_advancing_the_frontier(self):
-        receipt = json.loads(
-            (ROOT / "docs/fiction-ops/CURRENT_STATE_RECEIPT.json").read_text(encoding="utf-8")
-        )
+        receipt = json.loads(RECEIPT.read_text(encoding="utf-8"))
         self.assertEqual(receipt["last_frontier_change_pr"], 61)
         self.assertIsNone(receipt["pending_frontier_change_pr"])
         self.assertEqual(
@@ -145,14 +135,18 @@ class CurrentStateClosureTests(unittest.TestCase):
         ):
             self.assertIn(token, policy)
 
+        agents = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
+        self.assertIn("단일 활성 owner", agents)
+        self.assertIn("Notion", agents)
+        self.assertIn("완료 조건으로 사용하지 않는다", agents)
+
         for relative in (
-            "AGENTS.md",
             "[소설]/00_운영체계/START_HERE.md",
             "fiction/ACTIVE_CONTEXT.md",
             "fiction/HANDOFF.md",
         ):
             text = (ROOT / relative).read_text(encoding="utf-8")
-            self.assertIn("REPOSITORY_ONLY", text, relative)
+            self.assertIn("REPOSITORY_ONLY_CURRENT", text, relative)
             self.assertIn("Notion", text, relative)
             self.assertTrue(
                 "완료 조건이 아니다" in text
@@ -167,11 +161,13 @@ class CurrentStateClosureTests(unittest.TestCase):
             "ADOPT / ADAPT / REJECT",
             "FEASIBLE | PARTIAL | BLOCKED_UNVERIFIED",
             "SPEC_ONLY_IS_NOT_PRODUCTION_PROOF",
-            "PAUSED_UNTIL_EXPLICIT_RESUME",
             "GENERATED_CANDIDATE != USER_APPROVED != CANON_REGISTERED != DISTRIBUTION_READY",
             "모델의 임의 영구 기억이 아니라 repository에 남는 재사용 가능한 운영 evidence",
         ):
             self.assertIn(token, policy)
+
+        receipt = json.loads(RECEIPT.read_text(encoding="utf-8"))
+        self.assertEqual(receipt["manuscript_promotion_state"], "PAUSED_UNTIL_EXPLICIT_RESUME")
 
     def test_stale_pending_and_050_frontier_are_not_live_router_state(self):
         for relative in (
