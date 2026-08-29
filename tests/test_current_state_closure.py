@@ -5,6 +5,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+POLICY = ROOT / "docs/fiction-ops/REPOSITORY_AUTONOMOUS_RESEARCH_AND_LEARNING_POLICY_2026-08-29.md"
 
 
 class CurrentStateClosureTests(unittest.TestCase):
@@ -14,6 +15,7 @@ class CurrentStateClosureTests(unittest.TestCase):
         text = agents.read_text(encoding="utf-8")
         for required in (
             "[소설]/00_운영체계/START_HERE.md",
+            "docs/fiction-ops/REPOSITORY_AUTONOMOUS_RESEARCH_AND_LEARNING_POLICY_2026-08-29.md",
             "fiction/ACTIVE_CONTEXT.md",
             "fiction/CANON_REGISTRY.json",
             "fiction/analysis/SCENE_PASS_REGISTRY.json",
@@ -35,6 +37,10 @@ class CurrentStateClosureTests(unittest.TestCase):
     def test_internal_start_here_routes_through_current_state_receipt(self):
         start = (ROOT / "[소설]/00_운영체계/START_HERE.md").read_text(encoding="utf-8")
         self.assertIn("docs/fiction-ops/CURRENT_STATE_RECEIPT.json", start)
+        self.assertIn(
+            "docs/fiction-ops/REPOSITORY_AUTONOMOUS_RESEARCH_AND_LEARNING_POLICY_2026-08-29.md",
+            start,
+        )
 
     def test_start_here_state_matches_current_receipt(self):
         receipt = json.loads(
@@ -113,6 +119,70 @@ class CurrentStateClosureTests(unittest.TestCase):
                     text,
                     name,
                 )
+
+    def test_pr61_receipt_is_closed_without_advancing_the_frontier(self):
+        receipt = json.loads(
+            (ROOT / "docs/fiction-ops/CURRENT_STATE_RECEIPT.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(receipt["last_frontier_change_pr"], 61)
+        self.assertIsNone(receipt["pending_frontier_change_pr"])
+        self.assertEqual(
+            receipt["frontier_observed_at_main"],
+            "1de8beef60612ecc8113b4d7b8146ba7733d96d6",
+        )
+        self.assertEqual(receipt["verified_prefix_end"], 55)
+        self.assertEqual(receipt["legacy_tail_starts_at"], 56)
+        self.assertEqual(receipt["manuscript_promotion_state"], "PAUSED_UNTIL_EXPLICIT_RESUME")
+
+    def test_repository_policy_removes_notion_from_current_completion(self):
+        self.assertTrue(POLICY.is_file())
+        policy = POLICY.read_text(encoding="utf-8")
+        for token in (
+            "HISTORICAL_MIGRATION_REFERENCE_ONLY",
+            "SUPERSEDED_HISTORICAL_COMPATIBILITY",
+            "routine current work에서 Notion을 읽거나 쓰거나 동기화하거나 destination readback 완료 조건으로 사용하지 않는다",
+            "Notion readback은 completion gate가 아니다",
+        ):
+            self.assertIn(token, policy)
+
+        for relative in (
+            "AGENTS.md",
+            "[소설]/00_운영체계/START_HERE.md",
+            "fiction/ACTIVE_CONTEXT.md",
+            "fiction/HANDOFF.md",
+        ):
+            text = (ROOT / relative).read_text(encoding="utf-8")
+            self.assertIn("REPOSITORY_ONLY", text, relative)
+            self.assertIn("Notion", text, relative)
+            self.assertTrue(
+                "완료 조건이 아니다" in text
+                or "Gate가 아니다" in text
+                or "completion target이 아니다" in text,
+                relative,
+            )
+
+    def test_research_feasibility_autonomy_and_visual_candidate_contract(self):
+        policy = POLICY.read_text(encoding="utf-8")
+        for token in (
+            "ADOPT / ADAPT / REJECT",
+            "FEASIBLE | PARTIAL | BLOCKED_UNVERIFIED",
+            "SPEC_ONLY_IS_NOT_PRODUCTION_PROOF",
+            "PAUSED_UNTIL_EXPLICIT_RESUME",
+            "GENERATED_CANDIDATE != USER_APPROVED != CANON_REGISTERED != DISTRIBUTION_READY",
+            "모델의 임의 영구 기억이 아니라 repository에 남는 재사용 가능한 운영 evidence",
+        ):
+            self.assertIn(token, policy)
+
+    def test_stale_pending_and_050_frontier_are_not_live_router_state(self):
+        for relative in (
+            "[소설]/00_운영체계/START_HERE.md",
+            "fiction/ACTIVE_CONTEXT.md",
+            "fiction/HANDOFF.md",
+        ):
+            text = (ROOT / relative).read_text(encoding="utf-8")
+            self.assertNotIn("pending_frontier_change_pr: 61", text, relative)
+            self.assertNotIn("production prefix: `001–050`", text, relative)
+            self.assertNotIn("fail-closed boundary: `50→51`", text, relative)
 
 
 if __name__ == "__main__":
